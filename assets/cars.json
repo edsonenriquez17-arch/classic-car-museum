@@ -3,43 +3,63 @@
 "plate": "A0D - 466",
 "slug": "a0d-466",
 "d3": true,
-"name": "A0D - 466"
+"name": "Honda NSX",
+"brand": "Honda",
+"model": "NSX (NA1)",
+"year": "1991"
 },
 {
 "plate": "A2Y - 410",
 "slug": "a2y-410",
 "d3": true,
-"name": "A2Y - 410"
+"name": "Mercedes-Benz SL 500",
+"brand": "Mercedes-Benz",
+"model": "SL 500 (R230)",
+"year": "2003"
 },
 {
 "plate": "A3M - 354",
 "slug": "a3m-354",
 "d3": true,
-"name": "A3M - 354"
+"name": "Mercedes-Benz E55 AMG",
+"brand": "Mercedes-Benz",
+"model": "E55 AMG (W211)",
+"year": "2004"
 },
 {
 "plate": "A4D - 305",
 "slug": "a4d-305",
 "d3": true,
-"name": "A4D - 305"
+"name": "Porsche 911 GT3",
+"brand": "Porsche",
+"model": "911 GT3 (997.2)",
+"year": "2010"
 },
 {
 "plate": "A5M - 345",
 "slug": "a5m-345",
 "d3": true,
-"name": "A5M - 345"
+"name": "Classic Roadster",
+"model": "1920s American Roadster",
+"year": "1926"
 },
 {
 "plate": "A5T - 244",
 "slug": "a5t-244",
 "d3": true,
-"name": "A5T - 244"
+"name": "Jeep Grand Cherokee SRT8",
+"brand": "Jeep",
+"model": "Grand Cherokee SRT8 (WK)",
+"year": "2008"
 },
 {
 "plate": "A7H - 440",
 "slug": "a7h-440",
 "d3": true,
-"name": "A7H - 440"
+"name": "Mercedes-Benz C43 AMG",
+"brand": "Mercedes-Benz",
+"model": "C43 AMG (W202)",
+"year": "1998"
 },
 {
 "plate": "A9L - 161",
@@ -74,7 +94,10 @@
 "plate": "A9T - 107",
 "slug": "a9t-107",
 "d3": true,
-"name": "A9T - 107"
+"name": "Porsche 911 Turbo",
+"brand": "Porsche",
+"model": "911 Turbo (993)",
+"year": "1996"
 },
 {
 "plate": "ABR - 223",
@@ -138,7 +161,10 @@
 "plate": "AH - 9536",
 "slug": "ah-9536",
 "d3": true,
-"name": "AH - 9536"
+"name": "Plymouth Satellite",
+"brand": "Plymouth",
+"model": "Satellite",
+"year": "1966"
 },
 {
 "plate": "AHE - 474",
@@ -202,7 +228,10 @@
 "plate": "AKV - 003",
 "slug": "akv-003",
 "d3": true,
-"name": "AKV - 003"
+"name": "Porsche Cayman GT4",
+"brand": "Porsche",
+"model": "Cayman GT4 (981)",
+"year": "2016"
 },
 {
 "plate": "ALO-686",
@@ -237,37 +266,54 @@
 "plate": "ALR - 593",
 "slug": "alr-593",
 "d3": true,
-"name": "ALR - 593"
+"name": "Lotus Exige S",
+"brand": "Lotus",
+"model": "Exige S (V6)",
+"year": "2013"
 },
 {
 "plate": "AMMP - 057",
 "slug": "ammp-057",
 "d3": true,
-"name": "AMMP - 057"
+"name": "Brass-era Light Car",
+"model": "Brass-era Light Car",
+"year": "1915"
 },
 {
 "plate": "APC - 142",
 "slug": "apc-142",
 "d3": true,
-"name": "APC - 142"
+"name": "Ford Mustang GT",
+"brand": "Ford",
+"model": "Mustang GT (Fox Body, Shelby)",
+"year": "1990"
 },
 {
 "plate": "APX - 114",
 "slug": "apx-114",
 "d3": true,
-"name": "APX - 114"
+"name": "Ford Mustang Shelby GT350",
+"brand": "Ford",
+"model": "Mustang Shelby GT350",
+"year": "2016"
 },
 {
 "plate": "ASV - 385",
 "slug": "asv-385",
 "d3": true,
-"name": "ASV - 385"
+"name": "Porsche 911 GT3 RS",
+"brand": "Porsche",
+"model": "911 GT3 RS (991.1)",
+"year": "2016"
 },
 {
 "plate": "ASX - 457",
 "slug": "asx-457",
 "d3": true,
-"name": "ASX - 457"
+"name": "Aston Martin DB9",
+"brand": "Aston Martin",
+"model": "DB9",
+"year": "2013"
 },
 {
 "plate": "AUE - 622",
@@ -331,13 +377,19 @@
 "plate": "AWF - 621",
 "slug": "awf-621",
 "d3": true,
-"name": "AWF - 621"
+"name": "Dodge Challenger R/T",
+"brand": "Dodge",
+"model": "Challenger R/T",
+"year": "1970"
 },
 {
 "plate": "AWZ - 629",
 "slug": "awz-629",
 "d3": false,
-"name": "AWZ - 629"
+"name": "Aston Martin Vanquish",
+"brand": "Aston Martin",
+"model": "Vanquish",
+"year": "2014"
 },
 {
 "plate": "AXL - 068",
@@ -488,7 +540,10 @@
 "plate": "B2B - 316",
 "slug": "b2b-316",
 "d3": true,
-"name": "B2B - 316"
+"name": "Ford Mustang GT",
+"brand": "Ford",
+"model": "Mustang GT (Fox Body, Shelby)",
+"year": "1990"
 },
 {
 "plate": "B4Y - 274",
@@ -581,13 +636,19 @@
 "plate": "B6M - 164",
 "slug": "b6m-164",
 "d3": true,
-"name": "B6M - 164"
+"name": "BMW 1 Series M Coupe",
+"brand": "BMW",
+"model": "1 Series M Coupe (E82)",
+"year": "2011"
 },
 {
 "plate": "B7Q - 401",
 "slug": "b7q-401",
 "d3": true,
-"name": "B7Q - 401"
+"name": "BMW M6",
+"brand": "BMW",
+"model": "M6 (E63)",
+"year": "2007"
 },
 {
 "plate": "BAW - 297",
@@ -622,7 +683,10 @@
 "plate": "BFU - 487",
 "slug": "bfu-487",
 "d3": true,
-"name": "BFU - 487"
+"name": "Porsche 911 GT2 RS",
+"brand": "Porsche",
+"model": "911 GT2 RS (991.2)",
+"year": "2018"
 },
 {
 "plate": "BNK - 531",
@@ -657,19 +721,28 @@
 "plate": "BNT - 311",
 "slug": "bnt-311",
 "d3": true,
-"name": "BNT - 311"
+"name": "Mercedes-Benz SLK 230 Kompressor",
+"brand": "Mercedes-Benz",
+"model": "SLK 230 K (R170)",
+"year": "2001"
 },
 {
 "plate": "BPD - 280",
 "slug": "bpd-280",
 "d3": true,
-"name": "BPD - 280"
+"name": "BMW 850i",
+"brand": "BMW",
+"model": "850i (E31)",
+"year": "1992"
 },
 {
 "plate": "BSZ - 611",
 "slug": "bsz-611",
 "d3": true,
-"name": "BSZ - 611"
+"name": "Maserati GranTurismo MC",
+"brand": "Maserati",
+"model": "GranTurismo MC",
+"year": "2018"
 },
 {
 "plate": "BVS - 249",
@@ -704,7 +777,10 @@
 "plate": "C3X - 140",
 "slug": "c3x-140",
 "d3": true,
-"name": "C3X - 140"
+"name": "Audi R8 V10",
+"brand": "Audi",
+"model": "R8 V10 (Type 42)",
+"year": "2010"
 },
 {
 "plate": "C4Q - 097",
@@ -768,7 +844,10 @@
 "plate": "C7M - 309",
 "slug": "c7m-309",
 "d3": true,
-"name": "C7M - 309"
+"name": "BMW M5",
+"brand": "BMW",
+"model": "M5 (F10)",
+"year": "2013"
 },
 {
 "plate": "CPL - 048",
@@ -861,31 +940,46 @@
 "plate": "CXJ - 330",
 "slug": "cxj-330",
 "d3": true,
-"name": "CXJ - 330"
+"name": "Ferrari Testarossa",
+"brand": "Ferrari",
+"model": "Testarossa",
+"year": "1988"
 },
 {
 "plate": "D5Z - 370",
 "slug": "d5z-370",
 "d3": true,
-"name": "D5Z - 370"
+"name": "Porsche 911 Turbo",
+"brand": "Porsche",
+"model": "911 Turbo (930)",
+"year": "1986"
 },
 {
 "plate": "D6R - 546",
 "slug": "d6r-546",
 "d3": true,
-"name": "D6R - 546"
+"name": "Mercedes-Benz C55 AMG",
+"brand": "Mercedes-Benz",
+"model": "C55 AMG (W203)",
+"year": "2005"
 },
 {
 "plate": "D8X - 197",
 "slug": "d8x-197",
 "d3": true,
-"name": "D8X - 197"
+"name": "Nissan GT-R",
+"brand": "Nissan",
+"model": "GT-R (R35)",
+"year": "2012"
 },
 {
 "plate": "D9Z - 460",
 "slug": "d9z-460",
 "d3": true,
-"name": "D9Z - 460"
+"name": "Ford Mustang Shelby GT500",
+"brand": "Ford",
+"model": "Mustang Shelby GT500 (S197)",
+"year": "2008"
 },
 {
 "plate": "F0I - 108",
@@ -978,151 +1072,223 @@
 "plate": "F50 - 140",
 "slug": "f50-140",
 "d3": true,
-"name": "F50 - 140"
+"name": "Ford Mustang GT Convertible",
+"brand": "Ford",
+"model": "Mustang GT Convertible (Fox Body)",
+"year": "1990"
 },
 {
 "plate": "F5J - 319",
 "slug": "f5j-319",
 "d3": true,
-"name": "F5J - 319"
+"name": "McLaren MP4-12C",
+"brand": "McLaren",
+"model": "MP4-12C",
+"year": "2012"
 },
 {
 "plate": "FOL - 661",
 "slug": "fol-661",
 "d3": true,
-"name": "FOL - 661"
+"name": "Porsche 911 Turbo S",
+"brand": "Porsche",
+"model": "911 Turbo S (991.1)",
+"year": "2015"
 },
 {
 "plate": "SI PLACA 20",
 "slug": "si-placa-20",
 "d3": true,
-"name": "SI PLACA 20"
+"name": "Chevrolet Special DeLuxe",
+"brand": "Chevrolet",
+"model": "Special DeLuxe",
+"year": "1940"
 },
 {
 "plate": "SIN PLACA 10",
 "slug": "sin-placa-10",
 "d3": true,
-"name": "SIN PLACA 10"
+"name": "Chevrolet 3100 Pickup",
+"brand": "Chevrolet",
+"model": "3100 Pickup (Advance Design)",
+"year": "1950"
 },
 {
 "plate": "SIN PLACA 11",
 "slug": "sin-placa-11",
 "d3": true,
-"name": "SIN PLACA 11"
+"name": "1930s European Roadster",
+"model": "1930s European Roadster",
+"year": "1935"
 },
 {
 "plate": "SIN PLACA 12",
 "slug": "sin-placa-12",
 "d3": true,
-"name": "SIN PLACA 12"
+"name": "Mazda R360 Coupe",
+"brand": "Mazda",
+"model": "R360 Coupe",
+"year": "1962"
 },
 {
 "plate": "SIN PLACA 13",
 "slug": "sin-placa-13",
 "d3": true,
-"name": "SIN PLACA 13"
+"name": "Ford Capri",
+"brand": "Ford",
+"model": "Capri (Mk III)",
+"year": "1980"
 },
 {
 "plate": "SIN PLACA 14",
 "slug": "sin-placa-14",
 "d3": true,
-"name": "SIN PLACA 14"
+"name": "Packard Super Eight",
+"brand": "Packard",
+"model": "Super Eight",
+"year": "1936"
 },
 {
 "plate": "SIN PLACA 15",
 "slug": "sin-placa-15",
 "d3": true,
-"name": "SIN PLACA 15"
+"name": "Auburn 852 Supercharged",
+"brand": "Auburn",
+"model": "852 Supercharged",
+"year": "1936"
 },
 {
 "plate": "SIN PLACA 16",
 "slug": "sin-placa-16",
 "d3": true,
-"name": "SIN PLACA 16"
+"name": "Packard Deluxe Eight Phaeton",
+"brand": "Packard",
+"model": "Deluxe Eight Phaeton",
+"year": "1930"
 },
 {
 "plate": "SIN PLACA 17",
 "slug": "sin-placa-17",
 "d3": true,
-"name": "SIN PLACA 17"
+"name": "Packard Six Roadster",
+"brand": "Packard",
+"model": "Six Roadster",
+"year": "1926"
 },
 {
 "plate": "SIN PLACA 18",
 "slug": "sin-placa-18",
 "d3": true,
-"name": "SIN PLACA 18"
+"name": "1920s American Phaeton",
+"model": "1920s American Phaeton",
+"year": "1928"
 },
 {
 "plate": "SIN PLACA 19",
 "slug": "sin-placa-19",
 "d3": true,
-"name": "SIN PLACA 19"
+"name": "Cadillac V8 Town Sedan",
+"brand": "Cadillac",
+"model": "V8 Town Sedan",
+"year": "1932"
 },
 {
 "plate": "SIN PLACA 21",
 "slug": "sin-placa-21",
 "d3": true,
-"name": "SIN PLACA 21"
+"name": "Chrysler Airflow",
+"brand": "Chrysler",
+"model": "Airflow",
+"year": "1934"
 },
 {
 "plate": "SIN PLACA 22",
 "slug": "sin-placa-22",
 "d3": true,
-"name": "SIN PLACA 22"
+"name": "Chevrolet Superior Touring",
+"brand": "Chevrolet",
+"model": "Superior Touring",
+"year": "1924"
 },
 {
 "plate": "SIN PLACA 23",
 "slug": "sin-placa-23",
 "d3": true,
-"name": "SIN PLACA 23"
+"name": "Renault Town Car",
+"brand": "Renault",
+"model": "Brass-era Town Car",
+"year": "1911"
 },
 {
 "plate": "SIN PLACA 24",
 "slug": "sin-placa-24",
 "d3": true,
-"name": "SIN PLACA 24"
+"name": "Renault Type AG Town Car",
+"brand": "Renault",
+"model": "Type AG Town Car",
+"year": "1910"
 },
 {
 "plate": "SIN PLACA 25",
 "slug": "sin-placa-25",
 "d3": true,
-"name": "SIN PLACA 25"
+"name": "Brass-era Tonneau",
+"model": "Brass-era Tonneau",
+"year": "1903"
 },
 {
 "plate": "SIN PLACA 26",
 "slug": "sin-placa-26",
 "d3": true,
-"name": "SIN PLACA 26"
+"name": "Renault Runabout",
+"brand": "Renault",
+"model": "Brass-era Runabout",
+"year": "1908"
 },
 {
 "plate": "SIN PLACA 27",
 "slug": "sin-placa-27",
 "d3": true,
-"name": "SIN PLACA 27"
+"name": "Dodge Challenger R/T",
+"brand": "Dodge",
+"model": "Challenger R/T",
+"year": "1970"
 },
 {
 "plate": "SIN PLACA 9",
 "slug": "sin-placa-9",
 "d3": true,
-"name": "SIN PLACA 9"
+"name": "Volvo P1800",
+"brand": "Volvo",
+"model": "P1800",
+"year": "1966"
 },
 {
 "plate": "T33 - 080",
 "slug": "t33-080",
 "d3": true,
-"name": "T33 - 080"
+"name": "Volkswagen Beetle",
+"brand": "Volkswagen",
+"model": "Beetle (Type 1)",
+"year": "1965"
 },
 {
 "plate": "V1A - 109",
 "slug": "v1a-109",
 "d3": true,
-"name": "V1A - 109"
+"name": "Dodge Viper SRT-10",
+"brand": "Dodge",
+"model": "Viper SRT-10 (ZB)",
+"year": "2008"
 },
 {
 "plate": "V8F - 130",
 "slug": "v8f-130",
 "d3": true,
-"name": "V8F - 130"
+"name": "Ferrari California T",
+"brand": "Ferrari",
+"model": "California T",
+"year": "2015"
 },
 {
 "plate": "VAB - 413",
@@ -1186,54 +1352,81 @@
 "plate": "Z6A - 148",
 "slug": "z6a-148",
 "d3": true,
-"name": "Z6A - 148"
+"name": "BMW i8",
+"brand": "BMW",
+"model": "i8",
+"year": "2015"
 },
 {
 "plate": "sin placa 1",
 "slug": "sin-placa-1",
 "d3": true,
-"name": "sin placa 1"
+"name": "Mercedes-Benz SLS AMG",
+"brand": "Mercedes-Benz",
+"model": "SLS AMG",
+"year": "2011"
 },
 {
 "plate": "sin placa 2",
 "slug": "sin-placa-2",
 "d3": true,
-"name": "sin placa 2"
+"name": "Mercedes-Benz CLK 63 AMG Black Series",
+"brand": "Mercedes-Benz",
+"model": "CLK 63 AMG Black Series (C209)",
+"year": "2008"
 },
 {
 "plate": "sin placa 3",
 "slug": "sin-placa-3",
 "d3": true,
-"name": "sin placa 3"
+"name": "Jaguar F-Type",
+"brand": "Jaguar",
+"model": "F-Type",
+"year": "2015"
 },
 {
 "plate": "sin placa 4",
 "slug": "sin-placa-4",
 "d3": true,
-"name": "sin placa 4"
+"name": "Porsche Boxster Spyder",
+"brand": "Porsche",
+"model": "Boxster Spyder (987)",
+"year": "2011"
 },
 {
 "plate": "sin placa 5",
 "slug": "sin-placa-5",
 "d3": true,
-"name": "sin placa 5"
+"name": "Alfa Romeo 4C",
+"brand": "Alfa Romeo",
+"model": "4C",
+"year": "2015"
 },
 {
 "plate": "sin placa 6",
 "slug": "sin-placa-6",
 "d3": true,
-"name": "sin placa 6"
+"name": "Abarth 695",
+"brand": "Abarth",
+"model": "695",
+"year": "2016"
 },
 {
 "plate": "sin placa 7",
 "slug": "sin-placa-7",
 "d3": true,
-"name": "sin placa 7"
+"name": "Ford Mustang Shelby GT500",
+"brand": "Ford",
+"model": "Mustang Shelby GT500 (S197)",
+"year": "2008"
 },
 {
 "plate": "sin placa 8",
 "slug": "sin-placa-8",
 "d3": true,
-"name": "sin placa 8"
+"name": "Ford Mustang Shelby GT500",
+"brand": "Ford",
+"model": "Mustang Shelby GT500 (S197)",
+"year": "2012"
 }
 ]
