@@ -991,6 +991,8 @@ function apply(l){
     if(dict[l][k]!==undefined) el.placeholder = dict[l][k];
   });
   document.querySelectorAll('.lang button').forEach(b=>b.classList.toggle('active', b.dataset.lang===l));
+  const pv=document.getElementById('page-vehicle');
+  if(currentSlug && pv && pv.classList.contains('active')) showVehicle(currentSlug);
 }
 document.querySelectorAll('.lang button').forEach(b=>b.addEventListener('click',()=>apply(b.dataset.lang)));
 
@@ -1075,11 +1077,12 @@ function showVehicle(slug){
   else if(metaWrap) metaWrap.hidden=true;
   // subtle description below the cover
   const dw=document.getElementById('vhDescWrap'), dEl=document.getElementById('vhDesc');
-  if(car.desc){ if(dEl) dEl.textContent=car.desc; if(dw) dw.hidden=false; }
+  const desc=(lang==='es' && car.desc_es) ? car.desc_es : car.desc;
+  if(desc){ if(dEl) dEl.textContent=desc; if(dw) dw.hidden=false; }
   else if(dw) dw.hidden=true;
   // vehicle info — hide empty fields (no dashes)
   const setLi=(id,v)=>{const el=document.getElementById(id); if(!el) return; const li=el.closest('li'); const has=v&&String(v).trim(); if(has){ el.textContent=v; if(li) li.style.display=''; } else if(li) li.style.display='none';};
-  const sp=car.specs||{};
+  const sp=((lang==='es' && car.specs_es) ? car.specs_es : car.specs)||{};
   setLi('vsBrand',car.brand); setLi('vsModel',car.model); setLi('vsYear',car.year);
   setLi('vsPlate', realPlate(car.plate)?car.plate:'');
   setLi('vsBody',sp.tipo); setLi('vsMotor',sp.motor); setLi('vsDisp',sp.cil); setLi('vsHp',sp.hp);

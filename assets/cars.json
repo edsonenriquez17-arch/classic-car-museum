@@ -49,8 +49,18 @@
 "brand": "Ford",
 "model": "Super Deluxe Woody",
 "year": "1947",
-"desc": "Icónica camioneta familiar con paneles laterales de madera real (Woody). Una joya artesanal que requiere altísima precisión en carpintería automotriz.",
+"desc": "The quintessential American family wagon, framed by hand-crafted real-wood panels — a warm, timeless icon of the great postwar road trip.",
 "specs": {
+"tipo": "Station Wagon (Woody)",
+"motor": "V8 (flathead)",
+"cil": "3.9 L (239 cu in)",
+"hp": "100 HP",
+"trans": "3-speed manual",
+"frenos": "Hydraulic drum",
+"vel": "≈ 130 km/h"
+},
+"desc_es": "Icónica camioneta familiar con paneles laterales de madera real (Woody). Una joya artesanal que requiere altísima precisión en carpintería automotriz.",
+"specs_es": {
 "tipo": "Station Wagon (Woody)",
 "motor": "V8 (válvulas laterales)",
 "cil": "3.9 L (239 pulg³)",
@@ -74,8 +84,18 @@
 "brand": "Packard",
 "model": "740 Limousine",
 "year": "1930",
-"desc": "Imponente limusina de gala de los años 30. Un testimonio de la era dorada americana con acabados de paño fino y cristales divisorios en cabina.",
+"desc": "A commanding formal limousine from the 1930s — a testament to America's golden age, finished in fine broadcloth with a division window between chauffeur and passengers.",
 "specs": {
+"tipo": "Limousine",
+"motor": "Inline-8 (L-head)",
+"cil": "6.3 L (385 cu in)",
+"hp": "106 HP @ 3200 rpm",
+"trans": "4-speed manual",
+"frenos": "Mechanical drum (servo)",
+"vel": "≈ 130 km/h"
+},
+"desc_es": "Imponente limusina de gala de los años 30. Un testimonio de la era dorada americana con acabados de paño fino y cristales divisorios en cabina.",
+"specs_es": {
 "tipo": "Limousine",
 "motor": "8 en línea (L-head)",
 "cil": "6.3 L (385 pulg³)",
@@ -93,8 +113,18 @@
 "brand": "Stutz",
 "model": "BB",
 "year": "1928",
-"desc": "Famoso por su herencia en las pistas de carreras (la marca del mitico Bearcat). El modelo BB cuenta con un chasis deportivo de altísima ingeniería.",
+"desc": "Heir to the legendary Bearcat racing bloodline. The Model BB rides on a thoroughbred sporting chassis of remarkable engineering for its day.",
 "specs": {
+"tipo": "Speedster",
+"motor": "Inline-8 SOHC",
+"cil": "4.9 L (298 cu in)",
+"hp": "115 HP @ 3600 rpm",
+"trans": "3-speed manual",
+"frenos": "Hydraulic drum",
+"vel": "≈ 160 km/h"
+},
+"desc_es": "Famoso por su herencia en las pistas de carreras (la marca del mitico Bearcat). El modelo BB cuenta con un chasis deportivo de altísima ingeniería.",
+"specs_es": {
 "tipo": "Speedster",
 "motor": "8 en línea SOHC",
 "cil": "4.9 L (298 pulg³)",
@@ -118,8 +148,18 @@
 "brand": "Packard",
 "model": "633 Phaeton",
 "year": "1929",
-"desc": "Modelo clásico abierto de turismo con líneas señoriales. Su motor de 8 cilindros en línea destaca por su suavidad de marcha incomparable.",
+"desc": "A classic open tourer with stately, flowing lines. Its inline-eight is renowned for a smoothness of running few could match.",
 "specs": {
+"tipo": "Phaeton",
+"motor": "Inline-8 (L-head)",
+"cil": "5.2 L (319 cu in)",
+"hp": "90 HP @ 3200 rpm",
+"trans": "3-speed manual",
+"frenos": "Mechanical drum",
+"vel": "≈ 120 km/h"
+},
+"desc_es": "Modelo clásico abierto de turismo con líneas señoriales. Su motor de 8 cilindros en línea destaca por su suavidad de marcha incomparable.",
+"specs_es": {
 "tipo": "Phaeton",
 "motor": "8 en línea (L-head)",
 "cil": "5.2 L (319 pulg³)",
@@ -137,8 +177,18 @@
 "brand": "Packard",
 "model": "Super Eight Club Sedan",
 "year": "1937",
-"desc": "Elegante cupé cerrado de la preguerra. Una joya de ingeniería con un chasis súper robusto y detalles de confort sumamente avanzados.",
+"desc": "An elegant pre-war closed coupe — a feat of engineering on an exceptionally rigid chassis, with comfort features well ahead of its time.",
 "specs": {
+"tipo": "Club Sedan",
+"motor": "Inline-8 (L-head)",
+"cil": "5.3 L (320 cu in)",
+"hp": "130 HP",
+"trans": "3-speed manual",
+"frenos": "Hydraulic drum",
+"vel": "≈ 140 km/h"
+},
+"desc_es": "Elegante cupé cerrado de la preguerra. Una joya de ingeniería con un chasis súper robusto y detalles de confort sumamente avanzados.",
+"specs_es": {
 "tipo": "Club Sedan",
 "motor": "8 en línea (L-head)",
 "cil": "5.3 L (320 pulg³)",
@@ -162,8 +212,18 @@
 "brand": "Lincoln",
 "model": "L 7 Asientos",
 "year": "1925",
-"desc": "Exclusivo automóvil de chasis largo y 7 asientos de la era clásica. Elegancia señorial destinada a las familias más acaudaladas de los años 20.",
+"desc": "An exclusive long-wheelbase, seven-passenger motorcar of the Classic era — stately elegance built for the most affluent families of the 1920s.",
 "specs": {
+"tipo": "7-seat Sedan",
+"motor": "V8 (L-head 60°)",
+"cil": "5.9 L (358 cu in)",
+"hp": "90 HP @ 2800 rpm",
+"trans": "3-speed manual",
+"frenos": "Mechanical drum",
+"vel": "≈ 110 km/h"
+},
+"desc_es": "Exclusivo automóvil de chasis largo y 7 asientos de la era clásica. Elegancia señorial destinada a las familias más acaudaladas de los años 20.",
+"specs_es": {
 "tipo": "Sedán 7 asientos",
 "motor": "V8 (L-head 60°)",
 "cil": "5.9 L (358 pulg³)",
@@ -217,8 +277,18 @@
 "brand": "Buick",
 "model": "7 Asientos",
 "year": "1930",
-"desc": "Limousine de chasis largo y asientos de transporte (jump seats) de la era clásica. Usado por diplomáticos y hoteles de lujo. Pocas docenas originales vivas.",
+"desc": "A long-wheelbase limousine with jump seats from the Classic era, favored by diplomats and grand hotels. Only a few dozen originals survive.",
 "specs": {
+"tipo": "7-seat Sedan",
+"motor": "Inline-6 (OHV)",
+"cil": "5.4 L (331 cu in)",
+"hp": "99 HP @ 2800 rpm",
+"trans": "3-speed manual",
+"frenos": "Mechanical drum",
+"vel": "≈ 110 km/h"
+},
+"desc_es": "Limousine de chasis largo y asientos de transporte (jump seats) de la era clásica. Usado por diplomáticos y hoteles de lujo. Pocas docenas originales vivas.",
+"specs_es": {
 "tipo": "Sedán 7 asientos",
 "motor": "6 en línea (OHV)",
 "cil": "5.4 L (331 pulg³)",
@@ -236,8 +306,18 @@
 "brand": "Ford",
 "model": "A Turismo",
 "year": "1928",
-"desc": "Sucesor del Modelo T, introdujo los controles estándar modernos (pedales y palanca). El modelo 1928 es el primer año de su exitosa producción.",
+"desc": "Successor to the Model T, it introduced the modern standard controls. The 1928 car marks the very first year of its hugely successful production.",
 "specs": {
+"tipo": "Tourer (Phaeton)",
+"motor": "Inline-4 (L-head)",
+"cil": "3.3 L (201 cu in)",
+"hp": "40 HP @ 2200 rpm",
+"trans": "3-speed manual",
+"frenos": "Mechanical drum",
+"vel": "≈ 105 km/h"
+},
+"desc_es": "Sucesor del Modelo T, introdujo los controles estándar modernos (pedales y palanca). El modelo 1928 es el primer año de su exitosa producción.",
+"specs_es": {
 "tipo": "Turismo (Phaeton)",
 "motor": "4 en línea (L-head)",
 "cil": "3.3 L (201 pulg³)",
@@ -267,8 +347,18 @@
 "brand": "Packard",
 "model": "Station Sedan Woody",
 "year": "1949",
-"desc": "Rarísima camioneta familiar con paneles de madera integrados sobre estructura de acero. Una de las propuestas de diseño más audaces de Packard.",
+"desc": "An exceptionally rare family wagon with wood paneling integrated over a steel structure — one of Packard's boldest design statements.",
 "specs": {
+"tipo": "Station Sedan (Woody)",
+"motor": "Inline-8 (L-head)",
+"cil": "4.7 L (288 cu in)",
+"hp": "135 HP",
+"trans": "3-speed manual",
+"frenos": "Hydraulic drum",
+"vel": "≈ 140 km/h"
+},
+"desc_es": "Rarísima camioneta familiar con paneles de madera integrados sobre estructura de acero. Una de las propuestas de diseño más audaces de Packard.",
+"specs_es": {
 "tipo": "Station Sedan (Woody)",
 "motor": "8 en línea (L-head)",
 "cil": "4.7 L (288 pulg³)",
@@ -286,8 +376,18 @@
 "brand": "Chalmers",
 "model": "SIX",
 "year": "1914",
-"desc": "Legendario modelo de la era de latón. Famoso por su durabilidad mecánica y por ser una de las marcas americanas pioneras en competir a alto nivel.",
+"desc": "A legendary model of the Brass Era, celebrated for its mechanical durability and as one of the pioneering American marques to compete at the highest level.",
 "specs": {
+"tipo": "Tourer",
+"motor": "Inline-6 (L-head)",
+"cil": "6.8 L (415 cu in)",
+"hp": "54 HP",
+"trans": "3-speed manual",
+"frenos": "Mechanical drum (rear)",
+"vel": "≈ 90 km/h"
+},
+"desc_es": "Legendario modelo de la era de latón. Famoso por su durabilidad mecánica y por ser una de las marcas americanas pioneras en competir a alto nivel.",
+"specs_es": {
 "tipo": "Turismo",
 "motor": "6 en línea (L-head)",
 "cil": "6.8 L (415 pulg³)",
@@ -305,8 +405,18 @@
 "brand": "Oldsmobile",
 "model": "88",
 "year": "1956",
-"desc": "El modelo que popularizó el motor Rocket V8 de válvulas en culata. Un automóvil clave en el nacimiento de la era del rendimiento americano.",
+"desc": "The car that popularized the overhead-valve Rocket V8 — a pivotal machine in the birth of the American performance era.",
 "specs": {
+"tipo": "Hardtop",
+"motor": "Rocket V8 (OHV)",
+"cil": "5.3 L (324 cu in)",
+"hp": "230 HP",
+"trans": "Jetaway automatic",
+"frenos": "Hydraulic drum",
+"vel": "≈ 170 km/h"
+},
+"desc_es": "El modelo que popularizó el motor Rocket V8 de válvulas en culata. Un automóvil clave en el nacimiento de la era del rendimiento americano.",
+"specs_es": {
 "tipo": "Hardtop",
 "motor": "V8 Rocket (OHV)",
 "cil": "5.3 L (324 pulg³)",
@@ -324,8 +434,18 @@
 "brand": "Chevrolet",
 "model": "BEL AIR",
 "year": "1953",
-"desc": "El clásico indiscutible de los años 50 con sus legendarias molduras laterales cromadas. Un ejemplo perfecto de la era dorada de Detroit.",
+"desc": "The undisputed 1950s classic, defined by its legendary chrome side spears — a perfect example of Detroit's golden age.",
 "specs": {
+"tipo": "Sedan",
+"motor": "Inline-6 (Blue Flame)",
+"cil": "3.9 L (235 cu in)",
+"hp": "115 HP",
+"trans": "Powerglide / Manual",
+"frenos": "Hydraulic drum",
+"vel": "≈ 150 km/h"
+},
+"desc_es": "El clásico indiscutible de los años 50 con sus legendarias molduras laterales cromadas. Un ejemplo perfecto de la era dorada de Detroit.",
+"specs_es": {
 "tipo": "Sedán",
 "motor": "6 en línea (Blue Flame)",
 "cil": "3.9 L (235 pulg³)",
@@ -343,8 +463,18 @@
 "brand": "Plymouth",
 "model": "Satellite 426 Hemi",
 "year": "1966",
-"desc": "Mito absoluto del cuarto de milla. Equipado de fábrica con el descomunal motor 426 Hemi, es uno de los muscle cars más raros y cotizados del planeta.",
+"desc": "An absolute quarter-mile legend. Factory-fitted with the mighty 426 Hemi, it stands among the rarest and most coveted muscle cars on earth.",
 "specs": {
+"tipo": "Muscle car",
+"motor": "426 Hemi V8",
+"cil": "7.0 L (426 cu in)",
+"hp": "425 HP",
+"trans": "4-speed manual / TorqueFlite",
+"frenos": "Drum (disc optional)",
+"vel": "≈ 210 km/h"
+},
+"desc_es": "Mito absoluto del cuarto de milla. Equipado de fábrica con el descomunal motor 426 Hemi, es uno de los muscle cars más raros y cotizados del planeta.",
+"specs_es": {
 "tipo": "Muscle car",
 "motor": "V8 426 Hemi",
 "cil": "7.0 L (426 pulg³)",
@@ -368,8 +498,18 @@
 "brand": "Mercury",
 "model": "Montclair",
 "year": "1955",
-"desc": "Espectacular coupé de techo rígido con un diseño bitono radical y la icónica sección trasera con luces integradas. El máximo estilo de los 50.",
+"desc": "A spectacular hardtop coupe with a bold two-tone design and the iconic rear section with integrated lights — 1950s styling at its finest.",
 "specs": {
+"tipo": "Hardtop",
+"motor": "V8 (Y-block)",
+"cil": "4.8 L (292 cu in)",
+"hp": "198 HP",
+"trans": "Merc-O-Matic",
+"frenos": "Hydraulic drum",
+"vel": "≈ 160 km/h"
+},
+"desc_es": "Espectacular coupé de techo rígido con un diseño bitono radical y la icónica sección trasera con luces integradas. El máximo estilo de los 50.",
+"specs_es": {
 "tipo": "Hardtop",
 "motor": "V8 (Y-block)",
 "cil": "4.8 L (292 pulg³)",
@@ -387,8 +527,18 @@
 "brand": "Riley",
 "model": "Drop Head Coupe 2.5L",
 "year": "1951",
-"desc": "Elegante convertible británico de construcción artesanal. Combinaba un chasis de comportamiento deportivo con la distinción clásica inglesa.",
+"desc": "An elegant, hand-built British convertible that paired a sporting chassis with the classic distinction of English coachwork.",
 "specs": {
+"tipo": "Drop Head Coupe",
+"motor": "Inline-4 (high-cam)",
+"cil": "2.5 L (2443 cc)",
+"hp": "100 HP @ 4500 rpm",
+"trans": "4-speed manual",
+"frenos": "Hydro-mechanical drum",
+"vel": "≈ 153 km/h"
+},
+"desc_es": "Elegante convertible británico de construcción artesanal. Combinaba un chasis de comportamiento deportivo con la distinción clásica inglesa.",
+"specs_es": {
 "tipo": "Drop Head Coupé",
 "motor": "4 en línea (levas altas)",
 "cil": "2.5 L (2443 cc)",
@@ -406,8 +556,18 @@
 "brand": "BMW",
 "model": "Isetta 300",
 "year": "1961",
-"desc": "El microcar por excelencia con puerta frontal. Salvó económicamente a BMW en los 50. Versión de 300 cc es la evolución final y más potente.",
+"desc": "The quintessential front-door microcar that famously rescued BMW in the 1950s. The 300cc version is its final and most powerful evolution.",
 "specs": {
+"tipo": "Microcar (bubble)",
+"motor": "Single-cylinder 4-stroke",
+"cil": "298 cc",
+"hp": "13 HP",
+"trans": "4-speed manual",
+"frenos": "Drum",
+"vel": "≈ 85 km/h"
+},
+"desc_es": "El microcar por excelencia con puerta frontal. Salvó económicamente a BMW en los 50. Versión de 300 cc es la evolución final y más potente.",
+"specs_es": {
 "tipo": "Microcar (burbuja)",
 "motor": "1 cilindro 4T",
 "cil": "298 cc",
@@ -437,8 +597,18 @@
 "brand": "Maserati",
 "model": "Sebring Serie II",
 "year": "1966",
-"desc": "Gran Turismo italiano ultra exclusivo de carrocería Vignale. Equipado con motor de seis cilindros en línea derivado de la competición y tres carburadores.",
+"desc": "An ultra-exclusive Italian grand tourer bodied by Vignale, powered by a competition-derived inline-six breathing through triple carburettors.",
 "specs": {
+"tipo": "Grand Tourer (Vignale)",
+"motor": "Inline-6 DOHC",
+"cil": "3.7 L (3694 cc)",
+"hp": "245 HP",
+"trans": "5-speed manual (ZF)",
+"frenos": "4-wheel disc",
+"vel": "≈ 215 km/h"
+},
+"desc_es": "Gran Turismo italiano ultra exclusivo de carrocería Vignale. Equipado con motor de seis cilindros en línea derivado de la competición y tres carburadores.",
+"specs_es": {
 "tipo": "Gran Turismo (Vignale)",
 "motor": "6 en línea DOHC",
 "cil": "3.7 L (3694 cc)",
@@ -462,8 +632,18 @@
 "brand": "Mercedes-benz",
 "model": "560 SEC",
 "year": "1987",
-"desc": "Coupé C126 de alta gama, considerado uno de los grandes Mercedes de lujo de los años ochenta. El 560 SEC combina motor V8, diseño elegante y construcción sobresaliente, con fuerte atractivo para coleccionistas de clásicos modernos.",
+"desc": "A top-tier C126 coupe, regarded as one of the great luxury Mercedes of the 1980s — V8 power, elegant design and superb build, with strong collector appeal.",
 "specs": {
+"tipo": "Coupe",
+"motor": "V8 (M117)",
+"cil": "5.5 L (5547 cc)",
+"hp": "300 HP",
+"trans": "4-speed automatic",
+"frenos": "4-wheel disc (ABS)",
+"vel": "250 km/h (limited)"
+},
+"desc_es": "Coupé C126 de alta gama, considerado uno de los grandes Mercedes de lujo de los años ochenta. El 560 SEC combina motor V8, diseño elegante y construcción sobresaliente, con fuerte atractivo para coleccionistas de clásicos modernos.",
+"specs_es": {
 "tipo": "Coupé",
 "motor": "V8 (M117)",
 "cil": "5.5 L (5547 cc)",
@@ -499,8 +679,18 @@
 "brand": "Hudson",
 "model": "Super SIX",
 "year": "1919",
-"desc": "Famoso por su motor de alta compresión 'Super Six' que dominó las pruebas de aceleración y resistencia en los circuitos norteamericanos de la época.",
+"desc": "Famed for its high-compression 'Super Six' engine, which dominated the acceleration and endurance trials of the North American circuits of its day.",
 "specs": {
+"tipo": "Tourer",
+"motor": "Inline-6 (L-head)",
+"cil": "4.7 L (289 cu in)",
+"hp": "76 HP",
+"trans": "3-speed manual",
+"frenos": "Mechanical drum",
+"vel": "≈ 100 km/h"
+},
+"desc_es": "Famoso por su motor de alta compresión 'Super Six' que dominó las pruebas de aceleración y resistencia en los circuitos norteamericanos de la época.",
+"specs_es": {
 "tipo": "Turismo",
 "motor": "6 en línea (L-head)",
 "cil": "4.7 L (289 pulg³)",
@@ -524,8 +714,18 @@
 "brand": "BMW",
 "model": "635",
 "year": "Por confirmar",
-"desc": "Coupé E24 de gran turismo, con seis cilindros en línea y diseño muy elegante. El BMW 635 es uno de los clásicos modernos más apreciados de la marca por su equilibrio entre deportividad, lujo y presencia.",
+"desc": "An E24 grand-touring coupe with a silky inline-six and beautifully balanced design — among the marque's most cherished modern classics.",
 "specs": {
+"tipo": "Coupe",
+"motor": "Inline-6 (M30)",
+"cil": "3.4 L (3430 cc)",
+"hp": "218 HP",
+"trans": "5-speed manual / Auto",
+"frenos": "4-wheel disc",
+"vel": "≈ 228 km/h"
+},
+"desc_es": "Coupé E24 de gran turismo, con seis cilindros en línea y diseño muy elegante. El BMW 635 es uno de los clásicos modernos más apreciados de la marca por su equilibrio entre deportividad, lujo y presencia.",
+"specs_es": {
 "tipo": "Coupé",
 "motor": "6 en línea (M30)",
 "cil": "3.4 L (3430 cc)",
@@ -543,8 +743,18 @@
 "brand": "Mitsubishi",
 "model": "Lancer EVO",
 "year": "Por confirmar",
-"desc": "Sedán deportivo nacido de la homologación para rally. El Lancer Evolution es reconocido por su tracción integral, motor turbo y desempeño, siendo una pieza importante de la cultura japonesa de alto rendimiento.",
+"desc": "A sports sedan born of rally homologation. The Lancer Evolution is revered for its all-wheel drive, turbo engine and sheer performance — a cornerstone of Japanese high-performance culture.",
 "specs": {
+"tipo": "Sports Sedan (AWD)",
+"motor": "Turbo inline-4 (4G63)",
+"cil": "2.0 L (1997 cc)",
+"hp": "≈ 280 HP",
+"trans": "5/6-speed manual",
+"frenos": "4-wheel disc (Brembo)",
+"vel": "≈ 250 km/h"
+},
+"desc_es": "Sedán deportivo nacido de la homologación para rally. El Lancer Evolution es reconocido por su tracción integral, motor turbo y desempeño, siendo una pieza importante de la cultura japonesa de alto rendimiento.",
+"specs_es": {
 "tipo": "Sedán deportivo AWD",
 "motor": "4 en línea turbo (4G63)",
 "cil": "2.0 L (1997 cc)",
@@ -568,8 +778,18 @@
 "brand": "Studebaker",
 "model": "1924 Tudor",
 "year": "1924",
-"desc": "Automóvil clásico de dos puertas de los años 20. Una muestra perfecta de la ingeniería robusta que caracterizó a la marca en su época de gloria.",
+"desc": "A classic two-door of the 1920s — a fine showcase of the rugged engineering that defined the marque in its era of glory.",
 "specs": {
+"tipo": "Sedan (Tudor)",
+"motor": "Inline-6 (L-head)",
+"cil": "5.8 L (354 cu in)",
+"hp": "70 HP",
+"trans": "3-speed manual",
+"frenos": "Mechanical drum",
+"vel": "≈ 100 km/h"
+},
+"desc_es": "Automóvil clásico de dos puertas de los años 20. Una muestra perfecta de la ingeniería robusta que caracterizó a la marca en su época de gloria.",
+"specs_es": {
 "tipo": "Sedán (Tudor)",
 "motor": "6 en línea (L-head)",
 "cil": "5.8 L (354 pulg³)",
@@ -587,8 +807,18 @@
 "brand": "Willys",
 "model": "Jeep CJ2",
 "year": "1946",
-"desc": "El héroe de la Segunda Guerra Mundial adaptado a la vida civil (CJ). El inicio de la leyenda de los vehículos 4x4 en todo el mundo.",
+"desc": "The World War II hero adapted for civilian life. The very beginning of the 4x4 legend that would spread across the world.",
 "specs": {
+"tipo": "Off-roader (Jeep)",
+"motor": "Inline-4 (Go Devil)",
+"cil": "2.2 L (134 cu in)",
+"hp": "60 HP",
+"trans": "3-speed manual + 4x4",
+"frenos": "Hydraulic drum",
+"vel": "≈ 100 km/h"
+},
+"desc_es": "El héroe de la Segunda Guerra Mundial adaptado a la vida civil (CJ). El inicio de la leyenda de los vehículos 4x4 en todo el mundo.",
+"specs_es": {
 "tipo": "Todoterreno (Jeep)",
 "motor": "4 en línea Go Devil",
 "cil": "2.2 L (134 pulg³)",
@@ -606,8 +836,18 @@
 "brand": "Rolls Royce",
 "model": "British Phantom II",
 "year": "1934",
-"desc": "El epítome del lujo aristocrático mundial. Chasis Phantom II con especificaciones británicas originales, una presencia majestuosa insuperable.",
+"desc": "The epitome of aristocratic luxury. A Phantom II chassis to original British specification, with a majestic presence beyond compare.",
 "specs": {
+"tipo": "Limousine (coachbuilt)",
+"motor": "Inline-6 (OHV)",
+"cil": "7.7 L (7668 cc)",
+"hp": "≈ 120 HP",
+"trans": "4-speed manual",
+"frenos": "Drum (servo-assisted)",
+"vel": "≈ 150 km/h"
+},
+"desc_es": "El epítome del lujo aristocrático mundial. Chasis Phantom II con especificaciones británicas originales, una presencia majestuosa insuperable.",
+"specs_es": {
 "tipo": "Limousine (carrozado)",
 "motor": "6 en línea (OHV)",
 "cil": "7.7 L (7668 cc)",
@@ -655,8 +895,18 @@
 "brand": "Studebaker",
 "model": "Land Cruiser",
 "year": "1935",
-"desc": "Automóvil de turismo aerodinámico de mediados de los años 30, famoso por su suavidad de marcha y sus soluciones de espacio vanguardistas.",
+"desc": "An aerodynamic touring car of the mid-1930s, celebrated for its smooth ride and forward-thinking use of interior space.",
 "specs": {
+"tipo": "Sedan",
+"motor": "Inline-8 (L-head)",
+"cil": "4.1 L (250 cu in)",
+"hp": "110 HP",
+"trans": "3-speed manual",
+"frenos": "Hydraulic drum",
+"vel": "≈ 140 km/h"
+},
+"desc_es": "Automóvil de turismo aerodinámico de mediados de los años 30, famoso por su suavidad de marcha y sus soluciones de espacio vanguardistas.",
+"specs_es": {
 "tipo": "Sedán",
 "motor": "8 en línea (L-head)",
 "cil": "4.1 L (250 pulg³)",
@@ -674,8 +924,18 @@
 "brand": "Cadillac",
 "model": "EL Dorado Biarritz",
 "year": "1956",
-"desc": "El pico del exceso cromado de los 50. Edición Biarritz convertible ultra exclusiva. Solo 2,150 unidades construidas con el icónico motor de doble carburador de 4 bocas.",
+"desc": "The peak of 1950s chrome excess. An ultra-exclusive Biarritz convertible — just 2,150 built, powered by the iconic dual four-barrel V8.",
 "specs": {
+"tipo": "Luxury Convertible",
+"motor": "V8 (OHV, dual carb)",
+"cil": "6.0 L (365 cu in)",
+"hp": "305 HP",
+"trans": "Hydra-Matic",
+"frenos": "Hydraulic drum",
+"vel": "≈ 185 km/h"
+},
+"desc_es": "El pico del exceso cromado de los 50. Edición Biarritz convertible ultra exclusiva. Solo 2,150 unidades construidas con el icónico motor de doble carburador de 4 bocas.",
+"specs_es": {
 "tipo": "Convertible de lujo",
 "motor": "V8 (OHV, doble carburador)",
 "cil": "6.0 L (365 pulg³)",
@@ -693,8 +953,18 @@
 "brand": "Ford",
 "model": "Roush",
 "year": "1998",
-"desc": "Mustang preparado o asociado a la tradición Roush, orientado a mayor desempeño y presencia deportiva. Este tipo de unidad representa la cultura de preparadores americanos y el vínculo entre el Mustang moderno y el mundo de la performance.",
+"desc": "A Mustang built in the Roush tradition, tuned for greater performance and presence — embodying American tuner culture and the modern Mustang's link to the world of performance.",
 "specs": {
+"tipo": "Sports Coupe (Roush)",
+"motor": "V8 (4.6 L SOHC)",
+"cil": "4.6 L (281 cu in)",
+"hp": "260–400 HP (depending on build)",
+"trans": "5-speed manual",
+"frenos": "4-wheel disc",
+"vel": "≈ 250 km/h"
+},
+"desc_es": "Mustang preparado o asociado a la tradición Roush, orientado a mayor desempeño y presencia deportiva. Este tipo de unidad representa la cultura de preparadores americanos y el vínculo entre el Mustang moderno y el mundo de la performance.",
+"specs_es": {
 "tipo": "Coupé deportivo (Roush)",
 "motor": "V8 (4.6 L SOHC)",
 "cil": "4.6 L (281 pulg³)",
@@ -862,8 +1132,18 @@
 "brand": "Ferrari",
 "model": "Mondial",
 "year": "1982",
-"desc": "Ferrari 2+2 de motor central, diseñado para combinar uso deportivo con cierta practicidad. El Mondial ocupa un lugar interesante en la historia de la marca por ofrecer cuatro plazas y una experiencia Ferrari más utilizable.",
+"desc": "A mid-engined Ferrari 2+2 designed to blend sporting use with everyday practicality — a distinctive chapter in the marque's history for its four seats and more usable Ferrari experience.",
 "specs": {
+"tipo": "2+2 Coupe",
+"motor": "V8 DOHC (transverse mid)",
+"cil": "3.0 L (2927 cc)",
+"hp": "214 HP",
+"trans": "5-speed manual",
+"frenos": "4-wheel disc",
+"vel": "≈ 230 km/h"
+},
+"desc_es": "Ferrari 2+2 de motor central, diseñado para combinar uso deportivo con cierta practicidad. El Mondial ocupa un lugar interesante en la historia de la marca por ofrecer cuatro plazas y una experiencia Ferrari más utilizable.",
+"specs_es": {
 "tipo": "Coupé 2+2",
 "motor": "V8 DOHC (central transversal)",
 "cil": "3.0 L (2927 cc)",
@@ -881,8 +1161,18 @@
 "brand": "Allard",
 "model": "K2 (motor Mercury)",
 "year": "1950",
-"desc": "Biplaza deportivo artesanal con carrocería de aluminio. Muy buscado para las Mille Miglia. Solo 119 unidades construidas, unas 25 sobrevivientes.",
+"desc": "A hand-built, aluminum-bodied sports two-seater, highly sought for the Mille Miglia. Only 119 were made, with roughly 25 survivors today.",
 "specs": {
+"tipo": "Sports Roadster (aluminum)",
+"motor": "Mercury flathead V8",
+"cil": "3.9 L (239 cu in)",
+"hp": "≈ 110 HP",
+"trans": "3-speed manual",
+"frenos": "Hydraulic drum",
+"vel": "≈ 160 km/h"
+},
+"desc_es": "Biplaza deportivo artesanal con carrocería de aluminio. Muy buscado para las Mille Miglia. Solo 119 unidades construidas, unas 25 sobrevivientes.",
+"specs_es": {
 "tipo": "Roadster deportivo (aluminio)",
 "motor": "V8 Mercury (válvulas laterales)",
 "cil": "3.9 L (239 pulg³)",
