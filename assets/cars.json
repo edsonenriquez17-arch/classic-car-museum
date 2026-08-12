@@ -1,0 +1,949 @@
+[
+{
+"plate": "A0D - 466",
+"slug": "a0d-466",
+"d3": true,
+"name": "A0D - 466"
+},
+{
+"plate": "A2Y - 410",
+"slug": "a2y-410",
+"d3": true,
+"name": "A2Y - 410"
+},
+{
+"plate": "A3M - 354",
+"slug": "a3m-354",
+"d3": true,
+"name": "A3M - 354"
+},
+{
+"plate": "A4D - 305",
+"slug": "a4d-305",
+"d3": true,
+"name": "A4D - 305"
+},
+{
+"plate": "A5M - 345",
+"slug": "a5m-345",
+"d3": true,
+"name": "A5M - 345"
+},
+{
+"plate": "A5T - 244",
+"slug": "a5t-244",
+"d3": true,
+"name": "A5T - 244"
+},
+{
+"plate": "A7H - 440",
+"slug": "a7h-440",
+"d3": true,
+"name": "A7H - 440"
+},
+{
+"plate": "A9L - 161",
+"slug": "a9l-161",
+"d3": true,
+"name": "Ford Super Deluxe Woody",
+"brand": "Ford",
+"model": "Super Deluxe Woody",
+"year": "1947",
+"desc": "Icónica camioneta familiar con paneles laterales de madera real (Woody). Una joya artesanal que requiere altísima precisión en carpintería automotriz.",
+"specs": {
+"tipo": "Station Wagon (Woody)",
+"motor": "V8 (válvulas laterales)",
+"cil": "3.9 L (239 pulg³)",
+"hp": "100 HP",
+"trans": "Manual 3 vel.",
+"frenos": "Tambor hidráulico",
+"vel": "≈ 130 km/h"
+}
+},
+{
+"plate": "A9T - 107",
+"slug": "a9t-107",
+"d3": true,
+"name": "A9T - 107"
+},
+{
+"plate": "ABR - 223",
+"slug": "abr-223",
+"d3": true,
+"name": "Packard 740 Limousine",
+"brand": "Packard",
+"model": "740 Limousine",
+"year": "1930",
+"desc": "Imponente limusina de gala de los años 30. Un testimonio de la era dorada americana con acabados de paño fino y cristales divisorios en cabina.",
+"specs": {
+"tipo": "Limousine",
+"motor": "8 en línea (L-head)",
+"cil": "6.3 L (385 pulg³)",
+"hp": "106 HP @ 3200 rpm",
+"trans": "Manual 4 vel.",
+"frenos": "Tambor mecánico con servo",
+"vel": "≈ 130 km/h"
+}
+},
+{
+"plate": "ABY - 304",
+"slug": "aby-304",
+"d3": true,
+"name": "Stutz BB",
+"brand": "Stutz",
+"model": "BB",
+"year": "1928",
+"desc": "Famoso por su herencia en las pistas de carreras (la marca del mitico Bearcat). El modelo BB cuenta con un chasis deportivo de altísima ingeniería.",
+"specs": {
+"tipo": "Speedster",
+"motor": "8 en línea SOHC",
+"cil": "4.9 L (298 pulg³)",
+"hp": "115 HP @ 3600 rpm",
+"trans": "Manual 3 vel.",
+"frenos": "Tambor hidráulico",
+"vel": "≈ 160 km/h"
+}
+},
+{
+"plate": "AH - 9536",
+"slug": "ah-9536",
+"d3": true,
+"name": "AH - 9536"
+},
+{
+"plate": "AHE - 474",
+"slug": "ahe-474",
+"d3": true,
+"name": "Packard 633 Phaeton",
+"brand": "Packard",
+"model": "633 Phaeton",
+"year": "1929",
+"desc": "Modelo clásico abierto de turismo con líneas señoriales. Su motor de 8 cilindros en línea destaca por su suavidad de marcha incomparable.",
+"specs": {
+"tipo": "Phaeton",
+"motor": "8 en línea (L-head)",
+"cil": "5.2 L (319 pulg³)",
+"hp": "90 HP @ 3200 rpm",
+"trans": "Manual 3 vel.",
+"frenos": "Tambor mecánico",
+"vel": "≈ 120 km/h"
+}
+},
+{
+"plate": "AHE - 484",
+"slug": "ahe-484",
+"d3": true,
+"name": "Packard Super Eight Club Sedan",
+"brand": "Packard",
+"model": "Super Eight Club Sedan",
+"year": "1937",
+"desc": "Elegante cupé cerrado de la preguerra. Una joya de ingeniería con un chasis súper robusto y detalles de confort sumamente avanzados.",
+"specs": {
+"tipo": "Club Sedan",
+"motor": "8 en línea (L-head)",
+"cil": "5.3 L (320 pulg³)",
+"hp": "130 HP",
+"trans": "Manual 3 vel.",
+"frenos": "Tambor hidráulico",
+"vel": "≈ 140 km/h"
+}
+},
+{
+"plate": "AKV - 003",
+"slug": "akv-003",
+"d3": true,
+"name": "AKV - 003"
+},
+{
+"plate": "ALO-686",
+"slug": "alo-686",
+"d3": true,
+"name": "Lincoln L 7 Asientos",
+"brand": "Lincoln",
+"model": "L 7 Asientos",
+"year": "1925",
+"desc": "Exclusivo automóvil de chasis largo y 7 asientos de la era clásica. Elegancia señorial destinada a las familias más acaudaladas de los años 20.",
+"specs": {
+"tipo": "Sedán 7 asientos",
+"motor": "V8 (L-head 60°)",
+"cil": "5.9 L (358 pulg³)",
+"hp": "90 HP @ 2800 rpm",
+"trans": "Manual 3 vel.",
+"frenos": "Tambor mecánico",
+"vel": "≈ 110 km/h"
+}
+},
+{
+"plate": "ALR - 593",
+"slug": "alr-593",
+"d3": true,
+"name": "ALR - 593"
+},
+{
+"plate": "AMMP - 057",
+"slug": "ammp-057",
+"d3": true,
+"name": "AMMP - 057"
+},
+{
+"plate": "APC - 142",
+"slug": "apc-142",
+"d3": true,
+"name": "APC - 142"
+},
+{
+"plate": "APX - 114",
+"slug": "apx-114",
+"d3": true,
+"name": "APX - 114"
+},
+{
+"plate": "ASV - 385",
+"slug": "asv-385",
+"d3": true,
+"name": "ASV - 385"
+},
+{
+"plate": "ASX - 457",
+"slug": "asx-457",
+"d3": true,
+"name": "ASX - 457"
+},
+{
+"plate": "AUE - 622",
+"slug": "aue-622",
+"d3": true,
+"name": "Buick 7 Asientos",
+"brand": "Buick",
+"model": "7 Asientos",
+"year": "1930",
+"desc": "Limousine de chasis largo y asientos de transporte (jump seats) de la era clásica. Usado por diplomáticos y hoteles de lujo. Pocas docenas originales vivas.",
+"specs": {
+"tipo": "Sedán 7 asientos",
+"motor": "6 en línea (OHV)",
+"cil": "5.4 L (331 pulg³)",
+"hp": "99 HP @ 2800 rpm",
+"trans": "Manual 3 vel.",
+"frenos": "Tambor mecánico",
+"vel": "≈ 110 km/h"
+}
+},
+{
+"plate": "AUK - 547",
+"slug": "auk-547",
+"d3": true,
+"name": "Ford A Turismo",
+"brand": "Ford",
+"model": "A Turismo",
+"year": "1928",
+"desc": "Sucesor del Modelo T, introdujo los controles estándar modernos (pedales y palanca). El modelo 1928 es el primer año de su exitosa producción.",
+"specs": {
+"tipo": "Turismo (Phaeton)",
+"motor": "4 en línea (L-head)",
+"cil": "3.3 L (201 pulg³)",
+"hp": "40 HP @ 2200 rpm",
+"trans": "Manual 3 vel.",
+"frenos": "Tambor mecánico",
+"vel": "≈ 105 km/h"
+}
+},
+{
+"plate": "AWF - 621",
+"slug": "awf-621",
+"d3": true,
+"name": "AWF - 621"
+},
+{
+"plate": "AWZ - 629",
+"slug": "awz-629",
+"d3": false,
+"name": "AWZ - 629"
+},
+{
+"plate": "AXL - 068",
+"slug": "axl-068",
+"d3": true,
+"name": "Packard Station Sedan Woody",
+"brand": "Packard",
+"model": "Station Sedan Woody",
+"year": "1949",
+"desc": "Rarísima camioneta familiar con paneles de madera integrados sobre estructura de acero. Una de las propuestas de diseño más audaces de Packard.",
+"specs": {
+"tipo": "Station Sedan (Woody)",
+"motor": "8 en línea (L-head)",
+"cil": "4.7 L (288 pulg³)",
+"hp": "135 HP",
+"trans": "Manual 3 vel.",
+"frenos": "Tambor hidráulico",
+"vel": "≈ 140 km/h"
+}
+},
+{
+"plate": "AXS - 615",
+"slug": "axs-615",
+"d3": true,
+"name": "Chalmers SIX",
+"brand": "Chalmers",
+"model": "SIX",
+"year": "1914",
+"desc": "Legendario modelo de la era de latón. Famoso por su durabilidad mecánica y por ser una de las marcas americanas pioneras en competir a alto nivel.",
+"specs": {
+"tipo": "Turismo",
+"motor": "6 en línea (L-head)",
+"cil": "6.8 L (415 pulg³)",
+"hp": "54 HP",
+"trans": "Manual 3 vel.",
+"frenos": "Tambor mecánico (posterior)",
+"vel": "≈ 90 km/h"
+}
+},
+{
+"plate": "B0C - 176",
+"slug": "b0c-176",
+"d3": true,
+"name": "Oldsmobile 88",
+"brand": "Oldsmobile",
+"model": "88",
+"year": "1956",
+"desc": "El modelo que popularizó el motor Rocket V8 de válvulas en culata. Un automóvil clave en el nacimiento de la era del rendimiento americano.",
+"specs": {
+"tipo": "Hardtop",
+"motor": "V8 Rocket (OHV)",
+"cil": "5.3 L (324 pulg³)",
+"hp": "230 HP",
+"trans": "Automática Jetaway",
+"frenos": "Tambor hidráulico",
+"vel": "≈ 170 km/h"
+}
+},
+{
+"plate": "B10 - 580",
+"slug": "b10-580",
+"d3": true,
+"name": "Chevrolet BEL AIR",
+"brand": "Chevrolet",
+"model": "BEL AIR",
+"year": "1953",
+"desc": "El clásico indiscutible de los años 50 con sus legendarias molduras laterales cromadas. Un ejemplo perfecto de la era dorada de Detroit.",
+"specs": {
+"tipo": "Sedán",
+"motor": "6 en línea (Blue Flame)",
+"cil": "3.9 L (235 pulg³)",
+"hp": "115 HP",
+"trans": "Powerglide / Manual",
+"frenos": "Tambor hidráulico",
+"vel": "≈ 150 km/h"
+}
+},
+{
+"plate": "B1P - 040",
+"slug": "b1p-040",
+"d3": true,
+"name": "Plymouth Satellite 426 Hemi",
+"brand": "Plymouth",
+"model": "Satellite 426 Hemi",
+"year": "1966",
+"desc": "Mito absoluto del cuarto de milla. Equipado de fábrica con el descomunal motor 426 Hemi, es uno de los muscle cars más raros y cotizados del planeta.",
+"specs": {
+"tipo": "Muscle car",
+"motor": "V8 426 Hemi",
+"cil": "7.0 L (426 pulg³)",
+"hp": "425 HP",
+"trans": "Manual 4 vel. / TorqueFlite",
+"frenos": "Tambor (disco opc.)",
+"vel": "≈ 210 km/h"
+}
+},
+{
+"plate": "B2B - 316",
+"slug": "b2b-316",
+"d3": true,
+"name": "B2B - 316"
+},
+{
+"plate": "B4Y - 274",
+"slug": "b4y-274",
+"d3": true,
+"name": "Mercury Montclair",
+"brand": "Mercury",
+"model": "Montclair",
+"year": "1955",
+"desc": "Espectacular coupé de techo rígido con un diseño bitono radical y la icónica sección trasera con luces integradas. El máximo estilo de los 50.",
+"specs": {
+"tipo": "Hardtop",
+"motor": "V8 (Y-block)",
+"cil": "4.8 L (292 pulg³)",
+"hp": "198 HP",
+"trans": "Merc-O-Matic",
+"frenos": "Tambor hidráulico",
+"vel": "≈ 160 km/h"
+}
+},
+{
+"plate": "B4Z - 517",
+"slug": "b4z-517",
+"d3": true,
+"name": "Riley Drop Head Coupe 2.5L",
+"brand": "Riley",
+"model": "Drop Head Coupe 2.5L",
+"year": "1951",
+"desc": "Elegante convertible británico de construcción artesanal. Combinaba un chasis de comportamiento deportivo con la distinción clásica inglesa.",
+"specs": {
+"tipo": "Drop Head Coupé",
+"motor": "4 en línea (levas altas)",
+"cil": "2.5 L (2443 cc)",
+"hp": "100 HP @ 4500 rpm",
+"trans": "Manual 4 vel.",
+"frenos": "Tambor hidromecánico",
+"vel": "≈ 153 km/h"
+}
+},
+{
+"plate": "B5 - 3533",
+"slug": "b5-3533",
+"d3": true,
+"name": "BMW Isetta 300",
+"brand": "BMW",
+"model": "Isetta 300",
+"year": "1961",
+"desc": "El microcar por excelencia con puerta frontal. Salvó económicamente a BMW en los 50. Versión de 300 cc es la evolución final y más potente.",
+"specs": {
+"tipo": "Microcar (burbuja)",
+"motor": "1 cilindro 4T",
+"cil": "298 cc",
+"hp": "13 HP",
+"trans": "Manual 4 vel.",
+"frenos": "Tambor",
+"vel": "≈ 85 km/h"
+}
+},
+{
+"plate": "B6M - 164",
+"slug": "b6m-164",
+"d3": true,
+"name": "B6M - 164"
+},
+{
+"plate": "B7Q - 401",
+"slug": "b7q-401",
+"d3": true,
+"name": "B7Q - 401"
+},
+{
+"plate": "BAW - 297",
+"slug": "baw-297",
+"d3": true,
+"name": "Maserati Sebring Serie II",
+"brand": "Maserati",
+"model": "Sebring Serie II",
+"year": "1966",
+"desc": "Gran Turismo italiano ultra exclusivo de carrocería Vignale. Equipado con motor de seis cilindros en línea derivado de la competición y tres carburadores.",
+"specs": {
+"tipo": "Gran Turismo (Vignale)",
+"motor": "6 en línea DOHC",
+"cil": "3.7 L (3694 cc)",
+"hp": "245 HP",
+"trans": "Manual 5 vel. ZF",
+"frenos": "Disco en 4 ruedas",
+"vel": "≈ 215 km/h"
+}
+},
+{
+"plate": "BFU - 487",
+"slug": "bfu-487",
+"d3": true,
+"name": "BFU - 487"
+},
+{
+"plate": "BNK - 531",
+"slug": "bnk-531",
+"d3": true,
+"name": "Mercedes-benz 560 SEC",
+"brand": "Mercedes-benz",
+"model": "560 SEC",
+"year": "1987",
+"desc": "Coupé C126 de alta gama, considerado uno de los grandes Mercedes de lujo de los años ochenta. El 560 SEC combina motor V8, diseño elegante y construcción sobresaliente, con fuerte atractivo para coleccionistas de clásicos modernos.",
+"specs": {
+"tipo": "Coupé",
+"motor": "V8 (M117)",
+"cil": "5.5 L (5547 cc)",
+"hp": "300 HP",
+"trans": "Automática 4 vel.",
+"frenos": "Disco 4 ruedas (ABS)",
+"vel": "250 km/h (lim.)"
+}
+},
+{
+"plate": "BNT - 311",
+"slug": "bnt-311",
+"d3": true,
+"name": "BNT - 311"
+},
+{
+"plate": "BPD - 280",
+"slug": "bpd-280",
+"d3": true,
+"name": "BPD - 280"
+},
+{
+"plate": "BSZ - 611",
+"slug": "bsz-611",
+"d3": true,
+"name": "BSZ - 611"
+},
+{
+"plate": "BVS - 249",
+"slug": "bvs-249",
+"d3": true,
+"name": "Hudson Super SIX",
+"brand": "Hudson",
+"model": "Super SIX",
+"year": "1919",
+"desc": "Famoso por su motor de alta compresión 'Super Six' que dominó las pruebas de aceleración y resistencia en los circuitos norteamericanos de la época.",
+"specs": {
+"tipo": "Turismo",
+"motor": "6 en línea (L-head)",
+"cil": "4.7 L (289 pulg³)",
+"hp": "76 HP",
+"trans": "Manual 3 vel.",
+"frenos": "Tambor mecánico",
+"vel": "≈ 100 km/h"
+}
+},
+{
+"plate": "C3X - 140",
+"slug": "c3x-140",
+"d3": true,
+"name": "C3X - 140"
+},
+{
+"plate": "C4Q - 097",
+"slug": "c4q-097",
+"d3": true,
+"name": "BMW 635",
+"brand": "BMW",
+"model": "635",
+"year": "Por confirmar",
+"desc": "Coupé E24 de gran turismo, con seis cilindros en línea y diseño muy elegante. El BMW 635 es uno de los clásicos modernos más apreciados de la marca por su equilibrio entre deportividad, lujo y presencia.",
+"specs": {
+"tipo": "Coupé",
+"motor": "6 en línea (M30)",
+"cil": "3.4 L (3430 cc)",
+"hp": "218 HP",
+"trans": "Manual 5 vel. / Auto",
+"frenos": "Disco en 4 ruedas",
+"vel": "≈ 228 km/h"
+}
+},
+{
+"plate": "C70 - 358",
+"slug": "c70-358",
+"d3": true,
+"name": "Mitsubishi Lancer EVO",
+"brand": "Mitsubishi",
+"model": "Lancer EVO",
+"year": "Por confirmar",
+"desc": "Sedán deportivo nacido de la homologación para rally. El Lancer Evolution es reconocido por su tracción integral, motor turbo y desempeño, siendo una pieza importante de la cultura japonesa de alto rendimiento.",
+"specs": {
+"tipo": "Sedán deportivo AWD",
+"motor": "4 en línea turbo (4G63)",
+"cil": "2.0 L (1997 cc)",
+"hp": "≈ 280 HP",
+"trans": "Manual 5/6 vel.",
+"frenos": "Disco 4 ruedas (Brembo)",
+"vel": "≈ 250 km/h"
+}
+},
+{
+"plate": "C7M - 309",
+"slug": "c7m-309",
+"d3": true,
+"name": "C7M - 309"
+},
+{
+"plate": "CPL - 048",
+"slug": "cpl-048",
+"d3": true,
+"name": "Studebaker 1924 Tudor",
+"brand": "Studebaker",
+"model": "1924 Tudor",
+"year": "1924",
+"desc": "Automóvil clásico de dos puertas de los años 20. Una muestra perfecta de la ingeniería robusta que caracterizó a la marca en su época de gloria.",
+"specs": {
+"tipo": "Sedán (Tudor)",
+"motor": "6 en línea (L-head)",
+"cil": "5.8 L (354 pulg³)",
+"hp": "70 HP",
+"trans": "Manual 3 vel.",
+"frenos": "Tambor mecánico",
+"vel": "≈ 100 km/h"
+}
+},
+{
+"plate": "CTJ - 276",
+"slug": "ctj-276",
+"d3": true,
+"name": "Willys Jeep CJ2",
+"brand": "Willys",
+"model": "Jeep CJ2",
+"year": "1946",
+"desc": "El héroe de la Segunda Guerra Mundial adaptado a la vida civil (CJ). El inicio de la leyenda de los vehículos 4x4 en todo el mundo.",
+"specs": {
+"tipo": "Todoterreno (Jeep)",
+"motor": "4 en línea Go Devil",
+"cil": "2.2 L (134 pulg³)",
+"hp": "60 HP",
+"trans": "Manual 3 vel. + 4x4",
+"frenos": "Tambor hidráulico",
+"vel": "≈ 100 km/h"
+}
+},
+{
+"plate": "CTJ - 680",
+"slug": "ctj-680",
+"d3": true,
+"name": "Rolls Royce British Phantom II",
+"brand": "Rolls Royce",
+"model": "British Phantom II",
+"year": "1934",
+"desc": "El epítome del lujo aristocrático mundial. Chasis Phantom II con especificaciones británicas originales, una presencia majestuosa insuperable.",
+"specs": {
+"tipo": "Limousine (carrozado)",
+"motor": "6 en línea (OHV)",
+"cil": "7.7 L (7668 cc)",
+"hp": "≈ 120 HP",
+"trans": "Manual 4 vel.",
+"frenos": "Tambor con servo",
+"vel": "≈ 150 km/h"
+}
+},
+{
+"plate": "CXJ - 330",
+"slug": "cxj-330",
+"d3": true,
+"name": "CXJ - 330"
+},
+{
+"plate": "D5Z - 370",
+"slug": "d5z-370",
+"d3": true,
+"name": "D5Z - 370"
+},
+{
+"plate": "D6R - 546",
+"slug": "d6r-546",
+"d3": true,
+"name": "D6R - 546"
+},
+{
+"plate": "D8X - 197",
+"slug": "d8x-197",
+"d3": true,
+"name": "D8X - 197"
+},
+{
+"plate": "D9Z - 460",
+"slug": "d9z-460",
+"d3": true,
+"name": "D9Z - 460"
+},
+{
+"plate": "F0I - 108",
+"slug": "f0i-108",
+"d3": true,
+"name": "Studebaker Land Cruiser",
+"brand": "Studebaker",
+"model": "Land Cruiser",
+"year": "1935",
+"desc": "Automóvil de turismo aerodinámico de mediados de los años 30, famoso por su suavidad de marcha y sus soluciones de espacio vanguardistas.",
+"specs": {
+"tipo": "Sedán",
+"motor": "8 en línea (L-head)",
+"cil": "4.1 L (250 pulg³)",
+"hp": "110 HP",
+"trans": "Manual 3 vel.",
+"frenos": "Tambor hidráulico",
+"vel": "≈ 140 km/h"
+}
+},
+{
+"plate": "F11 - 446",
+"slug": "f11-446",
+"d3": true,
+"name": "Cadillac EL Dorado Biarritz",
+"brand": "Cadillac",
+"model": "EL Dorado Biarritz",
+"year": "1956",
+"desc": "El pico del exceso cromado de los 50. Edición Biarritz convertible ultra exclusiva. Solo 2,150 unidades construidas con el icónico motor de doble carburador de 4 bocas.",
+"specs": {
+"tipo": "Convertible de lujo",
+"motor": "V8 (OHV, doble carburador)",
+"cil": "6.0 L (365 pulg³)",
+"hp": "305 HP",
+"trans": "Hydra-Matic",
+"frenos": "Tambor hidráulico",
+"vel": "≈ 185 km/h"
+}
+},
+{
+"plate": "F1J - 304",
+"slug": "f1j-304",
+"d3": true,
+"name": "Ford Roush",
+"brand": "Ford",
+"model": "Roush",
+"year": "1998",
+"desc": "Mustang preparado o asociado a la tradición Roush, orientado a mayor desempeño y presencia deportiva. Este tipo de unidad representa la cultura de preparadores americanos y el vínculo entre el Mustang moderno y el mundo de la performance.",
+"specs": {
+"tipo": "Coupé deportivo (Roush)",
+"motor": "V8 (4.6 L SOHC)",
+"cil": "4.6 L (281 pulg³)",
+"hp": "260-400 HP (según preparación)",
+"trans": "Manual 5 vel.",
+"frenos": "Disco en 4 ruedas",
+"vel": "≈ 250 km/h"
+}
+},
+{
+"plate": "F50 - 140",
+"slug": "f50-140",
+"d3": true,
+"name": "F50 - 140"
+},
+{
+"plate": "F5J - 319",
+"slug": "f5j-319",
+"d3": true,
+"name": "F5J - 319"
+},
+{
+"plate": "FOL - 661",
+"slug": "fol-661",
+"d3": true,
+"name": "FOL - 661"
+},
+{
+"plate": "SI PLACA 20",
+"slug": "si-placa-20",
+"d3": true,
+"name": "SI PLACA 20"
+},
+{
+"plate": "SIN PLACA 10",
+"slug": "sin-placa-10",
+"d3": true,
+"name": "SIN PLACA 10"
+},
+{
+"plate": "SIN PLACA 11",
+"slug": "sin-placa-11",
+"d3": true,
+"name": "SIN PLACA 11"
+},
+{
+"plate": "SIN PLACA 12",
+"slug": "sin-placa-12",
+"d3": true,
+"name": "SIN PLACA 12"
+},
+{
+"plate": "SIN PLACA 13",
+"slug": "sin-placa-13",
+"d3": true,
+"name": "SIN PLACA 13"
+},
+{
+"plate": "SIN PLACA 14",
+"slug": "sin-placa-14",
+"d3": true,
+"name": "SIN PLACA 14"
+},
+{
+"plate": "SIN PLACA 15",
+"slug": "sin-placa-15",
+"d3": true,
+"name": "SIN PLACA 15"
+},
+{
+"plate": "SIN PLACA 16",
+"slug": "sin-placa-16",
+"d3": true,
+"name": "SIN PLACA 16"
+},
+{
+"plate": "SIN PLACA 17",
+"slug": "sin-placa-17",
+"d3": true,
+"name": "SIN PLACA 17"
+},
+{
+"plate": "SIN PLACA 18",
+"slug": "sin-placa-18",
+"d3": true,
+"name": "SIN PLACA 18"
+},
+{
+"plate": "SIN PLACA 19",
+"slug": "sin-placa-19",
+"d3": true,
+"name": "SIN PLACA 19"
+},
+{
+"plate": "SIN PLACA 21",
+"slug": "sin-placa-21",
+"d3": true,
+"name": "SIN PLACA 21"
+},
+{
+"plate": "SIN PLACA 22",
+"slug": "sin-placa-22",
+"d3": true,
+"name": "SIN PLACA 22"
+},
+{
+"plate": "SIN PLACA 23",
+"slug": "sin-placa-23",
+"d3": true,
+"name": "SIN PLACA 23"
+},
+{
+"plate": "SIN PLACA 24",
+"slug": "sin-placa-24",
+"d3": true,
+"name": "SIN PLACA 24"
+},
+{
+"plate": "SIN PLACA 25",
+"slug": "sin-placa-25",
+"d3": true,
+"name": "SIN PLACA 25"
+},
+{
+"plate": "SIN PLACA 26",
+"slug": "sin-placa-26",
+"d3": true,
+"name": "SIN PLACA 26"
+},
+{
+"plate": "SIN PLACA 27",
+"slug": "sin-placa-27",
+"d3": true,
+"name": "SIN PLACA 27"
+},
+{
+"plate": "SIN PLACA 9",
+"slug": "sin-placa-9",
+"d3": true,
+"name": "SIN PLACA 9"
+},
+{
+"plate": "T33 - 080",
+"slug": "t33-080",
+"d3": true,
+"name": "T33 - 080"
+},
+{
+"plate": "V1A - 109",
+"slug": "v1a-109",
+"d3": true,
+"name": "V1A - 109"
+},
+{
+"plate": "V8F - 130",
+"slug": "v8f-130",
+"d3": true,
+"name": "V8F - 130"
+},
+{
+"plate": "VAB - 413",
+"slug": "vab-413",
+"d3": true,
+"name": "Ferrari Mondial",
+"brand": "Ferrari",
+"model": "Mondial",
+"year": "1982",
+"desc": "Ferrari 2+2 de motor central, diseñado para combinar uso deportivo con cierta practicidad. El Mondial ocupa un lugar interesante en la historia de la marca por ofrecer cuatro plazas y una experiencia Ferrari más utilizable.",
+"specs": {
+"tipo": "Coupé 2+2",
+"motor": "V8 DOHC (central transversal)",
+"cil": "3.0 L (2927 cc)",
+"hp": "214 HP",
+"trans": "Manual 5 vel.",
+"frenos": "Disco en 4 ruedas",
+"vel": "≈ 230 km/h"
+}
+},
+{
+"plate": "Y1S - 584",
+"slug": "y1s-584",
+"d3": true,
+"name": "Allard K2 (motor Mercury)",
+"brand": "Allard",
+"model": "K2 (motor Mercury)",
+"year": "1950",
+"desc": "Biplaza deportivo artesanal con carrocería de aluminio. Muy buscado para las Mille Miglia. Solo 119 unidades construidas, unas 25 sobrevivientes.",
+"specs": {
+"tipo": "Roadster deportivo (aluminio)",
+"motor": "V8 Mercury (válvulas laterales)",
+"cil": "3.9 L (239 pulg³)",
+"hp": "≈ 110 HP",
+"trans": "Manual 3 vel.",
+"frenos": "Tambor hidráulico",
+"vel": "≈ 160 km/h"
+}
+},
+{
+"plate": "Z6A - 148",
+"slug": "z6a-148",
+"d3": true,
+"name": "Z6A - 148"
+},
+{
+"plate": "sin placa 1",
+"slug": "sin-placa-1",
+"d3": true,
+"name": "sin placa 1"
+},
+{
+"plate": "sin placa 2",
+"slug": "sin-placa-2",
+"d3": true,
+"name": "sin placa 2"
+},
+{
+"plate": "sin placa 3",
+"slug": "sin-placa-3",
+"d3": true,
+"name": "sin placa 3"
+},
+{
+"plate": "sin placa 4",
+"slug": "sin-placa-4",
+"d3": true,
+"name": "sin placa 4"
+},
+{
+"plate": "sin placa 5",
+"slug": "sin-placa-5",
+"d3": true,
+"name": "sin placa 5"
+},
+{
+"plate": "sin placa 6",
+"slug": "sin-placa-6",
+"d3": true,
+"name": "sin placa 6"
+},
+{
+"plate": "sin placa 7",
+"slug": "sin-placa-7",
+"d3": true,
+"name": "sin placa 7"
+},
+{
+"plate": "sin placa 8",
+"slug": "sin-placa-8",
+"d3": true,
+"name": "sin placa 8"
+}
+]
