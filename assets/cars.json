@@ -16,6 +16,16 @@
 "trans": "5-speed manual",
 "frenos": "4-wheel disc",
 "vel": "≈ 270 km/h"
+},
+"desc_es": "El revolucionario superdeportivo japonés todo de aluminio — Ayrton Senna ayudó a afinar su chasis, y su V6 VTEC unía prestaciones de superdeportivo con usabilidad diaria.",
+"specs_es": {
+"tipo": "Superdeportivo",
+"motor": "V6 DOHC VTEC (central)",
+"cil": "3.0 L (2977 cc)",
+"hp": "274 HP",
+"trans": "Manual 5 vel.",
+"frenos": "Disco en 4 ruedas",
+"vel": "≈ 270 km/h"
 }
 },
 {
@@ -35,6 +45,16 @@
 "trans": "5-speed automatic",
 "frenos": "4-wheel disc",
 "vel": "250 km/h (limited)"
+},
+"desc_es": "Un lujoso roadster de techo rígido plegable con un V8 sedoso — gran turismo a la manera Mercedes, sin esfuerzo y refinado.",
+"specs_es": {
+"tipo": "Roadster",
+"motor": "V8",
+"cil": "5.0 L (4966 cc)",
+"hp": "306 HP",
+"trans": "Automática 5 vel.",
+"frenos": "Disco en 4 ruedas",
+"vel": "250 km/h (lim.)"
 }
 },
 {
@@ -54,6 +74,16 @@
 "trans": "5-speed automatic",
 "frenos": "4-wheel disc",
 "vel": "250 km/h (limited)"
+},
+"desc_es": "Un súper-sedán sobrealimentado que avergonzaba a los deportivos — 476 hp de músculo AMG en un discreto traje de negocios.",
+"specs_es": {
+"tipo": "Sedán deportivo",
+"motor": "V8 sobrealimentado",
+"cil": "5.4 L (5439 cc)",
+"hp": "476 HP",
+"trans": "Automática 5 vel.",
+"frenos": "Disco en 4 ruedas",
+"vel": "250 km/h (lim.)"
 }
 },
 {
@@ -73,6 +103,16 @@
 "trans": "6-speed manual",
 "frenos": "Carbon-ceramic disc",
 "vel": "312 km/h"
+},
+"desc_es": "Un 911 atmosférico de raza pista, con un seis bóxer aullante y precisión de auto de carreras para la calle.",
+"specs_es": {
+"tipo": "Coupé deportivo",
+"motor": "6 bóxer",
+"cil": "3.8 L (3797 cc)",
+"hp": "435 HP",
+"trans": "Manual 6 vel.",
+"frenos": "Disco carbono-cerámico",
+"vel": "312 km/h"
 }
 },
 {
@@ -84,6 +124,10 @@
 "year": "1926",
 "desc": "A beautifully restored American roadster from the Roaring Twenties — two-tone paint and brass-age charm.",
 "specs": {
+"tipo": "Roadster"
+},
+"desc_es": "Un roadster americano de los locos años 20 bellamente restaurado — pintura bitono y encanto de la era del latón.",
+"specs_es": {
 "tipo": "Roadster"
 }
 },
@@ -104,6 +148,16 @@
 "trans": "5-speed automatic",
 "frenos": "4-wheel disc (Brembo)",
 "vel": "250 km/h"
+},
+"desc_es": "Un V8 Hemi de 6.1 litros metido en un SUV familiar — el SRT8 convirtió el trayecto al colegio en un arma de cuarto de milla.",
+"specs_es": {
+"tipo": "SUV deportivo",
+"motor": "V8 Hemi",
+"cil": "6.1 L (6059 cc)",
+"hp": "420 HP",
+"trans": "Automática 5 vel.",
+"frenos": "Disco en 4 ruedas (Brembo)",
+"vel": "250 km/h"
 }
 },
 {
@@ -123,6 +177,16 @@
 "trans": "5-speed automatic",
 "frenos": "4-wheel disc",
 "vel": "250 km/h (limited)"
+},
+"desc_es": "Uno de los primeros sedanes AMG compactos — un V8 hecho a mano escondido en una discreta carrocería Clase C.",
+"specs_es": {
+"tipo": "Sedán deportivo",
+"motor": "V8",
+"cil": "4.3 L (4266 cc)",
+"hp": "306 HP",
+"trans": "Automática 5 vel.",
+"frenos": "Disco en 4 ruedas",
+"vel": "250 km/h (lim.)"
 }
 },
 {
@@ -170,6 +234,16 @@
 "hp": "408 HP",
 "trans": "6-speed manual",
 "frenos": "4-wheel disc",
+"vel": "290 km/h"
+},
+"desc_es": "El último 911 Turbo refrigerado por aire — doble turbo y tracción total lo hicieron un mata-gigantes y una leyenda instantánea.",
+"specs_es": {
+"tipo": "Coupé deportivo",
+"motor": "6 bóxer biturbo",
+"cil": "3.6 L (3600 cc)",
+"hp": "408 HP",
+"trans": "Manual 6 vel.",
+"frenos": "Disco en 4 ruedas",
 "vel": "290 km/h"
 }
 },
@@ -248,6 +322,16 @@
 "trans": "3-speed automatic",
 "frenos": "Drum",
 "vel": "≈ 190 km/h"
+},
+"desc_es": "Un Mopar de tamaño medio y líneas limpias de la era muscle, que combinaba practicidad familiar con potencia de bloque grande.",
+"specs_es": {
+"tipo": "Hardtop",
+"motor": "V8",
+"cil": "6.3 L (383 pulg³)",
+"hp": "325 HP",
+"trans": "Automática 3 vel.",
+"frenos": "Tambor",
+"vel": "≈ 190 km/h"
 }
 },
 {
@@ -325,6 +409,16 @@
 "trans": "6-speed manual",
 "frenos": "4-wheel disc",
 "vel": "295 km/h"
+},
+"desc_es": "El Cayman de motor central por fin desatado — un seis bóxer derivado del 911 y componentes GT en un coupé compacto y puro.",
+"specs_es": {
+"tipo": "Coupé deportivo",
+"motor": "6 bóxer (central)",
+"cil": "3.8 L (3800 cc)",
+"hp": "385 HP",
+"trans": "Manual 6 vel.",
+"frenos": "Disco en 4 ruedas",
+"vel": "295 km/h"
 }
 },
 {
@@ -373,6 +467,16 @@
 "trans": "6-speed manual",
 "frenos": "4-wheel disc",
 "vel": "274 km/h"
+},
+"desc_es": "La filosofía Lotus de peso pluma con un V6 sobrealimentado — aceleración brutal y manejo telepático.",
+"specs_es": {
+"tipo": "Coupé deportivo",
+"motor": "V6 sobrealimentado",
+"cil": "3.5 L (3456 cc)",
+"hp": "345 HP",
+"trans": "Manual 6 vel.",
+"frenos": "Disco en 4 ruedas",
+"vel": "274 km/h"
 }
 },
 {
@@ -385,6 +489,10 @@
 "desc": "A rare brass-era light car, hand-built in the earliest days of motoring.",
 "specs": {
 "tipo": "Light Car"
+},
+"desc_es": "Un raro coche ligero de la era del latón, hecho a mano en los primeros días del automovilismo.",
+"specs_es": {
+"tipo": "Coche ligero"
 }
 },
 {
@@ -403,6 +511,16 @@
 "hp": "225 HP",
 "trans": "5-speed manual",
 "frenos": "4-wheel disc",
+"vel": "≈ 220 km/h"
+},
+"desc_es": "El Fox-body 5.0 — ligero, de tracción trasera e infinitamente modificable, el auto que mantuvo viva la llama del pony-car V8 en los 80.",
+"specs_es": {
+"tipo": "Muscle car",
+"motor": "V8",
+"cil": "5.0 L (302 pulg³)",
+"hp": "225 HP",
+"trans": "Manual 5 vel.",
+"frenos": "Disco en 4 ruedas",
 "vel": "≈ 220 km/h"
 }
 },
@@ -423,6 +541,16 @@
 "trans": "6-speed manual",
 "frenos": "4-wheel disc (Brembo)",
 "vel": "≈ 290 km/h"
+},
+"desc_es": "Un V8 5.2 de cigüeñal plano gritando hasta 8.250 rpm — el Mustang más enfocado a la pista que Ford había construido.",
+"specs_es": {
+"tipo": "Muscle car",
+"motor": "V8 plano",
+"cil": "5.2 L (5163 cc)",
+"hp": "526 HP",
+"trans": "Manual 6 vel.",
+"frenos": "Disco en 4 ruedas (Brembo)",
+"vel": "≈ 290 km/h"
 }
 },
 {
@@ -442,6 +570,16 @@
 "trans": "7-speed PDK",
 "frenos": "Carbon-ceramic disc",
 "vel": "310 km/h"
+},
+"desc_es": "Un seis bóxer atmosférico de 4.0 litros con un alerón a juego — el auto de carreras homologado para calle de Porsche.",
+"specs_es": {
+"tipo": "Coupé deportivo",
+"motor": "6 bóxer",
+"cil": "4.0 L (3996 cc)",
+"hp": "500 HP",
+"trans": "PDK 7 vel.",
+"frenos": "Disco carbono-cerámico",
+"vel": "310 km/h"
 }
 },
 {
@@ -460,6 +598,16 @@
 "hp": "510 HP",
 "trans": "6-speed automatic",
 "frenos": "4-wheel disc",
+"vel": "295 km/h"
+},
+"desc_es": "Un gran turismo británico hecho a mano con un V12 sonoro — belleza y prestaciones a partes iguales, sin esfuerzo.",
+"specs_es": {
+"tipo": "Gran Turismo",
+"motor": "V12",
+"cil": "5.9 L (5935 cc)",
+"hp": "510 HP",
+"trans": "Automática 6 vel.",
+"frenos": "Disco en 4 ruedas",
 "vel": "295 km/h"
 }
 },
@@ -538,6 +686,16 @@
 "trans": "4-speed manual",
 "frenos": "Drum",
 "vel": "≈ 210 km/h"
+},
+"desc_es": "Un icono E-body de primer año — capó largo, postura ancha y trueno de bloque grande, el muscle car americano por excelencia.",
+"specs_es": {
+"tipo": "Muscle car",
+"motor": "V8 (440)",
+"cil": "7.2 L (440 pulg³)",
+"hp": "375 HP",
+"trans": "Manual 4 vel.",
+"frenos": "Tambor",
+"vel": "≈ 210 km/h"
 }
 },
 {
@@ -556,6 +714,16 @@
 "hp": "568 HP",
 "trans": "8-speed automatic",
 "frenos": "Carbon-ceramic disc",
+"vel": "295 km/h"
+},
+"desc_es": "El buque insignia GT de carrocería de carbono de Aston — un V12 de 568 hp envuelto en una de las carrocerías más bellas de su época.",
+"specs_es": {
+"tipo": "Gran Turismo",
+"motor": "V12",
+"cil": "5.9 L (5935 cc)",
+"hp": "568 HP",
+"trans": "Automática 8 vel.",
+"frenos": "Disco carbono-cerámico",
 "vel": "295 km/h"
 }
 },
@@ -721,6 +889,16 @@
 "trans": "5-speed manual",
 "frenos": "4-wheel disc",
 "vel": "≈ 220 km/h"
+},
+"desc_es": "Un Fox-body preparado por Shelby — músculo V8 ligero y de tracción trasera que llevó el nombre Shelby a la era moderna.",
+"specs_es": {
+"tipo": "Muscle car",
+"motor": "V8",
+"cil": "5.0 L (302 pulg³)",
+"hp": "225 HP",
+"trans": "Manual 5 vel.",
+"frenos": "Disco en 4 ruedas",
+"vel": "≈ 220 km/h"
 }
 },
 {
@@ -827,6 +1005,16 @@
 "trans": "6-speed manual",
 "frenos": "4-wheel disc",
 "vel": "250 km/h (limited)"
+},
+"desc_es": "Un héroe de culto en miniatura — aletas anchas, un seis biturbo y caja manual hicieron del 1M un clásico moderno instantáneo.",
+"specs_es": {
+"tipo": "Coupé deportivo",
+"motor": "6 en línea biturbo",
+"cil": "3.0 L (2979 cc)",
+"hp": "340 HP",
+"trans": "Manual 6 vel.",
+"frenos": "Disco en 4 ruedas",
+"vel": "250 km/h (lim.)"
 }
 },
 {
@@ -846,6 +1034,16 @@
 "trans": "7-speed SMG",
 "frenos": "4-wheel disc",
 "vel": "250 km/h (limited)"
+},
+"desc_es": "Un V10 inspirado en la Fórmula 1 girando hasta 8.250 rpm en un elegante coupé gran turismo — exceso en el mejor sentido.",
+"specs_es": {
+"tipo": "Gran Turismo",
+"motor": "V10",
+"cil": "5.0 L (4999 cc)",
+"hp": "500 HP",
+"trans": "SMG 7 vel.",
+"frenos": "Disco en 4 ruedas",
+"vel": "250 km/h (lim.)"
 }
 },
 {
@@ -893,6 +1091,16 @@
 "hp": "700 HP",
 "trans": "7-speed PDK",
 "frenos": "Carbon-ceramic disc",
+"vel": "340 km/h"
+},
+"desc_es": "El 911 de calle más potente de su tiempo — 700 hp, tracción trasera y un récord en Nürburgring a su nombre.",
+"specs_es": {
+"tipo": "Coupé deportivo",
+"motor": "6 bóxer biturbo",
+"cil": "3.8 L (3800 cc)",
+"hp": "700 HP",
+"trans": "PDK 7 vel.",
+"frenos": "Disco carbono-cerámico",
 "vel": "340 km/h"
 }
 },
@@ -942,6 +1150,16 @@
 "trans": "5-speed automatic",
 "frenos": "4-wheel disc",
 "vel": "240 km/h"
+},
+"desc_es": "Un roadster de techo rígido plegable que llevó el descapotable Mercedes a un nuevo público — sobrealimentado y con estilo.",
+"specs_es": {
+"tipo": "Roadster",
+"motor": "4 en línea sobrealimentado",
+"cil": "2.3 L (2295 cc)",
+"hp": "197 HP",
+"trans": "Automática 5 vel.",
+"frenos": "Disco en 4 ruedas",
+"vel": "240 km/h"
 }
 },
 {
@@ -961,6 +1179,16 @@
 "trans": "6-speed manual",
 "frenos": "4-wheel disc",
 "vel": "250 km/h (limited)"
+},
+"desc_es": "Un gran turismo de faros escamoteables y motor V12 — el futurista buque insignia de BMW de los 90 y un hito de diseño.",
+"specs_es": {
+"tipo": "Gran Turismo",
+"motor": "V12",
+"cil": "5.0 L (4988 cc)",
+"hp": "300 HP",
+"trans": "Manual 6 vel.",
+"frenos": "Disco en 4 ruedas",
+"vel": "250 km/h (lim.)"
 }
 },
 {
@@ -979,6 +1207,16 @@
 "hp": "460 HP",
 "trans": "6-speed automatic",
 "frenos": "4-wheel disc",
+"vel": "301 km/h"
+},
+"desc_es": "Un V8 construido por Ferrari cantando en un gran turismo italiano — esculpido por Pininfarina, atronador por naturaleza.",
+"specs_es": {
+"tipo": "Gran Turismo",
+"motor": "V8",
+"cil": "4.7 L (4691 cc)",
+"hp": "460 HP",
+"trans": "Automática 6 vel.",
+"frenos": "Disco en 4 ruedas",
 "vel": "301 km/h"
 }
 },
@@ -1027,6 +1265,16 @@
 "hp": "525 HP",
 "trans": "6-speed manual",
 "frenos": "4-wheel disc",
+"vel": "316 km/h"
+},
+"desc_es": "Un V10 derivado de Lamborghini en un superdeportivo de tracción total y uso diario — el R8 que redefinió a Audi.",
+"specs_es": {
+"tipo": "Superdeportivo",
+"motor": "V10 (central)",
+"cil": "5.2 L (5204 cc)",
+"hp": "525 HP",
+"trans": "Manual 6 vel.",
+"frenos": "Disco en 4 ruedas",
 "vel": "316 km/h"
 }
 },
@@ -1105,6 +1353,16 @@
 "trans": "7-speed DCT",
 "frenos": "4-wheel disc",
 "vel": "250 km/h (limited)"
+},
+"desc_es": "Un súper-sedán biturbo de 560 hp — cuatro puertas, un maletero grande y prestaciones para avergonzar a superdeportivos.",
+"specs_es": {
+"tipo": "Sedán deportivo",
+"motor": "V8 biturbo",
+"cil": "4.4 L (4395 cc)",
+"hp": "560 HP",
+"trans": "DCT 7 vel.",
+"frenos": "Disco en 4 ruedas",
+"vel": "250 km/h (lim.)"
 }
 },
 {
@@ -1211,6 +1469,16 @@
 "trans": "5-speed manual",
 "frenos": "4-wheel disc",
 "vel": "290 km/h"
+},
+"desc_es": "El icono de los 80 con strakes laterales — un Ferrari de 12 cilindros que adornó un millón de paredes y definió una época.",
+"specs_es": {
+"tipo": "Superdeportivo",
+"motor": "12 bóxer (central)",
+"cil": "4.9 L (4943 cc)",
+"hp": "390 HP",
+"trans": "Manual 5 vel.",
+"frenos": "Disco en 4 ruedas",
+"vel": "290 km/h"
 }
 },
 {
@@ -1229,6 +1497,16 @@
 "hp": "300 HP",
 "trans": "4-speed manual",
 "frenos": "4-wheel disc",
+"vel": "260 km/h"
+},
+"desc_es": "El original 'viuda-negra' — turbo, con cola de ballena y emocionante, el 930 convirtió al 911 en superdeportivo.",
+"specs_es": {
+"tipo": "Coupé deportivo",
+"motor": "6 bóxer turbo",
+"cil": "3.3 L (3299 cc)",
+"hp": "300 HP",
+"trans": "Manual 4 vel.",
+"frenos": "Disco en 4 ruedas",
 "vel": "260 km/h"
 }
 },
@@ -1249,6 +1527,16 @@
 "trans": "5-speed automatic",
 "frenos": "4-wheel disc",
 "vel": "250 km/h (limited)"
+},
+"desc_es": "Un V8 atmosférico hecho a mano por AMG en un sedán compacto — apariencia discreta, prestaciones serias.",
+"specs_es": {
+"tipo": "Sedán deportivo",
+"motor": "V8",
+"cil": "5.4 L (5439 cc)",
+"hp": "367 HP",
+"trans": "Automática 5 vel.",
+"frenos": "Disco en 4 ruedas",
+"vel": "250 km/h (lim.)"
 }
 },
 {
@@ -1268,6 +1556,16 @@
 "trans": "6-speed DCT",
 "frenos": "4-wheel disc",
 "vel": "315 km/h"
+},
+"desc_es": "Godzilla — un mata-gigantes biturbo de tracción total que humilló a autos que costaban el triple.",
+"specs_es": {
+"tipo": "Superdeportivo",
+"motor": "V6 biturbo",
+"cil": "3.8 L (3799 cc)",
+"hp": "530 HP",
+"trans": "DCT 6 vel.",
+"frenos": "Disco en 4 ruedas",
+"vel": "315 km/h"
 }
 },
 {
@@ -1286,6 +1584,16 @@
 "hp": "500 HP",
 "trans": "6-speed manual",
 "frenos": "4-wheel disc (Brembo)",
+"vel": "250 km/h"
+},
+"desc_es": "Un V8 5.4 sobrealimentado con herencia Shelby — músculo brutal en línea recta con estética retro-moderna.",
+"specs_es": {
+"tipo": "Muscle car",
+"motor": "V8 sobrealimentado",
+"cil": "5.4 L (5409 cc)",
+"hp": "500 HP",
+"trans": "Manual 6 vel.",
+"frenos": "Disco en 4 ruedas (Brembo)",
 "vel": "250 km/h"
 }
 },
@@ -1393,6 +1701,16 @@
 "trans": "5-speed manual",
 "frenos": "4-wheel disc",
 "vel": "≈ 215 km/h"
+},
+"desc_es": "El Fox-body 5.0 con la capota abajo — ligero, de tracción trasera y modificable, un pony-car de los 80 en versión descapotable.",
+"specs_es": {
+"tipo": "Muscle car",
+"motor": "V8",
+"cil": "5.0 L (302 pulg³)",
+"hp": "225 HP",
+"trans": "Manual 5 vel.",
+"frenos": "Disco en 4 ruedas",
+"vel": "≈ 215 km/h"
 }
 },
 {
@@ -1411,6 +1729,16 @@
 "hp": "592 HP",
 "trans": "7-speed DCT",
 "frenos": "Carbon-ceramic disc",
+"vel": "330 km/h"
+},
+"desc_es": "El regreso de McLaren a los autos de calle — un superdeportivo de chasis de carbono y V8 biturbo, de velocidad asombrosa y clínica.",
+"specs_es": {
+"tipo": "Superdeportivo",
+"motor": "V8 biturbo (central)",
+"cil": "3.8 L (3799 cc)",
+"hp": "592 HP",
+"trans": "DCT 7 vel.",
+"frenos": "Disco carbono-cerámico",
 "vel": "330 km/h"
 }
 },
@@ -1431,6 +1759,16 @@
 "trans": "7-speed PDK",
 "frenos": "Carbon-ceramic disc",
 "vel": "318 km/h"
+},
+"desc_es": "Tracción total, biturbo y devastadoramente rápido — el superdeportivo de todos los días que hace todo brillantemente.",
+"specs_es": {
+"tipo": "Coupé deportivo",
+"motor": "6 bóxer biturbo",
+"cil": "3.8 L (3800 cc)",
+"hp": "560 HP",
+"trans": "PDK 7 vel.",
+"frenos": "Disco carbono-cerámico",
+"vel": "318 km/h"
 }
 },
 {
@@ -1449,6 +1787,16 @@
 "hp": "85 HP",
 "trans": "3-speed manual",
 "frenos": "Hydraulic drum",
+"vel": "≈ 130 km/h"
+},
+"desc_es": "Un Chevrolet de preguerra en sus mejores galas — el Special DeLuxe llevó estilo y valor a la calle principal de América.",
+"specs_es": {
+"tipo": "Sedán clásico",
+"motor": "6 en línea",
+"cil": "3.5 L (216 pulg³)",
+"hp": "85 HP",
+"trans": "Manual 3 vel.",
+"frenos": "Tambor hidráulico",
 "vel": "≈ 130 km/h"
 }
 },
@@ -1469,6 +1817,16 @@
 "trans": "3-speed manual",
 "frenos": "Hydraulic drum",
 "vel": "≈ 110 km/h"
+},
+"desc_es": "Una media tonelada Advance-Design — el caballo de batalla de posguerra cuyo encanto redondeado lo hizo un icono americano perdurable.",
+"specs_es": {
+"tipo": "Camioneta",
+"motor": "6 en línea",
+"cil": "3.5 L (216 pulg³)",
+"hp": "92 HP",
+"trans": "Manual 3 vel.",
+"frenos": "Tambor hidráulico",
+"vel": "≈ 110 km/h"
 }
 },
 {
@@ -1480,6 +1838,10 @@
 "year": "1935",
 "desc": "A charming small European roadster from the 1930s — hand-built and delicately proportioned.",
 "specs": {
+"tipo": "Roadster"
+},
+"desc_es": "Un encantador roadster europeo pequeño de los años 30 — hecho a mano y delicadamente proporcionado.",
+"specs_es": {
 "tipo": "Roadster"
 }
 },
@@ -1500,6 +1862,16 @@
 "trans": "4-speed manual",
 "frenos": "Drum",
 "vel": "≈ 90 km/h"
+},
+"desc_es": "El primer auto de pasajeros de Mazda — un diminuto y ligerísimo coupé kei que puso sobre ruedas al Japón de posguerra.",
+"specs_es": {
+"tipo": "Microcar kei",
+"motor": "V-twin refrigerado por aire (trasero)",
+"cil": "356 cc",
+"hp": "16 HP",
+"trans": "Manual 4 vel.",
+"frenos": "Tambor",
+"vel": "≈ 90 km/h"
 }
 },
 {
@@ -1518,6 +1890,16 @@
 "hp": "138 HP",
 "trans": "4-speed manual",
 "frenos": "Front disc / rear drum",
+"vel": "≈ 195 km/h"
+},
+"desc_es": "'El auto que siempre te prometiste' — la respuesta europea y asequible al Mustang, en formato fastback.",
+"specs_es": {
+"tipo": "Coupé",
+"motor": "V6",
+"cil": "3.0 L (2994 cc)",
+"hp": "138 HP",
+"trans": "Manual 4 vel.",
+"frenos": "Disco delantero / tambor trasero",
 "vel": "≈ 195 km/h"
 }
 },
@@ -1538,6 +1920,16 @@
 "trans": "3-speed manual",
 "frenos": "Hydraulic drum",
 "vel": "≈ 145 km/h"
+},
+"desc_es": "Grandeza plena de la era Classic — un Packard de ocho en línea de presencia imperiosa, de la mejor marca de América.",
+"specs_es": {
+"tipo": "Sedán de lujo",
+"motor": "8 en línea",
+"cil": "5.3 L (320 pulg³)",
+"hp": "130 HP",
+"trans": "Manual 3 vel.",
+"frenos": "Tambor hidráulico",
+"vel": "≈ 145 km/h"
 }
 },
 {
@@ -1556,6 +1948,16 @@
 "hp": "150 HP",
 "trans": "3-speed manual",
 "frenos": "Hydraulic drum",
+"vel": "≈ 160 km/h"
+},
+"desc_es": "Una obra maestra Art Déco sobrealimentada — escapes cromados externos y 100 mph garantizadas en su época.",
+"specs_es": {
+"tipo": "Deportivo de lujo",
+"motor": "8 en línea sobrealimentado",
+"cil": "4.6 L (280 pulg³)",
+"hp": "150 HP",
+"trans": "Manual 3 vel.",
+"frenos": "Tambor hidráulico",
 "vel": "≈ 160 km/h"
 }
 },
@@ -1576,6 +1978,16 @@
 "trans": "4-speed manual",
 "frenos": "Mechanical drum",
 "vel": "≈ 130 km/h"
+},
+"desc_es": "Un phaeton de doble parabrisas de la época dorada de Packard — elegancia carrozada para la élite de la era del jazz.",
+"specs_es": {
+"tipo": "Phaeton",
+"motor": "8 en línea",
+"cil": "6.3 L (385 pulg³)",
+"hp": "106 HP",
+"trans": "Manual 4 vel.",
+"frenos": "Tambor mecánico",
+"vel": "≈ 130 km/h"
 }
 },
 {
@@ -1595,6 +2007,16 @@
 "trans": "3-speed manual",
 "frenos": "Mechanical drum",
 "vel": "≈ 110 km/h"
+},
+"desc_es": "Un roadster Packard de mediados de los 20 — artesanía discreta de 'los maestros constructores de motores del mundo'.",
+"specs_es": {
+"tipo": "Roadster",
+"motor": "6 en línea",
+"cil": "4.7 L (289 pulg³)",
+"hp": "60 HP",
+"trans": "Manual 3 vel.",
+"frenos": "Tambor mecánico",
+"vel": "≈ 110 km/h"
 }
 },
 {
@@ -1606,6 +2028,10 @@
 "year": "1928",
 "desc": "A stately open phaeton from the late 1920s, restored to touring splendor.",
 "specs": {
+"tipo": "Phaeton"
+},
+"desc_es": "Un majestuoso phaeton abierto de finales de los 20, restaurado a su esplendor de turismo.",
+"specs_es": {
 "tipo": "Phaeton"
 }
 },
@@ -1626,6 +2052,16 @@
 "trans": "3-speed manual",
 "frenos": "Mechanical drum",
 "vel": "≈ 130 km/h"
+},
+"desc_es": "Dignidad Cadillac de la era de la Depresión — un V8 suave y formalidad carrozada del buque insignia de GM.",
+"specs_es": {
+"tipo": "Sedán de lujo",
+"motor": "V8",
+"cil": "5.8 L (353 pulg³)",
+"hp": "115 HP",
+"trans": "Manual 3 vel.",
+"frenos": "Tambor mecánico",
+"vel": "≈ 130 km/h"
 }
 },
 {
@@ -1644,6 +2080,16 @@
 "hp": "122 HP",
 "trans": "3-speed manual",
 "frenos": "Hydraulic drum",
+"vel": "≈ 140 km/h"
+},
+"desc_es": "Aerodinámica adelantada a su tiempo — la carrocería radicalmente aerodinámica del Airflow iba décadas por delante, quizá demasiado audaz para los compradores.",
+"specs_es": {
+"tipo": "Sedán aerodinámico",
+"motor": "8 en línea",
+"cil": "4.9 L (299 pulg³)",
+"hp": "122 HP",
+"trans": "Manual 3 vel.",
+"frenos": "Tambor hidráulico",
 "vel": "≈ 140 km/h"
 }
 },
@@ -1664,6 +2110,16 @@
 "trans": "3-speed manual",
 "frenos": "Mechanical drum (rear)",
 "vel": "≈ 80 km/h"
+},
+"desc_es": "Un turismo abierto de principios de los 20 — simple, robusto y asequible, el Chevrolet que plantó cara al Modelo T.",
+"specs_es": {
+"tipo": "Turismo",
+"motor": "4 en línea",
+"cil": "2.8 L (171 pulg³)",
+"hp": "26 HP",
+"trans": "Manual 3 vel.",
+"frenos": "Tambor mecánico (trasero)",
+"vel": "≈ 80 km/h"
 }
 },
 {
@@ -1677,6 +2133,10 @@
 "desc": "A brass-era Renault with the marque's signature coal-scuttle bonnet — Edwardian motoring at its most refined.",
 "specs": {
 "tipo": "Town Car"
+},
+"desc_es": "Un Renault de la era del latón con el característico capó 'coal-scuttle' de la marca — el automovilismo eduardiano en su forma más refinada.",
+"specs_es": {
+"tipo": "Limusina"
 }
 },
 {
@@ -1696,6 +2156,16 @@
 "trans": "3-speed manual",
 "frenos": "Mechanical drum (rear)",
 "vel": "≈ 50 km/h"
+},
+"desc_es": "El famoso linaje del 'Taxi del Marne' — un Renault Type AG cuyos descendientes recorrieron París y llevaron tropas a la batalla.",
+"specs_es": {
+"tipo": "Limusina",
+"motor": "2 en línea",
+"cil": "1.2 L (1205 cc)",
+"hp": "9 HP",
+"trans": "Manual 3 vel.",
+"frenos": "Tambor mecánico (trasero)",
+"vel": "≈ 50 km/h"
 }
 },
 {
@@ -1707,6 +2177,10 @@
 "year": "1903",
 "desc": "A turn-of-the-century tonneau with fringed surrey top — motoring in its pioneering, horseless-carriage infancy.",
 "specs": {
+"tipo": "Tonneau"
+},
+"desc_es": "Un tonneau de principios de siglo con toldo surrey de flecos — el automovilismo en su pionera infancia sin caballos.",
+"specs_es": {
 "tipo": "Tonneau"
 }
 },
@@ -1720,6 +2194,10 @@
 "year": "1908",
 "desc": "An Edwardian Renault runabout — brass, red wheels and the elegant simplicity of early French engineering.",
 "specs": {
+"tipo": "Runabout"
+},
+"desc_es": "Un runabout Renault eduardiano — latón, ruedas rojas y la elegante simplicidad de la primera ingeniería francesa.",
+"specs_es": {
 "tipo": "Runabout"
 }
 },
@@ -1740,6 +2218,16 @@
 "trans": "4-speed manual",
 "frenos": "Drum",
 "vel": "≈ 210 km/h"
+},
+"desc_es": "Un icono E-body de primer año — capó largo, postura ancha y trueno de bloque grande, el muscle car americano por excelencia.",
+"specs_es": {
+"tipo": "Muscle car",
+"motor": "V8 (440)",
+"cil": "7.2 L (440 pulg³)",
+"hp": "375 HP",
+"trans": "Manual 4 vel.",
+"frenos": "Tambor",
+"vel": "≈ 210 km/h"
 }
 },
 {
@@ -1758,6 +2246,16 @@
 "hp": "100 HP",
 "trans": "4-speed manual",
 "frenos": "Front disc / rear drum",
+"vel": "≈ 175 km/h"
+},
+"desc_es": "El elegante coupé sueco que hizo famoso 'El Santo' — estilo italiano, robustez Volvo y una elegancia natural.",
+"specs_es": {
+"tipo": "Coupé deportivo",
+"motor": "4 en línea",
+"cil": "1.8 L (1780 cc)",
+"hp": "100 HP",
+"trans": "Manual 4 vel.",
+"frenos": "Disco delantero / tambor trasero",
 "vel": "≈ 175 km/h"
 }
 },
@@ -1778,6 +2276,16 @@
 "trans": "4-speed manual",
 "frenos": "Drum",
 "vel": "≈ 120 km/h"
+},
+"desc_es": "El auto del pueblo — refrigerado por aire, motor trasero y encantador, el diseño único más exitoso de la historia.",
+"specs_es": {
+"tipo": "Economy",
+"motor": "4 bóxer (refrigerado por aire)",
+"cil": "1.3 L (1285 cc)",
+"hp": "50 HP",
+"trans": "Manual 4 vel.",
+"frenos": "Tambor",
+"vel": "≈ 120 km/h"
 }
 },
 {
@@ -1797,6 +2305,16 @@
 "trans": "6-speed manual",
 "frenos": "4-wheel disc",
 "vel": "325 km/h"
+},
+"desc_es": "Un V10 de 8.4 litros sin filtro ni disculpas — superdeportivo americano crudo y brutal en su forma más pura.",
+"specs_es": {
+"tipo": "Superdeportivo",
+"motor": "V10",
+"cil": "8.4 L (8382 cc)",
+"hp": "600 HP",
+"trans": "Manual 6 vel.",
+"frenos": "Disco en 4 ruedas",
+"vel": "325 km/h"
 }
 },
 {
@@ -1815,6 +2333,16 @@
 "hp": "560 HP",
 "trans": "7-speed DCT",
 "frenos": "Carbon-ceramic disc",
+"vel": "316 km/h"
+},
+"desc_es": "Un Ferrari GT de techo rígido plegable con un V8 turbo — glamour de gran turismo con usabilidad diaria.",
+"specs_es": {
+"tipo": "Gran Turismo",
+"motor": "V8 biturbo",
+"cil": "3.9 L (3855 cc)",
+"hp": "560 HP",
+"trans": "DCT 7 vel.",
+"frenos": "Disco carbono-cerámico",
 "vel": "316 km/h"
 }
 },
@@ -1893,6 +2421,16 @@
 "trans": "6-speed automatic",
 "frenos": "4-wheel disc",
 "vel": "250 km/h (limited)"
+},
+"desc_es": "Un híbrido enchufable del futuro — puertas de tijera, construcción de carbono y un corazón de tres cilindros que apenas consume.",
+"specs_es": {
+"tipo": "Deportivo híbrido",
+"motor": "3 en línea turbo + eléctrico",
+"cil": "1.5 L + e-motor",
+"hp": "362 HP (combinado)",
+"trans": "Automática 6 vel.",
+"frenos": "Disco en 4 ruedas",
+"vel": "250 km/h (lim.)"
 }
 },
 {
@@ -1911,6 +2449,16 @@
 "hp": "571 HP",
 "trans": "7-speed DCT",
 "frenos": "Carbon-ceramic disc",
+"vel": "317 km/h"
+},
+"desc_es": "Puertas de gaviota renacidas — el rugido de un V8 central-delantero y una silueta que rinde homenaje al legendario 300 SL.",
+"specs_es": {
+"tipo": "Superdeportivo",
+"motor": "V8 (central-delantero)",
+"cil": "6.3 L (6208 cc)",
+"hp": "571 HP",
+"trans": "DCT 7 vel.",
+"frenos": "Disco carbono-cerámico",
 "vel": "317 km/h"
 }
 },
@@ -1931,6 +2479,16 @@
 "trans": "7-speed automatic",
 "frenos": "4-wheel disc",
 "vel": "300 km/h"
+},
+"desc_es": "Un AMG especial ensanchado y aligerado — 507 caballos atmosféricos y agresividad de auto de carreras.",
+"specs_es": {
+"tipo": "Coupé deportivo",
+"motor": "V8",
+"cil": "6.2 L (6208 cc)",
+"hp": "507 HP",
+"trans": "Automática 7 vel.",
+"frenos": "Disco en 4 ruedas",
+"vel": "300 km/h"
 }
 },
 {
@@ -1949,6 +2507,16 @@
 "hp": "340 HP",
 "trans": "8-speed automatic",
 "frenos": "4-wheel disc",
+"vel": "260 km/h"
+},
+"desc_es": "El regreso de Jaguar al deportivo de dos plazas — un motor sobrealimentado gruñón y líneas esculpidas y sensuales.",
+"specs_es": {
+"tipo": "Coupé deportivo",
+"motor": "V6 sobrealimentado",
+"cil": "3.0 L (2995 cc)",
+"hp": "340 HP",
+"trans": "Automática 8 vel.",
+"frenos": "Disco en 4 ruedas",
 "vel": "260 km/h"
 }
 },
@@ -1969,6 +2537,16 @@
 "trans": "6-speed manual",
 "frenos": "4-wheel disc",
 "vel": "267 km/h"
+},
+"desc_es": "El Boxster 987 más puro — ligero, de capota manual y motor bóxer, hecho por el puro placer de conducir.",
+"specs_es": {
+"tipo": "Roadster",
+"motor": "6 bóxer (central)",
+"cil": "3.4 L (3436 cc)",
+"hp": "320 HP",
+"trans": "Manual 6 vel.",
+"frenos": "Disco en 4 ruedas",
+"vel": "267 km/h"
 }
 },
 {
@@ -1987,6 +2565,16 @@
 "hp": "240 HP",
 "trans": "6-speed DCT",
 "frenos": "4-wheel disc",
+"vel": "258 km/h"
+},
+"desc_es": "Un peso pluma italiano de chasis de carbono — sin dirección asistida, sin relleno, solo un cuatro turbo y feedback puro.",
+"specs_es": {
+"tipo": "Coupé deportivo",
+"motor": "4 en línea turbo (central)",
+"cil": "1.75 L (1742 cc)",
+"hp": "240 HP",
+"trans": "DCT 6 vel.",
+"frenos": "Disco en 4 ruedas",
 "vel": "258 km/h"
 }
 },
@@ -2007,6 +2595,16 @@
 "trans": "5-speed manual",
 "frenos": "4-wheel disc",
 "vel": "225 km/h"
+},
+"desc_es": "Un misil de bolsillo con el escorpión — el diminuto Fiat 500 transformado en un hot hatch gruñón y listo para pista.",
+"specs_es": {
+"tipo": "Hot hatch",
+"motor": "4 en línea turbo",
+"cil": "1.4 L (1368 cc)",
+"hp": "180 HP",
+"trans": "Manual 5 vel.",
+"frenos": "Disco en 4 ruedas",
+"vel": "225 km/h"
 }
 },
 {
@@ -2026,6 +2624,16 @@
 "trans": "6-speed manual",
 "frenos": "4-wheel disc (Brembo)",
 "vel": "250 km/h"
+},
+"desc_es": "Un V8 5.4 sobrealimentado con herencia Shelby — músculo brutal en línea recta con estética retro-moderna.",
+"specs_es": {
+"tipo": "Muscle car",
+"motor": "V8 sobrealimentado",
+"cil": "5.4 L (5409 cc)",
+"hp": "500 HP",
+"trans": "Manual 6 vel.",
+"frenos": "Disco en 4 ruedas (Brembo)",
+"vel": "250 km/h"
 }
 },
 {
@@ -2044,6 +2652,16 @@
 "hp": "550 HP",
 "trans": "6-speed manual",
 "frenos": "4-wheel disc (Brembo)",
+"vel": "≈ 260 km/h"
+},
+"desc_es": "El Shelby GT500 renovado — un V8 5.4 sobrealimentado y una insignia de cobra que promete velocidad seria.",
+"specs_es": {
+"tipo": "Muscle car",
+"motor": "V8 sobrealimentado",
+"cil": "5.4 L (5409 cc)",
+"hp": "550 HP",
+"trans": "Manual 6 vel.",
+"frenos": "Disco en 4 ruedas (Brembo)",
 "vel": "≈ 260 km/h"
 }
 }
