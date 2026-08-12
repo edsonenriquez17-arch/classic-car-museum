@@ -357,6 +357,20 @@
   .grid4 .col-card .yr{margin:4px 0 12px;font-size:14px}
   .grid4 .col-card .body{padding:16px 18px 20px}
   .pc-noresults{text-align:center;color:#8a8a8a;font-size:16px;padding:40px 0}
+  /* layout toggle (1 / 2 columns) */
+  .pc-layout{display:none;gap:6px}
+  .pc-lay{width:40px;height:40px;border:1px solid rgba(255,255,255,.25);background:transparent;border-radius:8px;color:#cfcfcf;display:grid;place-items:center;cursor:pointer;transition:all .2s}
+  .pc-lay svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.6}
+  .pc-lay:hover{border-color:#fff;color:#fff}
+  .pc-lay.active{background:var(--gold);border-color:var(--gold);color:#141414}
+  /* pagination */
+  .pc-pager{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:44px 0 4px}
+  .pg-btn{min-width:42px;height:42px;padding:0 12px;border:1px solid var(--line);background:var(--paper);color:#1a1a1a;border-radius:8px;font-family:var(--body);font-size:15px;cursor:pointer;transition:all .2s}
+  .pg-btn:hover:not(:disabled){border-color:var(--ink)}
+  .pg-btn.active{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .pg-btn.nav{font-size:20px;line-height:1}
+  .pg-btn:disabled{opacity:.35;cursor:default}
+  .pg-dots{align-self:center;color:#9a9a9a;padding:0 2px}
 
   /* ---------- VEHICLE DATA SHEET (internal) ---------- */
   #page-vehicle{padding:0;background:var(--bg)}
@@ -532,6 +546,21 @@
     .grid3{grid-template-columns:1fr;gap:16px}
     .hc-arrow{display:none}
     #homeGrid{padding-bottom:12px}
+    /* collection page: show layout toggle + paginated 1/2 columns */
+    .pc-layout{display:flex;justify-content:center;margin-top:4px}
+    .pc-filters{gap:14px}
+    #carGrid{gap:12px}
+    #carGrid.cols-1{grid-template-columns:1fr}
+    #carGrid.cols-2{grid-template-columns:1fr 1fr}
+    #carGrid.cols-1 .col-card .ph{height:200px}
+    #carGrid.cols-2 .col-card .ph{height:118px}
+    #carGrid.cols-2 .col-card .body{padding:11px 12px 14px}
+    #carGrid.cols-2 .col-card h4{font-size:13px;letter-spacing:.4px;line-height:1.2}
+    #carGrid.cols-2 .col-card .c-plate,#carGrid.cols-2 .col-card .yr{font-size:11px;margin:3px 0 8px}
+    #carGrid.cols-2 .col-card .link-arrow{font-size:11px;letter-spacing:.5px}
+    #carGrid.cols-2 .col-card .link-arrow svg{width:15px;height:15px}
+    .pc-pager{margin:32px 0 4px;gap:7px}
+    .pg-btn{min-width:40px;height:40px;font-size:14px}
     /* experiences */
     .experiences{padding:56px 18px}
     /* contact: trim padding, one clean column */
@@ -914,6 +943,10 @@
           </select>
           <input type="text" id="carSearch" data-ph="flt_search" placeholder="Search...">
         </div>
+        <div class="pc-layout" role="group" aria-label="Layout">
+          <button class="pc-lay" data-cols="1" aria-label="One column"><svg viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="7" rx="1"/><rect x="5" y="13" width="14" height="7" rx="1"/></svg></button>
+          <button class="pc-lay active" data-cols="2" aria-label="Two columns"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="16" rx="1"/><rect x="13" y="4" width="7" height="16" rx="1"/></svg></button>
+        </div>
       </div>
     </div>
     <div class="wrap">
@@ -926,9 +959,9 @@
   </div>
   <div class="pc-grid-zone">
     <div class="wrap">
-      <div class="grid4" id="carGrid"></div>
+      <div class="grid4 cols-2" id="carGrid"></div>
       <div class="pc-noresults" id="noResults" hidden data-i="flt_none">No vehicles match your search.</div>
-      <div class="pc-viewall"><button class="btn-red" id="viewAllBtn" data-i="view_all">View all</button></div>
+      <nav class="pc-pager" id="pcPager" aria-label="Collection pages"></nav>
     </div>
   </div>
 </section>
@@ -1175,7 +1208,8 @@ function realPlate(p){ return p && !/^S\s*I/i.test(p.trim()); }
 function carCard(c, cls){
   const disp=c.name||c.plate;
   const sub=(c.name && c.name!==c.plate && realPlate(c.plate)) ? `<div class="c-plate">${c.plate}</div>` : '';
-  return `<div class="col-card c-item${cls||''}" data-name="${(disp+' '+c.plate).toLowerCase()}" data-cat="classic" data-slug="${c.slug}">
+  const yr=parseInt(c.year,10); const cat=(yr&&yr>=1990)?'modern':'classic';
+  return `<div class="col-card c-item${cls||''}" data-name="${(disp+' '+c.plate).toLowerCase()}" data-cat="${cat}" data-slug="${c.slug}">
     <div class="ph"><img src="assets/cars/${c.slug}/thumb.jpg" alt="${disp}" loading="lazy"></div>
     <div class="body"><h4>${disp}</h4>${sub}<span class="link-arrow"><span data-i="visit_info">Visit info</span> <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
   </div>`;
@@ -1233,22 +1267,61 @@ function wireFilters(){
   const brandSel=document.getElementById('brandSel');
   const search=document.getElementById('carSearch');
   const noRes=document.getElementById('noResults');
+  const grid=document.getElementById('carGrid');
+  const pager=document.getElementById('pcPager');
   if(brandSel) brandSel.style.display='none';   // no per-car brand data yet
-  let cat='all';
-  function apply(){
+  let cat='all', page=1; const perPage=12;
+  function filtered(){
     const q=(search&&search.value.trim().toLowerCase())||'';
-    let shown=0;
-    document.querySelectorAll('#carGrid .c-item').forEach(it=>{
+    return [...grid.querySelectorAll('.c-item')].filter(it=>{
       const okCat = cat==='all' || it.dataset.cat===cat;
       const okQ = !q || it.dataset.name.includes(q);
-      const show = okCat && okQ; it.style.display=show?'':'none'; if(show) shown++;
+      return okCat && okQ;
     });
-    if(noRes) noRes.hidden = shown>0;
   }
-  pills.forEach(p=>p.addEventListener('click',()=>{ cat=p.dataset.cat; pills.forEach(x=>x.classList.toggle('active',x===p)); apply(); }));
-  if(search) search.addEventListener('input',apply);
-  const va=document.getElementById('viewAllBtn');
-  if(va) va.addEventListener('click',()=>{ cat='all'; if(search) search.value=''; pills.forEach(x=>x.classList.toggle('active',x.dataset.cat==='all')); apply(); document.getElementById('carGrid').scrollIntoView({behavior:'smooth',block:'start'}); });
+  function pageList(cur,total){
+    const out=[]; if(total<=7){for(let i=1;i<=total;i++)out.push(i);return out;}
+    out.push(1); let s=Math.max(2,cur-1),e=Math.min(total-1,cur+1);
+    if(cur<=3){s=2;e=4;} if(cur>=total-2){s=total-3;e=total-1;}
+    if(s>2)out.push('…'); for(let i=s;i<=e;i++)out.push(i); if(e<total-1)out.push('…'); out.push(total); return out;
+  }
+  function renderPager(pages){
+    if(!pager) return;
+    if(pages<=1){ pager.innerHTML=''; return; }
+    let h=`<button class="pg-btn nav" data-pg="prev"${page===1?' disabled':''} aria-label="Previous">‹</button>`;
+    pageList(page,pages).forEach(n=>{ h+= n==='…' ? `<span class="pg-dots">…</span>` : `<button class="pg-btn${n===page?' active':''}" data-pg="${n}">${n}</button>`; });
+    h+=`<button class="pg-btn nav" data-pg="next"${page===pages?' disabled':''} aria-label="Next">›</button>`;
+    pager.innerHTML=h;
+  }
+  function apply(){
+    const list=filtered();
+    const pages=Math.max(1,Math.ceil(list.length/perPage));
+    if(page>pages) page=pages;
+    grid.querySelectorAll('.c-item').forEach(it=>it.style.display='none');
+    const start=(page-1)*perPage;
+    list.slice(start,start+perPage).forEach(it=>it.style.display='');
+    if(noRes) noRes.hidden = list.length>0;
+    renderPager(pages);
+  }
+  window._pcApply=apply;
+  pills.forEach(p=>p.addEventListener('click',()=>{ cat=p.dataset.cat; page=1; pills.forEach(x=>x.classList.toggle('active',x===p)); apply(); }));
+  if(search) search.addEventListener('input',()=>{ page=1; apply(); });
+  if(pager) pager.addEventListener('click',e=>{
+    const b=e.target.closest('.pg-btn'); if(!b||b.disabled) return;
+    const pages=Math.max(1,Math.ceil(filtered().length/perPage));
+    const v=b.dataset.pg;
+    if(v==='prev') page=Math.max(1,page-1); else if(v==='next') page=Math.min(pages,page+1); else page=parseInt(v,10);
+    apply();
+    const zone=document.querySelector('.pc-grid-zone'); if(zone) zone.scrollIntoView({behavior:'smooth',block:'start'});
+  });
+  // 1 / 2 column layout toggle
+  const layBtns=[...document.querySelectorAll('.pc-lay')];
+  layBtns.forEach(b=>b.addEventListener('click',()=>{
+    const c=b.dataset.cols;
+    grid.classList.toggle('cols-1', c==='1'); grid.classList.toggle('cols-2', c==='2');
+    layBtns.forEach(x=>x.classList.toggle('active',x===b));
+  }));
+  apply();
 }
 // any collection card -> open its data sheet
 document.addEventListener('click',e=>{
