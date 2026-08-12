@@ -481,6 +481,61 @@
     .wrap{padding:0 16px}
     .kicker.big{font-size:clamp(34px,11vw,48px)}
   }
+
+  /* ============ MOBILE LAYOUT v3 — symmetry, alignment & rhythm ============ */
+  @media(max-width:560px){
+    .wrap{padding:0 20px}
+    /* image+text sections: full-width photo flush above centered text */
+    .legacy,.intro{gap:0}
+    .legacy .media,.intro .media{padding:0;min-height:0;height:auto;order:0}
+    .legacy .media img,.intro .media img{width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;display:block}
+    .legacy .txt,.intro .txt{order:2;padding:32px 24px;text-align:center;align-items:center}
+    .legacy .txt h2,.intro .txt h2{font-size:clamp(30px,8.5vw,42px);line-height:1.05;margin-bottom:16px}
+    .legacy .txt p,.intro .txt p{text-align:center;font-size:15.5px;line-height:1.6;margin-bottom:18px;max-width:420px}
+    .intro .txt .addr{text-align:center;line-height:1.9}
+    .legacy .link-arrow,.intro .link-arrow{justify-content:center}
+    /* panels: symmetric stacked cards */
+    .panels{gap:0}
+    .panel{padding:44px 24px;text-align:center;align-items:center;display:flex;flex-direction:column}
+    .panel .ic{margin:0 auto 20px}
+    .panel h3{font-size:22px}
+    .panel p{margin:12px 0 22px}
+    .panel .link-arrow{justify-content:center}
+    /* services: compact centered cards (removes the 64px icon gap) */
+    .services{padding:56px 0 44px}
+    .services h2{margin-bottom:30px;font-size:clamp(32px,9vw,44px)}
+    .cards{grid-template-columns:1fr;gap:16px}
+    .card{min-height:0;padding:28px 24px;text-align:center}
+    .card .ic{margin:0 auto 18px}
+    .card h4{font-size:20px}
+    /* 3D */
+    .exp3d{padding:44px 0 52px}
+    .exp3d .big{font-size:clamp(34px,11vw,46px)}
+    .pills{gap:10px;margin-top:22px}
+    .pill{padding:12px 20px;font-size:13px}
+    /* collection preview */
+    .collection{padding:52px 0}
+    .collection h2{font-size:clamp(34px,10vw,48px)}
+    .collection .sub{font-size:16px;margin:18px 0 16px}
+    .count-badge{margin-bottom:26px}
+    .grid3{grid-template-columns:1fr;gap:16px}
+    /* experiences */
+    .experiences{padding:56px 18px}
+    /* contact: trim padding, one clean column */
+    .contact{padding:54px 0 56px}
+    .contact-head{margin-bottom:32px}
+    .contact-head h2{font-size:clamp(34px,9vw,48px)}
+    .contact-grid{gap:18px}
+    .contact-card{padding:26px 22px}
+    .contact-side{padding:30px 24px}
+    /* location */
+    .location{padding:56px 0}
+    .location h2{font-size:clamp(34px,9vw,52px)}
+    .loc-map{height:260px}
+    /* newsletter */
+    .newsletter{padding:60px 0}
+    .newsletter h2{font-size:clamp(32px,9vw,48px);margin-bottom:30px}
+  }
 </style>
 </head>
 <body>
