@@ -184,6 +184,17 @@
   .col-card h4{font-family:var(--display);font-weight:600;font-size:20px;letter-spacing:1px;text-transform:uppercase}
   .col-card .yr{color:#c9c9c9;font-style:italic;margin:4px 0 18px}
   .col-card .link-arrow{color:#cfcfcf}
+  /* home collection carousel */
+  .home-carousel{position:relative}
+  #homeGrid{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scroll-behavior:smooth;grid-template-columns:none;padding:6px 2px 18px}
+  #homeGrid::-webkit-scrollbar{height:6px}
+  #homeGrid::-webkit-scrollbar-track{background:transparent}
+  #homeGrid::-webkit-scrollbar-thumb{background:rgba(0,0,0,.16);border-radius:4px}
+  #homeGrid .col-card{flex:0 0 auto;width:clamp(280px,80vw,330px);scroll-snap-align:center}
+  .hc-arrow{position:absolute;top:calc(50% - 10px);transform:translateY(-50%);width:48px;height:48px;border-radius:50%;border:0;background:rgba(16,16,18,.9);color:#fff;font-size:28px;line-height:1;cursor:pointer;z-index:5;display:grid;place-items:center;box-shadow:0 8px 22px rgba(0,0,0,.25);transition:background .2s,transform .2s}
+  .hc-arrow:hover{background:var(--red)}
+  .hc-arrow.prev{left:-8px}
+  .hc-arrow.next{right:-8px}
   /* empty placeholder cards (ready to fill) */
   .col-card.empty{background:#fff;border:1px solid var(--line)}
   .col-card.empty .ph{background:#f4f2ef;display:flex;align-items:center;justify-content:center;border-bottom:1px dashed #cfcbc6}
@@ -519,6 +530,8 @@
     .collection .sub{font-size:16px;margin:18px 0 16px}
     .count-badge{margin-bottom:26px}
     .grid3{grid-template-columns:1fr;gap:16px}
+    .hc-arrow{display:none}
+    #homeGrid{padding-bottom:12px}
     /* experiences */
     .experiences{padding:56px 18px}
     /* contact: trim padding, one clean column */
@@ -662,7 +675,11 @@
       <div data-i="col_s1">Including the World's Oldest Car in existence</div>
       <div data-i="col_s2">World's Oldest Car &amp; Rare Porsche Collection</div>
     </div>
-    <div class="grid3" id="homeGrid"></div>
+    <div class="home-carousel">
+      <button class="hc-arrow prev" aria-label="Previous" onclick="hcScroll(-1)">‹</button>
+      <div class="grid3" id="homeGrid"></div>
+      <button class="hc-arrow next" aria-label="Next" onclick="hcScroll(1)">›</button>
+    </div>
     <div class="view-all">
       <a href="#p-collection" data-i="view_col">View all 145 models <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
@@ -1165,10 +1182,11 @@ function carCard(c, cls){
 }
 function renderCollections(){
   const home=document.getElementById('homeGrid');
-  if(home) home.innerHTML=CARS.slice(0,3).map(c=>carCard(c)).join('');
+  if(home) home.innerHTML=CARS.slice(0,12).map(c=>carCard(c)).join('');
   const grid=document.getElementById('carGrid');
   if(grid) grid.innerHTML=CARS.map(c=>carCard(c)).join('');
 }
+function hcScroll(dir){const g=document.getElementById('homeGrid');if(!g)return;const card=g.querySelector('.col-card');const step=card?card.getBoundingClientRect().width+20:300;g.scrollBy({left:dir*step,behavior:'smooth'});}
 function setImg(id,src){ const el=document.getElementById(id); if(!el) return; const box=el.parentElement, lbl=box&&box.querySelector('.ph-lbl'); if(src){ el.src=src; if(lbl) lbl.style.display='none'; } else { el.removeAttribute('src'); if(lbl) lbl.style.display=''; } }
 function showVehicle(slug){
   const car=CARS.find(c=>c.slug===slug); if(!car) return;
