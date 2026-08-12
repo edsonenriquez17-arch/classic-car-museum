@@ -6,7 +6,17 @@
 "name": "Honda NSX",
 "brand": "Honda",
 "model": "NSX (NA1)",
-"year": "1991"
+"year": "1991",
+"desc": "Japan's revolutionary all-aluminum supercar — Ayrton Senna helped hone its chassis, and its VTEC V6 paired supercar pace with everyday usability.",
+"specs": {
+"tipo": "Supercar",
+"motor": "V6 DOHC VTEC (mid)",
+"cil": "3.0 L (2977 cc)",
+"hp": "274 HP",
+"trans": "5-speed manual",
+"frenos": "4-wheel disc",
+"vel": "≈ 270 km/h"
+}
 },
 {
 "plate": "A2Y - 410",
@@ -15,7 +25,17 @@
 "name": "Mercedes-Benz SL 500",
 "brand": "Mercedes-Benz",
 "model": "SL 500 (R230)",
-"year": "2003"
+"year": "2003",
+"desc": "A luxurious folding-hardtop roadster with a silky V8 — grand touring the Mercedes way, effortless and refined.",
+"specs": {
+"tipo": "Roadster",
+"motor": "V8",
+"cil": "5.0 L (4966 cc)",
+"hp": "306 HP",
+"trans": "5-speed automatic",
+"frenos": "4-wheel disc",
+"vel": "250 km/h (limited)"
+}
 },
 {
 "plate": "A3M - 354",
@@ -24,7 +44,17 @@
 "name": "Mercedes-Benz E55 AMG",
 "brand": "Mercedes-Benz",
 "model": "E55 AMG (W211)",
-"year": "2004"
+"year": "2004",
+"desc": "A supercharged super-sedan that embarrassed sports cars — 476 hp of AMG muscle in an understated business suit.",
+"specs": {
+"tipo": "Sports Sedan",
+"motor": "Supercharged V8",
+"cil": "5.4 L (5439 cc)",
+"hp": "476 HP",
+"trans": "5-speed automatic",
+"frenos": "4-wheel disc",
+"vel": "250 km/h (limited)"
+}
 },
 {
 "plate": "A4D - 305",
@@ -33,7 +63,17 @@
 "name": "Porsche 911 GT3",
 "brand": "Porsche",
 "model": "911 GT3 (997.2)",
-"year": "2010"
+"year": "2010",
+"desc": "A track-bred, naturally aspirated 911 with a howling flat-six and race-car precision for the road.",
+"specs": {
+"tipo": "Sports Coupe",
+"motor": "Flat-6",
+"cil": "3.8 L (3797 cc)",
+"hp": "435 HP",
+"trans": "6-speed manual",
+"frenos": "Carbon-ceramic disc",
+"vel": "312 km/h"
+}
 },
 {
 "plate": "A5M - 345",
@@ -41,7 +81,11 @@
 "d3": true,
 "name": "Classic Roadster",
 "model": "1920s American Roadster",
-"year": "1926"
+"year": "1926",
+"desc": "A beautifully restored American roadster from the Roaring Twenties — two-tone paint and brass-age charm.",
+"specs": {
+"tipo": "Roadster"
+}
 },
 {
 "plate": "A5T - 244",
@@ -50,7 +94,17 @@
 "name": "Jeep Grand Cherokee SRT8",
 "brand": "Jeep",
 "model": "Grand Cherokee SRT8 (WK)",
-"year": "2008"
+"year": "2008",
+"desc": "A 6.1-liter Hemi V8 stuffed into a family SUV — the SRT8 turned the school run into a quarter-mile weapon.",
+"specs": {
+"tipo": "Performance SUV",
+"motor": "Hemi V8",
+"cil": "6.1 L (6059 cc)",
+"hp": "420 HP",
+"trans": "5-speed automatic",
+"frenos": "4-wheel disc (Brembo)",
+"vel": "250 km/h"
+}
 },
 {
 "plate": "A7H - 440",
@@ -59,7 +113,17 @@
 "name": "Mercedes-Benz C43 AMG",
 "brand": "Mercedes-Benz",
 "model": "C43 AMG (W202)",
-"year": "1998"
+"year": "1998",
+"desc": "One of the first compact AMG sedans — a hand-built V8 hiding in a discreet C-Class body.",
+"specs": {
+"tipo": "Sports Sedan",
+"motor": "V8",
+"cil": "4.3 L (4266 cc)",
+"hp": "306 HP",
+"trans": "5-speed automatic",
+"frenos": "4-wheel disc",
+"vel": "250 km/h (limited)"
+}
 },
 {
 "plate": "A9L - 161",
@@ -97,7 +161,17 @@
 "name": "Porsche 911 Turbo",
 "brand": "Porsche",
 "model": "911 Turbo (993)",
-"year": "1996"
+"year": "1996",
+"desc": "The last air-cooled 911 Turbo — twin turbos and all-wheel drive made it a giant-slayer and an instant legend.",
+"specs": {
+"tipo": "Sports Coupe",
+"motor": "Twin-turbo flat-6",
+"cil": "3.6 L (3600 cc)",
+"hp": "408 HP",
+"trans": "6-speed manual",
+"frenos": "4-wheel disc",
+"vel": "290 km/h"
+}
 },
 {
 "plate": "ABR - 223",
@@ -164,7 +238,17 @@
 "name": "Plymouth Satellite",
 "brand": "Plymouth",
 "model": "Satellite",
-"year": "1966"
+"year": "1966",
+"desc": "A clean-lined mid-size Mopar of the muscle era, blending family practicality with available big-block power.",
+"specs": {
+"tipo": "Hardtop",
+"motor": "V8",
+"cil": "6.3 L (383 cu in)",
+"hp": "325 HP",
+"trans": "3-speed automatic",
+"frenos": "Drum",
+"vel": "≈ 190 km/h"
+}
 },
 {
 "plate": "AHE - 474",
@@ -231,7 +315,17 @@
 "name": "Porsche Cayman GT4",
 "brand": "Porsche",
 "model": "Cayman GT4 (981)",
-"year": "2016"
+"year": "2016",
+"desc": "The mid-engined Cayman finally unleashed — a 911-derived flat-six and GT hardware in a compact, pure driver's coupe.",
+"specs": {
+"tipo": "Sports Coupe",
+"motor": "Flat-6 (mid)",
+"cil": "3.8 L (3800 cc)",
+"hp": "385 HP",
+"trans": "6-speed manual",
+"frenos": "4-wheel disc",
+"vel": "295 km/h"
+}
 },
 {
 "plate": "ALO-686",
@@ -269,7 +363,17 @@
 "name": "Lotus Exige S",
 "brand": "Lotus",
 "model": "Exige S (V6)",
-"year": "2013"
+"year": "2013",
+"desc": "Featherweight Lotus philosophy with a supercharged V6 — brutal acceleration and telepathic handling.",
+"specs": {
+"tipo": "Sports Coupe",
+"motor": "Supercharged V6",
+"cil": "3.5 L (3456 cc)",
+"hp": "345 HP",
+"trans": "6-speed manual",
+"frenos": "4-wheel disc",
+"vel": "274 km/h"
+}
 },
 {
 "plate": "AMMP - 057",
@@ -277,7 +381,11 @@
 "d3": true,
 "name": "Brass-era Light Car",
 "model": "Brass-era Light Car",
-"year": "1915"
+"year": "1915",
+"desc": "A rare brass-era light car, hand-built in the earliest days of motoring.",
+"specs": {
+"tipo": "Light Car"
+}
 },
 {
 "plate": "APC - 142",
@@ -286,7 +394,17 @@
 "name": "Ford Mustang GT",
 "brand": "Ford",
 "model": "Mustang GT (Fox Body, Shelby)",
-"year": "1990"
+"year": "1990",
+"desc": "The Fox-body 5.0 — light, rear-drive and endlessly tunable, the car that kept the V8 pony-car flame alive in the '80s.",
+"specs": {
+"tipo": "Muscle car",
+"motor": "V8",
+"cil": "5.0 L (302 cu in)",
+"hp": "225 HP",
+"trans": "5-speed manual",
+"frenos": "4-wheel disc",
+"vel": "≈ 220 km/h"
+}
 },
 {
 "plate": "APX - 114",
@@ -295,7 +413,17 @@
 "name": "Ford Mustang Shelby GT350",
 "brand": "Ford",
 "model": "Mustang Shelby GT350",
-"year": "2016"
+"year": "2016",
+"desc": "A flat-plane-crank 5.2 V8 screaming to 8,250 rpm — the most track-focused Mustang Ford had ever built.",
+"specs": {
+"tipo": "Muscle car",
+"motor": "Flat-plane V8",
+"cil": "5.2 L (5163 cc)",
+"hp": "526 HP",
+"trans": "6-speed manual",
+"frenos": "4-wheel disc (Brembo)",
+"vel": "≈ 290 km/h"
+}
 },
 {
 "plate": "ASV - 385",
@@ -304,7 +432,17 @@
 "name": "Porsche 911 GT3 RS",
 "brand": "Porsche",
 "model": "911 GT3 RS (991.1)",
-"year": "2016"
+"year": "2016",
+"desc": "A 4.0-liter, naturally aspirated flat-six with a wing to match — Porsche's road-legal race car.",
+"specs": {
+"tipo": "Sports Coupe",
+"motor": "Flat-6",
+"cil": "4.0 L (3996 cc)",
+"hp": "500 HP",
+"trans": "7-speed PDK",
+"frenos": "Carbon-ceramic disc",
+"vel": "310 km/h"
+}
 },
 {
 "plate": "ASX - 457",
@@ -313,7 +451,17 @@
 "name": "Aston Martin DB9",
 "brand": "Aston Martin",
 "model": "DB9",
-"year": "2013"
+"year": "2013",
+"desc": "A hand-built British grand tourer with a sonorous V12 — beauty and pace in effortless measure.",
+"specs": {
+"tipo": "Grand Tourer",
+"motor": "V12",
+"cil": "5.9 L (5935 cc)",
+"hp": "510 HP",
+"trans": "6-speed automatic",
+"frenos": "4-wheel disc",
+"vel": "295 km/h"
+}
 },
 {
 "plate": "AUE - 622",
@@ -380,7 +528,17 @@
 "name": "Dodge Challenger R/T",
 "brand": "Dodge",
 "model": "Challenger R/T",
-"year": "1970"
+"year": "1970",
+"desc": "A first-year E-body icon — long hood, wide stance and big-block thunder, the definitive American muscle car.",
+"specs": {
+"tipo": "Muscle car",
+"motor": "V8 (440)",
+"cil": "7.2 L (440 cu in)",
+"hp": "375 HP",
+"trans": "4-speed manual",
+"frenos": "Drum",
+"vel": "≈ 210 km/h"
+}
 },
 {
 "plate": "AWZ - 629",
@@ -389,7 +547,17 @@
 "name": "Aston Martin Vanquish",
 "brand": "Aston Martin",
 "model": "Vanquish",
-"year": "2014"
+"year": "2014",
+"desc": "Aston's carbon-bodied flagship GT — a 568-hp V12 wrapped in one of the most beautiful bodies of its era.",
+"specs": {
+"tipo": "Grand Tourer",
+"motor": "V12",
+"cil": "5.9 L (5935 cc)",
+"hp": "568 HP",
+"trans": "8-speed automatic",
+"frenos": "Carbon-ceramic disc",
+"vel": "295 km/h"
+}
 },
 {
 "plate": "AXL - 068",
@@ -543,7 +711,17 @@
 "name": "Ford Mustang GT",
 "brand": "Ford",
 "model": "Mustang GT (Fox Body, Shelby)",
-"year": "1990"
+"year": "1990",
+"desc": "A Shelby-tuned Fox-body — light, rear-drive V8 muscle carrying the Shelby name into the modern era.",
+"specs": {
+"tipo": "Muscle car",
+"motor": "V8",
+"cil": "5.0 L (302 cu in)",
+"hp": "225 HP",
+"trans": "5-speed manual",
+"frenos": "4-wheel disc",
+"vel": "≈ 220 km/h"
+}
 },
 {
 "plate": "B4Y - 274",
@@ -639,7 +817,17 @@
 "name": "BMW 1 Series M Coupe",
 "brand": "BMW",
 "model": "1 Series M Coupe (E82)",
-"year": "2011"
+"year": "2011",
+"desc": "A pint-sized cult hero — wide arches, a twin-turbo six and a manual gearbox made the 1M an instant modern classic.",
+"specs": {
+"tipo": "Sports Coupe",
+"motor": "Twin-turbo inline-6",
+"cil": "3.0 L (2979 cc)",
+"hp": "340 HP",
+"trans": "6-speed manual",
+"frenos": "4-wheel disc",
+"vel": "250 km/h (limited)"
+}
 },
 {
 "plate": "B7Q - 401",
@@ -648,7 +836,17 @@
 "name": "BMW M6",
 "brand": "BMW",
 "model": "M6 (E63)",
-"year": "2007"
+"year": "2007",
+"desc": "A Formula 1-inspired V10 revving to 8,250 rpm in a sleek grand-touring coupe — excess in the best way.",
+"specs": {
+"tipo": "Grand Tourer",
+"motor": "V10",
+"cil": "5.0 L (4999 cc)",
+"hp": "500 HP",
+"trans": "7-speed SMG",
+"frenos": "4-wheel disc",
+"vel": "250 km/h (limited)"
+}
 },
 {
 "plate": "BAW - 297",
@@ -686,7 +884,17 @@
 "name": "Porsche 911 GT2 RS",
 "brand": "Porsche",
 "model": "911 GT2 RS (991.2)",
-"year": "2018"
+"year": "2018",
+"desc": "The most powerful road-going 911 of its day — 700 hp, rear-wheel drive and a Nürburgring record to its name.",
+"specs": {
+"tipo": "Sports Coupe",
+"motor": "Twin-turbo flat-6",
+"cil": "3.8 L (3800 cc)",
+"hp": "700 HP",
+"trans": "7-speed PDK",
+"frenos": "Carbon-ceramic disc",
+"vel": "340 km/h"
+}
 },
 {
 "plate": "BNK - 531",
@@ -724,7 +932,17 @@
 "name": "Mercedes-Benz SLK 230 Kompressor",
 "brand": "Mercedes-Benz",
 "model": "SLK 230 K (R170)",
-"year": "2001"
+"year": "2001",
+"desc": "A folding-hardtop roadster that brought open-top Mercedes motoring to a new audience — supercharged and stylish.",
+"specs": {
+"tipo": "Roadster",
+"motor": "Supercharged inline-4",
+"cil": "2.3 L (2295 cc)",
+"hp": "197 HP",
+"trans": "5-speed automatic",
+"frenos": "4-wheel disc",
+"vel": "240 km/h"
+}
 },
 {
 "plate": "BPD - 280",
@@ -733,7 +951,17 @@
 "name": "BMW 850i",
 "brand": "BMW",
 "model": "850i (E31)",
-"year": "1992"
+"year": "1992",
+"desc": "A pop-up-headlight, V12-powered grand tourer — BMW's futuristic '90s flagship and a design landmark.",
+"specs": {
+"tipo": "Grand Tourer",
+"motor": "V12",
+"cil": "5.0 L (4988 cc)",
+"hp": "300 HP",
+"trans": "6-speed manual",
+"frenos": "4-wheel disc",
+"vel": "250 km/h (limited)"
+}
 },
 {
 "plate": "BSZ - 611",
@@ -742,7 +970,17 @@
 "name": "Maserati GranTurismo MC",
 "brand": "Maserati",
 "model": "GranTurismo MC",
-"year": "2018"
+"year": "2018",
+"desc": "A Ferrari-built V8 singing through an Italian grand tourer — sculpted by Pininfarina, thunderous by nature.",
+"specs": {
+"tipo": "Grand Tourer",
+"motor": "V8",
+"cil": "4.7 L (4691 cc)",
+"hp": "460 HP",
+"trans": "6-speed automatic",
+"frenos": "4-wheel disc",
+"vel": "301 km/h"
+}
 },
 {
 "plate": "BVS - 249",
@@ -780,7 +1018,17 @@
 "name": "Audi R8 V10",
 "brand": "Audi",
 "model": "R8 V10 (Type 42)",
-"year": "2010"
+"year": "2010",
+"desc": "A Lamborghini-derived V10 in an everyday-usable, all-wheel-drive supercar — the R8 that redefined Audi.",
+"specs": {
+"tipo": "Supercar",
+"motor": "V10 (mid)",
+"cil": "5.2 L (5204 cc)",
+"hp": "525 HP",
+"trans": "6-speed manual",
+"frenos": "4-wheel disc",
+"vel": "316 km/h"
+}
 },
 {
 "plate": "C4Q - 097",
@@ -847,7 +1095,17 @@
 "name": "BMW M5",
 "brand": "BMW",
 "model": "M5 (F10)",
-"year": "2013"
+"year": "2013",
+"desc": "A 560-hp twin-turbo super-sedan — four doors, a big trunk and the pace to shame supercars.",
+"specs": {
+"tipo": "Sports Sedan",
+"motor": "Twin-turbo V8",
+"cil": "4.4 L (4395 cc)",
+"hp": "560 HP",
+"trans": "7-speed DCT",
+"frenos": "4-wheel disc",
+"vel": "250 km/h (limited)"
+}
 },
 {
 "plate": "CPL - 048",
@@ -943,7 +1201,17 @@
 "name": "Ferrari Testarossa",
 "brand": "Ferrari",
 "model": "Testarossa",
-"year": "1988"
+"year": "1988",
+"desc": "The side-strake '80s icon — a 12-cylinder Ferrari that adorned a million bedroom walls and defined an era.",
+"specs": {
+"tipo": "Supercar",
+"motor": "Flat-12 (mid)",
+"cil": "4.9 L (4943 cc)",
+"hp": "390 HP",
+"trans": "5-speed manual",
+"frenos": "4-wheel disc",
+"vel": "290 km/h"
+}
 },
 {
 "plate": "D5Z - 370",
@@ -952,7 +1220,17 @@
 "name": "Porsche 911 Turbo",
 "brand": "Porsche",
 "model": "911 Turbo (930)",
-"year": "1986"
+"year": "1986",
+"desc": "The original widow-maker — turbocharged, whale-tailed and thrilling, the 930 made the 911 a supercar.",
+"specs": {
+"tipo": "Sports Coupe",
+"motor": "Turbo flat-6",
+"cil": "3.3 L (3299 cc)",
+"hp": "300 HP",
+"trans": "4-speed manual",
+"frenos": "4-wheel disc",
+"vel": "260 km/h"
+}
 },
 {
 "plate": "D6R - 546",
@@ -961,7 +1239,17 @@
 "name": "Mercedes-Benz C55 AMG",
 "brand": "Mercedes-Benz",
 "model": "C55 AMG (W203)",
-"year": "2005"
+"year": "2005",
+"desc": "A naturally aspirated V8 hand-built by AMG in a compact sedan — subtle looks, serious pace.",
+"specs": {
+"tipo": "Sports Sedan",
+"motor": "V8",
+"cil": "5.4 L (5439 cc)",
+"hp": "367 HP",
+"trans": "5-speed automatic",
+"frenos": "4-wheel disc",
+"vel": "250 km/h (limited)"
+}
 },
 {
 "plate": "D8X - 197",
@@ -970,7 +1258,17 @@
 "name": "Nissan GT-R",
 "brand": "Nissan",
 "model": "GT-R (R35)",
-"year": "2012"
+"year": "2012",
+"desc": "Godzilla — a twin-turbo, all-wheel-drive giant-slayer that humbled cars costing three times as much.",
+"specs": {
+"tipo": "Supercar",
+"motor": "Twin-turbo V6",
+"cil": "3.8 L (3799 cc)",
+"hp": "530 HP",
+"trans": "6-speed DCT",
+"frenos": "4-wheel disc",
+"vel": "315 km/h"
+}
 },
 {
 "plate": "D9Z - 460",
@@ -979,7 +1277,17 @@
 "name": "Ford Mustang Shelby GT500",
 "brand": "Ford",
 "model": "Mustang Shelby GT500 (S197)",
-"year": "2008"
+"year": "2008",
+"desc": "A supercharged 5.4 V8 with Shelby heritage — brutal straight-line muscle in modern retro clothing.",
+"specs": {
+"tipo": "Muscle car",
+"motor": "Supercharged V8",
+"cil": "5.4 L (5409 cc)",
+"hp": "500 HP",
+"trans": "6-speed manual",
+"frenos": "4-wheel disc (Brembo)",
+"vel": "250 km/h"
+}
 },
 {
 "plate": "F0I - 108",
@@ -1075,7 +1383,17 @@
 "name": "Ford Mustang GT Convertible",
 "brand": "Ford",
 "model": "Mustang GT Convertible (Fox Body)",
-"year": "1990"
+"year": "1990",
+"desc": "The Fox-body 5.0 with the top down — light, rear-drive and tunable, an '80s pony-car in convertible form.",
+"specs": {
+"tipo": "Muscle car",
+"motor": "V8",
+"cil": "5.0 L (302 cu in)",
+"hp": "225 HP",
+"trans": "5-speed manual",
+"frenos": "4-wheel disc",
+"vel": "≈ 215 km/h"
+}
 },
 {
 "plate": "F5J - 319",
@@ -1084,7 +1402,17 @@
 "name": "McLaren MP4-12C",
 "brand": "McLaren",
 "model": "MP4-12C",
-"year": "2012"
+"year": "2012",
+"desc": "McLaren's return to road cars — a carbon-tubbed, twin-turbo V8 supercar of astonishing, clinical speed.",
+"specs": {
+"tipo": "Supercar",
+"motor": "Twin-turbo V8 (mid)",
+"cil": "3.8 L (3799 cc)",
+"hp": "592 HP",
+"trans": "7-speed DCT",
+"frenos": "Carbon-ceramic disc",
+"vel": "330 km/h"
+}
 },
 {
 "plate": "FOL - 661",
@@ -1093,7 +1421,17 @@
 "name": "Porsche 911 Turbo S",
 "brand": "Porsche",
 "model": "911 Turbo S (991.1)",
-"year": "2015"
+"year": "2015",
+"desc": "All-wheel-drive, twin-turbo and devastatingly quick — the everyday supercar that does everything brilliantly.",
+"specs": {
+"tipo": "Sports Coupe",
+"motor": "Twin-turbo flat-6",
+"cil": "3.8 L (3800 cc)",
+"hp": "560 HP",
+"trans": "7-speed PDK",
+"frenos": "Carbon-ceramic disc",
+"vel": "318 km/h"
+}
 },
 {
 "plate": "SI PLACA 20",
@@ -1102,7 +1440,17 @@
 "name": "Chevrolet Special DeLuxe",
 "brand": "Chevrolet",
 "model": "Special DeLuxe",
-"year": "1940"
+"year": "1940",
+"desc": "A pre-war Chevrolet in its Sunday best — the Special DeLuxe brought style and value to Main Street America.",
+"specs": {
+"tipo": "Classic Sedan",
+"motor": "Inline-6",
+"cil": "3.5 L (216 cu in)",
+"hp": "85 HP",
+"trans": "3-speed manual",
+"frenos": "Hydraulic drum",
+"vel": "≈ 130 km/h"
+}
 },
 {
 "plate": "SIN PLACA 10",
@@ -1111,7 +1459,17 @@
 "name": "Chevrolet 3100 Pickup",
 "brand": "Chevrolet",
 "model": "3100 Pickup (Advance Design)",
-"year": "1950"
+"year": "1950",
+"desc": "An Advance-Design half-ton — the postwar workhorse whose rounded charm made it an enduring American icon.",
+"specs": {
+"tipo": "Pickup",
+"motor": "Inline-6",
+"cil": "3.5 L (216 cu in)",
+"hp": "92 HP",
+"trans": "3-speed manual",
+"frenos": "Hydraulic drum",
+"vel": "≈ 110 km/h"
+}
 },
 {
 "plate": "SIN PLACA 11",
@@ -1119,7 +1477,11 @@
 "d3": true,
 "name": "1930s European Roadster",
 "model": "1930s European Roadster",
-"year": "1935"
+"year": "1935",
+"desc": "A charming small European roadster from the 1930s — hand-built and delicately proportioned.",
+"specs": {
+"tipo": "Roadster"
+}
 },
 {
 "plate": "SIN PLACA 12",
@@ -1128,7 +1490,17 @@
 "name": "Mazda R360 Coupe",
 "brand": "Mazda",
 "model": "R360 Coupe",
-"year": "1962"
+"year": "1962",
+"desc": "Mazda's first passenger car — a tiny, feather-light kei coupe that put postwar Japan on wheels.",
+"specs": {
+"tipo": "Kei Microcar",
+"motor": "Air-cooled V-twin (rear)",
+"cil": "356 cc",
+"hp": "16 HP",
+"trans": "4-speed manual",
+"frenos": "Drum",
+"vel": "≈ 90 km/h"
+}
 },
 {
 "plate": "SIN PLACA 13",
@@ -1137,7 +1509,17 @@
 "name": "Ford Capri",
 "brand": "Ford",
 "model": "Capri (Mk III)",
-"year": "1980"
+"year": "1980",
+"desc": "'The car you always promised yourself' — Europe's affordable fastback answer to the Mustang.",
+"specs": {
+"tipo": "Coupe",
+"motor": "V6",
+"cil": "3.0 L (2994 cc)",
+"hp": "138 HP",
+"trans": "4-speed manual",
+"frenos": "Front disc / rear drum",
+"vel": "≈ 195 km/h"
+}
 },
 {
 "plate": "SIN PLACA 14",
@@ -1146,7 +1528,17 @@
 "name": "Packard Super Eight",
 "brand": "Packard",
 "model": "Super Eight",
-"year": "1936"
+"year": "1936",
+"desc": "Full Classic-era grandeur — a straight-eight Packard of imperious presence from America's finest marque.",
+"specs": {
+"tipo": "Luxury Sedan",
+"motor": "Inline-8",
+"cil": "5.3 L (320 cu in)",
+"hp": "130 HP",
+"trans": "3-speed manual",
+"frenos": "Hydraulic drum",
+"vel": "≈ 145 km/h"
+}
 },
 {
 "plate": "SIN PLACA 15",
@@ -1155,7 +1547,17 @@
 "name": "Auburn 852 Supercharged",
 "brand": "Auburn",
 "model": "852 Supercharged",
-"year": "1936"
+"year": "1936",
+"desc": "A supercharged Art Deco masterpiece — external chrome exhausts and a guaranteed 100 mph in period.",
+"specs": {
+"tipo": "Luxury Sport",
+"motor": "Supercharged inline-8",
+"cil": "4.6 L (280 cu in)",
+"hp": "150 HP",
+"trans": "3-speed manual",
+"frenos": "Hydraulic drum",
+"vel": "≈ 160 km/h"
+}
 },
 {
 "plate": "SIN PLACA 16",
@@ -1164,7 +1566,17 @@
 "name": "Packard Deluxe Eight Phaeton",
 "brand": "Packard",
 "model": "Deluxe Eight Phaeton",
-"year": "1930"
+"year": "1930",
+"desc": "A dual-cowl phaeton from Packard's golden age — coachbuilt elegance for the Jazz Age elite.",
+"specs": {
+"tipo": "Phaeton",
+"motor": "Inline-8",
+"cil": "6.3 L (385 cu in)",
+"hp": "106 HP",
+"trans": "4-speed manual",
+"frenos": "Mechanical drum",
+"vel": "≈ 130 km/h"
+}
 },
 {
 "plate": "SIN PLACA 17",
@@ -1173,7 +1585,17 @@
 "name": "Packard Six Roadster",
 "brand": "Packard",
 "model": "Six Roadster",
-"year": "1926"
+"year": "1926",
+"desc": "A mid-1920s Packard roadster — understated craftsmanship from the master motor-builders of the world.",
+"specs": {
+"tipo": "Roadster",
+"motor": "Inline-6",
+"cil": "4.7 L (289 cu in)",
+"hp": "60 HP",
+"trans": "3-speed manual",
+"frenos": "Mechanical drum",
+"vel": "≈ 110 km/h"
+}
 },
 {
 "plate": "SIN PLACA 18",
@@ -1181,7 +1603,11 @@
 "d3": true,
 "name": "1920s American Phaeton",
 "model": "1920s American Phaeton",
-"year": "1928"
+"year": "1928",
+"desc": "A stately open phaeton from the late 1920s, restored to touring splendor.",
+"specs": {
+"tipo": "Phaeton"
+}
 },
 {
 "plate": "SIN PLACA 19",
@@ -1190,7 +1616,17 @@
 "name": "Cadillac V8 Town Sedan",
 "brand": "Cadillac",
 "model": "V8 Town Sedan",
-"year": "1932"
+"year": "1932",
+"desc": "Depression-era Cadillac dignity — a smooth V8 and coachbuilt formality from GM's flagship.",
+"specs": {
+"tipo": "Luxury Sedan",
+"motor": "V8",
+"cil": "5.8 L (353 cu in)",
+"hp": "115 HP",
+"trans": "3-speed manual",
+"frenos": "Mechanical drum",
+"vel": "≈ 130 km/h"
+}
 },
 {
 "plate": "SIN PLACA 21",
@@ -1199,7 +1635,17 @@
 "name": "Chrysler Airflow",
 "brand": "Chrysler",
 "model": "Airflow",
-"year": "1934"
+"year": "1934",
+"desc": "Aerodynamics before its time — the Airflow's radical streamlined body was decades ahead, if too bold for buyers.",
+"specs": {
+"tipo": "Streamliner Sedan",
+"motor": "Inline-8",
+"cil": "4.9 L (299 cu in)",
+"hp": "122 HP",
+"trans": "3-speed manual",
+"frenos": "Hydraulic drum",
+"vel": "≈ 140 km/h"
+}
 },
 {
 "plate": "SIN PLACA 22",
@@ -1208,7 +1654,17 @@
 "name": "Chevrolet Superior Touring",
 "brand": "Chevrolet",
 "model": "Superior Touring",
-"year": "1924"
+"year": "1924",
+"desc": "An early-'20s open tourer — simple, sturdy and affordable, the Chevrolet that took on the Model T.",
+"specs": {
+"tipo": "Tourer",
+"motor": "Inline-4",
+"cil": "2.8 L (171 cu in)",
+"hp": "26 HP",
+"trans": "3-speed manual",
+"frenos": "Mechanical drum (rear)",
+"vel": "≈ 80 km/h"
+}
 },
 {
 "plate": "SIN PLACA 23",
@@ -1217,7 +1673,11 @@
 "name": "Renault Town Car",
 "brand": "Renault",
 "model": "Brass-era Town Car",
-"year": "1911"
+"year": "1911",
+"desc": "A brass-era Renault with the marque's signature coal-scuttle bonnet — Edwardian motoring at its most refined.",
+"specs": {
+"tipo": "Town Car"
+}
 },
 {
 "plate": "SIN PLACA 24",
@@ -1226,7 +1686,17 @@
 "name": "Renault Type AG Town Car",
 "brand": "Renault",
 "model": "Type AG Town Car",
-"year": "1910"
+"year": "1910",
+"desc": "The famed 'Taxi de la Marne' lineage — a Renault Type AG whose descendants once ferried Paris and carried troops.",
+"specs": {
+"tipo": "Town Car",
+"motor": "Inline-2",
+"cil": "1.2 L (1205 cc)",
+"hp": "9 HP",
+"trans": "3-speed manual",
+"frenos": "Mechanical drum (rear)",
+"vel": "≈ 50 km/h"
+}
 },
 {
 "plate": "SIN PLACA 25",
@@ -1234,7 +1704,11 @@
 "d3": true,
 "name": "Brass-era Tonneau",
 "model": "Brass-era Tonneau",
-"year": "1903"
+"year": "1903",
+"desc": "A turn-of-the-century tonneau with fringed surrey top — motoring in its pioneering, horseless-carriage infancy.",
+"specs": {
+"tipo": "Tonneau"
+}
 },
 {
 "plate": "SIN PLACA 26",
@@ -1243,7 +1717,11 @@
 "name": "Renault Runabout",
 "brand": "Renault",
 "model": "Brass-era Runabout",
-"year": "1908"
+"year": "1908",
+"desc": "An Edwardian Renault runabout — brass, red wheels and the elegant simplicity of early French engineering.",
+"specs": {
+"tipo": "Runabout"
+}
 },
 {
 "plate": "SIN PLACA 27",
@@ -1252,7 +1730,17 @@
 "name": "Dodge Challenger R/T",
 "brand": "Dodge",
 "model": "Challenger R/T",
-"year": "1970"
+"year": "1970",
+"desc": "A first-year E-body icon — long hood, wide stance and big-block thunder, the definitive American muscle car.",
+"specs": {
+"tipo": "Muscle car",
+"motor": "V8 (440)",
+"cil": "7.2 L (440 cu in)",
+"hp": "375 HP",
+"trans": "4-speed manual",
+"frenos": "Drum",
+"vel": "≈ 210 km/h"
+}
 },
 {
 "plate": "SIN PLACA 9",
@@ -1261,7 +1749,17 @@
 "name": "Volvo P1800",
 "brand": "Volvo",
 "model": "P1800",
-"year": "1966"
+"year": "1966",
+"desc": "The elegant Swedish coupe made famous by 'The Saint' — Italian-styled, Volvo-tough and effortlessly cool.",
+"specs": {
+"tipo": "Sports Coupe",
+"motor": "Inline-4",
+"cil": "1.8 L (1780 cc)",
+"hp": "100 HP",
+"trans": "4-speed manual",
+"frenos": "Front disc / rear drum",
+"vel": "≈ 175 km/h"
+}
 },
 {
 "plate": "T33 - 080",
@@ -1270,7 +1768,17 @@
 "name": "Volkswagen Beetle",
 "brand": "Volkswagen",
 "model": "Beetle (Type 1)",
-"year": "1965"
+"year": "1965",
+"desc": "The people's car — air-cooled, rear-engined and utterly charming, the most successful single design in history.",
+"specs": {
+"tipo": "Economy",
+"motor": "Flat-4 (air-cooled)",
+"cil": "1.3 L (1285 cc)",
+"hp": "50 HP",
+"trans": "4-speed manual",
+"frenos": "Drum",
+"vel": "≈ 120 km/h"
+}
 },
 {
 "plate": "V1A - 109",
@@ -1279,7 +1787,17 @@
 "name": "Dodge Viper SRT-10",
 "brand": "Dodge",
 "model": "Viper SRT-10 (ZB)",
-"year": "2008"
+"year": "2008",
+"desc": "An 8.4-liter V10 with no filter and no apologies — raw, brutal American supercar in its purest form.",
+"specs": {
+"tipo": "Supercar",
+"motor": "V10",
+"cil": "8.4 L (8382 cc)",
+"hp": "600 HP",
+"trans": "6-speed manual",
+"frenos": "4-wheel disc",
+"vel": "325 km/h"
+}
 },
 {
 "plate": "V8F - 130",
@@ -1288,7 +1806,17 @@
 "name": "Ferrari California T",
 "brand": "Ferrari",
 "model": "California T",
-"year": "2015"
+"year": "2015",
+"desc": "A folding-hardtop Ferrari GT with a turbocharged V8 — grand touring glamour with everyday usability.",
+"specs": {
+"tipo": "Grand Tourer",
+"motor": "Twin-turbo V8",
+"cil": "3.9 L (3855 cc)",
+"hp": "560 HP",
+"trans": "7-speed DCT",
+"frenos": "Carbon-ceramic disc",
+"vel": "316 km/h"
+}
 },
 {
 "plate": "VAB - 413",
@@ -1355,7 +1883,17 @@
 "name": "BMW i8",
 "brand": "BMW",
 "model": "i8",
-"year": "2015"
+"year": "2015",
+"desc": "A plug-in hybrid from the future — scissor doors, carbon construction and a three-cylinder heart that sips fuel.",
+"specs": {
+"tipo": "Hybrid Sports",
+"motor": "Turbo inline-3 + electric",
+"cil": "1.5 L + e-motor",
+"hp": "362 HP (combined)",
+"trans": "6-speed automatic",
+"frenos": "4-wheel disc",
+"vel": "250 km/h (limited)"
+}
 },
 {
 "plate": "sin placa 1",
@@ -1364,7 +1902,17 @@
 "name": "Mercedes-Benz SLS AMG",
 "brand": "Mercedes-Benz",
 "model": "SLS AMG",
-"year": "2011"
+"year": "2011",
+"desc": "Gullwing doors reborn — a front-mid V8 howl and a shape that pays homage to the legendary 300 SL.",
+"specs": {
+"tipo": "Supercar",
+"motor": "V8 (front-mid)",
+"cil": "6.3 L (6208 cc)",
+"hp": "571 HP",
+"trans": "7-speed DCT",
+"frenos": "Carbon-ceramic disc",
+"vel": "317 km/h"
+}
 },
 {
 "plate": "sin placa 2",
@@ -1373,7 +1921,17 @@
 "name": "Mercedes-Benz CLK 63 AMG Black Series",
 "brand": "Mercedes-Benz",
 "model": "CLK 63 AMG Black Series (C209)",
-"year": "2008"
+"year": "2008",
+"desc": "A wide-bodied, stripped-out AMG special — 507 naturally aspirated horses and race-car aggression.",
+"specs": {
+"tipo": "Sports Coupe",
+"motor": "V8",
+"cil": "6.2 L (6208 cc)",
+"hp": "507 HP",
+"trans": "7-speed automatic",
+"frenos": "4-wheel disc",
+"vel": "300 km/h"
+}
 },
 {
 "plate": "sin placa 3",
@@ -1382,7 +1940,17 @@
 "name": "Jaguar F-Type",
 "brand": "Jaguar",
 "model": "F-Type",
-"year": "2015"
+"year": "2015",
+"desc": "Jaguar's return to the two-seat sports car — a snarling supercharged engine and sculpted, sensuous lines.",
+"specs": {
+"tipo": "Sports Coupe",
+"motor": "Supercharged V6",
+"cil": "3.0 L (2995 cc)",
+"hp": "340 HP",
+"trans": "8-speed automatic",
+"frenos": "4-wheel disc",
+"vel": "260 km/h"
+}
 },
 {
 "plate": "sin placa 4",
@@ -1391,7 +1959,17 @@
 "name": "Porsche Boxster Spyder",
 "brand": "Porsche",
 "model": "Boxster Spyder (987)",
-"year": "2011"
+"year": "2011",
+"desc": "The purest 987 Boxster — lightweight, manual-topped and flat-six powered, built for the pure joy of driving.",
+"specs": {
+"tipo": "Roadster",
+"motor": "Flat-6 (mid)",
+"cil": "3.4 L (3436 cc)",
+"hp": "320 HP",
+"trans": "6-speed manual",
+"frenos": "4-wheel disc",
+"vel": "267 km/h"
+}
 },
 {
 "plate": "sin placa 5",
@@ -1400,7 +1978,17 @@
 "name": "Alfa Romeo 4C",
 "brand": "Alfa Romeo",
 "model": "4C",
-"year": "2015"
+"year": "2015",
+"desc": "A carbon-tubbed Italian featherweight — no power steering, no filler, just a turbo four and pure feedback.",
+"specs": {
+"tipo": "Sports Coupe",
+"motor": "Turbo inline-4 (mid)",
+"cil": "1.75 L (1742 cc)",
+"hp": "240 HP",
+"trans": "6-speed DCT",
+"frenos": "4-wheel disc",
+"vel": "258 km/h"
+}
 },
 {
 "plate": "sin placa 6",
@@ -1409,7 +1997,17 @@
 "name": "Abarth 695",
 "brand": "Abarth",
 "model": "695",
-"year": "2016"
+"year": "2016",
+"desc": "A scorpion-badged pocket rocket — the tiny Fiat 500 transformed into a snarling, track-ready hot hatch.",
+"specs": {
+"tipo": "Hot Hatch",
+"motor": "Turbo inline-4",
+"cil": "1.4 L (1368 cc)",
+"hp": "180 HP",
+"trans": "5-speed manual",
+"frenos": "4-wheel disc",
+"vel": "225 km/h"
+}
 },
 {
 "plate": "sin placa 7",
@@ -1418,7 +2016,17 @@
 "name": "Ford Mustang Shelby GT500",
 "brand": "Ford",
 "model": "Mustang Shelby GT500 (S197)",
-"year": "2008"
+"year": "2008",
+"desc": "A supercharged 5.4 V8 with Shelby heritage — brutal straight-line muscle in modern retro clothing.",
+"specs": {
+"tipo": "Muscle car",
+"motor": "Supercharged V8",
+"cil": "5.4 L (5409 cc)",
+"hp": "500 HP",
+"trans": "6-speed manual",
+"frenos": "4-wheel disc (Brembo)",
+"vel": "250 km/h"
+}
 },
 {
 "plate": "sin placa 8",
@@ -1427,6 +2035,16 @@
 "name": "Ford Mustang Shelby GT500",
 "brand": "Ford",
 "model": "Mustang Shelby GT500 (S197)",
-"year": "2012"
+"year": "2012",
+"desc": "The facelifted Shelby GT500 — a supercharged 5.4 V8 and a cobra badge promising serious velocity.",
+"specs": {
+"tipo": "Muscle car",
+"motor": "Supercharged V8",
+"cil": "5.4 L (5409 cc)",
+"hp": "550 HP",
+"trans": "6-speed manual",
+"frenos": "4-wheel disc (Brembo)",
+"vel": "≈ 260 km/h"
+}
 }
 ]
