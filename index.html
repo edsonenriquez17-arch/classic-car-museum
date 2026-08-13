@@ -371,6 +371,38 @@
   .pg-btn.nav{font-size:20px;line-height:1}
   .pg-btn:disabled{opacity:.35;cursor:default}
   .pg-dots{align-self:center;color:#9a9a9a;padding:0 2px}
+  /* service card as link */
+  .card.card-link{display:flex;flex-direction:column;text-decoration:none;color:inherit}
+  .card.card-link .link-arrow{margin-top:auto;padding-top:14px;color:var(--red);letter-spacing:1.5px;font-size:13px;text-transform:uppercase;display:inline-flex;align-items:center;gap:8px}
+  .card.card-link .link-arrow svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.8}
+  .card.card-link:hover .link-arrow{gap:12px}
+  /* ---------- GOURMET CAFÉ (menu page) ---------- */
+  #page-cafe{padding:0 0 80px;background:#f5f4f2}
+  .cafe-hero{background:#0d0d10;color:#fff;padding:120px 0 56px;text-align:center}
+  .cafe-hero .back-btn{margin-bottom:30px;color:#9a9a9a}
+  .cafe-hero .back-btn:hover{color:var(--gold)}
+  .cafe-brand{font-family:var(--display);font-weight:700;letter-spacing:10px;font-size:clamp(30px,5vw,46px)}
+  .cafe-tag{color:var(--gold);letter-spacing:6px;font-size:13px;text-transform:uppercase;margin-top:10px}
+  .cafe-title{font-family:var(--display);font-weight:600;font-size:clamp(30px,4vw,52px);margin:26px 0 14px}
+  .cafe-lead{max-width:640px;margin:0 auto;color:#c9c9c9;font-size:16px;line-height:1.7}
+  .cafe-hint{color:#7a7a7a;font-size:13px;letter-spacing:1px;margin-top:26px}
+  .cafe-menu{max-width:820px;margin:44px auto 0;display:flex;flex-direction:column;gap:14px}
+  .cm-block{background:var(--paper);border:1px solid var(--line);border-radius:12px;overflow:hidden;transition:box-shadow .2s}
+  .cm-block.open{box-shadow:0 14px 34px rgba(0,0,0,.08)}
+  .cm-cat{width:100%;display:flex;align-items:center;justify-content:space-between;gap:14px;background:transparent;border:0;cursor:pointer;padding:20px 24px;text-align:left}
+  .cm-cat .cm-name{font-family:var(--display);font-weight:600;font-size:clamp(17px,2.2vw,21px);letter-spacing:.5px;color:#141414}
+  .cm-cat .cm-right{display:flex;align-items:center;gap:14px;color:#9a9a9a}
+  .cm-cat .cm-count{background:var(--bg);color:#555;font-size:12px;padding:3px 11px;border-radius:20px;letter-spacing:1px}
+  .cm-cat .cm-chev{width:20px;height:20px;transition:transform .3s}
+  .cm-block.open .cm-chev{transform:rotate(180deg)}
+  .cm-block.open .cm-name{color:var(--red)}
+  .cm-items{max-height:0;overflow:hidden;transition:max-height .45s ease}
+  .cm-block.open .cm-items{max-height:2600px}
+  .cm-list{padding:2px 24px 20px;border-top:1px solid var(--line)}
+  .cm-item{padding:14px 0;border-bottom:1px dashed rgba(0,0,0,.09)}
+  .cm-item:last-child{border-bottom:0}
+  .cm-item .in{font-family:var(--display);font-weight:600;font-size:15px;letter-spacing:.4px;color:#1a1a1a;text-transform:uppercase}
+  .cm-item .id{color:#6a6a6a;font-size:14px;line-height:1.5;margin-top:4px}
 
   /* ---------- VEHICLE DATA SHEET (internal) ---------- */
   #page-vehicle{padding:0;background:var(--bg)}
@@ -563,6 +595,12 @@
     #carGrid.cols-2 .col-card .link-arrow svg{width:15px;height:15px}
     .pc-pager{margin:32px 0 4px;gap:7px}
     .pg-btn{min-width:40px;height:40px;font-size:14px}
+    /* gourmet café mobile */
+    .cafe-hero{padding:100px 0 40px}
+    .cafe-menu{margin-top:32px;gap:12px}
+    .cm-cat{padding:16px 18px}
+    .cm-list{padding:2px 18px 16px}
+    .card.card-link .link-arrow{justify-content:center}
     /* stats: horizontal row (3 across), smaller text — like desktop */
     .pc-stats{grid-template-columns:repeat(3,1fr);gap:0;padding:18px 6px;transform:translateY(24px)}
     .stat{padding:2px 8px;border-left-width:2px}
@@ -614,9 +652,9 @@
       <li><a href="#p-collection" data-i="nav_collection">Collection</a></li>
       <li><a href="#p-experience" data-i="nav_experience">Experience</a></li>
       <li><a href="#exp3d" data-i="nav_360">360° Tour</a></li>
-      <li><a href="#legacy" data-i="nav_about">About</a></li>
-      <li><a href="#contact" data-i="nav_contact">Contact</a></li>
-      <li><a href="#contact" data-i="nav_book">Book</a></li>
+      <li><a href="#p-cafe" data-i="nav_cafe">Gourmet Café</a></li>
+      <li><a href="#p-contact" data-i="nav_contact">Contact</a></li>
+      <li><a href="#p-contact" data-i="nav_book">Book</a></li>
       <li>
         <div class="lang">
           <button data-lang="en" class="active">EN</button>
@@ -653,13 +691,13 @@
     <div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M15 9l-2 6-4-2 2-6z" fill="#fff" stroke="none"/></svg></div>
     <h3 data-i="p1_t">Book your private tour</h3>
     <p data-i="p1_d">Reserve a guided visit and step into an unrepeatable collection.</p>
-    <a href="#contact" class="link-arrow" data-i="visit_info">Visit info <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <a href="#p-contact" class="link-arrow" data-i="visit_info">Visit info <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
   </div>
   <div class="panel wine">
     <div class="ic"><svg viewBox="0 0 24 24"><path d="M4 11h13a3 3 0 0 1 0 6H8a4 4 0 0 1-4-4z"/><path d="M17 11h2a2 2 0 0 1 0 4h-2"/><path d="M8 4v2M11 3v3M14 4v2"/></svg></div>
     <h3 data-i="p2_t">Café menu</h3>
     <p data-i="p2_d">Peruvian contemporary cuisine inside the Museum by Chef Carla Navea.</p>
-    <a href="#experiences" class="link-arrow" data-i="visit_info">Visit info <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <a href="#p-cafe" class="link-arrow" data-i="visit_info">Visit info <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
   </div>
 </section>
 
@@ -754,11 +792,12 @@
         <h4 data-i="s3_t">Private Sales</h4>
         <p data-i="s3_d">Exclusive one-on-one transactions for high-value or rare vehicles.</p>
       </div>
-      <div class="card">
+      <a href="#p-cafe" class="card card-link">
         <div class="ic"><svg viewBox="0 0 24 24"><path d="M4 9h13v3.5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5z"/><path d="M17 10h2.2a2.3 2.3 0 0 1 0 4.6H17"/><path d="M8 2.5c-.6 1 .6 1.7 0 2.7M12 2.5c-.6 1 .6 1.7 0 2.7"/></svg></div>
         <h4 data-i="s4_t">Gourmet Café</h4>
         <p data-i="s4_d">Italian &amp; Peruvian fusion.</p>
-      </div>
+        <span class="link-arrow" data-i="visit_info">Visit info <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
     </div>
   </div>
 </section>
@@ -780,8 +819,9 @@
 </section>
 
 <!-- CONTACT -->
-<section class="contact shared-zone" id="contact">
+<section class="subpage" id="page-contact">
   <div class="wrap">
+    <a href="#top" class="back-btn" data-i="back_home">← Back to Home</a>
     <div class="contact-head">
       <h2 data-i="contact_t">Contact us</h2>
       <p data-i="c_sub">Plan your visit or book a private experience. Our bilingual team replies within 24 hours.</p>
@@ -835,6 +875,23 @@
         </div>
       </aside>
     </div>
+  </div>
+</section>
+
+<!-- INTERNAL PAGE · GOURMET CAFÉ (menu) -->
+<section class="subpage" id="page-cafe">
+  <div class="cafe-hero">
+    <div class="wrap">
+      <a href="#top" class="back-btn light" data-i="back_home">← Back to Home</a>
+      <div class="cafe-brand">ARTECH</div>
+      <div class="cafe-tag" data-i="cafe_tag">Café · Cocina · Bar</div>
+      <h2 class="cafe-title" data-i="cafe_title">Gourmet Café</h2>
+      <p class="cafe-lead" data-i="cafe_lead">Peruvian &amp; Italian fusion inside the Museum, by Chef Carla Navea. Tuesday to Sunday · 9 am – 7 pm.</p>
+      <div class="cafe-hint" data-i="cafe_hint">Tap a category to explore the menu</div>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="cafe-menu" id="cafeMenu"></div>
   </div>
 </section>
 
@@ -896,7 +953,7 @@
         <div class="d"><span data-i="exp3b">Peruvian contemporary cuisine inside the Museum. By</span> <b>Chef Carla Navea</b>. <span data-i="exp3c">Tuesday to Sunday · 9 am – 7 pm</span></div>
       </div>
     </div>
-    <div class="sp-cta"><a href="#contact" class="btn-red" data-i="pgx_cta">Book your experience</a></div>
+    <div class="sp-cta"><a href="#p-contact" class="btn-red" data-i="pgx_cta">Book your experience</a></div>
   </div>
 </section>
 
@@ -1043,7 +1100,8 @@
 <script>
 const dict = {
   en:{
-    nav_collection:"Collection",nav_experience:"Experience",nav_360:"360° Tour",nav_about:"About",nav_contact:"Contact",nav_book:"Book",
+    nav_collection:"Collection",nav_experience:"Experience",nav_360:"360° Tour",nav_about:"About",nav_cafe:"Gourmet Café",nav_contact:"Contact",nav_book:"Book",
+    cafe_tag:"Café · Cocina · Bar",cafe_title:"Gourmet Café",cafe_lead:"Peruvian & Italian fusion inside the Museum, by Chef Carla Navea. Tuesday to Sunday · 9 am – 7 pm.",cafe_hint:"Tap a category to explore the menu",
     hero_title:"Shift into history",hero_sub:"Home to the World's Oldest Car & Rare Porsche Collection",hero_btn:"360-degree tour",
     banner:"A LIVING MUSEUM OF MOTORING HISTORY",pl_tag:"SHIFT INTO HISTORY",pl_sub:"ARTECH · Lima, Perú",
     p1_t:"Book your private tour",p1_d:"Reserve a guided visit and step into an unrepeatable collection.",
@@ -1094,7 +1152,8 @@ const dict = {
     nl_ok:"Thank you for subscribing!",nl_need:"Please accept the privacy policy to continue."
   },
   es:{
-    nav_collection:"Colección",nav_experience:"Experiencia",nav_360:"Visita 360°",nav_about:"Nosotros",nav_contact:"Contacto",nav_book:"Reserva",
+    nav_collection:"Colección",nav_experience:"Experiencia",nav_360:"Visita 360°",nav_about:"Nosotros",nav_cafe:"Café Gourmet",nav_contact:"Contacto",nav_book:"Reserva",
+    cafe_tag:"Café · Cocina · Bar",cafe_title:"Café Gourmet",cafe_lead:"Fusión peruana e italiana dentro del Museo, por la Chef Carla Navea. Martes a Domingo · 9 am – 7 pm.",cafe_hint:"Toca una categoría para ver la carta",
     hero_title:"Un viaje a la historia",hero_sub:"Hogar del auto más antiguo del mundo y una rara colección Porsche",hero_btn:"Visita 360°",
     banner:"UN MUSEO VIVO DE LA HISTORIA DEL AUTOMÓVIL",pl_tag:"UN VIAJE A LA HISTORIA",pl_sub:"ARTECH · Lima, Perú",
     p1_t:"Reserva tu tour privado",p1_d:"Reserva una visita guiada y entra a una colección irrepetible.",
@@ -1160,6 +1219,7 @@ function apply(l){
   document.querySelectorAll('.lang button').forEach(b=>b.classList.toggle('active', b.dataset.lang===l));
   const pv=document.getElementById('page-vehicle');
   if(currentSlug && pv && pv.classList.contains('active')) showVehicle(currentSlug);
+  if(typeof renderCafeMenu==='function') renderCafeMenu();
 }
 document.querySelectorAll('.lang button').forEach(b=>b.addEventListener('click',()=>apply(b.dataset.lang)));
 
@@ -1182,7 +1242,7 @@ if('IntersectionObserver' in window && spyMap.length){
 }
 
 // internal pages router (same-window views: #p-experience / #p-collection)
-const innerPages={ 'p-experience':document.getElementById('page-experience'), 'p-collection':document.getElementById('page-collection'), 'p-vehicle':document.getElementById('page-vehicle') };
+const innerPages={ 'p-experience':document.getElementById('page-experience'), 'p-collection':document.getElementById('page-collection'), 'p-vehicle':document.getElementById('page-vehicle'), 'p-cafe':document.getElementById('page-cafe'), 'p-contact':document.getElementById('page-contact') };
 function route(){
   const key=location.hash.replace('#','');
   const page=innerPages[key];
@@ -1229,6 +1289,77 @@ function renderCollections(){
   if(grid) grid.innerHTML=CARS.map(c=>carCard(c)).join('');
 }
 function hcScroll(dir){const g=document.getElementById('homeGrid');if(!g)return;const card=g.querySelector('.col-card');const step=card?card.getBoundingClientRect().width+20:300;g.scrollBy({left:dir*step,behavior:'smooth'});}
+// ===== Gourmet Café menu (accordion) =====
+const CAFE_MENU=[
+ {t:{en:'Salads',es:'Ensaladas'},items:[
+   {n:'Burrata Capresse',d:'Tomate, pesto, pistachos, reducción de balsámico, arúgula, cilantro, aceite de oliva. (extra jamón serrano s/)'},
+   {n:'Ensalada de Cangrejo',d:'Pulpa de cangrejo, pepino rallado, zanahoria rayada, mayonesa de la casa, cebolla crocante.'},
+   {n:'Ensalada César',d:'Mix de lechugas, parmesano reggiano, tocino, crotones de poro gluten free. (extra pollo s/)'}]},
+ {t:{en:'Soups & Creams',es:'Sopas y Cremas'},items:[
+   {n:'Crema de Racacha',d:''},{n:'Sopa de la Semana',d:''}]},
+ {t:{en:'Sides & Extras',es:'Acompañamientos y Extras'},items:[
+   {n:'Papas Trufadas y Parmesano',d:'Parmesano rallado, perejil y trufa blanca.'},
+   {n:'Verduras a la Parrilla',d:'Espárragos, loche, zucchini, tomate cherry, champiñones.'},
+   {n:'Ensaladita Fresca ARTECH',d:''}]},
+ {t:{en:'To Share',es:'Para Picar'},items:[
+   {n:'Dip de Cangrejo Caliente',d:'Relleno dentro de un pan de masa madre.'},
+   {n:'Tartare de Atún',d:'Atún, ajonjolí, alcaparras, palta y mango.'},
+   {n:'Mollejas USA',d:''},
+   {n:'Tequeños de Queso Cajamarquino',d:'Queso auténtico cajamarquino artesanal pasteurizado, guacamole.'},
+   {n:'Bolitas de Racacha',d:'Tubérculo de la selva, relleno de jamón serrano y queso, acompañado de salsa huacatay.'},
+   {n:'Tortilla de Langostinos',d:'Huevos batidos, langostinos jumbo, salsa criolla y pan cortado.'},
+   {n:'Pulpo Parrillero',d:'Pulpo a la parrilla acompañado de puré de racacha.'},
+   {n:'Cebiche al Estilo ARTECH',d:'Pesca del día, camote confitado, choclo, palta, cebolla, canchita, todo al limón.'}]},
+ {t:{en:'Mains',es:'Segundos'},items:[
+   {n:'Penne con Tomates Confitados y Pulpo',d:'Pulpo, tomates secos al ajo, parmesano reggiano.'},
+   {n:'Ravioles de la Semana',d:'Pregunta por nuestro especial del día.'},
+   {n:'Lasagna de la Semana',d:'Pregunta por nuestro especial del día.'},
+   {n:'Bife Americano a la Parrilla',d:'Acompañado de papas fritas y ensaladita fresca.'},
+   {n:'Panceta Laqueada en Salsa Miso y Chaufa',d:'Jugosa y crocante panceta montada sobre un arroz chaufa.'},
+   {n:'Atún en Costra de Pimienta',d:'Acompañado de puré de racacha, verduras parrilleras.'},
+   {n:'Seco de Pescado',d:'Plato del norte, acompañado de yuca y arroz.'}]},
+ {t:{en:'Breakfast',es:'Desayunos'},items:[
+   {n:'Huevos Benedictos ARTECH',d:'Tostón de pan campesino, tocino, huevos escalfados, palta y salsa holandesa.'},
+   {n:'Tostón de Pesto',d:'Tomates confitados, pesto, queso de cabra.'},
+   {n:'Huevos Revueltos, Escalfados o Fritos',d:'Acompañados de tostadas de pan campesino. (extra tocino / jamón serrano / mantequilla y mermelada de frambuesas s/)'}]},
+ {t:{en:'Sandwiches & Breads',es:'Sándwiches y Panes'},items:[
+   {n:'Hamburguesa en Pan de Camote (Gluten Free)',d:'Casera de res, lechuga, tomate, cheddar, tocino.'},
+   {n:'Butifarra',d:'Jamón del país, salsa criolla, mayonesa de la casa y Dijon.'},
+   {n:'Hamburguesa de Atún',d:'Trozos de atún término medio, palta, mayonesa de la casa, sacha tomate, echalottes.'},
+   {n:'Sándwich de Panceta',d:'Panceta laqueada en salsa miso, mayonesa de ajo confitado, nabo encurtido y salsa chalaca.'},
+   {n:'Croissant',d:'Jamón y queso · mantequilla.'},
+   {n:'Croque Madame',d:'Pan campesino, jamón inglés, queso y salsa bechamel, huevo frito a la inglesa.'}]},
+ {t:{en:'Desserts',es:'Postres'},items:[
+   {n:'Suspiro de Lúcuma',d:''},
+   {n:'Keke de Zanahoria (Gluten Free)',d:'Helado de vainilla y frosting de queso crema.'},
+   {n:'Crocante de Manzana',d:'Helado de vainilla.'},
+   {n:'Pie de Limón',d:''},
+   {n:'Soufflé de Chocolate',d:'Helado de vainilla y culí de frambuesas.'},
+   {n:'Brownies y Blondies (Gluten Free)',d:''}]},
+ {t:{en:'Hot Drinks',es:'Bebidas Calientes'},items:[
+   {n:'Espresso',d:''},{n:'Cappuccino',d:''},{n:'Americano',d:''},
+   {n:'Manzanilla, Hierba Luisa o Menta Naturales',d:''},{n:'Chocolate Caliente ARTECH',d:''}]},
+ {t:{en:'Cold Drinks, Milkshakes & Juices',es:'Bebidas Frías, Milkshakes y Jugos'},items:[
+   {n:'Latte',d:''},
+   {n:'Milkshake de Vainilla, Chocolate, Fresa o Lúcuma',d:''},
+   {n:'Jugo de Naranja, Fresa o Lúcuma',d:''},
+   {n:'Limonada · Limonada de Hierba Luisa',d:''},
+   {n:'Maracuyá · Chicha Morada',d:''},
+   {n:'Coca Cola · Inka Cola · Agua',d:''}]},
+ {t:{en:'Bar — Wines, Cocktails & Beers',es:'Bar — Vinos, Cócteles y Cervezas'},items:[
+   {n:'Vinos',d:'Tinto · Blanco · Rosé.'},
+   {n:'Cócteles',d:'Pisco Sour · Pisco Punch de Chicha · Maracuyá Sour.'},
+   {n:'Cervezas',d:'Artesanal · Pilsen · Heineken.'}]}
+];
+function renderCafeMenu(){
+  const host=document.getElementById('cafeMenu'); if(!host) return;
+  const L=(typeof lang!=='undefined'&&lang==='es')?'es':'en';
+  host.innerHTML=CAFE_MENU.map(cat=>{
+    const items=cat.items.map(it=>`<div class="cm-item"><div class="in">${it.n}</div>${it.d?`<div class="id">${it.d}</div>`:''}</div>`).join('');
+    return `<div class="cm-block"><button class="cm-cat" type="button"><span class="cm-name">${cat.t[L]}</span><span class="cm-right"><span class="cm-count">${cat.items.length}</span><svg class="cm-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></span></button><div class="cm-items"><div class="cm-list">${items}</div></div></div>`;
+  }).join('');
+}
+document.addEventListener('click',e=>{const b=e.target.closest('.cm-cat');if(!b)return;b.closest('.cm-block').classList.toggle('open');});
 function setImg(id,src){ const el=document.getElementById(id); if(!el) return; const box=el.parentElement, lbl=box&&box.querySelector('.ph-lbl'); if(src){ el.src=src; if(lbl) lbl.style.display='none'; } else { el.removeAttribute('src'); if(lbl) lbl.style.display=''; } }
 function showVehicle(slug){
   const car=CARS.find(c=>c.slug===slug); if(!car) return;
