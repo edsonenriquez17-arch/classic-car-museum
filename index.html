@@ -331,7 +331,8 @@
 
   /* ---------- COLLECTION PAGE (internal) ---------- */
   #page-collection{padding:0 0 90px;background:#f5f4f2}
-  .pc-hero{background:#0d0d10;color:#fff;padding:30px 0 0}
+  .pc-hero{background:#0d0d10;color:#fff;padding:104px 0 0}
+  .pc-hero .back-btn{margin-bottom:22px}
   .col-exp{padding-bottom:60px!important}
   .back-btn.light{color:#9a9a9a}
   .back-btn.light:hover{color:var(--red)}
@@ -587,8 +588,8 @@
   /* ============ MOBILE LAYOUT v3 — symmetry, alignment & rhythm ============ */
   @media(max-width:560px){
     .wrap{padding:0 20px}
-    /* image+text sections: full-width photo flush above centered text */
-    .legacy,.intro{gap:0}
+    /* image+text sections: unified rounded card (photo framed with text) */
+    .legacy,.intro{gap:0;margin:16px 20px;border-radius:18px;overflow:hidden;box-shadow:0 16px 36px rgba(0,0,0,.12)}
     .legacy .media,.intro .media{padding:0;min-height:0;height:auto;order:0}
     .legacy .media img,.intro .media img{width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;display:block}
     .legacy .txt,.intro .txt{order:2;padding:32px 24px;text-align:center;align-items:center}
@@ -596,13 +597,14 @@
     .legacy .txt p,.intro .txt p{text-align:center;font-size:15.5px;line-height:1.6;margin-bottom:18px;max-width:420px}
     .intro .txt .addr{text-align:center;line-height:1.9}
     .legacy .link-arrow,.intro .link-arrow{justify-content:center}
-    /* panels: symmetric stacked cards */
-    .panels{gap:0}
-    .panel{padding:44px 24px;text-align:center;align-items:center;display:flex;flex-direction:column}
-    .panel .ic{margin:0 auto 20px}
-    .panel h3{font-size:22px}
-    .panel p{margin:12px 0 22px}
-    .panel .link-arrow{justify-content:center}
+    /* panels: two symmetric elevated cards, side by side */
+    .panels{grid-template-columns:1fr 1fr;gap:12px;padding:16px 20px}
+    .panel{border-radius:16px;padding:26px 16px;min-height:0;text-align:center;align-items:center;display:flex;flex-direction:column;box-shadow:0 14px 32px rgba(0,0,0,.16)}
+    .panel .ic{width:52px;height:52px;margin:0 auto 14px}
+    .panel .ic svg{width:26px;height:26px}
+    .panel h3{font-size:15px;line-height:1.25}
+    .panel p{font-size:12.5px;margin:10px 0 16px;line-height:1.5;color:#cfcfcf}
+    .panel .link-arrow{justify-content:center;font-size:11px}
     /* services: compact centered cards (removes the 64px icon gap) */
     .services{padding:56px 0 44px}
     .services h2{margin-bottom:30px;font-size:clamp(32px,9vw,44px)}
@@ -806,7 +808,7 @@
       <button class="hc-arrow next" aria-label="Next" onclick="hcScroll(1)">›</button>
     </div>
     <div class="view-all">
-      <a href="#p-collection" data-i="view_col">View all 145 models <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a href="#p-collection" data-i="view_col">View all 95 models <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
   </div>
 </section>
@@ -852,8 +854,8 @@
   </div>
 </section>
 
-<!-- VISIT INTRO (shown only inside internal pages) -->
-<section class="intro internal-only">
+<!-- VISIT INTRO (home bottom + internal pages) -->
+<section class="intro shared-zone">
   <div class="txt">
     <h2 data-i="intro_t">Visit the museum</h2>
     <div class="addr">
@@ -1036,29 +1038,9 @@
 
 <!-- ===== INTERNAL PAGE · COLLECTION ===== -->
 <section class="subpage" id="page-collection">
-  <div class="experiences col-exp">
-    <video class="exp-bg" autoplay muted loop playsinline preload="auto" poster="assets/experiences.png">
-      <source src="assets/experiences.mp4" type="video/mp4">
-    </video>
-    <div class="inner">
-      <div class="kicker" data-i="exp_the">THE <span class="u">MUSEUM</span></div>
-      <div class="kicker big" data-i="exp_title">EXPERIENCES</div>
-      <div class="exp-item">
-        <div class="t"><b>THE HERITAGE TOUR</b> | $120 USD p/p | 90 min</div>
-        <div class="d" data-i="exp1">Access to the World's Oldest Car + Private Guide + Coffee at Salón Café</div>
-      </div>
-      <div class="exp-item">
-        <div class="t"><b>PORSCHE &amp; PERFORMANCE</b> | $150 USD p/p | 60 min</div>
-        <div class="d" data-i="exp2">Exclusive access to our Porsche collection. For collectors.</div>
-      </div>
-      <div class="exp-item">
-        <div class="t">SALÓN CAFÉ | <span data-i="exp3a">A CORDON BLEU EXPERIENCE</span></div>
-        <div class="d"><span data-i="exp3b">Peruvian contemporary cuisine inside the Museum. By</span> <b>Chef Carla Navea</b>. <span data-i="exp3c">Tuesday to Sunday · 9 am – 7 pm</span></div>
-      </div>
-    </div>
-  </div>
   <div class="pc-hero">
     <div class="wrap">
+      <a href="#top" class="back-btn light" data-i="back_home">← Back to Home</a>
       <div class="pc-head">
         <h2 data-i="col_t">Our Collection</h2>
         <div class="pc-sub">
@@ -1093,7 +1075,7 @@
     </div>
     <div class="wrap">
       <div class="pc-stats">
-        <div class="stat"><b>145+</b><span data-i="st1">Vehicles on exhibition</span></div>
+        <div class="stat"><b>95</b><span data-i="st1">Vehicles on exhibition</span></div>
         <div class="stat"><b>100</b><span data-i="st2">Years of history covered</span></div>
         <div class="stat"><b>60+</b><span data-i="st3">Brands represented</span></div>
       </div>
@@ -1200,13 +1182,13 @@ const dict = {
     back_home:"← Back to Home",
     pgx_sub:"Tours, gastronomy and themed halls — a complete journey through automotive history.",pgx_cta:"Book your experience",
     pgc_kick:"THE FULL",pgc_sub:"From the World's Oldest Car to rare Porsche classics — explore every model in our permanent exhibition.",
-    pgc_note:"More models are added as the archive is digitized — 145 vehicles in the permanent collection.",pgc_cta:"Book your visit",
+    pgc_note:"More models are added as the archive is digitized — 95 vehicles in the permanent collection.",pgc_cta:"Book your visit",
     flt_all:"All",flt_classic:"Classics",flt_modern:"Modern",flt_brands:"All brands",flt_search:"Search...",flt_none:"No vehicles match your search.",view_all:"View all",
     vh_cover:"COVER PHOTO",vh_year:"YEAR",vh_plate:"PLATE",vh_detail:"DETAIL",vh_info:"VEHICLE INFORMATION",vh_view1:"VIEW 01",vh_view2:"VIEW 02",vh_general:"GENERAL SPECIFICATIONS:",
     vh_story:"In 1950, only 21 K-2 units were built, of which 03 were exported to South America; 02 to Uruguay and 01 to Peru. This car was imported to Peru by Sociedad Mercantil Internacional in December 1950.",
     vs_maker:"Manufacturer",vs_model:"Model",vs_year:"Year",vs_plate:"Plate",vs_body:"Body",vs_type:"Type",vs_cyl:"Engine",vs_disp:"Displacement",vs_power:"Power",vs_trans:"Transmission",vs_comp:"Compression",vs_ign:"Ignition",vs_head:"Cylinder head",vs_carb:"Carburation",vs_brakes:"Brakes",vs_wheel:"Wheel",vs_speed:"Top speed",
     st1:"Vehicles on exhibition",st2:"Years of history covered",st3:"Brands represented",
-    year:"Year",view_col:"View all 145 models",ph_media:"Photo / Video",ph_title:"Car name",ph_desc:"Add year & description",
+    year:"Year",view_col:"View all 95 models",ph_media:"Photo / Video",ph_title:"Car name",ph_desc:"Add year & description",
     col_count:"models",
     ap_title:"The Experience",ap_sub:"The tour, the café and our themed halls",ap_cdesc:"Add photos, video & description",
     ap_tour:"Guided Tour",ap_cafe:"Café",ap_hall1:"Main Hall",ap_hall2:"Porsche Hall",ap_hall3:"Classics Hall",ap_hall4:"Events Hall",
@@ -1253,13 +1235,13 @@ const dict = {
     back_home:"← Volver al inicio",
     pgx_sub:"Tours, gastronomía y salas temáticas — un viaje completo por la historia automotriz.",pgx_cta:"Reserva tu experiencia",
     pgc_kick:"TODA LA",pgc_sub:"Desde el auto más antiguo del mundo hasta raros clásicos Porsche — explora cada modelo de nuestra exhibición permanente.",
-    pgc_note:"Se agregan más modelos a medida que se digitaliza el archivo — 145 vehículos en la colección permanente.",pgc_cta:"Reserva tu visita",
+    pgc_note:"Se agregan más modelos a medida que se digitaliza el archivo — 95 vehículos en la colección permanente.",pgc_cta:"Reserva tu visita",
     flt_all:"Todos",flt_classic:"Clásicos",flt_modern:"Modernos",flt_brands:"Todas las marcas",flt_search:"Buscar...",flt_none:"Ningún vehículo coincide con tu búsqueda.",view_all:"Ver todos",
     vh_cover:"PORTADA",vh_year:"AÑO",vh_plate:"PLACA",vh_detail:"DETALLE",vh_info:"INFORMACIÓN DEL VEHÍCULO",vh_view1:"VISTA 01",vh_view2:"VISTA 02",vh_general:"CARACTERÍSTICAS GENERALES:",
     vh_story:"En 1950, se construyeron tan solo 21 K-2, de los cuales 03 se exportaron a Sudamérica; 02 al Uruguay y 01 al Perú. Este coche fue importado al Perú por la Sociedad Mercantil Internacional en Diciembre de 1950.",
     vs_maker:"Fabricante",vs_model:"Modelo",vs_year:"Año",vs_plate:"Placa",vs_body:"Carrocería",vs_type:"Tipo",vs_cyl:"Motor",vs_disp:"Cilindrada",vs_power:"Potencia",vs_trans:"Transmisión",vs_comp:"Compresión",vs_ign:"Encendido",vs_head:"Culata",vs_carb:"Carburación",vs_brakes:"Frenos",vs_wheel:"Aro",vs_speed:"Velocidad",
     st1:"Vehículos en exhibición",st2:"Años de historia cubiertos",st3:"Marcas representadas",
-    year:"Año",view_col:"Ver los 145 modelos",ph_media:"Foto / Video",ph_title:"Nombre del auto",ph_desc:"Agregar año y descripción",
+    year:"Año",view_col:"Ver los 95 modelos",ph_media:"Foto / Video",ph_title:"Nombre del auto",ph_desc:"Agregar año y descripción",
     col_count:"modelos",
     ap_title:"La Experiencia",ap_sub:"El recorrido, la cafetería y nuestras salas temáticas",ap_cdesc:"Agregar fotos, video y descripción",
     ap_tour:"Recorrido Guiado",ap_cafe:"Cafetería",ap_hall1:"Sala Principal",ap_hall2:"Sala Porsche",ap_hall3:"Sala de Clásicos",ap_hall4:"Sala de Eventos",
