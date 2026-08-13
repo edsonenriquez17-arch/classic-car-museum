@@ -529,8 +529,10 @@
     /* services: compact centered cards (removes the 64px icon gap) */
     .services{padding:56px 0 44px}
     .services h2{margin-bottom:30px;font-size:clamp(32px,9vw,44px)}
-    .cards{grid-template-columns:1fr;gap:16px}
-    .card{min-height:0;padding:28px 24px;text-align:center}
+    .cards{display:flex;grid-template-columns:none;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scroll-behavior:smooth;padding:4px 2px 14px}
+    .cards::-webkit-scrollbar{height:6px}
+    .cards::-webkit-scrollbar-thumb{background:rgba(0,0,0,.16);border-radius:4px}
+    .card{flex:0 0 auto;width:clamp(240px,72vw,290px);min-height:0;padding:28px 24px;text-align:center;scroll-snap-align:center}
     .card .ic{margin:0 auto 18px}
     .card h4{font-size:20px}
     /* 3D */
@@ -561,6 +563,12 @@
     #carGrid.cols-2 .col-card .link-arrow svg{width:15px;height:15px}
     .pc-pager{margin:32px 0 4px;gap:7px}
     .pg-btn{min-width:40px;height:40px;font-size:14px}
+    /* stats: horizontal row (3 across), smaller text — like desktop */
+    .pc-stats{grid-template-columns:repeat(3,1fr);gap:0;padding:18px 6px;transform:translateY(24px)}
+    .stat{padding:2px 8px;border-left-width:2px}
+    .stat b{font-size:22px;margin-bottom:4px}
+    .stat span{font-size:8.5px;letter-spacing:.8px;line-height:1.3}
+    .pc-grid-zone{padding-top:60px}
     /* experiences */
     .experiences{padding:56px 18px}
     /* contact: trim padding, one clean column */
