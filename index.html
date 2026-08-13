@@ -431,38 +431,50 @@
   .post-cta{margin-top:14px}
 
   /* ---------- VEHICLE DATA SHEET (internal) ---------- */
-  #page-vehicle{padding:0;background:var(--bg)}
-  .vh-hero{position:relative;background:linear-gradient(#8f8f8f,#7c7c7c);overflow:hidden;min-height:300px}
-  .vh-hero-ph span{font-family:var(--display);font-weight:700;font-size:clamp(48px,9vw,112px);color:#fff;letter-spacing:3px;opacity:.92;text-transform:uppercase}
-  .vh-caption{position:absolute;right:max(20px,5%);bottom:32px;background:rgba(18,18,20,.82);color:#fff;padding:16px 28px;max-width:88%}
-  .vh-name{font-family:var(--display);font-weight:600;font-size:clamp(19px,2.6vw,30px);letter-spacing:1px}
-  .vh-meta{color:#cfcfcf;font-size:14px;letter-spacing:1px;margin-top:5px}
-  .vh-descwrap{background:var(--bg);padding:46px 24px 26px}
-  .vh-desc{max-width:920px;margin:0 auto;text-align:center;font-size:clamp(16px,1.9vw,20px);line-height:1.6;color:#2a2a2a}
-  .vh-detalles{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;padding:16px 0 60px;align-items:start}
-  .vh-box.detalle{background:var(--ink);color:#fff;position:relative;overflow:hidden}
-  .vh-specs{display:grid;grid-template-columns:1fr 1fr}
-  .vh-cell{padding:56px clamp(28px,5vw,70px);min-height:340px;color:#fff}
-  .vh-cell.dark{background:var(--ink)}
-  .vh-cell.wine{background:var(--red-dark)}
-  .vh-cell.ph{display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:600;font-size:clamp(24px,3vw,36px);letter-spacing:2px}
-  .vh-cell h3{font-family:var(--display);font-weight:600;font-size:clamp(18px,2.2vw,24px);letter-spacing:1px;margin-bottom:22px;text-transform:uppercase}
-  .vh-list{list-style:none;line-height:1.95}
-  .vh-list li{color:#dcdcdc;font-size:16px}
-  .vh-list b{font-weight:600;color:#fff}
-  .vh-more{padding:58px 0 30px}
+  #page-vehicle{padding:0 0 20px;background:var(--bg)}
+  /* HERO — cover photo with scrim, back bar and title overlay */
+  .vh-hero{position:relative;background:linear-gradient(#8f8f8f,#7c7c7c);overflow:hidden;aspect-ratio:16/9}
+  .vh-cover-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
+  .vh-cover-img:not([src]){display:none}
+  .vh-hero .vh-hero-ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:0}
+  .vh-hero-ph span{font-family:var(--display);font-weight:700;font-size:clamp(40px,8vw,100px);color:#fff;letter-spacing:3px;opacity:.9;text-transform:uppercase}
+  .vh-hero::before{content:"";position:absolute;top:0;left:0;right:0;height:130px;background:linear-gradient(180deg,rgba(0,0,0,.6),transparent);z-index:2;pointer-events:none}
+  .vh-hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:60%;background:linear-gradient(0deg,rgba(8,8,10,.9),transparent);z-index:2;pointer-events:none}
+  .vh-hero-top{position:absolute;top:0;left:0;right:0;z-index:4;padding:96px 24px 0}
+  .vh-back{display:inline-flex;align-items:center;gap:8px;color:#fff;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;background:rgba(0,0,0,.4);padding:9px 16px;border-radius:30px;transition:background .2s}
+  .vh-back:hover{background:var(--red)}
+  .vh-hero-cap{position:absolute;left:0;right:0;bottom:0;z-index:4;padding:0 24px 26px}
+  .vh-name{font-family:var(--display);font-weight:600;color:#fff;font-size:clamp(26px,4.5vw,56px);line-height:1.05;letter-spacing:.5px}
+  .vh-meta{color:var(--gold);font-size:14px;letter-spacing:2px;margin-top:9px;text-transform:uppercase}
+  /* KEY STATS */
+  .vh-keys{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:32px 0 4px}
+  .vh-key{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:18px 14px;text-align:center}
+  .vh-key .vk-v{display:block;font-family:var(--display);font-weight:600;font-size:clamp(15px,1.9vw,21px);color:#161616;line-height:1.2}
+  .vh-key .vk-l{display:block;color:#9a9a9a;font-size:11px;letter-spacing:2px;text-transform:uppercase;margin-top:8px}
+  /* DESCRIPTION */
+  .vh-descwrap{background:var(--bg);padding:36px 24px 10px}
+  .vh-desc{max-width:820px;margin:0 auto;text-align:center;font-size:clamp(16px,1.9vw,20px);line-height:1.7;color:#2a2a2a}
+  /* GALLERY (unified) */
+  .vh-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding:34px 0 10px}
+  .vh-gitem{display:block;border-radius:12px;overflow:hidden;background:var(--ink);aspect-ratio:4/3;cursor:zoom-in}
+  .vh-gitem img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
+  .vh-gitem:hover img{transform:scale(1.05)}
+  /* SPEC CARDS */
+  .vh-spec-cards{display:grid;grid-template-columns:1fr 1fr;gap:20px;padding:24px 0 10px;align-items:start}
+  .vh-card{background:var(--ink);color:#fff;border-radius:16px;padding:32px 30px}
+  .vh-card.wine{background:var(--red-dark)}
+  .vh-card h3{font-family:var(--display);font-weight:600;font-size:clamp(17px,2vw,22px);letter-spacing:1px;text-transform:uppercase;margin-bottom:18px;padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,.14)}
+  .vh-list{list-style:none}
+  .vh-list li{display:flex;justify-content:space-between;gap:16px;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.08);font-size:15px}
+  .vh-list li:last-child{border-bottom:0}
+  .vh-list b{font-weight:500;color:#a3a3a3;text-transform:uppercase;font-size:12px;letter-spacing:1px;flex:none;align-self:center}
+  .vh-list li span{color:#fff;text-align:right}
+  .vh-more{padding:44px 0 20px}
   .vh-more .view-all{margin-bottom:24px}
   .vh-strip .col-card{display:block;text-decoration:none}
   .vh-link{cursor:pointer}
-  /* real image slots (populated by JS) */
-  .vh-cover-img{display:block;width:100%;height:auto;position:relative;z-index:1}
-  .vh-cover-img:not([src]){display:none}
-  .vh-hero .vh-hero-ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:0}
-  .vh-caption{z-index:3}
-  .vh-imgcell{display:block!important;position:relative;overflow:hidden;padding:0!important;min-height:0!important;background:var(--ink)}
   .vh-slot{display:block;width:100%;height:auto}
   .vh-slot:not([src]){display:none}
-  .vh-box.detalle .ph-lbl,.vh-imgcell .ph-lbl{display:flex;align-items:center;justify-content:center;min-height:200px;font-family:var(--display);font-weight:600;font-size:clamp(24px,3vw,36px);letter-spacing:2px;color:#fff}
   .vdash{color:#7f7f7f}
   /* clickable photos -> lightbox */
   #page-vehicle .vh-slot,#page-vehicle .vh-cover-img{cursor:zoom-in}
@@ -550,8 +562,15 @@
     .lang button{padding:10px 18px;font-size:14px}
     .subpage{padding:100px 0 50px}
     .sp-offers{padding:26px 22px}
-    .vh-cell{padding:40px 26px;min-height:0}
-    .vh-descwrap{padding:34px 20px 20px}
+    .vh-hero{aspect-ratio:4/3}
+    .vh-hero-top{padding:90px 18px 0}
+    .vh-hero-cap{padding:0 18px 20px}
+    .vh-keys{grid-template-columns:1fr 1fr;gap:10px;margin-top:24px}
+    .vh-descwrap{padding:28px 20px 6px}
+    .vh-gallery{grid-template-columns:1fr 1fr;gap:12px;padding:26px 0 6px}
+    .vh-spec-cards{grid-template-columns:1fr;gap:14px;padding:20px 0 6px}
+    .vh-card{padding:26px 22px}
+    .vh-strip{grid-template-columns:1fr 1fr!important;gap:12px}
     .pc-head h2{font-size:clamp(34px,10vw,48px)}
     .grid4 .col-card .ph{height:210px}
     .pc-tools{width:100%}
@@ -1094,44 +1113,40 @@
   <div class="vh-hero">
     <img id="vhCover" class="vh-cover-img" alt="">
     <div class="vh-hero-ph"><span data-i="vh_cover">COVER PHOTO</span></div>
-    <div class="vh-caption">
+    <div class="vh-hero-top"><a href="#p-collection" class="vh-back" data-i="vh_back">← Collection</a></div>
+    <div class="vh-hero-cap">
       <div class="vh-name" id="vhName">—</div>
-      <div class="vh-meta" id="vhMetaWrap"><span data-i="vh_plate">PLATE</span>: <span id="vhPlate">—</span></div>
+      <div class="vh-meta" id="vhMetaWrap"></div>
     </div>
   </div>
+  <div class="wrap"><div class="vh-keys" id="vhKeys"></div></div>
   <div class="vh-descwrap" id="vhDescWrap" hidden>
     <p class="vh-desc" id="vhDesc"></p>
   </div>
+  <div class="wrap"><div class="vh-gallery" id="vhGallery"></div></div>
   <div class="wrap">
-    <div class="vh-detalles">
-      <div class="vh-box detalle"><img id="vhD1" class="vh-slot" alt=""><span class="ph-lbl" data-i="vh_detail">DETAIL</span></div>
-      <div class="vh-box detalle"><img id="vhD2" class="vh-slot" alt=""><span class="ph-lbl" data-i="vh_detail">DETAIL</span></div>
-      <div class="vh-box detalle"><img id="vhD3" class="vh-slot" alt=""><span class="ph-lbl" data-i="vh_detail">DETAIL</span></div>
-    </div>
-  </div>
-  <div class="vh-specs">
-    <div class="vh-cell dark">
-      <h3 data-i="vh_info">VEHICLE INFORMATION</h3>
-      <ul class="vh-list">
-        <li><b data-i="vs_maker">Manufacturer</b>: <span id="vsBrand" class="vdash">—</span></li>
-        <li><b data-i="vs_model">Model</b>: <span id="vsModel" class="vdash">—</span></li>
-        <li><b data-i="vs_year">Year</b>: <span id="vsYear" class="vdash">—</span></li>
-        <li><b data-i="vs_plate">Plate</b>: <span id="vsPlate" class="vdash">—</span></li>
-        <li><b data-i="vs_body">Body</b>: <span id="vsBody" class="vdash">—</span></li>
-        <li><b data-i="vs_cyl">Engine</b>: <span id="vsMotor" class="vdash">—</span></li>
-        <li><b data-i="vs_disp">Displacement</b>: <span id="vsDisp" class="vdash">—</span></li>
-        <li><b data-i="vs_power">Power</b>: <span id="vsHp" class="vdash">—</span></li>
-      </ul>
-    </div>
-    <div class="vh-cell dark ph vh-imgcell"><img id="vhV1" class="vh-slot" alt=""><span class="ph-lbl" data-i="vh_view1">VIEW 01</span></div>
-    <div class="vh-cell dark ph vh-imgcell"><img id="vhV2" class="vh-slot" alt=""><span class="ph-lbl" data-i="vh_view2">VIEW 02</span></div>
-    <div class="vh-cell wine">
-      <h3 data-i="vh_general">GENERAL SPECIFICATIONS:</h3>
-      <ul class="vh-list">
-        <li><b data-i="vs_trans">Transmission</b>: <span id="vsTrans" class="vdash">—</span></li>
-        <li><b data-i="vs_brakes">Brakes</b>: <span id="vsBrakes" class="vdash">—</span></li>
-        <li><b data-i="vs_speed">Top speed</b>: <span id="vsSpeed" class="vdash">—</span></li>
-      </ul>
+    <div class="vh-spec-cards">
+      <div class="vh-card" id="vhInfoCard">
+        <h3 data-i="vh_info">Vehicle Information</h3>
+        <ul class="vh-list">
+          <li><b data-i="vs_maker">Manufacturer</b><span id="vsBrand"></span></li>
+          <li><b data-i="vs_model">Model</b><span id="vsModel"></span></li>
+          <li><b data-i="vs_year">Year</b><span id="vsYear"></span></li>
+          <li><b data-i="vs_plate">Plate</b><span id="vsPlate"></span></li>
+          <li><b data-i="vs_body">Body</b><span id="vsBody"></span></li>
+          <li><b data-i="vs_cyl">Engine</b><span id="vsMotor"></span></li>
+          <li><b data-i="vs_disp">Displacement</b><span id="vsDisp"></span></li>
+          <li><b data-i="vs_power">Power</b><span id="vsHp"></span></li>
+        </ul>
+      </div>
+      <div class="vh-card wine" id="vhSpecCard">
+        <h3 data-i="vh_general">General Specifications</h3>
+        <ul class="vh-list">
+          <li><b data-i="vs_trans">Transmission</b><span id="vsTrans"></span></li>
+          <li><b data-i="vs_brakes">Brakes</b><span id="vsBrakes"></span></li>
+          <li><b data-i="vs_speed">Top speed</b><span id="vsSpeed"></span></li>
+        </ul>
+      </div>
     </div>
   </div>
   <div class="wrap vh-more">
@@ -1160,7 +1175,7 @@ const dict = {
   en:{
     nav_collection:"Collection",nav_experience:"Experience",nav_360:"360° Tour",nav_about:"About",nav_cafe:"Gourmet Café",nav_contact:"Contact",nav_book:"Book",
     cafe_tag:"Café · Cocina · Bar",cafe_title:"Gourmet Café",cafe_lead:"Peruvian & Italian fusion inside the Museum, by Chef Carla Navea. Tuesday to Sunday · 9 am – 7 pm.",cafe_hint:"Tap a category to explore the menu",
-    nav_blog:"Blog",blog_kick:"THE JOURNAL",blog_title:"Stories from the Museum",blog_sub:"Classic cars, restoration and the culture behind the collection in Lima.",blog_back:"← All articles",post_cta:"Plan your visit",
+    nav_blog:"Blog",blog_kick:"THE JOURNAL",blog_title:"Stories from the Museum",blog_sub:"Classic cars, restoration and the culture behind the collection in Lima.",blog_back:"← All articles",post_cta:"Plan your visit",vh_back:"← Collection",
     hero_title:"Shift into history",hero_sub:"Home to the World's Oldest Car & Rare Porsche Collection",hero_btn:"360-degree tour",
     banner:"A LIVING MUSEUM OF MOTORING HISTORY",pl_tag:"SHIFT INTO HISTORY",pl_sub:"ARTECH · Lima, Perú",
     p1_t:"Book your private tour",p1_d:"Reserve a guided visit and step into an unrepeatable collection.",
@@ -1213,7 +1228,7 @@ const dict = {
   es:{
     nav_collection:"Colección",nav_experience:"Experiencia",nav_360:"Visita 360°",nav_about:"Nosotros",nav_cafe:"Café Gourmet",nav_contact:"Contacto",nav_book:"Reserva",
     cafe_tag:"Café · Cocina · Bar",cafe_title:"Café Gourmet",cafe_lead:"Fusión peruana e italiana dentro del Museo, por la Chef Carla Navea. Martes a Domingo · 9 am – 7 pm.",cafe_hint:"Toca una categoría para ver la carta",
-    nav_blog:"Blog",blog_kick:"EL DIARIO",blog_title:"Historias del Museo",blog_sub:"Autos clásicos, restauración y la cultura detrás de la colección en Lima.",blog_back:"← Todos los artículos",post_cta:"Planifica tu visita",
+    nav_blog:"Blog",blog_kick:"EL DIARIO",blog_title:"Historias del Museo",blog_sub:"Autos clásicos, restauración y la cultura detrás de la colección en Lima.",blog_back:"← Todos los artículos",post_cta:"Planifica tu visita",vh_back:"← Colección",
     hero_title:"Un viaje a la historia",hero_sub:"Hogar del auto más antiguo del mundo y una rara colección Porsche",hero_btn:"Visita 360°",
     banner:"UN MUSEO VIVO DE LA HISTORIA DEL AUTOMÓVIL",pl_tag:"UN VIAJE A LA HISTORIA",pl_sub:"ARTECH · Lima, Perú",
     p1_t:"Reserva tu tour privado",p1_d:"Reserva una visita guiada y entra a una colección irrepetible.",
@@ -1499,16 +1514,35 @@ function showVehicle(slug){
   const car=CARS.find(c=>c.slug===slug); if(!car) return;
   currentSlug=slug;
   const b='assets/cars/'+slug+'/';
+  const es=(lang==='es');
   setImg('vhCover',b+'cover.jpg');
-  setImg('vhD1',b+'d1.jpg'); setImg('vhD2',b+'d2.jpg'); setImg('vhD3',car.d3?b+'d3.jpg':'');
-  setImg('vhV1',b+'v1.jpg'); setImg('vhV2',b+'v2.jpg');
   const disp=car.name||car.plate;
-  const set=(id,v)=>{const el=document.getElementById(id); if(el) el.textContent=(v&&String(v).trim())||'—';};
+  const set=(id,v)=>{const el=document.getElementById(id); if(el) el.textContent=(v&&String(v).trim())||'';};
   set('vhName',disp);
-  // plate line: hide if the car has no real plate
+  const sp0=((es && car.specs_es) ? car.specs_es : car.specs)||{};
+  // hero meta: year · plate
+  const mparts=[];
+  if(car.year) mparts.push(car.year);
+  if(realPlate(car.plate)) mparts.push((es?'Placa ':'Plate ')+car.plate);
   const metaWrap=document.getElementById('vhMetaWrap');
-  if(realPlate(car.plate)){ if(metaWrap) metaWrap.hidden=false; set('vhPlate',car.plate); }
-  else if(metaWrap) metaWrap.hidden=true;
+  if(metaWrap){ metaWrap.textContent=mparts.join('   ·   '); metaWrap.style.display=mparts.length?'':'none'; }
+  // key stats tiles
+  const keys=document.getElementById('vhKeys');
+  if(keys){
+    const K=[];
+    if(car.year) K.push([es?'Año':'Year',car.year]);
+    if(sp0.hp) K.push([es?'Potencia':'Power',sp0.hp]);
+    if(sp0.vel) K.push([es?'Vel. máx.':'Top speed',sp0.vel]);
+    if(sp0.trans) K.push([es?'Transmisión':'Transmission',sp0.trans]);
+    keys.innerHTML=K.slice(0,4).map(k=>`<div class="vh-key"><span class="vk-v">${k[1]}</span><span class="vk-l">${k[0]}</span></div>`).join('');
+    keys.style.display=(K.length>=2)?'':'none';
+  }
+  // unified gallery (detail + view photos that exist)
+  const gal=document.getElementById('vhGallery');
+  if(gal){
+    const shots=['d1','d2','d3','v1','v2'].filter(k=>k!=='d3'||car.d3);
+    gal.innerHTML=shots.map(k=>`<a class="vh-gitem"><img class="vh-slot" src="${b}${k}.jpg" alt="${disp}" loading="lazy" onerror="this.closest('.vh-gitem').remove()"></a>`).join('');
+  }
   // subtle description below the cover
   const dw=document.getElementById('vhDescWrap'), dEl=document.getElementById('vhDesc');
   const desc=(lang==='es' && car.desc_es) ? car.desc_es : car.desc;
@@ -1516,17 +1550,17 @@ function showVehicle(slug){
   else if(dw) dw.hidden=true;
   // vehicle info — hide empty fields (no dashes)
   const setLi=(id,v)=>{const el=document.getElementById(id); if(!el) return; const li=el.closest('li'); const has=v&&String(v).trim(); if(has){ el.textContent=v; if(li) li.style.display=''; } else if(li) li.style.display='none';};
-  const sp=((lang==='es' && car.specs_es) ? car.specs_es : car.specs)||{};
+  const sp=sp0;
   setLi('vsBrand',car.brand); setLi('vsModel',car.model); setLi('vsYear',car.year);
   setLi('vsPlate', realPlate(car.plate)?car.plate:'');
   setLi('vsBody',sp.tipo); setLi('vsMotor',sp.motor); setLi('vsDisp',sp.cil); setLi('vsHp',sp.hp);
   setLi('vsTrans',sp.trans); setLi('vsBrakes',sp.frenos); setLi('vsSpeed',sp.vel);
   // hide info card if it has no data at all; hide specs card if empty
-  const infoCell=document.querySelector('#page-vehicle .vh-cell.dark:not(.vh-imgcell)');
+  const infoCard=document.getElementById('vhInfoCard');
   const infoHas=[car.brand,car.model,car.year,realPlate(car.plate)?car.plate:'',sp.tipo,sp.motor,sp.cil,sp.hp].some(x=>x&&String(x).trim());
-  if(infoCell) infoCell.style.visibility=infoHas?'visible':'hidden';
-  const wineCell=document.querySelector('#page-vehicle .vh-cell.wine');
-  if(wineCell) wineCell.style.display=(sp.trans||sp.frenos||sp.vel)?'':'none';
+  if(infoCard) infoCard.style.display=infoHas?'':'none';
+  const specCard=document.getElementById('vhSpecCard');
+  if(specCard) specCard.style.display=(sp.trans||sp.frenos||sp.vel)?'':'none';
   const strip=document.getElementById('vhStrip');
   if(strip){ const i=CARS.indexOf(car); let out='';
     for(let k=1;k<=4;k++){ const c=CARS[(i+k)%CARS.length]; const dn=c.name||c.plate;
