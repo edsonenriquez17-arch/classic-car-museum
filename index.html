@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>ARTECH · Classic Car Museum · Lima</title>
 <meta name="description" content="Home to the World's Oldest Car & Rare Porsche Collection. A living museum in the heart of Lima." />
-<link rel="preload" as="image" href="assets/splash-car.png" fetchpriority="high">
+<link rel="preload" as="image" href="assets/splash-ferrari.png" fetchpriority="high">
 <link rel="preload" as="image" href="assets/logo.png" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -51,8 +51,27 @@
   .pl-logo{height:40px;width:auto;margin:0 auto 30px;opacity:0;filter:drop-shadow(0 2px 14px rgba(0,0,0,.6));
     animation:plFadeDown .9s .1s ease forwards}
   .pl-stage{position:relative;display:inline-block}
-  .pl-car{width:min(560px,80vw);height:auto;display:block;opacity:0;
-    filter:drop-shadow(0 26px 30px rgba(0,0,0,.55));animation:plCarIn 1.15s .25s cubic-bezier(.2,.7,.2,1) forwards}
+  .pl-rumble{position:relative;display:block;animation:plIdle 0.16s 1.5s linear infinite}
+  .pl-car{width:min(620px,88vw);height:auto;display:block;opacity:0;
+    filter:drop-shadow(0 30px 34px rgba(0,0,0,.6));animation:plCarIn 1.5s .2s cubic-bezier(.16,.9,.24,1) forwards}
+  /* haces de luz de los faros */
+  .pl-beam{position:absolute;bottom:16%;width:26%;height:16%;border-radius:50%;pointer-events:none;
+    background:radial-gradient(ellipse at center,rgba(255,244,214,.85),rgba(255,226,150,.25) 45%,transparent 72%);
+    opacity:0;filter:blur(6px);mix-blend-mode:screen;animation:plBeam 1.1s 1.15s ease forwards}
+  .pl-beam.left{left:4%}
+  .pl-beam.right{right:4%}
+  @keyframes plBeam{0%{opacity:0;transform:scale(.6)}55%{opacity:1;transform:scale(1.12)}100%{opacity:.82;transform:scale(1)}}
+  @keyframes plIdle{0%{transform:translate3d(0,0,0)}25%{transform:translate3d(.6px,-.5px,0)}
+    50%{transform:translate3d(-.5px,.6px,0)}75%{transform:translate3d(.4px,.5px,0)}100%{transform:translate3d(0,0,0)}}
+  /* botón de sonido */
+  .pl-sound{position:absolute;right:20px;bottom:20px;z-index:5;width:46px;height:46px;border-radius:50%;
+    border:1px solid rgba(255,255,255,.28);background:rgba(255,255,255,.08);color:#fff;cursor:pointer;
+    display:grid;place-items:center;transition:background .2s,border-color .2s,transform .2s}
+  .pl-sound:hover{background:var(--red);border-color:var(--red);transform:scale(1.06)}
+  .pl-sound svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+  .pl-sound .spk{fill:currentColor;stroke:none}
+  .pl-sound .wv{display:none}.pl-sound .xm{display:block}
+  .pl-sound.on .wv{display:block}.pl-sound.on .xm{display:none}
   .pl-shadow{position:absolute;left:50%;bottom:2%;width:62%;height:26px;transform:translateX(-50%);
     background:radial-gradient(ellipse at center,rgba(0,0,0,.55),transparent 70%);filter:blur(7px);z-index:-1;
     opacity:0;animation:plFadeIn 1s .5s ease forwards}
@@ -64,7 +83,11 @@
     animation:plLoad 5.2s .5s cubic-bezier(.4,.1,.2,1) forwards}
   .pl-sub{color:#8a8a8a;font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-top:16px;
     opacity:0;animation:plFadeIn .8s 1s ease forwards}
-  @keyframes plCarIn{0%{opacity:0;transform:translateX(-70px) scale(.96)}100%{opacity:1;transform:translateX(0) scale(1)}}
+  @keyframes plCarIn{
+    0%{opacity:0;transform:translateY(26px) scale(.42);filter:drop-shadow(0 30px 34px rgba(0,0,0,.6)) blur(7px)}
+    45%{opacity:1;filter:drop-shadow(0 30px 34px rgba(0,0,0,.6)) blur(0)}
+    78%{transform:translateY(-6px) scale(1.06)}
+    100%{opacity:1;transform:translateY(0) scale(1);filter:drop-shadow(0 30px 34px rgba(0,0,0,.6)) blur(0)}}
   @keyframes plFadeDown{0%{opacity:0;transform:translateY(-14px)}100%{opacity:1;transform:translateY(0)}}
   @keyframes plFadeUp{0%{opacity:0;transform:translateY(14px)}100%{opacity:1;transform:translateY(0)}}
   @keyframes plFadeIn{to{opacity:1}}
@@ -726,13 +749,19 @@
   <div class="pl-inner">
     <img class="pl-logo" src="assets/logo.png" alt="ARTECH">
     <div class="pl-stage">
-      <img class="pl-car" src="assets/splash-car.png" alt="" aria-hidden="true" fetchpriority="high" decoding="async">
+      <div class="pl-rumble">
+        <img class="pl-car" src="assets/splash-ferrari.png" alt="" aria-hidden="true" fetchpriority="high" decoding="async">
+        <span class="pl-beam left"></span><span class="pl-beam right"></span>
+      </div>
       <div class="pl-shadow"></div>
     </div>
     <div class="pl-tag" data-i="pl_tag">SHIFT INTO HISTORY</div>
     <div class="pl-barwrap"><div class="pl-bar"></div></div>
     <div class="pl-sub" data-i="pl_sub">ARTECH · Lima, Perú</div>
   </div>
+  <button id="plSound" class="pl-sound" type="button" aria-label="Sound">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path class="spk" d="M4 9v6h4l5 4V5L8 9H4z"/><path class="wv" d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12"/><path class="xm" d="M17 9.5l5 5m0-5l-5 5"/></svg>
+  </button>
 </div>
 <script>document.documentElement.classList.add('pl-lock');document.addEventListener('DOMContentLoaded',()=>document.body.classList.add('pl-lock'));</script>
 
@@ -1808,7 +1837,83 @@ apply('en');
   const unlock=()=>{document.documentElement.classList.remove('pl-lock');document.body.classList.remove('pl-lock');};
   if(!pl){unlock();return;}
   let done=false;
-  function reveal(){ if(done)return; done=true; pl.classList.add('done'); unlock(); setTimeout(()=>{ if(pl.parentNode) pl.remove(); },900); }
+  function reveal(){ if(done)return; done=true; engine.stop(); pl.classList.add('done'); unlock(); setTimeout(()=>{ if(pl.parentNode) pl.remove(); },900); }
+
+  /* ---- synthesized V12 engine start + idle (Web Audio, no audio file) ---- */
+  const btn=document.getElementById('plSound');
+  const engine=(function(){
+    let ctx=null, master=null, nodes=[], running=false, stopped=false;
+    function build(){
+      const AC=window.AudioContext||window.webkitAudioContext; if(!AC) return false;
+      ctx=new AC();
+      master=ctx.createGain(); master.gain.value=0; master.connect(ctx.destination);
+      const lp=ctx.createBiquadFilter(); lp.type='lowpass'; lp.frequency.value=760; lp.Q.value=6; lp.connect(master);
+      // cilindros: osciladores desafinados = timbre grave y rico
+      [1,2,3].forEach((m,i)=>{
+        const o=ctx.createOscillator(); o.type=i===2?'square':'sawtooth';
+        o.frequency.value=42*m; o.detune.value=(i-1)*14;
+        const g=ctx.createGain(); g.gain.value=i===0?0.5:(i===1?0.28:0.14);
+        o.connect(g); g.connect(lp); o.start(); nodes.push(o,g);
+      });
+      // textura de escape (ruido filtrado)
+      const len=ctx.sampleRate*2, buf=ctx.createBuffer(1,len,ctx.sampleRate), d=buf.getChannelData(0);
+      for(let i=0;i<len;i++) d[i]=(Math.random()*2-1)*0.5;
+      const noise=ctx.createBufferSource(); noise.buffer=buf; noise.loop=true;
+      const bp=ctx.createBiquadFilter(); bp.type='bandpass'; bp.frequency.value=320; bp.Q.value=1.1;
+      const ng=ctx.createGain(); ng.gain.value=0.1;
+      noise.connect(bp); bp.connect(ng); ng.connect(lp); noise.start(); nodes.push(noise,bp,ng);
+      // arranque: rugido y luego ralentí
+      const t=ctx.currentTime, f=nodes.filter(n=>n.frequency&&n.type!=='lowpass');
+      master.gain.setValueAtTime(0,t);
+      master.gain.linearRampToValueAtTime(0.16,t+0.35);   // encendido
+      master.gain.linearRampToValueAtTime(0.30,t+1.15);   // acelerada
+      master.gain.linearRampToValueAtTime(0.13,t+2.6);    // baja a ralentí
+      [0,1,2].forEach(i=>{ const o=nodes[i*2], base=42*(i+1);
+        o.frequency.setValueAtTime(base*0.55,t);
+        o.frequency.exponentialRampToValueAtTime(base*1.85,t+1.15);   // rev up
+        o.frequency.exponentialRampToValueAtTime(base,t+2.8);          // settle
+      });
+      lp.frequency.setValueAtTime(430,t);
+      lp.frequency.exponentialRampToValueAtTime(1500,t+1.15);
+      lp.frequency.exponentialRampToValueAtTime(700,t+2.8);
+      return true;
+    }
+    function setBtn(on){ if(btn) btn.classList.toggle('on',on); }
+    return {
+      async start(){
+        if(running||stopped||localStorage.getItem('artechSound')==='off') return false;
+        if(!ctx && !build()) return false;
+        try{ await ctx.resume(); }catch(e){}
+        if(ctx.state!=='running') return false;
+        running=true; setBtn(true); return true;
+      },
+      stop(){
+        stopped=true; setBtn(false);
+        if(!ctx) return;
+        try{ master.gain.cancelScheduledValues(ctx.currentTime);
+             master.gain.setTargetAtTime(0,ctx.currentTime,0.25);
+             setTimeout(()=>{ try{ctx.close();}catch(e){} },900);
+        }catch(e){}
+        running=false;
+      },
+      mute(){ localStorage.setItem('artechSound','off'); this.stop(); stopped=false; },
+      isOn(){ return running; }
+    };
+  })();
+
+  // intenta sonar de inmediato; si el navegador lo bloquea, arranca al primer toque
+  engine.start().then(ok=>{
+    if(ok) return;
+    const kick=()=>{ engine.start(); off(); };
+    const off=()=>['pointerdown','keydown','touchstart'].forEach(e=>removeEventListener(e,kick));
+    ['pointerdown','keydown','touchstart'].forEach(e=>addEventListener(e,kick,{once:false,passive:true}));
+  });
+  if(btn) btn.addEventListener('click',e=>{
+    e.stopPropagation();
+    if(engine.isOn()) engine.mute();
+    else { localStorage.removeItem('artechSound'); engine.start(); }
+  });
+
   setTimeout(reveal, 6000);   // after the loading bar completes (~5.7s)
   setTimeout(reveal, 8500);   // hard safety cap
 })();
@@ -1829,7 +1934,7 @@ apply('en');
   // graceful fallback: if 3D fails or is slow, show a static car image (never leave "Loading…")
   function fallback(){
     if(host.dataset.done) return; host.dataset.done='1';
-    host.innerHTML='<img src="assets/splash-car.png" alt="" style="width:100%;height:100%;object-fit:contain">';
+    host.innerHTML='<img src="assets/splash-ferrari.png" alt="" style="width:100%;height:100%;object-fit:contain">';
     if(loader) loader.classList.add('hidden');
   }
   const safety=setTimeout(fallback, 9000);
