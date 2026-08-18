@@ -774,6 +774,24 @@
     .legacy,.intro{margin:0;border-radius:0;box-shadow:none}
     .legacy .txt,.intro .txt{padding:34px 22px}
   }
+
+  /* ---- header: aire entre el logo y el menú (que no lo interrumpa) ---- */
+  @media(min-width:901px){
+    .nav{gap:56px}
+    .logo{flex:none;margin-right:8px}
+    .navlinks{margin-left:auto;gap:26px}
+    .navlinks a{font-size:14px;letter-spacing:1.2px;white-space:nowrap}
+    .lang{margin-left:14px}
+  }
+  @media(min-width:901px) and (max-width:1300px){
+    .nav{gap:30px}
+    .navlinks{gap:17px}
+    .navlinks a{font-size:12.5px;letter-spacing:.6px}
+    .logo img{height:34px}
+    header.scrolled .logo img{height:29px}
+    .nav-cta{padding:8px 14px}
+    .lang button{padding:5px 11px;font-size:12px}
+  }
 </style>
 </head>
 <body>
