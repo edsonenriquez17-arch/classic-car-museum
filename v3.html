@@ -127,6 +127,8 @@
   .kicker.big{font-weight:600;font-size:clamp(44px,7vw,84px);letter-spacing:2px;margin-bottom:44px}
   .kicker .u{border-bottom:3px solid #fff;padding-bottom:6px}
   .exp-item{margin:26px 0}
+  .exp-lead{color:#dcdcdc;font-size:clamp(16px,2vw,20px);line-height:1.7;max-width:600px;margin:6px auto 32px}
+  .exp-cta{display:inline-block}
   .exp-item .t{font-family:var(--display);font-weight:600;font-size:clamp(17px,2.2vw,22px);letter-spacing:1px}
   .exp-item .d{color:#d7d7d7;font-size:16px;margin-top:4px}
   .exp-item .t b{color:#fff}
@@ -934,18 +936,8 @@
   <div class="inner">
     <div class="kicker" data-i="exp_the">THE <span class="u">MUSEUM</span></div>
     <div class="kicker big" data-i="exp_title">EXPERIENCES</div>
-    <div class="exp-item">
-      <div class="t"><b>THE HERITAGE TOUR</b> | $120 USD p/p | 90 min</div>
-      <div class="d" data-i="exp1">Access to the World's Oldest Car + Private Guide + Coffee at Salón Café</div>
-    </div>
-    <div class="exp-item">
-      <div class="t"><b>PORSCHE &amp; PERFORMANCE</b> | $150 USD p/p | 60 min</div>
-      <div class="d" data-i="exp2">Exclusive access to our Porsche collection. For collectors.</div>
-    </div>
-    <div class="exp-item">
-      <div class="t">SALÓN CAFÉ | <span data-i="exp3a">A CORDON BLEU EXPERIENCE</span></div>
-      <div class="d"><span data-i="exp3b">Peruvian contemporary cuisine inside the Museum. By</span> <b>Chef Carla Navea</b>. <span data-i="exp3c">Tuesday to Sunday · 9 am – 7 pm</span></div>
-    </div>
+    <p class="exp-lead" data-i="exp_lead">Guided tours, exclusive Porsche access and contemporary gastronomy — a complete journey through automotive history.</p>
+    <a href="#p-experience" class="btn-red exp-cta" data-i="exp_cta">See the experiences</a>
   </div>
 </section>
 
@@ -1365,7 +1357,7 @@ const dict = {
     p1_t:"Book your private tour",p1_d:"Reserve a guided visit and step into an unrepeatable collection.",
     p2_t:"Café menu",p2_d:"Peruvian & Italian fusion inside the Museum, by Chef Carla Navea.",
     visit_info:"Visit info",
-    exp_the:"THE MUSEUM",exp_title:"EXPERIENCES",
+    exp_the:"THE MUSEUM",exp_title:"EXPERIENCES",exp_lead:"Guided tours, exclusive Porsche access and contemporary gastronomy — a complete journey through automotive history.",exp_cta:"See the experiences",
     exp1:"Access to the World's Oldest Car + Private Guide + Coffee at Salón Café",
     exp2:"Exclusive access to our Porsche collection. For collectors.",
     exp3a:"A CORDON BLEU EXPERIENCE",exp3b:"Peruvian & Italian fusion inside the Museum. By",exp3c:"Tuesday to Sunday · 9 am – 7 pm",
@@ -1419,7 +1411,7 @@ const dict = {
     p1_t:"Reserva tu tour privado",p1_d:"Reserva una visita guiada y entra a una colección irrepetible.",
     p2_t:"Carta del café",p2_d:"Fusión peruana e italiana dentro del Museo, por la Chef Carla Navea.",
     visit_info:"Ver info",
-    exp_the:"EL MUSEO",exp_title:"EXPERIENCIAS",
+    exp_the:"EL MUSEO",exp_title:"EXPERIENCIAS",exp_lead:"Tours guiados, acceso exclusivo a Porsche y gastronomía contemporánea — un viaje completo por la historia del automóvil.",exp_cta:"Ver las experiencias",
     exp1:"Acceso al auto más antiguo del mundo + Guía privado + Café en el Salón Café",
     exp2:"Acceso exclusivo a nuestra colección Porsche. Para coleccionistas.",
     exp3a:"UNA EXPERIENCIA CORDON BLEU",exp3b:"Fusión peruana e italiana dentro del Museo. Por la",exp3c:"Martes a Domingo · 9 am – 7 pm",
