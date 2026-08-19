@@ -823,6 +823,72 @@
     #preloader .pl-sub{font-size:11px;letter-spacing:2px}
     #preloader .pl-barwrap{width:62vw;margin-top:16px}
   }
+
+  /* ================= ARTECH 360 VIEWER (3D) ================= */
+  .exp3d{padding:0;background:#0b0b0d;border-top:1px solid rgba(255,255,255,.07);overflow:hidden}
+  .v3d{position:relative;width:100%;height:min(88vh,860px);min-height:520px;
+    background:radial-gradient(ellipse 70% 60% at 50% 62%,#1a1a1f 0%,#0d0d10 55%,#08080a 100%)}
+  .v3d #scene3d{position:absolute;inset:0;width:100%;height:100%}
+  .v3d .scene-load{z-index:4}
+  .v3d-watermark{position:absolute;top:50%;left:50%;transform:translate(-50%,-52%);
+    font-family:var(--display);font-weight:800;letter-spacing:-2px;white-space:nowrap;
+    font-size:clamp(70px,15vw,220px);color:rgba(255,255,255,.045);pointer-events:none;z-index:0;
+    text-transform:uppercase;transition:opacity .4s}
+  /* título */
+  .v3d-head{position:absolute;top:clamp(22px,4vw,44px);left:clamp(20px,4vw,54px);z-index:5;pointer-events:none}
+  .v3d-name{font-family:var(--display);font-weight:800;color:#fff;letter-spacing:-1px;line-height:1;
+    font-size:clamp(26px,4.2vw,52px);text-transform:uppercase}
+  .v3d-sub{color:var(--gold);letter-spacing:3px;font-size:clamp(11px,1.2vw,14px);margin-top:10px;text-transform:uppercase}
+  /* menú de vistas */
+  .v3d-menu{position:absolute;left:clamp(20px,4vw,54px);top:50%;transform:translateY(-50%);z-index:5;
+    display:flex;flex-direction:column;gap:6px}
+  .v3d-item{display:flex;align-items:center;gap:14px;background:none;border:0;cursor:pointer;padding:9px 0;
+    color:rgba(255,255,255,.62);font-family:var(--display);font-weight:600;font-size:14px;letter-spacing:2.4px;
+    text-transform:uppercase;transition:color .25s,gap .25s}
+  .v3d-item .dot{width:11px;height:11px;border-radius:50%;border:1.5px solid rgba(255,255,255,.4);
+    flex:none;transition:all .25s}
+  .v3d-item:hover{color:#fff;gap:17px}
+  .v3d-item.active{color:#fff}
+  .v3d-item.active .dot{background:var(--red);border-color:var(--red);box-shadow:0 0 0 4px rgba(225,6,0,.22)}
+  /* barra de herramientas */
+  .v3d-tools{position:absolute;right:clamp(16px,3vw,42px);top:50%;transform:translateY(-50%);z-index:5;
+    display:flex;flex-direction:column;gap:10px}
+  .v3d-tool{width:46px;height:46px;border-radius:12px;border:1px solid rgba(255,255,255,.16);
+    background:rgba(255,255,255,.05);display:grid;place-items:center;cursor:pointer;transition:all .22s}
+  .v3d-tool svg{width:22px;height:22px;stroke:rgba(255,255,255,.85);fill:none;stroke-width:1.6;
+    stroke-linecap:round;stroke-linejoin:round}
+  .v3d-tool:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.4)}
+  .v3d-tool.on{background:var(--red);border-color:var(--red)}
+  .v3d-tool.on svg{stroke:#fff}
+  /* colores */
+  .v3d-swatches{position:absolute;right:calc(clamp(16px,3vw,42px) + 58px);top:50%;transform:translateY(-50%);
+    z-index:6;display:flex;flex-direction:column;gap:9px;background:rgba(12,12,15,.92);padding:12px;
+    border-radius:14px;border:1px solid rgba(255,255,255,.12)}
+  .v3d-swatches[hidden]{display:none}
+  .sw{width:30px;height:30px;border-radius:50%;border:2px solid rgba(255,255,255,.25);background:var(--c);
+    cursor:pointer;transition:transform .18s,border-color .18s}
+  .sw:hover{transform:scale(1.12)}
+  .sw.on{border-color:var(--gold);transform:scale(1.12)}
+  /* pie */
+  .v3d-foot{position:absolute;left:0;right:0;bottom:clamp(16px,2.6vw,30px);z-index:5;text-align:center;pointer-events:none}
+  .v3d-hint{color:rgba(255,255,255,.42);font-size:12.5px;letter-spacing:1.4px}
+  @media(max-width:900px){
+    .v3d{height:auto;min-height:0;padding:88px 0 26px;display:flex;flex-direction:column}
+    .v3d #scene3d{position:relative;inset:auto;height:46vh;min-height:280px;order:2}
+    .v3d-head{position:static;order:1;text-align:center;padding:0 20px 4px}
+    .v3d-menu{position:static;order:3;transform:none;flex-direction:row;flex-wrap:nowrap;overflow-x:auto;
+      gap:20px;padding:16px 20px 4px;justify-content:flex-start;scroll-snap-type:x mandatory}
+    .v3d-menu::-webkit-scrollbar{height:0}
+    .v3d-item{font-size:11.5px;letter-spacing:1.4px;gap:8px;white-space:nowrap;scroll-snap-align:center}
+    .v3d-item .dot{width:8px;height:8px}
+    .v3d-tools{position:static;order:4;transform:none;flex-direction:row;justify-content:center;
+      gap:12px;padding:14px 20px 0}
+    .v3d-tool{width:42px;height:42px}
+    .v3d-swatches{position:absolute;right:auto;left:50%;bottom:74px;top:auto;transform:translateX(-50%);
+      flex-direction:row}
+    .v3d-foot{position:static;order:5;padding-top:12px}
+    .v3d-watermark{font-size:clamp(52px,20vw,110px);top:38%}
+  }
 </style>
 </head>
 <body>
@@ -915,20 +981,47 @@
   </div>
 </section>
 
-<!-- 3D EXPERIENCE -->
+<!-- 3D EXPERIENCE · ARTECH 360 VIEWER -->
 <section class="exp3d home-only" id="exp3d">
-  <div class="wrap">
-    <div class="kick" data-i="d3_kick">EXPLORE <span class="u">EVERY</span> DETAIL</div>
-    <div class="big" data-i="d3_title">EXPERIENCE 3D</div>
-    <div class="stage" id="stage">
-      <div id="scene3d"></div>
-      <div id="scene3dLoad" class="scene-load">Loading 3D…</div>
+  <div class="v3d" id="v3d">
+    <div class="v3d-watermark" id="v3dMark">OVERVIEW</div>
+    <div id="scene3d"></div>
+    <div id="scene3dLoad" class="scene-load">Loading 3D…</div>
+
+    <div class="v3d-head">
+      <h2 class="v3d-name" id="v3dName">MASERATI 300S</h2>
+      <div class="v3d-sub" id="v3dSub">1957 · RACING BLUE</div>
     </div>
-    <div class="hint" data-i="d3_hint">↤ Drag to rotate 360° · scroll to zoom ↦</div>
-    <div class="pills">
-      <button class="pill" id="btn360" data-i="pill1">360° View</button>
-      <button class="pill" id="btnZoom" data-i="pill2">Real-time Interaction</button>
-      <button class="pill" id="btnImm" data-i="pill3">Immersive Experience</button>
+
+    <nav class="v3d-menu" id="v3dMenu">
+      <button class="v3d-item active" data-view="overview"><span class="dot"></span><span data-i="v3d_overview">Overview</span></button>
+      <button class="v3d-item" data-view="profile"><span class="dot"></span><span data-i="v3d_profile">Exterior</span></button>
+      <button class="v3d-item" data-view="wheels"><span class="dot"></span><span data-i="v3d_wheels">Wheels</span></button>
+      <button class="v3d-item" data-view="lights"><span class="dot"></span><span data-i="v3d_lights">Lights</span></button>
+      <button class="v3d-item" data-view="interior"><span class="dot"></span><span data-i="v3d_interior">Interior</span></button>
+      <button class="v3d-item" data-view="rear"><span class="dot"></span><span data-i="v3d_rear">Rear</span></button>
+    </nav>
+
+    <div class="v3d-tools" id="v3dTools">
+      <button class="v3d-tool" id="tPaint" title="Colour" aria-label="Colour"><svg viewBox="0 0 24 24"><path d="M5 15l7-11 7 11a7 7 0 0 1-14 0z"/></svg></button>
+      <button class="v3d-tool" id="tWheels" title="Wheels" aria-label="Wheels"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.4"/><circle cx="12" cy="12" r="2.6"/><path d="M12 3.6v6M12 14.4v6M3.6 12h6M14.4 12h6"/></svg></button>
+      <button class="v3d-tool" id="tLights" title="Lights" aria-label="Lights"><svg viewBox="0 0 24 24"><path d="M4 8.5h6.5a5 5 0 0 1 0 7H4z"/><path d="M14.5 9.5h5M14.5 12h6M14.5 14.5h5"/></svg></button>
+      <button class="v3d-tool" id="tNight" title="Night" aria-label="Night"><svg viewBox="0 0 24 24"><path d="M20 13.4A8 8 0 1 1 10.6 4a6.6 6.6 0 0 0 9.4 9.4z"/></svg></button>
+      <button class="v3d-tool" id="tSpin" title="Auto-rotate" aria-label="Auto-rotate"><svg viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-2.6-5.9"/><path d="M20 4v4h-4"/></svg></button>
+      <button class="v3d-tool" id="tReset" title="Reset" aria-label="Reset"><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 2.6-5.9"/><path d="M4 4v4h4"/></svg></button>
+    </div>
+
+    <div class="v3d-swatches" id="v3dSw" hidden>
+      <button class="sw" data-c="E10600" style="--c:#E10600" aria-label="Rosso"></button>
+      <button class="sw" data-c="1b3a6b" style="--c:#1b3a6b" aria-label="Racing blue"></button>
+      <button class="sw" data-c="C9A24B" style="--c:#C9A24B" aria-label="Gold"></button>
+      <button class="sw" data-c="0f1113" style="--c:#0f1113" aria-label="Black"></button>
+      <button class="sw" data-c="cfd3d7" style="--c:#cfd3d7" aria-label="Silver"></button>
+      <button class="sw" data-c="14402a" style="--c:#14402a" aria-label="British green"></button>
+    </div>
+
+    <div class="v3d-foot">
+      <span class="v3d-hint" data-i="d3_hint">↤ Drag to rotate 360° · scroll to zoom ↦</span>
     </div>
   </div>
 </section>
@@ -1325,6 +1418,7 @@ const dict = {
     nav_collection:"Collection",nav_experience:"Experience",nav_360:"360° Tour",nav_about:"About",nav_cafe:"Gourmet Café",nav_contact:"Contact",nav_book:"Book",
     cafe_tag:"Café · Cocina · Bar",cafe_title:"Gourmet Café",cafe_lead:"Peruvian & Italian fusion inside the Museum, by Chef Carla Navea. Tuesday to Sunday · 9 am – 7 pm.",cafe_hint:"Tap a category to explore the menu",
     nav_blog:"Blog",blog_kick:"THE JOURNAL",blog_title:"Stories from the Museum",blog_sub:"Classic cars, restoration and the culture behind the collection in Lima.",blog_back:"← All articles",post_cta:"Plan your visit",vh_back:"← Collection",
+    v3d_overview:"Overview",v3d_profile:"Exterior",v3d_wheels:"Wheels",v3d_lights:"Lights",v3d_interior:"Interior",v3d_rear:"Rear",
     nav_tickets:"Buy Tickets",hero_tickets:"Buy Tickets",tk_kick:"VISIT ARTECH",tk_title:"Buy Tickets",tk_sub:"Choose your date and tickets to experience the Museum, the collection and the Gourmet Café.",tk_date:"Select a date",tk_general:"General",tk_general_d:"Adult admission",tk_reduced:"Children & Seniors",tk_reduced_d:"Kids and senior citizens",tk_continue:"Reserve by WhatsApp",tk_note:"Prices are being finalized. Online payment is coming soon — for now, confirm your reservation via WhatsApp or at the entrance.",tk_pick:"Please pick a date and at least one ticket.",
     hero_title:"Shift into history",hero_sub:"A living experience of cars, art and gastronomy — home to the World's Oldest Car & a rare Porsche collection.",hero_btn:"360° tour",
     banner:"A LIVING MUSEUM OF MOTORING HISTORY",pl_tag:"SHIFT INTO HISTORY",pl_sub:"ARTECH · Lima, Perú",
@@ -1379,6 +1473,7 @@ const dict = {
     nav_collection:"Colección",nav_experience:"Experiencia",nav_360:"Visita 360°",nav_about:"Nosotros",nav_cafe:"Café Gourmet",nav_contact:"Contacto",nav_book:"Reserva",
     cafe_tag:"Café · Cocina · Bar",cafe_title:"Café Gourmet",cafe_lead:"Fusión peruana e italiana dentro del Museo, por la Chef Carla Navea. Martes a Domingo · 9 am – 7 pm.",cafe_hint:"Toca una categoría para ver la carta",
     nav_blog:"Blog",blog_kick:"EL DIARIO",blog_title:"Historias del Museo",blog_sub:"Autos clásicos, restauración y la cultura detrás de la colección en Lima.",blog_back:"← Todos los artículos",post_cta:"Planifica tu visita",vh_back:"← Colección",
+    v3d_overview:"Vista general",v3d_profile:"Exterior",v3d_wheels:"Ruedas",v3d_lights:"Luces",v3d_interior:"Interior",v3d_rear:"Trasera",
     nav_tickets:"Comprar Tickets",hero_tickets:"Comprar Tickets",tk_kick:"VISITA ARTECH",tk_title:"Comprar Tickets",tk_sub:"Elige tu fecha y tus entradas para vivir el Museo, la colección y el Gourmet Café.",tk_date:"Selecciona una fecha",tk_general:"General",tk_general_d:"Entrada adulto",tk_reduced:"Niños y adultos mayores",tk_reduced_d:"Niños y personas de la tercera edad",tk_continue:"Reservar por WhatsApp",tk_note:"Los precios se están definiendo. El pago en línea llegará pronto — por ahora, confirma tu reserva por WhatsApp o en la entrada.",tk_pick:"Elige una fecha y al menos una entrada.",
     hero_title:"Un viaje a la historia",hero_sub:"Una experiencia viva de autos, arte y gastronomía — hogar del auto más antiguo del mundo y una rara colección Porsche.",hero_btn:"Tour 360°",
     banner:"UN MUSEO VIVO DE LA HISTORIA DEL AUTOMÓVIL",pl_tag:"UN VIAJE A LA HISTORIA",pl_sub:"ARTECH · Lima, Perú",
@@ -1978,156 +2073,168 @@ apply('en');
 </script>
 <script type="module">
 (async function(){
-  const host = document.getElementById('scene3d');
-  const loader = document.getElementById('scene3dLoad');
+  const host=document.getElementById('scene3d'), loader=document.getElementById('scene3dLoad');
   if(!host) return;
-  // graceful fallback: if 3D fails or is slow, show a static car image (never leave "Loading…")
-  function fallback(){
-    if(host.dataset.done) return; host.dataset.done='1';
-    host.innerHTML='<img src="assets/splash-ferrari.png" alt="" style="width:100%;height:100%;object-fit:contain">';
-    if(loader) loader.classList.add('hidden');
-  }
-  const safety=setTimeout(fallback, 9000);
-  let THREE, OrbitControls, RoundedBoxGeometry, RoomEnvironment;
+  function fallback(){ if(host.dataset.done) return; host.dataset.done='1';
+    host.innerHTML='<img src="assets/splash-maserati.jpg" alt="" style="width:100%;height:100%;object-fit:contain">';
+    if(loader) loader.classList.add('hidden'); }
+  const safety=setTimeout(fallback,10000);
+  let THREE,OrbitControls,RoundedBoxGeometry,RoomEnvironment;
   try{
-    THREE = await import('three');
-    ({ OrbitControls } = await import('three/addons/controls/OrbitControls.js'));
-    ({ RoundedBoxGeometry } = await import('three/addons/geometries/RoundedBoxGeometry.js'));
-    ({ RoomEnvironment } = await import('three/addons/environments/RoomEnvironment.js'));
-  }catch(err){
-    clearTimeout(safety); fallback();
-    console.warn('three.js load failed', err); return;
-  }
-  host.dataset.done='1'; clearTimeout(safety);
+    THREE=await import('three');
+    ({OrbitControls}=await import('three/addons/controls/OrbitControls.js'));
+    ({RoundedBoxGeometry}=await import('three/addons/geometries/RoundedBoxGeometry.js'));
+    ({RoomEnvironment}=await import('three/addons/environments/RoomEnvironment.js'));
+  }catch(e){ clearTimeout(safety); fallback(); return; }
+  clearTimeout(safety); host.dataset.done='1';
 
-  const W = host.clientWidth, H = host.clientHeight;
-  const renderer = new THREE.WebGLRenderer({antialias:true, alpha:true});
-  renderer.setPixelRatio(Math.min(devicePixelRatio,2));
-  renderer.setSize(W,H);
-  renderer.outputColorSpace = THREE.SRGBColorSpace;
-  renderer.toneMapping = THREE.ACESFilmicToneMapping;
-  renderer.toneMappingExposure = 1.05;
-  renderer.shadowMap.enabled = true;
-  renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+  const W=host.clientWidth||800, H=host.clientHeight||520;
+  const renderer=new THREE.WebGLRenderer({antialias:true,alpha:true});
+  renderer.setPixelRatio(Math.min(devicePixelRatio,2)); renderer.setSize(W,H);
+  renderer.toneMapping=THREE.ACESFilmicToneMapping; renderer.toneMappingExposure=1.1;
+  renderer.shadowMap.enabled=true; renderer.shadowMap.type=THREE.PCFSoftShadowMap;
   host.appendChild(renderer.domElement);
+  const scene=new THREE.Scene();
+  const pmrem=new THREE.PMREMGenerator(renderer);
+  scene.environment=pmrem.fromScene(new RoomEnvironment(renderer),0.04).texture;
+  const camera=new THREE.PerspectiveCamera(32,W/H,0.1,120);
+  const controls=new OrbitControls(camera,renderer.domElement);
+  controls.enableDamping=true; controls.dampingFactor=0.07; controls.enablePan=false;
+  controls.minDistance=4.2; controls.maxDistance=14; controls.maxPolarAngle=Math.PI/2.03;
 
-  const scene = new THREE.Scene();
-  const pmrem = new THREE.PMREMGenerator(renderer);
-  scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
+  const key=new THREE.DirectionalLight(0xffffff,2.2); key.position.set(6,7,5);
+  key.castShadow=true; key.shadow.mapSize.set(1024,1024); scene.add(key);
+  const fill=new THREE.DirectionalLight(0xffffff,0.6); fill.position.set(-6,4,-5); scene.add(fill);
+  const amb=new THREE.AmbientLight(0xffffff,0.35); scene.add(amb);
+  const rimL=new THREE.PointLight(0xE10600,0,10); rimL.position.set(-4,1.6,-3); scene.add(rimL);
 
-  const camera = new THREE.PerspectiveCamera(32, W/H, 0.1, 100);
-  const DEF_POS = new THREE.Vector3(5.6, 2.5, 6.2);
-  const DEF_TGT = new THREE.Vector3(0, 0.7, 0);
-  camera.position.copy(DEF_POS);
+  const paint=new THREE.MeshPhysicalMaterial({color:0x1b3a6b,metalness:0.55,roughness:0.22,clearcoat:1,clearcoatRoughness:0.12});
+  const glass=new THREE.MeshPhysicalMaterial({color:0x0a0d12,metalness:0.3,roughness:0.05,transparent:true,opacity:0.85});
+  const tire=new THREE.MeshStandardMaterial({color:0x0b0b0d,roughness:0.92,metalness:0.05});
+  const rim=new THREE.MeshStandardMaterial({color:0xd6dade,metalness:0.98,roughness:0.16});
+  const chrome=new THREE.MeshStandardMaterial({color:0xe8ecef,metalness:1,roughness:0.08});
+  const stripe=new THREE.MeshPhysicalMaterial({color:0xf2f2f0,metalness:0.3,roughness:0.3,clearcoat:1});
+  const beamMat=new THREE.MeshStandardMaterial({color:0xffffff,emissive:0xfff2cc,emissiveIntensity:0.35,roughness:0.25});
+  const tailMat=new THREE.MeshStandardMaterial({color:0x330404,emissive:0xff1e10,emissiveIntensity:0.5,roughness:0.3});
+  const seatMat=new THREE.MeshStandardMaterial({color:0x6b3b23,roughness:0.75});
 
-  const controls = new OrbitControls(camera, renderer.domElement);
-  controls.target.copy(DEF_TGT);
-  controls.enableDamping = true; controls.dampingFactor = 0.07;
-  controls.enablePan = false;
-  controls.minDistance = 4.5; controls.maxDistance = 13;
-  controls.minPolarAngle = 0.18; controls.maxPolarAngle = Math.PI/2 - 0.04;
-  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  controls.autoRotate = !reduce; controls.autoRotateSpeed = 1.1;
-
-  // lights
-  scene.add(new THREE.HemisphereLight(0xffffff, 0x8d8d8d, 0.55));
-  const key = new THREE.DirectionalLight(0xffffff, 2.1);
-  key.position.set(5,9,5); key.castShadow = true;
-  key.shadow.mapSize.set(2048,2048);
-  key.shadow.camera.near = 1; key.shadow.camera.far = 40;
-  key.shadow.camera.left=-9; key.shadow.camera.right=9; key.shadow.camera.top=9; key.shadow.camera.bottom=-9;
-  key.shadow.bias = -0.0004; key.shadow.radius = 6;
-  scene.add(key);
-  const fill = new THREE.DirectionalLight(0xffffff, 0.55); fill.position.set(-6,4,-5); scene.add(fill);
-
-  // materials
-  const RED = 0xE10600;
-  const paint = new THREE.MeshPhysicalMaterial({color:RED, metalness:0.5, roughness:0.26, clearcoat:1, clearcoatRoughness:0.16});
-  const glass = new THREE.MeshPhysicalMaterial({color:0x0b0d11, metalness:0.4, roughness:0.06, clearcoat:1});
-  const tire  = new THREE.MeshStandardMaterial({color:0x0c0c0e, roughness:0.85, metalness:0.1});
-  const rim   = new THREE.MeshStandardMaterial({color:0xd0d4d9, metalness:0.95, roughness:0.22});
-  const lightW= new THREE.MeshStandardMaterial({color:0xffffff, emissive:0xfff0c8, emissiveIntensity:1.5, roughness:0.3});
-  const lightR= new THREE.MeshStandardMaterial({color:0x2a0000, emissive:0xff2a18, emissiveIntensity:1.7, roughness:0.3});
-
-  // stylized coupe built from shapes
-  const car = new THREE.Group();
-  const rbox = (w,h,d,r)=>new RoundedBoxGeometry(w,h,d,5,r);
-  const body = new THREE.Mesh(rbox(3.8,0.72,1.72,0.28), paint); body.position.y=0.66; car.add(body);
-  const skirt= new THREE.Mesh(rbox(3.9,0.34,1.62,0.16), paint); skirt.position.y=0.36; car.add(skirt);
-  const hood = new THREE.Mesh(rbox(1.25,0.3,1.55,0.14), paint); hood.position.set(1.25,0.98,0); car.add(hood);
-  const deck = new THREE.Mesh(rbox(1.0,0.3,1.55,0.14), paint); deck.position.set(-1.35,0.98,0); car.add(deck);
-  const cabin= new THREE.Mesh(rbox(1.85,0.62,1.44,0.24), glass); cabin.position.set(-0.15,1.2,0); car.add(cabin);
-
+  const car=new THREE.Group(); scene.add(car);
+  const rb=(w,h,d,r)=>new RoundedBoxGeometry(w,h,d,6,r);
+  const add=(g,m,x,y,z)=>{const me=new THREE.Mesh(g,m);me.position.set(x,y,z);me.castShadow=true;me.receiveShadow=true;car.add(me);return me;};
+  add(rb(4.3,0.62,1.78,0.30),paint,0,0.70,0);
+  add(rb(4.0,0.40,1.62,0.18),paint,0,0.42,0);
+  const nose=add(rb(1.5,0.52,1.66,0.26),paint,1.62,0.80,0); nose.scale.set(1,0.92,0.96);
+  add(rb(1.2,0.44,1.62,0.22),paint,-1.75,0.82,0);
+  add(rb(2.6,0.10,0.34,0.05),stripe,0.55,1.03,0);
+  add(rb(1.5,0.46,1.32,0.22),glass,-0.35,1.20,0);
+  add(rb(0.10,0.44,1.28,0.05),chrome,0.42,1.24,0);
+  add(rb(0.9,0.24,1.14,0.10),seatMat,-0.55,1.06,0);
+  add(rb(4.35,0.12,0.16,0.05),chrome,0,0.30,0.86);
+  add(rb(4.35,0.12,0.16,0.05),chrome,0,0.30,-0.86);
+  add(rb(0.22,0.30,1.5,0.10),chrome,2.30,0.62,0);
+  add(rb(0.18,0.26,1.4,0.08),chrome,-2.32,0.66,0);
+  add(rb(0.14,0.34,0.92,0.10),new THREE.MeshStandardMaterial({color:0x111316,metalness:0.9,roughness:0.35}),2.28,0.72,0);
+  add(new THREE.SphereGeometry(0.19,24,18),beamMat,2.02,0.92,0.56);
+  add(new THREE.SphereGeometry(0.19,24,18),beamMat,2.02,0.92,-0.56);
+  add(rb(0.10,0.16,0.34,0.05),tailMat,-2.30,0.86,0.52);
+  add(rb(0.10,0.16,0.34,0.05),tailMat,-2.30,0.86,-0.52);
+  add(rb(0.12,0.10,0.24,0.04),chrome,0.55,1.16,0.92);
+  add(rb(0.12,0.10,0.24,0.04),chrome,0.55,1.16,-0.92);
   function wheel(x,z){
-    const g = new THREE.Group();
-    const t = new THREE.Mesh(new THREE.CylinderGeometry(0.46,0.46,0.32,30), tire); t.rotation.x=Math.PI/2; g.add(t);
-    const r = new THREE.Mesh(new THREE.CylinderGeometry(0.29,0.29,0.35,22), rim); r.rotation.x=Math.PI/2; g.add(r);
-    g.position.set(x,0.46,z); car.add(g);
+    const g=new THREE.Group();
+    const t=new THREE.Mesh(new THREE.TorusGeometry(0.46,0.19,16,40),tire); t.rotation.y=Math.PI/2; t.castShadow=true; g.add(t);
+    const d=new THREE.Mesh(new THREE.CylinderGeometry(0.30,0.30,0.20,28),rim); d.rotation.z=Math.PI/2; g.add(d);
+    for(let i=0;i<12;i++){ const sp=new THREE.Mesh(new THREE.CylinderGeometry(0.012,0.012,0.58,6),rim);
+      sp.rotation.z=Math.PI/2; sp.rotation.x=i*Math.PI/6; g.add(sp); }
+    g.position.set(x,0.48,z); car.add(g); return g;
   }
-  wheel(1.2,0.9); wheel(1.2,-0.9); wheel(-1.2,0.9); wheel(-1.2,-0.9);
+  [[1.45,0.82],[1.45,-0.82],[-1.45,0.82],[-1.45,-0.82]].forEach(function(a){ wheel(a[0],a[1]); });
+  const floor=new THREE.Mesh(new THREE.CircleGeometry(9,64),
+    new THREE.MeshStandardMaterial({color:0x101013,roughness:0.75,metalness:0.2}));
+  floor.rotation.x=-Math.PI/2; floor.receiveShadow=true; scene.add(floor);
 
-  const hl = new THREE.Mesh(rbox(0.14,0.2,0.42,0.06), lightW);
-  hl.position.set(1.92,0.74,0.52); car.add(hl);
-  const hl2 = hl.clone(); hl2.position.z=-0.52; car.add(hl2);
-  const tl = new THREE.Mesh(rbox(0.1,0.16,0.5,0.05), lightR);
-  tl.position.set(-1.9,0.8,0.46); car.add(tl);
-  const tl2 = tl.clone(); tl2.position.z=-0.46; car.add(tl2);
-
-  car.traverse(o=>{ if(o.isMesh){ o.castShadow=true; o.receiveShadow=true; } });
-  car.rotation.y = -0.5;
-  scene.add(car);
-
-  // soft ground shadow
-  const ground = new THREE.Mesh(new THREE.CircleGeometry(7,64), new THREE.ShadowMaterial({opacity:0.24}));
-  ground.rotation.x = -Math.PI/2; ground.receiveShadow = true; scene.add(ground);
-
-  // camera tween helper (for pill actions)
-  let tween = null;
-  function moveTo(pos, tgt, dur=900){
-    tween = { p0:camera.position.clone(), t0:controls.target.clone(), p1:pos.clone(), t1:tgt.clone(), start:performance.now(), dur };
-    controls.enabled = false;
+  const V={
+    overview:{p:[6.0,2.6,6.4],t:[0,0.75,0],mark:'OVERVIEW'},
+    profile:{p:[0.2,1.5,8.6],t:[0,0.80,0],mark:'EXTERIOR'},
+    wheels:{p:[3.4,1.0,3.4],t:[1.35,0.50,0.85],mark:'WHEELS'},
+    lights:{p:[5.6,1.3,1.8],t:[1.90,0.85,0],mark:'LIGHTS'},
+    interior:{p:[1.6,2.4,2.2],t:[-0.30,1.05,0],mark:'INTERIOR'},
+    rear:{p:[-6.2,2.0,3.6],t:[-1.3,0.85,0],mark:'REAR'}
+  };
+  let from=null,to=null,tgtFrom=null,tgtTo=null,t0=0;
+  const DUR=950, mark=document.getElementById('v3dMark');
+  function goto(k){
+    const v=V[k]||V.overview;
+    from=camera.position.clone(); to=new THREE.Vector3(v.p[0],v.p[1],v.p[2]);
+    tgtFrom=controls.target.clone(); tgtTo=new THREE.Vector3(v.t[0],v.t[1],v.t[2]);
+    t0=performance.now();
+    if(mark){ mark.style.opacity=0; setTimeout(function(){ mark.textContent=v.mark; mark.style.opacity=1; },220); }
   }
-
-  // pills
-  const b360=document.getElementById('btn360'), bZoom=document.getElementById('btnZoom'), bImm=document.getElementById('btnImm');
-  let immersive=false;
-  if(b360) b360.addEventListener('click',()=>{
-    controls.autoRotate = !controls.autoRotate;
-    b360.classList.toggle('active', controls.autoRotate);
-  });
-  if(b360) b360.classList.toggle('active', controls.autoRotate);
-  if(bZoom) bZoom.addEventListener('click',()=>{ immersive=false; bImm&&bImm.classList.remove('active'); moveTo(DEF_POS, DEF_TGT); });
-  if(bImm) bImm.addEventListener('click',()=>{
-    immersive=!immersive; bImm.classList.toggle('active', immersive);
-    if(immersive) moveTo(new THREE.Vector3(2.4,1.35,3.3), new THREE.Vector3(0.4,0.7,0));
-    else moveTo(DEF_POS, DEF_TGT);
+  camera.position.set(V.overview.p[0],V.overview.p[1],V.overview.p[2]);
+  controls.target.set(0,0.75,0); controls.update();
+  document.querySelectorAll('.v3d-item').forEach(function(b){
+    b.addEventListener('click',function(){
+      document.querySelectorAll('.v3d-item').forEach(function(x){x.classList.remove('active');});
+      b.classList.add('active'); goto(b.dataset.view);
+    });
   });
 
-  // resize
-  const ro = new ResizeObserver(()=>{
-    const w=host.clientWidth, h=host.clientHeight; if(!w||!h) return;
-    camera.aspect=w/h; camera.updateProjectionMatrix(); renderer.setSize(w,h);
+  const sw=document.getElementById('v3dSw');
+  const tp=document.getElementById('tPaint');
+  if(tp) tp.addEventListener('click',function(e){ e.currentTarget.classList.toggle('on'); if(sw) sw.hidden=!sw.hidden; });
+  const NAMES={'E10600':'ROSSO ARTECH','1b3a6b':'RACING BLUE','C9A24B':'ORO','0f1113':'NERO','cfd3d7':'ARGENTO','14402a':'BRITISH GREEN'};
+  document.querySelectorAll('.sw[data-c]').forEach(function(b){
+    b.addEventListener('click',function(){
+      const c=b.dataset.c; if(!/^[0-9a-fA-F]{6}$/.test(c)) return;
+      paint.color.set('#'+c);
+      document.querySelectorAll('.sw').forEach(function(x){x.classList.remove('on');});
+      b.classList.add('on');
+      const sub=document.getElementById('v3dSub');
+      if(sub) sub.textContent='1957 · '+(NAMES[c]||'');
+    });
   });
-  ro.observe(host);
+  let lightsOn=false;
+  const tl=document.getElementById('tLights');
+  if(tl) tl.addEventListener('click',function(e){
+    lightsOn=!lightsOn; e.currentTarget.classList.toggle('on',lightsOn);
+    beamMat.emissiveIntensity=lightsOn?2.4:0.35;
+    tailMat.emissiveIntensity=lightsOn?2.2:0.5;
+    rimL.intensity=lightsOn?2.2:0;
+  });
+  let night=false;
+  const tn=document.getElementById('tNight');
+  if(tn) tn.addEventListener('click',function(e){
+    night=!night; e.currentTarget.classList.toggle('on',night);
+    key.intensity=night?0.5:2.2; fill.intensity=night?0.15:0.6; amb.intensity=night?0.10:0.35;
+    renderer.toneMappingExposure=night?0.85:1.1;
+    const v=document.getElementById('v3d');
+    if(v) v.style.background=night?'radial-gradient(ellipse 70% 60% at 50% 62%,#111117 0%,#06060a 60%,#030305 100%)':'';
+  });
+  let spin=true;
+  const ts=document.getElementById('tSpin');
+  if(ts){ ts.classList.add('on'); ts.addEventListener('click',function(e){ spin=!spin; e.currentTarget.classList.toggle('on',spin); }); }
+  const tw=document.getElementById('tWheels');
+  if(tw) tw.addEventListener('click',function(){ const b=document.querySelector('.v3d-item[data-view="wheels"]'); if(b) b.click(); });
+  const tr=document.getElementById('tReset');
+  if(tr) tr.addEventListener('click',function(){ const b=document.querySelector('.v3d-item[data-view="overview"]'); if(b) b.click(); });
 
-  // render the first frame synchronously so the car is visible immediately
-  controls.update();
+  const ease=function(x){ return x<0.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2; };
+  function resize(){ const w=host.clientWidth,h=host.clientHeight; if(!w||!h) return;
+    camera.aspect=w/h; camera.updateProjectionMatrix(); renderer.setSize(w,h); }
+  addEventListener('resize',resize); resize();
+  let dragging=false;
+  controls.addEventListener('start',function(){ dragging=true; });
   renderer.render(scene,camera);
-  loader && loader.classList.add('hidden');
-
-  function animate(now){
-    requestAnimationFrame(animate);
-    if(tween){
-      const p=Math.min((now-tween.start)/tween.dur,1);
-      const e=1-Math.pow(1-p,3);
-      camera.position.lerpVectors(tween.p0,tween.p1,e);
-      controls.target.lerpVectors(tween.t0,tween.t1,e);
-      if(p>=1){ tween=null; controls.enabled=true; }
-    }
-    controls.update();
-    renderer.render(scene,camera);
-  }
-  requestAnimationFrame(animate);
+  if(loader) loader.classList.add('hidden');
+  (function loop(now){
+    requestAnimationFrame(loop);
+    if(from){ const k=Math.min(1,(now-t0)/DUR), e=ease(k);
+      camera.position.lerpVectors(from,to,e); controls.target.lerpVectors(tgtFrom,tgtTo,e);
+      if(k>=1) from=null; }
+    else if(spin && !dragging){ car.rotation.y+=0.0022; }
+    if(lightsOn){ beamMat.emissiveIntensity=1.9+Math.sin(now/420)*0.25; }
+    controls.update(); renderer.render(scene,camera);
+  })(performance.now());
 })();
 </script>
 </body>
