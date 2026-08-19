@@ -9,6 +9,7 @@
 <link rel="preload" as="image" href="assets/logo.png" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
 <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <style>
   /* Whole site typography: Abadi MT where installed; 'Cabin' web font as an
@@ -978,7 +979,7 @@
 
 <!-- EXPERIENCES -->
 <section class="experiences home-only" id="experiences">
-  <video class="exp-bg" autoplay muted loop playsinline preload="auto" poster="assets/experiences.png">
+  <video class="exp-bg" autoplay muted loop playsinline preload="none" poster="assets/experiences.png">
     <source src="assets/experiences.mp4" type="video/mp4">
   </video>
   <div class="inner">
@@ -2019,12 +2020,22 @@ apply('en');
   const unlock=()=>{document.documentElement.classList.remove('pl-lock');document.body.classList.remove('pl-lock');};
   if(!pl){unlock();return;}
   let done=false;
-  function reveal(){ if(done)return; done=true; try{const v=document.getElementById('plVideo'); if(v){v.pause();}}catch(e){} pl.classList.add('done'); unlock(); setTimeout(()=>{ if(pl.parentNode) pl.remove(); },900); }
+  const limpiadores=[];
+  function reveal(){
+    if(done)return; done=true;
+    limpiadores.forEach(function(f){ try{f();}catch(e){} });      // quita los listeners de audio
+    try{
+      const v=document.getElementById('plVideo');
+      if(v){ v.pause(); v.muted=true; v.removeAttribute('src'); v.load(); }   // corta el sonido de verdad
+    }catch(e){}
+    pl.classList.add('done'); unlock();
+    setTimeout(function(){ if(pl.parentNode) pl.remove(); },900);
+  }
 
   /* ---- audio automático: el video nunca se detiene por intentar sonar ---- */
   const vid=document.getElementById('plVideo');
   const intentarSonido=async()=>{
-    if(!vid || vid.dataset.snd==='1') return false;
+    if(!vid || done || vid.dataset.snd==='1') return false;
     const t=vid.currentTime;
     vid.muted=false; vid.volume=1;
     try{ await vid.play(); }catch(e){}
@@ -2049,6 +2060,7 @@ apply('en');
     vid.addEventListener('playing',()=>{ intentarSonido(); },{once:true});
     const auto=()=>{ intentarSonido().then(ok=>{ if(ok) quitar(); }); };
     const quitar=()=>['pointerdown','touchstart','keydown','scroll'].forEach(e=>removeEventListener(e,auto));
+    limpiadores.push(quitar);
     ['pointerdown','touchstart','keydown','scroll'].forEach(e=>addEventListener(e,auto,{passive:true}));
 
     // 2) la barra avanza con el progreso REAL del video
@@ -2083,6 +2095,12 @@ apply('en');
 (async function(){
   const host=document.getElementById('scene3d'), loader=document.getElementById('scene3dLoad');
   if(!host) return;
+  // carga diferida: no descargamos three.js hasta que el visor esté cerca del viewport
+  await new Promise(function(res){
+    if(!('IntersectionObserver' in window)) return res();
+    const io=new IntersectionObserver(function(en){ if(en[0].isIntersecting){ io.disconnect(); res(); } },{rootMargin:'600px'});
+    io.observe(host);
+  });
   function fallback(){ if(host.dataset.done) return; host.dataset.done='1';
     host.innerHTML='<img src="assets/splash-maserati.jpg" alt="" style="width:100%;height:100%;object-fit:contain">';
     if(loader) loader.classList.add('hidden'); }
