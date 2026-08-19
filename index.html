@@ -765,7 +765,7 @@
   header.nav-open{background:transparent!important;backdrop-filter:none!important;
     -webkit-backdrop-filter:none!important;box-shadow:none!important}
   .navlinks{z-index:130}
-  .nav-backdrop{position:fixed;inset:0;background:rgba(6,6,8,.72);z-index:120;opacity:0;
+  .nav-backdrop{position:fixed;inset:0;background:rgba(6,6,8,.72);z-index:90;opacity:0;
     visibility:hidden;transition:opacity .35s,visibility .35s}
   body.nav-open .nav-backdrop{opacity:1;visibility:visible}
   @media(min-width:901px){.nav-backdrop{display:none}}
@@ -1472,7 +1472,7 @@ route();
 // mobile menu
 const burger=document.getElementById('burger'), nav=document.getElementById('navlinks');
 const navBd=document.createElement('div'); navBd.className='nav-backdrop'; document.body.appendChild(navBd);
-const setNav=o=>{nav.classList.toggle('open',o);document.body.classList.toggle('nav-open',o);document.getElementById('header').classList.toggle('nav-open',o);};
+const setNav=o=>{nav.classList.toggle('open',o);document.body.classList.toggle('nav-open',o);document.getElementById('header').classList.toggle('nav-open',o);if(matchMedia('(max-width:900px)').matches){nav.style.transform=o?'translateX(0)':'translateX(100%)';nav.style.visibility=o?'visible':'';nav.style.pointerEvents=o?'auto':'';}else{nav.style.transform='';nav.style.visibility='';nav.style.pointerEvents='';}};
 burger.addEventListener('click',()=>setNav(!nav.classList.contains('open')));
 navBd.addEventListener('click',()=>setNav(false));
 nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setNav(false)));
