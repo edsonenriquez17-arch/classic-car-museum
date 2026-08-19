@@ -2,7 +2,6 @@
 {
 "plate": "A0D - 466",
 "slug": "a0d-466",
-"d3": true,
 "name": "Honda NSX",
 "brand": "Honda",
 "model": "NSX (NA1)",
@@ -26,12 +25,18 @@
 "trans": "Manual 5 vel.",
 "frenos": "Disco en 4 ruedas",
 "vel": "≈ 270 km/h"
-}
+},
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "A2Y - 410",
 "slug": "a2y-410",
-"d3": true,
 "name": "Mercedes-Benz SL 500",
 "brand": "Mercedes-Benz",
 "model": "SL 500 (R230)",
@@ -55,12 +60,18 @@
 "trans": "Automática 5 vel.",
 "frenos": "Disco en 4 ruedas",
 "vel": "250 km/h (lim.)"
-}
+},
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "A3M - 354",
 "slug": "a3m-354",
-"d3": true,
 "name": "Mercedes-Benz E55 AMG",
 "brand": "Mercedes-Benz",
 "model": "E55 AMG (W211)",
@@ -85,12 +96,18 @@
 "frenos": "Disco en 4 ruedas",
 "vel": "250 km/h (lim.)"
 },
-"side": 1
+"side": 1,
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "A4D - 305",
 "slug": "a4d-305",
-"d3": true,
 "name": "Porsche 911 GT3",
 "brand": "Porsche",
 "model": "911 GT3 (997.2)",
@@ -114,12 +131,18 @@
 "trans": "Manual 6 vel.",
 "frenos": "Disco carbono-cerámico",
 "vel": "312 km/h"
-}
+},
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "A5M - 345",
 "slug": "a5m-345",
-"d3": true,
 "name": "Classic Roadster",
 "model": "1920s American Roadster",
 "year": "1926",
@@ -130,12 +153,18 @@
 "desc_es": "Un roadster americano de los locos años 20 bellamente restaurado — pintura bitono y encanto de la era del latón.",
 "specs_es": {
 "tipo": "Roadster"
-}
+},
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "A5T - 244",
 "slug": "a5t-244",
-"d3": true,
 "name": "Jeep Grand Cherokee SRT8",
 "brand": "Jeep",
 "model": "Grand Cherokee SRT8 (WK)",
@@ -159,12 +188,18 @@
 "trans": "Automática 5 vel.",
 "frenos": "Disco en 4 ruedas (Brembo)",
 "vel": "250 km/h"
-}
+},
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "A7H - 440",
 "slug": "a7h-440",
-"d3": true,
 "name": "Mercedes-Benz C43 AMG",
 "brand": "Mercedes-Benz",
 "model": "C43 AMG (W202)",
@@ -189,12 +224,18 @@
 "frenos": "Disco en 4 ruedas",
 "vel": "250 km/h (lim.)"
 },
-"side": 1
+"side": 1,
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "A9L - 161",
 "slug": "a9l-161",
-"d3": true,
 "name": "Ford Super Deluxe Woody",
 "brand": "Ford",
 "model": "Super Deluxe Woody",
@@ -219,12 +260,18 @@
 "frenos": "Tambor hidráulico",
 "vel": "≈ 130 km/h"
 },
-"side": 1
+"side": 1,
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "A9T - 107",
 "slug": "a9t-107",
-"d3": true,
 "name": "Porsche 911 Turbo",
 "brand": "Porsche",
 "model": "911 Turbo (993)",
@@ -248,12 +295,18 @@
 "trans": "Manual 6 vel.",
 "frenos": "Disco en 4 ruedas",
 "vel": "290 km/h"
-}
+},
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "ABR - 223",
 "slug": "abr-223",
-"d3": true,
 "name": "Packard 740 Limousine",
 "brand": "Packard",
 "model": "740 Limousine",
@@ -277,12 +330,18 @@
 "trans": "Manual 4 vel.",
 "frenos": "Tambor mecánico con servo",
 "vel": "≈ 130 km/h"
-}
+},
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "ABY - 304",
 "slug": "aby-304",
-"d3": true,
 "name": "Stutz BB",
 "brand": "Stutz",
 "model": "BB",
@@ -307,12 +366,18 @@
 "frenos": "Tambor hidráulico",
 "vel": "≈ 160 km/h"
 },
-"side": 1
+"side": 1,
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "AH - 9536",
 "slug": "ah-9536",
-"d3": true,
 "name": "Plymouth Satellite",
 "brand": "Plymouth",
 "model": "Satellite",
@@ -337,12 +402,18 @@
 "frenos": "Tambor",
 "vel": "≈ 190 km/h"
 },
-"side": 1
+"side": 1,
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "AHE - 474",
 "slug": "ahe-474",
-"d3": true,
 "name": "Packard 633 Phaeton",
 "brand": "Packard",
 "model": "633 Phaeton",
@@ -366,12 +437,18 @@
 "trans": "Manual 3 vel.",
 "frenos": "Tambor mecánico",
 "vel": "≈ 120 km/h"
-}
+},
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "AHE - 484",
 "slug": "ahe-484",
-"d3": true,
 "name": "Packard Super Eight Club Sedan",
 "brand": "Packard",
 "model": "Super Eight Club Sedan",
@@ -395,12 +472,18 @@
 "trans": "Manual 3 vel.",
 "frenos": "Tambor hidráulico",
 "vel": "≈ 140 km/h"
-}
+},
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "AKV - 003",
 "slug": "akv-003",
-"d3": true,
 "name": "Porsche Cayman GT4",
 "brand": "Porsche",
 "model": "Cayman GT4 (981)",
@@ -424,12 +507,18 @@
 "trans": "Manual 6 vel.",
 "frenos": "Disco en 4 ruedas",
 "vel": "295 km/h"
-}
+},
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "ALO-686",
 "slug": "alo-686",
-"d3": true,
 "name": "Lincoln L 7 Asientos",
 "brand": "Lincoln",
 "model": "L 7 Asientos",
@@ -453,12 +542,18 @@
 "trans": "Manual 3 vel.",
 "frenos": "Tambor mecánico",
 "vel": "≈ 110 km/h"
-}
+},
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "ALR - 593",
 "slug": "alr-593",
-"d3": true,
 "name": "Lotus Exige S",
 "brand": "Lotus",
 "model": "Exige S (V6)",
@@ -482,12 +577,18 @@
 "trans": "Manual 6 vel.",
 "frenos": "Disco en 4 ruedas",
 "vel": "274 km/h"
-}
+},
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "AMMP - 057",
 "slug": "ammp-057",
-"d3": true,
 "name": "Brass-era Light Car",
 "model": "Brass-era Light Car",
 "year": "1915",
@@ -498,12 +599,18 @@
 "desc_es": "Un raro coche ligero de la era del latón, hecho a mano en los primeros días del automovilismo.",
 "specs_es": {
 "tipo": "Coche ligero"
-}
+},
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "APC - 142",
 "slug": "apc-142",
-"d3": true,
 "name": "Ford Mustang GT",
 "brand": "Ford",
 "model": "Mustang GT (Fox Body, Shelby)",
@@ -527,12 +634,18 @@
 "trans": "Manual 5 vel.",
 "frenos": "Disco en 4 ruedas",
 "vel": "≈ 220 km/h"
-}
+},
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "APX - 114",
 "slug": "apx-114",
-"d3": true,
 "name": "Ford Mustang Shelby GT350",
 "brand": "Ford",
 "model": "Mustang Shelby GT350",
@@ -556,12 +669,18 @@
 "trans": "Manual 6 vel.",
 "frenos": "Disco en 4 ruedas (Brembo)",
 "vel": "≈ 290 km/h"
-}
+},
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "ASV - 385",
 "slug": "asv-385",
-"d3": true,
 "name": "Porsche 911 GT3 RS",
 "brand": "Porsche",
 "model": "911 GT3 RS (991.1)",
@@ -586,12 +705,18 @@
 "frenos": "Disco carbono-cerámico",
 "vel": "310 km/h"
 },
-"side": 1
+"side": 1,
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "ASX - 457",
 "slug": "asx-457",
-"d3": true,
 "name": "Aston Martin DB9",
 "brand": "Aston Martin",
 "model": "DB9",
@@ -615,12 +740,18 @@
 "trans": "Automática 6 vel.",
 "frenos": "Disco en 4 ruedas",
 "vel": "295 km/h"
-}
+},
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "AUE - 622",
 "slug": "aue-622",
-"d3": true,
 "name": "Buick 7 Asientos",
 "brand": "Buick",
 "model": "7 Asientos",
@@ -644,12 +775,18 @@
 "trans": "Manual 3 vel.",
 "frenos": "Tambor mecánico",
 "vel": "≈ 110 km/h"
-}
+},
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "AUK - 547",
 "slug": "auk-547",
-"d3": true,
 "name": "Ford A Turismo",
 "brand": "Ford",
 "model": "A Turismo",
@@ -673,12 +810,18 @@
 "trans": "Manual 3 vel.",
 "frenos": "Tambor mecánico",
 "vel": "≈ 105 km/h"
-}
+},
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "AWF - 621",
 "slug": "awf-621",
-"d3": true,
 "name": "Dodge Challenger R/T",
 "brand": "Dodge",
 "model": "Challenger R/T",
@@ -703,12 +846,18 @@
 "frenos": "Tambor",
 "vel": "≈ 210 km/h"
 },
-"side": 1
+"side": 1,
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "AWZ - 629",
 "slug": "awz-629",
-"d3": false,
 "name": "Aston Martin Vanquish",
 "brand": "Aston Martin",
 "model": "Vanquish",
@@ -732,12 +881,17 @@
 "trans": "Automática 8 vel.",
 "frenos": "Disco carbono-cerámico",
 "vel": "295 km/h"
-}
+},
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "AXL - 068",
 "slug": "axl-068",
-"d3": true,
 "name": "Packard Station Sedan Woody",
 "brand": "Packard",
 "model": "Station Sedan Woody",
@@ -762,12 +916,18 @@
 "frenos": "Tambor hidráulico",
 "vel": "≈ 140 km/h"
 },
-"side": 1
+"side": 1,
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "AXS - 615",
 "slug": "axs-615",
-"d3": true,
 "name": "Chalmers SIX",
 "brand": "Chalmers",
 "model": "SIX",
@@ -791,12 +951,18 @@
 "trans": "Manual 3 vel.",
 "frenos": "Tambor mecánico (posterior)",
 "vel": "≈ 90 km/h"
-}
+},
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "B0C - 176",
 "slug": "b0c-176",
-"d3": true,
 "name": "Oldsmobile 88",
 "brand": "Oldsmobile",
 "model": "88",
@@ -821,12 +987,18 @@
 "frenos": "Tambor hidráulico",
 "vel": "≈ 170 km/h"
 },
-"side": 1
+"side": 1,
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "B10 - 580",
 "slug": "b10-580",
-"d3": true,
 "name": "Chevrolet BEL AIR",
 "brand": "Chevrolet",
 "model": "BEL AIR",
@@ -850,12 +1022,18 @@
 "trans": "Powerglide / Manual",
 "frenos": "Tambor hidráulico",
 "vel": "≈ 150 km/h"
-}
+},
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "B1P - 040",
 "slug": "b1p-040",
-"d3": true,
 "name": "Plymouth Satellite 426 Hemi",
 "brand": "Plymouth",
 "model": "Satellite 426 Hemi",
@@ -880,12 +1058,18 @@
 "frenos": "Tambor (disco opc.)",
 "vel": "≈ 210 km/h"
 },
-"side": 1
+"side": 1,
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "B2B - 316",
 "slug": "b2b-316",
-"d3": true,
 "name": "Ford Mustang GT",
 "brand": "Ford",
 "model": "Mustang GT (Fox Body, Shelby)",
@@ -909,12 +1093,18 @@
 "trans": "Manual 5 vel.",
 "frenos": "Disco en 4 ruedas",
 "vel": "≈ 220 km/h"
-}
+},
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "B4Y - 274",
 "slug": "b4y-274",
-"d3": true,
 "name": "Mercury Montclair",
 "brand": "Mercury",
 "model": "Montclair",
@@ -939,12 +1129,18 @@
 "frenos": "Tambor hidráulico",
 "vel": "≈ 160 km/h"
 },
-"side": 1
+"side": 1,
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "B4Z - 517",
 "slug": "b4z-517",
-"d3": true,
 "name": "Riley Drop Head Coupe 2.5L",
 "brand": "Riley",
 "model": "Drop Head Coupe 2.5L",
@@ -968,12 +1164,18 @@
 "trans": "Manual 4 vel.",
 "frenos": "Tambor hidromecánico",
 "vel": "≈ 153 km/h"
-}
+},
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "B5 - 3533",
 "slug": "b5-3533",
-"d3": true,
 "name": "BMW Isetta 300",
 "brand": "BMW",
 "model": "Isetta 300",
@@ -997,12 +1199,18 @@
 "trans": "Manual 4 vel.",
 "frenos": "Tambor",
 "vel": "≈ 85 km/h"
-}
+},
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "B6M - 164",
 "slug": "b6m-164",
-"d3": true,
 "name": "BMW 1 Series M Coupe",
 "brand": "BMW",
 "model": "1 Series M Coupe (E82)",
@@ -1026,12 +1234,18 @@
 "trans": "Manual 6 vel.",
 "frenos": "Disco en 4 ruedas",
 "vel": "250 km/h (lim.)"
-}
+},
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "B7Q - 401",
 "slug": "b7q-401",
-"d3": true,
 "name": "BMW M6",
 "brand": "BMW",
 "model": "M6 (E63)",
@@ -1056,12 +1270,18 @@
 "frenos": "Disco en 4 ruedas",
 "vel": "250 km/h (lim.)"
 },
-"side": 1
+"side": 1,
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "BAW - 297",
 "slug": "baw-297",
-"d3": true,
 "name": "Maserati Sebring Serie II",
 "brand": "Maserati",
 "model": "Sebring Serie II",
@@ -1086,12 +1306,18 @@
 "frenos": "Disco en 4 ruedas",
 "vel": "≈ 215 km/h"
 },
-"side": 1
+"side": 1,
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "BFU - 487",
 "slug": "bfu-487",
-"d3": true,
 "name": "Porsche 911 GT2 RS",
 "brand": "Porsche",
 "model": "911 GT2 RS (991.2)",
@@ -1116,12 +1342,17 @@
 "frenos": "Disco carbono-cerámico",
 "vel": "340 km/h"
 },
-"side": 1
+"side": 1,
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg"
+]
 },
 {
 "plate": "BNK - 531",
 "slug": "bnk-531",
-"d3": true,
 "name": "Mercedes-benz 560 SEC",
 "brand": "Mercedes-benz",
 "model": "560 SEC",
@@ -1146,12 +1377,18 @@
 "frenos": "Disco 4 ruedas (ABS)",
 "vel": "250 km/h (lim.)"
 },
-"side": 1
+"side": 1,
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "BNT - 311",
 "slug": "bnt-311",
-"d3": true,
 "name": "Mercedes-Benz SLK 230 Kompressor",
 "brand": "Mercedes-Benz",
 "model": "SLK 230 K (R170)",
@@ -1176,12 +1413,18 @@
 "frenos": "Disco en 4 ruedas",
 "vel": "240 km/h"
 },
-"side": 1
+"side": 1,
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "BPD - 280",
 "slug": "bpd-280",
-"d3": true,
 "name": "BMW 850i",
 "brand": "BMW",
 "model": "850i (E31)",
@@ -1205,12 +1448,18 @@
 "trans": "Manual 6 vel.",
 "frenos": "Disco en 4 ruedas",
 "vel": "250 km/h (lim.)"
-}
+},
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "BSZ - 611",
 "slug": "bsz-611",
-"d3": true,
 "name": "Maserati GranTurismo MC",
 "brand": "Maserati",
 "model": "GranTurismo MC",
@@ -1234,12 +1483,18 @@
 "trans": "Automática 6 vel.",
 "frenos": "Disco en 4 ruedas",
 "vel": "301 km/h"
-}
+},
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "BVS - 249",
 "slug": "bvs-249",
-"d3": true,
 "name": "Hudson Super SIX",
 "brand": "Hudson",
 "model": "Super SIX",
@@ -1263,12 +1518,18 @@
 "trans": "Manual 3 vel.",
 "frenos": "Tambor mecánico",
 "vel": "≈ 100 km/h"
-}
+},
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "C3X - 140",
 "slug": "c3x-140",
-"d3": true,
 "name": "Audi R8 V10",
 "brand": "Audi",
 "model": "R8 V10 (Type 42)",
@@ -1293,12 +1554,18 @@
 "frenos": "Disco en 4 ruedas",
 "vel": "316 km/h"
 },
-"side": 1
+"side": 1,
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "C4Q - 097",
 "slug": "c4q-097",
-"d3": true,
 "name": "BMW 635",
 "brand": "BMW",
 "model": "635",
@@ -1322,12 +1589,18 @@
 "trans": "Manual 5 vel. / Auto",
 "frenos": "Disco en 4 ruedas",
 "vel": "≈ 228 km/h"
-}
+},
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "C70 - 358",
 "slug": "c70-358",
-"d3": true,
 "name": "Mitsubishi Lancer EVO",
 "brand": "Mitsubishi",
 "model": "Lancer EVO",
@@ -1351,12 +1624,18 @@
 "trans": "Manual 5/6 vel.",
 "frenos": "Disco 4 ruedas (Brembo)",
 "vel": "≈ 250 km/h"
-}
+},
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "C7M - 309",
 "slug": "c7m-309",
-"d3": true,
 "name": "BMW M5",
 "brand": "BMW",
 "model": "M5 (F10)",
@@ -1381,12 +1660,18 @@
 "frenos": "Disco en 4 ruedas",
 "vel": "250 km/h (lim.)"
 },
-"side": 1
+"side": 1,
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "CPL - 048",
 "slug": "cpl-048",
-"d3": true,
 "name": "Studebaker 1924 Tudor",
 "brand": "Studebaker",
 "model": "1924 Tudor",
@@ -1410,12 +1695,18 @@
 "trans": "Manual 3 vel.",
 "frenos": "Tambor mecánico",
 "vel": "≈ 100 km/h"
-}
+},
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "CTJ - 276",
 "slug": "ctj-276",
-"d3": true,
 "name": "Willys Jeep CJ2",
 "brand": "Willys",
 "model": "Jeep CJ2",
@@ -1439,12 +1730,18 @@
 "trans": "Manual 3 vel. + 4x4",
 "frenos": "Tambor hidráulico",
 "vel": "≈ 100 km/h"
-}
+},
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "CTJ - 680",
 "slug": "ctj-680",
-"d3": true,
 "name": "Rolls Royce British Phantom II",
 "brand": "Rolls Royce",
 "model": "British Phantom II",
@@ -1468,12 +1765,18 @@
 "trans": "Manual 4 vel.",
 "frenos": "Tambor con servo",
 "vel": "≈ 150 km/h"
-}
+},
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "CXJ - 330",
 "slug": "cxj-330",
-"d3": true,
 "name": "Ferrari Testarossa",
 "brand": "Ferrari",
 "model": "Testarossa",
@@ -1498,12 +1801,18 @@
 "frenos": "Disco en 4 ruedas",
 "vel": "290 km/h"
 },
-"side": 1
+"side": 1,
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "D5Z - 370",
 "slug": "d5z-370",
-"d3": true,
 "name": "Porsche 911 Turbo",
 "brand": "Porsche",
 "model": "911 Turbo (930)",
@@ -1527,12 +1836,18 @@
 "trans": "Manual 4 vel.",
 "frenos": "Disco en 4 ruedas",
 "vel": "260 km/h"
-}
+},
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "D6R - 546",
 "slug": "d6r-546",
-"d3": true,
 "name": "Mercedes-Benz C55 AMG",
 "brand": "Mercedes-Benz",
 "model": "C55 AMG (W203)",
@@ -1557,12 +1872,18 @@
 "frenos": "Disco en 4 ruedas",
 "vel": "250 km/h (lim.)"
 },
-"side": 1
+"side": 1,
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "D8X - 197",
 "slug": "d8x-197",
-"d3": true,
 "name": "Nissan GT-R",
 "brand": "Nissan",
 "model": "GT-R (R35)",
@@ -1586,12 +1907,18 @@
 "trans": "DCT 6 vel.",
 "frenos": "Disco en 4 ruedas",
 "vel": "315 km/h"
-}
+},
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "D9Z - 460",
 "slug": "d9z-460",
-"d3": true,
 "name": "Ford Mustang Shelby GT500",
 "brand": "Ford",
 "model": "Mustang Shelby GT500 (S197)",
@@ -1615,12 +1942,18 @@
 "trans": "Manual 6 vel.",
 "frenos": "Disco en 4 ruedas (Brembo)",
 "vel": "250 km/h"
-}
+},
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "F0I - 108",
 "slug": "f0i-108",
-"d3": true,
 "name": "Studebaker Land Cruiser",
 "brand": "Studebaker",
 "model": "Land Cruiser",
@@ -1644,12 +1977,18 @@
 "trans": "Manual 3 vel.",
 "frenos": "Tambor hidráulico",
 "vel": "≈ 140 km/h"
-}
+},
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "F11 - 446",
 "slug": "f11-446",
-"d3": true,
 "name": "Cadillac EL Dorado Biarritz",
 "brand": "Cadillac",
 "model": "EL Dorado Biarritz",
@@ -1674,12 +2013,18 @@
 "frenos": "Tambor hidráulico",
 "vel": "≈ 185 km/h"
 },
-"side": 1
+"side": 1,
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "F1J - 304",
 "slug": "f1j-304",
-"d3": true,
 "name": "Ford Roush",
 "brand": "Ford",
 "model": "Roush",
@@ -1703,12 +2048,18 @@
 "trans": "Manual 5 vel.",
 "frenos": "Disco en 4 ruedas",
 "vel": "≈ 250 km/h"
-}
+},
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "F50 - 140",
 "slug": "f50-140",
-"d3": true,
 "name": "Ford Mustang GT Convertible",
 "brand": "Ford",
 "model": "Mustang GT Convertible (Fox Body)",
@@ -1732,12 +2083,18 @@
 "trans": "Manual 5 vel.",
 "frenos": "Disco en 4 ruedas",
 "vel": "≈ 215 km/h"
-}
+},
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "F5J - 319",
 "slug": "f5j-319",
-"d3": true,
 "name": "McLaren MP4-12C",
 "brand": "McLaren",
 "model": "MP4-12C",
@@ -1761,12 +2118,18 @@
 "trans": "DCT 7 vel.",
 "frenos": "Disco carbono-cerámico",
 "vel": "330 km/h"
-}
+},
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "FOL - 661",
 "slug": "fol-661",
-"d3": true,
 "name": "Porsche 911 Turbo S",
 "brand": "Porsche",
 "model": "911 Turbo S (991.1)",
@@ -1791,12 +2154,18 @@
 "frenos": "Disco carbono-cerámico",
 "vel": "318 km/h"
 },
-"side": 1
+"side": 1,
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "SI PLACA 20",
 "slug": "si-placa-20",
-"d3": true,
 "name": "Chevrolet Special DeLuxe",
 "brand": "Chevrolet",
 "model": "Special DeLuxe",
@@ -1820,12 +2189,18 @@
 "trans": "Manual 3 vel.",
 "frenos": "Tambor hidráulico",
 "vel": "≈ 130 km/h"
-}
+},
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "SIN PLACA 10",
 "slug": "sin-placa-10",
-"d3": true,
 "name": "Chevrolet 3100 Pickup",
 "brand": "Chevrolet",
 "model": "3100 Pickup (Advance Design)",
@@ -1850,12 +2225,18 @@
 "frenos": "Tambor hidráulico",
 "vel": "≈ 110 km/h"
 },
-"side": 1
+"side": 1,
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "SIN PLACA 11",
 "slug": "sin-placa-11",
-"d3": true,
 "name": "1930s European Roadster",
 "model": "1930s European Roadster",
 "year": "1935",
@@ -1866,12 +2247,18 @@
 "desc_es": "Un encantador roadster europeo pequeño de los años 30 — hecho a mano y delicadamente proporcionado.",
 "specs_es": {
 "tipo": "Roadster"
-}
+},
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "SIN PLACA 12",
 "slug": "sin-placa-12",
-"d3": true,
 "name": "Mazda R360 Coupe",
 "brand": "Mazda",
 "model": "R360 Coupe",
@@ -1895,12 +2282,18 @@
 "trans": "Manual 4 vel.",
 "frenos": "Tambor",
 "vel": "≈ 90 km/h"
-}
+},
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "SIN PLACA 13",
 "slug": "sin-placa-13",
-"d3": true,
 "name": "Ford Capri",
 "brand": "Ford",
 "model": "Capri (Mk III)",
@@ -1925,12 +2318,18 @@
 "frenos": "Disco delantero / tambor trasero",
 "vel": "≈ 195 km/h"
 },
-"side": 1
+"side": 1,
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "SIN PLACA 14",
 "slug": "sin-placa-14",
-"d3": true,
 "name": "Packard Super Eight",
 "brand": "Packard",
 "model": "Super Eight",
@@ -1954,12 +2353,18 @@
 "trans": "Manual 3 vel.",
 "frenos": "Tambor hidráulico",
 "vel": "≈ 145 km/h"
-}
+},
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "SIN PLACA 15",
 "slug": "sin-placa-15",
-"d3": true,
 "name": "Auburn 852 Supercharged",
 "brand": "Auburn",
 "model": "852 Supercharged",
@@ -1983,12 +2388,18 @@
 "trans": "Manual 3 vel.",
 "frenos": "Tambor hidráulico",
 "vel": "≈ 160 km/h"
-}
+},
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "SIN PLACA 16",
 "slug": "sin-placa-16",
-"d3": true,
 "name": "Packard Deluxe Eight Phaeton",
 "brand": "Packard",
 "model": "Deluxe Eight Phaeton",
@@ -2012,12 +2423,18 @@
 "trans": "Manual 4 vel.",
 "frenos": "Tambor mecánico",
 "vel": "≈ 130 km/h"
-}
+},
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "SIN PLACA 17",
 "slug": "sin-placa-17",
-"d3": true,
 "name": "Packard Six Roadster",
 "brand": "Packard",
 "model": "Six Roadster",
@@ -2041,12 +2458,18 @@
 "trans": "Manual 3 vel.",
 "frenos": "Tambor mecánico",
 "vel": "≈ 110 km/h"
-}
+},
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "SIN PLACA 18",
 "slug": "sin-placa-18",
-"d3": true,
 "name": "1920s American Phaeton",
 "model": "1920s American Phaeton",
 "year": "1928",
@@ -2057,12 +2480,18 @@
 "desc_es": "Un majestuoso phaeton abierto de finales de los 20, restaurado a su esplendor de turismo.",
 "specs_es": {
 "tipo": "Phaeton"
-}
+},
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "SIN PLACA 19",
 "slug": "sin-placa-19",
-"d3": true,
 "name": "Cadillac V8 Town Sedan",
 "brand": "Cadillac",
 "model": "V8 Town Sedan",
@@ -2086,12 +2515,18 @@
 "trans": "Manual 3 vel.",
 "frenos": "Tambor mecánico",
 "vel": "≈ 130 km/h"
-}
+},
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "SIN PLACA 21",
 "slug": "sin-placa-21",
-"d3": true,
 "name": "Chrysler Airflow",
 "brand": "Chrysler",
 "model": "Airflow",
@@ -2115,12 +2550,18 @@
 "trans": "Manual 3 vel.",
 "frenos": "Tambor hidráulico",
 "vel": "≈ 140 km/h"
-}
+},
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "SIN PLACA 22",
 "slug": "sin-placa-22",
-"d3": true,
 "name": "Chevrolet Superior Touring",
 "brand": "Chevrolet",
 "model": "Superior Touring",
@@ -2144,12 +2585,18 @@
 "trans": "Manual 3 vel.",
 "frenos": "Tambor mecánico (trasero)",
 "vel": "≈ 80 km/h"
-}
+},
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "SIN PLACA 23",
 "slug": "sin-placa-23",
-"d3": true,
 "name": "Renault Town Car",
 "brand": "Renault",
 "model": "Brass-era Town Car",
@@ -2161,12 +2608,18 @@
 "desc_es": "Un Renault de la era del latón con el característico capó 'coal-scuttle' de la marca — el automovilismo eduardiano en su forma más refinada.",
 "specs_es": {
 "tipo": "Limusina"
-}
+},
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "SIN PLACA 24",
 "slug": "sin-placa-24",
-"d3": true,
 "name": "Renault Type AG Town Car",
 "brand": "Renault",
 "model": "Type AG Town Car",
@@ -2190,12 +2643,18 @@
 "trans": "Manual 3 vel.",
 "frenos": "Tambor mecánico (trasero)",
 "vel": "≈ 50 km/h"
-}
+},
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "SIN PLACA 25",
 "slug": "sin-placa-25",
-"d3": true,
 "name": "Brass-era Tonneau",
 "model": "Brass-era Tonneau",
 "year": "1903",
@@ -2206,12 +2665,18 @@
 "desc_es": "Un tonneau de principios de siglo con toldo surrey de flecos — el automovilismo en su pionera infancia sin caballos.",
 "specs_es": {
 "tipo": "Tonneau"
-}
+},
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "SIN PLACA 26",
 "slug": "sin-placa-26",
-"d3": true,
 "name": "Renault Runabout",
 "brand": "Renault",
 "model": "Brass-era Runabout",
@@ -2223,12 +2688,18 @@
 "desc_es": "Un runabout Renault eduardiano — latón, ruedas rojas y la elegante simplicidad de la primera ingeniería francesa.",
 "specs_es": {
 "tipo": "Runabout"
-}
+},
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "SIN PLACA 27",
 "slug": "sin-placa-27",
-"d3": true,
 "name": "Dodge Challenger R/T",
 "brand": "Dodge",
 "model": "Challenger R/T",
@@ -2253,12 +2724,18 @@
 "frenos": "Tambor",
 "vel": "≈ 210 km/h"
 },
-"side": 1
+"side": 1,
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "SIN PLACA 9",
 "slug": "sin-placa-9",
-"d3": true,
 "name": "Volvo P1800",
 "brand": "Volvo",
 "model": "P1800",
@@ -2282,12 +2759,18 @@
 "trans": "Manual 4 vel.",
 "frenos": "Disco delantero / tambor trasero",
 "vel": "≈ 175 km/h"
-}
+},
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "T33 - 080",
 "slug": "t33-080",
-"d3": true,
 "name": "Volkswagen Beetle",
 "brand": "Volkswagen",
 "model": "Beetle (Type 1)",
@@ -2312,12 +2795,18 @@
 "frenos": "Tambor",
 "vel": "≈ 120 km/h"
 },
-"side": 1
+"side": 1,
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "V1A - 109",
 "slug": "v1a-109",
-"d3": true,
 "name": "Dodge Viper SRT-10",
 "brand": "Dodge",
 "model": "Viper SRT-10 (ZB)",
@@ -2341,12 +2830,18 @@
 "trans": "Manual 6 vel.",
 "frenos": "Disco en 4 ruedas",
 "vel": "325 km/h"
-}
+},
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "V8F - 130",
 "slug": "v8f-130",
-"d3": true,
 "name": "Ferrari California T",
 "brand": "Ferrari",
 "model": "California T",
@@ -2370,12 +2865,18 @@
 "trans": "DCT 7 vel.",
 "frenos": "Disco carbono-cerámico",
 "vel": "316 km/h"
-}
+},
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "VAB - 413",
 "slug": "vab-413",
-"d3": true,
 "name": "Ferrari Mondial",
 "brand": "Ferrari",
 "model": "Mondial",
@@ -2399,12 +2900,18 @@
 "trans": "Manual 5 vel.",
 "frenos": "Disco en 4 ruedas",
 "vel": "≈ 230 km/h"
-}
+},
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "Y1S - 584",
 "slug": "y1s-584",
-"d3": true,
 "name": "Allard K2 (motor Mercury)",
 "brand": "Allard",
 "model": "K2 (motor Mercury)",
@@ -2428,12 +2935,18 @@
 "trans": "Manual 3 vel.",
 "frenos": "Tambor hidráulico",
 "vel": "≈ 160 km/h"
-}
+},
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "Z6A - 148",
 "slug": "z6a-148",
-"d3": true,
 "name": "BMW i8",
 "brand": "BMW",
 "model": "i8",
@@ -2458,12 +2971,18 @@
 "frenos": "Disco en 4 ruedas",
 "vel": "250 km/h (lim.)"
 },
-"side": 1
+"side": 1,
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "sin placa 1",
 "slug": "sin-placa-1",
-"d3": true,
 "name": "Mercedes-Benz SLS AMG",
 "brand": "Mercedes-Benz",
 "model": "SLS AMG",
@@ -2488,12 +3007,18 @@
 "frenos": "Disco carbono-cerámico",
 "vel": "317 km/h"
 },
-"side": 1
+"side": 1,
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "sin placa 2",
 "slug": "sin-placa-2",
-"d3": true,
 "name": "Mercedes-Benz CLK 63 AMG Black Series",
 "brand": "Mercedes-Benz",
 "model": "CLK 63 AMG Black Series (C209)",
@@ -2518,12 +3043,18 @@
 "frenos": "Disco en 4 ruedas",
 "vel": "300 km/h"
 },
-"side": 1
+"side": 1,
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "sin placa 3",
 "slug": "sin-placa-3",
-"d3": true,
 "name": "Jaguar F-Type",
 "brand": "Jaguar",
 "model": "F-Type",
@@ -2547,12 +3078,18 @@
 "trans": "Automática 8 vel.",
 "frenos": "Disco en 4 ruedas",
 "vel": "260 km/h"
-}
+},
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "sin placa 4",
 "slug": "sin-placa-4",
-"d3": true,
 "name": "Porsche Boxster Spyder",
 "brand": "Porsche",
 "model": "Boxster Spyder (987)",
@@ -2577,12 +3114,18 @@
 "frenos": "Disco en 4 ruedas",
 "vel": "267 km/h"
 },
-"side": 1
+"side": 1,
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "sin placa 5",
 "slug": "sin-placa-5",
-"d3": true,
 "name": "Alfa Romeo 4C",
 "brand": "Alfa Romeo",
 "model": "4C",
@@ -2607,12 +3150,18 @@
 "frenos": "Disco en 4 ruedas",
 "vel": "258 km/h"
 },
-"side": 1
+"side": 1,
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "sin placa 6",
 "slug": "sin-placa-6",
-"d3": true,
 "name": "Abarth 695",
 "brand": "Abarth",
 "model": "695",
@@ -2637,12 +3186,18 @@
 "frenos": "Disco en 4 ruedas",
 "vel": "225 km/h"
 },
-"side": 1
+"side": 1,
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "sin placa 7",
 "slug": "sin-placa-7",
-"d3": true,
 "name": "Ford Mustang Shelby GT500",
 "brand": "Ford",
 "model": "Mustang Shelby GT500 (S197)",
@@ -2666,12 +3221,18 @@
 "trans": "Manual 6 vel.",
 "frenos": "Disco en 4 ruedas (Brembo)",
 "vel": "250 km/h"
-}
+},
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "plate": "sin placa 8",
 "slug": "sin-placa-8",
-"d3": true,
 "name": "Ford Mustang Shelby GT500",
 "brand": "Ford",
 "model": "Mustang Shelby GT500 (S197)",
@@ -2695,7 +3256,14 @@
 "trans": "Manual 6 vel.",
 "frenos": "Disco en 4 ruedas (Brembo)",
 "vel": "≈ 260 km/h"
-}
+},
+"shots": [
+"d1.jpg",
+"d2.jpg",
+"d3.jpg",
+"v1.jpg",
+"v2.jpg"
+]
 },
 {
 "slug": "maserati-300s",
@@ -2704,7 +3272,6 @@
 "brand": "Maserati",
 "model": "300S",
 "year": "1956",
-"d3": 0,
 "side": 1,
 "desc": "One of only 26 built — Maserati's works sports-racer, driven by Fangio, Moss and Behra. Its hand-formed aluminium body by Fantuzzi covers a tubular chassis and the celebrated 3.0-litre twin-cam six, a car many consider the most beautiful sports-racing Maserati of all.",
 "desc_es": "Uno de solo 26 construidos — el sport-prototipo oficial de Maserati, pilotado por Fangio, Moss y Behra. Su carrocería de aluminio batido a mano por Fantuzzi cubre un chasis tubular y el célebre seis en línea de doble árbol de 3.0 litros; para muchos, el Maserati de competición más bello de todos.",
@@ -2725,6 +3292,7 @@
 "trans": "Manual 4 vel.",
 "frenos": "Tambor de aleación aleteado",
 "vel": "≈ 280 km/h"
-}
+},
+"shots": []
 }
 ]

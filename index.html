@@ -906,6 +906,8 @@
   .vh-side img{display:block;width:100%;height:auto;transition:transform .6s}
   .vh-side:hover img{transform:scale(1.02)}
   @media(max-width:560px){ .vh-side{margin:22px 0 2px;border-radius:12px} }
+
+  .vh-gitem.empty{background:rgba(16,16,18,.06);border:1px dashed rgba(16,16,18,.16);cursor:default}
 </style>
 </head>
 <body>
@@ -1899,8 +1901,10 @@ function showVehicle(slug){
   }
   const gal=document.getElementById('vhGallery');
   if(gal){
-    const shots=['d1','d2','d3','v1','v2'].filter(k=>k!=='d3'||car.d3);
-    gal.innerHTML=shots.map(k=>`<a class="vh-gitem"><img class="vh-slot" src="${b}${k}.jpg" alt="${disp}" loading="lazy" onerror="this.closest('.vh-gitem').remove()"></a>`).join('');
+    const shots=Array.isArray(car.shots)?car.shots:[];
+    gal.innerHTML = shots.length
+      ? shots.map(f=>`<a class="vh-gitem"><img class="vh-slot" src="${b}${f}" alt="${disp}" loading="lazy"></a>`).join('')
+      : '<div class="vh-gitem empty"></div>'.repeat(4);   // espacios en blanco para fotos futuras
     startGalleryAuto();
   }
   // subtle description below the cover
