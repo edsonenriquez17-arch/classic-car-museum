@@ -802,7 +802,7 @@
   .pl-logo{filter:drop-shadow(0 2px 18px rgba(0,0,0,.85))}
   .pl-tag,.pl-sub{text-shadow:0 2px 14px rgba(0,0,0,.9)}
   .pl-barwrap{opacity:1;animation:none;background:rgba(255,255,255,.22)}
-  .pl-bar{animation:plLoad 9.6s .2s cubic-bezier(.4,.1,.2,1) forwards}
+  .pl-bar{animation:none;width:0;transition:width .25s linear}
   .pl-sound{z-index:5}
 
   /* ---------- PRELOADER VIDEO: pantalla completa + textos abajo ---------- */
@@ -1932,25 +1932,46 @@ apply('en');
     const ok=!vid.muted && !vid.paused;
     setBtn(ok); return ok;
   };
+  const bar=document.querySelector('#preloader .pl-bar');
   if(vid){
-    vid.play().catch(()=>{});                       // arranque silencioso garantizado
-    sonar().then(ok=>{                              // intentamos con sonido
+    // 1) reproducir en cuanto haya datos suficientes (el video manda, no un reloj fijo)
+    const arrancar=()=>{ vid.play().catch(()=>{}); };
+    arrancar();
+    ['loadeddata','canplay','canplaythrough'].forEach(e=>vid.addEventListener(e,arrancar,{once:true}));
+    document.addEventListener('visibilitychange',()=>{ if(!document.hidden) arrancar(); });
+
+    // sonido: intentamos activarlo; si el navegador lo bloquea, al primer toque
+    sonar().then(ok=>{
       if(ok) return;
       setBtn(false);
       const kick=()=>{ sonar(); off(); };
       const off=()=>['pointerdown','click','keydown','touchstart'].forEach(e=>removeEventListener(e,kick));
       ['pointerdown','click','keydown','touchstart'].forEach(e=>addEventListener(e,kick,{passive:true}));
     });
-    vid.addEventListener('ended',()=>reveal());     // termina el video -> entra la web
+
+    // 2) la barra avanza con el progreso REAL del video
+    vid.addEventListener('timeupdate',()=>{
+      if(bar && vid.duration) bar.style.width=Math.min(100,(vid.currentTime/vid.duration)*100)+'%';
+    });
+
+    // 3) la carga dura exactamente lo que dura el video
+    vid.addEventListener('ended',reveal);
+    vid.addEventListener('playing',()=>{                    // margen desde que EMPIEZA a verse
+      if(vid.duration) setTimeout(reveal,(vid.duration-vid.currentTime)*1000+700);
+    },{once:true});
+    vid.addEventListener('error',()=>setTimeout(reveal,1200));   // si el video falla, no bloquear
+
+    // 4) tope de seguridad amplio (solo si el video nunca llega a reproducirse)
+    setTimeout(()=>{ if(vid.paused && !vid.currentTime) reveal(); }, 15000);
+    setTimeout(reveal, 45000);
+  } else {
+    setTimeout(reveal, 4000);
   }
   if(btn) btn.addEventListener('click',e=>{
     e.stopPropagation();
     if(vid && !vid.muted){ vid.muted=true; localStorage.setItem('artechSound','off'); setBtn(false); }
     else { localStorage.removeItem('artechSound'); sonar(); }
   });
-
-  setTimeout(reveal, 10200);  // duración del video (9.6 s) + margen
-  setTimeout(reveal, 13000);  // tope de seguridad
 })();
 </script>
 
