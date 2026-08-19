@@ -838,9 +838,6 @@
     <div class="pl-sub" data-i="pl_sub">ARTECH · Lima, Perú</div>
     <div class="pl-barwrap"><div class="pl-bar"></div></div>
   </div>
-  <button id="plSound" class="pl-sound" type="button" aria-label="Sound">
-    <svg viewBox="0 0 24 24" aria-hidden="true"><path class="spk" d="M4 9v6h4l5 4V5L8 9H4z"/><path class="wv" d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12"/><path class="xm" d="M17 9.5l5 5m0-5l-5 5"/></svg>
-  </button>
 </div>
 <script>document.documentElement.classList.add('pl-lock');document.addEventListener('DOMContentLoaded',()=>document.body.classList.add('pl-lock'));</script>
 
@@ -1921,16 +1918,21 @@ apply('en');
   let done=false;
   function reveal(){ if(done)return; done=true; try{const v=document.getElementById('plVideo'); if(v){v.pause();}}catch(e){} pl.classList.add('done'); unlock(); setTimeout(()=>{ if(pl.parentNode) pl.remove(); },900); }
 
-  /* ---- audio del video (sustituye al motor sintetizado) ---- */
-  const btn=document.getElementById('plSound');
+  /* ---- audio automático: el video nunca se detiene por intentar sonar ---- */
   const vid=document.getElementById('plVideo');
-  const setBtn=on=>{ if(btn){ btn.classList.toggle('on',on); btn.classList.toggle('hint',!on); } };
-  const sonar=async()=>{
-    if(!vid || localStorage.getItem('artechSound')==='off') return false;
+  const intentarSonido=async()=>{
+    if(!vid || vid.dataset.snd==='1') return false;
+    const t=vid.currentTime;
     vid.muted=false; vid.volume=1;
     try{ await vid.play(); }catch(e){}
-    const ok=!vid.muted && !vid.paused;
-    setBtn(ok); return ok;
+    await new Promise(r=>setTimeout(r,120));
+    if(vid.paused || vid.muted){          // el navegador bloqueó el audio -> seguimos en silencio
+      vid.muted=true;
+      if(vid.currentTime<t) vid.currentTime=t;
+      vid.play().catch(()=>{});
+      return false;
+    }
+    vid.dataset.snd='1'; return true;     // sonando
   };
   const bar=document.querySelector('#preloader .pl-bar');
   if(vid){
@@ -1940,14 +1942,11 @@ apply('en');
     ['loadeddata','canplay','canplaythrough'].forEach(e=>vid.addEventListener(e,arrancar,{once:true}));
     document.addEventListener('visibilitychange',()=>{ if(!document.hidden) arrancar(); });
 
-    // sonido: intentamos activarlo; si el navegador lo bloquea, al primer toque
-    sonar().then(ok=>{
-      if(ok) return;
-      setBtn(false);
-      const kick=()=>{ sonar(); off(); };
-      const off=()=>['pointerdown','click','keydown','touchstart'].forEach(e=>removeEventListener(e,kick));
-      ['pointerdown','click','keydown','touchstart'].forEach(e=>addEventListener(e,kick,{passive:true}));
-    });
+    // sonido automático en cuanto el video ya está corriendo (si el navegador lo permite)
+    vid.addEventListener('playing',()=>{ intentarSonido(); },{once:true});
+    const auto=()=>{ intentarSonido().then(ok=>{ if(ok) quitar(); }); };
+    const quitar=()=>['pointerdown','touchstart','keydown','scroll'].forEach(e=>removeEventListener(e,auto));
+    ['pointerdown','touchstart','keydown','scroll'].forEach(e=>addEventListener(e,auto,{passive:true}));
 
     // 2) la barra avanza con el progreso REAL del video
     vid.addEventListener('timeupdate',()=>{
@@ -1967,11 +1966,6 @@ apply('en');
   } else {
     setTimeout(reveal, 4000);
   }
-  if(btn) btn.addEventListener('click',e=>{
-    e.stopPropagation();
-    if(vid && !vid.muted){ vid.muted=true; localStorage.setItem('artechSound','off'); setBtn(false); }
-    else { localStorage.removeItem('artechSound'); sonar(); }
-  });
 })();
 </script>
 
