@@ -889,6 +889,14 @@
     .v3d-foot{position:static;order:5;padding-top:12px}
     .v3d-watermark{font-size:clamp(52px,20vw,110px);top:38%}
   }
+
+  /* ---- preloader en MÓVIL: el video 16:9 se encuadra completo (no recortado) ---- */
+  @media(max-width:640px){
+    #preloader .pl-video{object-fit:contain;object-position:center 42%}
+    #preloader::after{background:linear-gradient(180deg,rgba(0,0,0,.35) 0%,rgba(0,0,0,0) 30%,
+      rgba(0,0,0,0) 55%,rgba(0,0,0,.80) 82%,rgba(0,0,0,.95) 100%)}
+    #preloader .pl-inner{padding-bottom:7vh}
+  }
 </style>
 </head>
 <body>
