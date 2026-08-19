@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>ARTECH · Classic Car Museum · Lima</title>
 <meta name="description" content="Home to the World's Oldest Car & Rare Porsche Collection. A living museum in the heart of Lima." />
-<link rel="preload" as="image" href="assets/splash-maserati.jpg" fetchpriority="high">
+<link rel="preload" as="video" href="assets/preloader.mp4" fetchpriority="high">
 <link rel="preload" as="image" href="assets/logo.png" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -792,6 +792,18 @@
     .nav-cta{padding:8px 14px}
     .lang button{padding:5px 11px;font-size:12px}
   }
+
+  /* ---------- PRELOADER CON VIDEO ---------- */
+  .pl-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;background:#000}
+  #preloader::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+    background:linear-gradient(180deg,rgba(0,0,0,.55),rgba(0,0,0,.15) 42%,rgba(0,0,0,.75))}
+  #preloader .pl-inner{position:relative;z-index:2}
+  #preloader .pl-glow{display:none}
+  .pl-logo{filter:drop-shadow(0 2px 18px rgba(0,0,0,.85))}
+  .pl-tag,.pl-sub{text-shadow:0 2px 14px rgba(0,0,0,.9)}
+  .pl-barwrap{opacity:1;animation:none;background:rgba(255,255,255,.22)}
+  .pl-bar{animation:plLoad 9.6s .2s cubic-bezier(.4,.1,.2,1) forwards}
+  .pl-sound{z-index:5}
 </style>
 </head>
 <body>
@@ -801,13 +813,7 @@
   <div class="pl-glow"></div>
   <div class="pl-inner">
     <img class="pl-logo" src="assets/logo.png" alt="ARTECH">
-    <div class="pl-stage">
-      <div class="pl-rumble">
-        <img class="pl-car" src="assets/splash-maserati.jpg" alt="" aria-hidden="true" fetchpriority="high" decoding="async">
-        <span class="pl-beam left"></span><span class="pl-beam right"></span>
-      </div>
-      <div class="pl-shadow"></div>
-    </div>
+    <video class="pl-video" id="plVideo" src="assets/preloader.mp4" autoplay muted playsinline preload="auto" aria-hidden="true"></video>
     <div class="pl-tag" data-i="pl_tag">SHIFT INTO HISTORY</div>
     <div class="pl-barwrap"><div class="pl-bar"></div></div>
     <div class="pl-sub" data-i="pl_sub">ARTECH · Lima, Perú</div>
@@ -1893,104 +1899,38 @@ apply('en');
   const unlock=()=>{document.documentElement.classList.remove('pl-lock');document.body.classList.remove('pl-lock');};
   if(!pl){unlock();return;}
   let done=false;
-  function reveal(){ if(done)return; done=true; engine.stop(); pl.classList.add('done'); unlock(); setTimeout(()=>{ if(pl.parentNode) pl.remove(); },900); }
+  function reveal(){ if(done)return; done=true; try{const v=document.getElementById('plVideo'); if(v){v.pause();}}catch(e){} pl.classList.add('done'); unlock(); setTimeout(()=>{ if(pl.parentNode) pl.remove(); },900); }
 
-  /* ---- synthesized V12 engine start + idle (Web Audio, no audio file) ---- */
+  /* ---- audio del video (sustituye al motor sintetizado) ---- */
   const btn=document.getElementById('plSound');
-  const engine=(function(){
-    let ctx=null, master=null, nodes=[], running=false, stopped=false;
-    function build(){
-      const AC=window.AudioContext||window.webkitAudioContext; if(!AC) return false;
-      ctx=new AC();
-      master=ctx.createGain(); master.gain.value=0; master.connect(ctx.destination);
-      // distorsión: genera armónicos medios -> se oye en parlantes de celular
-      const shaper=ctx.createWaveShaper();
-      const curve=new Float32Array(1024);
-      for(let i=0;i<1024;i++){ const x=i/512-1; curve[i]=Math.tanh(x*3.2); }
-      shaper.curve=curve; shaper.oversample='2x'; shaper.connect(master);
-      const lp=ctx.createBiquadFilter(); lp.type='lowpass'; lp.frequency.value=3400; lp.Q.value=1.2; lp.connect(shaper);
-      const hp=ctx.createBiquadFilter(); hp.type='highpass'; hp.frequency.value=110; hp.connect(lp);
-      // cilindros: fundamental audible (~95 Hz) + armónicos en la banda de voz
-      const BASE=95;
-      [1,2,3,4].forEach((m,i)=>{
-        const o=ctx.createOscillator(); o.type=(i%2)?'square':'sawtooth';
-        o.frequency.value=BASE*m; o.detune.value=(i-1)*11;
-        const g=ctx.createGain(); g.gain.value=[0.42,0.30,0.20,0.12][i];
-        o.connect(g); g.connect(hp); o.start(); nodes.push(o,g);
-      });
-      // gruñido medio (banda 600-1400 Hz, la que mejor reproduce un celular)
-      const growl=ctx.createOscillator(); growl.type='sawtooth'; growl.frequency.value=BASE*7;
-      const gbp=ctx.createBiquadFilter(); gbp.type='bandpass'; gbp.frequency.value=950; gbp.Q.value=2.2;
-      const gg=ctx.createGain(); gg.gain.value=0.16;
-      growl.connect(gbp); gbp.connect(gg); gg.connect(hp); growl.start(); nodes.push(growl,gbp,gg);
-      // textura de escape (ruido filtrado en medios)
-      const len=ctx.sampleRate*2, buf=ctx.createBuffer(1,len,ctx.sampleRate), d=buf.getChannelData(0);
-      for(let i=0;i<len;i++) d[i]=(Math.random()*2-1)*0.5;
-      const noise=ctx.createBufferSource(); noise.buffer=buf; noise.loop=true;
-      const bp=ctx.createBiquadFilter(); bp.type='bandpass'; bp.frequency.value=1200; bp.Q.value=0.9;
-      const ng=ctx.createGain(); ng.gain.value=0.14;
-      noise.connect(bp); bp.connect(ng); ng.connect(hp); noise.start(); nodes.push(noise,bp,ng);
-      // arranque -> acelerada -> ralentí
-      const t=ctx.currentTime;
-      master.gain.setValueAtTime(0.0001,t);
-      master.gain.linearRampToValueAtTime(0.34,t+0.30);   // encendido
-      master.gain.linearRampToValueAtTime(0.55,t+1.15);   // acelerada
-      master.gain.linearRampToValueAtTime(0.26,t+2.8);    // ralentí
-      [0,1,2,3].forEach(i=>{ const o=nodes[i*2], base=BASE*(i+1);
-        o.frequency.setValueAtTime(base*0.6,t);
-        o.frequency.exponentialRampToValueAtTime(base*1.75,t+1.15);   // rev up
-        o.frequency.exponentialRampToValueAtTime(base,t+2.9);          // settle
-      });
-      growl.frequency.setValueAtTime(BASE*4,t);
-      growl.frequency.exponentialRampToValueAtTime(BASE*12,t+1.15);
-      growl.frequency.exponentialRampToValueAtTime(BASE*7,t+2.9);
-      gbp.frequency.setValueAtTime(700,t);
-      gbp.frequency.exponentialRampToValueAtTime(1600,t+1.15);
-      gbp.frequency.exponentialRampToValueAtTime(950,t+2.9);
-      lp.frequency.setValueAtTime(1400,t);
-      lp.frequency.exponentialRampToValueAtTime(4800,t+1.15);
-      lp.frequency.exponentialRampToValueAtTime(3000,t+2.9);
-      return true;
-    }
-    function setBtn(on){ if(btn){ btn.classList.toggle('on',on); if(on) btn.classList.remove('hint'); } }
-    return {
-      async start(){
-        if(running||stopped||localStorage.getItem('artechSound')==='off') return false;
-        if(!ctx && !build()) return false;
-        try{ await ctx.resume(); }catch(e){}
-        if(ctx.state!=='running') return false;
-        running=true; setBtn(true); return true;
-      },
-      stop(){
-        stopped=true; setBtn(false);
-        if(!ctx) return;
-        try{ master.gain.cancelScheduledValues(ctx.currentTime);
-             master.gain.setTargetAtTime(0,ctx.currentTime,0.25);
-             setTimeout(()=>{ try{ctx.close();}catch(e){} },900);
-        }catch(e){}
-        running=false;
-      },
-      mute(){ localStorage.setItem('artechSound','off'); this.stop(); stopped=false; },
-      isOn(){ return running; }
-    };
-  })();
-
-  // intenta sonar de inmediato; si el navegador lo bloquea, arranca al primer toque
-  engine.start().then(ok=>{
-    if(ok) return;
-    if(btn) btn.classList.add('hint');            // el navegador bloqueó el audio: avisamos
-    const kick=()=>{ engine.start(); off(); };
-    const off=()=>['pointerdown','click','keydown','touchstart'].forEach(e=>removeEventListener(e,kick));
-    ['pointerdown','click','keydown','touchstart'].forEach(e=>addEventListener(e,kick,{once:false,passive:true}));
-  });
+  const vid=document.getElementById('plVideo');
+  const setBtn=on=>{ if(btn){ btn.classList.toggle('on',on); btn.classList.toggle('hint',!on); } };
+  const sonar=async()=>{
+    if(!vid || localStorage.getItem('artechSound')==='off') return false;
+    vid.muted=false; vid.volume=1;
+    try{ await vid.play(); }catch(e){}
+    const ok=!vid.muted && !vid.paused;
+    setBtn(ok); return ok;
+  };
+  if(vid){
+    vid.play().catch(()=>{});                       // arranque silencioso garantizado
+    sonar().then(ok=>{                              // intentamos con sonido
+      if(ok) return;
+      setBtn(false);
+      const kick=()=>{ sonar(); off(); };
+      const off=()=>['pointerdown','click','keydown','touchstart'].forEach(e=>removeEventListener(e,kick));
+      ['pointerdown','click','keydown','touchstart'].forEach(e=>addEventListener(e,kick,{passive:true}));
+    });
+    vid.addEventListener('ended',()=>reveal());     // termina el video -> entra la web
+  }
   if(btn) btn.addEventListener('click',e=>{
     e.stopPropagation();
-    if(engine.isOn()) engine.mute();
-    else { localStorage.removeItem('artechSound'); engine.start(); }
+    if(vid && !vid.muted){ vid.muted=true; localStorage.setItem('artechSound','off'); setBtn(false); }
+    else { localStorage.removeItem('artechSound'); sonar(); }
   });
 
-  setTimeout(reveal, 6000);   // after the loading bar completes (~5.7s)
-  setTimeout(reveal, 8500);   // hard safety cap
+  setTimeout(reveal, 10200);  // duración del video (9.6 s) + margen
+  setTimeout(reveal, 13000);  // tope de seguridad
 })();
 </script>
 
