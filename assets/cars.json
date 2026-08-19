@@ -218,7 +218,8 @@
 "trans": "Manual 3 vel.",
 "frenos": "Tambor hidráulico",
 "vel": "≈ 130 km/h"
-}
+},
+"side": 1
 },
 {
 "plate": "A9T - 107",
@@ -584,7 +585,8 @@
 "trans": "PDK 7 vel.",
 "frenos": "Disco carbono-cerámico",
 "vel": "310 km/h"
-}
+},
+"side": 1
 },
 {
 "plate": "ASX - 457",
@@ -1173,7 +1175,8 @@
 "trans": "Automática 5 vel.",
 "frenos": "Disco en 4 ruedas",
 "vel": "240 km/h"
-}
+},
+"side": 1
 },
 {
 "plate": "BPD - 280",
@@ -2692,6 +2695,36 @@
 "trans": "Manual 6 vel.",
 "frenos": "Disco en 4 ruedas (Brembo)",
 "vel": "≈ 260 km/h"
+}
+},
+{
+"slug": "maserati-300s",
+"plate": "SIN PLACA 28",
+"name": "Maserati 300S",
+"brand": "Maserati",
+"model": "300S",
+"year": "1956",
+"d3": 0,
+"side": 1,
+"desc": "One of only 26 built — Maserati's works sports-racer, driven by Fangio, Moss and Behra. Its hand-formed aluminium body by Fantuzzi covers a tubular chassis and the celebrated 3.0-litre twin-cam six, a car many consider the most beautiful sports-racing Maserati of all.",
+"desc_es": "Uno de solo 26 construidos — el sport-prototipo oficial de Maserati, pilotado por Fangio, Moss y Behra. Su carrocería de aluminio batido a mano por Fantuzzi cubre un chasis tubular y el célebre seis en línea de doble árbol de 3.0 litros; para muchos, el Maserati de competición más bello de todos.",
+"specs": {
+"tipo": "Sports racer (Fantuzzi)",
+"motor": "Inline-6 DOHC",
+"cil": "3.0 L (2992 cc)",
+"hp": "260 HP @ 6500 rpm",
+"trans": "4-speed manual",
+"frenos": "Finned alloy drum",
+"vel": "≈ 280 km/h"
+},
+"specs_es": {
+"tipo": "Sport de competición (Fantuzzi)",
+"motor": "6 en línea DOHC",
+"cil": "3.0 L (2992 cc)",
+"hp": "260 HP @ 6500 rpm",
+"trans": "Manual 4 vel.",
+"frenos": "Tambor de aleación aleteado",
+"vel": "≈ 280 km/h"
 }
 }
 ]
