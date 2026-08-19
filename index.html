@@ -898,6 +898,14 @@
       rgba(0,0,0,0) 55%,rgba(0,0,0,.80) 82%,rgba(0,0,0,.95) 100%)}
     #preloader .pl-inner{padding-bottom:7vh}
   }
+
+  /* ---- foto de costado a gran formato dentro de la ficha ---- */
+  .vh-side{margin:30px 0 6px;border-radius:16px;overflow:hidden;background:var(--ink);
+    box-shadow:0 26px 60px rgba(0,0,0,.18);cursor:zoom-in;position:relative}
+  .vh-side[hidden]{display:none}
+  .vh-side img{display:block;width:100%;height:auto;transition:transform .6s}
+  .vh-side:hover img{transform:scale(1.02)}
+  @media(max-width:560px){ .vh-side{margin:22px 0 2px;border-radius:12px} }
 </style>
 </head>
 <body>
@@ -1374,6 +1382,7 @@
   <div class="vh-descwrap" id="vhDescWrap" hidden>
     <p class="vh-desc" id="vhDesc"></p>
   </div>
+  <div class="wrap"><figure class="vh-side" id="vhSideWrap" hidden><img id="vhSide" alt=""></figure></div>
   <div class="wrap"><div class="vh-gallery" id="vhGallery"></div></div>
   <div class="wrap">
     <div class="vh-spec-cards">
@@ -1883,6 +1892,11 @@ function showVehicle(slug){
     keys.style.display=(K.length>=2)?'':'none';
   }
   // unified gallery (detail + view photos that exist)
+  const sideWrap=document.getElementById('vhSideWrap'), sideImg=document.getElementById('vhSide');
+  if(sideWrap && sideImg){
+    if(car.side){ sideImg.src=b+'side.jpg'; sideImg.alt=disp; sideWrap.hidden=false; }
+    else { sideImg.removeAttribute('src'); sideWrap.hidden=true; }
+  }
   const gal=document.getElementById('vhGallery');
   if(gal){
     const shots=['d1','d2','d3','v1','v2'].filter(k=>k!=='d3'||car.d3);
@@ -1997,7 +2011,7 @@ document.addEventListener('click',e=>{
   function openLb(src){ lbImg.src=src; lb.classList.add('show'); document.documentElement.style.overflow='hidden'; }
   function closeLb(){ lb.classList.remove('show'); document.documentElement.style.overflow=''; setTimeout(()=>lbImg.removeAttribute('src'),300); }
   document.addEventListener('click',e=>{
-    const img=e.target.closest('#page-vehicle .vh-slot, #page-vehicle .vh-cover-img');
+    const img=e.target.closest('#page-vehicle .vh-slot, #page-vehicle .vh-cover-img, #page-vehicle .vh-side img');
     if(img && img.getAttribute('src')){ e.preventDefault(); e.stopPropagation(); openLb(img.currentSrc||img.src); return; }
     if(e.target===lb || e.target===lbImg || e.target.classList.contains('lb-close')) closeLb();
   });

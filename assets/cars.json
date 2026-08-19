@@ -84,7 +84,8 @@
 "trans": "Automática 5 vel.",
 "frenos": "Disco en 4 ruedas",
 "vel": "250 km/h (lim.)"
-}
+},
+"side": 1
 },
 {
 "plate": "A4D - 305",
@@ -187,7 +188,8 @@
 "trans": "Automática 5 vel.",
 "frenos": "Disco en 4 ruedas",
 "vel": "250 km/h (lim.)"
-}
+},
+"side": 1
 },
 {
 "plate": "A9L - 161",
@@ -303,7 +305,8 @@
 "trans": "Manual 3 vel.",
 "frenos": "Tambor hidráulico",
 "vel": "≈ 160 km/h"
-}
+},
+"side": 1
 },
 {
 "plate": "AH - 9536",
@@ -332,7 +335,8 @@
 "trans": "Automática 3 vel.",
 "frenos": "Tambor",
 "vel": "≈ 190 km/h"
-}
+},
+"side": 1
 },
 {
 "plate": "AHE - 474",
@@ -696,7 +700,8 @@
 "trans": "Manual 4 vel.",
 "frenos": "Tambor",
 "vel": "≈ 210 km/h"
-}
+},
+"side": 1
 },
 {
 "plate": "AWZ - 629",
@@ -754,7 +759,8 @@
 "trans": "Manual 3 vel.",
 "frenos": "Tambor hidráulico",
 "vel": "≈ 140 km/h"
-}
+},
+"side": 1
 },
 {
 "plate": "AXS - 615",
@@ -812,7 +818,8 @@
 "trans": "Automática Jetaway",
 "frenos": "Tambor hidráulico",
 "vel": "≈ 170 km/h"
-}
+},
+"side": 1
 },
 {
 "plate": "B10 - 580",
@@ -870,7 +877,8 @@
 "trans": "Manual 4 vel. / TorqueFlite",
 "frenos": "Tambor (disco opc.)",
 "vel": "≈ 210 km/h"
-}
+},
+"side": 1
 },
 {
 "plate": "B2B - 316",
@@ -928,7 +936,8 @@
 "trans": "Merc-O-Matic",
 "frenos": "Tambor hidráulico",
 "vel": "≈ 160 km/h"
-}
+},
+"side": 1
 },
 {
 "plate": "B4Z - 517",
@@ -1044,7 +1053,8 @@
 "trans": "SMG 7 vel.",
 "frenos": "Disco en 4 ruedas",
 "vel": "250 km/h (lim.)"
-}
+},
+"side": 1
 },
 {
 "plate": "BAW - 297",
@@ -1073,7 +1083,8 @@
 "trans": "Manual 5 vel. ZF",
 "frenos": "Disco en 4 ruedas",
 "vel": "≈ 215 km/h"
-}
+},
+"side": 1
 },
 {
 "plate": "BFU - 487",
@@ -1102,7 +1113,8 @@
 "trans": "PDK 7 vel.",
 "frenos": "Disco carbono-cerámico",
 "vel": "340 km/h"
-}
+},
+"side": 1
 },
 {
 "plate": "BNK - 531",
@@ -1131,7 +1143,8 @@
 "trans": "Automática 4 vel.",
 "frenos": "Disco 4 ruedas (ABS)",
 "vel": "250 km/h (lim.)"
-}
+},
+"side": 1
 },
 {
 "plate": "BNT - 311",
@@ -1276,7 +1289,8 @@
 "trans": "Manual 6 vel.",
 "frenos": "Disco en 4 ruedas",
 "vel": "316 km/h"
-}
+},
+"side": 1
 },
 {
 "plate": "C4Q - 097",
@@ -1363,7 +1377,8 @@
 "trans": "DCT 7 vel.",
 "frenos": "Disco en 4 ruedas",
 "vel": "250 km/h (lim.)"
-}
+},
+"side": 1
 },
 {
 "plate": "CPL - 048",
@@ -1479,7 +1494,8 @@
 "trans": "Manual 5 vel.",
 "frenos": "Disco en 4 ruedas",
 "vel": "290 km/h"
-}
+},
+"side": 1
 },
 {
 "plate": "D5Z - 370",
@@ -1537,7 +1553,8 @@
 "trans": "Automática 5 vel.",
 "frenos": "Disco en 4 ruedas",
 "vel": "250 km/h (lim.)"
-}
+},
+"side": 1
 },
 {
 "plate": "D8X - 197",
@@ -1653,7 +1670,8 @@
 "trans": "Hydra-Matic",
 "frenos": "Tambor hidráulico",
 "vel": "≈ 185 km/h"
-}
+},
+"side": 1
 },
 {
 "plate": "F1J - 304",
@@ -1769,7 +1787,8 @@
 "trans": "PDK 7 vel.",
 "frenos": "Disco carbono-cerámico",
 "vel": "318 km/h"
-}
+},
+"side": 1
 },
 {
 "plate": "SI PLACA 20",
@@ -1827,7 +1846,8 @@
 "trans": "Manual 3 vel.",
 "frenos": "Tambor hidráulico",
 "vel": "≈ 110 km/h"
-}
+},
+"side": 1
 },
 {
 "plate": "SIN PLACA 11",
@@ -1901,7 +1921,8 @@
 "trans": "Manual 4 vel.",
 "frenos": "Disco delantero / tambor trasero",
 "vel": "≈ 195 km/h"
-}
+},
+"side": 1
 },
 {
 "plate": "SIN PLACA 14",
@@ -2228,7 +2249,8 @@
 "trans": "Manual 4 vel.",
 "frenos": "Tambor",
 "vel": "≈ 210 km/h"
-}
+},
+"side": 1
 },
 {
 "plate": "SIN PLACA 9",
@@ -2286,7 +2308,8 @@
 "trans": "Manual 4 vel.",
 "frenos": "Tambor",
 "vel": "≈ 120 km/h"
-}
+},
+"side": 1
 },
 {
 "plate": "V1A - 109",
@@ -2431,7 +2454,8 @@
 "trans": "Automática 6 vel.",
 "frenos": "Disco en 4 ruedas",
 "vel": "250 km/h (lim.)"
-}
+},
+"side": 1
 },
 {
 "plate": "sin placa 1",
@@ -2460,7 +2484,8 @@
 "trans": "DCT 7 vel.",
 "frenos": "Disco carbono-cerámico",
 "vel": "317 km/h"
-}
+},
+"side": 1
 },
 {
 "plate": "sin placa 2",
@@ -2489,7 +2514,8 @@
 "trans": "Automática 7 vel.",
 "frenos": "Disco en 4 ruedas",
 "vel": "300 km/h"
-}
+},
+"side": 1
 },
 {
 "plate": "sin placa 3",
@@ -2547,7 +2573,8 @@
 "trans": "Manual 6 vel.",
 "frenos": "Disco en 4 ruedas",
 "vel": "267 km/h"
-}
+},
+"side": 1
 },
 {
 "plate": "sin placa 5",
@@ -2576,7 +2603,8 @@
 "trans": "DCT 6 vel.",
 "frenos": "Disco en 4 ruedas",
 "vel": "258 km/h"
-}
+},
+"side": 1
 },
 {
 "plate": "sin placa 6",
@@ -2605,7 +2633,8 @@
 "trans": "Manual 5 vel.",
 "frenos": "Disco en 4 ruedas",
 "vel": "225 km/h"
-}
+},
+"side": 1
 },
 {
 "plate": "sin placa 7",
