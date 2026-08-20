@@ -32,7 +32,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 10
 },
 {
 "plate": "A2Y - 410",
@@ -67,7 +68,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 100
 },
 {
 "plate": "A3M - 354",
@@ -103,7 +105,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 100
 },
 {
 "plate": "A4D - 305",
@@ -138,7 +141,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 100
 },
 {
 "plate": "A5M - 345",
@@ -160,7 +164,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 100
 },
 {
 "plate": "A5T - 244",
@@ -195,7 +200,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 100
 },
 {
 "plate": "A7H - 440",
@@ -231,7 +237,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 100
 },
 {
 "plate": "A9L - 161",
@@ -267,7 +274,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 24
 },
 {
 "plate": "A9T - 107",
@@ -302,7 +310,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 14
 },
 {
 "plate": "ABR - 223",
@@ -337,7 +346,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 100
 },
 {
 "plate": "ABY - 304",
@@ -373,7 +383,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 18
 },
 {
 "plate": "AH - 9536",
@@ -409,7 +420,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 100
 },
 {
 "plate": "AHE - 474",
@@ -444,7 +456,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 100
 },
 {
 "plate": "AHE - 484",
@@ -479,7 +492,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 100
 },
 {
 "plate": "AKV - 003",
@@ -514,7 +528,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 100
 },
 {
 "plate": "ALO-686",
@@ -549,7 +564,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 100
 },
 {
 "plate": "ALR - 593",
@@ -584,7 +600,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 100
 },
 {
 "plate": "AMMP - 057",
@@ -606,7 +623,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 100
 },
 {
 "plate": "APC - 142",
@@ -641,7 +659,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 100
 },
 {
 "plate": "APX - 114",
@@ -676,7 +695,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 100
 },
 {
 "plate": "ASV - 385",
@@ -712,7 +732,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 4
 },
 {
 "plate": "ASX - 457",
@@ -747,7 +768,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 100
 },
 {
 "plate": "AUE - 622",
@@ -782,7 +804,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 100
 },
 {
 "plate": "AUK - 547",
@@ -817,7 +840,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 100
 },
 {
 "plate": "AWF - 621",
@@ -853,7 +877,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 23
 },
 {
 "plate": "AWZ - 629",
@@ -887,7 +912,8 @@
 "d2.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 100
 },
 {
 "plate": "AXL - 068",
@@ -923,7 +949,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 100
 },
 {
 "plate": "AXS - 615",
@@ -958,7 +985,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 100
 },
 {
 "plate": "B0C - 176",
@@ -994,7 +1022,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 100
 },
 {
 "plate": "B10 - 580",
@@ -1029,7 +1058,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 100
 },
 {
 "plate": "B1P - 040",
@@ -1065,7 +1095,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 22
 },
 {
 "plate": "B2B - 316",
@@ -1100,7 +1131,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 100
 },
 {
 "plate": "B4Y - 274",
@@ -1136,7 +1168,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 100
 },
 {
 "plate": "B4Z - 517",
@@ -1171,7 +1204,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 100
 },
 {
 "plate": "B5 - 3533",
@@ -1206,7 +1240,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 100
 },
 {
 "plate": "B6M - 164",
@@ -1241,7 +1276,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 100
 },
 {
 "plate": "B7Q - 401",
@@ -1277,7 +1313,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 100
 },
 {
 "plate": "BAW - 297",
@@ -1313,7 +1350,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 15
 },
 {
 "plate": "BFU - 487",
@@ -1348,7 +1386,8 @@
 "d2.jpg",
 "d3.jpg",
 "v1.jpg"
-]
+],
+"featured_order": 3
 },
 {
 "plate": "BNK - 531",
@@ -1384,7 +1423,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 100
 },
 {
 "plate": "BNT - 311",
@@ -1420,7 +1460,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 100
 },
 {
 "plate": "BPD - 280",
@@ -1455,7 +1496,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 100
 },
 {
 "plate": "BSZ - 611",
@@ -1490,7 +1532,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 100
 },
 {
 "plate": "BVS - 249",
@@ -1525,7 +1568,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 100
 },
 {
 "plate": "C3X - 140",
@@ -1561,7 +1605,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 7
 },
 {
 "plate": "C4Q - 097",
@@ -1596,7 +1641,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 100
 },
 {
 "plate": "C70 - 358",
@@ -1631,7 +1677,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 100
 },
 {
 "plate": "C7M - 309",
@@ -1667,7 +1714,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 100
 },
 {
 "plate": "CPL - 048",
@@ -1702,7 +1750,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 100
 },
 {
 "plate": "CTJ - 276",
@@ -1737,7 +1786,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 100
 },
 {
 "plate": "CTJ - 680",
@@ -1772,7 +1822,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 19
 },
 {
 "plate": "CXJ - 330",
@@ -1808,7 +1859,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 2
 },
 {
 "plate": "D5Z - 370",
@@ -1843,7 +1895,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 13
 },
 {
 "plate": "D6R - 546",
@@ -1879,7 +1932,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 100
 },
 {
 "plate": "D8X - 197",
@@ -1914,7 +1968,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 9
 },
 {
 "plate": "D9Z - 460",
@@ -1949,7 +2004,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 100
 },
 {
 "plate": "F0I - 108",
@@ -1984,7 +2040,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 100
 },
 {
 "plate": "F11 - 446",
@@ -2020,7 +2077,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 100
 },
 {
 "plate": "F1J - 304",
@@ -2055,7 +2113,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 100
 },
 {
 "plate": "F50 - 140",
@@ -2090,7 +2149,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 100
 },
 {
 "plate": "F5J - 319",
@@ -2125,7 +2185,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 6
 },
 {
 "plate": "FOL - 661",
@@ -2161,7 +2222,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 12
 },
 {
 "plate": "SI PLACA 20",
@@ -2196,7 +2258,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 100
 },
 {
 "plate": "SIN PLACA 10",
@@ -2232,7 +2295,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 100
 },
 {
 "plate": "SIN PLACA 11",
@@ -2254,7 +2318,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 100
 },
 {
 "plate": "SIN PLACA 12",
@@ -2289,7 +2354,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 100
 },
 {
 "plate": "SIN PLACA 13",
@@ -2325,7 +2391,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 100
 },
 {
 "plate": "SIN PLACA 14",
@@ -2360,7 +2427,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 100
 },
 {
 "plate": "SIN PLACA 15",
@@ -2395,7 +2463,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 16
 },
 {
 "plate": "SIN PLACA 16",
@@ -2430,7 +2499,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 100
 },
 {
 "plate": "SIN PLACA 17",
@@ -2465,7 +2535,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 100
 },
 {
 "plate": "SIN PLACA 18",
@@ -2487,7 +2558,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 100
 },
 {
 "plate": "SIN PLACA 19",
@@ -2522,7 +2594,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 100
 },
 {
 "plate": "SIN PLACA 21",
@@ -2557,7 +2630,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 17
 },
 {
 "plate": "SIN PLACA 22",
@@ -2592,7 +2666,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 100
 },
 {
 "plate": "SIN PLACA 23",
@@ -2615,7 +2690,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 21
 },
 {
 "plate": "SIN PLACA 24",
@@ -2650,7 +2726,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 100
 },
 {
 "plate": "SIN PLACA 25",
@@ -2672,7 +2749,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 20
 },
 {
 "plate": "SIN PLACA 26",
@@ -2695,7 +2773,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 100
 },
 {
 "plate": "SIN PLACA 27",
@@ -2731,7 +2810,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 100
 },
 {
 "plate": "SIN PLACA 9",
@@ -2766,7 +2846,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 100
 },
 {
 "plate": "T33 - 080",
@@ -2802,7 +2883,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 100
 },
 {
 "plate": "V1A - 109",
@@ -2837,7 +2919,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 8
 },
 {
 "plate": "V8F - 130",
@@ -2872,7 +2955,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 11
 },
 {
 "plate": "VAB - 413",
@@ -2907,7 +2991,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 100
 },
 {
 "plate": "Y1S - 584",
@@ -2942,7 +3027,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 100
 },
 {
 "plate": "Z6A - 148",
@@ -2978,7 +3064,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 100
 },
 {
 "plate": "sin placa 1",
@@ -3014,7 +3101,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 5
 },
 {
 "plate": "sin placa 2",
@@ -3050,7 +3138,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 100
 },
 {
 "plate": "sin placa 3",
@@ -3085,7 +3174,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 100
 },
 {
 "plate": "sin placa 4",
@@ -3121,7 +3211,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 100
 },
 {
 "plate": "sin placa 5",
@@ -3157,7 +3248,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 100
 },
 {
 "plate": "sin placa 6",
@@ -3193,7 +3285,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 100
 },
 {
 "plate": "sin placa 7",
@@ -3228,7 +3321,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 100
 },
 {
 "plate": "sin placa 8",
@@ -3263,7 +3357,8 @@
 "d3.jpg",
 "v1.jpg",
 "v2.jpg"
-]
+],
+"featured_order": 100
 },
 {
 "slug": "maserati-300s",
@@ -3293,6 +3388,7 @@
 "frenos": "Tambor de aleación aleteado",
 "vel": "≈ 280 km/h"
 },
-"shots": []
+"shots": [],
+"featured_order": 1
 }
 ]

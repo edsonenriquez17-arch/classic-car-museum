@@ -104,8 +104,8 @@
   header.scrolled{background:rgba(16,16,18,.92);backdrop-filter:blur(8px);box-shadow:0 2px 20px rgba(0,0,0,.25);padding:12px 0}
   .nav{display:flex;align-items:center;justify-content:space-between}
   .logo{display:inline-flex;align-items:center}
-  .logo img{height:40px;width:auto;display:block;filter:drop-shadow(0 2px 12px rgba(0,0,0,.5));transition:height .35s}
-  header.scrolled .logo img{height:32px}
+  .logo img{height:50px;width:auto;display:block;filter:drop-shadow(0 2px 12px rgba(0,0,0,.5));transition:height .35s}
+  header.scrolled .logo img{height:40px}
   .navlinks{display:flex;align-items:center;gap:34px;list-style:none}
   .navlinks a{color:#fff;font-size:15px;letter-spacing:1.5px;text-transform:uppercase;opacity:.92;transition:opacity .2s,color .2s;text-shadow:0 1px 8px rgba(0,0,0,.5)}
   .navlinks a:hover{color:var(--red);opacity:1}
@@ -788,8 +788,8 @@
     .nav{gap:30px}
     .navlinks{gap:17px}
     .navlinks a{font-size:12.5px;letter-spacing:.6px}
-    .logo img{height:34px}
-    header.scrolled .logo img{height:29px}
+    .logo img{height:42px}
+    header.scrolled .logo img{height:36px}
     .nav-cta{padding:8px 14px}
     .lang button{padding:5px 11px;font-size:12px}
   }
@@ -908,6 +908,29 @@
   @media(max-width:560px){ .vh-side{margin:22px 0 2px;border-radius:12px} }
 
   .vh-gitem.empty{background:rgba(16,16,18,.06);border:1px dashed rgba(16,16,18,.16);cursor:default}
+
+  /* ---------- 360 TOUR · turntable fotográfico ---------- */
+  .t360{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    cursor:grab;touch-action:pan-y;user-select:none}
+  .t360.grab{cursor:grabbing}
+  .t360-img{max-width:min(78%,1150px);max-height:74%;object-fit:contain;display:block;
+    filter:drop-shadow(0 30px 40px rgba(0,0,0,.55));pointer-events:none}
+  .t360-strip{display:flex;gap:9px;margin-top:18px;overflow-x:auto;max-width:min(84%,900px);padding:4px}
+  .t360-strip[hidden]{display:none}
+  .t360-strip::-webkit-scrollbar{height:5px}
+  .t360-strip::-webkit-scrollbar-thumb{background:rgba(255,255,255,.22);border-radius:4px}
+  .t360-th{flex:0 0 auto;width:74px;height:52px;border-radius:8px;overflow:hidden;padding:0;cursor:pointer;
+    border:1.5px solid rgba(255,255,255,.18);background:none;transition:border-color .2s,transform .2s}
+  .t360-th img{width:100%;height:100%;object-fit:cover;display:block}
+  .t360-th:hover{transform:translateY(-2px);border-color:rgba(255,255,255,.55)}
+  .t360-th.on{border-color:var(--gold)}
+  .v3d.night{background:radial-gradient(ellipse 70% 60% at 50% 62%,#0e0e13 0%,#050508 60%,#000 100%)}
+  .v3d.night .t360-img{filter:drop-shadow(0 30px 40px rgba(0,0,0,.8)) brightness(.72) contrast(1.06)}
+  @media(max-width:900px){
+    .t360-img{max-width:92%;max-height:64%}
+    .t360-strip{margin-top:12px;max-width:94%}
+    .t360-th{width:60px;height:44px}
+  }
 </style>
 </head>
 <body>
@@ -981,7 +1004,7 @@
   </div>
   <div class="panel wine">
     <img class="ic ic-img" src="assets/icons/cafe.png" alt="" loading="lazy">
-    <h3 data-i="p2_t">Café menu</h3>
+    <h3 data-i="p2_t">Gourmet Café</h3>
     <p data-i="p2_d">Peruvian contemporary cuisine inside the Museum by Chef Carla Navea.</p>
     <a href="#p-cafe" class="link-arrow" data-i="visit_info">Visit info <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
   </div>
@@ -1005,7 +1028,7 @@
   <div class="v3d" id="v3d">
     <div class="v3d-watermark" id="v3dMark">OVERVIEW</div>
     <div id="scene3d"></div>
-    <div id="scene3dLoad" class="scene-load">Loading 3D…</div>
+    <div id="scene3dLoad" class="scene-load" data-i="d3_loading">Loading…</div>
 
     <div class="v3d-head">
       <h2 class="v3d-name" id="v3dName">MASERATI 300S</h2>
@@ -1159,9 +1182,9 @@
           <span class="cc-ic wa"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2zm5.5 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1-.4-.1-.9-.3-1.6-.6-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8 0-1.3.7-2 .9-2.2.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .5l-.4.6c-.2.2-.3.4-.1.7.2.3.9 1.4 1.9 2.3 1.3 1.1 2.2 1.4 2.5 1.5.2.1.4.1.6-.1l.7-.9c.2-.2.4-.2.6-.1l1.8.9c.3.1.5.2.5.4.1.2.1.7-.1 1.3z"/></svg></span>
           <span class="cc-txt"><b>WhatsApp</b><span>+51 992 432 455</span></span>
         </a>
-        <a class="cc-row" href="mailto:info@classiccarmuseum.pe">
+        <a class="cc-row" href="mailto:info@artech.pe">
           <span class="cc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
-          <span class="cc-txt"><b data-i="c_email">Email</b><span>info@classiccarmuseum.pe</span></span>
+          <span class="cc-txt"><b data-i="c_email">Email</b><span>info@artech.pe</span></span>
         </a>
         <a class="cc-row" href="#location">
           <span class="cc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
@@ -1187,7 +1210,7 @@
     <div class="wrap">
       <a href="#top" class="back-btn light" data-i="back_home">← Back to Home</a>
       <div class="cafe-brand">ARTECH</div>
-      <div class="cafe-tag" data-i="cafe_tag">Café · Cocina · Bar</div>
+      <div class="cafe-tag" data-i="cafe_tag">CAFÉ · KITCHEN · BAR</div>
       <h2 class="cafe-title" data-i="cafe_title">Gourmet Café</h2>
       <p class="cafe-lead" data-i="cafe_lead">Peruvian &amp; Italian fusion inside the Museum, by Chef Carla Navea. Tuesday to Sunday · 9 am – 7 pm.</p>
       <div class="cafe-hint" data-i="cafe_hint">Tap a category to explore the menu</div>
@@ -1252,8 +1275,8 @@
         </div>
       </div>
       <div class="tk-summary" id="tkSummary"></div>
-      <button class="btn-red tk-continue" id="tkContinue" type="button" data-i="tk_continue">Reserve by WhatsApp</button>
-      <p class="tk-note" data-i="tk_note">Prices are being finalized. Online payment is coming soon — for now, confirm your reservation via WhatsApp or at the entrance.</p>
+      <button class="btn-red tk-continue" id="tkContinue" type="button" data-i="tk_continue">Confirm reservation</button>
+      <p class="tk-note" data-i="tk_note">Reserve your date in one message. Our team confirms availability, admission and payment by WhatsApp within minutes — Tuesday to Sunday, 9 am – 7 pm.</p>
     </div>
   </div>
 </section>
@@ -1300,14 +1323,14 @@
     <div class="sp-offers">
       <div class="sp-offer">
         <div class="t"><b>THE HERITAGE TOUR</b> | $120 USD p/p | 90 min</div>
-        <div class="d" data-i="exp1">Access to the World's Oldest Car + Private Guide + Coffee at Salón Café</div>
+        <div class="d" data-i="exp1">Access to the World's Oldest Car + Private Guide + Coffee at the Gourmet Café</div>
       </div>
       <div class="sp-offer">
         <div class="t"><b>PORSCHE &amp; PERFORMANCE</b> | $150 USD p/p | 60 min</div>
         <div class="d" data-i="exp2">Exclusive access to our Porsche collection. For collectors.</div>
       </div>
       <div class="sp-offer">
-        <div class="t">SALÓN CAFÉ | <span data-i="exp3a">A CORDON BLEU EXPERIENCE</span></div>
+        <div class="t">GOURMET CAFÉ | <span data-i="exp3a">A CORDON BLEU EXPERIENCE</span></div>
         <div class="d"><span data-i="exp3b">Peruvian contemporary cuisine inside the Museum. By</span> <b>Chef Carla Navea</b>. <span data-i="exp3c">Tuesday to Sunday · 9 am – 7 pm</span></div>
       </div>
     </div>
@@ -1435,18 +1458,19 @@
 <script>
 const dict = {
   en:{
+    d3_loading:"Loading…",
     nav_collection:"Collection",nav_experience:"Experience",nav_360:"360° Tour",nav_about:"About",nav_cafe:"Gourmet Café",nav_contact:"Contact",nav_book:"Book",
-    cafe_tag:"Café · Cocina · Bar",cafe_title:"Gourmet Café",cafe_lead:"Peruvian & Italian fusion inside the Museum, by Chef Carla Navea. Tuesday to Sunday · 9 am – 7 pm.",cafe_hint:"Tap a category to explore the menu",
+    cafe_tag:"CAFÉ · KITCHEN · BAR",cafe_title:"Gourmet Café",cafe_lead:"Peruvian & Italian fusion inside the Museum, by Chef Carla Navea. Tuesday to Sunday · 9 am – 7 pm.",cafe_hint:"Tap a category to explore the menu",
     nav_blog:"Blog",blog_kick:"THE JOURNAL",blog_title:"Stories from the Museum",blog_sub:"Classic cars, restoration and the culture behind the collection in Lima.",blog_back:"← All articles",post_cta:"Plan your visit",vh_back:"← Collection",
     v3d_overview:"Overview",v3d_profile:"Exterior",v3d_wheels:"Wheels",v3d_lights:"Lights",v3d_interior:"Interior",v3d_rear:"Rear",
-    nav_tickets:"Buy Tickets",hero_tickets:"Buy Tickets",tk_kick:"VISIT ARTECH",tk_title:"Buy Tickets",tk_sub:"Choose your date and tickets to experience the Museum, the collection and the Gourmet Café.",tk_date:"Select a date",tk_general:"General",tk_general_d:"Adult admission",tk_reduced:"Children & Seniors",tk_reduced_d:"Kids and senior citizens",tk_continue:"Reserve by WhatsApp",tk_note:"Prices are being finalized. Online payment is coming soon — for now, confirm your reservation via WhatsApp or at the entrance.",tk_pick:"Please pick a date and at least one ticket.",
+    nav_tickets:"Buy Tickets",hero_tickets:"Buy Tickets",tk_kick:"VISIT ARTECH",tk_title:"Buy Tickets",tk_sub:"Choose your date and tickets — we confirm your reservation by WhatsApp.",tk_date:"Select a date",tk_general:"General",tk_general_d:"Adult admission",tk_reduced:"Children & Seniors",tk_reduced_d:"Kids and senior citizens",tk_continue:"Confirm reservation",tk_note:"Reserve your date in one message. Our team confirms availability, admission and payment by WhatsApp within minutes — Tuesday to Sunday, 9 am – 7 pm.",tk_pick:"Please pick a date and at least one ticket.",
     hero_title:"Shift into history",hero_sub:"A living experience of cars, art and gastronomy — home to the World's Oldest Car & a rare Porsche collection.",hero_btn:"360° tour",
     banner:"A LIVING MUSEUM OF MOTORING HISTORY",pl_tag:"SHIFT INTO HISTORY",pl_sub:"ARTECH · Lima, Perú",
     p1_t:"Book your private tour",p1_d:"Reserve a guided visit and step into an unrepeatable collection.",
-    p2_t:"Café menu",p2_d:"Peruvian & Italian fusion inside the Museum, by Chef Carla Navea.",
+    p2_t:"Gourmet Café",p2_d:"Peruvian & Italian fusion inside the Museum, by Chef Carla Navea.",
     visit_info:"Visit info",
     exp_the:"THE MUSEUM",exp_title:"EXPERIENCES",exp_lead:"Guided tours, exclusive Porsche access and contemporary gastronomy — a complete journey through automotive history.",exp_cta:"See the experiences",
-    exp1:"Access to the World's Oldest Car + Private Guide + Coffee at Salón Café",
+    exp1:"Access to the World's Oldest Car + Private Guide + Coffee at the Gourmet Café",
     exp2:"Exclusive access to our Porsche collection. For collectors.",
     exp3a:"A CORDON BLEU EXPERIENCE",exp3b:"Peruvian & Italian fusion inside the Museum. By",exp3c:"Tuesday to Sunday · 9 am – 7 pm",
     leg_t:"The legacy",
@@ -1490,18 +1514,19 @@ const dict = {
     nl_ok:"Thank you for subscribing!",nl_need:"Please accept the privacy policy to continue."
   },
   es:{
+    d3_loading:"Cargando…",
     nav_collection:"Colección",nav_experience:"Experiencia",nav_360:"Visita 360°",nav_about:"Nosotros",nav_cafe:"Café Gourmet",nav_contact:"Contacto",nav_book:"Reserva",
-    cafe_tag:"Café · Cocina · Bar",cafe_title:"Café Gourmet",cafe_lead:"Fusión peruana e italiana dentro del Museo, por la Chef Carla Navea. Martes a Domingo · 9 am – 7 pm.",cafe_hint:"Toca una categoría para ver la carta",
+    cafe_tag:"CAFÉ · COCINA · BAR",cafe_title:"Café Gourmet",cafe_lead:"Fusión peruana e italiana dentro del Museo, por la Chef Carla Navea. Martes a Domingo · 9 am – 7 pm.",cafe_hint:"Toca una categoría para ver la carta",
     nav_blog:"Blog",blog_kick:"EL DIARIO",blog_title:"Historias del Museo",blog_sub:"Autos clásicos, restauración y la cultura detrás de la colección en Lima.",blog_back:"← Todos los artículos",post_cta:"Planifica tu visita",vh_back:"← Colección",
     v3d_overview:"Vista general",v3d_profile:"Exterior",v3d_wheels:"Ruedas",v3d_lights:"Luces",v3d_interior:"Interior",v3d_rear:"Trasera",
-    nav_tickets:"Comprar Tickets",hero_tickets:"Comprar Tickets",tk_kick:"VISITA ARTECH",tk_title:"Comprar Tickets",tk_sub:"Elige tu fecha y tus entradas para vivir el Museo, la colección y el Gourmet Café.",tk_date:"Selecciona una fecha",tk_general:"General",tk_general_d:"Entrada adulto",tk_reduced:"Niños y adultos mayores",tk_reduced_d:"Niños y personas de la tercera edad",tk_continue:"Reservar por WhatsApp",tk_note:"Los precios se están definiendo. El pago en línea llegará pronto — por ahora, confirma tu reserva por WhatsApp o en la entrada.",tk_pick:"Elige una fecha y al menos una entrada.",
+    nav_tickets:"Comprar Tickets",hero_tickets:"Comprar Tickets",tk_kick:"VISITA ARTECH",tk_title:"Comprar Tickets",tk_sub:"Elige tu fecha y tus entradas — confirmamos tu reserva por WhatsApp.",tk_date:"Selecciona una fecha",tk_general:"General",tk_general_d:"Entrada adulto",tk_reduced:"Niños y adultos mayores",tk_reduced_d:"Niños y personas de la tercera edad",tk_continue:"Confirmar reserva",tk_note:"Reserva tu fecha en un solo mensaje. Nuestro equipo confirma disponibilidad, entradas y pago por WhatsApp en minutos — de martes a domingo, 9 am – 7 pm.",tk_pick:"Elige una fecha y al menos una entrada.",
     hero_title:"Un viaje a la historia",hero_sub:"Una experiencia viva de autos, arte y gastronomía — hogar del auto más antiguo del mundo y una rara colección Porsche.",hero_btn:"Tour 360°",
     banner:"UN MUSEO VIVO DE LA HISTORIA DEL AUTOMÓVIL",pl_tag:"UN VIAJE A LA HISTORIA",pl_sub:"ARTECH · Lima, Perú",
     p1_t:"Reserva tu tour privado",p1_d:"Reserva una visita guiada y entra a una colección irrepetible.",
-    p2_t:"Carta del café",p2_d:"Fusión peruana e italiana dentro del Museo, por la Chef Carla Navea.",
+    p2_t:"Gourmet Café",p2_d:"Fusión peruana e italiana dentro del Museo, por la Chef Carla Navea.",
     visit_info:"Ver info",
     exp_the:"EL MUSEO",exp_title:"EXPERIENCIAS",exp_lead:"Tours guiados, acceso exclusivo a Porsche y gastronomía contemporánea — un viaje completo por la historia del automóvil.",exp_cta:"Ver las experiencias",
-    exp1:"Acceso al auto más antiguo del mundo + Guía privado + Café en el Salón Café",
+    exp1:"Acceso al auto más antiguo del mundo + Guía privado + café en el Gourmet Café",
     exp2:"Acceso exclusivo a nuestra colección Porsche. Para coleccionistas.",
     exp3a:"UNA EXPERIENCIA CORDON BLEU",exp3b:"Fusión peruana e italiana dentro del Museo. Por la",exp3c:"Martes a Domingo · 9 am – 7 pm",
     leg_t:"El legado",
@@ -1558,6 +1583,7 @@ function apply(l){
     if(dict[l][k]!==undefined) el.placeholder = dict[l][k];
   });
   document.querySelectorAll('.lang button').forEach(b=>b.classList.toggle('active', b.dataset.lang===l));
+  window.dispatchEvent(new Event('artech:lang'));
   const pv=document.getElementById('page-vehicle');
   if(currentSlug && pv && pv.classList.contains('active')) showVehicle(currentSlug);
   if(typeof renderCafeMenu==='function') renderCafeMenu();
@@ -2004,6 +2030,8 @@ document.addEventListener('click',e=>{
 });
 (async function initCars(){
   try{ const r=await fetch('assets/cars.json',{cache:'no-cache'}); CARS=await r.json(); }catch(e){ CARS=[]; }
+  // orden curatorial: featured_order (1 = primero); el resto conserva su orden
+  CARS.sort((a,b)=>((a.featured_order||100)-(b.featured_order||100)));
   renderCollections(); wireFilters();
   if(typeof apply==='function') apply(lang);
   if(location.hash==='#p-vehicle' && CARS[0]) showVehicle(CARS[0].slug);
@@ -2103,182 +2131,102 @@ apply('en');
 </script>
 
 <!-- ===== Real 3D stylized car (Three.js) ===== -->
-<script type="importmap">
-{ "imports": {
-  "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
-  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
-}}
-</script>
-<script type="module">
-(async function(){
-  const host=document.getElementById('scene3d'), loader=document.getElementById('scene3dLoad');
-  if(!host) return;
-  // carga diferida: no descargamos three.js hasta que el visor esté cerca del viewport
-  await new Promise(function(res){
-    if(!('IntersectionObserver' in window)) return res();
-    const io=new IntersectionObserver(function(en){ if(en[0].isIntersecting){ io.disconnect(); res(); } },{rootMargin:'600px'});
-    io.observe(host);
-  });
-  function fallback(){ if(host.dataset.done) return; host.dataset.done='1';
-    host.innerHTML='<img src="assets/splash-maserati.jpg" alt="" style="width:100%;height:100%;object-fit:contain">';
-    if(loader) loader.classList.add('hidden'); }
-  const safety=setTimeout(fallback,10000);
-  let THREE,OrbitControls,RoundedBoxGeometry,RoomEnvironment;
-  try{
-    THREE=await import('three');
-    ({OrbitControls}=await import('three/addons/controls/OrbitControls.js'));
-    ({RoundedBoxGeometry}=await import('three/addons/geometries/RoundedBoxGeometry.js'));
-    ({RoomEnvironment}=await import('three/addons/environments/RoomEnvironment.js'));
-  }catch(e){ clearTimeout(safety); fallback(); return; }
-  clearTimeout(safety); host.dataset.done='1';
-
-  const W=host.clientWidth||800, H=host.clientHeight||520;
-  const renderer=new THREE.WebGLRenderer({antialias:true,alpha:true});
-  renderer.setPixelRatio(Math.min(devicePixelRatio,2)); renderer.setSize(W,H);
-  renderer.toneMapping=THREE.ACESFilmicToneMapping; renderer.toneMappingExposure=1.1;
-  renderer.shadowMap.enabled=true; renderer.shadowMap.type=THREE.PCFSoftShadowMap;
-  host.appendChild(renderer.domElement);
-  const scene=new THREE.Scene();
-  const pmrem=new THREE.PMREMGenerator(renderer);
-  scene.environment=pmrem.fromScene(new RoomEnvironment(renderer),0.04).texture;
-  const camera=new THREE.PerspectiveCamera(32,W/H,0.1,120);
-  const controls=new OrbitControls(camera,renderer.domElement);
-  controls.enableDamping=true; controls.dampingFactor=0.07; controls.enablePan=false;
-  controls.minDistance=4.2; controls.maxDistance=14; controls.maxPolarAngle=Math.PI/2.03;
-
-  const key=new THREE.DirectionalLight(0xffffff,2.2); key.position.set(6,7,5);
-  key.castShadow=true; key.shadow.mapSize.set(1024,1024); scene.add(key);
-  const fill=new THREE.DirectionalLight(0xffffff,0.6); fill.position.set(-6,4,-5); scene.add(fill);
-  const amb=new THREE.AmbientLight(0xffffff,0.35); scene.add(amb);
-  const rimL=new THREE.PointLight(0xE10600,0,10); rimL.position.set(-4,1.6,-3); scene.add(rimL);
-
-  const paint=new THREE.MeshPhysicalMaterial({color:0x1b3a6b,metalness:0.55,roughness:0.22,clearcoat:1,clearcoatRoughness:0.12});
-  const glass=new THREE.MeshPhysicalMaterial({color:0x0a0d12,metalness:0.3,roughness:0.05,transparent:true,opacity:0.85});
-  const tire=new THREE.MeshStandardMaterial({color:0x0b0b0d,roughness:0.92,metalness:0.05});
-  const rim=new THREE.MeshStandardMaterial({color:0xd6dade,metalness:0.98,roughness:0.16});
-  const chrome=new THREE.MeshStandardMaterial({color:0xe8ecef,metalness:1,roughness:0.08});
-  const stripe=new THREE.MeshPhysicalMaterial({color:0xf2f2f0,metalness:0.3,roughness:0.3,clearcoat:1});
-  const beamMat=new THREE.MeshStandardMaterial({color:0xffffff,emissive:0xfff2cc,emissiveIntensity:0.35,roughness:0.25});
-  const tailMat=new THREE.MeshStandardMaterial({color:0x330404,emissive:0xff1e10,emissiveIntensity:0.5,roughness:0.3});
-  const seatMat=new THREE.MeshStandardMaterial({color:0x6b3b23,roughness:0.75});
-
-  const car=new THREE.Group(); scene.add(car);
-  const rb=(w,h,d,r)=>new RoundedBoxGeometry(w,h,d,6,r);
-  const add=(g,m,x,y,z)=>{const me=new THREE.Mesh(g,m);me.position.set(x,y,z);me.castShadow=true;me.receiveShadow=true;car.add(me);return me;};
-  add(rb(4.3,0.62,1.78,0.30),paint,0,0.70,0);
-  add(rb(4.0,0.40,1.62,0.18),paint,0,0.42,0);
-  const nose=add(rb(1.5,0.52,1.66,0.26),paint,1.62,0.80,0); nose.scale.set(1,0.92,0.96);
-  add(rb(1.2,0.44,1.62,0.22),paint,-1.75,0.82,0);
-  add(rb(2.6,0.10,0.34,0.05),stripe,0.55,1.03,0);
-  add(rb(1.5,0.46,1.32,0.22),glass,-0.35,1.20,0);
-  add(rb(0.10,0.44,1.28,0.05),chrome,0.42,1.24,0);
-  add(rb(0.9,0.24,1.14,0.10),seatMat,-0.55,1.06,0);
-  add(rb(4.35,0.12,0.16,0.05),chrome,0,0.30,0.86);
-  add(rb(4.35,0.12,0.16,0.05),chrome,0,0.30,-0.86);
-  add(rb(0.22,0.30,1.5,0.10),chrome,2.30,0.62,0);
-  add(rb(0.18,0.26,1.4,0.08),chrome,-2.32,0.66,0);
-  add(rb(0.14,0.34,0.92,0.10),new THREE.MeshStandardMaterial({color:0x111316,metalness:0.9,roughness:0.35}),2.28,0.72,0);
-  add(new THREE.SphereGeometry(0.19,24,18),beamMat,2.02,0.92,0.56);
-  add(new THREE.SphereGeometry(0.19,24,18),beamMat,2.02,0.92,-0.56);
-  add(rb(0.10,0.16,0.34,0.05),tailMat,-2.30,0.86,0.52);
-  add(rb(0.10,0.16,0.34,0.05),tailMat,-2.30,0.86,-0.52);
-  add(rb(0.12,0.10,0.24,0.04),chrome,0.55,1.16,0.92);
-  add(rb(0.12,0.10,0.24,0.04),chrome,0.55,1.16,-0.92);
-  function wheel(x,z){
-    const g=new THREE.Group();
-    const t=new THREE.Mesh(new THREE.TorusGeometry(0.46,0.19,16,40),tire); t.rotation.y=Math.PI/2; t.castShadow=true; g.add(t);
-    const d=new THREE.Mesh(new THREE.CylinderGeometry(0.30,0.30,0.20,28),rim); d.rotation.z=Math.PI/2; g.add(d);
-    for(let i=0;i<12;i++){ const sp=new THREE.Mesh(new THREE.CylinderGeometry(0.012,0.012,0.58,6),rim);
-      sp.rotation.z=Math.PI/2; sp.rotation.x=i*Math.PI/6; g.add(sp); }
-    g.position.set(x,0.48,z); car.add(g); return g;
-  }
-  [[1.45,0.82],[1.45,-0.82],[-1.45,0.82],[-1.45,-0.82]].forEach(function(a){ wheel(a[0],a[1]); });
-  const floor=new THREE.Mesh(new THREE.CircleGeometry(9,64),
-    new THREE.MeshStandardMaterial({color:0x101013,roughness:0.75,metalness:0.2}));
-  floor.rotation.x=-Math.PI/2; floor.receiveShadow=true; scene.add(floor);
-
-  const V={
-    overview:{p:[6.0,2.6,6.4],t:[0,0.75,0],mark:'OVERVIEW'},
-    profile:{p:[0.2,1.5,8.6],t:[0,0.80,0],mark:'EXTERIOR'},
-    wheels:{p:[3.4,1.0,3.4],t:[1.35,0.50,0.85],mark:'WHEELS'},
-    lights:{p:[5.6,1.3,1.8],t:[1.90,0.85,0],mark:'LIGHTS'},
-    interior:{p:[1.6,2.4,2.2],t:[-0.30,1.05,0],mark:'INTERIOR'},
-    rear:{p:[-6.2,2.0,3.6],t:[-1.3,0.85,0],mark:'REAR'}
+<script>
+/* ================= ARTECH · 360 TOUR (turntable fotográfico) =================
+   Vehículo: editable en TOUR.car — el cliente sólo cambia estos campos. */
+(function(){
+  const BASE='assets/360-tour/ford-super-deluxe-woody/';
+  const TOUR={
+    car:{ name:'FORD SUPER DELUXE WOODY',
+          sub:{en:'1946 · BURGUNDY & MAPLE', es:'1946 · BURDEOS Y ARCE'} },
+    // secuencia de giro (arrastrar para rotar 360°)
+    spin:['front','front-34-right','side-left','rear-34-left','rear','rear-34-right','side-left-2','front-34-left'],
+    views:{
+      overview:{mark:{en:'OVERVIEW',es:'VISTA GENERAL'},spin:true},
+      profile :{mark:{en:'EXTERIOR',es:'EXTERIOR'}, shots:['side-left','side-left-2','top','top-open','underside']},
+      wheels  :{mark:{en:'WHEELS',es:'RUEDAS'},     shots:['side-left','front-34-left','rear-34-left-2','side-left-2']},
+      lights  :{mark:{en:'LIGHTS',es:'LUCES'},      shots:['front','front-34-left','front-34-right']},
+      interior:{mark:{en:'INTERIOR',es:'INTERIOR'}, shots:['dashboard','steering-wheel','speedometer','cluster','radio',
+                 'gear-indicator','pedals','front-seat','rear-seat','door-panel','door-panels','headliner',
+                 'interior-door-open','interior-doors-open','dash-left']},
+      rear    :{mark:{en:'REAR',es:'TRASERA'},      shots:['rear','rear-34-left','rear-34-right','cargo-area']}
+    }
   };
-  let from=null,to=null,tgtFrom=null,tgtTo=null,t0=0;
-  const DUR=950, mark=document.getElementById('v3dMark');
-  function goto(k){
-    const v=V[k]||V.overview;
-    from=camera.position.clone(); to=new THREE.Vector3(v.p[0],v.p[1],v.p[2]);
-    tgtFrom=controls.target.clone(); tgtTo=new THREE.Vector3(v.t[0],v.t[1],v.t[2]);
-    t0=performance.now();
-    if(mark){ mark.style.opacity=0; setTimeout(function(){ mark.textContent=v.mark; mark.style.opacity=1; },220); }
+  const host=document.getElementById('scene3d'); if(!host) return;
+  const loader=document.getElementById('scene3dLoad'), mark=document.getElementById('v3dMark');
+  const L=()=> (typeof lang!=='undefined' && lang==='es') ? 'es' : 'en';
+
+  host.innerHTML='<div class="t360"><img class="t360-img" id="t360img" alt=""><div class="t360-strip" id="t360strip"></div></div>';
+  const img=document.getElementById('t360img'), strip=document.getElementById('t360strip');
+
+  const nom=document.getElementById('v3dName'), sub=document.getElementById('v3dSub');
+  function rotula(){ if(nom) nom.textContent=TOUR.car.name; if(sub) sub.textContent=TOUR.car.sub[L()]; }
+  rotula();
+  window.addEventListener('artech:lang',rotula);
+
+  let modo='spin', frames=TOUR.spin.slice(), idx=0;
+  const url=n=>BASE+n+'.jpg';
+  function pinta(){ img.src=url(frames[idx]); marcaMiniatura(); }
+  function marcaMiniatura(){
+    [...strip.children].forEach((b,i)=>b.classList.toggle('on',i===idx));
   }
-  camera.position.set(V.overview.p[0],V.overview.p[1],V.overview.p[2]);
-  controls.target.set(0,0.75,0); controls.update();
-  document.querySelectorAll('.v3d-item').forEach(function(b){
-    b.addEventListener('click',function(){
-      document.querySelectorAll('.v3d-item').forEach(function(x){x.classList.remove('active');});
-      b.classList.add('active'); goto(b.dataset.view);
-    });
-  });
+  function setVista(k){
+    const v=TOUR.views[k]||TOUR.views.overview;
+    if(mark){ mark.style.opacity=0; setTimeout(()=>{mark.textContent=v.mark[L()]; mark.style.opacity=1;},200); }
+    if(v.spin){ modo='spin'; frames=TOUR.spin.slice(); strip.innerHTML=''; strip.hidden=true; }
+    else{
+      modo='shots'; frames=v.shots.slice(); strip.hidden=false;
+      strip.innerHTML=frames.map((n,i)=>`<button class="t360-th" data-i="${i}"><img src="${url(n)}" alt="" loading="lazy"></button>`).join('');
+    }
+    idx=0; pinta();
+  }
+  strip.addEventListener('click',e=>{ const b=e.target.closest('.t360-th'); if(!b) return;
+    idx=+b.dataset.i; pinta(); });
 
-  const sw=document.getElementById('v3dSw');
-  const tp=document.getElementById('tPaint');
-  if(tp) tp.addEventListener('click',function(e){ e.currentTarget.classList.toggle('on'); if(sw) sw.hidden=!sw.hidden; });
-  const NAMES={'E10600':'ROSSO ARTECH','1b3a6b':'RACING BLUE','C9A24B':'ORO','0f1113':'NERO','cfd3d7':'ARGENTO','14402a':'BRITISH GREEN'};
-  document.querySelectorAll('.sw[data-c]').forEach(function(b){
-    b.addEventListener('click',function(){
-      const c=b.dataset.c; if(!/^[0-9a-fA-F]{6}$/.test(c)) return;
-      paint.color.set('#'+c);
-      document.querySelectorAll('.sw').forEach(function(x){x.classList.remove('on');});
-      b.classList.add('on');
-      const sub=document.getElementById('v3dSub');
-      if(sub) sub.textContent='1957 · '+(NAMES[c]||'');
-    });
-  });
-  let lightsOn=false;
-  const tl=document.getElementById('tLights');
-  if(tl) tl.addEventListener('click',function(e){
-    lightsOn=!lightsOn; e.currentTarget.classList.toggle('on',lightsOn);
-    beamMat.emissiveIntensity=lightsOn?2.4:0.35;
-    tailMat.emissiveIntensity=lightsOn?2.2:0.5;
-    rimL.intensity=lightsOn?2.2:0;
-  });
-  let night=false;
-  const tn=document.getElementById('tNight');
-  if(tn) tn.addEventListener('click',function(e){
-    night=!night; e.currentTarget.classList.toggle('on',night);
-    key.intensity=night?0.5:2.2; fill.intensity=night?0.15:0.6; amb.intensity=night?0.10:0.35;
-    renderer.toneMappingExposure=night?0.85:1.1;
-    const v=document.getElementById('v3d');
-    if(v) v.style.background=night?'radial-gradient(ellipse 70% 60% at 50% 62%,#111117 0%,#06060a 60%,#030305 100%)':'';
-  });
-  let spin=true;
-  const ts=document.getElementById('tSpin');
-  if(ts){ ts.classList.add('on'); ts.addEventListener('click',function(e){ spin=!spin; e.currentTarget.classList.toggle('on',spin); }); }
+  /* arrastrar para girar / rueda para pasar fotos */
+  let down=false, x0=0, i0=0;
+  const stage=host.querySelector('.t360');
+  const paso=()=> Math.max(18, stage.clientWidth/(frames.length*1.6));
+  stage.addEventListener('pointerdown',e=>{ down=true; x0=e.clientX; i0=idx; stage.setPointerCapture(e.pointerId); stage.classList.add('grab'); });
+  stage.addEventListener('pointermove',e=>{ if(!down) return;
+    const d=Math.round((e.clientX-x0)/paso());
+    const n=((i0 - d)%frames.length+frames.length)%frames.length;
+    if(n!==idx){ idx=n; pinta(); } });
+  const suelta=()=>{ down=false; stage.classList.remove('grab'); };
+  stage.addEventListener('pointerup',suelta); stage.addEventListener('pointercancel',suelta);
+
+  /* auto-giro suave hasta que el usuario interactúe */
+  let auto=setInterval(()=>{ if(modo!=='spin'||down) return; idx=(idx+1)%frames.length; pinta(); },1400);
+  stage.addEventListener('pointerdown',()=>{ clearInterval(auto); auto=null; },{once:true});
+
+  /* menú de vistas */
+  document.querySelectorAll('.v3d-item').forEach(b=>b.addEventListener('click',()=>{
+    document.querySelectorAll('.v3d-item').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active'); setVista(b.dataset.view);
+  }));
+  /* herramientas */
   const tw=document.getElementById('tWheels');
-  if(tw) tw.addEventListener('click',function(){ const b=document.querySelector('.v3d-item[data-view="wheels"]'); if(b) b.click(); });
+  if(tw) tw.addEventListener('click',()=>document.querySelector('.v3d-item[data-view="wheels"]')?.click());
+  const tl=document.getElementById('tLights');
+  if(tl) tl.addEventListener('click',()=>document.querySelector('.v3d-item[data-view="lights"]')?.click());
   const tr=document.getElementById('tReset');
-  if(tr) tr.addEventListener('click',function(){ const b=document.querySelector('.v3d-item[data-view="overview"]'); if(b) b.click(); });
+  if(tr) tr.addEventListener('click',()=>document.querySelector('.v3d-item[data-view="overview"]')?.click());
+  const tn=document.getElementById('tNight');
+  if(tn) tn.addEventListener('click',e=>{ e.currentTarget.classList.toggle('on');
+    document.getElementById('v3d')?.classList.toggle('night'); });
+  const ts=document.getElementById('tSpin');
+  if(ts){ ts.classList.add('on'); ts.addEventListener('click',e=>{
+    const on=!e.currentTarget.classList.contains('on');
+    e.currentTarget.classList.toggle('on',on);
+    if(on && !auto){ auto=setInterval(()=>{ if(modo!=='spin'||down) return; idx=(idx+1)%frames.length; pinta(); },1400); }
+    else { clearInterval(auto); auto=null; } }); }
+  const tp=document.getElementById('tPaint'); if(tp) tp.style.display='none';
+  const sw=document.getElementById('v3dSw'); if(sw) sw.remove();
 
-  const ease=function(x){ return x<0.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2; };
-  function resize(){ const w=host.clientWidth,h=host.clientHeight; if(!w||!h) return;
-    camera.aspect=w/h; camera.updateProjectionMatrix(); renderer.setSize(w,h); }
-  addEventListener('resize',resize); resize();
-  let dragging=false;
-  controls.addEventListener('start',function(){ dragging=true; });
-  renderer.render(scene,camera);
-  if(loader) loader.classList.add('hidden');
-  (function loop(now){
-    requestAnimationFrame(loop);
-    if(from){ const k=Math.min(1,(now-t0)/DUR), e=ease(k);
-      camera.position.lerpVectors(from,to,e); controls.target.lerpVectors(tgtFrom,tgtTo,e);
-      if(k>=1) from=null; }
-    else if(spin && !dragging){ car.rotation.y+=0.0022; }
-    if(lightsOn){ beamMat.emissiveIntensity=1.9+Math.sin(now/420)*0.25; }
-    controls.update(); renderer.render(scene,camera);
-  })(performance.now());
+  /* precarga del set de giro */
+  TOUR.spin.forEach(n=>{ const i=new Image(); i.src=url(n); });
+  img.addEventListener('load',()=>{ if(loader) loader.classList.add('hidden'); },{once:true});
+  setVista('overview');
 })();
 </script>
 </body>
