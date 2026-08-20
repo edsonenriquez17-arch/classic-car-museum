@@ -827,7 +827,7 @@
 
   /* ================= ARTECH 360 VIEWER (3D) ================= */
   .exp3d{padding:0;background:#0b0b0d;border-top:1px solid rgba(255,255,255,.07);overflow:hidden}
-  .v3d{position:relative;width:100%;height:min(88vh,860px);min-height:520px;
+  .v3d{position:relative;width:100%;height:min(92vh,900px);min-height:640px;
     background:radial-gradient(ellipse 70% 60% at 50% 62%,#1a1a1f 0%,#0d0d10 55%,#08080a 100%)}
   .v3d #scene3d{position:absolute;inset:0;width:100%;height:100%}
   .v3d .scene-load{z-index:4}
@@ -836,10 +836,10 @@
     font-size:clamp(70px,15vw,220px);color:rgba(255,255,255,.045);pointer-events:none;z-index:0;
     text-transform:uppercase;transition:opacity .4s}
   /* título */
-  .v3d-head{position:absolute;top:clamp(22px,4vw,44px);left:clamp(20px,4vw,54px);z-index:5;pointer-events:none}
-  .v3d-name{font-family:var(--display);font-weight:800;color:#fff;letter-spacing:-1px;line-height:1;
-    font-size:clamp(26px,4.2vw,52px);text-transform:uppercase}
-  .v3d-sub{color:var(--gold);letter-spacing:3px;font-size:clamp(11px,1.2vw,14px);margin-top:10px;text-transform:uppercase}
+  .v3d-head{position:absolute;top:clamp(20px,3.2vw,36px);left:clamp(20px,4vw,54px);z-index:5;pointer-events:none}
+  .v3d-name{font-family:var(--display);font-weight:800;color:#fff;letter-spacing:-1px;line-height:1.02;
+    font-size:clamp(22px,3vw,40px);text-transform:uppercase}
+  .v3d-sub{color:var(--gold);letter-spacing:3px;font-size:clamp(10px,1vw,12.5px);margin-top:8px;text-transform:uppercase}
   /* menú de vistas */
   .v3d-menu{position:absolute;left:clamp(20px,4vw,54px);top:50%;transform:translateY(-50%);z-index:5;
     display:flex;flex-direction:column;gap:6px}
@@ -911,25 +911,35 @@
 
   /* ---------- 360 TOUR · turntable fotográfico ---------- */
   .t360{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    padding:clamp(158px,23%,205px) clamp(90px,11vw,190px) clamp(48px,7%,78px);
     cursor:grab;touch-action:pan-y;user-select:none}
   .t360.grab{cursor:grabbing}
-  .t360-img{max-width:min(78%,1150px);max-height:74%;object-fit:contain;display:block;
-    filter:drop-shadow(0 30px 40px rgba(0,0,0,.55));pointer-events:none}
-  .t360-strip{display:flex;gap:9px;margin-top:18px;overflow-x:auto;max-width:min(84%,900px);padding:4px}
+  .t360-stage{position:relative;flex:1;width:100%;display:flex;align-items:center;justify-content:center;min-height:0}
+  .t360-img{max-width:100%;max-height:100%;object-fit:contain;display:block;pointer-events:none;
+    filter:drop-shadow(0 22px 26px rgba(0,0,0,.55))}
+  .t360-shadow{position:absolute;left:50%;bottom:2%;width:58%;height:5%;transform:translateX(-50%);
+    background:radial-gradient(ellipse at center,rgba(0,0,0,.55),transparent 72%);filter:blur(7px);pointer-events:none}
+  .t360-strip{display:flex;gap:9px;margin-top:16px;overflow-x:auto;max-width:min(90%,860px);padding:4px;flex:none}
   .t360-strip[hidden]{display:none}
   .t360-strip::-webkit-scrollbar{height:5px}
   .t360-strip::-webkit-scrollbar-thumb{background:rgba(255,255,255,.22);border-radius:4px}
   .t360-th{flex:0 0 auto;width:74px;height:52px;border-radius:8px;overflow:hidden;padding:0;cursor:pointer;
-    border:1.5px solid rgba(255,255,255,.18);background:none;transition:border-color .2s,transform .2s}
+    border:1.5px solid rgba(255,255,255,.18);background:rgba(255,255,255,.04);transition:border-color .2s,transform .2s}
   .t360-th img{width:100%;height:100%;object-fit:cover;display:block}
   .t360-th:hover{transform:translateY(-2px);border-color:rgba(255,255,255,.55)}
   .t360-th.on{border-color:var(--gold)}
   .v3d.night{background:radial-gradient(ellipse 70% 60% at 50% 62%,#0e0e13 0%,#050508 60%,#000 100%)}
-  .v3d.night .t360-img{filter:drop-shadow(0 30px 40px rgba(0,0,0,.8)) brightness(.72) contrast(1.06)}
+  .v3d.night .t360-img{filter:drop-shadow(0 22px 26px rgba(0,0,0,.85)) brightness(.72) contrast(1.06)}
+  /* el rotulo no debe pisar el auto */
+  .v3d-head{max-width:min(32%,380px)}
+  .v3d-watermark{top:46%}
   @media(max-width:900px){
-    .t360-img{max-width:92%;max-height:64%}
-    .t360-strip{margin-top:12px;max-width:94%}
+    .t360{padding:14px 14px 8px}
+    .t360-stage{min-height:210px}
+    .t360-strip{margin-top:10px;max-width:96%}
     .t360-th{width:60px;height:44px}
+    .v3d-head{max-width:none}
+  }
   }
 </style>
 </head>
@@ -2156,7 +2166,7 @@ apply('en');
   const loader=document.getElementById('scene3dLoad'), mark=document.getElementById('v3dMark');
   const L=()=> (typeof lang!=='undefined' && lang==='es') ? 'es' : 'en';
 
-  host.innerHTML='<div class="t360"><img class="t360-img" id="t360img" alt=""><div class="t360-strip" id="t360strip"></div></div>';
+  host.innerHTML='<div class="t360"><div class="t360-stage"><img class="t360-img" id="t360img" alt=""><span class="t360-shadow"></span></div><div class="t360-strip" id="t360strip"></div></div>';
   const img=document.getElementById('t360img'), strip=document.getElementById('t360strip');
 
   const nom=document.getElementById('v3dName'), sub=document.getElementById('v3dSub');
@@ -2165,7 +2175,9 @@ apply('en');
   window.addEventListener('artech:lang',rotula);
 
   let modo='spin', frames=TOUR.spin.slice(), idx=0;
-  const url=n=>BASE+n+'.jpg';
+  const PNG=new Set(['front','front-34-right','side-left','rear-34-left','rear','rear-34-right',
+    'side-left-2','front-34-left','top','top-open','underside','rear-34-left-2']);
+  const url=n=>BASE+n+(PNG.has(n)?'.png':'.jpg');
   function pinta(){ img.src=url(frames[idx]); marcaMiniatura(); }
   function marcaMiniatura(){
     [...strip.children].forEach((b,i)=>b.classList.toggle('on',i===idx));
