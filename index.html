@@ -909,37 +909,6 @@
 
   .vh-gitem.empty{background:rgba(16,16,18,.06);border:1px dashed rgba(16,16,18,.16);cursor:default}
 
-  /* ---------- 360 TOUR · turntable fotográfico ---------- */
-  .t360{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
-    padding:clamp(158px,23%,205px) clamp(90px,11vw,190px) clamp(48px,7%,78px);
-    cursor:grab;touch-action:pan-y;user-select:none}
-  .t360.grab{cursor:grabbing}
-  .t360-stage{position:relative;flex:1;width:100%;display:flex;align-items:center;justify-content:center;min-height:0}
-  .t360-img{max-width:100%;max-height:100%;object-fit:contain;display:block;pointer-events:none;
-    filter:drop-shadow(0 22px 26px rgba(0,0,0,.55))}
-  .t360-shadow{position:absolute;left:50%;bottom:2%;width:58%;height:5%;transform:translateX(-50%);
-    background:radial-gradient(ellipse at center,rgba(0,0,0,.55),transparent 72%);filter:blur(7px);pointer-events:none}
-  .t360-strip{display:flex;gap:9px;margin-top:16px;overflow-x:auto;max-width:min(90%,860px);padding:4px;flex:none}
-  .t360-strip[hidden]{display:none}
-  .t360-strip::-webkit-scrollbar{height:5px}
-  .t360-strip::-webkit-scrollbar-thumb{background:rgba(255,255,255,.22);border-radius:4px}
-  .t360-th{flex:0 0 auto;width:74px;height:52px;border-radius:8px;overflow:hidden;padding:0;cursor:pointer;
-    border:1.5px solid rgba(255,255,255,.18);background:rgba(255,255,255,.04);transition:border-color .2s,transform .2s}
-  .t360-th img{width:100%;height:100%;object-fit:cover;display:block}
-  .t360-th:hover{transform:translateY(-2px);border-color:rgba(255,255,255,.55)}
-  .t360-th.on{border-color:var(--gold)}
-  .v3d.night{background:radial-gradient(ellipse 70% 60% at 50% 62%,#0e0e13 0%,#050508 60%,#000 100%)}
-  .v3d.night .t360-img{filter:drop-shadow(0 22px 26px rgba(0,0,0,.85)) brightness(.72) contrast(1.06)}
-  /* el rotulo no debe pisar el auto */
-  .v3d-head{max-width:min(32%,380px)}
-  .v3d-watermark{top:46%}
-  @media(max-width:900px){
-    .t360{padding:14px 14px 8px}
-    .t360-stage{min-height:210px}
-    .t360-strip{margin-top:10px;max-width:96%}
-    .t360-th{width:60px;height:44px}
-    .v3d-head{max-width:none}
-  }
 
   /* ---------- BUY TICKETS · billete ---------- */
   #page-tickets{background:var(--bg);padding:132px 0 90px}
@@ -1123,6 +1092,8 @@
       <button class="sw" data-c="cfd3d7" style="--c:#cfd3d7" aria-label="Silver"></button>
       <button class="sw" data-c="14402a" style="--c:#14402a" aria-label="British green"></button>
     </div>
+
+
 
     <div class="v3d-foot">
       <span class="v3d-hint" data-i="d3_hint">↤ Drag to rotate 360° · scroll to zoom ↦</span>
@@ -2221,104 +2192,184 @@ apply('en');
 </script>
 
 <!-- ===== Real 3D stylized car (Three.js) ===== -->
-<script>
-/* ================= ARTECH · 360 TOUR (turntable fotográfico) =================
-   Vehículo: editable en TOUR.car — el cliente sólo cambia estos campos. */
-(function(){
-  const BASE='assets/360-tour/ford-super-deluxe-woody/';
-  const TOUR={
-    car:{ name:'FORD SUPER DELUXE WOODY',
-          sub:{en:'1946 · BURGUNDY & MAPLE', es:'1946 · BURDEOS Y ARCE'} },
-    // secuencia de giro (arrastrar para rotar 360°)
-    spin:['front','front-34-right','side-left','rear-34-left','rear','rear-34-right','side-left-2','front-34-left'],
-    views:{
-      overview:{mark:{en:'OVERVIEW',es:'VISTA GENERAL'},spin:true},
-      profile :{mark:{en:'EXTERIOR',es:'EXTERIOR'}, shots:['side-left','side-left-2','top','top-open','underside']},
-      wheels  :{mark:{en:'WHEELS',es:'RUEDAS'},     shots:['side-left','front-34-left','rear-34-left-2','side-left-2']},
-      lights  :{mark:{en:'LIGHTS',es:'LUCES'},      shots:['front','front-34-left','front-34-right']},
-      interior:{mark:{en:'INTERIOR',es:'INTERIOR'}, shots:['dashboard','steering-wheel','speedometer','cluster','radio',
-                 'gear-indicator','pedals','front-seat','rear-seat','door-panel','door-panels','headliner',
-                 'interior-door-open','interior-doors-open','dash-left']},
-      rear    :{mark:{en:'REAR',es:'TRASERA'},      shots:['rear','rear-34-left','rear-34-right','cargo-area']}
-    }
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+}}
+</script>
+<script type="module">
+(async function(){
+  const host=document.getElementById('scene3d'), loader=document.getElementById('scene3dLoad');
+  if(!host) return;
+  // carga diferida: no descargamos three.js hasta que el visor esté cerca del viewport
+  await new Promise(function(res){
+    let listo=false; const ok=function(){ if(listo) return; listo=true; res(); };
+    if(!('IntersectionObserver' in window)) return ok();
+    const io=new IntersectionObserver(function(en){ if(en[0].isIntersecting){ io.disconnect(); ok(); } },{rootMargin:'900px'});
+    io.observe(host);
+    setTimeout(ok, 2500);                      // red de seguridad: siempre carga
+  });
+  function fallback(){ if(host.dataset.done) return; host.dataset.done='1';
+    host.innerHTML='<img src="assets/splash-maserati.jpg" alt="" style="width:100%;height:100%;object-fit:contain">';
+    if(loader) loader.classList.add('hidden'); }
+  const safety=setTimeout(fallback,10000);
+  let THREE,OrbitControls,RoundedBoxGeometry,RoomEnvironment;
+  try{
+    THREE=await import('three');
+    ({OrbitControls}=await import('three/addons/controls/OrbitControls.js'));
+    ({RoundedBoxGeometry}=await import('three/addons/geometries/RoundedBoxGeometry.js'));
+    ({RoomEnvironment}=await import('three/addons/environments/RoomEnvironment.js'));
+  }catch(e){ clearTimeout(safety); fallback(); return; }
+  clearTimeout(safety); host.dataset.done='1';
+
+  const W=host.clientWidth||800, H=host.clientHeight||520;
+  const renderer=new THREE.WebGLRenderer({antialias:true,alpha:true});
+  renderer.setPixelRatio(Math.min(devicePixelRatio,2)); renderer.setSize(W,H);
+  renderer.toneMapping=THREE.ACESFilmicToneMapping; renderer.toneMappingExposure=1.1;
+  renderer.shadowMap.enabled=true; renderer.shadowMap.type=THREE.PCFSoftShadowMap;
+  host.appendChild(renderer.domElement);
+  const scene=new THREE.Scene();
+  const pmrem=new THREE.PMREMGenerator(renderer);
+  scene.environment=pmrem.fromScene(new RoomEnvironment(renderer),0.04).texture;
+  const camera=new THREE.PerspectiveCamera(32,W/H,0.1,120);
+  const controls=new OrbitControls(camera,renderer.domElement);
+  controls.enableDamping=true; controls.dampingFactor=0.07; controls.enablePan=false;
+  controls.minDistance=4.2; controls.maxDistance=14; controls.maxPolarAngle=Math.PI/2.03;
+
+  const key=new THREE.DirectionalLight(0xffffff,2.2); key.position.set(6,7,5);
+  key.castShadow=true; key.shadow.mapSize.set(1024,1024); scene.add(key);
+  const fill=new THREE.DirectionalLight(0xffffff,0.6); fill.position.set(-6,4,-5); scene.add(fill);
+  const amb=new THREE.AmbientLight(0xffffff,0.35); scene.add(amb);
+  const rimL=new THREE.PointLight(0xE10600,0,10); rimL.position.set(-4,1.6,-3); scene.add(rimL);
+
+  const paint=new THREE.MeshPhysicalMaterial({color:0x1b3a6b,metalness:0.55,roughness:0.22,clearcoat:1,clearcoatRoughness:0.12});
+  const glass=new THREE.MeshPhysicalMaterial({color:0x0a0d12,metalness:0.3,roughness:0.05,transparent:true,opacity:0.85});
+  const tire=new THREE.MeshStandardMaterial({color:0x0b0b0d,roughness:0.92,metalness:0.05});
+  const rim=new THREE.MeshStandardMaterial({color:0xd6dade,metalness:0.98,roughness:0.16});
+  const chrome=new THREE.MeshStandardMaterial({color:0xe8ecef,metalness:1,roughness:0.08});
+  const stripe=new THREE.MeshPhysicalMaterial({color:0xf2f2f0,metalness:0.3,roughness:0.3,clearcoat:1});
+  const beamMat=new THREE.MeshStandardMaterial({color:0xffffff,emissive:0xfff2cc,emissiveIntensity:0.35,roughness:0.25});
+  const tailMat=new THREE.MeshStandardMaterial({color:0x330404,emissive:0xff1e10,emissiveIntensity:0.5,roughness:0.3});
+  const seatMat=new THREE.MeshStandardMaterial({color:0x6b3b23,roughness:0.75});
+
+  const car=new THREE.Group(); scene.add(car);
+  const rb=(w,h,d,r)=>new RoundedBoxGeometry(w,h,d,6,r);
+  const add=(g,m,x,y,z)=>{const me=new THREE.Mesh(g,m);me.position.set(x,y,z);me.castShadow=true;me.receiveShadow=true;car.add(me);return me;};
+  add(rb(4.3,0.62,1.78,0.30),paint,0,0.70,0);
+  add(rb(4.0,0.40,1.62,0.18),paint,0,0.42,0);
+  const nose=add(rb(1.5,0.52,1.66,0.26),paint,1.62,0.80,0); nose.scale.set(1,0.92,0.96);
+  add(rb(1.2,0.44,1.62,0.22),paint,-1.75,0.82,0);
+  add(rb(2.6,0.10,0.34,0.05),stripe,0.55,1.03,0);
+  add(rb(1.5,0.46,1.32,0.22),glass,-0.35,1.20,0);
+  add(rb(0.10,0.44,1.28,0.05),chrome,0.42,1.24,0);
+  add(rb(0.9,0.24,1.14,0.10),seatMat,-0.55,1.06,0);
+  add(rb(4.35,0.12,0.16,0.05),chrome,0,0.30,0.86);
+  add(rb(4.35,0.12,0.16,0.05),chrome,0,0.30,-0.86);
+  add(rb(0.22,0.30,1.5,0.10),chrome,2.30,0.62,0);
+  add(rb(0.18,0.26,1.4,0.08),chrome,-2.32,0.66,0);
+  add(rb(0.14,0.34,0.92,0.10),new THREE.MeshStandardMaterial({color:0x111316,metalness:0.9,roughness:0.35}),2.28,0.72,0);
+  add(new THREE.SphereGeometry(0.19,24,18),beamMat,2.02,0.92,0.56);
+  add(new THREE.SphereGeometry(0.19,24,18),beamMat,2.02,0.92,-0.56);
+  add(rb(0.10,0.16,0.34,0.05),tailMat,-2.30,0.86,0.52);
+  add(rb(0.10,0.16,0.34,0.05),tailMat,-2.30,0.86,-0.52);
+  add(rb(0.12,0.10,0.24,0.04),chrome,0.55,1.16,0.92);
+  add(rb(0.12,0.10,0.24,0.04),chrome,0.55,1.16,-0.92);
+  function wheel(x,z){
+    const g=new THREE.Group();
+    const t=new THREE.Mesh(new THREE.TorusGeometry(0.46,0.19,16,40),tire); t.rotation.y=Math.PI/2; t.castShadow=true; g.add(t);
+    const d=new THREE.Mesh(new THREE.CylinderGeometry(0.30,0.30,0.20,28),rim); d.rotation.z=Math.PI/2; g.add(d);
+    for(let i=0;i<12;i++){ const sp=new THREE.Mesh(new THREE.CylinderGeometry(0.012,0.012,0.58,6),rim);
+      sp.rotation.z=Math.PI/2; sp.rotation.x=i*Math.PI/6; g.add(sp); }
+    g.position.set(x,0.48,z); car.add(g); return g;
+  }
+  [[1.45,0.82],[1.45,-0.82],[-1.45,0.82],[-1.45,-0.82]].forEach(function(a){ wheel(a[0],a[1]); });
+  const floor=new THREE.Mesh(new THREE.CircleGeometry(9,64),
+    new THREE.MeshStandardMaterial({color:0x101013,roughness:0.75,metalness:0.2}));
+  floor.rotation.x=-Math.PI/2; floor.receiveShadow=true; scene.add(floor);
+
+  const V={
+    overview:{p:[6.0,2.6,6.4],t:[0,0.75,0],mark:'OVERVIEW'},
+    profile:{p:[0.2,1.5,8.6],t:[0,0.80,0],mark:'EXTERIOR'},
+    wheels:{p:[3.4,1.0,3.4],t:[1.35,0.50,0.85],mark:'WHEELS'},
+    lights:{p:[5.6,1.3,1.8],t:[1.90,0.85,0],mark:'LIGHTS'},
+    interior:{p:[1.6,2.4,2.2],t:[-0.30,1.05,0],mark:'INTERIOR'},
+    rear:{p:[-6.2,2.0,3.6],t:[-1.3,0.85,0],mark:'REAR'}
   };
-  const host=document.getElementById('scene3d'); if(!host) return;
-  const loader=document.getElementById('scene3dLoad'), mark=document.getElementById('v3dMark');
-  const L=()=> (typeof lang!=='undefined' && lang==='es') ? 'es' : 'en';
-
-  host.innerHTML='<div class="t360"><div class="t360-stage"><img class="t360-img" id="t360img" alt=""><span class="t360-shadow"></span></div><div class="t360-strip" id="t360strip"></div></div>';
-  const img=document.getElementById('t360img'), strip=document.getElementById('t360strip');
-
-  const nom=document.getElementById('v3dName'), sub=document.getElementById('v3dSub');
-  function rotula(){ if(nom) nom.textContent=TOUR.car.name; if(sub) sub.textContent=TOUR.car.sub[L()]; }
-  rotula();
-  window.addEventListener('artech:lang',rotula);
-
-  let modo='spin', frames=TOUR.spin.slice(), idx=0;
-  const PNG=new Set(['front','front-34-right','side-left','rear-34-left','rear','rear-34-right',
-    'side-left-2','front-34-left','top','top-open','underside','rear-34-left-2']);
-  const url=n=>BASE+n+(PNG.has(n)?'.png':'.jpg');
-  function pinta(){ img.src=url(frames[idx]); marcaMiniatura(); }
-  function marcaMiniatura(){
-    [...strip.children].forEach((b,i)=>b.classList.toggle('on',i===idx));
+  let from=null,to=null,tgtFrom=null,tgtTo=null,t0=0;
+  const DUR=950, mark=document.getElementById('v3dMark');
+  function goto(k){
+    const v=V[k]||V.overview;
+    from=camera.position.clone(); to=new THREE.Vector3(v.p[0],v.p[1],v.p[2]);
+    tgtFrom=controls.target.clone(); tgtTo=new THREE.Vector3(v.t[0],v.t[1],v.t[2]);
+    t0=performance.now();
+    if(mark){ mark.style.opacity=0; setTimeout(function(){ mark.textContent=v.mark; mark.style.opacity=1; },220); }
   }
-  function setVista(k){
-    const v=TOUR.views[k]||TOUR.views.overview;
-    if(mark){ mark.style.opacity=0; setTimeout(()=>{mark.textContent=v.mark[L()]; mark.style.opacity=1;},200); }
-    if(v.spin){ modo='spin'; frames=TOUR.spin.slice(); strip.innerHTML=''; strip.hidden=true; }
-    else{
-      modo='shots'; frames=v.shots.slice(); strip.hidden=false;
-      strip.innerHTML=frames.map((n,i)=>`<button class="t360-th" data-idx="${i}"><img src="${url(n)}" alt="" loading="lazy"></button>`).join('');
-    }
-    idx=0; pinta();
-  }
-  strip.addEventListener('click',e=>{ const b=e.target.closest('.t360-th'); if(!b) return;
-    idx=+b.dataset.idx; pinta(); });
+  camera.position.set(V.overview.p[0],V.overview.p[1],V.overview.p[2]);
+  controls.target.set(0,0.75,0); controls.update();
+  document.querySelectorAll('.v3d-item').forEach(function(b){
+    b.addEventListener('click',function(){
+      document.querySelectorAll('.v3d-item').forEach(function(x){x.classList.remove('active');});
+      b.classList.add('active'); goto(b.dataset.view);
+    });
+  });
 
-  /* arrastrar para girar / rueda para pasar fotos */
-  let down=false, x0=0, i0=0;
-  const stage=host.querySelector('.t360');
-  const paso=()=> Math.max(18, stage.clientWidth/(frames.length*1.6));
-  stage.addEventListener('pointerdown',e=>{ down=true; x0=e.clientX; i0=idx; stage.setPointerCapture(e.pointerId); stage.classList.add('grab'); });
-  stage.addEventListener('pointermove',e=>{ if(!down) return;
-    const d=Math.round((e.clientX-x0)/paso());
-    const n=((i0 - d)%frames.length+frames.length)%frames.length;
-    if(n!==idx){ idx=n; pinta(); } });
-  const suelta=()=>{ down=false; stage.classList.remove('grab'); };
-  stage.addEventListener('pointerup',suelta); stage.addEventListener('pointercancel',suelta);
-
-  /* auto-giro suave hasta que el usuario interactúe */
-  let auto=setInterval(()=>{ if(modo!=='spin'||down) return; idx=(idx+1)%frames.length; pinta(); },1400);
-  stage.addEventListener('pointerdown',()=>{ clearInterval(auto); auto=null; },{once:true});
-
-  /* menú de vistas */
-  document.querySelectorAll('.v3d-item').forEach(b=>b.addEventListener('click',()=>{
-    document.querySelectorAll('.v3d-item').forEach(x=>x.classList.remove('active'));
-    b.classList.add('active'); setVista(b.dataset.view);
-  }));
-  /* herramientas */
-  const tw=document.getElementById('tWheels');
-  if(tw) tw.addEventListener('click',()=>document.querySelector('.v3d-item[data-view="wheels"]')?.click());
+  const sw=document.getElementById('v3dSw');
+  const tp=document.getElementById('tPaint');
+  if(tp) tp.addEventListener('click',function(e){ e.currentTarget.classList.toggle('on'); if(sw) sw.hidden=!sw.hidden; });
+  const NAMES={'E10600':'ROSSO ARTECH','1b3a6b':'RACING BLUE','C9A24B':'ORO','0f1113':'NERO','cfd3d7':'ARGENTO','14402a':'BRITISH GREEN'};
+  document.querySelectorAll('.sw[data-c]').forEach(function(b){
+    b.addEventListener('click',function(){
+      const c=b.dataset.c; if(!/^[0-9a-fA-F]{6}$/.test(c)) return;
+      paint.color.set('#'+c);
+      document.querySelectorAll('.sw').forEach(function(x){x.classList.remove('on');});
+      b.classList.add('on');
+      const sub=document.getElementById('v3dSub');
+      if(sub) sub.textContent='1957 · '+(NAMES[c]||'');
+    });
+  });
+  let lightsOn=false;
   const tl=document.getElementById('tLights');
-  if(tl) tl.addEventListener('click',()=>document.querySelector('.v3d-item[data-view="lights"]')?.click());
-  const tr=document.getElementById('tReset');
-  if(tr) tr.addEventListener('click',()=>document.querySelector('.v3d-item[data-view="overview"]')?.click());
+  if(tl) tl.addEventListener('click',function(e){
+    lightsOn=!lightsOn; e.currentTarget.classList.toggle('on',lightsOn);
+    beamMat.emissiveIntensity=lightsOn?2.4:0.35;
+    tailMat.emissiveIntensity=lightsOn?2.2:0.5;
+    rimL.intensity=lightsOn?2.2:0;
+  });
+  let night=false;
   const tn=document.getElementById('tNight');
-  if(tn) tn.addEventListener('click',e=>{ e.currentTarget.classList.toggle('on');
-    document.getElementById('v3d')?.classList.toggle('night'); });
+  if(tn) tn.addEventListener('click',function(e){
+    night=!night; e.currentTarget.classList.toggle('on',night);
+    key.intensity=night?0.5:2.2; fill.intensity=night?0.15:0.6; amb.intensity=night?0.10:0.35;
+    renderer.toneMappingExposure=night?0.85:1.1;
+    const v=document.getElementById('v3d');
+    if(v) v.style.background=night?'radial-gradient(ellipse 70% 60% at 50% 62%,#111117 0%,#06060a 60%,#030305 100%)':'';
+  });
+  let spin=true;
   const ts=document.getElementById('tSpin');
-  if(ts){ ts.classList.add('on'); ts.addEventListener('click',e=>{
-    const on=!e.currentTarget.classList.contains('on');
-    e.currentTarget.classList.toggle('on',on);
-    if(on && !auto){ auto=setInterval(()=>{ if(modo!=='spin'||down) return; idx=(idx+1)%frames.length; pinta(); },1400); }
-    else { clearInterval(auto); auto=null; } }); }
-  const tp=document.getElementById('tPaint'); if(tp) tp.style.display='none';
-  const sw=document.getElementById('v3dSw'); if(sw) sw.remove();
+  if(ts){ ts.classList.add('on'); ts.addEventListener('click',function(e){ spin=!spin; e.currentTarget.classList.toggle('on',spin); }); }
+  const tw=document.getElementById('tWheels');
+  if(tw) tw.addEventListener('click',function(){ const b=document.querySelector('.v3d-item[data-view="wheels"]'); if(b) b.click(); });
+  const tr=document.getElementById('tReset');
+  if(tr) tr.addEventListener('click',function(){ const b=document.querySelector('.v3d-item[data-view="overview"]'); if(b) b.click(); });
 
-  /* precarga del set de giro */
-  TOUR.spin.forEach(n=>{ const i=new Image(); i.src=url(n); });
-  img.addEventListener('load',()=>{ if(loader) loader.classList.add('hidden'); },{once:true});
-  setVista('overview');
+  const ease=function(x){ return x<0.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2; };
+  function resize(){ const w=host.clientWidth,h=host.clientHeight; if(!w||!h) return;
+    camera.aspect=w/h; camera.updateProjectionMatrix(); renderer.setSize(w,h); }
+  addEventListener('resize',resize); resize();
+  let dragging=false;
+  controls.addEventListener('start',function(){ dragging=true; });
+  renderer.render(scene,camera);
+  if(loader) loader.classList.add('hidden');
+  (function loop(now){
+    requestAnimationFrame(loop);
+    if(from){ const k=Math.min(1,(now-t0)/DUR), e=ease(k);
+      camera.position.lerpVectors(from,to,e); controls.target.lerpVectors(tgtFrom,tgtTo,e);
+      if(k>=1) from=null; }
+    else if(spin && !dragging){ car.rotation.y+=0.0022; }
+    if(lightsOn){ beamMat.emissiveIntensity=1.9+Math.sin(now/420)*0.25; }
+    controls.update(); renderer.render(scene,camera);
+  })(performance.now());
 })();
 </script>
 </body>
