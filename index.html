@@ -989,6 +989,10 @@
     .ticket{border-radius:16px}
     .disc{margin-top:48px}
   }
+
+  /* la pagina de tickets cierra con el newsletter, como el diseño aprobado */
+  body.on-tickets .intro,body.on-tickets .internal-only{display:none!important}
+  body.on-tickets .newsletter{display:block!important;order:3}
 </style>
 </head>
 <body>
@@ -1343,7 +1347,7 @@
         <div class="tk-col tk-action">
           <div class="tk-barcode" aria-hidden="true"></div>
           <button class="btn-red tk-continue" id="tkContinue" type="button" data-i="tk_continue">Reserve by WhatsApp</button>
-          <p class="tk-note" data-i="tk_note">We are finalizing our pricing. Very soon you will be able to book and pay directly online. For now, please confirm your visit via WhatsApp or at the museum entrance.</p>
+          <p class="tk-note" data-i="tk_note">We are finalizing our pricing. Very soon, you will be able to book and pay directly online. For now, please confirm your visit via WhatsApp or directly at the museum entrance.</p>
         </div>
       </div>
     </div>
@@ -1544,7 +1548,7 @@ const dict = {
     nav_collection:"Collection",nav_experience:"Experience",nav_360:"360° Tour",nav_about:"About",nav_cafe:"Gourmet Café",nav_contact:"Contact",nav_book:"Book",
     cafe_tag:"CAFÉ · KITCHEN · BAR",cafe_title:"Gourmet Café",cafe_lead:"Peruvian & Italian fusion inside the Museum, by Chef Carla Navea. Tuesday to Sunday · 9 am – 7 pm.",cafe_hint:"Tap a category to explore the menu",
     nav_blog:"Blog",blog_kick:"THE JOURNAL",blog_title:"Stories from the Museum",blog_sub:"Classic cars, restoration and the culture behind the collection in Lima.",blog_back:"← All articles",post_cta:"Plan your visit",vh_back:"← Collection",
-    tk_title:"An Invitation to History",tk_sub:"Choose your date and secure your tickets to discover the collection, explore the history of the automobile, and enjoy a dining experience at our Gourmet Café.",tk_hours_t:"Opening Hours",tk_hours:"Tuesday to Sunday · 9 am – 7 pm",tk_addr_t:"Address",tk_continue:"Reserve by WhatsApp",tk_note:"We are finalizing our pricing. Very soon you will be able to book and pay directly online. For now, please confirm your visit via WhatsApp or at the museum entrance.",disc_t:"Discover ARTECH",disc_s:"A look at the spaces, details, and pieces that make every visit an extraordinary experience.",
+    tk_title:"An Invitation to History",tk_sub:"Choose your date and secure your tickets to discover the collection, explore the history of the automobile, and enjoy a dining experience at our Gourmet Café.",tk_hours_t:"Opening Hours",tk_hours:"Tuesday to Sunday · 9 am – 7 pm",tk_addr_t:"Address",tk_continue:"Reserve by WhatsApp",tk_note:"We are finalizing our pricing. Very soon, you will be able to book and pay directly online. For now, please confirm your visit via WhatsApp or directly at the museum entrance.",disc_t:"Discover ARTECH",disc_s:"A look at the spaces, details, and pieces that make every visit an extraordinary experience.",
     v3d_overview:"Overview",v3d_profile:"Exterior",v3d_wheels:"Wheels",v3d_lights:"Lights",v3d_interior:"Interior",v3d_rear:"Rear",
     nav_tickets:"Buy Tickets",hero_tickets:"Buy Tickets",tk_date:"Select a date",tk_general:"General",tk_general_d:"Adult admission",tk_reduced:"Children & Seniors",tk_reduced_d:"Kids and senior citizens",tk_pick:"Please pick a date and at least one ticket.",
     hero_title:"Shift into history",hero_sub:"A living experience of cars, art and gastronomy — home to the World's Oldest Car & a rare Porsche collection.",hero_btn:"360° tour",
@@ -1601,7 +1605,7 @@ const dict = {
     nav_collection:"Colección",nav_experience:"Experiencia",nav_360:"Visita 360°",nav_about:"Nosotros",nav_cafe:"Café Gourmet",nav_contact:"Contacto",nav_book:"Reserva",
     cafe_tag:"CAFÉ · COCINA · BAR",cafe_title:"Café Gourmet",cafe_lead:"Fusión peruana e italiana dentro del Museo, por la Chef Carla Navea. Martes a Domingo · 9 am – 7 pm.",cafe_hint:"Toca una categoría para ver la carta",
     nav_blog:"Blog",blog_kick:"EL DIARIO",blog_title:"Historias del Museo",blog_sub:"Autos clásicos, restauración y la cultura detrás de la colección en Lima.",blog_back:"← Todos los artículos",post_cta:"Planifica tu visita",vh_back:"← Colección",
-    tk_title:"Una invitación a la historia",tk_sub:"Elige tu fecha y asegura tus entradas para descubrir la colección, recorrer la historia del automóvil y disfrutar una experiencia gastronómica en nuestro Gourmet Café.",tk_hours_t:"Horario",tk_hours:"Martes a Domingo · 9 am – 7 pm",tk_addr_t:"Dirección",tk_continue:"Reservar por WhatsApp",tk_note:"Estamos definiendo nuestros precios. Muy pronto podrás reservar y pagar en línea. Por ahora, confirma tu visita por WhatsApp o directamente en la entrada del museo.",disc_t:"Descubre ARTECH",disc_s:"Un vistazo a los espacios, detalles y piezas que hacen de cada visita una experiencia extraordinaria.",
+    tk_title:"Una invitación a la historia",tk_sub:"Elige tu fecha y asegura tus entradas para descubrir la colección, recorrer la historia del automóvil y disfrutar una experiencia gastronómica en nuestro Gourmet Café.",tk_hours_t:"Horario",tk_hours:"Martes a Domingo · 9 am – 7 pm",tk_addr_t:"Dirección",tk_continue:"Reservar por WhatsApp",tk_note:"Estamos definiendo nuestros precios. Muy pronto podrás reservar y pagar directamente en línea. Por ahora, confirma tu visita por WhatsApp o directamente en la entrada del museo.",disc_t:"Descubre ARTECH",disc_s:"Un vistazo a los espacios, detalles y piezas que hacen de cada visita una experiencia extraordinaria.",
     v3d_overview:"Vista general",v3d_profile:"Exterior",v3d_wheels:"Ruedas",v3d_lights:"Luces",v3d_interior:"Interior",v3d_rear:"Trasera",
     nav_tickets:"Comprar Tickets",hero_tickets:"Comprar Tickets",tk_date:"Selecciona una fecha",tk_general:"General",tk_general_d:"Entrada adulto",tk_reduced:"Niños y adultos mayores",tk_reduced_d:"Niños y personas de la tercera edad",tk_pick:"Elige una fecha y al menos una entrada.",
     hero_title:"Un viaje a la historia",hero_sub:"Una experiencia viva de autos, arte y gastronomía — hogar del auto más antiguo del mundo y una rara colección Porsche.",hero_btn:"Tour 360°",
@@ -1701,12 +1705,14 @@ function route(){
   const page=innerPages[key];
   if(page){
     document.body.classList.add('page-open');
+    document.body.classList.toggle('on-tickets', key==='p-tickets');
     Object.values(innerPages).forEach(el=>el&&el.classList.remove('active'));
     page.classList.add('active');
     scrollTo(0,0);
   } else {
     const wasOpen=document.body.classList.contains('page-open');
     document.body.classList.remove('page-open');
+    document.body.classList.remove('on-tickets');
     Object.values(innerPages).forEach(el=>el&&el.classList.remove('active'));
     if(wasOpen && location.hash.length>1){
       const t=document.querySelector(location.hash);
