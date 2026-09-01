@@ -962,6 +962,32 @@
   /* la pagina de tickets cierra con el newsletter, como el diseño aprobado */
   body.on-tickets .intro,body.on-tickets .internal-only{display:none!important}
   body.on-tickets .newsletter{display:block!important;order:3}
+
+  /* ---- página EXPERIENCE (según el PDF del cliente) ---- */
+  body.on-experience .intro,body.on-experience .internal-only{display:none!important}
+  body.on-experience .newsletter{display:block!important;order:3}
+  .xp-head{max-width:1080px;margin:0 auto 52px}
+  .xp-head h2{font-family:var(--display);font-weight:700;line-height:1.03;letter-spacing:-.5px;
+    font-size:clamp(40px,6.4vw,84px);margin:0 0 20px}
+  .xp-head p{color:#4a4a4a;line-height:1.62;max-width:780px;margin:0;
+    font-size:clamp(15px,1.5vw,19px)}
+  .xp-photo{max-width:1080px;margin:0 auto 74px;border-radius:26px;overflow:hidden;
+    background:#3f464c;aspect-ratio:3/1}
+  .xp-photo img{width:100%;height:100%;object-fit:cover;display:block}
+  .xp-list{max-width:900px;margin:0 auto}
+  .xp-item{text-align:center;padding:46px 0}
+  .xp-item+.xp-item{border-top:1px solid rgba(0,0,0,.15)}
+  .xp-item h3{font-family:var(--display);font-weight:600;letter-spacing:-.3px;margin:0 0 10px;
+    font-size:clamp(28px,4.2vw,52px)}
+  .xp-meta{color:var(--ink);margin-bottom:14px;font-size:clamp(15px,1.7vw,21px)}
+  .xp-d{color:#4a4a4a;line-height:1.6;max-width:700px;margin:0 auto 12px;
+    font-size:clamp(14px,1.5vw,18px)}
+  .xp-tag{font-style:italic;color:#6f6f6f;margin:0;font-size:clamp(13px,1.35vw,16px)}
+  @media(max-width:760px){
+    .xp-photo{aspect-ratio:16/10;border-radius:18px;margin-bottom:48px}
+    .xp-head{margin-bottom:38px}
+    .xp-item{padding:34px 0}
+  }
 </style>
 </head>
 <body>
@@ -1372,26 +1398,33 @@
 <section class="subpage" id="page-experience">
   <div class="wrap">
     <a class="back-btn" href="#top" data-i="back_home">← Back to Home</a>
-    <div class="sp-head">
-      <div class="kick" data-i="exp_the">THE MUSEUM</div>
-      <h2 data-i="exp_title">EXPERIENCES</h2>
-      <p data-i="pgx_sub">Tours, gastronomy and themed halls — a complete journey through automotive history.</p>
+    <div class="xp-head">
+      <h2 data-i="xp_title">More Than a Museum</h2>
+      <p data-i="xp_sub">An experience where history, design, and a passion for automobiles come to life. Discover exclusive tours, fine dining, and spaces designed for an extraordinary visit.</p>
     </div>
-    <div class="sp-offers">
-      <div class="sp-offer">
-        <div class="t"><b>THE HERITAGE TOUR</b> | $120 USD p/p | 90 min</div>
-        <div class="d" data-i="exp1">Access to the World's Oldest Car + Private Guide + Coffee at the Gourmet Café</div>
-      </div>
-      <div class="sp-offer">
-        <div class="t"><b>PORSCHE &amp; PERFORMANCE</b> | $150 USD p/p | 60 min</div>
-        <div class="d" data-i="exp2">Exclusive access to our Porsche collection. For collectors.</div>
-      </div>
-      <div class="sp-offer">
-        <div class="t">GOURMET CAFÉ | <span data-i="exp3a">A CORDON BLEU EXPERIENCE</span></div>
-        <div class="d"><span data-i="exp3b">Peruvian contemporary cuisine inside the Museum. By</span> <b>Chef Carla Navea</b>. <span data-i="exp3c">Tuesday to Sunday · 9 am – 7 pm</span></div>
-      </div>
+
+    <figure class="xp-photo"><img src="assets/ambience.jpg" alt="" loading="lazy"></figure>
+
+    <div class="xp-list">
+      <article class="xp-item">
+        <h3 data-i="xp1_t">The Heritage Tour</h3>
+        <div class="xp-meta" data-i="xp1_m">US$120 per person  I  90 minutes</div>
+        <p class="xp-d" data-i="xp1_d">A private journey through automotive history, featuring access to the world's oldest car, an exclusive guide, and a coffee experience at the Gourmet Café.</p>
+        <p class="xp-tag" data-i="xp1_x">History, elegance, and passion in a unique experience.</p>
+      </article>
+      <article class="xp-item">
+        <h3 data-i="xp2_t">Porsche &amp; Performance</h3>
+        <div class="xp-meta" data-i="xp2_m">US$150 per person  I  60 minutes</div>
+        <p class="xp-d" data-i="xp2_d">Exclusive access to our Porsche collection, guided by a specialist. Created for collectors and enthusiasts.</p>
+        <p class="xp-tag" data-i="xp2_x">Engineering, precision, and pure driving emotion.</p>
+      </article>
+      <article class="xp-item">
+        <h3 data-i="xp3_t">Gourmet Café</h3>
+        <div class="xp-meta" data-i="xp3_m">A Cordon Bleu experience  I  Tuesday to Sunday, 9 am – 7 pm</div>
+        <p class="xp-d" data-i="xp3_d">Peruvian and Italian fusion cuisine inside the Museum, by Chef Carla Navea, served among the collection.</p>
+        <p class="xp-tag" data-i="xp3_x">Flavour, design, and history at the same table.</p>
+      </article>
     </div>
-    <div class="sp-cta"><a href="#p-contact" class="btn-red" data-i="pgx_cta">Book your experience</a></div>
   </div>
 </section>
 
@@ -1545,6 +1578,17 @@ const dict = {
     col_t:"Our Collection",col_s1:"Including the World's Oldest Car in existence",col_s2:"World's Oldest Car & Rare Porsche Collection",
     back_home:"← Back to Home",
     pgx_sub:"Tours, gastronomy and themed halls — a complete journey through automotive history.",pgx_cta:"Book your experience",
+    xp_title:"More Than a Museum",
+    xp_sub:"An experience where history, design, and a passion for automobiles come to life. Discover exclusive tours, fine dining, and spaces designed for an extraordinary visit.",
+    xp1_t:"The Heritage Tour",xp1_m:"US$120 per person  I  90 minutes",
+    xp1_d:"A private journey through automotive history, featuring access to the world's oldest car, an exclusive guide, and a coffee experience at the Gourmet Café.",
+    xp1_x:"History, elegance, and passion in a unique experience.",
+    xp2_t:"Porsche & Performance",xp2_m:"US$150 per person  I  60 minutes",
+    xp2_d:"Exclusive access to our Porsche collection, guided by a specialist. Created for collectors and enthusiasts.",
+    xp2_x:"Engineering, precision, and pure driving emotion.",
+    xp3_t:"Gourmet Café",xp3_m:"A Cordon Bleu experience  I  Tuesday to Sunday, 9 am – 7 pm",
+    xp3_d:"Peruvian and Italian fusion cuisine inside the Museum, by Chef Carla Navea, served among the collection.",
+    xp3_x:"Flavour, design, and history at the same table.",
     pgc_kick:"THE FULL",pgc_sub:"From the World's Oldest Car to rare Porsche classics — explore every model in our permanent exhibition.",
     pgc_note:"More models are added as the archive is digitized — 96 vehicles in the permanent collection.",pgc_cta:"Book your visit",
     flt_all:"All",flt_classic:"Classics",flt_modern:"Modern",flt_brands:"All brands",flt_search:"Search...",flt_none:"No vehicles match your search.",view_all:"View all",
@@ -1602,6 +1646,17 @@ const dict = {
     col_t:"Nuestra Colección",col_s1:"Incluyendo el auto más antiguo del mundo en existencia",col_s2:"El auto más antiguo del mundo y rara colección Porsche",
     back_home:"← Volver al inicio",
     pgx_sub:"Tours, gastronomía y salas temáticas — un viaje completo por la historia automotriz.",pgx_cta:"Reserva tu experiencia",
+    xp_title:"Más que un Museo",
+    xp_sub:"Una experiencia donde la historia, el diseño y la pasión por los automóviles cobran vida. Descubre tours exclusivos, alta cocina y espacios diseñados para una visita extraordinaria.",
+    xp1_t:"The Heritage Tour",xp1_m:"US$120 por persona  I  90 minutos",
+    xp1_d:"Un recorrido privado por la historia del automóvil, con acceso al auto más antiguo del mundo, un guía exclusivo y una experiencia de café en el Gourmet Café.",
+    xp1_x:"Historia, elegancia y pasión en una experiencia única.",
+    xp2_t:"Porsche & Performance",xp2_m:"US$150 por persona  I  60 minutos",
+    xp2_d:"Acceso exclusivo a nuestra colección Porsche, guiado por un especialista. Creado para coleccionistas y entusiastas.",
+    xp2_x:"Ingeniería, precisión y pura emoción al volante.",
+    xp3_t:"Gourmet Café",xp3_m:"Una experiencia Cordon Bleu  I  Martes a Domingo, 9 am – 7 pm",
+    xp3_d:"Cocina de fusión peruana e italiana dentro del Museo, por la Chef Carla Navea, servida entre la colección.",
+    xp3_x:"Sabor, diseño e historia en la misma mesa.",
     pgc_kick:"TODA LA",pgc_sub:"Desde el auto más antiguo del mundo hasta raros clásicos Porsche — explora cada modelo de nuestra exhibición permanente.",
     pgc_note:"Se agregan más modelos a medida que se digitaliza el archivo — 96 vehículos en la colección permanente.",pgc_cta:"Reserva tu visita",
     flt_all:"Todos",flt_classic:"Clásicos",flt_modern:"Modernos",flt_brands:"Todas las marcas",flt_search:"Buscar...",flt_none:"Ningún vehículo coincide con tu búsqueda.",view_all:"Ver todos",
@@ -1671,20 +1726,34 @@ if('IntersectionObserver' in window && spyMap.length){
 
 // internal pages router (same-window views: #p-experience / #p-collection)
 const innerPages={ 'p-experience':document.getElementById('page-experience'), 'p-collection':document.getElementById('page-collection'), 'p-vehicle':document.getElementById('page-vehicle'), 'p-cafe':document.getElementById('page-cafe'), 'p-contact':document.getElementById('page-contact'), 'p-blog':document.getElementById('page-blog'), 'p-post':document.getElementById('page-post'), 'p-tickets':document.getElementById('page-tickets') };
+/* los videos decorativos del home consumen CPU aunque estén ocultos:
+   se pausan al abrir una página interna y vuelven al regresar */
+function mediaDeFondo(encender){
+  document.querySelectorAll('.hero-bg,.exp-bg').forEach(function(v){
+    try{
+      if(encender){ delete v.dataset.off; v.play().catch(function(){}); }
+      else { v.dataset.off='1'; v.pause(); }      // marca la pausa como intencional
+    }catch(e){}
+  });
+}
 function route(){
   const key=location.hash.replace('#','');
   const page=innerPages[key];
   if(page){
     document.body.classList.add('page-open');
     document.body.classList.toggle('on-tickets', key==='p-tickets');
+    document.body.classList.toggle('on-experience', key==='p-experience');
     Object.values(innerPages).forEach(el=>el&&el.classList.remove('active'));
     page.classList.add('active');
     scrollTo(0,0);
+    mediaDeFondo(false);                       // los videos del home no siguen corriendo ocultos
   } else {
     const wasOpen=document.body.classList.contains('page-open');
     document.body.classList.remove('page-open');
     document.body.classList.remove('on-tickets');
+    document.body.classList.remove('on-experience');
     Object.values(innerPages).forEach(el=>el&&el.classList.remove('active'));
+    mediaDeFondo(true);
     if(wasOpen && location.hash.length>1){
       const t=document.querySelector(location.hash);
       if(t) setTimeout(()=>t.scrollIntoView({behavior:'smooth'}),50);
@@ -2147,7 +2216,7 @@ apply('en');
     h.dataset.on='1';
     h.preload='auto';
     // el atributo autoplay ya no re-arranca después de un load() manual: hay que reintentar
-    const dale=function(){ h.play().catch(function(){}); };
+    const dale=function(){ if(h.dataset.off!=='1') h.play().catch(function(){}); };
     ['loadeddata','canplay','canplaythrough'].forEach(function(e){ h.addEventListener(e,dale); });
     // es un fondo decorativo sin controles: cualquier pausa (pestaña en segundo
     // plano, ahorro de energía) es involuntaria, así que se reanuda sola
@@ -2386,6 +2455,8 @@ apply('en');
   if(loader) loader.classList.add('hidden');
   (function loop(now){
     requestAnimationFrame(loop);
+    // si la sección está oculta (una página interna abierta) no se gasta GPU dibujando
+    if(!renderer.domElement.offsetParent) return;
     if(from){ const k=Math.min(1,(now-t0)/DUR), e=ease(k);
       camera.position.lerpVectors(from,to,e); controls.target.lerpVectors(tgtFrom,tgtTo,e);
       if(k>=1) from=null; }
