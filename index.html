@@ -2149,6 +2149,10 @@ apply('en');
     // el atributo autoplay ya no re-arranca después de un load() manual: hay que reintentar
     const dale=function(){ h.play().catch(function(){}); };
     ['loadeddata','canplay','canplaythrough'].forEach(function(e){ h.addEventListener(e,dale); });
+    // es un fondo decorativo sin controles: cualquier pausa (pestaña en segundo
+    // plano, ahorro de energía) es involuntaria, así que se reanuda sola
+    h.addEventListener('pause',function(){ if(!document.hidden) setTimeout(dale,60); });
+    document.addEventListener('visibilitychange',function(){ if(!document.hidden) dale(); });
     if(h.dataset.src){ h.src=h.dataset.src; h.load(); }
     dale();
   }
