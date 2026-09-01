@@ -2676,11 +2676,16 @@ const BLOG=[
   body:["Chorrillos is one of Lima's oldest seaside districts, with cliffs, fishing traditions and a relaxed pace that feels a world away from the city center.","It is the perfect home for a museum like ARTECH: accessible, characterful and surrounded by great food and ocean views.","Visitors often pair a morning at the collection with a walk along the Costa Verde or fresh seafood by the water, making it an easy and rewarding day out.","For travellers looking beyond the usual tourist trail, Chorrillos offers a more authentic side of Lima — with world-class classic cars at its heart."],
   bodyEs:["Chorrillos es uno de los distritos costeros más antiguos de Lima, con acantilados, tradiciones de pesca y un ritmo relajado que se siente a un mundo de distancia del centro.","Es el hogar perfecto para un museo como ARTECH: accesible, con carácter y rodeado de buena comida y vistas al mar.","Los visitantes suelen combinar una mañana en la colección con un paseo por la Costa Verde o un fresco plato de mariscos junto al agua, convirtiéndolo en un día fácil y gratificante.","Para quienes buscan ir más allá del circuito turístico habitual, Chorrillos ofrece un lado más auténtico de Lima, con autos clásicos de clase mundial en su corazón."]}
 ];
+function fechaBlog(d){
+  if(lang!=='es') return d;
+  const M={Jan:'Ene',Apr:'Abr',Aug:'Ago',Dec:'Dic'};   // el resto coincide en ambos idiomas
+  return d.replace(/^[A-Za-z]{3}/, m => M[m] || m);
+}
 function renderBlog(){
   const host=document.getElementById('blogGrid'); if(!host) return;
   const L=(typeof lang!=='undefined'&&lang==='es')?'es':'en';
   const rl=(L==='es')?'min de lectura':'min read';
-  host.innerHTML=BLOG.map(p=>`<a class="blog-card" href="#p-post" data-id="${p.id}"><div class="bc-top"><span class="bc-cat">${p.cat[L]}</span></div><div class="bc-body"><h3>${p.title[L]}</h3><p>${p.excerpt[L]}</p><div class="bc-meta"><span>${p.date}</span><span>${p.read} ${rl}</span></div></div></a>`).join('');
+  host.innerHTML=BLOG.map(p=>`<a class="blog-card" href="#p-post" data-id="${p.id}"><div class="bc-top"><span class="bc-cat">${p.cat[L]}</span></div><div class="bc-body"><h3>${p.title[L]}</h3><p>${p.excerpt[L]}</p><div class="bc-meta"><span>${fechaBlog(p.date)}</span><span>${p.read} ${rl}</span></div></div></a>`).join('');
 }
 let currentPost=null;
 function showPost(id){
@@ -2689,7 +2694,7 @@ function showPost(id){
   const set=(el,v)=>{const n=document.getElementById(el); if(n) n.textContent=v;};
   set('postCat',p.cat[L]); set('postTitle',p.title[L]);
   const rl=(L==='es')?'min de lectura':'min read';
-  set('postMeta',`${p.date}  ·  ${p.read} ${rl}`);
+  set('postMeta',`${fechaBlog(p.date)}  ·  ${p.read} ${rl}`);
   const paras=(L==='es'&&p.bodyEs)?p.bodyEs:p.body;
   const bd=document.getElementById('postBody'); if(bd) bd.innerHTML=paras.map(par=>`<p>${par}</p>`).join('');
   scrollTo(0,0);
