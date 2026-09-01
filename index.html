@@ -1007,12 +1007,12 @@
   .v3d #scene3d{position:absolute;inset:0;width:100%;height:100%}
   .v3d .scene-load{z-index:4}
   .v3d-watermark{position:absolute;top:50%;left:50%;transform:translate(-50%,-52%);
-    font-family:var(--display);font-weight:800;letter-spacing:-2px;white-space:nowrap;
+    font-family:var(--display);font-weight:700;letter-spacing:-2px;white-space:nowrap;
     font-size:clamp(70px,15vw,220px);color:rgba(255,255,255,.045);pointer-events:none;z-index:0;
     text-transform:uppercase;transition:opacity .4s}
   /* título */
   .v3d-head{position:absolute;top:clamp(20px,3.2vw,36px);left:clamp(20px,4vw,54px);z-index:5;pointer-events:none}
-  .v3d-name{font-family:var(--display);font-weight:800;color:#fff;letter-spacing:-1px;line-height:1.02;
+  .v3d-name{font-family:var(--display);font-weight:700;color:#fff;letter-spacing:-1px;line-height:1.02;
     font-size:clamp(22px,3vw,40px);text-transform:uppercase}
   .v3d-sub{color:var(--gold);letter-spacing:3px;font-size:clamp(10px,1vw,12.5px);margin-top:8px;text-transform:uppercase}
   /* menú de vistas */
@@ -1276,7 +1276,7 @@ of motoring history</h2>
 <!-- 3D EXPERIENCE · ARTECH 360 VIEWER -->
 <section class="exp3d home-only" id="exp3d">
   <div class="v3d" id="v3d">
-    <div class="v3d-watermark" id="v3dMark">OVERVIEW</div>
+    <div class="v3d-watermark" id="v3dMark" data-i="v3d_overview">Overview</div>
     <div id="scene3d"></div>
     <div id="scene3dLoad" class="scene-load" data-i="d3_loading">Loading…</div>
 
@@ -1816,7 +1816,7 @@ const dict = {
     cafe_explore:"Explore Our Menu",
     cafe_hours:"Tuesday to Sunday · 9:00 a.m. – 7:00 p.m.",
     cafe_closing:"Discover a space where a passion for automobiles and fine dining come together in a unique experience.",
-    foto_amb:"FOTO AMBIENTE",
+    foto_amb:"AMBIENCE PHOTO",
     nav_blog:"Blog",blog_kick:"THE JOURNAL",blog_title:"Stories from the Museum",blog_sub:"Classic cars, restoration and the culture behind the collection in Lima.",blog_back:"← All articles",post_cta:"Plan your visit",vh_back:"← Collection",
     tk_title:"An Invitation to History",tk_sub:"Choose your date and secure your tickets to discover the collection, explore the history of the automobile, and enjoy a dining experience at our Gourmet Café.",tk_hours_t:"Opening Hours",tk_hours:"Tuesday to Sunday · 9 am – 7 pm",tk_addr_t:"Address",tk_continue:"Reserve by WhatsApp",tk_note:"We are finalizing our pricing. Very soon, you will be able to book and pay directly online. For now, please confirm your visit via WhatsApp or directly at the museum entrance.",disc_t:"Discover ARTECH",disc_s:"A look at the spaces, details, and pieces that make every visit an extraordinary experience.",
     v3d_overview:"Overview",v3d_profile:"Exterior",v3d_wheels:"Wheels",v3d_lights:"Lights",v3d_interior:"Interior",v3d_rear:"Rear",
@@ -1857,20 +1857,20 @@ const dict = {
     tw_note:"Every workshop is visited and reviewed once a year. The stars are awarded by ARTECH and may change from one edition to the next.",
     xp_title:"More Than a Museum",
     xp_sub:"An experience where history, design, and a passion for automobiles come to life. Discover exclusive tours, fine dining, and spaces designed for an extraordinary visit.",
-    xp1_t:"The Heritage Tour",xp1_m:"US$120 per person  I  90 minutes",
+    xp1_t:"The Heritage Tour",xp1_m:"US$120 per person  ·  90 minutes",
     xp1_d:"A private journey through automotive history, featuring access to the world's oldest car, an exclusive guide, and a coffee experience at the Gourmet Café.",
     xp1_x:"History, elegance, and passion in a unique experience.",
-    xp2_t:"Porsche & Performance",xp2_m:"US$150 per person  I  60 minutes",
+    xp2_t:"Porsche & Performance",xp2_m:"US$150 per person  ·  60 minutes",
     xp2_d:"Exclusive access to our Porsche collection, guided by a specialist. Created for collectors and enthusiasts.",
     xp2_x:"Engineering, precision, and pure driving emotion.",
-    xp3_t:"Gourmet Café",xp3_m:"A Cordon Bleu experience  I  Tuesday to Sunday, 9 am – 7 pm",
+    xp3_t:"Gourmet Café",xp3_m:"A Cordon Bleu experience  ·  Tuesday to Sunday, 9 am – 7 pm",
     xp3_d:"Peruvian and Italian fusion cuisine inside the Museum, by Chef Carla Navea, served among the collection.",
     xp3_x:"Flavour, design, and history at the same table.",
     pgc_kick:"THE FULL",pgc_sub:"From the World's Oldest Car to rare Porsche classics — explore every model in our permanent exhibition.",
     pgc_note:"More models are added as the archive is digitized — 96 vehicles in the permanent collection.",pgc_cta:"Book your visit",
     flt_all:"All",flt_classic:"Classics",flt_modern:"Modern",flt_brands:"All brands",flt_search:"Search...",flt_none:"No vehicles match your search.",view_all:"View all",
     vh_cover:"COVER PHOTO",vh_year:"YEAR",vh_plate:"PLATE",vh_detail:"DETAIL",vh_info:"VEHICLE INFORMATION",vh_view1:"VIEW 01",vh_view2:"VIEW 02",vh_general:"GENERAL SPECIFICATIONS:",
-    vh_story:"In 1950, only 21 K-2 units were built, of which 03 were exported to South America; 02 to Uruguay and 01 to Peru. This car was imported to Peru by Sociedad Mercantil Internacional in December 1950.",
+    vh_story:"In 1950, only 21 K-2 units were built, of which three were exported to South America: two to Uruguay and one to Peru. This car was imported to Peru by Sociedad Mercantil Internacional in December 1950.",
     vs_maker:"Manufacturer",vs_model:"Model",vs_year:"Year",vs_plate:"Plate",vs_body:"Body",vs_type:"Type",vs_cyl:"Engine",vs_disp:"Displacement",vs_power:"Power",vs_trans:"Transmission",vs_comp:"Compression",vs_ign:"Ignition",vs_head:"Cylinder head",vs_carb:"Carburation",vs_brakes:"Brakes",vs_wheel:"Wheel",vs_speed:"Top speed",
     st1:"Vehicles on exhibition",st2:"Years of history covered",st3:"Brands represented",
     year:"Year",view_col:"View all 96 models",ph_media:"Photo / Video",ph_title:"Car name",ph_desc:"Add year & description",
@@ -1942,20 +1942,20 @@ const dict = {
     tw_note:"Cada taller se visita y se revisa una vez al año. Las estrellas las otorga ARTECH y pueden cambiar de una edición a la siguiente.",
     xp_title:"Más que un Museo",
     xp_sub:"Una experiencia donde la historia, el diseño y la pasión por los automóviles cobran vida. Descubre tours exclusivos, alta cocina y espacios diseñados para una visita extraordinaria.",
-    xp1_t:"The Heritage Tour",xp1_m:"US$120 por persona  I  90 minutos",
+    xp1_t:"The Heritage Tour",xp1_m:"US$120 por persona  ·  90 minutos",
     xp1_d:"Un recorrido privado por la historia del automóvil, con acceso al auto más antiguo del mundo, un guía exclusivo y una experiencia de café en el Gourmet Café.",
     xp1_x:"Historia, elegancia y pasión en una experiencia única.",
-    xp2_t:"Porsche & Performance",xp2_m:"US$150 por persona  I  60 minutos",
+    xp2_t:"Porsche & Performance",xp2_m:"US$150 por persona  ·  60 minutos",
     xp2_d:"Acceso exclusivo a nuestra colección Porsche, guiado por un especialista. Creado para coleccionistas y entusiastas.",
     xp2_x:"Ingeniería, precisión y pura emoción al volante.",
-    xp3_t:"Gourmet Café",xp3_m:"Una experiencia Cordon Bleu  I  Martes a Domingo, 9 am – 7 pm",
+    xp3_t:"Gourmet Café",xp3_m:"Una experiencia Cordon Bleu  ·  Martes a Domingo, 9 am – 7 pm",
     xp3_d:"Cocina de fusión peruana e italiana dentro del Museo, por la Chef Carla Navea, servida entre la colección.",
     xp3_x:"Sabor, diseño e historia en la misma mesa.",
     pgc_kick:"TODA LA",pgc_sub:"Desde el auto más antiguo del mundo hasta raros clásicos Porsche — explora cada modelo de nuestra exhibición permanente.",
     pgc_note:"Se agregan más modelos a medida que se digitaliza el archivo — 96 vehículos en la colección permanente.",pgc_cta:"Reserva tu visita",
     flt_all:"Todos",flt_classic:"Clásicos",flt_modern:"Modernos",flt_brands:"Todas las marcas",flt_search:"Buscar...",flt_none:"Ningún vehículo coincide con tu búsqueda.",view_all:"Ver todos",
     vh_cover:"PORTADA",vh_year:"AÑO",vh_plate:"PLACA",vh_detail:"DETALLE",vh_info:"INFORMACIÓN DEL VEHÍCULO",vh_view1:"VISTA 01",vh_view2:"VISTA 02",vh_general:"CARACTERÍSTICAS GENERALES:",
-    vh_story:"En 1950, se construyeron tan solo 21 K-2, de los cuales 03 se exportaron a Sudamérica; 02 al Uruguay y 01 al Perú. Este coche fue importado al Perú por la Sociedad Mercantil Internacional en Diciembre de 1950.",
+    vh_story:"En 1950, se construyeron tan solo 21 K-2, de los cuales tres se exportaron a Sudamérica: dos a Uruguay y uno al Perú. Este auto fue importado al Perú por la Sociedad Mercantil Internacional en diciembre de 1950.",
     vs_maker:"Fabricante",vs_model:"Modelo",vs_year:"Año",vs_plate:"Placa",vs_body:"Carrocería",vs_type:"Tipo",vs_cyl:"Motor",vs_disp:"Cilindrada",vs_power:"Potencia",vs_trans:"Transmisión",vs_comp:"Compresión",vs_ign:"Encendido",vs_head:"Culata",vs_carb:"Carburación",vs_brakes:"Frenos",vs_wheel:"Aro",vs_speed:"Velocidad",
     st1:"Vehículos en exhibición",st2:"Años de historia cubiertos",st3:"Marcas representadas",
     year:"Año",view_col:"Ver los 96 modelos",ph_media:"Foto / Video",ph_title:"Nombre del auto",ph_desc:"Agregar año y descripción",
@@ -2096,7 +2096,7 @@ const TALLERES = [
   e:{en:'Documentation and provenance',es:'Documentación y procedencia'},
   d:{en:'They trace chassis numbers, invoices and former owners. Without them, half of what we know about the collection would be a guess.',
      es:'Rastrean números de chasis, facturas y propietarios anteriores. Sin ellos, la mitad de lo que sabemos de la colección sería una suposición.'},
-  o:['Toda la colección','Fichas de procedencia','Archivo fotográfico']}
+  o:[{en:'The whole collection',es:'Toda la colección'},{en:'Provenance records',es:'Fichas de procedencia'},{en:'Photographic archive',es:'Archivo fotográfico'}]}
 ];
 
 function renderTalleres(){
@@ -2122,7 +2122,7 @@ function renderTalleres(){
       +   '<div class="tw-zone">'+t.z+'</div>'
       +   '<p class="tw-desc">'+L(t.d)+'</p>'
       +   '<div class="tw-works"><span class="tw-works-t" data-i="tw_works">Works</span>'
-      +     t.o.map(function(o){return '<span class="tw-work">'+o+'</span>';}).join('')
+      +     t.o.map(function(o){return '<span class="tw-work">'+(typeof o==='string'?o:L(o))+'</span>';}).join('')
       +   '</div>'
       + '</div></article>';
   }).join('');
@@ -2217,7 +2217,7 @@ const INFO = {
      es:'Este es el único sitio web oficial de ARTECH. El museo opera en Av. Huaylas 640, Chorrillos, Lima, Perú. Contacto: info@artech.pe.'}]}],
   acc:[
    {q:{en:'Website terms',es:'Condiciones del sitio'},
-    a:{en:'By accessing this website you agree to these terms. The site is for personal use and may not be used for commercial purposes without written authorisation.',
+    a:{en:'By accessing this website you agree to these terms. The site is for personal use and may not be used for commercial purposes without written authorization.',
        es:'Al acceder a este sitio aceptas estas condiciones. El sitio es para uso personal y no puede utilizarse con fines comerciales sin autorización escrita.'}},
    {q:{en:'Accuracy of the information',es:'Exactitud de la información'},
     a:{en:'We make every effort to keep the information on vehicles, hours and experiences up to date, but it may change without notice. Confirm any detail with us before your visit.',
@@ -2247,7 +2247,7 @@ const INFO = {
     a:{en:'Yes, free parking for visitors at the museum entrance.',
        es:'Sí, estacionamiento gratuito para visitantes en la entrada del museo.'}},
    {q:{en:'Can I take photographs?',es:'¿Puedo tomar fotografías?'},
-    a:{en:'Yes, for personal use. Professional shoots and filming require prior authorisation.',
+    a:{en:'Yes, for personal use. Professional shoots and filming require prior authorization.',
        es:'Sí, para uso personal. Las sesiones profesionales y las grabaciones requieren autorización previa.'}},
    {q:{en:'Is the museum accessible?',es:'¿El museo es accesible?'},
     a:{en:'The exhibition halls, the café and the toilets have step-free access.',
@@ -2319,7 +2319,7 @@ const INFO = {
     {en:'The halls use low-consumption lighting and the washing area recirculates water. We keep measuring our consumption in order to reduce it.',
      es:'Las salas usan iluminación de bajo consumo y la zona de lavado recircula el agua. Seguimos midiendo nuestro consumo para reducirlo.'}]},
    {h:{en:'Waste',es:'Residuos'},p:[
-    {en:'Oils, batteries and solvents are handed to authorised managers. In the café we work with local suppliers to cut down on packaging.',
+    {en:'Oils, batteries and solvents are handed to authorized managers. In the café we work with local suppliers to cut down on packaging.',
      es:'Aceites, baterías y solventes se entregan a gestores autorizados. En el café trabajamos con proveedores locales para reducir envases.'}]},
    {h:{en:'Community',es:'Comunidad'},p:[
     {en:'We open the museum to schools and technical institutes so that new generations can see up close the trades that keep these machines alive.',
@@ -2374,8 +2374,9 @@ function renderInfo(key){
   const d=INFO[key]; const host=document.getElementById('page-info');
   if(!d||!host) return;
   const L=(o)=>o ? (o[lang]||o.en||'') : '';
+  const _t=(k,f)=>(typeof dict!=='undefined' && dict[lang] && dict[lang][k]) ? dict[lang][k] : f;
   let h='<div class="wrap">'
-      + '<a href="#top" class="back-btn light" data-i="back_home">← Back to Home</a>'
+      + '<a href="#top" class="back-btn light">'+_t('back_home','← Back to Home')+'</a>'
       + '<h2 class="info-title">'+L(d.t)+'</h2>'
       + (d.lead?'<p class="info-lead">'+L(d.lead)+'</p>':'')
       + '</div><div class="info-body"><div class="wrap">';
@@ -2667,12 +2668,12 @@ const BLOG=[
  {id:'private-tours',cat:{en:'Experiences',es:'Experiencias'},read:4,date:'Apr 2026',
   title:{en:"Private Tours and Experiences for Collectors and Families",es:"Tours privados y experiencias para coleccionistas y familias"},
   excerpt:{en:"Curated, one-on-one journeys through the collection — at your own pace.",es:"Recorridos curados y personalizados por la colección, a tu propio ritmo."},
-  body:["Some visitors want to explore freely; others want the full story. ARTECH offers private and group experiences designed around your interests, whether that is Porsche, pre-war elegance or the world's oldest car.","A private guide brings each vehicle to life with the history, engineering and anecdotes that make a collection memorable — ideal for enthusiasts, families and corporate guests alike.","Experiences can be paired with the Gourmet Café for a complete afternoon, and are available in English and Spanish.","It is a more personal way to experience the Museum, and a favourite for special occasions and visiting collectors."],
+  body:["Some visitors want to explore freely; others want the full story. ARTECH offers private and group experiences designed around your interests, whether that is Porsche, pre-war elegance or the world's oldest car.","A private guide brings each vehicle to life with the history, engineering and anecdotes that make a collection memorable — ideal for enthusiasts, families and corporate guests alike.","Experiences can be paired with the Gourmet Café for a complete afternoon, and are available in English and Spanish.","It is a more personal way to experience the Museum, and a favorite for special occasions and visiting collectors."],
   bodyEs:["Algunos visitantes quieren explorar libremente; otros quieren la historia completa. ARTECH ofrece experiencias privadas y grupales diseñadas en torno a tus intereses, ya sea Porsche, la elegancia de preguerra o el auto más antiguo del mundo.","Un guía privado da vida a cada vehículo con la historia, la ingeniería y las anécdotas que hacen memorable una colección, ideal para entusiastas, familias e invitados corporativos.","Las experiencias pueden combinarse con el Gourmet Café para una tarde completa, y están disponibles en inglés y español.","Es una forma más personal de vivir el Museo, y una de las favoritas para ocasiones especiales y coleccionistas de visita."]},
  {id:'chorrillos',cat:{en:'Travel',es:'Viajes'},read:4,date:'Apr 2026',
   title:{en:"Why Chorrillos Is Lima's Hidden Cultural Gem",es:"Por qué Chorrillos es la joya cultural escondida de Lima"},
   excerpt:{en:"Just south of Miraflores, this seaside district blends history, food and sea air.",es:"Al sur de Miraflores, este distrito costero mezcla historia, gastronomía y brisa marina."},
-  body:["Chorrillos is one of Lima's oldest seaside districts, with cliffs, fishing traditions and a relaxed pace that feels a world away from the city centre.","It is the perfect home for a museum like ARTECH: accessible, characterful and surrounded by great food and ocean views.","Visitors often pair a morning at the collection with a walk along the Costa Verde or fresh seafood by the water, making it an easy and rewarding day out.","For travellers looking beyond the usual tourist trail, Chorrillos offers a more authentic side of Lima — with world-class classic cars at its heart."],
+  body:["Chorrillos is one of Lima's oldest seaside districts, with cliffs, fishing traditions and a relaxed pace that feels a world away from the city center.","It is the perfect home for a museum like ARTECH: accessible, characterful and surrounded by great food and ocean views.","Visitors often pair a morning at the collection with a walk along the Costa Verde or fresh seafood by the water, making it an easy and rewarding day out.","For travellers looking beyond the usual tourist trail, Chorrillos offers a more authentic side of Lima — with world-class classic cars at its heart."],
   bodyEs:["Chorrillos es uno de los distritos costeros más antiguos de Lima, con acantilados, tradiciones de pesca y un ritmo relajado que se siente a un mundo de distancia del centro.","Es el hogar perfecto para un museo como ARTECH: accesible, con carácter y rodeado de buena comida y vistas al mar.","Los visitantes suelen combinar una mañana en la colección con un paseo por la Costa Verde o un fresco plato de mariscos junto al agua, convirtiéndolo en un día fácil y gratificante.","Para quienes buscan ir más allá del circuito turístico habitual, Chorrillos ofrece un lado más auténtico de Lima, con autos clásicos de clase mundial en su corazón."]}
 ];
 function renderBlog(){
@@ -3089,22 +3090,32 @@ apply('en');
   floor.rotation.x=-Math.PI/2; floor.receiveShadow=true; scene.add(floor);
 
   const V={
-    overview:{p:[6.0,2.6,6.4],t:[0,0.75,0],mark:'OVERVIEW'},
-    profile:{p:[0.2,1.5,8.6],t:[0,0.80,0],mark:'EXTERIOR'},
-    wheels:{p:[3.4,1.0,3.4],t:[1.35,0.50,0.85],mark:'WHEELS'},
-    lights:{p:[5.6,1.3,1.8],t:[1.90,0.85,0],mark:'LIGHTS'},
-    interior:{p:[1.6,2.4,2.2],t:[-0.30,1.05,0],mark:'INTERIOR'},
-    rear:{p:[-6.2,2.0,3.6],t:[-1.3,0.85,0],mark:'REAR'}
+    overview:{p:[6.0,2.6,6.4],t:[0,0.75,0],mark:'v3d_overview'},
+    profile:{p:[0.2,1.5,8.6],t:[0,0.80,0],mark:'v3d_profile'},
+    wheels:{p:[3.4,1.0,3.4],t:[1.35,0.50,0.85],mark:'v3d_wheels'},
+    lights:{p:[5.6,1.3,1.8],t:[1.90,0.85,0],mark:'v3d_lights'},
+    interior:{p:[1.6,2.4,2.2],t:[-0.30,1.05,0],mark:'v3d_interior'},
+    rear:{p:[-6.2,2.0,3.6],t:[-1.3,0.85,0],mark:'v3d_rear'}
   };
-  let from=null,to=null,tgtFrom=null,tgtTo=null,t0=0;
+  let from=null,to=null,tgtFrom=null,tgtTo=null,t0=0,vistaActual='overview';
   const DUR=950, mark=document.getElementById('v3dMark');
   function goto(k){
     const v=V[k]||V.overview;
     from=camera.position.clone(); to=new THREE.Vector3(v.p[0],v.p[1],v.p[2]);
     tgtFrom=controls.target.clone(); tgtTo=new THREE.Vector3(v.t[0],v.t[1],v.t[2]);
     t0=performance.now();
-    if(mark){ mark.style.opacity=0; setTimeout(function(){ mark.textContent=v.mark; mark.style.opacity=1; },220); }
+    vistaActual=k;
+    if(mark){ mark.style.opacity=0; setTimeout(function(){ mark.textContent=rotulo(v.mark); mark.style.opacity=1; },220); }
   }
+  function rotulo(clave){
+    const d=(typeof dict!=='undefined' && dict[lang]) ? dict[lang][clave] : null;
+    return (d||clave).toUpperCase();
+  }
+  // al cambiar de idioma se repinta la marca de agua
+  window.addEventListener('artech:lang',function(){
+    const v=V[vistaActual]||V.overview;
+    if(mark) mark.textContent=rotulo(v.mark);
+  });
   camera.position.set(V.overview.p[0],V.overview.p[1],V.overview.p[2]);
   controls.target.set(0,0.75,0); controls.update();
   document.querySelectorAll('.v3d-item').forEach(function(b){
