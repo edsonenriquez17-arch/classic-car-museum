@@ -314,7 +314,7 @@
 
   /* ---------- NEWSLETTER ---------- */
   .newsletter{position:relative;background:#050506;color:#fff;padding:120px 0;text-align:center;overflow:hidden}
-  .newsletter .nl-bg{position:absolute;inset:0;background:url('assets/hero.png') center/cover no-repeat;opacity:.14;filter:grayscale(.4)}
+  .newsletter .nl-bg{position:absolute;inset:0;background:url('assets/hero-poster.jpg') center/cover no-repeat;opacity:.14;filter:grayscale(.4)}
   .newsletter::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(5,5,6,.55),rgba(5,5,6,.92))}
   .nl-inner{position:relative;z-index:2;max-width:840px}
   .nl-kicker{color:var(--red);letter-spacing:5px;font-size:14px;text-transform:uppercase;margin-bottom:22px}
@@ -1005,9 +1005,9 @@
 
 <!-- HERO -->
 <section class="hero home-only" id="top">
-  <video class="hero-bg" autoplay muted loop playsinline preload="auto" poster="assets/hero.png">
-    <source src="assets/hero.mp4" type="video/mp4">
-  </video>
+  <!-- el video no se descarga hasta que el preloader termina: así no le roba ancho de banda -->
+  <video class="hero-bg" id="heroVid" autoplay muted loop playsinline preload="none"
+         poster="assets/hero-poster.jpg" data-src="assets/hero.mp4"></video>
   <div class="hero-inner">
     <div class="wrap">
       <h1 data-i="hero_title">Shift into history</h1>
@@ -1043,7 +1043,7 @@
 
 <!-- EXPERIENCES -->
 <section class="experiences home-only" id="experiences">
-  <video class="exp-bg" autoplay muted loop playsinline preload="none" poster="assets/experiences.png">
+  <video class="exp-bg" autoplay muted loop playsinline preload="none" poster="assets/experiences-poster.jpg">
     <source src="assets/experiences.mp4" type="video/mp4">
   </video>
   <div class="inner">
@@ -2136,7 +2136,21 @@ apply('en');
       if(v){ v.pause(); v.muted=true; v.removeAttribute('src'); v.load(); }   // corta el sonido de verdad
     }catch(e){}
     pl.classList.add('done'); unlock();
+    arrancarHero();                                               // recién ahora baja el video de portada
     setTimeout(function(){ if(pl.parentNode) pl.remove(); },900);
+  }
+
+  /* el video de portada espera al preloader para no competir por el ancho de banda */
+  function arrancarHero(){
+    const h=document.getElementById('heroVid');
+    if(!h || h.dataset.on==='1') return;
+    h.dataset.on='1';
+    h.preload='auto';
+    // el atributo autoplay ya no re-arranca después de un load() manual: hay que reintentar
+    const dale=function(){ h.play().catch(function(){}); };
+    ['loadeddata','canplay','canplaythrough'].forEach(function(e){ h.addEventListener(e,dale); });
+    if(h.dataset.src){ h.src=h.dataset.src; h.load(); }
+    dale();
   }
 
   /* ---- audio automático: el video nunca se detiene por intentar sonar ---- */
@@ -2180,11 +2194,16 @@ apply('en');
     vid.addEventListener('playing',()=>{                    // margen desde que EMPIEZA a verse
       if(vid.duration) setTimeout(reveal,(vid.duration-vid.currentTime)*1000+700);
     },{once:true});
-    vid.addEventListener('error',()=>setTimeout(reveal,1200));   // si el video falla, no bloquear
+    vid.addEventListener('error',()=>reveal());                  // si el video falla, no bloquear
 
-    // 4) tope de seguridad amplio (solo si el video nunca llega a reproducirse)
-    setTimeout(()=>{ if(vid.paused && !vid.currentTime) reveal(); }, 15000);
-    setTimeout(reveal, 45000);
+    // 4) topes de seguridad: la web nunca queda esperando al video
+    setTimeout(()=>{ if(vid.paused && !vid.currentTime) reveal(); }, 2500);   // no arrancó: entrar ya
+    let atasco=null;                                             // se quedó sin buffer a mitad
+    ['waiting','stalled'].forEach(e=>vid.addEventListener(e,()=>{
+      clearTimeout(atasco); atasco=setTimeout(reveal,2000);
+    }));
+    ['playing','timeupdate'].forEach(e=>vid.addEventListener(e,()=>clearTimeout(atasco)));
+    setTimeout(reveal, 14000);                                   // tope duro
   } else {
     setTimeout(reveal, 4000);
   }
