@@ -130,8 +130,26 @@
   @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(255,255,255,.35)}50%{box-shadow:0 0 0 12px rgba(255,255,255,0)}}
 
   /* ---------- BANNER ---------- */
-  .banner{background:var(--bg);text-align:center;padding:40px 20px}
-  .banner h2{font-family:var(--display);font-weight:700;font-size:clamp(22px,3.4vw,40px);color:#1a1a1a;letter-spacing:.5px}
+  /* ---------- BANNER: museo vivo + accesos (según HOME-3.pdf) ---------- */
+  .banner{background:var(--bg);padding:62px 0}
+  .bn-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:40px;align-items:center}
+  .bn-title{font-family:var(--display);font-weight:700;color:#111;line-height:1.12;letter-spacing:0;
+    font-size:clamp(28px,4vw,54px);margin:0;white-space:pre-line}
+  .bn-items{display:flex;flex-direction:column}
+  .bn-item{display:grid;grid-template-columns:auto minmax(0,1fr);gap:22px;align-items:start;
+    padding:24px 0;color:inherit}
+  .bn-item+.bn-item{border-top:1px solid rgba(0,0,0,.16)}
+  .bn-ic{width:56px;height:56px;border-radius:3px;display:block;flex:0 0 auto}
+  .bn-item h3{font-family:var(--display);font-weight:600;color:#111;margin:0 0 6px;letter-spacing:0;
+    text-transform:none;font-size:clamp(19px,2.1vw,27px)}
+  .bn-item p{color:#3f3f3f;margin:0 0 10px;line-height:1.5;font-size:clamp(14px,1.35vw,17px)}
+  .bn-item .link-arrow{color:#9b9b9b}
+  .bn-item:hover .link-arrow{gap:18px;color:#111}
+  @media(max-width:860px){
+    .bn-grid{grid-template-columns:1fr;gap:22px}
+    .bn-ic{width:46px;height:46px}
+    .bn-item{gap:16px;padding:20px 0}
+  }
 
   /* ---------- SPLIT PANELS ---------- */
   .panels{display:grid;grid-template-columns:1fr 1fr}
@@ -427,16 +445,33 @@
   .card.card-link .link-arrow svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.8}
   .card.card-link:hover .link-arrow{gap:12px}
   /* ---------- GOURMET CAFÉ (menu page) ---------- */
-  #page-cafe{padding:0 0 80px;background:#f5f4f2}
-  .cafe-hero{background:#0d0d10;color:#fff;padding:120px 0 56px;text-align:center}
-  .cafe-hero .back-btn{margin-bottom:30px;color:#9a9a9a}
-  .cafe-hero .back-btn:hover{color:var(--gold)}
-  .cafe-brand{font-family:var(--display);font-weight:700;letter-spacing:10px;font-size:clamp(30px,5vw,46px)}
-  .cafe-tag{color:var(--gold);letter-spacing:6px;font-size:13px;text-transform:uppercase;margin-top:10px}
-  .cafe-title{font-family:var(--display);font-weight:600;font-size:clamp(30px,4vw,52px);margin:26px 0 14px}
-  .cafe-lead{max-width:640px;margin:0 auto;color:#c9c9c9;font-size:16px;line-height:1.7}
-  .cafe-hint{color:#7a7a7a;font-size:13px;letter-spacing:1px;margin-top:26px}
-  .cafe-menu{max-width:820px;margin:44px auto 0;display:flex;flex-direction:column;gap:14px}
+  #page-cafe{padding:130px 0 80px;background:#f5f4f2}
+  /* ---------- GOURMET CAFÉ (orden de textos según cafe.pdf) ---------- */
+  .cafe-head{max-width:1080px;margin:0 auto 40px}
+  .cafe-title{font-family:var(--display);font-weight:700;color:var(--ink);line-height:1.05;
+    font-size:clamp(38px,5.6vw,74px);margin:0 0 4px}
+  .cafe-sub{font-family:var(--display);font-weight:500;color:var(--ink);
+    font-size:clamp(17px,1.9vw,24px);margin-bottom:16px}
+  .cafe-lead{max-width:860px;margin:0;color:#4a4a4a;line-height:1.6;
+    font-size:clamp(15px,1.5vw,19px)}
+  .cafe-photo{max-width:1080px;margin:0 auto 56px;border-radius:26px;aspect-ratio:2.35/1;
+    background:#3f464c;display:grid;place-items:center}
+  .cafe-photo span{color:rgba(255,255,255,.62);letter-spacing:6px;text-transform:uppercase;
+    font-size:clamp(13px,1.6vw,20px)}
+  .cafe-menu-head{text-align:center;margin-bottom:30px}
+  .cafe-menu-head h3{font-family:var(--display);font-weight:700;color:var(--ink);margin:0 0 8px;
+    font-size:clamp(28px,4vw,52px)}
+  .cafe-menu-head p{color:#4a4a4a;margin:0;font-size:clamp(14px,1.5vw,19px)}
+  .cafe-menu{max-width:820px;margin:0 auto;display:flex;flex-direction:column;gap:14px}
+  .cafe-closing{max-width:900px;margin:56px auto 0;text-align:center;color:var(--ink);
+    line-height:1.55;font-size:clamp(15px,1.7vw,21px);
+    border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:26px 10px}
+  @media(max-width:760px){
+    .cafe-photo{aspect-ratio:16/10;border-radius:18px;margin-bottom:38px}
+    .cafe-head{margin-bottom:28px}
+    .cafe-closing{margin-top:38px;padding:20px 6px}
+    #page-cafe{padding-top:100px}
+  }
   .cm-block{background:var(--paper);border:1px solid var(--line);border-radius:12px;overflow:hidden;transition:box-shadow .2s}
   .cm-block.open{box-shadow:0 14px 34px rgba(0,0,0,.08)}
   .cm-cat{width:100%;display:flex;align-items:center;justify-content:space-between;gap:14px;background:transparent;border:0;cursor:pointer;padding:20px 24px;text-align:left}
@@ -573,7 +608,7 @@
     .navlinks{position:fixed;inset:0 0 0 auto;width:78%;max-width:340px;background:var(--ink);flex-direction:column;justify-content:center;gap:28px;transform:translateX(100%);transition:transform .35s;padding:40px}
     .navlinks.open{transform:translateX(0)}
     .burger{display:flex;z-index:110}
-    .panels,.legacy,.intro,.contact-grid,.loc-grid{grid-template-columns:1fr}
+    .legacy,.intro,.contact-grid,.loc-grid{grid-template-columns:1fr}
     .loc-grid{gap:40px}
     .loc-map{height:360px}
     .loc-row{grid-template-columns:130px 1fr;gap:14px}
@@ -626,7 +661,7 @@
     .hero p{font-size:16px;margin:14px 0 24px}
     .btn-red{display:block;width:100%;text-align:center;padding:16px 20px;font-size:17px}
     .pc-viewall .btn-red,.sp-cta .btn-red{display:inline-block;width:auto}
-    .banner{padding:30px 18px}
+    .banner{padding:40px 18px}
     .panel{padding:44px 26px;min-height:0}
     .experiences{padding:70px 18px}
     .location{padding:70px 0}
@@ -730,7 +765,7 @@
     #page-post{padding:96px 0 60px}
     .post-body p{font-size:16px;line-height:1.75}
     /* gourmet café mobile */
-    .cafe-hero{padding:100px 0 40px}
+
     .cafe-menu{margin-top:32px;gap:12px}
     .cm-cat{padding:16px 18px}
     .cm-list{padding:2px 18px 16px}
@@ -981,6 +1016,10 @@
   /* ---- página COLLECTION: sin el bloque "Visit the museum", con newsletter ---- */
   body.on-collection .intro,body.on-collection .internal-only{display:none!important}
   body.on-collection .newsletter{display:block!important;order:3}
+
+  /* ---- página GOURMET CAFÉ: termina en newsletter, como el PDF ---- */
+  body.on-cafe .intro,body.on-cafe .internal-only{display:none!important}
+  body.on-cafe .newsletter{display:block!important;order:3}
   .xp-head{max-width:1080px;margin:0 auto 52px}
   .xp-head h2{font-family:var(--display);font-weight:700;line-height:1.03;letter-spacing:-.5px;
     font-size:clamp(40px,6.4vw,84px);margin:0 0 20px}
@@ -1063,24 +1102,31 @@
 
 <!-- BANNER -->
 <section class="banner home-only">
-  <h2 data-i="banner">SHIFT INTO HISTORY. EXPERIENCE IT WITH US</h2>
+  <div class="wrap bn-grid">
+    <h2 class="bn-title" data-i="banner">A living museum
+of motoring history</h2>
+    <div class="bn-items">
+      <a class="bn-item" href="#p-contact">
+        <img class="bn-ic" src="assets/icons/compass.png" alt="" loading="lazy">
+        <div>
+          <h3 data-i="p1_t">Book your private tour</h3>
+          <p data-i="p1_d">Reserve a guided visit and step into an unrepeatable collection.</p>
+          <span class="link-arrow"><span data-i="visit_info">Visit info</span> <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+      <a class="bn-item" href="#p-cafe">
+        <img class="bn-ic" src="assets/icons/cafe.png" alt="" loading="lazy">
+        <div>
+          <h3 data-i="p2_t">Gourmet Café</h3>
+          <p data-i="p2_d">Peruvian &amp; Italian fusion inside the Museum, by Chef Carla Navea.</p>
+          <span class="link-arrow"><span data-i="visit_info">Visit info</span> <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+    </div>
+  </div>
 </section>
 
 <!-- SPLIT PANELS -->
-<section class="panels home-only">
-  <div class="panel dark">
-    <img class="ic ic-img" src="assets/icons/compass.png" alt="" loading="lazy">
-    <h3 data-i="p1_t">Book your private tour</h3>
-    <p data-i="p1_d">Reserve a guided visit and step into an unrepeatable collection.</p>
-    <a href="#p-contact" class="link-arrow" data-i="visit_info">Visit info <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-  </div>
-  <div class="panel wine">
-    <img class="ic ic-img" src="assets/icons/cafe.png" alt="" loading="lazy">
-    <h3 data-i="p2_t">Gourmet Café</h3>
-    <p data-i="p2_d">Peruvian contemporary cuisine inside the Museum by Chef Carla Navea.</p>
-    <a href="#p-cafe" class="link-arrow" data-i="visit_info">Visit info <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-  </div>
-</section>
 
 <!-- EXPERIENCES -->
 <section class="experiences home-only" id="experiences">
@@ -1280,18 +1326,26 @@
 
 <!-- INTERNAL PAGE · GOURMET CAFÉ (menu) -->
 <section class="subpage" id="page-cafe">
-  <div class="cafe-hero">
-    <div class="wrap">
-      <a href="#top" class="back-btn light" data-i="back_home">← Back to Home</a>
-      <div class="cafe-brand">ARTECH</div>
-      <div class="cafe-tag" data-i="cafe_tag">CAFÉ · KITCHEN · BAR</div>
-      <h2 class="cafe-title" data-i="cafe_title">Gourmet Café</h2>
-      <p class="cafe-lead" data-i="cafe_lead">Peruvian &amp; Italian fusion inside the Museum, by Chef Carla Navea. Tuesday to Sunday · 9 am – 7 pm.</p>
-      <div class="cafe-hint" data-i="cafe_hint">Tap a category to explore the menu</div>
-    </div>
-  </div>
   <div class="wrap">
+    <a href="#top" class="back-btn" data-i="back_home">← Back to Home</a>
+
+    <div class="cafe-head">
+      <h2 class="cafe-title" data-i="cafe_title">Gourmet Café</h2>
+      <div class="cafe-sub" data-i="cafe_sub">An exceptional gastronomic experience</div>
+      <p class="cafe-lead" data-i="cafe_lead">A concept blending the essence of Peruvian cuisine with Italian tradition, created by Chef Carla Navea and designed to complement the museum experience.</p>
+    </div>
+
+    <!-- espacio reservado para la foto de ambiente del café (pendiente del cliente) -->
+    <figure class="cafe-photo"><span data-i="foto_amb">FOTO AMBIENTE</span></figure>
+
+    <div class="cafe-menu-head">
+      <h3 data-i="cafe_explore">Explore Our Menu</h3>
+      <p data-i="cafe_hours">Tuesday to Sunday · 9:00 a.m. – 7:00 p.m.</p>
+    </div>
+
     <div class="cafe-menu" id="cafeMenu"></div>
+
+    <p class="cafe-closing" data-i="cafe_closing">Discover a space where a passion for automobiles and fine dining come together in a unique experience.</p>
   </div>
 </section>
 
@@ -1561,13 +1615,19 @@ const dict = {
   en:{
     d3_loading:"Loading…",
     nav_collection:"Collection",nav_experience:"Experience",nav_360:"360° Tour",nav_about:"About",nav_cafe:"Gourmet Café",nav_contact:"Contact",nav_book:"Book",
-    cafe_tag:"CAFÉ · KITCHEN · BAR",cafe_title:"Gourmet Café",cafe_lead:"Peruvian & Italian fusion inside the Museum, by Chef Carla Navea. Tuesday to Sunday · 9 am – 7 pm.",cafe_hint:"Tap a category to explore the menu",
+    cafe_tag:"CAFÉ · KITCHEN · BAR",cafe_title:"Gourmet Café",cafe_hint:"Tap a category to explore the menu",
+    cafe_sub:"An exceptional gastronomic experience",
+    cafe_lead:"A concept blending the essence of Peruvian cuisine with Italian tradition, created by Chef Carla Navea and designed to complement the museum experience.",
+    cafe_explore:"Explore Our Menu",
+    cafe_hours:"Tuesday to Sunday · 9:00 a.m. – 7:00 p.m.",
+    cafe_closing:"Discover a space where a passion for automobiles and fine dining come together in a unique experience.",
+    foto_amb:"FOTO AMBIENTE",
     nav_blog:"Blog",blog_kick:"THE JOURNAL",blog_title:"Stories from the Museum",blog_sub:"Classic cars, restoration and the culture behind the collection in Lima.",blog_back:"← All articles",post_cta:"Plan your visit",vh_back:"← Collection",
     tk_title:"An Invitation to History",tk_sub:"Choose your date and secure your tickets to discover the collection, explore the history of the automobile, and enjoy a dining experience at our Gourmet Café.",tk_hours_t:"Opening Hours",tk_hours:"Tuesday to Sunday · 9 am – 7 pm",tk_addr_t:"Address",tk_continue:"Reserve by WhatsApp",tk_note:"We are finalizing our pricing. Very soon, you will be able to book and pay directly online. For now, please confirm your visit via WhatsApp or directly at the museum entrance.",disc_t:"Discover ARTECH",disc_s:"A look at the spaces, details, and pieces that make every visit an extraordinary experience.",
     v3d_overview:"Overview",v3d_profile:"Exterior",v3d_wheels:"Wheels",v3d_lights:"Lights",v3d_interior:"Interior",v3d_rear:"Rear",
     nav_tickets:"Buy Tickets",hero_tickets:"Buy Tickets",tk_date:"Select a date",tk_general:"General",tk_general_d:"Adult admission",tk_reduced:"Children & Seniors",tk_reduced_d:"Kids and senior citizens",tk_pick:"Please pick a date and at least one ticket.",
     hero_title:"Shift into history",hero_sub:"A living experience of cars, art and gastronomy — home to the World's Oldest Car & a rare Porsche collection.",hero_btn:"360° tour",
-    banner:"A LIVING MUSEUM OF MOTORING HISTORY",pl_tag:"SHIFT INTO HISTORY",pl_sub:"ARTECH · Lima, Perú",
+    banner:"A living museum\nof motoring history",pl_tag:"SHIFT INTO HISTORY",pl_sub:"ARTECH · Lima, Perú",
     p1_t:"Book your private tour",p1_d:"Reserve a guided visit and step into an unrepeatable collection.",
     p2_t:"Gourmet Café",p2_d:"Peruvian & Italian fusion inside the Museum, by Chef Carla Navea.",
     visit_info:"Visit info",
@@ -1631,13 +1691,19 @@ const dict = {
   es:{
     d3_loading:"Cargando…",
     nav_collection:"Colección",nav_experience:"Experiencia",nav_360:"Visita 360°",nav_about:"Nosotros",nav_cafe:"Café Gourmet",nav_contact:"Contacto",nav_book:"Reserva",
-    cafe_tag:"CAFÉ · COCINA · BAR",cafe_title:"Café Gourmet",cafe_lead:"Fusión peruana e italiana dentro del Museo, por la Chef Carla Navea. Martes a Domingo · 9 am – 7 pm.",cafe_hint:"Toca una categoría para ver la carta",
+    cafe_tag:"CAFÉ · COCINA · BAR",cafe_title:"Café Gourmet",cafe_hint:"Toca una categoría para ver la carta",
+    cafe_sub:"Una experiencia gastronómica excepcional",
+    cafe_lead:"Un concepto que une la esencia de la cocina peruana con la tradición italiana, creado por la Chef Carla Navea y diseñado para complementar la experiencia del museo.",
+    cafe_explore:"Explora Nuestra Carta",
+    cafe_hours:"Martes a Domingo · 9:00 a.m. – 7:00 p.m.",
+    cafe_closing:"Descubre un espacio donde la pasión por los automóviles y la alta cocina se encuentran en una experiencia única.",
+    foto_amb:"FOTO AMBIENTE",
     nav_blog:"Blog",blog_kick:"EL DIARIO",blog_title:"Historias del Museo",blog_sub:"Autos clásicos, restauración y la cultura detrás de la colección en Lima.",blog_back:"← Todos los artículos",post_cta:"Planifica tu visita",vh_back:"← Colección",
     tk_title:"Una invitación a la historia",tk_sub:"Elige tu fecha y asegura tus entradas para descubrir la colección, recorrer la historia del automóvil y disfrutar una experiencia gastronómica en nuestro Gourmet Café.",tk_hours_t:"Horario",tk_hours:"Martes a Domingo · 9 am – 7 pm",tk_addr_t:"Dirección",tk_continue:"Reservar por WhatsApp",tk_note:"Estamos definiendo nuestros precios. Muy pronto podrás reservar y pagar directamente en línea. Por ahora, confirma tu visita por WhatsApp o directamente en la entrada del museo.",disc_t:"Descubre ARTECH",disc_s:"Un vistazo a los espacios, detalles y piezas que hacen de cada visita una experiencia extraordinaria.",
     v3d_overview:"Vista general",v3d_profile:"Exterior",v3d_wheels:"Ruedas",v3d_lights:"Luces",v3d_interior:"Interior",v3d_rear:"Trasera",
     nav_tickets:"Comprar Tickets",hero_tickets:"Comprar Tickets",tk_date:"Selecciona una fecha",tk_general:"General",tk_general_d:"Entrada adulto",tk_reduced:"Niños y adultos mayores",tk_reduced_d:"Niños y personas de la tercera edad",tk_pick:"Elige una fecha y al menos una entrada.",
     hero_title:"Un viaje a la historia",hero_sub:"Una experiencia viva de autos, arte y gastronomía — hogar del auto más antiguo del mundo y una rara colección Porsche.",hero_btn:"Tour 360°",
-    banner:"UN MUSEO VIVO DE LA HISTORIA DEL AUTOMÓVIL",pl_tag:"UN VIAJE A LA HISTORIA",pl_sub:"ARTECH · Lima, Perú",
+    banner:"Un museo vivo\nde la historia del automóvil",pl_tag:"UN VIAJE A LA HISTORIA",pl_sub:"ARTECH · Lima, Perú",
     p1_t:"Reserva tu tour privado",p1_d:"Reserva una visita guiada y entra a una colección irrepetible.",
     p2_t:"Gourmet Café",p2_d:"Fusión peruana e italiana dentro del Museo, por la Chef Carla Navea.",
     visit_info:"Ver info",
@@ -1759,6 +1825,7 @@ function route(){
     document.body.classList.toggle('on-tickets', key==='p-tickets');
     document.body.classList.toggle('on-experience', key==='p-experience');
     document.body.classList.toggle('on-collection', key==='p-collection');
+    document.body.classList.toggle('on-cafe', key==='p-cafe');
     Object.values(innerPages).forEach(el=>el&&el.classList.remove('active'));
     page.classList.add('active');
     scrollTo(0,0);
@@ -1769,6 +1836,7 @@ function route(){
     document.body.classList.remove('on-tickets');
     document.body.classList.remove('on-experience');
     document.body.classList.remove('on-collection');
+    document.body.classList.remove('on-cafe');
     Object.values(innerPages).forEach(el=>el&&el.classList.remove('active'));
     mediaDeFondo(true);
     if(wasOpen && location.hash.length>1){
