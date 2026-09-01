@@ -368,7 +368,13 @@
   .back-btn.light{color:#9a9a9a}
   .back-btn.light:hover{color:var(--red)}
   .pc-head{text-align:center;padding-bottom:34px}
-  .pc-head h2{font-family:var(--display);font-weight:700;font-size:clamp(44px,6vw,76px);display:inline-block;border-bottom:4px solid #fff;padding-bottom:12px;margin-bottom:18px}
+  .pc-head h2{font-family:var(--display);font-weight:700;line-height:1.04;margin:0 auto 18px;
+    font-size:clamp(38px,5.6vw,74px);max-width:1100px}
+  .pc-lead{color:#cfcfcf;line-height:1.6;max-width:1000px;margin:0 auto;
+    font-size:clamp(15px,1.5vw,19px)}
+  .pc-photo{max-width:1180px;margin:0 auto;border-radius:26px;overflow:hidden;
+    background:#3f464c;aspect-ratio:3/1}
+  .pc-photo img{width:100%;height:100%;object-fit:cover;display:block}
   .pc-sub{color:#d0d0d0;font-size:17px;line-height:1.6}
   .pc-filterbar{background:#131316;border-top:1px solid rgba(255,255,255,.07);border-bottom:1px solid rgba(255,255,255,.07);padding:16px 0}
   .pc-filters{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
@@ -380,11 +386,21 @@
   .pc-tools select,.pc-tools input{background:#1b1b1f;color:#e6e6e6;border:1px solid rgba(255,255,255,.2);border-radius:8px;padding:10px 14px;font-family:var(--body);font-size:14px}
   .pc-tools input{width:170px}
   .pc-tools select:focus,.pc-tools input:focus{outline:none;border-color:var(--red)}
-  .pc-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:0;background:#0a0a0c;border-radius:6px;margin:26px 0 0;padding:34px 10px;transform:translateY(40px)}
-  .stat{border-left:2px solid var(--red);padding:6px 26px}
-  .stat b{display:block;font-family:Georgia,'Times New Roman',serif;font-weight:500;font-size:clamp(34px,4vw,52px);line-height:1;color:#fff;margin-bottom:10px}
-  .stat span{color:#9a9a9a;font-size:12px;letter-spacing:3px;text-transform:uppercase}
-  .pc-grid-zone{padding-top:110px}
+  /* estadísticas sobre el fondo claro, como el PDF: números negros y separadores rojos */
+  .pc-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:0;
+    padding:6px 0 34px;border-bottom:1px solid var(--line);margin-bottom:44px}
+  .stat{display:flex;align-items:baseline;justify-content:center;gap:12px;padding:6px 20px}
+  .stat+.stat{border-left:2px solid var(--red)}
+  .stat b{font-family:var(--display);font-weight:700;line-height:1;color:var(--ink);
+    font-size:clamp(30px,4.2vw,54px)}
+  .stat span{color:#3a3a3a;font-size:clamp(13px,1.4vw,18px);letter-spacing:0;text-transform:none}
+  .pc-grid-zone{padding-top:64px}
+  @media(max-width:760px){
+    .pc-photo{aspect-ratio:16/10;border-radius:18px}
+    .pc-stats{grid-template-columns:1fr;padding-bottom:22px;margin-bottom:30px}
+    .stat{justify-content:flex-start;padding:10px 4px}
+    .stat+.stat{border-left:0;border-top:1px solid rgba(0,0,0,.10)}
+  }
   .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
   .grid4 .col-card .ph{height:190px}
   .grid4 .col-card h4{font-size:16px}
@@ -570,8 +586,7 @@
     .vh-detalles{grid-template-columns:1fr;gap:16px}
     .vh-cell{min-height:auto;padding:44px 30px}
     .vh-cell.ph{min-height:200px}
-    .pc-stats{grid-template-columns:1fr;gap:24px;transform:translateY(20px)}
-    .pc-grid-zone{padding-top:70px}
+    .pc-grid-zone{padding-top:52px}
     .pc-filters{flex-direction:column;align-items:stretch}
     .pc-tools{flex-wrap:wrap}
     .pc-tools input{flex:1;width:auto}
@@ -601,7 +616,6 @@
   .pf.active{background:var(--gold);border-color:var(--gold);color:#141414}
   .btn-red{border-radius:8px;letter-spacing:1px}
   .vh-caption{border-left:3px solid var(--gold)}
-  .stat b{font-family:Georgia,'Times New Roman',serif}
 
   /* ============ MOBILE-FIRST REFINEMENT (phones 320–560) ============ */
   @media(max-width:560px){
@@ -721,12 +735,9 @@
     .cm-cat{padding:16px 18px}
     .cm-list{padding:2px 18px 16px}
     .card.card-link .link-arrow{justify-content:center}
-    /* stats: horizontal row (3 across), smaller text — like desktop */
-    .pc-stats{grid-template-columns:repeat(3,1fr);gap:0;padding:18px 6px;transform:translateY(24px)}
-    .stat{padding:2px 8px;border-left-width:2px}
-    .stat b{font-size:22px;margin-bottom:4px}
-    .stat span{font-size:8.5px;letter-spacing:.8px;line-height:1.3}
-    .pc-grid-zone{padding-top:60px}
+    .stat b{font-size:30px}
+    .stat span{font-size:13px;line-height:1.3}
+    .pc-grid-zone{padding-top:44px}
     /* experiences */
     .experiences{padding:56px 18px}
     /* contact: trim padding, one clean column */
@@ -966,6 +977,10 @@
   /* ---- página EXPERIENCE (según el PDF del cliente) ---- */
   body.on-experience .intro,body.on-experience .internal-only{display:none!important}
   body.on-experience .newsletter{display:block!important;order:3}
+
+  /* ---- página COLLECTION: sin el bloque "Visit the museum", con newsletter ---- */
+  body.on-collection .intro,body.on-collection .internal-only{display:none!important}
+  body.on-collection .newsletter{display:block!important;order:3}
   .xp-head{max-width:1080px;margin:0 auto 52px}
   .xp-head h2{font-family:var(--display);font-weight:700;line-height:1.03;letter-spacing:-.5px;
     font-size:clamp(40px,6.4vw,84px);margin:0 0 20px}
@@ -1434,12 +1449,10 @@
     <div class="wrap">
       <a href="#top" class="back-btn light" data-i="back_home">← Back to Home</a>
       <div class="pc-head">
-        <h2 data-i="col_t">Our Collection</h2>
-        <div class="pc-sub">
-          <div data-i="col_s1">Including the World's Oldest Car in existence</div>
-          <div data-i="col_s2">World's Oldest Car &amp; Rare Porsche Collection</div>
-        </div>
+        <h2 data-i="col_t2">A Collection That Makes History</h2>
+        <p class="pc-lead" data-i="col_lead">ARTECH brings together 96 exceptional vehicles, the result of decades of Jimmy's passion and dedication to preserving automotive history. Each piece stands out for its design, engineering, and historical significance, making the collection a unique legacy of elegance, innovation, and automotive culture in Lima, Peru.</p>
       </div>
+      <figure class="pc-photo"><img src="assets/ambience-collection.jpg" alt="" fetchpriority="high"></figure>
     </div>
     <div class="pc-filterbar">
       <div class="wrap pc-filters">
@@ -1465,16 +1478,14 @@
         </div>
       </div>
     </div>
+  </div>
+  <div class="pc-grid-zone">
     <div class="wrap">
       <div class="pc-stats">
         <div class="stat"><b>96</b><span data-i="st1">Vehicles on exhibition</span></div>
         <div class="stat"><b>100</b><span data-i="st2">Years of history covered</span></div>
         <div class="stat"><b>60+</b><span data-i="st3">Brands represented</span></div>
       </div>
-    </div>
-  </div>
-  <div class="pc-grid-zone">
-    <div class="wrap">
       <div class="grid4 cols-2" id="carGrid"></div>
       <div class="pc-noresults" id="noResults" hidden data-i="flt_none">No vehicles match your search.</div>
       <nav class="pc-pager" id="pcPager" aria-label="Collection pages"></nav>
@@ -1576,6 +1587,8 @@ const dict = {
     d3_kick:"EXPLORE EVERY DETAIL",d3_title:"EXPERIENCE 3D",d3_hint:"↤ Drag to rotate 360° · scroll to zoom ↦",
     pill1:"360° View",pill2:"Real-time Interaction",pill3:"Immersive Experience",
     col_t:"Our Collection",col_s1:"Including the World's Oldest Car in existence",col_s2:"World's Oldest Car & Rare Porsche Collection",
+    col_t2:"A Collection That Makes History",
+    col_lead:"ARTECH brings together 96 exceptional vehicles, the result of decades of Jimmy's passion and dedication to preserving automotive history. Each piece stands out for its design, engineering, and historical significance, making the collection a unique legacy of elegance, innovation, and automotive culture in Lima, Peru.",
     back_home:"← Back to Home",
     pgx_sub:"Tours, gastronomy and themed halls — a complete journey through automotive history.",pgx_cta:"Book your experience",
     xp_title:"More Than a Museum",
@@ -1644,6 +1657,8 @@ const dict = {
     d3_kick:"EXPLORA CADA DETALLE",d3_title:"EXPERIENCIA 3D",d3_hint:"↤ Arrastra para rotar 360° · scroll para zoom ↦",
     pill1:"Vista 360°",pill2:"Interacción en tiempo real",pill3:"Experiencia inmersiva",
     col_t:"Nuestra Colección",col_s1:"Incluyendo el auto más antiguo del mundo en existencia",col_s2:"El auto más antiguo del mundo y rara colección Porsche",
+    col_t2:"Una Colección Que Hace Historia",
+    col_lead:"ARTECH reúne 96 vehículos excepcionales, fruto de décadas de pasión y dedicación de Jimmy por preservar la historia del automóvil. Cada pieza destaca por su diseño, su ingeniería y su importancia histórica, y convierte a la colección en un legado único de elegancia, innovación y cultura automotriz en Lima, Perú.",
     back_home:"← Volver al inicio",
     pgx_sub:"Tours, gastronomía y salas temáticas — un viaje completo por la historia automotriz.",pgx_cta:"Reserva tu experiencia",
     xp_title:"Más que un Museo",
@@ -1743,6 +1758,7 @@ function route(){
     document.body.classList.add('page-open');
     document.body.classList.toggle('on-tickets', key==='p-tickets');
     document.body.classList.toggle('on-experience', key==='p-experience');
+    document.body.classList.toggle('on-collection', key==='p-collection');
     Object.values(innerPages).forEach(el=>el&&el.classList.remove('active'));
     page.classList.add('active');
     scrollTo(0,0);
@@ -1752,6 +1768,7 @@ function route(){
     document.body.classList.remove('page-open');
     document.body.classList.remove('on-tickets');
     document.body.classList.remove('on-experience');
+    document.body.classList.remove('on-collection');
     Object.values(innerPages).forEach(el=>el&&el.classList.remove('active'));
     mediaDeFondo(true);
     if(wasOpen && location.hash.length>1){
