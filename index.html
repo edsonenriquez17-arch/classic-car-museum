@@ -1130,7 +1130,9 @@
   .tk-head h2{font-family:var(--display);font-weight:700;font-size:clamp(38px,6vw,72px);
     line-height:1.02;letter-spacing:-1.5px;color:var(--gray-1)}
   .tk-head p{color:var(--gray-3);font-size:clamp(15px,1.7vw,18px);line-height:1.65;margin-top:16px;max-width:640px}
-  .ticket{background:var(--paper);border-radius:var(--r-pill);overflow:hidden;
+  /* la tarjeta es un bloque grande, no una pildora: con radio completo se
+     deformaba en ovalo y el overflow recortaba los textos de los lados */
+  .ticket{background:var(--paper);border-radius:var(--r-lg);overflow:hidden;
     box-shadow:0 26px 60px rgba(0,0,0,.13);
     -webkit-mask-image:radial-gradient(circle 11px at 0 50%,transparent 98%,#000 100%),
       radial-gradient(circle 11px at 100% 50%,transparent 98%,#000 100%);
