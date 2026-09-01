@@ -130,6 +130,73 @@
   @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(255,255,255,.35)}50%{box-shadow:0 0 0 12px rgba(255,255,255,0)}}
 
   /* ---------- BANNER ---------- */
+  /* ---------- PIE DE PÁGINA AMPLIADO (estructura tipo Rolls-Royce, tipografía ARTECH) ---------- */
+  footer .ft-brand{text-align:center;padding:6px 0 30px}
+  /* el logo del kit es blanco: sobre el crema del pie hay que oscurecerlo */
+  footer .ft-brand img{height:34px;width:auto;display:inline-block;filter:brightness(0);opacity:.86}
+  .ft-cols{display:grid;grid-template-columns:repeat(5,minmax(0,1fr)) auto;gap:26px 30px;
+    align-items:start;padding:34px 0;border-top:1px solid var(--line)}
+  .ft-col{display:flex;flex-direction:column;gap:16px}
+  .ft-col a{font-family:var(--display);color:var(--ink);text-transform:uppercase;
+    letter-spacing:2.2px;font-size:13px;line-height:1.2;transition:color .2s}
+  .ft-col a:hover{color:var(--red)}
+  .ft-social{align-self:end;justify-self:end}
+  .ft-bottom{display:flex;align-items:center;justify-content:space-between;gap:18px;
+    flex-wrap:wrap;padding-top:26px;border-top:1px solid var(--line)}
+  .ft-bottom .fl{color:#6a6a6a;font-size:13px}
+  .ft-mini{display:flex;gap:22px}
+  .ft-mini a{color:#6a6a6a;font-size:12px;letter-spacing:1.4px;text-transform:uppercase}
+  .ft-mini a:hover{color:var(--red)}
+  @media(max-width:980px){
+    .ft-cols{grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+    .ft-social{grid-column:1/-1;justify-self:start;align-self:start}
+  }
+  @media(max-width:560px){
+    .ft-cols{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 16px;padding:26px 0}
+    .ft-col a{font-size:12px;letter-spacing:1.6px}
+    .ft-bottom{flex-direction:column;align-items:flex-start;gap:12px}
+  }
+
+  /* ---------- PÁGINAS DE INFORMACIÓN (legal, privacidad, faqs, etc.) ---------- */
+  #page-info{padding:0 0 0;background:var(--bg)}
+  #page-info>.wrap{padding:130px 0 54px;background:#0d0d10;max-width:none}
+  #page-info>.wrap>*{max-width:1180px;margin-left:auto;margin-right:auto;padding-left:20px;padding-right:20px}
+  #page-info .back-btn{display:inline-flex;margin-bottom:26px}
+  .info-title{font-family:var(--display);font-weight:600;color:#fff;text-transform:uppercase;
+    letter-spacing:3px;line-height:1.08;margin:0 0 18px;font-size:clamp(30px,4.6vw,56px)}
+  .info-lead{color:#c4c4c4;line-height:1.65;max-width:820px;margin:0;
+    font-size:clamp(15px,1.5vw,19px)}
+  .info-body{padding:56px 0 80px}
+  .info-sec{max-width:880px;margin:0 auto 40px}
+  .info-sec h3{font-family:var(--display);font-weight:600;color:var(--ink);text-transform:uppercase;
+    letter-spacing:2.4px;margin:0 0 14px;font-size:clamp(18px,2.2vw,27px)}
+  .info-sec p{color:#4a4a4a;line-height:1.7;margin:0 0 12px;font-size:clamp(15px,1.4vw,17px)}
+  .info-acc{max-width:880px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
+  .acc-block{background:var(--paper);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  .acc-q{width:100%;display:flex;align-items:center;justify-content:space-between;gap:14px;
+    background:transparent;border:0;cursor:pointer;padding:19px 22px;text-align:left;
+    font-family:var(--display);font-weight:600;color:var(--ink);letter-spacing:.4px;
+    font-size:clamp(15px,1.7vw,18px)}
+  .acc-q svg{width:20px;height:20px;stroke:#8a8a8a;fill:none;stroke-width:2;flex:0 0 auto;
+    transition:transform .3s}
+  .acc-block.open .acc-q svg{transform:rotate(180deg)}
+  .acc-a{max-height:0;overflow:hidden;transition:max-height .4s ease}
+  .acc-block.open .acc-a{max-height:900px}
+  .acc-a p{color:#4a4a4a;line-height:1.7;margin:0;padding:0 22px 20px;
+    font-size:clamp(14px,1.35vw,16px)}
+  .info-map{max-width:1080px;margin:0 auto;display:grid;gap:34px 30px;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+  .map-col{display:flex;flex-direction:column;gap:12px}
+  .map-col h3{font-family:var(--display);font-weight:600;color:var(--ink);text-transform:uppercase;
+    letter-spacing:2.4px;font-size:16px;margin:0 0 4px}
+  .map-col a{color:#4a4a4a;font-size:15px;transition:color .2s}
+  .map-col a:hover{color:var(--red)}
+  @media(max-width:760px){
+    #page-info>.wrap{padding:100px 0 40px}
+    .info-body{padding:40px 0 60px}
+    .info-sec{margin-bottom:30px}
+  }
+
   /* ---------- BANNER: museo vivo + accesos (según HOME-3.pdf) ---------- */
   .banner{background:var(--bg);padding:62px 0}
   .bn-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:40px;align-items:center}
@@ -1020,6 +1087,10 @@
   /* ---- página GOURMET CAFÉ: termina en newsletter, como el PDF ---- */
   body.on-cafe .intro,body.on-cafe .internal-only{display:none!important}
   body.on-cafe .newsletter{display:block!important;order:3}
+
+  /* ---- páginas de información: terminan en newsletter + pie ---- */
+  body.on-info .intro,body.on-info .internal-only{display:none!important}
+  body.on-info .newsletter{display:block!important;order:3}
   .xp-head{max-width:1080px;margin:0 auto 52px}
   .xp-head h2{font-family:var(--display);font-weight:700;line-height:1.03;letter-spacing:-.5px;
     font-size:clamp(40px,6.4vw,84px);margin:0 0 20px}
@@ -1599,13 +1670,53 @@ of motoring history</h2>
 <div id="lightbox"><button class="lb-close" aria-label="Close">×</button><img id="lbImg" alt=""></div>
 
 <!-- FOOTER -->
+
+<!-- ===== PÁGINAS DE INFORMACIÓN (pie de página) ===== -->
+<section class="subpage" id="page-info"></section>
+
 <footer>
-  <div class="wrap foot">
-    <div class="fl">© 2026 ARTECH · Lima, Perú</div>
-    <div class="socials">
-      <a href="https://facebook.com/classiccarmuseum" target="_blank" rel="noopener" aria-label="Facebook"><img src="assets/icons/facebook.png" alt="Facebook" loading="lazy"></a>
-      <a href="https://instagram.com/classiccarmuseum" target="_blank" rel="noopener" aria-label="Instagram"><img src="assets/icons/instagram.png" alt="Instagram" loading="lazy"></a>
-      <a href="https://tiktok.com/@classiccarmuseum" target="_blank" rel="noopener" aria-label="TikTok"><img src="assets/icons/tiktok.png" alt="TikTok" loading="lazy"></a>
+  <div class="wrap">
+    <div class="ft-brand"><img src="assets/logo.png" alt="ARTECH"></div>
+    <div class="ft-cols">
+      <nav class="ft-col">
+        <a href="#p-preowned" data-i="ft_preowned">Vehicles for sale</a>
+        <a href="#p-visit" data-i="ft_visit">Plan your visit</a>
+        <a href="#p-privacy" data-i="ft_privacy">Privacy</a>
+        <a href="#" class="ft-lang" id="ftLang" data-i="ft_language">Language</a>
+      </nav>
+      <nav class="ft-col">
+        <a href="#p-cookies" data-i="ft_cookies">Cookies</a>
+        <a href="#p-careers" data-i="ft_careers">Careers</a>
+        <a href="#p-club" data-i="ft_club">ARTECH Club</a>
+      </nav>
+      <nav class="ft-col">
+        <a href="#p-press" data-i="ft_press">Press room</a>
+        <a href="#p-sitemap" data-i="ft_sitemap">Site map</a>
+        <a href="#p-blog" data-i="ft_blog">Blog</a>
+      </nav>
+      <nav class="ft-col">
+        <a href="#p-legal" data-i="ft_legal">Legal</a>
+        <a href="#p-faqs" data-i="ft_faqs">FAQs</a>
+        <a href="#p-sustainability" data-i="ft_sustain">Sustainability</a>
+      </nav>
+      <nav class="ft-col">
+        <a href="#p-claims" data-i="ft_claims">Complaints book</a>
+        <a href="#p-contact" data-i="ft_contact">Contact</a>
+        <a href="#p-tickets" data-i="ft_tickets">Buy tickets</a>
+      </nav>
+      <div class="ft-social socials">
+        <a href="https://facebook.com/classiccarmuseum" target="_blank" rel="noopener" aria-label="Facebook"><img src="assets/icons/facebook.png" alt="Facebook" loading="lazy"></a>
+        <a href="https://instagram.com/classiccarmuseum" target="_blank" rel="noopener" aria-label="Instagram"><img src="assets/icons/instagram.png" alt="Instagram" loading="lazy"></a>
+        <a href="https://tiktok.com/@classiccarmuseum" target="_blank" rel="noopener" aria-label="TikTok"><img src="assets/icons/tiktok.png" alt="TikTok" loading="lazy"></a>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <div class="fl">© 2026 ARTECH · Lima, Perú</div>
+      <div class="ft-mini">
+        <a href="#p-legal" data-i="ft_legal">Legal</a>
+        <a href="#p-privacy" data-i="ft_privacy">Privacy</a>
+        <a href="#p-cookies" data-i="ft_cookies">Cookies</a>
+      </div>
     </div>
   </div>
 </footer>
@@ -1651,6 +1762,11 @@ const dict = {
     col_lead:"ARTECH brings together 96 exceptional vehicles, the result of decades of Jimmy's passion and dedication to preserving automotive history. Each piece stands out for its design, engineering, and historical significance, making the collection a unique legacy of elegance, innovation, and automotive culture in Lima, Peru.",
     back_home:"← Back to Home",
     pgx_sub:"Tours, gastronomy and themed halls — a complete journey through automotive history.",pgx_cta:"Book your experience",
+    ft_preowned:"Vehicles for sale",ft_visit:"Plan your visit",ft_privacy:"Privacy",ft_language:"Language",
+    ft_cookies:"Cookies",ft_careers:"Careers",ft_club:"ARTECH Club",
+    ft_press:"Press room",ft_sitemap:"Site map",ft_blog:"Blog",
+    ft_legal:"Legal",ft_faqs:"FAQs",ft_sustain:"Sustainability",
+    ft_claims:"Complaints book",ft_contact:"Contact",ft_tickets:"Buy tickets",
     xp_title:"More Than a Museum",
     xp_sub:"An experience where history, design, and a passion for automobiles come to life. Discover exclusive tours, fine dining, and spaces designed for an extraordinary visit.",
     xp1_t:"The Heritage Tour",xp1_m:"US$120 per person  I  90 minutes",
@@ -1727,6 +1843,11 @@ const dict = {
     col_lead:"ARTECH reúne 96 vehículos excepcionales, fruto de décadas de pasión y dedicación de Jimmy por preservar la historia del automóvil. Cada pieza destaca por su diseño, su ingeniería y su importancia histórica, y convierte a la colección en un legado único de elegancia, innovación y cultura automotriz en Lima, Perú.",
     back_home:"← Volver al inicio",
     pgx_sub:"Tours, gastronomía y salas temáticas — un viaje completo por la historia automotriz.",pgx_cta:"Reserva tu experiencia",
+    ft_preowned:"Vehículos en venta",ft_visit:"Planifica tu visita",ft_privacy:"Privacidad",ft_language:"Idioma",
+    ft_cookies:"Cookies",ft_careers:"Trabaja con nosotros",ft_club:"ARTECH Club",
+    ft_press:"Sala de prensa",ft_sitemap:"Mapa del sitio",ft_blog:"Blog",
+    ft_legal:"Legal",ft_faqs:"Preguntas frecuentes",ft_sustain:"Sostenibilidad",
+    ft_claims:"Libro de reclamaciones",ft_contact:"Contacto",ft_tickets:"Comprar entradas",
     xp_title:"Más que un Museo",
     xp_sub:"Una experiencia donde la historia, el diseño y la pasión por los automóviles cobran vida. Descubre tours exclusivos, alta cocina y espacios diseñados para una visita extraordinaria.",
     xp1_t:"The Heritage Tour",xp1_m:"US$120 por persona  I  90 minutos",
@@ -1783,6 +1904,8 @@ function apply(l){
   if(currentSlug && pv && pv.classList.contains('active')) showVehicle(currentSlug);
   if(typeof renderCafeMenu==='function') renderCafeMenu();
   if(typeof renderBlog==='function') renderBlog();
+  const _k=location.hash.replace('#','');
+  if(typeof INFO!=='undefined' && INFO[_k]) renderInfo(_k);
   if(typeof currentPost!=='undefined' && currentPost){ const pp=document.getElementById('page-post'); if(pp && pp.classList.contains('active')) showPost(currentPost); }
 }
 document.querySelectorAll('.lang button').forEach(b=>b.addEventListener('click',()=>apply(b.dataset.lang)));
@@ -1805,8 +1928,300 @@ if('IntersectionObserver' in window && spyMap.length){
   spyMap.forEach(o=>io.observe(o.el));
 }
 
+/* ===== PÁGINAS DE INFORMACIÓN (pie de página) =====
+   Todo el contenido vive en este objeto: el cliente sólo edita aquí, en EN y ES.
+   t = título · lead = entrada · blocks = secciones · acc = acordeón · links = mapa del sitio
+   TEXTO DE RELLENO: sustituir por la información real de ARTECH.            */
+const INFO = {
+ 'p-preowned':{
+  t:{en:'Vehicles for sale',es:'Vehículos en venta'},
+  lead:{en:'A discreet service for collectors: a selection of vehicles from the ARTECH collection and from private owners, offered for sale through the museum.',
+        es:'Un servicio discreto para coleccionistas: una selección de vehículos de la colección ARTECH y de propietarios privados, ofrecidos en venta a través del museo.'},
+  blocks:[
+   {h:{en:'Private sales',es:'Venta privada'},p:[
+    {en:'Every transaction is handled one to one, with full confidentiality and without public listings. Our team accompanies both parties from the first viewing to the final paperwork.',
+     es:'Cada transacción se gestiona uno a uno, con total confidencialidad y sin anuncios públicos. Nuestro equipo acompaña a ambas partes desde la primera visita hasta la documentación final.'}]},
+   {h:{en:'Valuation and provenance',es:'Tasación y procedencia'},p:[
+    {en:'Each vehicle is reviewed by our specialists, who verify its history, documentation and state of preservation before it is offered.',
+     es:'Cada vehículo es revisado por nuestros especialistas, que verifican su historia, documentación y estado de conservación antes de ser ofrecido.'}]},
+   {h:{en:'Consignment',es:'Consignación'},p:[
+    {en:'If you wish to sell a classic vehicle, we can exhibit it at the museum while we find the right buyer. Write to info@artech.pe to arrange an assessment.',
+     es:'Si desea vender un vehículo clásico, podemos exhibirlo en el museo mientras encontramos al comprador adecuado. Escriba a info@artech.pe para coordinar una evaluación.'}]}]},
+
+ 'p-visit':{
+  t:{en:'Plan your visit',es:'Planifica tu visita'},
+  lead:{en:'Everything you need to know before coming to ARTECH, fifteen minutes from Miraflores.',
+        es:'Todo lo que necesitas saber antes de venir a ARTECH, a quince minutos de Miraflores.'},
+  blocks:[
+   {h:{en:'Hours and address',es:'Horario y dirección'},p:[
+    {en:'Tuesday to Sunday, 9:00 a.m. to 7:00 p.m. Av. Huaylas 640, Chorrillos, Lima. Closed on Mondays and public holidays.',
+     es:'Martes a domingo, de 9:00 a.m. a 7:00 p.m. Av. Huaylas 640, Chorrillos, Lima. Cerrado los lunes y feriados.'}]},
+   {h:{en:'Getting here',es:'Cómo llegar'},p:[
+    {en:'The museum is fifteen minutes from Miraflores by car along the Costa Verde. There are bus stops within a short walk and taxi services reach the entrance directly.',
+     es:'El museo está a quince minutos de Miraflores en auto por la Costa Verde. Hay paraderos a pocos pasos y los servicios de taxi llegan directamente a la entrada.'}]},
+   {h:{en:'Parking and amenities',es:'Estacionamiento y servicios'},p:[
+    {en:'Free parking for visitors, step-free access throughout the exhibition halls, cloakroom and the Gourmet Café on the same floor.',
+     es:'Estacionamiento gratuito para visitantes, acceso sin escalones en todas las salas, guardarropa y el Gourmet Café en el mismo nivel.'}]}]},
+
+ 'p-privacy':{
+  t:{en:'Privacy',es:'Privacidad'},
+  lead:{en:'ARTECH respects your privacy. This notice explains what personal data we collect, why we collect it and what rights you have over it.',
+        es:'ARTECH respeta tu privacidad. Este aviso explica qué datos personales recogemos, por qué lo hacemos y qué derechos tienes sobre ellos.'},
+  blocks:[
+   {h:{en:'Who is responsible',es:'Quién es responsable'},p:[
+    {en:'ARTECH, with premises at Av. Huaylas 640, Chorrillos, Lima, is responsible for the personal data collected through this website. For any query write to info@artech.pe.',
+     es:'ARTECH, con local en Av. Huaylas 640, Chorrillos, Lima, es responsable de los datos personales recogidos a través de este sitio. Para cualquier consulta escribe a info@artech.pe.'}]}],
+  acc:[
+   {q:{en:'What data we collect',es:'Qué datos recogemos'},
+    a:{en:'Only what you give us voluntarily: the name, email and message you enter in the contact form, and the email address you provide when subscribing to the newsletter.',
+       es:'Sólo lo que nos entregas voluntariamente: el nombre, correo y mensaje que escribes en el formulario de contacto, y el correo que indicas al suscribirte al boletín.'}},
+   {q:{en:'How we use it',es:'Cómo los usamos'},
+    a:{en:'To answer your enquiries, manage visit bookings and send you news about the museum if you have asked for it. We do not sell or transfer your data to third parties.',
+       es:'Para responder tus consultas, gestionar reservas de visita y enviarte novedades del museo si lo has solicitado. No vendemos ni cedemos tus datos a terceros.'}},
+   {q:{en:'How long we keep it',es:'Cuánto tiempo los conservamos'},
+    a:{en:'For as long as the purpose that motivated the collection remains, and afterwards for the period required by applicable law.',
+       es:'Mientras se mantenga la finalidad que motivó su recolección y, después, durante el plazo que exija la normativa aplicable.'}},
+   {q:{en:'Your rights',es:'Tus derechos'},
+    a:{en:'You may access, update, correct or delete your data, and withdraw your consent at any time, by writing to info@artech.pe.',
+       es:'Puedes acceder, actualizar, rectificar o suprimir tus datos, y retirar tu consentimiento en cualquier momento, escribiendo a info@artech.pe.'}}]},
+
+ 'p-cookies':{
+  t:{en:'Cookies',es:'Cookies'},
+  lead:{en:'This site uses the minimum number of cookies needed for it to work properly and to understand how it is used.',
+        es:'Este sitio usa la mínima cantidad de cookies necesaria para funcionar correctamente y entender cómo se utiliza.'},
+  acc:[
+   {q:{en:'What a cookie is',es:'Qué es una cookie'},
+    a:{en:'A small file the site stores in your browser so it can remember choices such as the language you selected.',
+       es:'Un archivo pequeño que el sitio guarda en tu navegador para recordar elecciones como el idioma que seleccionaste.'}},
+   {q:{en:'Essential cookies',es:'Cookies esenciales'},
+    a:{en:'They allow the site to function: they keep your language preference and the state of the sections you open. They cannot be disabled without affecting the experience.',
+       es:'Permiten que el sitio funcione: guardan tu preferencia de idioma y el estado de las secciones que abres. No pueden desactivarse sin afectar la experiencia.'}},
+   {q:{en:'Analytics cookies',es:'Cookies analíticas'},
+    a:{en:'They help us know which sections are visited most, always in aggregate form and without identifying you personally.',
+       es:'Nos ayudan a saber qué secciones se visitan más, siempre de forma agregada y sin identificarte personalmente.'}},
+   {q:{en:'How to manage them',es:'Cómo gestionarlas'},
+    a:{en:'You can delete or block cookies from your browser settings at any time. Doing so may affect some functions of the site.',
+       es:'Puedes eliminar o bloquear las cookies desde la configuración de tu navegador en cualquier momento. Hacerlo puede afectar algunas funciones del sitio.'}}]},
+
+ 'p-legal':{
+  t:{en:'Legal',es:'Legal'},
+  lead:{en:'Terms governing the use of this website and the information published on it.',
+        es:'Condiciones que rigen el uso de este sitio web y la información publicada en él.'},
+  blocks:[
+   {h:{en:'Company information',es:'Información de la empresa'},p:[
+    {en:'This is the only official ARTECH website. The museum operates at Av. Huaylas 640, Chorrillos, Lima, Perú. Contact: info@artech.pe.',
+     es:'Este es el único sitio web oficial de ARTECH. El museo opera en Av. Huaylas 640, Chorrillos, Lima, Perú. Contacto: info@artech.pe.'}]}],
+  acc:[
+   {q:{en:'Website terms',es:'Condiciones del sitio'},
+    a:{en:'By accessing this website you agree to these terms. The site is for personal use and may not be used for commercial purposes without written authorisation.',
+       es:'Al acceder a este sitio aceptas estas condiciones. El sitio es para uso personal y no puede utilizarse con fines comerciales sin autorización escrita.'}},
+   {q:{en:'Accuracy of the information',es:'Exactitud de la información'},
+    a:{en:'We make every effort to keep the information on vehicles, hours and experiences up to date, but it may change without notice. Confirm any detail with us before your visit.',
+       es:'Hacemos todo lo posible por mantener actualizada la información de vehículos, horarios y experiencias, pero puede cambiar sin aviso. Confirma cualquier detalle con nosotros antes de tu visita.'}},
+   {q:{en:'Intellectual property',es:'Propiedad intelectual'},
+    a:{en:'The photographs, texts and the ARTECH name are protected. They may not be reproduced without written permission from the museum.',
+       es:'Las fotografías, los textos y el nombre ARTECH están protegidos. No pueden reproducirse sin permiso escrito del museo.'}},
+   {q:{en:'External links',es:'Enlaces externos'},
+    a:{en:'This site may link to third-party pages. ARTECH is not responsible for their content or their privacy practices.',
+       es:'Este sitio puede enlazar a páginas de terceros. ARTECH no se responsabiliza de su contenido ni de sus prácticas de privacidad.'}},
+   {q:{en:'Applicable law',es:'Ley aplicable'},
+    a:{en:'These terms are governed by the laws of the Republic of Peru.',
+       es:'Estas condiciones se rigen por las leyes de la República del Perú.'}}]},
+
+ 'p-faqs':{
+  t:{en:'FAQs',es:'Preguntas frecuentes'},
+  lead:{en:'The questions our visitors ask most often. If you do not find yours, write to info@artech.pe.',
+        es:'Las preguntas que más nos hacen nuestros visitantes. Si no encuentras la tuya, escribe a info@artech.pe.'},
+  acc:[
+   {q:{en:'What are the opening hours?',es:'¿Cuál es el horario?'},
+    a:{en:'Tuesday to Sunday, from 9:00 a.m. to 7:00 p.m. We are closed on Mondays and public holidays.',
+       es:'Martes a domingo, de 9:00 a.m. a 7:00 p.m. Cerramos los lunes y feriados.'}},
+   {q:{en:'Do I need to book in advance?',es:'¿Necesito reservar con anticipación?'},
+    a:{en:'Not for a general visit. Private tours and group visits do need to be arranged in advance.',
+       es:'No para una visita general. Los tours privados y las visitas de grupo sí deben coordinarse con anticipación.'}},
+   {q:{en:'Is there parking?',es:'¿Hay estacionamiento?'},
+    a:{en:'Yes, free parking for visitors at the museum entrance.',
+       es:'Sí, estacionamiento gratuito para visitantes en la entrada del museo.'}},
+   {q:{en:'Can I take photographs?',es:'¿Puedo tomar fotografías?'},
+    a:{en:'Yes, for personal use. Professional shoots and filming require prior authorisation.',
+       es:'Sí, para uso personal. Las sesiones profesionales y las grabaciones requieren autorización previa.'}},
+   {q:{en:'Is the museum accessible?',es:'¿El museo es accesible?'},
+    a:{en:'The exhibition halls, the café and the toilets have step-free access.',
+       es:'Las salas de exhibición, el café y los servicios higiénicos tienen acceso sin escalones.'}},
+   {q:{en:'Can children visit?',es:'¿Pueden entrar niños?'},
+    a:{en:'Of course. Children accompanied by an adult are welcome and have a reduced admission.',
+       es:'Por supuesto. Los niños acompañados de un adulto son bienvenidos y tienen entrada reducida.'}},
+   {q:{en:'Do I need a reservation for the Gourmet Café?',es:'¿Necesito reserva para el Gourmet Café?'},
+    a:{en:'It is not essential, but we recommend it at weekends. Write to info@artech.pe to reserve a table.',
+       es:'No es imprescindible, pero la recomendamos los fines de semana. Escribe a info@artech.pe para reservar una mesa.'}},
+   {q:{en:'Can the museum be hired for events?',es:'¿Se puede alquilar el museo para eventos?'},
+    a:{en:'Yes, we host private events among the collection. Write to info@artech.pe and we will send you the options.',
+       es:'Sí, realizamos eventos privados entre la colección. Escribe a info@artech.pe y te enviamos las opciones.'}}]},
+
+ 'p-claims':{
+  t:{en:'Complaints book',es:'Libro de reclamaciones'},
+  lead:{en:'In accordance with Peruvian consumer protection law, ARTECH makes a complaints book available to its visitors.',
+        es:'Conforme a la normativa peruana de protección al consumidor, ARTECH pone a disposición de sus visitantes un libro de reclamaciones.'},
+  blocks:[
+   {h:{en:'How to file a complaint',es:'Cómo presentar un reclamo'},p:[
+    {en:'You may fill in the physical book available at the museum reception, or send us your case by email with your name, contact details and a description of what happened.',
+     es:'Puedes llenar el libro físico disponible en la recepción del museo, o enviarnos tu caso por correo indicando tu nombre, datos de contacto y una descripción de lo ocurrido.'}]},
+   {h:{en:'Response time',es:'Plazo de respuesta'},p:[
+    {en:'We will acknowledge receipt within two working days and give you a substantive reply within the period established by law.',
+     es:'Acusaremos recibo dentro de los dos días hábiles siguientes y te daremos una respuesta de fondo dentro del plazo que establece la ley.'}]},
+   {h:{en:'Contact',es:'Contacto'},p:[
+    {en:'ARTECH · Av. Huaylas 640, Chorrillos, Lima · info@artech.pe · +51 992 432 455',
+     es:'ARTECH · Av. Huaylas 640, Chorrillos, Lima · info@artech.pe · +51 992 432 455'}]}]},
+
+ 'p-careers':{
+  t:{en:'Careers',es:'Trabaja con nosotros'},
+  lead:{en:'ARTECH brings together people who care for machines that outlive us. If that idea appeals to you, we would like to meet you.',
+        es:'ARTECH reúne a personas que cuidan máquinas que nos sobreviven. Si esa idea te atrae, nos gustaría conocerte.'},
+  blocks:[
+   {h:{en:'What we look for',es:'Qué buscamos'},p:[
+    {en:'Attention to detail, respect for the history of each piece and a genuine interest in looking after the visitor. Previous experience with classic vehicles is valued but not essential.',
+     es:'Atención al detalle, respeto por la historia de cada pieza y un interés genuino por atender al visitante. Se valora la experiencia previa con vehículos clásicos, aunque no es indispensable.'}]},
+   {h:{en:'Areas',es:'Áreas'},p:[
+    {en:'Guides and visitor services, restoration and workshop, kitchen and dining room at the Gourmet Café, communications and events.',
+     es:'Guías y atención al visitante, restauración y taller, cocina y salón del Gourmet Café, comunicaciones y eventos.'}]},
+   {h:{en:'How to apply',es:'Cómo postular'},p:[
+    {en:'Send your CV to info@artech.pe indicating the area that interests you. We review every application and reply to those that match an open position.',
+     es:'Envía tu CV a info@artech.pe indicando el área que te interesa. Revisamos todas las postulaciones y respondemos a las que coinciden con una posición abierta.'}]}]},
+
+ 'p-press':{
+  t:{en:'Press room',es:'Sala de prensa'},
+  lead:{en:'Resources and contact for journalists, producers and media covering ARTECH.',
+        es:'Recursos y contacto para periodistas, productores y medios que cubren ARTECH.'},
+  blocks:[
+   {h:{en:'Media enquiries',es:'Consultas de prensa'},p:[
+    {en:'Write to info@artech.pe with the subject "Press" and tell us the medium, the angle of your piece and your deadline. We will get back to you as quickly as we can.',
+     es:'Escribe a info@artech.pe con el asunto "Prensa" indicando el medio, el enfoque de tu nota y tu fecha de cierre. Te responderemos con la mayor rapidez posible.'}]},
+   {h:{en:'Images and press kit',es:'Imágenes y kit de prensa'},p:[
+    {en:'We have high-resolution photographs of the collection and of the museum halls available on request, for editorial use with credit.',
+     es:'Contamos con fotografías en alta resolución de la colección y de las salas del museo, disponibles a solicitud, para uso editorial con crédito.'}]},
+   {h:{en:'Filming at the museum',es:'Grabaciones en el museo'},p:[
+    {en:'Shoots and filming are arranged outside opening hours so as not to affect the visit. Write to us with the dates and the technical requirements of your production.',
+     es:'Las sesiones y grabaciones se coordinan fuera del horario de atención para no afectar la visita. Escríbenos con las fechas y los requerimientos técnicos de tu producción.'}]}]},
+
+ 'p-sustainability':{
+  t:{en:'Sustainability',es:'Sostenibilidad'},
+  lead:{en:'Preserving a vehicle is, in itself, an act of sustainability: it keeps in use what has already been made instead of replacing it.',
+        es:'Conservar un vehículo es, en sí mismo, un acto de sostenibilidad: mantiene en uso lo que ya fue fabricado en lugar de reemplazarlo.'},
+  blocks:[
+   {h:{en:'Preservation before replacement',es:'Conservar antes que reemplazar'},p:[
+    {en:'Our workshop repairs and reuses original parts wherever possible. Every component that returns to service is one that does not have to be manufactured again.',
+     es:'Nuestro taller repara y reutiliza piezas originales siempre que es posible. Cada componente que vuelve a servicio es uno que no hay que fabricar de nuevo.'}]},
+   {h:{en:'Energy and water',es:'Energía y agua'},p:[
+    {en:'The halls use low-consumption lighting and the washing area recirculates water. We keep measuring our consumption in order to reduce it.',
+     es:'Las salas usan iluminación de bajo consumo y la zona de lavado recircula el agua. Seguimos midiendo nuestro consumo para reducirlo.'}]},
+   {h:{en:'Waste',es:'Residuos'},p:[
+    {en:'Oils, batteries and solvents are handed to authorised managers. In the café we work with local suppliers to cut down on packaging.',
+     es:'Aceites, baterías y solventes se entregan a gestores autorizados. En el café trabajamos con proveedores locales para reducir envases.'}]},
+   {h:{en:'Community',es:'Comunidad'},p:[
+    {en:'We open the museum to schools and technical institutes so that new generations can see up close the trades that keep these machines alive.',
+     es:'Abrimos el museo a colegios e institutos técnicos para que nuevas generaciones conozcan de cerca los oficios que mantienen vivas estas máquinas.'}]}]},
+
+ 'p-club':{
+  t:{en:'ARTECH Club',es:'ARTECH Club'},
+  lead:{en:'A circle for those who want to stay close to the collection all year round.',
+        es:'Un círculo para quienes quieren estar cerca de la colección durante todo el año.'},
+  blocks:[
+   {h:{en:'Benefits',es:'Beneficios'},p:[
+    {en:'Unlimited access to the museum, invitations to private openings, priority booking for experiences and a permanent discount at the Gourmet Café.',
+     es:'Acceso ilimitado al museo, invitaciones a aperturas privadas, reserva prioritaria de experiencias y descuento permanente en el Gourmet Café.'}]},
+   {h:{en:'Members-only events',es:'Eventos sólo para miembros'},p:[
+    {en:'Evenings with the collection, workshop visits and conversations with the specialists who look after each vehicle.',
+     es:'Noches con la colección, visitas al taller y conversaciones con los especialistas que cuidan cada vehículo.'}]},
+   {h:{en:'How to join',es:'Cómo unirse'},p:[
+    {en:'Membership is annual and personal. Write to info@artech.pe and we will send you the current conditions.',
+     es:'La membresía es anual y personal. Escribe a info@artech.pe y te enviamos las condiciones vigentes.'}]}]},
+
+ 'p-sitemap':{
+  t:{en:'Site map',es:'Mapa del sitio'},
+  lead:{en:'Every section of this site, in one place.',
+        es:'Todas las secciones de este sitio, en un solo lugar.'},
+  links:[
+   {h:{en:'The museum',es:'El museo'},items:[
+    {k:'#top',t:{en:'Home',es:'Inicio'}},
+    {k:'#p-collection',t:{en:'Collection',es:'Colección'}},
+    {k:'#p-experience',t:{en:'Experiences',es:'Experiencias'}},
+    {k:'#exp3d',t:{en:'360° tour',es:'Tour 360°'}},
+    {k:'#p-cafe',t:{en:'Gourmet Café',es:'Gourmet Café'}}]},
+   {h:{en:'Plan your visit',es:'Planifica tu visita'},items:[
+    {k:'#p-visit',t:{en:'Plan your visit',es:'Planifica tu visita'}},
+    {k:'#p-tickets',t:{en:'Buy tickets',es:'Comprar entradas'}},
+    {k:'#p-contact',t:{en:'Contact',es:'Contacto'}},
+    {k:'#p-faqs',t:{en:'FAQs',es:'Preguntas frecuentes'}}]},
+   {h:{en:'ARTECH',es:'ARTECH'},items:[
+    {k:'#p-preowned',t:{en:'Vehicles for sale',es:'Vehículos en venta'}},
+    {k:'#p-club',t:{en:'ARTECH Club',es:'ARTECH Club'}},
+    {k:'#p-careers',t:{en:'Careers',es:'Trabaja con nosotros'}},
+    {k:'#p-press',t:{en:'Press room',es:'Sala de prensa'}},
+    {k:'#p-sustainability',t:{en:'Sustainability',es:'Sostenibilidad'}},
+    {k:'#p-blog',t:{en:'Blog',es:'Blog'}}]},
+   {h:{en:'Legal',es:'Legal'},items:[
+    {k:'#p-legal',t:{en:'Legal',es:'Legal'}},
+    {k:'#p-privacy',t:{en:'Privacy',es:'Privacidad'}},
+    {k:'#p-cookies',t:{en:'Cookies',es:'Cookies'}},
+    {k:'#p-claims',t:{en:'Complaints book',es:'Libro de reclamaciones'}}]}]}
+};
+
+function renderInfo(key){
+  const d=INFO[key]; const host=document.getElementById('page-info');
+  if(!d||!host) return;
+  const L=(o)=>o ? (o[lang]||o.en||'') : '';
+  let h='<div class="wrap">'
+      + '<a href="#top" class="back-btn light" data-i="back_home">← Back to Home</a>'
+      + '<h2 class="info-title">'+L(d.t)+'</h2>'
+      + (d.lead?'<p class="info-lead">'+L(d.lead)+'</p>':'')
+      + '</div><div class="info-body"><div class="wrap">';
+  (d.blocks||[]).forEach(function(b){
+    h+='<section class="info-sec"><h3>'+L(b.h)+'</h3>';
+    (b.p||[]).forEach(function(p){ h+='<p>'+L(p)+'</p>'; });
+    h+='</section>';
+  });
+  if(d.acc && d.acc.length){
+    h+='<div class="info-acc">';
+    d.acc.forEach(function(a,i){
+      h+='<div class="acc-block"><button class="acc-q" type="button" aria-expanded="false" data-i2="'+i+'">'
+        +'<span>'+L(a.q)+'</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>'
+        +'<div class="acc-a"><p>'+L(a.a)+'</p></div></div>';
+    });
+    h+='</div>';
+  }
+  if(d.links){
+    h+='<div class="info-map">';
+    d.links.forEach(function(g){
+      h+='<div class="map-col"><h3>'+L(g.h)+'</h3>';
+      g.items.forEach(function(it){ h+='<a href="'+it.k+'">'+L(it.t)+'</a>'; });
+      h+='</div>';
+    });
+    h+='</div>';
+  }
+  h+='</div></div>';
+  host.innerHTML=h;
+  host.querySelectorAll('.acc-q').forEach(function(b){
+    b.addEventListener('click',function(){
+      const bl=b.closest('.acc-block'); const abierto=bl.classList.toggle('open');
+      b.setAttribute('aria-expanded', abierto?'true':'false');
+    });
+  });
+}
+
+/* el enlace LANGUAGE del pie alterna entre los dos idiomas */
+(function(){
+  const l=document.getElementById('ftLang'); if(!l) return;
+  l.addEventListener('click',function(e){
+    e.preventDefault();
+    const otro = (typeof lang!=='undefined' && lang==='es') ? 'en' : 'es';
+    const b=document.querySelector('.lang button[data-lang="'+otro+'"]');
+    if(b) b.click(); else if(typeof apply==='function') apply(otro);
+  });
+})();
+
 // internal pages router (same-window views: #p-experience / #p-collection)
-const innerPages={ 'p-experience':document.getElementById('page-experience'), 'p-collection':document.getElementById('page-collection'), 'p-vehicle':document.getElementById('page-vehicle'), 'p-cafe':document.getElementById('page-cafe'), 'p-contact':document.getElementById('page-contact'), 'p-blog':document.getElementById('page-blog'), 'p-post':document.getElementById('page-post'), 'p-tickets':document.getElementById('page-tickets') };
+const innerPages={ 'p-experience':document.getElementById('page-experience'), 'p-collection':document.getElementById('page-collection'), 'p-vehicle':document.getElementById('page-vehicle'), 'p-cafe':document.getElementById('page-cafe'), 'p-contact':document.getElementById('page-contact'), 'p-blog':document.getElementById('page-blog'), 'p-post':document.getElementById('page-post'), 'p-tickets':document.getElementById('page-tickets')  };
+Object.keys(INFO).forEach(function(k){ innerPages[k]=document.getElementById('page-info'); });
 /* los videos decorativos del home consumen CPU aunque estén ocultos:
    se pausan al abrir una página interna y vuelven al regresar */
 function mediaDeFondo(encender){
@@ -1826,6 +2241,8 @@ function route(){
     document.body.classList.toggle('on-experience', key==='p-experience');
     document.body.classList.toggle('on-collection', key==='p-collection');
     document.body.classList.toggle('on-cafe', key==='p-cafe');
+    document.body.classList.toggle('on-info', !!INFO[key]);
+    if(INFO[key]) renderInfo(key);
     Object.values(innerPages).forEach(el=>el&&el.classList.remove('active'));
     page.classList.add('active');
     scrollTo(0,0);
@@ -1837,6 +2254,7 @@ function route(){
     document.body.classList.remove('on-experience');
     document.body.classList.remove('on-collection');
     document.body.classList.remove('on-cafe');
+    document.body.classList.remove('on-info');
     Object.values(innerPages).forEach(el=>el&&el.classList.remove('active'));
     mediaDeFondo(true);
     if(wasOpen && location.hash.length>1){
