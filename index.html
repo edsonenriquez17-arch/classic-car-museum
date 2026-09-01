@@ -1295,9 +1295,9 @@ of motoring history</h2>
 
 <!-- EXPERIENCES -->
 <section class="experiences home-only" id="experiences">
-  <video class="exp-bg" autoplay muted loop playsinline preload="none" poster="assets/experiences-poster.jpg">
-    <source src="assets/experiences.mp4" type="video/mp4">
-  </video>
+  <!-- se descarga junto al de portada, cuando el preloader ya termino -->
+  <video class="exp-bg" id="expVid" autoplay muted loop playsinline preload="none"
+         poster="assets/experiences-poster.jpg" data-src="assets/experiences.mp4"></video>
   <div class="inner">
     <div class="kicker" data-i="exp_the">THE <span class="u">MUSEUM</span></div>
     <div class="kicker big" data-i="exp_title">EXPERIENCES</div>
@@ -1538,7 +1538,7 @@ of motoring history</h2>
 
     <!-- TICKET -->
     <div class="ticket">
-      <div class="ticket-photo"><img src="assets/tickets-hero.jpg" alt="" fetchpriority="high"></div>
+      <div class="ticket-photo"><img data-src="assets/tickets-hero.jpg" alt=""></div>
       <div class="ticket-body">
         <div class="tk-col">
           <label class="tk-lbl" for="tkDate" data-i="tk_date">Select a date</label>
@@ -1629,7 +1629,7 @@ of motoring history</h2>
       <p data-i="xp_sub">An experience where history, design, and a passion for automobiles come to life. Discover exclusive tours, fine dining, and spaces designed for an extraordinary visit.</p>
     </div>
 
-    <figure class="xp-photo"><img src="assets/ambience.jpg" alt="" fetchpriority="high"></figure>
+    <figure class="xp-photo"><img data-src="assets/ambience.jpg" alt=""></figure>
 
     <div class="xp-list">
       <article class="xp-item">
@@ -1663,7 +1663,7 @@ of motoring history</h2>
         <h2 data-i="col_t2">A Collection That Makes History</h2>
         <p class="pc-lead" data-i="col_lead">ARTECH brings together 96 exceptional vehicles, the result of decades of Jimmy's passion and dedication to preserving automotive history. Each piece stands out for its design, engineering, and historical significance, making the collection a unique legacy of elegance, innovation, and automotive culture in Lima, Peru.</p>
       </div>
-      <figure class="pc-photo"><img src="assets/ambience-collection.jpg" alt="" fetchpriority="high"></figure>
+      <figure class="pc-photo"><img data-src="assets/ambience-collection.jpg" alt=""></figure>
     </div>
     <div class="pc-filterbar">
       <div class="wrap pc-filters">
@@ -2478,6 +2478,9 @@ function route(){
     if(key==='p-workshops') renderTalleres();
     Object.values(innerPages).forEach(el=>el&&el.classList.remove('active'));
     page.classList.add('active');
+    page.querySelectorAll('img[data-src]').forEach(function(im){
+      im.src=im.dataset.src; im.removeAttribute('data-src');
+    });
     scrollTo(0,0);
     mediaDeFondo(false);                       // los videos del home no siguen corriendo ocultos
   } else {
@@ -2952,7 +2955,25 @@ apply('en');
 
   /* el video de portada espera al preloader para no competir por el ancho de banda */
   function arrancarHero(){
-    const h=document.getElementById('heroVid');
+    prepararFondo('heroVid');                 // el de portada se ve de inmediato
+    observarExperiencias();                   // el de Experiencias, al llegar a su seccion
+  }
+  /* el video de Experiencias esta fuera de pantalla al cargar: no tiene sentido
+     descargar 910 KB hasta que el visitante se acerque a esa seccion */
+  function observarExperiencias(){
+    const sec=document.getElementById('experiences');
+    if(!sec) return;
+    if(!('IntersectionObserver' in window)) return prepararFondo('expVid');
+    let listo=false;
+    const cargar=function(){ if(listo) return; listo=true; io.disconnect(); prepararFondo('expVid'); };
+    const io=new IntersectionObserver(function(en){ if(en[0].isIntersecting) cargar(); },{rootMargin:'300px'});
+    io.observe(sec);
+    // red de seguridad: si el observador no llega a dispararse (pestana en segundo
+    // plano, por ejemplo) el video se carga igual, ya lejos del preloader
+    setTimeout(cargar, 6000);
+  }
+  function prepararFondo(id){
+    const h=document.getElementById(id);
     if(!h || h.dataset.on==='1') return;
     h.dataset.on='1';
     h.preload='auto';
@@ -3039,9 +3060,18 @@ apply('en');
   await new Promise(function(res){
     let listo=false; const ok=function(){ if(listo) return; listo=true; res(); };
     if(!('IntersectionObserver' in window)) return ok();
-    const io=new IntersectionObserver(function(en){ if(en[0].isIntersecting){ io.disconnect(); ok(); } },{rootMargin:'900px'});
+    const io=new IntersectionObserver(function(en){ if(en[0].isIntersecting){ io.disconnect(); cuandoLibre(); } },{rootMargin:'900px'});
     io.observe(host);
-    setTimeout(ok, 2500);                      // red de seguridad: siempre carga
+    // el preloader manda: nada de descargar three.js ni montar WebGL mientras corre
+    const libre = function(){
+      return !document.getElementById('preloader');
+    };
+    const cuandoLibre = function(){
+      if(libre()) return ok();
+      const t = setInterval(function(){ if(libre()){ clearInterval(t); ok(); } }, 200);
+      setTimeout(function(){ clearInterval(t); ok(); }, 14000);   // tope duro
+    };
+    setTimeout(cuandoLibre, 2500);              // red de seguridad, ya sin pisar el preloader
   });
   function fallback(){ if(host.dataset.done) return; host.dataset.done='1';
     host.innerHTML='<img src="assets/splash-maserati.jpg" alt="" style="width:100%;height:100%;object-fit:contain">';
