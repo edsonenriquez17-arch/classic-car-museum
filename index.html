@@ -158,6 +158,47 @@
   @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(255,255,255,.35)}50%{box-shadow:0 0 0 12px rgba(255,255,255,0)}}
 
   /* ---------- BANNER ---------- */
+  .xp-head{max-width:1080px;margin:0 auto 46px}
+  .xp-photo{max-width:1080px;margin:0 auto 62px;border-radius:var(--r-lg);overflow:hidden;
+    background:#3f464c;aspect-ratio:3/1}
+  .xp-photo img{width:100%;height:100%;object-fit:cover;display:block}
+  @media(max-width:760px){
+    .xp-photo{aspect-ratio:16/10;margin-bottom:44px}
+    .xp-head{margin-bottom:34px}
+  }
+  /* --- Experiencias: ficha por experiencia --- */
+  .xp-kick{font-family:var(--display);color:var(--red);letter-spacing:6px;text-transform:uppercase;
+    font-size:clamp(11px,1.3vw,14px);margin-bottom:18px}
+  .xp-note{color:var(--gray-4);font-size:clamp(14px,1.4vw,16px);margin:16px 0 0;font-style:italic}
+  .xp-item{display:grid;grid-template-columns:auto minmax(0,1fr);gap:26px;
+    text-align:left;padding:46px 0}
+  .xp-num{font-family:var(--display);font-weight:700;color:var(--line);line-height:.9;
+    font-size:clamp(38px,5vw,64px)}
+  .xp-body h3{font-family:var(--display);font-weight:600;color:var(--gray-1);margin:0 0 14px;
+    letter-spacing:-.2px;font-size:clamp(24px,3.2vw,38px)}
+  .xp-facts{display:flex;flex-wrap:wrap;gap:10px 34px;margin:0 0 18px;padding:0}
+  .xp-facts div{display:flex;flex-direction:column;gap:2px}
+  .xp-facts dt{color:var(--gray-4);letter-spacing:2.4px;text-transform:uppercase;font-size:10.5px}
+  .xp-facts dd{margin:0;color:var(--gray-1);font-size:clamp(15px,1.6vw,18px)}
+  .xp-d{color:var(--gray-3);line-height:1.7;max-width:640px;margin:0 0 16px;
+    font-size:clamp(15px,1.4vw,17px)}
+  .xp-inc,.xp-extra{margin:0 0 16px;padding:18px 22px;background:var(--paper);
+    border:1px solid var(--line);border-radius:var(--r-md);max-width:640px}
+  .xp-inc h4,.xp-extra h4{font-family:var(--display);font-weight:600;color:var(--gray-1);
+    letter-spacing:2.4px;text-transform:uppercase;font-size:11px;margin:0 0 10px}
+  .xp-inc ul{margin:0;padding-left:18px;color:var(--gray-3);line-height:1.85;font-size:15px}
+  .xp-extra p{margin:0;color:var(--gray-3);line-height:1.65;font-size:15px}
+  .xp-tag{font-style:italic;color:var(--gray-4);margin:0;max-width:640px;
+    font-size:clamp(14px,1.35vw,16px)}
+  .xp-cap{max-width:900px;margin:10px auto 0;padding-top:38px;border-top:1px solid var(--line)}
+  .xp-cap h3{font-family:var(--display);font-weight:600;color:var(--gray-1);letter-spacing:2.4px;
+    text-transform:uppercase;font-size:clamp(15px,1.8vw,19px);margin:0 0 14px}
+  .xp-cap p{color:var(--gray-3);line-height:1.7;margin:0 0 8px;font-size:clamp(15px,1.4vw,17px)}
+  @media(max-width:640px){
+    .xp-item{grid-template-columns:1fr;gap:10px;padding:34px 0}
+    .xp-num{font-size:32px}
+    .xp-inc,.xp-extra{padding:14px 16px}
+  }
   /* ---------- TALLERES AFILIADOS · ESTRELLAS ARTECH ---------- */
   #page-workshops{padding:0 0 0;background:var(--dark-1)}
   .tw-hero{background:var(--dark-1);color:#fff;padding:var(--sp-top) 0 var(--sp-s);text-align:center}
@@ -1196,20 +1237,6 @@
   .xp-photo{max-width:1080px;margin:0 auto 74px;border-radius:var(--r-lg);overflow:hidden;
     background:#3f464c;aspect-ratio:3/1}
   .xp-photo img{width:100%;height:100%;object-fit:cover;display:block}
-  .xp-list{max-width:900px;margin:0 auto}
-  .xp-item{text-align:center;padding:46px 0}
-  .xp-item+.xp-item{border-top:1px solid rgba(0,0,0,.15)}
-  .xp-item h3{font-family:var(--display);font-weight:600;letter-spacing:-.3px;margin:0 0 10px;
-    font-size:clamp(28px,4.2vw,52px)}
-  .xp-meta{color:var(--ink);margin-bottom:14px;font-size:clamp(15px,1.7vw,21px)}
-  .xp-d{color:var(--gray-3);line-height:1.6;max-width:700px;margin:0 auto 12px;
-    font-size:clamp(14px,1.5vw,18px)}
-  .xp-tag{font-style:italic;color:var(--gray-4);margin:0;font-size:clamp(13px,1.35vw,16px)}
-  @media(max-width:760px){
-    .xp-photo{aspect-ratio:16/10;border-radius:var(--r-lg);margin-bottom:48px}
-    .xp-head{margin-bottom:38px}
-    .xp-item{padding:34px 0}
-  }
 </style>
 </head>
 <body>
@@ -1236,7 +1263,7 @@
       <li><a href="#p-collection" data-i="nav_collection">Collection</a></li>
       <li><a href="#p-experience" data-i="nav_experience">Experience</a></li>
       <li><a href="#exp3d" data-i="nav_360">360° Tour</a></li>
-      <li><a href="#p-cafe" data-i="nav_cafe">Gourmet Café</a></li>
+      <li><a href="#p-cafe" data-i="nav_cafe">Restaurant</a></li>
       <li><a href="#p-workshops" data-i="nav_workshops">Workshops</a></li>
       <li><a href="#p-tickets" class="nav-cta" data-i="nav_tickets">Buy Tickets</a></li>
       <li>
@@ -1284,8 +1311,8 @@ of motoring history</h2>
       <a class="bn-item" href="#p-cafe">
         <img class="bn-ic" src="assets/icons/cafe.png" alt="" loading="lazy">
         <div>
-          <h3 data-i="p2_t">Gourmet Café</h3>
-          <p data-i="p2_d">Peruvian &amp; Italian fusion inside the Museum, by Chef Carla Navea.</p>
+          <h3 data-i="p2_t">Restaurant · Café · Bar</h3>
+          <p data-i="p2_d">Signature cuisine inside the Museum, by Chef Carla Navea.</p>
           <span class="link-arrow"><span data-i="visit_info">Visit info</span> <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </div>
       </a>
@@ -1301,7 +1328,7 @@ of motoring history</h2>
   <video class="exp-bg" id="expVid" autoplay muted loop playsinline preload="none"
          poster="assets/experiences-poster.jpg" data-src="assets/experiences.mp4"></video>
   <div class="inner">
-    <div class="kicker" data-i="exp_the">THE <span class="u">MUSEUM</span></div>
+    <div class="kicker" data-i="exp_the">ARTECH</div>
     <div class="kicker big" data-i="exp_title">EXPERIENCES</div>
     <p class="exp-lead" data-i="exp_lead">Guided tours, exclusive Porsche access and contemporary gastronomy — a complete journey through automotive history.</p>
     <a href="#p-experience" class="btn-red exp-cta" data-i="exp_cta">See the experiences</a>
@@ -1407,8 +1434,8 @@ of motoring history</h2>
       </div>
       <a href="#p-cafe" class="card card-link">
         <img class="ic ic-img" src="assets/icons/cafe.png" alt="" loading="lazy">
-        <h4 data-i="s4_t">Gourmet Café</h4>
-        <p data-i="s4_d">Italian &amp; Peruvian fusion.</p>
+        <h4 data-i="s4_t">Restaurant · Café · Bar</h4>
+        <p data-i="s4_d">Signature cuisine by Chef Carla Navea.</p>
         <span class="link-arrow" data-i="visit_info">Visit info <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </a>
     </div>
@@ -1483,9 +1510,9 @@ of motoring history</h2>
     <a href="#top" class="back-btn" data-i="back_home">← Back to Home</a>
 
     <div class="cafe-head">
-      <h2 class="cafe-title" data-i="cafe_title">Gourmet Café</h2>
+      <h2 class="cafe-title" data-i="cafe_title">Restaurant · Café · Bar</h2>
       <div class="cafe-sub" data-i="cafe_sub">An exceptional gastronomic experience</div>
-      <p class="cafe-lead" data-i="cafe_lead">A concept blending the essence of Peruvian cuisine with Italian tradition, created by Chef Carla Navea and designed to complement the museum experience.</p>
+      <p class="cafe-lead" data-i="cafe_lead">Signature cuisine by Chef Carla Navea, created to complement the museum experience.</p>
     </div>
 
     <!-- espacio reservado para la foto de ambiente del café (pendiente del cliente) -->
@@ -1535,7 +1562,7 @@ of motoring history</h2>
     <a href="#top" class="back-btn" data-i="back_home">← Back to Home</a>
     <div class="tk-head">
       <h2 data-i="tk_title">An Invitation to History</h2>
-      <p data-i="tk_sub">Choose your date and secure your tickets to discover the collection, explore the history of the automobile, and enjoy a dining experience at our Gourmet Café.</p>
+      <p data-i="tk_sub">Choose your date and secure your tickets to discover the collection, explore the history of the automobile, and enjoy a dining experience at our restaurant.</p>
     </div>
 
     <!-- TICKET -->
@@ -1627,31 +1654,20 @@ of motoring history</h2>
   <div class="wrap">
     <a class="back-btn" href="#top" data-i="back_home">← Back to Home</a>
     <div class="xp-head">
-      <h2 data-i="xp_title">More Than a Museum</h2>
-      <p data-i="xp_sub">An experience where history, design, and a passion for automobiles come to life. Discover exclusive tours, fine dining, and spaces designed for an extraordinary visit.</p>
+      <div class="xp-kick" data-i="xp_kick">ARTECH EXPERIENCES</div>
+      <h2 data-i="xp_title">An immersive experience that awakens your senses</h2>
+      <p data-i="xp_sub">At ARTECH, every visit is a guided experience designed to connect visitors with the world of automobiles, their history, design, and passion.</p>
+      <p class="xp-note" data-i="xp_note">All visits are guided, with groups of up to 20 people per hour.</p>
     </div>
 
     <figure class="xp-photo"><img data-src="assets/ambience.jpg" alt=""></figure>
 
-    <div class="xp-list">
-      <article class="xp-item">
-        <h3 data-i="xp1_t">The Heritage Tour</h3>
-        <div class="xp-meta" data-i="xp1_m">US$120 per person  I  90 minutes</div>
-        <p class="xp-d" data-i="xp1_d">A private journey through automotive history, featuring access to the world's oldest car, an exclusive guide, and a coffee experience at the Gourmet Café.</p>
-        <p class="xp-tag" data-i="xp1_x">History, elegance, and passion in a unique experience.</p>
-      </article>
-      <article class="xp-item">
-        <h3 data-i="xp2_t">Porsche &amp; Performance</h3>
-        <div class="xp-meta" data-i="xp2_m">US$150 per person  I  60 minutes</div>
-        <p class="xp-d" data-i="xp2_d">Exclusive access to our Porsche collection, guided by a specialist. Created for collectors and enthusiasts.</p>
-        <p class="xp-tag" data-i="xp2_x">Engineering, precision, and pure driving emotion.</p>
-      </article>
-      <article class="xp-item">
-        <h3 data-i="xp3_t">Gourmet Café</h3>
-        <div class="xp-meta" data-i="xp3_m">A Cordon Bleu experience  I  Tuesday to Sunday, 9 am – 7 pm</div>
-        <p class="xp-d" data-i="xp3_d">Peruvian and Italian fusion cuisine inside the Museum, by Chef Carla Navea, served among the collection.</p>
-        <p class="xp-tag" data-i="xp3_x">Flavour, design, and history at the same table.</p>
-      </article>
+    <div class="xp-list" id="xpList"></div>
+
+    <div class="xp-cap">
+      <h3 data-i="xp_cap_t">Capacity</h3>
+      <p data-i="xp_cap_1">20 people per hour for regular experiences.</p>
+      <p data-i="xp_cap_2">For private experiences, the tour is tailored to each group to ensure personalized, high-level service.</p>
     </div>
   </div>
 </section>
@@ -1836,27 +1852,32 @@ of motoring history</h2>
 const dict = {
   en:{
     d3_loading:"Loading…",
-    nav_collection:"Collection",nav_experience:"Experience",nav_360:"360° Tour",nav_about:"About",nav_cafe:"Gourmet Café",nav_contact:"Contact",nav_book:"Book",
-    cafe_tag:"CAFÉ · KITCHEN · BAR",cafe_title:"Gourmet Café",cafe_hint:"Tap a category to explore the menu",
+    nav_collection:"Collection",nav_experience:"Experiences",nav_360:"360° Tour",nav_about:"About",nav_cafe:"Restaurant",nav_contact:"Contact",nav_book:"Book",
+    cafe_tag:"RESTAURANT · CAFÉ · BAR",cafe_title:"Restaurant · Café · Bar",cafe_hint:"Tap a category to explore the menu",
     cafe_sub:"An exceptional gastronomic experience",
-    cafe_lead:"A concept blending the essence of Peruvian cuisine with Italian tradition, created by Chef Carla Navea and designed to complement the museum experience.",
+    cafe_lead:"Signature cuisine by Chef Carla Navea, created to complement the museum experience.",
     cafe_explore:"Explore Our Menu",
     cafe_hours:"Tuesday to Sunday · 9:00 a.m. – 7:00 p.m.",
     cafe_closing:"Discover a space where a passion for automobiles and fine dining come together in a unique experience.",
     foto_amb:"AMBIENCE PHOTO",
     nav_blog:"Blog",blog_kick:"THE JOURNAL",blog_title:"Stories from the Museum",blog_sub:"Classic cars, restoration and the culture behind the collection in Lima.",blog_back:"← All articles",post_cta:"Plan your visit",vh_back:"← Collection",
-    tk_title:"An Invitation to History",tk_sub:"Choose your date and secure your tickets to discover the collection, explore the history of the automobile, and enjoy a dining experience at our Gourmet Café.",tk_hours_t:"Opening Hours",tk_hours:"Tuesday to Sunday · 9 am – 7 pm",tk_addr_t:"Address",tk_continue:"Reserve by WhatsApp",tk_note:"We are finalizing our pricing. Very soon, you will be able to book and pay directly online. For now, please confirm your visit via WhatsApp or directly at the museum entrance.",disc_t:"Discover ARTECH",disc_s:"A look at the spaces, details, and pieces that make every visit an extraordinary experience.",
+    tk_title:"An Invitation to History",tk_sub:"Choose your date and secure your tickets to discover the collection, explore the history of the automobile, and enjoy a dining experience at our restaurant.",tk_hours_t:"Opening Hours",tk_hours:"Tuesday to Sunday · 9 am – 7 pm",tk_addr_t:"Address",tk_continue:"Reserve by WhatsApp",tk_note:"We are finalizing our pricing. Very soon, you will be able to book and pay directly online. For now, please confirm your visit via WhatsApp or directly at the museum entrance.",disc_t:"Discover ARTECH",disc_s:"A look at the spaces, details, and pieces that make every visit an extraordinary experience.",
     v3d_overview:"Overview",v3d_profile:"Exterior",v3d_wheels:"Wheels",v3d_lights:"Lights",v3d_interior:"Interior",v3d_rear:"Rear",
     nav_tickets:"Buy Tickets",hero_tickets:"Buy Tickets",tk_date:"Select a date",tk_general:"General",tk_general_d:"Adult admission",tk_reduced:"Children & Seniors",tk_reduced_d:"Kids and senior citizens",tk_pick:"Please pick a date and at least one ticket.",
     hero_title:"Shift into history",hero_sub:"A living experience of cars, art and gastronomy — home to the World's Oldest Car & a rare Porsche collection.",hero_btn:"360° tour",
+    xp_kick:"ARTECH EXPERIENCES",
+    xp_title:"An immersive experience that awakens your senses",
+    xp_sub:"At ARTECH, every visit is a guided experience designed to connect visitors with the world of automobiles, their history, design, and passion.",
+    xp_note:"All visits are guided, with groups of up to 20 people per hour.",
+    xp_dur:"Duration",xp_price:"Price",xp_groups:"Groups",
+    xp_cap_t:"Capacity",
+    xp_cap_1:"20 people per hour for regular experiences.",
+    xp_cap_2:"For private experiences, the tour is tailored to each group to ensure personalized, high-level service.",
     banner:"A living museum\nof motoring history",pl_tag:"SHIFT INTO HISTORY",pl_sub:"ARTECH · Lima, Perú",
     p1_t:"Book your private tour",p1_d:"Reserve a guided visit and step into an unrepeatable collection.",
-    p2_t:"Gourmet Café",p2_d:"Peruvian & Italian fusion inside the Museum, by Chef Carla Navea.",
+    p2_t:"Restaurant · Café · Bar",p2_d:"Signature cuisine inside the Museum, by Chef Carla Navea.",
     visit_info:"Visit info",
-    exp_the:"THE MUSEUM",exp_title:"EXPERIENCES",exp_lead:"Guided tours, exclusive Porsche access and contemporary gastronomy — a complete journey through automotive history.",exp_cta:"See the experiences",
-    exp1:"Access to the World's Oldest Car + Private Guide + Coffee at the Gourmet Café",
-    exp2:"Exclusive access to our Porsche collection. For collectors.",
-    exp3a:"A CORDON BLEU EXPERIENCE",exp3b:"Peruvian & Italian fusion inside the Museum. By",exp3c:"Tuesday to Sunday · 9 am – 7 pm",
+    exp_the:"ARTECH",exp_title:"EXPERIENCES",exp_lead:"Guided tours, exclusive Porsche access and signature cuisine — a complete journey through automotive history.",exp_cta:"See the experiences",
     leg_t:"The legacy",
     leg_1:"For decades, Jimmy has rescued, restored, and preserved automotive history in the heart of Lima.",
     leg_2:"From the World's Oldest Car to rare Porsche classics, each vehicle has an engine, a story, and a soul.",
@@ -1865,41 +1886,30 @@ const dict = {
     s1_t:"Group Tours",s1_d:"Guided experiences for groups through the full collection.",
     s2_t:"Private Tours",s2_d:"One-on-one curated visits at your own pace.",
     s3_t:"Private Sales",s3_d:"Exclusive one-on-one transactions for high-value or rare vehicles.",
-    s4_t:"Gourmet Café",s4_d:"Italian & Peruvian fusion.",
+    s4_t:"Restaurant · Café · Bar",s4_d:"Signature cuisine by Chef Carla Navea.",
     d3_kick:"EXPLORE EVERY DETAIL",d3_title:"EXPERIENCE 3D",d3_hint:"↤ Drag to rotate 360° · scroll to zoom ↦",
     pill1:"360° View",pill2:"Real-time Interaction",pill3:"Immersive Experience",
-    col_t:"Our Collection",col_s1:"Including the World's Oldest Car in existence",col_s2:"World's Oldest Car & Rare Porsche Collection",
+    col_t:"Our Collection",col_s1:"Including the world's oldest surviving car",col_s2:"World's Oldest Car & Rare Porsche Collection",
     col_t2:"A Collection That Makes History",
     col_lead:"ARTECH brings together 96 exceptional vehicles, the result of decades of Jimmy's passion and dedication to preserving automotive history. Each piece stands out for its design, engineering, and historical significance, making the collection a unique legacy of elegance, innovation, and automotive culture in Lima, Peru.",
     back_home:"← Back to Home",
-    pgx_sub:"Tours, gastronomy and themed halls — a complete journey through automotive history.",pgx_cta:"Book your experience",
+    pgx_sub:"Tours, dining and themed halls — a complete journey through automotive history.",pgx_cta:"Book your experience",
     ft_preowned:"Vehicles for sale",ft_visit:"Plan your visit",ft_privacy:"Privacy",ft_language:"Language",
     ft_cookies:"Cookies",ft_careers:"Careers",ft_club:"ARTECH Club",
     ft_press:"Press room",ft_sitemap:"Site map",ft_blog:"Blog",
     ft_legal:"Legal",ft_faqs:"FAQs",ft_sustain:"Sustainability",
     ft_claims:"Complaints book",ft_contact:"Contact",ft_tickets:"Buy tickets",
     nav_workshops:"Workshops",tw_kick:"THE ARTECH STARS",tw_title:"Affiliated Workshops",
-    tw_lead:"Ten houses of craft that keep this collection alive. Each one is awarded ARTECH stars for the quality of its work, the fidelity of its restorations and the respect it shows for the original piece.",
-    tw_system:"The rating",tw_houses:"The ten houses",tw_works:"Works",
+    tw_lead:"Five houses of craft that keep this collection alive. Each one is awarded ARTECH stars for the quality of its work, the fidelity of its restorations and the respect it shows for the original piece.",
+    tw_system:"The rating",tw_houses:"The five houses",tw_works:"Works",
     tw_note:"Every workshop is visited and reviewed once a year. The stars are awarded by ARTECH and may change from one edition to the next.",
-    xp_title:"More Than a Museum",
-    xp_sub:"An experience where history, design, and a passion for automobiles come to life. Discover exclusive tours, fine dining, and spaces designed for an extraordinary visit.",
-    xp1_t:"The Heritage Tour",xp1_m:"US$120 per person  ·  90 minutes",
-    xp1_d:"A private journey through automotive history, featuring access to the world's oldest car, an exclusive guide, and a coffee experience at the Gourmet Café.",
-    xp1_x:"History, elegance, and passion in a unique experience.",
-    xp2_t:"Porsche & Performance",xp2_m:"US$150 per person  ·  60 minutes",
-    xp2_d:"Exclusive access to our Porsche collection, guided by a specialist. Created for collectors and enthusiasts.",
-    xp2_x:"Engineering, precision, and pure driving emotion.",
-    xp3_t:"Gourmet Café",xp3_m:"A Cordon Bleu experience  ·  Tuesday to Sunday, 9 am – 7 pm",
-    xp3_d:"Peruvian and Italian fusion cuisine inside the Museum, by Chef Carla Navea, served among the collection.",
-    xp3_x:"Flavour, design, and history at the same table.",
     pgc_kick:"THE FULL",pgc_sub:"From the World's Oldest Car to rare Porsche classics — explore every model in our permanent exhibition.",
     pgc_note:"More models are added as the archive is digitized — 96 vehicles in the permanent collection.",pgc_cta:"Book your visit",
     flt_all:"All",flt_classic:"Classics",flt_modern:"Modern",flt_brands:"All brands",flt_search:"Search...",flt_none:"No vehicles match your search.",view_all:"View all",
     vh_cover:"COVER PHOTO",vh_year:"YEAR",vh_plate:"PLATE",vh_detail:"DETAIL",vh_info:"VEHICLE INFORMATION",vh_view1:"VIEW 01",vh_view2:"VIEW 02",vh_general:"GENERAL SPECIFICATIONS:",
     vh_story:"In 1950, only 21 K-2 units were built, of which three were exported to South America: two to Uruguay and one to Peru. This car was imported to Peru by Sociedad Mercantil Internacional in December 1950.",
     vs_maker:"Manufacturer",vs_model:"Model",vs_year:"Year",vs_plate:"Plate",vs_body:"Body",vs_type:"Type",vs_cyl:"Engine",vs_disp:"Displacement",vs_power:"Power",vs_trans:"Transmission",vs_comp:"Compression",vs_ign:"Ignition",vs_head:"Cylinder head",vs_carb:"Carburation",vs_brakes:"Brakes",vs_wheel:"Wheel",vs_speed:"Top speed",
-    st1:"Vehicles on exhibition",st2:"Years of history covered",st3:"Brands represented",
+    st1:"Vehicles on exhibition",st2:"Years of history",st3:"Brands represented",
     year:"Year",view_col:"View all 96 models",ph_media:"Photo / Video",ph_title:"Car name",ph_desc:"Add year & description",
     col_count:"models",
     ap_title:"The Experience",ap_sub:"The tour, the café and our themed halls",ap_cdesc:"Add photos, video & description",
@@ -1909,7 +1919,7 @@ const dict = {
     f_name:"Full name",f_phone:"Phone / WhatsApp",f_email:"Email address",f_subject:"I'm interested in",f_msg:"Message",f_submit:"Send message",
     f_note:"By sending this form you agree to be contacted about your request.",
     ph_name:"Your name",ph_phone:"+51 ...",ph_email:"you@email.com",ph_msg:"Tell us about your visit...",
-    opt1:"Group tour",opt2:"Private tour",opt3:"Private sale",opt4:"Café reservation",opt5:"Other",
+    opt1:"Group tour",opt2:"Private tour",opt3:"Private sale",opt4:"Restaurant reservation",opt5:"Other",
     c_direct:"Prefer to talk now?",c_direct_sub:"Reach us directly and get an instant reply during opening hours.",
     c_email:"Email",c_visit:"Visit us",c_hours:"Tuesday to Sunday · 9 am – 7 pm",
     sent:"Thank you! Your message has been sent. We'll reply within 24 hours.",
@@ -1922,39 +1932,44 @@ const dict = {
   },
   es:{
     d3_loading:"Cargando…",
-    nav_collection:"Colección",nav_experience:"Experiencia",nav_360:"Visita 360°",nav_about:"Nosotros",nav_cafe:"Café Gourmet",nav_contact:"Contacto",nav_book:"Reserva",
-    cafe_tag:"CAFÉ · COCINA · BAR",cafe_title:"Café Gourmet",cafe_hint:"Toca una categoría para ver la carta",
+    nav_collection:"Colección",nav_experience:"Experiencias",nav_360:"Tour 360°",nav_about:"Nosotros",nav_cafe:"Restaurante",nav_contact:"Contacto",nav_book:"Reserva",
+    cafe_tag:"RESTAURANTE · CAFÉ · BAR",cafe_title:"Restaurante · Café · Bar",cafe_hint:"Toca una categoría para ver la carta",
     cafe_sub:"Una experiencia gastronómica excepcional",
-    cafe_lead:"Un concepto que une la esencia de la cocina peruana con la tradición italiana, creado por la Chef Carla Navea y diseñado para complementar la experiencia del museo.",
+    cafe_lead:"Cocina de autor de la Chef Carla Navea, creada para complementar la experiencia del museo.",
     cafe_explore:"Explora Nuestra Carta",
     cafe_hours:"Martes a Domingo · 9:00 a.m. – 7:00 p.m.",
     cafe_closing:"Descubre un espacio donde la pasión por los automóviles y la alta cocina se encuentran en una experiencia única.",
     foto_amb:"FOTO AMBIENTE",
     nav_blog:"Blog",blog_kick:"EL DIARIO",blog_title:"Historias del Museo",blog_sub:"Autos clásicos, restauración y la cultura detrás de la colección en Lima.",blog_back:"← Todos los artículos",post_cta:"Planifica tu visita",vh_back:"← Colección",
-    tk_title:"Una invitación a la historia",tk_sub:"Elige tu fecha y asegura tus entradas para descubrir la colección, recorrer la historia del automóvil y disfrutar una experiencia gastronómica en nuestro Gourmet Café.",tk_hours_t:"Horario",tk_hours:"Martes a Domingo · 9 am – 7 pm",tk_addr_t:"Dirección",tk_continue:"Reservar por WhatsApp",tk_note:"Estamos definiendo nuestros precios. Muy pronto podrás reservar y pagar directamente en línea. Por ahora, confirma tu visita por WhatsApp o directamente en la entrada del museo.",disc_t:"Descubre ARTECH",disc_s:"Un vistazo a los espacios, detalles y piezas que hacen de cada visita una experiencia extraordinaria.",
+    tk_title:"Una invitación a la historia",tk_sub:"Elige tu fecha y asegura tus entradas para descubrir la colección, recorrer la historia del automóvil y disfrutar una experiencia gastronómica en nuestro restaurante.",tk_hours_t:"Horario",tk_hours:"Martes a Domingo · 9 am – 7 pm",tk_addr_t:"Dirección",tk_continue:"Reservar por WhatsApp",tk_note:"Estamos definiendo nuestros precios. Muy pronto podrás reservar y pagar directamente en línea. Por ahora, confirma tu visita por WhatsApp o directamente en la entrada del museo.",disc_t:"Descubre ARTECH",disc_s:"Un vistazo a los espacios, detalles y piezas que hacen de cada visita una experiencia extraordinaria.",
     v3d_overview:"Vista general",v3d_profile:"Exterior",v3d_wheels:"Ruedas",v3d_lights:"Luces",v3d_interior:"Interior",v3d_rear:"Trasera",
-    nav_tickets:"Comprar Tickets",hero_tickets:"Comprar Tickets",tk_date:"Selecciona una fecha",tk_general:"General",tk_general_d:"Entrada adulto",tk_reduced:"Niños y adultos mayores",tk_reduced_d:"Niños y personas de la tercera edad",tk_pick:"Elige una fecha y al menos una entrada.",
-    hero_title:"Un viaje a la historia",hero_sub:"Una experiencia viva de autos, arte y gastronomía — hogar del auto más antiguo del mundo y una rara colección Porsche.",hero_btn:"Tour 360°",
-    banner:"Un museo vivo\nde la historia del automóvil",pl_tag:"UN VIAJE A LA HISTORIA",pl_sub:"ARTECH · Lima, Perú",
+    nav_tickets:"Comprar Entradas",hero_tickets:"Comprar Entradas",tk_date:"Selecciona una fecha",tk_general:"General",tk_general_d:"Entrada adulto",tk_reduced:"Niños y adultos mayores",tk_reduced_d:"Niños y personas de la tercera edad",tk_pick:"Elige una fecha y al menos una entrada.",
+    hero_title:"Un viaje a la historia",hero_sub:"Una experiencia viva de autos, arte y gastronomía — hogar del auto más antiguo del mundo y de una colección Porsche excepcional.",hero_btn:"Tour 360°",
+    xp_kick:"EXPERIENCIAS ARTECH",
+    xp_title:"Una experiencia inmersiva que despierta tus sentidos",
+    xp_sub:"En ARTECH, cada visita es una experiencia guiada diseñada para conectar al visitante con el mundo del automóvil, su historia, diseño y pasión.",
+    xp_note:"Todas nuestras visitas son guiadas, con grupos de hasta 20 personas por hora.",
+    xp_dur:"Duración",xp_price:"Precio",xp_groups:"Grupos",
+    xp_cap_t:"Capacidad",
+    xp_cap_1:"20 personas por hora en las experiencias regulares.",
+    xp_cap_2:"En las experiencias privadas, el recorrido se adapta al grupo para garantizar una atención personalizada y de alto nivel.",
+    banner:"Historia viva\ndel automóvil",pl_tag:"UN VIAJE A LA HISTORIA",pl_sub:"ARTECH · Lima, Perú",
     p1_t:"Reserva tu tour privado",p1_d:"Reserva una visita guiada y entra a una colección irrepetible.",
-    p2_t:"Gourmet Café",p2_d:"Fusión peruana e italiana dentro del Museo, por la Chef Carla Navea.",
+    p2_t:"Restaurante · Café · Bar",p2_d:"Cocina de autor dentro del Museo, por la Chef Carla Navea.",
     visit_info:"Ver info",
-    exp_the:"EL MUSEO",exp_title:"EXPERIENCIAS",exp_lead:"Tours guiados, acceso exclusivo a Porsche y gastronomía contemporánea — un viaje completo por la historia del automóvil.",exp_cta:"Ver las experiencias",
-    exp1:"Acceso al auto más antiguo del mundo + Guía privado + café en el Gourmet Café",
-    exp2:"Acceso exclusivo a nuestra colección Porsche. Para coleccionistas.",
-    exp3a:"UNA EXPERIENCIA CORDON BLEU",exp3b:"Fusión peruana e italiana dentro del Museo. Por la",exp3c:"Martes a Domingo · 9 am – 7 pm",
+    exp_the:"ARTECH",exp_title:"EXPERIENCIAS",exp_lead:"Tours guiados, acceso exclusivo a Porsche y cocina de autor — un viaje completo por la historia del automóvil.",exp_cta:"Ver las experiencias",
     leg_t:"El legado",
     leg_1:"Durante décadas, Jimmy ha rescatado, restaurado y preservado la historia automotriz en el corazón de Lima.",
-    leg_2:"Desde el auto más antiguo del mundo hasta raros clásicos Porsche, cada vehículo tiene un motor, una historia y un alma.",
+    leg_2:"Desde el auto más antiguo del mundo hasta clásicos Porsche excepcionales, cada vehículo tiene un motor, una historia y un alma.",
     leg_3:"Esto no es un garaje. Es un Museo vivo. Y tu experiencia empieza aquí.",
     serv_t:"Nuestros Servicios",
     s1_t:"Tours Grupales",s1_d:"Experiencias guiadas para grupos por toda la colección.",
-    s2_t:"Tours Privados",s2_d:"Visitas exclusivas a tu propio ritmo.",
-    s3_t:"Ventas Privadas",s3_d:"Transacciones exclusivas uno a uno para vehículos raros o de alto valor.",
-    s4_t:"Café Gourmet",s4_d:"Fusión italiana y peruana.",
-    d3_kick:"EXPLORA CADA DETALLE",d3_title:"EXPERIENCIA 3D",d3_hint:"↤ Arrastra para rotar 360° · scroll para zoom ↦",
+    s2_t:"Tours Privados",s2_d:"Visitas personalizadas, uno a uno, a tu propio ritmo.",
+    s3_t:"Ventas Privadas",s3_d:"Transacciones exclusivas, uno a uno, para vehículos excepcionales o de alto valor.",
+    s4_t:"Restaurante · Café · Bar",s4_d:"Cocina de autor de la Chef Carla Navea.",
+    d3_kick:"EXPLORA CADA DETALLE",d3_title:"EXPERIENCIA 3D",d3_hint:"↤ Arrastra para rotar 360° · usa la rueda para acercar ↦",
     pill1:"Vista 360°",pill2:"Interacción en tiempo real",pill3:"Experiencia inmersiva",
-    col_t:"Nuestra Colección",col_s1:"Incluyendo el auto más antiguo del mundo en existencia",col_s2:"El auto más antiguo del mundo y rara colección Porsche",
+    col_t:"Nuestra Colección",col_s1:"Incluye el auto más antiguo del mundo que se conserva",col_s2:"El auto más antiguo del mundo y una colección Porsche excepcional",
     col_t2:"Una Colección Que Hace Historia",
     col_lead:"ARTECH reúne 96 vehículos excepcionales, fruto de décadas de pasión y dedicación de Jimmy por preservar la historia del automóvil. Cada pieza destaca por su diseño, su ingeniería y su importancia histórica, y convierte a la colección en un legado único de elegancia, innovación y cultura automotriz en Lima, Perú.",
     back_home:"← Volver al inicio",
@@ -1965,27 +1980,16 @@ const dict = {
     ft_legal:"Legal",ft_faqs:"Preguntas frecuentes",ft_sustain:"Sostenibilidad",
     ft_claims:"Libro de reclamaciones",ft_contact:"Contacto",ft_tickets:"Comprar entradas",
     nav_workshops:"Talleres",tw_kick:"LAS ESTRELLAS ARTECH",tw_title:"Talleres Afiliados",
-    tw_lead:"Diez casas de oficio que mantienen viva esta colección. A cada una se le otorgan estrellas ARTECH por la calidad de su trabajo, la fidelidad de sus restauraciones y el respeto que muestra por la pieza original.",
-    tw_system:"La calificación",tw_houses:"Las diez casas",tw_works:"Obras",
+    tw_lead:"Cinco casas de oficio que mantienen viva esta colección. A cada una se le otorgan estrellas ARTECH por la calidad de su trabajo, la fidelidad de sus restauraciones y el respeto que muestra por la pieza original.",
+    tw_system:"La calificación",tw_houses:"Las cinco casas",tw_works:"Obras",
     tw_note:"Cada taller se visita y se revisa una vez al año. Las estrellas las otorga ARTECH y pueden cambiar de una edición a la siguiente.",
-    xp_title:"Más que un Museo",
-    xp_sub:"Una experiencia donde la historia, el diseño y la pasión por los automóviles cobran vida. Descubre tours exclusivos, alta cocina y espacios diseñados para una visita extraordinaria.",
-    xp1_t:"The Heritage Tour",xp1_m:"US$120 por persona  ·  90 minutos",
-    xp1_d:"Un recorrido privado por la historia del automóvil, con acceso al auto más antiguo del mundo, un guía exclusivo y una experiencia de café en el Gourmet Café.",
-    xp1_x:"Historia, elegancia y pasión en una experiencia única.",
-    xp2_t:"Porsche & Performance",xp2_m:"US$150 por persona  ·  60 minutos",
-    xp2_d:"Acceso exclusivo a nuestra colección Porsche, guiado por un especialista. Creado para coleccionistas y entusiastas.",
-    xp2_x:"Ingeniería, precisión y pura emoción al volante.",
-    xp3_t:"Gourmet Café",xp3_m:"Una experiencia Cordon Bleu  ·  Martes a Domingo, 9 am – 7 pm",
-    xp3_d:"Cocina de fusión peruana e italiana dentro del Museo, por la Chef Carla Navea, servida entre la colección.",
-    xp3_x:"Sabor, diseño e historia en la misma mesa.",
-    pgc_kick:"TODA LA",pgc_sub:"Desde el auto más antiguo del mundo hasta raros clásicos Porsche — explora cada modelo de nuestra exhibición permanente.",
+    pgc_kick:"TODA LA",pgc_sub:"Desde el auto más antiguo del mundo hasta clásicos Porsche excepcionales — explora cada modelo de nuestra exhibición permanente.",
     pgc_note:"Se agregan más modelos a medida que se digitaliza el archivo — 96 vehículos en la colección permanente.",pgc_cta:"Reserva tu visita",
     flt_all:"Todos",flt_classic:"Clásicos",flt_modern:"Modernos",flt_brands:"Todas las marcas",flt_search:"Buscar...",flt_none:"Ningún vehículo coincide con tu búsqueda.",view_all:"Ver todos",
     vh_cover:"PORTADA",vh_year:"AÑO",vh_plate:"PLACA",vh_detail:"DETALLE",vh_info:"INFORMACIÓN DEL VEHÍCULO",vh_view1:"VISTA 01",vh_view2:"VISTA 02",vh_general:"CARACTERÍSTICAS GENERALES:",
     vh_story:"En 1950, se construyeron tan solo 21 K-2, de los cuales tres se exportaron a Sudamérica: dos a Uruguay y uno al Perú. Este auto fue importado al Perú por la Sociedad Mercantil Internacional en diciembre de 1950.",
     vs_maker:"Fabricante",vs_model:"Modelo",vs_year:"Año",vs_plate:"Placa",vs_body:"Carrocería",vs_type:"Tipo",vs_cyl:"Motor",vs_disp:"Cilindrada",vs_power:"Potencia",vs_trans:"Transmisión",vs_comp:"Compresión",vs_ign:"Encendido",vs_head:"Culata",vs_carb:"Carburación",vs_brakes:"Frenos",vs_wheel:"Aro",vs_speed:"Velocidad",
-    st1:"Vehículos en exhibición",st2:"Años de historia cubiertos",st3:"Marcas representadas",
+    st1:"Vehículos en exhibición",st2:"Años de historia",st3:"Marcas representadas",
     year:"Año",view_col:"Ver los 96 modelos",ph_media:"Foto / Video",ph_title:"Nombre del auto",ph_desc:"Agregar año y descripción",
     col_count:"modelos",
     ap_title:"La Experiencia",ap_sub:"El recorrido, la cafetería y nuestras salas temáticas",ap_cdesc:"Agregar fotos, video y descripción",
@@ -1995,7 +1999,7 @@ const dict = {
     f_name:"Nombre completo",f_phone:"Teléfono / WhatsApp",f_email:"Correo electrónico",f_subject:"Me interesa",f_msg:"Mensaje",f_submit:"Enviar mensaje",
     f_note:"Al enviar este formulario aceptas que te contactemos sobre tu solicitud.",
     ph_name:"Tu nombre",ph_phone:"+51 ...",ph_email:"tucorreo@email.com",ph_msg:"Cuéntanos sobre tu visita...",
-    opt1:"Tour grupal",opt2:"Tour privado",opt3:"Venta privada",opt4:"Reserva en el café",opt5:"Otro",
+    opt1:"Tour grupal",opt2:"Tour privado",opt3:"Venta privada",opt4:"Reserva en el restaurante",opt5:"Otro",
     c_direct:"¿Prefieres hablar ahora?",c_direct_sub:"Contáctanos directamente y recibe respuesta inmediata en horario de atención.",
     c_email:"Correo",c_visit:"Visítanos",c_hours:"Martes a Domingo · 9 am – 7 pm",
     sent:"¡Gracias! Tu mensaje ha sido enviado. Te responderemos en menos de 24 horas.",
@@ -2026,6 +2030,7 @@ function apply(l){
   if(typeof renderCafeMenu==='function') renderCafeMenu();
   if(typeof renderBlog==='function') renderBlog();
   if(typeof renderTalleres==='function') renderTalleres();
+  if(typeof renderExperiencias==='function') renderExperiencias();
   const _k=location.hash.replace('#','');
   if(typeof INFO!=='undefined' && INFO[_k]) renderInfo(_k);
   if(typeof currentPost!=='undefined' && currentPost){ const pp=document.getElementById('page-post'); if(pp && pp.classList.contains('active')) showPost(currentPost); }
@@ -2050,6 +2055,72 @@ if('IntersectionObserver' in window && spyMap.length){
   spyMap.forEach(o=>io.observe(o.el));
 }
 
+/* ===== EXPERIENCIAS ARTECH =====
+   Contenido facilitado por el cliente. Editar aqui, en EN y ES.
+   n = numero · t = titulo · dur = duracion · pre = precio
+   d = descripcion · extra = beneficio adicional · inc = lo que incluye  */
+const EXPERIENCIAS = [
+ {n:'01',
+  t:{en:'Artech Experience', es:'Experiencia Artech'},
+  dur:{en:'1 hour', es:'1 hora'},
+  pre:{en:'S/ 80 per person', es:'S/ 80 por persona'},
+  d:{en:'An immersive experience through our automobile exhibition, accompanied by a guided tour that reveals the stories, details, and most remarkable pieces in the collection.',
+     es:'Una experiencia inmersiva por nuestra exposición de automóviles, acompañada por un recorrido guiado que descubre las historias, detalles y piezas más especiales de la colección.'},
+  extra:{k:{en:'Additional benefit', es:'Beneficio adicional'},
+         v:{en:'With a minimum restaurant spend of S/ 100 per person, guests receive access to the Artech Experience.',
+            es:'Con un consumo mínimo de S/ 100 por persona en el restaurante, el visitante obtiene acceso a la Experiencia Artech.'}}},
+
+ {n:'02',
+  t:{en:'VIP Experience', es:'Experiencia VIP'},
+  dur:{en:'1 hour 30 minutes', es:'1 hora 30 minutos'},
+  pre:{en:'S/ 120 per person', es:'S/ 120 por persona'},
+  d:{en:'A more exclusive experience that, in addition to the exhibition tour, includes a guided visit to the workshop, offering an up-close look at the work, restoration, and care behind the automobiles.',
+     es:'Una experiencia más exclusiva que, además del recorrido por la exposición, incluye la visita guiada al taller, permitiendo conocer de cerca el trabajo, restauración y cuidado de los automóviles.'},
+  x:{en:'A unique opportunity for those who want to go beyond the exhibition and discover what happens behind the scenes.',
+     es:'Una propuesta diseñada para quienes quieren ir más allá de la exposición y descubrir lo que ocurre detrás de escena.'}},
+
+ {n:'03',
+  t:{en:'Private Experience', es:'Experiencia Privada'},
+  dur:{en:'2 hours 30 minutes', es:'2 horas 30 minutos'},
+  pre:{en:'S/ 450 per person', es:'S/ 450 por persona'},
+  gr:{en:'Minimum 15 people', es:'Mínimo 15 personas'},
+  d:{en:'A fully private and personalized experience, featuring an intensive guided tour of the museum and its exclusive spaces.',
+     es:'Una experiencia completamente privada y personalizada, con un recorrido intensivo y guiado por el museo y sus espacios especiales.'},
+  incT:{en:'Includes', es:'Incluye'},
+  inc:[{en:'Private guided tour of the museum', es:'Visita privada y guiada al museo'},
+       {en:'Exclusive access to the workshop',  es:'Acceso exclusivo al taller'},
+       {en:'In-depth tour of the collection',   es:'Recorrido intensivo por la colección'},
+       {en:'Gastronomic experience',            es:'Experiencia gastronómica'},
+       {en:'Welcome Pisco Sour',                es:'Pisco Sour de bienvenida'},
+       {en:'One appetizer from our menu',       es:'Una entrada de nuestra carta'},
+       {en:'Personalized attention throughout the experience', es:'Atención personalizada durante todo el recorrido'}],
+  x:{en:'An experience designed for private groups, corporate events, celebrations, and guests seeking a unique and exclusive automotive experience.',
+     es:'Una experiencia pensada para grupos privados, empresas, celebraciones y clientes que buscan una experiencia automotriz única y exclusiva.'}}
+];
+
+function renderExperiencias(){
+  const host=document.getElementById('xpList'); if(!host) return;
+  const L=o=>o ? (o[lang]||o.en||'') : '';
+  const et=k=>(typeof dict!=='undefined' && dict[lang] && dict[lang][k]) ? dict[lang][k] : k;
+  host.innerHTML=EXPERIENCIAS.map(function(e){
+    let h='<article class="xp-item"><div class="xp-num">'+e.n+'</div>'
+        + '<div class="xp-body"><h3>'+L(e.t)+'</h3><dl class="xp-facts">';
+    if(e.gr) h+='<div><dt>'+et('xp_groups')+'</dt><dd>'+L(e.gr)+'</dd></div>';
+    h+='<div><dt>'+et('xp_dur')+'</dt><dd>'+L(e.dur)+'</dd></div>'
+     + '<div><dt>'+et('xp_price')+'</dt><dd>'+L(e.pre)+'</dd></div></dl>'
+     + '<p class="xp-d">'+L(e.d)+'</p>';
+    if(e.inc){
+      h+='<div class="xp-inc"><h4>'+L(e.incT)+'</h4><ul>'
+       + e.inc.map(function(i){return '<li>'+L(i)+'</li>';}).join('') + '</ul></div>';
+    }
+    if(e.extra){
+      h+='<div class="xp-extra"><h4>'+L(e.extra.k)+'</h4><p>'+L(e.extra.v)+'</p></div>';
+    }
+    if(e.x) h+='<p class="xp-tag">'+L(e.x)+'</p>';
+    return h+'</div></article>';
+  }).join('');
+}
+
 /* ===== TALLERES AFILIADOS · ESTRELLAS ARTECH =====
    ARMAZÓN: los textos son de relleno, listos para sustituir.
    Cada taller: n = nombre · e = especialidad · s = estrellas (1-3)
@@ -2072,60 +2143,26 @@ const TALLERES = [
   d:{en:'Layer upon layer, applied and sanded by hand until the reflection has no seam. The house that returned the Racing Blue to our 300S.',
      es:'Capa sobre capa, aplicadas y lijadas a mano hasta que el reflejo no tiene costura. La casa que devolvió el azul de carrera a nuestro 300S.'},
   o:['Maserati 300S','Ferrari Testarossa','Porsche 911 Turbo S']},
-
  {n:'Atelier Vargas', s:3, z:'San Isidro, Lima',
   e:{en:'Upholstery and leather',es:'Tapicería y cuero'},
   d:{en:'Hides selected one by one and stitched with the same tension the factory used. They rebuilt the entire cabin of the Packard from period photographs.',
      es:'Cueros elegidos uno a uno y cosidos con la misma tensión que usaba la fábrica. Reconstruyeron el habitáculo completo del Packard a partir de fotografías de época.'},
   o:['Packard 740 Limousine','Stutz BB','Mercury Montclair']},
-
  {n:'Motores Ferrand', s:3, z:'Surquillo, Lima',
   e:{en:'Engines and mechanics',es:'Motores y mecánica'},
   d:{en:'Every engine is opened, measured and reassembled to original tolerances. Nothing leaves the bench until it sounds the way it should.',
      es:'Cada motor se abre, se mide y se rearma con las tolerancias originales. Nada sale del banco hasta que suena como debe sonar.'},
   o:['Porsche 911 GT2 RS','Mercedes-Benz 560 SEC','Dodge Challenger R/T']},
-
  {n:'Chapa Solari', s:2, z:'Chorrillos, Lima',
   e:{en:'Bodywork and panel beating',es:'Carrocería y chapa'},
   d:{en:'Hammer and dolly, no filler. They straightened the wings of the Woody by working the metal until the line returned on its own.',
      es:'Martillo y tas, sin masilla. Enderezaron los guardabarros del Woody trabajando el metal hasta que la línea volvió sola.'},
   o:['Ford Super Deluxe Woody','Cadillac El Dorado','Oldsmobile 88']},
-
  {n:'Cromo Iriarte', s:2, z:'Callao, Lima',
   e:{en:'Chrome and metal plating',es:'Cromado y metales'},
   d:{en:'Copper, nickel and chrome in the old order, with the polishing time nobody wants to spend any more. Their grilles look wet.',
      es:'Cobre, níquel y cromo en el orden antiguo, con el tiempo de pulido que ya nadie quiere dedicar. Sus parrillas parecen mojadas.'},
-  o:['Auburn 851','Cadillac El Dorado','Plymouth Satellite']},
-
- {n:'Volt Lavalle', s:2, z:'Lince, Lima',
-  e:{en:'Electrics and instruments',es:'Electricidad e instrumentación'},
-  d:{en:'Looms braided by hand and dials recalibrated one needle at a time. They keep the clocks of the collection telling the truth.',
-     es:'Ramales trenzados a mano y relojes recalibrados aguja por aguja. Mantienen los instrumentos de la colección diciendo la verdad.'},
-  o:['BMW i8','Mercedes-Benz E55 AMG','Alfa Romeo 4C']},
-
- {n:'Maderas Bracamonte', s:2, z:'Pueblo Libre, Lima',
-  e:{en:'Wood and dashboards',es:'Maderas y salpicaderos'},
-  d:{en:'Veneers cut from the same trunk so the grain continues across the whole dashboard. Patience measured in months.',
-     es:'Chapas cortadas del mismo tronco para que la veta continúe a lo largo de todo el salpicadero. Paciencia medida en meses.'},
-  o:['Ford Super Deluxe Woody','Packard 740 Limousine','Maserati Sebring']},
-
- {n:'Rueda Ancash', s:1, z:'Ate, Lima',
-  e:{en:'Wheels and wire spokes',es:'Ruedas y radios'},
-  d:{en:'Each spoke tensioned by ear until the wheel rings true. A trade that is disappearing and that they still teach.',
-     es:'Cada radio tensado de oído hasta que la rueda suena afinada. Un oficio que se está perdiendo y que ellos todavía enseñan.'},
-  o:['Maserati Sebring','Stutz BB','Auburn 851']},
-
- {n:'Cristal Barranco', s:1, z:'Barranco, Lima',
-  e:{en:'Glass and seals',es:'Vidrios y sellados'},
-  d:{en:'Curved glass made to the original templates and rubbers extruded to measure. Nothing whistles at speed after they have finished.',
-     es:'Vidrios curvados con las plantillas originales y gomas extruidas a medida. Nada silba a velocidad cuando ellos terminan.'},
-  o:['Mercedes-Benz SLK 230','Plymouth Satellite','BMW M6']},
-
- {n:'Archivo Miraflores', s:1, z:'Miraflores, Lima',
-  e:{en:'Documentation and provenance',es:'Documentación y procedencia'},
-  d:{en:'They trace chassis numbers, invoices and former owners. Without them, half of what we know about the collection would be a guess.',
-     es:'Rastrean números de chasis, facturas y propietarios anteriores. Sin ellos, la mitad de lo que sabemos de la colección sería una suposición.'},
-  o:[{en:'The whole collection',es:'Toda la colección'},{en:'Provenance records',es:'Fichas de procedencia'},{en:'Photographic archive',es:'Archivo fotográfico'}]}
+  o:['Auburn 851','Cadillac El Dorado','Plymouth Satellite']}
 ];
 
 function renderTalleres(){
@@ -2193,8 +2230,8 @@ const INFO = {
     {en:'The museum is fifteen minutes from Miraflores by car along the Costa Verde. There are bus stops within a short walk and taxi services reach the entrance directly.',
      es:'El museo está a quince minutos de Miraflores en auto por la Costa Verde. Hay paraderos a pocos pasos y los servicios de taxi llegan directamente a la entrada.'}]},
    {h:{en:'Parking and amenities',es:'Estacionamiento y servicios'},p:[
-    {en:'Free parking for visitors, step-free access throughout the exhibition halls, cloakroom and the Gourmet Café on the same floor.',
-     es:'Estacionamiento gratuito para visitantes, acceso sin escalones en todas las salas, guardarropa y el Gourmet Café en el mismo nivel.'}]}]},
+    {en:'Free parking for visitors, step-free access throughout the exhibition halls, cloakroom and the restaurant on the same floor.',
+     es:'Estacionamiento gratuito para visitantes, acceso sin escalones en todas las salas, guardarropa y el restaurante en el mismo nivel.'}]}]},
 
  'p-privacy':{
   t:{en:'Privacy',es:'Privacidad'},
@@ -2284,7 +2321,7 @@ const INFO = {
    {q:{en:'Can children visit?',es:'¿Pueden entrar niños?'},
     a:{en:'Of course. Children accompanied by an adult are welcome and have a reduced admission.',
        es:'Por supuesto. Los niños acompañados de un adulto son bienvenidos y tienen entrada reducida.'}},
-   {q:{en:'Do I need a reservation for the Gourmet Café?',es:'¿Necesito reserva para el Gourmet Café?'},
+   {q:{en:'Do I need a reservation for the restaurant?',es:'¿Necesito reserva para el restaurante?'},
     a:{en:'It is not essential, but we recommend it at weekends. Write to info@artech.pe to reserve a table.',
        es:'No es imprescindible, pero la recomendamos los fines de semana. Escribe a info@artech.pe para reservar una mesa.'}},
    {q:{en:'Can the museum be hired for events?',es:'¿Se puede alquilar el museo para eventos?'},
@@ -2315,8 +2352,8 @@ const INFO = {
     {en:'Attention to detail, respect for the history of each piece and a genuine interest in looking after the visitor. Previous experience with classic vehicles is valued but not essential.',
      es:'Atención al detalle, respeto por la historia de cada pieza y un interés genuino por atender al visitante. Se valora la experiencia previa con vehículos clásicos, aunque no es indispensable.'}]},
    {h:{en:'Areas',es:'Áreas'},p:[
-    {en:'Guides and visitor services, restoration and workshop, kitchen and dining room at the Gourmet Café, communications and events.',
-     es:'Guías y atención al visitante, restauración y taller, cocina y salón del Gourmet Café, comunicaciones y eventos.'}]},
+    {en:'Guides and visitor services, restoration and workshop, kitchen and dining room at the restaurant, communications and events.',
+     es:'Guías y atención al visitante, restauración y taller, cocina y salón del restaurante, comunicaciones y eventos.'}]},
    {h:{en:'How to apply',es:'Cómo postular'},p:[
     {en:'Send your CV to info@artech.pe indicating the area that interests you. We review every application and reply to those that match an open position.',
      es:'Envía tu CV a info@artech.pe indicando el área que te interesa. Revisamos todas las postulaciones y respondemos a las que coinciden con una posición abierta.'}]}]},
@@ -2360,8 +2397,8 @@ const INFO = {
         es:'Un círculo para quienes quieren estar cerca de la colección durante todo el año.'},
   blocks:[
    {h:{en:'Benefits',es:'Beneficios'},p:[
-    {en:'Unlimited access to the museum, invitations to private openings, priority booking for experiences and a permanent discount at the Gourmet Café.',
-     es:'Acceso ilimitado al museo, invitaciones a aperturas privadas, reserva prioritaria de experiencias y descuento permanente en el Gourmet Café.'}]},
+    {en:'Unlimited access to the museum, invitations to private openings, priority booking for experiences and a permanent discount at the restaurant.',
+     es:'Acceso ilimitado al museo, invitaciones a aperturas privadas, reserva prioritaria de experiencias y descuento permanente en el restaurante.'}]},
    {h:{en:'Members-only events',es:'Eventos sólo para miembros'},p:[
     {en:'Evenings with the collection, workshop visits and conversations with the specialists who look after each vehicle.',
      es:'Noches con la colección, visitas al taller y conversaciones con los especialistas que cuidan cada vehículo.'}]},
@@ -2379,7 +2416,7 @@ const INFO = {
     {k:'#p-collection',t:{en:'Collection',es:'Colección'}},
     {k:'#p-experience',t:{en:'Experiences',es:'Experiencias'}},
     {k:'#exp3d',t:{en:'360° tour',es:'Tour 360°'}},
-    {k:'#p-cafe',t:{en:'Gourmet Café',es:'Gourmet Café'}}]},
+    {k:'#p-cafe',t:{en:'Restaurant · Café · Bar',es:'Restaurante · Café · Bar'}}]},
    {h:{en:'Plan your visit',es:'Planifica tu visita'},items:[
     {k:'#p-visit',t:{en:'Plan your visit',es:'Planifica tu visita'}},
     {k:'#p-tickets',t:{en:'Buy tickets',es:'Comprar entradas'}},
@@ -2478,6 +2515,7 @@ function route(){
     document.body.classList.toggle('on-info', !!INFO[key]);
     if(INFO[key]) renderInfo(key);
     if(key==='p-workshops') renderTalleres();
+    if(key==='p-experience') renderExperiencias();
     Object.values(innerPages).forEach(el=>el&&el.classList.remove('active'));
     page.classList.add('active');
     page.querySelectorAll('img[data-src]').forEach(function(im){
@@ -2532,7 +2570,7 @@ function renderCollections(){
   if(grid) grid.innerHTML=CARS.map(c=>carCard(c)).join('');
 }
 function hcScroll(dir){const g=document.getElementById('homeGrid');if(!g)return;const card=g.querySelector('.col-card');const step=card?card.getBoundingClientRect().width+20:300;g.scrollBy({left:dir*step,behavior:'smooth'});}
-// ===== Gourmet Café menu (accordion) =====
+// ===== Carta del restaurante (acordeon) =====
 const CAFE_MENU=[
  {t:{en:'Salads',es:'Ensaladas'},items:[
    {n:'Burrata Capresse',d:'Tomate, pesto, pistachos, reducción de balsámico, arúgula, cilantro, aceite de oliva. (extra jamón serrano s/)'},
@@ -2683,15 +2721,15 @@ const BLOG=[
   body:["Before the Second World War, the finest automobiles were built like couture. Marques such as Packard, Auburn and Cadillac created coachbuilt masterpieces for royalty, film stars and industrialists.","Straight-eight engines ran with legendary smoothness. Supercharged Auburns guaranteed 100 mph in an era when most roads were unpaved. Every phaeton and limousine was a statement of status and craftsmanship.","These cars defined the Golden Age of motoring — a brief, dazzling period when design, engineering and ambition reached a peak that many enthusiasts still consider unmatched.","To walk among them at ARTECH is to step into the 1930s, when the automobile was the ultimate symbol of progress."],
   bodyEs:["Antes de la Segunda Guerra Mundial, los mejores automóviles se construían como alta costura. Marcas como Packard, Auburn y Cadillac creaban obras maestras carrozadas para la realeza, estrellas de cine e industriales.","Los motores de ocho cilindros en línea funcionaban con una suavidad legendaria. Los Auburn sobrealimentados garantizaban 160 km/h en una época en que la mayoría de los caminos no estaban pavimentados. Cada phaeton y limusina era una declaración de estatus y artesanía.","Estos autos definieron la época dorada del automovilismo: un periodo breve y deslumbrante en el que diseño, ingeniería y ambición alcanzaron una cima que muchos entusiastas aún consideran insuperable.","Caminar entre ellos en ARTECH es entrar a los años treinta, cuando el automóvil era el máximo símbolo de progreso."]},
  {id:'cafe',cat:{en:'Café',es:'Café'},read:3,date:'Jun 2026',
-  title:{en:"Gourmet Café: Peruvian–Italian Fusion by Chef Carla Navea",es:"Gourmet Café: fusión peruana e italiana por la Chef Carla Navea"},
+  title:{en:"Signature Cuisine by Chef Carla Navea",es:"Cocina de autor de la Chef Carla Navea"},
   excerpt:{en:"A contemporary kitchen inside the Museum, where classic cars meet contemporary cuisine.",es:"Una cocina contemporánea dentro del Museo, donde los clásicos se encuentran con la alta cocina."},
-  body:["A visit to ARTECH is not only about cars. Inside the Museum, the Gourmet Café by Chef Carla Navea serves a menu that blends Peruvian ingredients with Italian technique.","Think burrata capresse alongside cebiche al estilo ARTECH; truffled potatoes beside a slow-laquered pork chaufa. The result is honest, seasonal and rooted in Peru's extraordinary produce.","Open Tuesday to Sunday from 9 am to 7 pm, the café is a destination in its own right — perfect before or after a guided tour.","It is the kind of place where a coffee turns into lunch, and lunch turns into an afternoon surrounded by automotive history."],
-  bodyEs:["Una visita a ARTECH no es solo sobre autos. Dentro del Museo, el Gourmet Café de la Chef Carla Navea ofrece una carta que combina ingredientes peruanos con técnica italiana.","Imagina una burrata capresse junto a un cebiche al estilo ARTECH; papas trufadas al lado de una panceta laqueada sobre chaufa. El resultado es honesto, de estación y arraigado en el extraordinario producto peruano.","Abierto de martes a domingo de 9 am a 7 pm, el café es un destino por sí mismo, perfecto antes o después de un tour guiado.","Es de esos lugares donde un café se convierte en almuerzo, y el almuerzo en una tarde rodeada de historia del automóvil."]},
+  body:["A visit to ARTECH is not only about cars. Inside the Museum, the restaurant by Chef Carla Navea serves a signature menu built on Peru's extraordinary produce.","Think burrata capresse alongside cebiche al estilo ARTECH; truffled potatoes beside a slow-laquered pork chaufa. The result is honest, seasonal and rooted in Peru's extraordinary produce.","Open Tuesday to Sunday from 9 am to 7 pm, the café is a destination in its own right — perfect before or after a guided tour.","It is the kind of place where a coffee turns into lunch, and lunch turns into an afternoon surrounded by automotive history."],
+  bodyEs:["Una visita a ARTECH no es solo sobre autos. Dentro del Museo, el restaurante de la Chef Carla Navea ofrece una carta de cocina de autor construida sobre el extraordinario producto peruano.","Imagina una burrata capresse junto a un cebiche al estilo ARTECH; papas trufadas al lado de una panceta laqueada sobre chaufa. El resultado es honesto, de estación y arraigado en el extraordinario producto peruano.","Abierto de martes a domingo de 9 am a 7 pm, el café es un destino por sí mismo, perfecto antes o después de un tour guiado.","Es de esos lugares donde un café se convierte en almuerzo, y el almuerzo en una tarde rodeada de historia del automóvil."]},
  {id:'visit-guide',cat:{en:'Visit',es:'Visita'},read:5,date:'May 2026',
   title:{en:"Visiting a Classic Car Museum in Lima: A Complete Guide",es:"Visitar un museo de autos clásicos en Lima: guía completa"},
   excerpt:{en:"Hours, location, tickets and tips for the best classic car experience in Lima, Peru.",es:"Horarios, ubicación, entradas y consejos para la mejor experiencia de autos clásicos en Lima."},
-  body:["Planning a visit is easy. ARTECH is located on Av. Huaylas 640 in Chorrillos, in a permanent covered exhibition hall with parking for visitors.","The Museum is open Tuesday to Sunday, 9 am to 7 pm. Staff are English-speaking and credit cards are accepted, making it a comfortable stop for international travellers.","For the best experience, allow at least two hours: one for the collection and one for the Gourmet Café. Private and group tours can be booked in advance for a deeper, guided journey.","Whether you are a lifelong petrolhead or simply looking for one of the most unusual things to do in Lima, the collection rewards every kind of visitor."],
-  bodyEs:["Planificar la visita es fácil. ARTECH está en la Av. Huaylas 640, en Chorrillos, en una sala de exhibición techada permanente con estacionamiento para visitantes.","El Museo abre de martes a domingo, de 9 am a 7 pm. El personal habla inglés y se aceptan tarjetas, lo que lo hace cómodo para viajeros internacionales.","Para la mejor experiencia, reserva al menos dos horas: una para la colección y otra para el Gourmet Café. Los tours privados y grupales pueden reservarse con anticipación para un recorrido más profundo y guiado.","Seas un apasionado de los autos o simplemente busques una de las cosas más originales por hacer en Lima, la colección premia a todo tipo de visitante."]},
+  body:["Planning a visit is easy. ARTECH is located on Av. Huaylas 640 in Chorrillos, in a permanent covered exhibition hall with parking for visitors.","The Museum is open Tuesday to Sunday, 9 am to 7 pm. Staff are English-speaking and credit cards are accepted, making it a comfortable stop for international travellers.","For the best experience, allow at least two hours: one for the collection and one for the restaurant. Private and group tours can be booked in advance for a deeper, guided journey.","Whether you are a lifelong petrolhead or simply looking for one of the most unusual things to do in Lima, the collection rewards every kind of visitor."],
+  bodyEs:["Planificar la visita es fácil. ARTECH está en la Av. Huaylas 640, en Chorrillos, en una sala de exhibición techada permanente con estacionamiento para visitantes.","El Museo abre de martes a domingo, de 9 am a 7 pm. El personal habla inglés y se aceptan tarjetas, lo que lo hace cómodo para viajeros internacionales.","Para la mejor experiencia, reserva al menos dos horas: una para la colección y otra para el restaurante. Los tours privados y grupales pueden reservarse con anticipación para un recorrido más profundo y guiado.","Seas un apasionado de los autos o simplemente busques una de las cosas más originales por hacer en Lima, la colección premia a todo tipo de visitante."]},
  {id:'design-history',cat:{en:'Heritage',es:'Patrimonio'},read:6,date:'May 2026',
   title:{en:"120 Years of Design: From the Brass Era to Hypercars",es:"120 años de diseño: de la era del latón a los hiperdeportivos"},
   excerpt:{en:"How automotive design evolved from brass lamps and wooden wheels to carbon fibre.",es:"Cómo evolucionó el diseño del automóvil, del latón y la madera a la fibra de carbono."},
@@ -2700,8 +2738,8 @@ const BLOG=[
  {id:'private-tours',cat:{en:'Experiences',es:'Experiencias'},read:4,date:'Apr 2026',
   title:{en:"Private Tours and Experiences for Collectors and Families",es:"Tours privados y experiencias para coleccionistas y familias"},
   excerpt:{en:"Curated, one-on-one journeys through the collection — at your own pace.",es:"Recorridos curados y personalizados por la colección, a tu propio ritmo."},
-  body:["Some visitors want to explore freely; others want the full story. ARTECH offers private and group experiences designed around your interests, whether that is Porsche, pre-war elegance or the world's oldest car.","A private guide brings each vehicle to life with the history, engineering and anecdotes that make a collection memorable — ideal for enthusiasts, families and corporate guests alike.","Experiences can be paired with the Gourmet Café for a complete afternoon, and are available in English and Spanish.","It is a more personal way to experience the Museum, and a favorite for special occasions and visiting collectors."],
-  bodyEs:["Algunos visitantes quieren explorar libremente; otros quieren la historia completa. ARTECH ofrece experiencias privadas y grupales diseñadas en torno a tus intereses, ya sea Porsche, la elegancia de preguerra o el auto más antiguo del mundo.","Un guía privado da vida a cada vehículo con la historia, la ingeniería y las anécdotas que hacen memorable una colección, ideal para entusiastas, familias e invitados corporativos.","Las experiencias pueden combinarse con el Gourmet Café para una tarde completa, y están disponibles en inglés y español.","Es una forma más personal de vivir el Museo, y una de las favoritas para ocasiones especiales y coleccionistas de visita."]},
+  body:["Some visitors want to explore freely; others want the full story. ARTECH offers private and group experiences designed around your interests, whether that is Porsche, pre-war elegance or the world's oldest car.","A private guide brings each vehicle to life with the history, engineering and anecdotes that make a collection memorable — ideal for enthusiasts, families and corporate guests alike.","Experiences can be paired with the restaurant for a complete afternoon, and are available in English and Spanish.","It is a more personal way to experience the Museum, and a favorite for special occasions and visiting collectors."],
+  bodyEs:["Algunos visitantes quieren explorar libremente; otros quieren la historia completa. ARTECH ofrece experiencias privadas y grupales diseñadas en torno a tus intereses, ya sea Porsche, la elegancia de preguerra o el auto más antiguo del mundo.","Un guía privado da vida a cada vehículo con la historia, la ingeniería y las anécdotas que hacen memorable una colección, ideal para entusiastas, familias e invitados corporativos.","Las experiencias pueden combinarse con el restaurante para una tarde completa, y están disponibles en inglés y español.","Es una forma más personal de vivir el Museo, y una de las favoritas para ocasiones especiales y coleccionistas de visita."]},
  {id:'chorrillos',cat:{en:'Travel',es:'Viajes'},read:4,date:'Apr 2026',
   title:{en:"Why Chorrillos Is Lima's Hidden Cultural Gem",es:"Por qué Chorrillos es la joya cultural escondida de Lima"},
   excerpt:{en:"Just south of Miraflores, this seaside district blends history, food and sea air.",es:"Al sur de Miraflores, este distrito costero mezcla historia, gastronomía y brisa marina."},
