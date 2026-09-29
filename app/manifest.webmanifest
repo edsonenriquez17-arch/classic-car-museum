@@ -1,0 +1,14 @@
+{
+  "name": "ARTECH · Guía del Museo",
+  "short_name": "ARTECH",
+  "description": "Guía interactiva del Museo del Automóvil ARTECH — colección, recorrido y experiencia.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0b0b0d",
+  "theme_color": "#0b0b0d",
+  "icons": [
+    { "src": "../assets/logo.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
+  ]
+}

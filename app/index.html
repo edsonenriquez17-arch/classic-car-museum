@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1" />
+<meta name="robots" content="noindex, nofollow" />
+
+<!-- Comportamiento tipo APP (no web): pantalla completa al añadir a inicio -->
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="ARTECH" />
+<meta name="theme-color" content="#0b0b0d" />
+<link rel="manifest" href="manifest.webmanifest" />
+<link rel="apple-touch-icon" href="../assets/logo.png" />
+
+<title>ARTECH · Guía del Museo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="app.css" />
+</head>
+<body>
+
+<!-- Splash / arranque tipo app -->
+<div id="splash" class="splash">
+  <div class="splash-inner">
+    <div class="ph splash-art">
+      <span class="ph-label">IMAGEN DE PORTADA</span>
+      <img src="../assets/splash-ferrari.png" alt="" onerror="this.remove()" />
+    </div>
+    <img class="splash-logo" src="../assets/logo.png" alt="ARTECH" onerror="this.replaceWith(document.createTextNode('ARTECH'))" />
+    <p class="splash-tagline" data-i="tagline">Historia viva del automóvil</p>
+    <button class="splash-cta" id="splashStart" data-i="enter">Iniciar recorrido</button>
+    <p class="splash-hint" data-i="splashHint">Guía interactiva del museo · Lima</p>
+  </div>
+</div>
+
+<!-- App shell -->
+<div id="app" class="app" hidden>
+
+  <!-- Barra superior -->
+  <header class="topbar">
+    <button class="tb-back" id="btnBack" aria-label="Volver" hidden>
+      <svg viewBox="0 0 24 24" width="22" height="22"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="tb-brand" id="tbBrand">
+      <img src="../assets/logo.png" alt="ARTECH" onerror="this.replaceWith(document.createTextNode('ARTECH'))" />
+    </div>
+    <h1 class="tb-title" id="tbTitle" hidden></h1>
+    <button class="tb-lang" id="btnLang">EN</button>
+  </header>
+
+  <!-- Contenido -->
+  <main id="view" class="view"></main>
+
+  <!-- Navegación inferior tipo app -->
+  <nav class="tabbar" id="tabbar">
+    <button class="tab tab-on" data-tab="home">
+      <svg viewBox="0 0 24 24"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linjoin="round"/></svg>
+      <span data-i="tabHome">Inicio</span>
+    </button>
+    <button class="tab" data-tab="collection">
+      <svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+      <span data-i="tabCollection">Colección</span>
+    </button>
+    <button class="tab" data-tab="tour">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="10" r="2.4" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>
+      <span data-i="tabTour">Recorrido</span>
+    </button>
+    <button class="tab" data-tab="info">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 11v5M12 8h.01" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>
+      <span data-i="tabInfo">Info</span>
+    </button>
+  </nav>
+</div>
+
+<!-- Lightbox de galería -->
+<div id="lightbox" class="lightbox" hidden>
+  <button class="lb-close" id="lbClose" aria-label="Cerrar">✕</button>
+  <img id="lbImg" src="" alt="" />
+</div>
+
+<script src="app.js" defer></script>
+</body>
+</html>

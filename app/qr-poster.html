@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ARTECH · Cartel QR</title>
+<style>
+  @page { size: A4 portrait; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Manrope', system-ui, sans-serif;
+    background: #0b0b0d;
+    color: #f3f0ea;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 24px;
+  }
+  .poster {
+    width: 210mm;
+    max-width: 100%;
+    aspect-ratio: 210 / 297;
+    background: radial-gradient(120% 70% at 50% 0%, #17130c 0%, #0b0b0d 55%);
+    border: 1px solid #2a2a2f;
+    border-radius: 18px;
+    padding: 48px 44px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .kicker { color: #c9a24b; letter-spacing: 5px; font-size: 14px; font-weight: 700; margin-top: 18px; }
+  .brand { font-family: Georgia, serif; font-size: 46px; letter-spacing: 8px; font-weight: 700; margin-top: 6px; }
+  .rule { width: 60px; height: 2px; background: #c9a24b; margin: 22px 0; }
+  h1 {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 1.08;
+    max-width: 14ch;
+    margin-bottom: 10px;
+  }
+  .lead { color: #9a978f; font-size: 17px; line-height: 1.5; max-width: 34ch; }
+  .qr-wrap {
+    margin: 34px 0 22px;
+    background: #fff;
+    padding: 22px;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0,0,0,.5);
+  }
+  .qr-wrap img { width: 260px; height: 260px; display: block; }
+  .scan { font-size: 22px; font-weight: 700; letter-spacing: .5px; }
+  .scan span { color: #c9a24b; }
+  .steps { color: #9a978f; font-size: 14px; margin-top: 10px; line-height: 1.7; }
+  .foot { margin-top: auto; color: #6b6862; font-size: 12px; letter-spacing: 1px; padding-top: 24px; }
+  .en { color: #6b6862; font-size: 13px; margin-top: 4px; font-style: italic; }
+  @media print { body { background: #fff; padding: 0; } .poster { border: none; border-radius: 0; } }
+</style>
+</head>
+<body>
+  <div class="poster">
+    <div class="kicker">MUSEO DEL AUTOMÓVIL</div>
+    <div class="brand">ARTECH</div>
+    <div class="rule"></div>
+    <h1>Explora el museo desde tu teléfono</h1>
+    <p class="lead">Escanea el código y recorre la colección auto por auto: su historia, su ficha técnica y su galería.</p>
+
+    <div class="qr-wrap">
+      <img src="qr-artech-app.png" alt="Código QR de la app ARTECH" />
+    </div>
+
+    <div class="scan">Escanea para <span>comenzar</span></div>
+    <div class="steps">Abre la cámara de tu teléfono · Apunta al código · Toca el enlace</div>
+    <p class="en">Scan to explore the museum on your phone</p>
+
+    <div class="foot">ARTECH · CHORRILLOS, LIMA — PERÚ</div>
+  </div>
+</body>
+</html>
