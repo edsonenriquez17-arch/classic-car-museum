@@ -199,6 +199,61 @@
     .xp-num{font-size:32px}
     .xp-inc,.xp-extra{padding:14px 16px}
   }
+  /* --- Talleres: criterios, taller principal y restauracion --- */
+  .tw-sys-lead{color:var(--gray-5);text-align:center;max-width:620px;margin:-28px auto 26px;
+    font-size:clamp(14px,1.4vw,16px);line-height:1.6}
+  .tw-crit{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:0 auto 40px;
+    max-width:760px}
+  .tw-chip{color:var(--gold);border:1px solid rgba(201,162,75,.4);border-radius:var(--r-pill);
+    padding:7px 18px;letter-spacing:2.2px;text-transform:uppercase;font-size:11px}
+  /* tabla de puntuaciones */
+  .tw-scores{display:grid;gap:0;margin:20px 0 0;padding:0;border-top:1px solid rgba(255,255,255,.10)}
+  .tw-scores div{display:flex;align-items:center;justify-content:space-between;gap:16px;
+    padding:11px 0;border-bottom:1px solid rgba(255,255,255,.07)}
+  .tw-scores dt{color:var(--gray-5);letter-spacing:2.2px;text-transform:uppercase;font-size:10.5px}
+  .tw-scores dd{margin:0;display:flex}
+  .tw-rate{display:inline-flex;gap:4px;align-items:center}
+  .tw-off{display:inline-flex;gap:4px;opacity:.22}
+  /* taller principal */
+  .tw-main-zone{background:var(--dark-2);padding:var(--sp-m) 0;
+    border-top:1px solid rgba(255,255,255,.07)}
+  .tw-main-card{max-width:1080px;margin:0 auto;border:1px solid rgba(201,162,75,.30);
+    border-radius:var(--r-md);background:var(--dark-1);padding:34px 34px 30px}
+  .tw-main-top{display:grid;grid-template-columns:200px minmax(0,1fr);gap:30px;align-items:start}
+  .tw-logo{aspect-ratio:3/2;border:1px solid rgba(255,255,255,.14);border-radius:var(--r-sm);
+    background:var(--dark-3);display:grid;place-items:center;overflow:hidden}
+  .tw-logo img{width:100%;height:100%;object-fit:contain;padding:12px}
+  .tw-badge{display:inline-block;color:#141414;background:var(--gold);border-radius:var(--r-pill);
+    padding:5px 14px;letter-spacing:2.2px;text-transform:uppercase;font-size:10.5px;margin-bottom:12px}
+  .tw-main-card h3{font-family:var(--display);font-weight:600;color:#fff;margin:0 0 6px;
+    letter-spacing:1px;font-size:clamp(26px,3.4vw,38px)}
+  .tw-main-card .tw-desc{max-width:640px}
+  /* bloque de restauracion */
+  .tw-rest{margin-top:26px;padding-top:22px;border-top:1px solid rgba(255,255,255,.10)}
+  .tw-rest-t{font-family:var(--display);font-weight:600;color:var(--gold);letter-spacing:3.4px;
+    text-transform:uppercase;font-size:11.5px;margin:0 0 16px}
+  .tw-rest-grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}
+  .tw-rest-item{margin:0}
+  .tw-rest-media{aspect-ratio:4/3;border:1px dashed rgba(255,255,255,.18);border-radius:var(--r-sm);
+    background:var(--dark-3);display:grid;place-items:center;overflow:hidden;margin-bottom:8px}
+  .tw-rest-media img,.tw-vid{width:100%;height:100%;object-fit:cover;display:block}
+  .tw-rest-video{aspect-ratio:16/9}
+  .tw-ph{color:rgba(255,255,255,.28);letter-spacing:2.4px;text-transform:uppercase;font-size:10px;
+    text-align:center;padding:0 8px}
+  .tw-rest-item figcaption{color:var(--gray-6);font-size:13px;line-height:1.35}
+  .tw-soon{color:rgba(255,255,255,.26);font-style:italic}
+  /* aliados: una tarjeta por fila, con su propia restauracion */
+  #tallerGrid{grid-template-columns:1fr;gap:22px;max-width:1080px}
+  #tallerGrid .tw-card{padding:0}
+  #tallerGrid .tw-body{padding:28px 30px 30px}
+  @media(max-width:760px){
+    .tw-main-card{padding:22px 20px 24px}
+    .tw-main-top{grid-template-columns:1fr;gap:18px}
+    .tw-logo{max-width:220px}
+    .tw-scores div{gap:10px}
+    .tw-rest-grid{gap:14px;grid-template-columns:repeat(auto-fit,minmax(140px,1fr))}
+    #tallerGrid .tw-body{padding:22px 18px 24px}
+  }
   /* ---------- TALLERES AFILIADOS · ESTRELLAS ARTECH ---------- */
   #page-workshops{padding:0 0 0;background:var(--dark-1)}
   .tw-hero{background:var(--dark-1);color:#fff;padding:var(--sp-top) 0 var(--sp-s);text-align:center}
@@ -1786,17 +1841,24 @@ of motoring history</h2>
       <a href="#top" class="back-btn light" data-i="back_home">← Back to Home</a>
       <div class="tw-kick" data-i="tw_kick">THE ARTECH STARS</div>
       <h2 class="tw-title" data-i="tw_title">Affiliated Workshops</h2>
-      <p class="tw-lead" data-i="tw_lead">Ten houses of craft that keep this collection alive. Each one is awarded ARTECH stars for the quality of its work, the fidelity of its restorations and the respect it shows for the original piece.</p>
+      <p class="tw-lead" data-i="tw_lead">The houses of craft that keep this collection alive. ARTECH stars are awarded on the work actually done, across five criteria.</p>
     </div>
   </div>
 
   <div class="tw-tiers"><div class="wrap">
     <h3 class="tw-sec-t" data-i="tw_system">The rating</h3>
+    <p class="tw-sys-lead" data-i="tw_sys_lead">Every workshop is scored from one to three stars on each of these five criteria.</p>
+    <div class="tw-crit" id="twCriterios"></div>
     <div class="tw-tier-grid" id="tallerLeyenda"></div>
   </div></div>
 
+  <div class="tw-main-zone"><div class="wrap">
+    <h3 class="tw-sec-t" data-i="tw_main_t">The main workshop</h3>
+    <div id="twPrincipal"></div>
+  </div></div>
+
   <div class="tw-list"><div class="wrap">
-    <h3 class="tw-sec-t" data-i="tw_houses">The ten houses</h3>
+    <h3 class="tw-sec-t" data-i="tw_allied_t">Allied workshops</h3>
     <div class="tw-grid" id="tallerGrid"></div>
     <p class="tw-note" data-i="tw_note">Every workshop is visited and reviewed once a year. The stars are awarded by ARTECH and may change from one edition to the next.</p>
   </div></div>
@@ -1903,8 +1965,12 @@ const dict = {
     ft_press:"Press room",ft_sitemap:"Site map",ft_blog:"Blog",
     ft_legal:"Legal",ft_faqs:"FAQs",ft_sustain:"Sustainability",
     ft_claims:"Complaints book",ft_contact:"Contact",ft_tickets:"Buy tickets",
+    tw_sys_lead:"Every workshop is scored from one to three stars on each of these five criteria.",
+    tw_main_t:"The main workshop",tw_main_badge:"Main workshop",
+    tw_allied_t:"Allied workshops",
+    tw_rest:"Restoration",tw_photo:"Photo",tw_video:"Video",tw_soon:"Coming soon",tw_logo:"Logo",
     nav_workshops:"Workshops",tw_kick:"THE ARTECH STARS",tw_title:"Affiliated Workshops",
-    tw_lead:"Five houses of craft that keep this collection alive. Each one is awarded ARTECH stars for the quality of its work, the fidelity of its restorations and the respect it shows for the original piece.",
+    tw_lead:"The houses of craft that keep this collection alive. ARTECH stars are awarded on the work actually done, across five criteria: chrome, mechanics, bodywork and paint, turnaround and value.",
     tw_system:"The rating",tw_houses:"The five houses",tw_works:"Works",
     tw_note:"Every workshop is visited and reviewed once a year. The stars are awarded by ARTECH and may change from one edition to the next.",
     pgc_kick:"THE FULL",pgc_sub:"From the World's Oldest Car to rare Porsche classics — explore every model in our permanent exhibition.",
@@ -1983,8 +2049,12 @@ const dict = {
     ft_press:"Sala de prensa",ft_sitemap:"Mapa del sitio",ft_blog:"Blog",
     ft_legal:"Legal",ft_faqs:"Preguntas frecuentes",ft_sustain:"Sostenibilidad",
     ft_claims:"Libro de reclamaciones",ft_contact:"Contacto",ft_tickets:"Comprar entradas",
+    tw_sys_lead:"Cada taller se califica de una a tres estrellas en cada uno de estos cinco criterios.",
+    tw_main_t:"El taller principal",tw_main_badge:"Taller principal",
+    tw_allied_t:"Talleres aliados",
+    tw_rest:"Restauración",tw_photo:"Foto",tw_video:"Video",tw_soon:"Próximamente",tw_logo:"Logo",
     nav_workshops:"Talleres",tw_kick:"LAS ESTRELLAS ARTECH",tw_title:"Talleres Afiliados",
-    tw_lead:"Cinco casas de oficio que mantienen viva esta colección. A cada una se le otorgan estrellas ARTECH por la calidad de su trabajo, la fidelidad de sus restauraciones y el respeto que muestra por la pieza original.",
+    tw_lead:"Las casas de oficio que mantienen viva esta colección. Las estrellas ARTECH se otorgan según el trabajo realizado, en cinco criterios: cromado, mecánica, planchado y pintura, tiempo y precio.",
     tw_system:"La calificación",tw_houses:"Las cinco casas",tw_works:"Obras",
     tw_note:"Cada taller se visita y se revisa una vez al año. Las estrellas las otorga ARTECH y pueden cambiar de una edición a la siguiente.",
     pgc_kick:"TODA LA",pgc_sub:"Desde el auto más antiguo del mundo hasta clásicos Porsche excepcionales — explora cada modelo de nuestra exhibición permanente.",
@@ -2126,14 +2196,64 @@ function renderExperiencias(){
 }
 
 /* ===== TALLERES AFILIADOS · ESTRELLAS ARTECH =====
-   ARMAZÓN: los textos son de relleno, listos para sustituir.
-   Cada taller: n = nombre · e = especialidad · s = estrellas (1-3)
-   z = zona · d = descripción · o = obras (autos de la colección)   */
+   Las estrellas se otorgan por CINCO criterios. Editar aqui, en EN y ES.
+   p = puntuacion por criterio, de 1 a 3 estrellas.
+   PUNTUACIONES DE RELLENO: sustituir por las reales de ARTECH.
+   obras[].foto / .video = huecos reservados; se rellenan con el archivo
+   cuando este disponible (ej. foto:'assets/talleres/indicars/auburn.jpg'). */
+const CRITERIOS = [
+ {k:'cromado',  t:{en:'Chrome',            es:'Cromado'}},
+ {k:'mecanica', t:{en:'Mechanics',         es:'Mecánica'}},
+ {k:'pintura',  t:{en:'Bodywork & paint',  es:'Planchado y pintura'}},
+ {k:'tiempo',   t:{en:'Turnaround',        es:'Tiempo'}},
+ {k:'precio',   t:{en:'Value',             es:'Precio'}}
+];
+
+const PRINCIPAL = {
+ n:'INDICARS',
+ z:'Lima, Perú',
+ logo:'',                                   /* hueco para el logo */
+ e:{en:'Full restoration · parts made in-house',
+    es:'Restauración integral · piezas fabricadas en casa'},
+ d:{en:'INDICARS manufactures and repairs every part a car needs, one piece at a time. Classic vehicles are returned to their original condition; some are modernised when the project calls for it. It is the workshop behind the restorations of this collection.',
+    es:'INDICARS fabrica y arregla cada pieza que necesita un auto, una por una. Los vehículos clásicos se devuelven a su estado original y algunos se modernizan cuando el proyecto lo pide. Es el taller detrás de las restauraciones de esta colección.'},
+ p:{cromado:3, mecanica:3, pintura:3, tiempo:3, precio:2},
+ obras:[
+  {n:'Auburn 852 Supercharged', foto:'', video:''},
+  {n:'Volvo P1800',             foto:'', video:''},
+  {n:'Porsche 930 Turbo',       foto:'', video:''},
+  {n:'Dodge Challenger R/T',    foto:'', video:''}
+ ]
+};
+
+const TALLERES = [
+ {n:'RP Alta Gama', z:'Lima, Perú',
+  e:{en:'High-end bodywork and paint', es:'Planchado y pintura de alta gama'},
+  d:{en:'Placeholder text. Describe here the work of RP Alta Gama within the collection.',
+     es:'Texto de relleno. Describir aquí el trabajo de RP Alta Gama dentro de la colección.'},
+  p:{cromado:3, mecanica:2, pintura:3, tiempo:2, precio:2},
+  obras:[{n:'', foto:''},{n:'', foto:''},{n:'', foto:''},{n:'', foto:''}]},
+
+ {n:'Carmelo Service', z:'Lima, Perú',
+  e:{en:'Mechanics and maintenance', es:'Mecánica y mantenimiento'},
+  d:{en:'Placeholder text. Describe here the work of Carmelo Service within the collection.',
+     es:'Texto de relleno. Describir aquí el trabajo de Carmelo Service dentro de la colección.'},
+  p:{cromado:2, mecanica:3, pintura:2, tiempo:3, precio:3},
+  obras:[{n:'', foto:''},{n:'', foto:''},{n:'', foto:''},{n:'', foto:''}]},
+
+ {n:'Germania Automotriz', z:'Lima, Perú',
+  e:{en:'Mechanics and European specialists', es:'Mecánica y especialistas en europeos'},
+  d:{en:'Placeholder text. Describe here the work of Germania Automotriz within the collection.',
+     es:'Texto de relleno. Describir aquí el trabajo de Germania Automotriz dentro de la colección.'},
+  p:{cromado:2, mecanica:3, pintura:2, tiempo:2, precio:3},
+  obras:[{n:'', foto:''},{n:'', foto:''},{n:'', foto:''},{n:'', foto:''}]}
+];
+
 const ESTRELLAS = [
- {s:1, t:{en:'One ARTECH star',es:'Una estrella ARTECH'},
+ {s:1, t:{en:'One ARTECH star',   es:'Una estrella ARTECH'},
        d:{en:'Exceptional craft. Worth entrusting a piece to.',
           es:'Oficio excepcional. Merece confiarle una pieza.'}},
- {s:2, t:{en:'Two ARTECH stars',es:'Dos estrellas ARTECH'},
+ {s:2, t:{en:'Two ARTECH stars',  es:'Dos estrellas ARTECH'},
        d:{en:'Remarkable mastery. Worth a detour.',
           es:'Maestría notable. Merece desviarse del camino.'}},
  {s:3, t:{en:'Three ARTECH stars',es:'Tres estrellas ARTECH'},
@@ -2141,65 +2261,79 @@ const ESTRELLAS = [
           es:'Excelencia absoluta. Merece un viaje en sí mismo.'}}
 ];
 
-const TALLERES = [
- {n:'Casa Belmonte', s:3, z:'Barranco, Lima',
-  e:{en:'Paint and finishes',es:'Pintura y acabados'},
-  d:{en:'Layer upon layer, applied and sanded by hand until the reflection has no seam. The house that returned the Racing Blue to our 300S.',
-     es:'Capa sobre capa, aplicadas y lijadas a mano hasta que el reflejo no tiene costura. La casa que devolvió el azul de carrera a nuestro 300S.'},
-  o:['Maserati 300S','Ferrari Testarossa','Porsche 911 Turbo S']},
- {n:'Atelier Vargas', s:3, z:'San Isidro, Lima',
-  e:{en:'Upholstery and leather',es:'Tapicería y cuero'},
-  d:{en:'Hides selected one by one and stitched with the same tension the factory used. They rebuilt the entire cabin of the Packard from period photographs.',
-     es:'Cueros elegidos uno a uno y cosidos con la misma tensión que usaba la fábrica. Reconstruyeron el habitáculo completo del Packard a partir de fotografías de época.'},
-  o:['Packard 740 Limousine','Stutz BB','Mercury Montclair']},
- {n:'Motores Ferrand', s:3, z:'Surquillo, Lima',
-  e:{en:'Engines and mechanics',es:'Motores y mecánica'},
-  d:{en:'Every engine is opened, measured and reassembled to original tolerances. Nothing leaves the bench until it sounds the way it should.',
-     es:'Cada motor se abre, se mide y se rearma con las tolerancias originales. Nada sale del banco hasta que suena como debe sonar.'},
-  o:['Porsche 911 GT2 RS','Mercedes-Benz 560 SEC','Dodge Challenger R/T']},
- {n:'Chapa Solari', s:2, z:'Chorrillos, Lima',
-  e:{en:'Bodywork and panel beating',es:'Carrocería y chapa'},
-  d:{en:'Hammer and dolly, no filler. They straightened the wings of the Woody by working the metal until the line returned on its own.',
-     es:'Martillo y tas, sin masilla. Enderezaron los guardabarros del Woody trabajando el metal hasta que la línea volvió sola.'},
-  o:['Ford Super Deluxe Woody','Cadillac El Dorado','Oldsmobile 88']},
- {n:'Cromo Iriarte', s:2, z:'Callao, Lima',
-  e:{en:'Chrome and metal plating',es:'Cromado y metales'},
-  d:{en:'Copper, nickel and chrome in the old order, with the polishing time nobody wants to spend any more. Their grilles look wet.',
-     es:'Cobre, níquel y cromo en el orden antiguo, con el tiempo de pulido que ya nadie quiere dedicar. Sus parrillas parecen mojadas.'},
-  o:['Auburn 851','Cadillac El Dorado','Plymouth Satellite']}
-];
-
 function renderTalleres(){
   const host=document.getElementById('tallerGrid'); if(!host) return;
-  const L=(o)=>o ? (o[lang]||o.en||'') : '';
-  const estrella='<svg class="tw-star" viewBox="0 0 24 24" aria-hidden="true">'
+  const L=o=>o ? (o[lang]||o.en||'') : '';
+  const et=k=>(typeof dict!=='undefined' && dict[lang] && dict[lang][k]) ? dict[lang][k] : k;
+  const ESTR='<svg class="tw-star" viewBox="0 0 24 24" aria-hidden="true">'
     +'<path d="M12 2.6l2.5 6.1 6.6.5-5 4.3 1.5 6.4-5.6-3.5-5.6 3.5 1.5-6.4-5-4.3 6.6-.5z"/></svg>';
-  // leyenda de estrellas
+  /* fila de estrellas: llenas hasta la puntuacion, huecas el resto */
+  const fila=v=>'<span class="tw-rate" role="img" aria-label="'+v+'/3">'
+    + ESTR.repeat(v)
+    + '<span class="tw-off">'+ESTR.repeat(3-v)+'</span></span>';
+  /* tabla de los cinco criterios */
+  const tabla=p=>'<dl class="tw-scores">'
+    + CRITERIOS.map(c=>'<div><dt>'+L(c.t)+'</dt><dd>'+fila(p[c.k]||0)+'</dd></div>').join('')
+    + '</dl>';
+
+  /* --- los cinco criterios, explicados --- */
+  const crit=document.getElementById('twCriterios');
+  if(crit) crit.innerHTML=CRITERIOS.map(c=>'<span class="tw-chip">'+L(c.t)+'</span>').join('');
+
+  /* --- que significa cada nivel --- */
   const leyenda=document.getElementById('tallerLeyenda');
-  if(leyenda){
-    leyenda.innerHTML=ESTRELLAS.slice().reverse().map(function(e){
-      return '<div class="tw-tier"><div class="tw-tier-stars">'+estrella.repeat(e.s)+'</div>'
-        +'<h4>'+L(e.t)+'</h4><p>'+L(e.d)+'</p></div>';
-    }).join('');
-  }
-  host.innerHTML=TALLERES.map(function(t,i){
-    return '<article class="tw-card">'
-      + '<div class="tw-photo" aria-hidden="true"><span>'+String(i+1).padStart(2,'0')+'</span></div>'
-      + '<div class="tw-body">'
-      +   '<div class="tw-stars" title="'+t.s+'">'+estrella.repeat(t.s)+'</div>'
-      +   '<h3>'+t.n+'</h3>'
-      +   '<div class="tw-spec">'+L(t.e)+'</div>'
-      +   '<div class="tw-zone">'+t.z+'</div>'
-      +   '<p class="tw-desc">'+L(t.d)+'</p>'
-      +   '<div class="tw-works"><span class="tw-works-t" data-i="tw_works">Works</span>'
-      +     t.o.map(function(o){return '<span class="tw-work">'+(typeof o==='string'?o:L(o))+'</span>';}).join('')
-      +   '</div>'
-      + '</div></article>';
-  }).join('');
-  // la etiqueta "Obras" tambien se traduce
-  host.querySelectorAll('[data-i="tw_works"]').forEach(function(e){
-    if(dict[lang].tw_works) e.textContent=dict[lang].tw_works;
-  });
+  if(leyenda) leyenda.innerHTML=ESTRELLAS.slice().reverse().map(e=>
+    '<div class="tw-tier"><div class="tw-tier-stars">'+ESTR.repeat(e.s)+'</div>'
+    +'<h4>'+L(e.t)+'</h4><p>'+L(e.d)+'</p></div>').join('');
+
+  /* --- bloque de restauracion: huecos de foto y video --- */
+  const restauracion=(obras,conVideo)=>'<div class="tw-rest">'
+    + '<h4 class="tw-rest-t">'+et('tw_rest')+'</h4>'
+    + '<div class="tw-rest-grid">'
+    + obras.map(o=>{
+        const media = o.foto
+          ? '<img src="'+o.foto+'" alt="'+(o.n||'')+'" loading="lazy">'
+          : '<span class="tw-ph">'+et('tw_photo')+'</span>';
+        const vid = conVideo ? (o.video
+          ? '<video class="tw-vid" src="'+o.video+'" controls playsinline></video>'
+          : '<span class="tw-ph tw-ph-v">'+et('tw_video')+'</span>') : '';
+        return '<figure class="tw-rest-item">'
+             + '<div class="tw-rest-media">'+media+'</div>'
+             + (vid?'<div class="tw-rest-media tw-rest-video">'+vid+'</div>':'')
+             + '<figcaption>'+(o.n||'<span class="tw-soon">'+et('tw_soon')+'</span>')+'</figcaption>'
+             + '</figure>';
+      }).join('')
+    + '</div></div>';
+
+  /* --- taller principal --- */
+  const pr=document.getElementById('twPrincipal');
+  if(pr) pr.innerHTML='<article class="tw-main-card">'
+    + '<div class="tw-main-top">'
+    +   '<div class="tw-logo">'+(PRINCIPAL.logo
+          ? '<img src="'+PRINCIPAL.logo+'" alt="'+PRINCIPAL.n+'">'
+          : '<span class="tw-ph">'+et('tw_logo')+'</span>')+'</div>'
+    +   '<div class="tw-main-txt">'
+    +     '<div class="tw-badge">'+et('tw_main_badge')+'</div>'
+    +     '<h3>'+PRINCIPAL.n+'</h3>'
+    +     '<div class="tw-spec">'+L(PRINCIPAL.e)+'</div>'
+    +     '<div class="tw-zone">'+PRINCIPAL.z+'</div>'
+    +     '<p class="tw-desc">'+L(PRINCIPAL.d)+'</p>'
+    +   '</div>'
+    + '</div>'
+    + tabla(PRINCIPAL.p)
+    + restauracion(PRINCIPAL.obras, true)
+    + '</article>';
+
+  /* --- talleres aliados --- */
+  host.innerHTML=TALLERES.map(t=>'<article class="tw-card">'
+    + '<div class="tw-body">'
+    +   '<h3>'+t.n+'</h3>'
+    +   '<div class="tw-spec">'+L(t.e)+'</div>'
+    +   '<div class="tw-zone">'+t.z+'</div>'
+    +   '<p class="tw-desc">'+L(t.d)+'</p>'
+    +   tabla(t.p)
+    +   restauracion(t.obras, false)
+    + '</div></article>').join('');
 }
 
 /* ===== PÁGINAS DE INFORMACIÓN (pie de página) =====
