@@ -1218,6 +1218,8 @@ innerPages['exp3d']=document.getElementById('exp3d');
    se pausan al abrir una página interna y vuelven al regresar */
 function mediaDeFondo(encender){
   document.querySelectorAll('.hero-bg,.exp-bg').forEach(function(v){
+    // V3 shell owns the hero's autoplay, user pause and scene visibility.
+    if(v.id==='heroVid')return;
     try{
       if(encender && v.dataset.userPaused!=='1'){ delete v.dataset.off; v.play().catch(function(){}); }
       else { v.dataset.off='1'; v.pause(); }      // marca la pausa como intencional

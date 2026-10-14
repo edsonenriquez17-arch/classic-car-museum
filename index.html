@@ -13,13 +13,15 @@
 <link rel="stylesheet" href="assets/css/site.css">
 <link rel="stylesheet" href="assets/css/editorial.css">
 <link rel="stylesheet" href="assets/css/v3-scenes.css">
+<link rel="stylesheet" href="assets/css/v3-block1.css">
 </head>
 <body>
 <a class="skip-link" href="#main-content" data-i="skip_content">Skip to content</a>
 <noscript><p class="noscript-note">JavaScript is required for the catalogue. Contact ARTECH: <a href="https://wa.me/51992432455">WhatsApp</a> · <a href="mailto:info@artech.pe">info@artech.pe</a>.</p><style>#preloader{display:none!important}.subpage{display:none!important}</style></noscript>
 
-<!-- V3-01 · Black, wordmark, black, first scene. -->
+<!-- V3-B01 · Original rendered car, fifteen seconds and the approved wordmark. -->
 <div id="preloader" hidden role="dialog" aria-modal="true" aria-label="ARTECH">
+  <video class="pl-video" id="plVideo" data-src="assets/preloader.mp4" muted loop playsinline preload="none" aria-hidden="true"></video>
   <button class="pl-skip" id="plSkip" type="button" data-i="skip_intro">Skip intro</button>
   <div class="pl-inner">
     <img class="pl-logo" src="assets/logo.png" alt="ARTECH" width="280" height="54">
@@ -32,6 +34,13 @@
   <nav aria-label="Main navigation" data-aria="nav_main">
   <div class="wrap nav">
     <a href="#top" class="logo" aria-label="ARTECH"><img src="assets/logo.png" alt="ARTECH"></a>
+    <div class="v3-header-links" aria-label="Museum sections" data-aria="nav_main">
+      <a href="#p-collection" data-i="nav_collection">Collection</a>
+      <a href="#p-workshops" data-i="nav_taller">The Workshop</a>
+      <a href="#p-experience" data-i="nav_experience">Experiences</a>
+      <a href="#p-cafe" data-i="nav_cafe">Restaurant</a>
+      <a href="#p-history" data-i="nav_history">History</a>
+    </div>
     <div id="v3MenuPanel" class="v3-menu-panel" hidden>
       <ul class="navlinks" id="navlinks" inert>
         <li><a href="#p-collection" data-i="nav_collection" data-menu-photo="assets/cars/maserati-300s/cover.jpg">Collection</a></li>
@@ -60,7 +69,7 @@
 <!-- V3-02 · Complete homepage: nine scenes and the shared footer. -->
 <section class="home-only v3-deck" id="v3Opening" data-scene-deck>
   <div class="v3-stage">
-    <section class="v3-scene v3-hero-scene" id="top" data-scene="home-01">
+    <section class="v3-scene v3-hero-scene" id="top" data-scene="home-01" data-scene-units="2.7">
       <div class="v3-scene-inner v3-split">
         <div class="v3-copy">
           <p class="v3-kicker" data-i="h_hero_pre">ARTECH · LIMA</p>
@@ -69,29 +78,32 @@ THROUGH TIME.</h1>
           <p id="homeHeroHook">Classic and contemporary cars. A collection to discover in Lima.</p>
           <div class="v3-actions"><a href="#p-tickets" class="home-button" data-i="nav_tickets">Book your visit</a><a href="#p-collection" class="home-link" data-i="h_collection">View the collection ↗</a></div>
         </div>
+        <div class="v3-hero-slot">
         <figure class="v3-media v3-hero-media">
           <img src="assets/cars/cxj-330/cover.jpg" alt="Ferrari Testarossa, 1988" width="1800" height="1199" fetchpriority="high">
-          <video id="heroVid" class="hero-bg" muted loop playsinline preload="none" poster="assets/cars/cxj-330/cover.jpg" data-src="assets/hero.mp4" data-has-audio="false" data-user-paused="1" aria-label="ARTECH"></video>
+          <video id="heroVid" class="hero-bg" autoplay muted loop playsinline preload="none" poster="assets/cars/cxj-330/cover.jpg" data-src="assets/hero.mp4" data-has-audio="false" data-user-paused="0" aria-label="ARTECH"></video>
           <button id="homeVideoToggle" class="v3-video-toggle" type="button" aria-label="Play video" aria-controls="heroVid" aria-pressed="false">
             <svg class="v3-play-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
             <svg class="v3-pause-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h4v14H7zM14 5h4v14h-4z"/></svg>
           </button>
+          <button id="homeSoundToggle" class="v3-sound-toggle" type="button" aria-controls="heroVid" aria-pressed="false" hidden>Sound off</button>
           <figcaption id="v3VideoStatus" class="v3-video-status" hidden role="status"></figcaption>
         </figure>
+        </div>
       </div>
-      <div class="v3-scene-bottom"><span class="v3-scene-index">01 / 09</span><button class="v3-next-scene" type="button" data-next-scene aria-label="Next scene" data-es-aria="Siguiente escena" data-en-aria="Next scene"><span data-es="SIGUE EL RECORRIDO" data-en="CONTINUE THE JOURNEY">CONTINUE THE JOURNEY</span><span aria-hidden="true">↓</span></button></div>
+      <div class="v3-scene-bottom"><button class="v3-next-scene" type="button" data-next-scene aria-label="Next scene" data-es-aria="Siguiente escena" data-en-aria="Next scene"><span data-es="SIGUE EL RECORRIDO" data-en="CONTINUE THE JOURNEY">CONTINUE THE JOURNEY</span><span aria-hidden="true">↓</span></button></div>
     </section>
     <section class="v3-scene v3-type-scene" data-scene="home-02">
       <div class="v3-scene-inner"><p class="v3-kicker" data-es="EL COMIENZO" data-en="THE BEGINNING">THE BEGINNING</p><h2 id="v3OldestTitle">THE JOURNEY
 BEGINS IN 1903.</h2><p id="v3OldestNote"></p></div>
-      <div class="v3-scene-bottom"><span class="v3-scene-index">02 / 09</span><button class="v3-next-scene" type="button" data-next-scene aria-label="Next scene" data-es-aria="Siguiente escena" data-en-aria="Next scene"><span data-es="DESCUBRE LA PRIMERA PIEZA" data-en="DISCOVER THE FIRST CAR">DISCOVER THE FIRST CAR</span><span aria-hidden="true">↓</span></button></div>
+      <div class="v3-scene-bottom"><button class="v3-next-scene" type="button" data-next-scene aria-label="Next scene" data-es-aria="Siguiente escena" data-en-aria="Next scene"><span data-es="DESCUBRE LA PRIMERA PIEZA" data-en="DISCOVER THE FIRST CAR">DISCOVER THE FIRST CAR</span><span aria-hidden="true">↓</span></button></div>
     </section>
     <section class="v3-scene v3-first-car" data-scene="home-03">
       <div class="v3-scene-inner"><figure class="v3-media"><img src="assets/cars/sin-placa-25/v1.jpg" alt="Automóvil de 1903 de la colección" data-v3-alt-es="Automóvil de 1903 de la colección" data-v3-alt-en="1903 car in the collection" width="1600" height="1600" loading="lazy"></figure><div class="v3-photo-caption"><div><p class="v3-kicker">1903</p><h2 data-es="OTRA FORMA
 DE VIAJAR." data-en="A DIFFERENT WAY
 TO TRAVEL.">A DIFFERENT WAY
 TO TRAVEL.</h2></div><a class="home-link" href="#p-vehicle/sin-placa-25" data-i="h_piece">Discover this piece ↗</a></div></div>
-      <div class="v3-scene-bottom"><span class="v3-scene-index">03 / 09</span><button class="v3-next-scene" type="button" data-next-scene aria-label="Next scene" data-es-aria="Siguiente escena" data-en-aria="Next scene"><span data-es="CONTINÚA POR LAS ÉPOCAS" data-en="CONTINUE THROUGH THE ERAS">CONTINUE THROUGH THE ERAS</span><span aria-hidden="true">↓</span></button></div>
+      <div class="v3-scene-bottom"><button class="v3-next-scene" type="button" data-next-scene aria-label="Next scene" data-es-aria="Siguiente escena" data-en-aria="Next scene"><span data-es="CONTINÚA POR LAS ÉPOCAS" data-en="CONTINUE THROUGH THE ERAS">CONTINUE THROUGH THE ERAS</span><span aria-hidden="true">↓</span></button></div>
     </section>
 
     <section class="v3-scene v3-era-scene" id="collection" data-scene="home-04" data-scene-units="5.8">
@@ -105,21 +117,21 @@ SUPERCHARGED</h2></div><a id="homeEraLink" class="home-link" href="#p-vehicle/si
           <button type="button" data-era="0" aria-pressed="false">1903</button><button type="button" data-era="1" aria-pressed="true">1936</button><button type="button" data-era="2" aria-pressed="false">1956</button><button type="button" data-era="3" aria-pressed="false">1970</button><button type="button" data-era="4" aria-pressed="false">1988</button><button type="button" data-era="5" aria-pressed="false">2018</button>
         </nav>
       </div>
-      <div class="v3-scene-bottom"><span class="v3-scene-index">04 / 09</span><button class="v3-next-scene" type="button" data-next-scene aria-label="Next scene" data-es-aria="Siguiente escena" data-en-aria="Next scene"><span data-es="DETRÁS DE LA COLECCIÓN" data-en="BEHIND THE COLLECTION">BEHIND THE COLLECTION</span><span aria-hidden="true">↓</span></button></div>
+      <div class="v3-scene-bottom"><button class="v3-next-scene" type="button" data-next-scene aria-label="Next scene" data-es-aria="Siguiente escena" data-en-aria="Next scene"><span data-es="DETRÁS DE LA COLECCIÓN" data-en="BEHIND THE COLLECTION">BEHIND THE COLLECTION</span><span aria-hidden="true">↓</span></button></div>
     </section>
     <section class="v3-scene v3-type-scene" data-scene="home-05">
       <div class="v3-scene-inner"><p class="v3-kicker" data-es="MÁS ALLÁ DE LA SALA" data-en="BEYOND THE GALLERY">BEYOND THE GALLERY</p><h2 data-es="LO QUE VES EN LA SALA
 ES PARTE DE LA HISTORIA." data-en="WHAT YOU SEE IN THE GALLERY
 IS PART OF THE STORY.">WHAT YOU SEE IN THE GALLERY
 IS PART OF THE STORY.</h2><p data-es="En el taller, la historia continúa." data-en="In the workshop, the story continues.">In the workshop, the story continues.</p></div>
-      <div class="v3-scene-bottom"><span class="v3-scene-index">05 / 09</span><button class="v3-next-scene" type="button" data-next-scene aria-label="Next scene" data-es-aria="Siguiente escena" data-en-aria="Next scene"><span data-es="CONOCE LOS OFICIOS" data-en="DISCOVER THE CRAFTS">DISCOVER THE CRAFTS</span><span aria-hidden="true">↓</span></button></div>
+      <div class="v3-scene-bottom"><button class="v3-next-scene" type="button" data-next-scene aria-label="Next scene" data-es-aria="Siguiente escena" data-en-aria="Next scene"><span data-es="CONOCE LOS OFICIOS" data-en="DISCOVER THE CRAFTS">DISCOVER THE CRAFTS</span><span aria-hidden="true">↓</span></button></div>
     </section>
     <section class="v3-scene v3-workshop-preview" id="legacy" data-scene="home-06">
       <div class="v3-scene-inner v3-split"><div class="v3-copy"><p class="v3-kicker" data-i="nav_taller">The Workshop</p><h2 data-es="LA HISTORIA TAMBIÉN
 SE RECONSTRUYE." data-en="HISTORY CAN
 BE REBUILT.">HISTORY CAN
 BE REBUILT.</h2><p data-es="Carrocería, mecánica, pintura y tapicería. Descubre los oficios detrás de la colección." data-en="Bodywork, mechanics, paint and upholstery. Discover the crafts behind the collection.">Bodywork, mechanics, paint and upholstery. Discover the crafts behind the collection.</p><div class="v3-actions"><a href="#p-workshops" class="home-link" data-i="h_workshop">Discover the workshop ↗</a></div></div><figure class="v3-media"><img src="assets/cars/cxj-330/d1.jpg" alt="Emblema y carrocería del Ferrari Testarossa" data-v3-alt-es="Emblema y carrocería del Ferrari Testarossa" data-v3-alt-en="Ferrari Testarossa badge and bodywork" width="1400" height="1099" loading="lazy"></figure></div>
-      <div class="v3-scene-bottom"><span class="v3-scene-index">06 / 09</span><button class="v3-next-scene" type="button" data-next-scene aria-label="Next scene" data-es-aria="Siguiente escena" data-en-aria="Next scene"><span data-es="ELIGE TU EXPERIENCIA" data-en="CHOOSE YOUR EXPERIENCE">CHOOSE YOUR EXPERIENCE</span><span aria-hidden="true">↓</span></button></div>
+      <div class="v3-scene-bottom"><button class="v3-next-scene" type="button" data-next-scene aria-label="Next scene" data-es-aria="Siguiente escena" data-en-aria="Next scene"><span data-es="ELIGE TU EXPERIENCIA" data-en="CHOOSE YOUR EXPERIENCE">CHOOSE YOUR EXPERIENCE</span><span aria-hidden="true">↓</span></button></div>
     </section>
     <section class="v3-scene v3-scene--paper v3-home-experiences" id="experiences" data-scene="home-07">
       <div class="v3-scene-inner"><p class="v3-kicker" data-es="EXPERIENCIAS" data-en="EXPERIENCES">EXPERIENCES</p><h2 data-es="ELIGE CÓMO
@@ -138,14 +150,14 @@ IN PRIVATE">ARTECH
 IN PRIVATE</h3><p data-es="Mín. 15 personas · 2 h 30 min" data-en="Min. 15 guests · 2 h 30 min">Min. 15 guests · 2 h 30 min</p><a class="v3-experience-link" href="#p-tickets/private" data-i="nav_tickets">Book your visit</a></div></article>
         </div><p class="v3-commercial-note" data-es="Solicita tu turno. Artech confirma disponibilidad y condiciones." data-en="Request your visit. Artech confirms availability and conditions.">Request your visit. Artech confirms availability and conditions.</p>
       </div>
-      <div class="v3-scene-bottom"><span class="v3-scene-index">07 / 09</span><button class="v3-next-scene" type="button" data-next-scene aria-label="Next scene" data-es-aria="Siguiente escena" data-en-aria="Next scene"><span data-es="TU VISITA EMPIEZA AQUÍ" data-en="YOUR VISIT STARTS HERE">YOUR VISIT STARTS HERE</span><span aria-hidden="true">↓</span></button></div>
+      <div class="v3-scene-bottom"><button class="v3-next-scene" type="button" data-next-scene aria-label="Next scene" data-es-aria="Siguiente escena" data-en-aria="Next scene"><span data-es="TU VISITA EMPIEZA AQUÍ" data-en="YOUR VISIT STARTS HERE">YOUR VISIT STARTS HERE</span><span aria-hidden="true">↓</span></button></div>
     </section>
     <section class="v3-scene v3-type-scene v3-visit-preview" data-scene="home-08">
       <div class="v3-scene-inner"><p class="v3-kicker" id="homeCollectionFacts"></p><h2 data-es="HAZ ESPACIO
 PARA DESCUBRIR." data-en="MAKE TIME
 TO DISCOVER.">MAKE TIME
 TO DISCOVER.</h2><p data-es="Elige tu día. El resto comienza en Artech." data-en="Choose your day. The rest begins at Artech.">Choose your day. The rest begins at Artech.</p><div class="v3-actions"><a class="home-button" href="#p-tickets" data-i="nav_tickets">Book your visit</a><a class="home-link" href="#p-experience" data-es="CONOCE LAS EXPERIENCIAS ↗" data-en="EXPLORE THE EXPERIENCES ↗">EXPLORE THE EXPERIENCES ↗</a></div></div>
-      <div class="v3-scene-bottom"><span class="v3-scene-index">08 / 09</span><button class="v3-next-scene" type="button" data-next-scene aria-label="Next scene" data-es-aria="Siguiente escena" data-en-aria="Next scene"><span data-es="EL SIGUIENTE CAPÍTULO" data-en="THE NEXT CHAPTER">THE NEXT CHAPTER</span><span aria-hidden="true">↓</span></button></div>
+      <div class="v3-scene-bottom"><button class="v3-next-scene" type="button" data-next-scene aria-label="Next scene" data-es-aria="Siguiente escena" data-en-aria="Next scene"><span data-es="EL SIGUIENTE CAPÍTULO" data-en="THE NEXT CHAPTER">THE NEXT CHAPTER</span><span aria-hidden="true">↓</span></button></div>
     </section>
     <section class="v3-scene v3-chapter-scene" id="home-closing" data-scene="home-09" data-scene-units="2.1" data-next-chapter="#p-workshops">
       <div class="v3-scene-inner"><figure class="v3-media"><img src="assets/cars/cxj-330/d3.jpg" alt="Emblema frontal del Ferrari Testarossa" data-v3-alt-es="Emblema frontal del Ferrari Testarossa" data-v3-alt-en="Ferrari Testarossa front badge" width="1400" height="1099" loading="lazy"></figure><div class="v3-photo-caption"><div><p class="v3-kicker" data-es="SIGUIENTE CAPÍTULO" data-en="NEXT CHAPTER">NEXT CHAPTER</p><h2 data-es="EL TALLER." data-en="THE WORKSHOP.">THE WORKSHOP.</h2></div><a href="#p-workshops" class="home-link" data-es="ENTRAR AL TALLER ↗" data-en="ENTER THE WORKSHOP ↗">ENTER THE WORKSHOP ↗</a></div><p class="v3-chapter-note" data-es="Sigue bajando para descubrir el taller." data-en="Keep scrolling to discover the workshop.">Keep scrolling to discover the workshop.</p><a class="v3-footer-access" href="#site-footer" data-es="INFORMACIÓN DEL MUSEO ↓" data-en="MUSEUM INFORMATION ↓">MUSEUM INFORMATION ↓</a></div>
