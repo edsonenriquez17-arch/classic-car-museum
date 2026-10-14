@@ -1,0 +1,12 @@
+{
+  "name": "artech-static-site",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "test": "node --test tests/core.test.cjs",
+    "test:browser": "node --test tests/browser.test.cjs"
+  },
+  "devDependencies": {
+    "playwright": "1.62.1"
+  }
+}
