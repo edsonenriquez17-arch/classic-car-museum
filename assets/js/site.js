@@ -16,7 +16,6 @@ const dict = {
     "footer_copyright": "© 2026 ARTECH · Lima, Peru",
     "footer_legal": "Legal information",
     "lang_switch": "Cambiar a español",
-
     "nav_experience": "Experiences",
     "nav_360": "3D demo",
     "nav_about": "About",
@@ -284,7 +283,60 @@ const dict = {
     "demo_3d_short": "ILLUSTRATIVE MODEL",
     "model_3d": "3D DESIGN STUDY",
     "viewer_fallback": "The 3D viewer is unavailable. You can explore the collection instead.",
-    "cafe_photo_note": "Museum interior"
+    "cafe_photo_note": "Museum interior",
+    "h_hero_pre": "WE DON’T EXHIBIT CARS.",
+    "h_hero_title": "WE BRING THEM\nBACK TO LIFE.",
+    "h_hero_hook": "The oldest piece is {age} years old. Meet it below.",
+    "h_hook_fallback": "The journey begins in 1903. Meet its first piece below.",
+    "h_enter_workshop": "Enter the workshop ↗",
+    "h_scroll": "Discover the collection ↓",
+    "h_brands_label": "Collection brands",
+    "h_brands": "{count} brands. Under one roof.",
+    "h_pause_brands": "Pause brands",
+    "h_resume_brands": "Resume brands",
+    "h_video_pause": "Pause video",
+    "h_video_play": "Play video",
+    "h_video_no_audio": "No audio track",
+    "h_video_failed": "Video unavailable",
+    "h_sound_on": "Sound on",
+    "h_sound_off": "Mute",
+    "h_statement": "A CLASSIC SPEAKS\nBEFORE YOU START\nTHE ENGINE.",
+    "h_statement_note": "LOOK CLOSELY. THE DETAILS TELL THE STORY.",
+    "h_journey": "THE JOURNEY",
+    "h_years": "115 YEARS.\nSIX STOPS.",
+    "h_collection": "View the collection ↗",
+    "h_journey_note": "From the 1903 Tonneau to the 2018 Porsche. Choose a year to discover its piece.",
+    "h_piece": "Discover this piece ↗",
+    "h_memory": "SOME CARS\nARE FORGOTTEN.",
+    "h_return": "HERE, THEY\nDRIVE AGAIN.",
+    "h_return_body": "The collection is only one part of the story. Enter the workshop and discover the craft behind each piece.",
+    "h_workshop": "Discover the workshop ↗",
+    "h_rescue": "RESCUE",
+    "h_rescue_body": "See the details that make a piece worth preserving.",
+    "h_rebuild": "REBUILD",
+    "h_rebuild_body": "Discover the work behind the seats, the engine and the body.",
+    "h_exhibit": "EXHIBIT",
+    "h_exhibit_body": "Meet the piece in person. Look beyond the photograph.",
+    "h_access": "THREE LEVELS OF ACCESS",
+    "h_levels": "LOOKING IS EASY.\nUNDERSTANDING TAKES MORE.",
+    "h_anchor": "For S/ 40 more, step inside the workshop.",
+    "h_level_1": "COLLECTION",
+    "h_level_1_detail": "Guided tour · 1 hour",
+    "h_level_2": "COLLECTION + WORKSHOP",
+    "h_level_2_detail": "VIP · 1 hour 30 minutes",
+    "h_level_3": "ALL OF ARTECH. PRIVATE.",
+    "h_level_3_detail": "Minimum 15 people · 2 hours 30 minutes",
+    "h_person": "per person",
+    "h_choose": "Plan this visit ↗",
+    "h_private": "Explore private access ↗",
+    "h_request_note": "Send your request. The team confirms availability and the final price on WhatsApp.",
+    "h_ready": "READY TO",
+    "h_close": "IGNITE\nTHE HISTORY?",
+    "h_no_payment": "No online payment. We confirm your request on WhatsApp.",
+    "h_auburn_detail": "Auburn 852 headlamp and grille",
+    "h_auburn_interior": "Auburn 852 dashboard and interior",
+    "h_upholstery": "Leather upholstery and instruments",
+    "h_ferrari_detail": "Ferrari badge and grille"
   },
   "es": {
     "d3_loading": "Cargando…",
@@ -300,7 +352,6 @@ const dict = {
     "footer_copyright": "© 2026 ARTECH · Lima, Perú",
     "footer_legal": "Información legal",
     "lang_switch": "Switch to English",
-
     "nav_experience": "Experiencias",
     "nav_360": "Demo 3D",
     "nav_about": "Nosotros",
@@ -568,7 +619,60 @@ const dict = {
     "demo_3d_short": "MODELO ILUSTRATIVO",
     "model_3d": "ESTUDIO DE DISEÑO 3D",
     "viewer_fallback": "El visor 3D no está disponible. Puedes explorar la colección.",
-    "cafe_photo_note": "Interior del museo"
+    "cafe_photo_note": "Interior del museo",
+    "h_hero_pre": "NO EXHIBIMOS AUTOS.",
+    "h_hero_title": "LOS TRAEMOS\nDE VUELTA.",
+    "h_hero_hook": "La pieza más antigua tiene {age} años. Te la presentamos al bajar.",
+    "h_hook_fallback": "El recorrido comienza en 1903. Te presentamos su primera pieza al bajar.",
+    "h_enter_workshop": "Entrar al taller ↗",
+    "h_scroll": "Descubre la colección ↓",
+    "h_brands_label": "Marcas de la colección",
+    "h_brands": "{count} marcas. Un solo techo.",
+    "h_pause_brands": "Pausar marcas",
+    "h_resume_brands": "Reanudar marcas",
+    "h_video_pause": "Pausar video",
+    "h_video_play": "Reproducir video",
+    "h_video_no_audio": "Sin audio",
+    "h_video_failed": "Video no disponible",
+    "h_sound_on": "Activar sonido",
+    "h_sound_off": "Silenciar",
+    "h_statement": "UN CLÁSICO HABLA\nANTES DE ENCENDER\nEL MOTOR.",
+    "h_statement_note": "MIRA DE CERCA. LOS DETALLES CUENTAN LA HISTORIA.",
+    "h_journey": "EL RECORRIDO",
+    "h_years": "115 AÑOS.\nSEIS PARADAS.",
+    "h_collection": "Ver la colección ↗",
+    "h_journey_note": "Del Tonneau de 1903 al Porsche de 2018. Elige un año y descubre su pieza.",
+    "h_piece": "Descubrir esta pieza ↗",
+    "h_memory": "ALGUNOS AUTOS\nSE OLVIDAN.",
+    "h_return": "AQUÍ VUELVEN\nA RODAR.",
+    "h_return_body": "La colección es una parte de la historia. Entra al taller y descubre el trabajo detrás de cada pieza.",
+    "h_workshop": "Conocer El Taller ↗",
+    "h_rescue": "RESCATAR",
+    "h_rescue_body": "Mira los detalles que hacen que una pieza merezca conservarse.",
+    "h_rebuild": "RECONSTRUIR",
+    "h_rebuild_body": "Descubre el trabajo detrás de los asientos, el motor y la carrocería.",
+    "h_exhibit": "EXHIBIR",
+    "h_exhibit_body": "Conoce la pieza en persona. Mira más allá de la fotografía.",
+    "h_access": "TRES NIVELES DE ACCESO",
+    "h_levels": "MIRAR ES FÁCIL.\nENTENDER, NO.",
+    "h_anchor": "Por S/ 40 más, entras al taller.",
+    "h_level_1": "COLECCIÓN",
+    "h_level_1_detail": "Recorrido guiado · 1 hora",
+    "h_level_2": "COLECCIÓN + TALLER",
+    "h_level_2_detail": "VIP · 1 hora 30 minutos",
+    "h_level_3": "TODO ARTECH, EN PRIVADO",
+    "h_level_3_detail": "Mínimo 15 personas · 2 horas 30 minutos",
+    "h_person": "por persona",
+    "h_choose": "Planifica esta visita ↗",
+    "h_private": "Explora el acceso privado ↗",
+    "h_request_note": "Envía tu solicitud. El equipo confirma disponibilidad y precio final por WhatsApp.",
+    "h_ready": "¿LISTO PARA",
+    "h_close": "ENCENDER\nLA HISTORIA?",
+    "h_no_payment": "No pagas en línea. Confirmamos tu solicitud por WhatsApp.",
+    "h_auburn_detail": "Faro y parrilla del Auburn 852",
+    "h_auburn_interior": "Tablero e interior del Auburn 852",
+    "h_upholstery": "Tapicería de cuero e instrumentos",
+    "h_ferrari_detail": "Emblema y parrilla de Ferrari"
   }
 };
 let lang = language();
@@ -596,6 +700,7 @@ function apply(l){
   const labels = { burger: 'menu', carSearch: 'search_label', brandSel: 'brand_label', lightbox: 'photo_gallery' };
   Object.entries(labels).forEach(([id, key]) => document.getElementById(id)?.setAttribute('aria-label', dict[l][key]));
   document.getElementById('ftLang')?.setAttribute('aria-label', dict[l].lang_switch);
+  renderHome();
   window.dispatchEvent(new Event('artech:lang'));
   const pv=document.getElementById('page-vehicle');
   if(currentSlug && pv && pv.classList.contains('active')) showVehicle(currentSlug);
@@ -1131,7 +1236,7 @@ function renderInfo(key){
 })();
 
 // internal pages router (same-window views: #p-experience / #p-collection)
-const innerPages={ 'p-experience':document.getElementById('page-experience'), 'p-collection':document.getElementById('page-collection'), 'p-vehicle':document.getElementById('page-vehicle'), 'p-cafe':document.getElementById('page-cafe'), 'p-contact':document.getElementById('page-contact'), 'p-blog':document.getElementById('page-blog'), 'p-post':document.getElementById('page-post'), 'p-tickets':document.getElementById('page-tickets')  , 'p-workshops':document.getElementById('page-workshops') };
+const innerPages={ 'location':document.getElementById('location'), 'p-experience':document.getElementById('page-experience'), 'p-collection':document.getElementById('page-collection'), 'p-vehicle':document.getElementById('page-vehicle'), 'p-cafe':document.getElementById('page-cafe'), 'p-contact':document.getElementById('page-contact'), 'p-blog':document.getElementById('page-blog'), 'p-post':document.getElementById('page-post'), 'p-tickets':document.getElementById('page-tickets')  , 'p-workshops':document.getElementById('page-workshops'), 'p-affiliated':document.getElementById('page-affiliated') };
 Object.keys(INFO).forEach(function(k){ innerPages[k]=document.getElementById('page-info'); });
 innerPages['exp3d']=document.getElementById('exp3d');
 /* los videos decorativos del home consumen CPU aunque estén ocultos:
@@ -1139,7 +1244,7 @@ innerPages['exp3d']=document.getElementById('exp3d');
 function mediaDeFondo(encender){
   document.querySelectorAll('.hero-bg,.exp-bg').forEach(function(v){
     try{
-      if(encender){ delete v.dataset.off; v.play().catch(function(){}); }
+      if(encender && v.dataset.userPaused!=='1'){ delete v.dataset.off; v.play().catch(function(){}); }
       else { v.dataset.off='1'; v.pause(); }      // marca la pausa como intencional
     }catch(e){}
   });
@@ -1261,6 +1366,59 @@ function carCard(c, cls) {
     <div class="body"><h4>${escapeHTML(disp)}</h4><p class="c-meta">${escapeHTML([c.brand,c.year].filter(Boolean).join(' · '))}</p>
     <span class="link-arrow"><span data-i="visit_info">${dict[lang].visit_info}</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div></a>`;
 }
+// MH04–MH06: catalogue facts and honest media controls for the homepage.
+function renderHome() {
+  const t = dict[lang], hook = document.getElementById('homeHeroHook');
+  const years = CARS.map(car => Number.parseInt(car.year, 10)).filter(Number.isFinite);
+  if (hook) hook.textContent = years.length
+    ? t.h_hero_hook.replace('{age}', Number(todayInLima().slice(0, 4)) - Math.min(...years))
+    : t.h_hook_fallback;
+  const brands = [...new Set(CARS.map(car => car.brand).filter(Boolean))].sort();
+  const count = document.getElementById('homeBrandCount'), track = document.getElementById('homeBrandTrack');
+  if (count) count.textContent = brands.length ? t.h_brands.replace('{count}', brands.length) : (lang === 'es' ? 'Bajo un solo techo.' : 'Under one roof.');
+  const key = brands.join('|');
+  if (track && brands.length && track.dataset.brands !== key) {
+    const names = brands.map(brand => `<span>${escapeHTML(brand)}</span>`).join('');
+    track.innerHTML = `<div class="home-brand-set">${names}</div><div class="home-brand-set" aria-hidden="true">${names}</div>`;
+    track.dataset.brands = key;
+  }
+  const pause = document.getElementById('homeBrandsToggle');
+  if (pause) pause.textContent = t[track?.classList.contains('paused') ? 'h_resume_brands' : 'h_pause_brands'];
+  const video = document.getElementById('heroVid'), toggle = document.getElementById('homeVideoToggle'), sound = document.getElementById('homeSoundToggle');
+  if (toggle && video) {
+    toggle.textContent = t[video.error ? 'h_video_failed' : video.paused ? 'h_video_play' : 'h_video_pause'];
+    toggle.setAttribute('aria-pressed', String(!video.paused));
+    toggle.disabled = !!video.error;
+  }
+  if (sound && video) {
+    sound.disabled = video.dataset.hasAudio !== 'true';
+    sound.textContent = t[sound.disabled ? 'h_video_no_audio' : video.muted ? 'h_sound_on' : 'h_sound_off'];
+    sound.setAttribute('aria-pressed', String(!video.muted && !sound.disabled));
+  }
+}
+document.getElementById('homeBrandsToggle')?.addEventListener('click', event => {
+  const track = document.getElementById('homeBrandTrack');
+  const paused = track.classList.toggle('paused');
+  event.currentTarget.setAttribute('aria-pressed', String(paused));
+  renderHome();
+});
+document.getElementById('homeVideoToggle')?.addEventListener('click', () => {
+  const video = document.getElementById('heroVid');
+  if (video.paused) {
+    video.dataset.userPaused = '0';
+    if (!video.getAttribute('src')) { video.dataset.on = '1'; video.src = video.dataset.src; video.load(); }
+    video.play().catch(() => renderHome());
+  } else { video.dataset.userPaused = '1'; video.pause(); }
+  renderHome();
+});
+document.getElementById('homeSoundToggle')?.addEventListener('click', () => {
+  const video = document.getElementById('heroVid');
+  if (video.dataset.hasAudio !== 'true') return;
+  video.muted = !video.muted;
+  renderHome();
+});
+['play', 'pause', 'error', 'loadedmetadata'].forEach(type => document.getElementById('heroVid')?.addEventListener(type, renderHome));
+
 function renderCollections(){
   const home=document.getElementById('homeGrid');
   if(home) home.innerHTML=CARS.slice(0,12).map(c=>carCard(c)).join('');
@@ -1482,49 +1640,6 @@ document.getElementById('cform').addEventListener('submit', e => {
   document.getElementById('contact-status').textContent=dict[lang].contact_ready;
 });
 
-// A visit request, not an availability engine or a confirmed reservation.
-(function tickets() {
-  const date=document.getElementById('tkDate'), time=document.getElementById('tkTime');
-  const gEl=document.getElementById('qtyGen'),rEl=document.getElementById('qtyRed');
-  const error=document.getElementById('tkError'),cont=document.getElementById('tkContinue');
-  let gen=0,red=0;
-  date.min=todayInLima();
-  for(let hour=visit.openingHour;hour<visit.closingHour;hour++) {
-    const option=document.createElement('option'); option.value=option.textContent=`${String(hour).padStart(2,'0')}:00`;time.append(option);
-  }
-  function update(showError=false) {
-    date.min=todayInLima();
-    gEl.textContent=gen;rEl.textContent=red;
-    const total=gen+red,problem=dateError(date.value),valid=!problem&&total>0;
-    const key=problem==='past'?'tk_past':problem==='closed'?'tk_closed':'tk_required';
-    error.hidden=valid||(!showError&&!date.value);error.textContent=valid?'':dict[lang][key];
-    date.setAttribute('aria-invalid',String(!!date.value&&!!problem));
-    cont.setAttribute('aria-disabled',String(!valid));
-    document.getElementById('tkSummary').textContent=total?`${total} ${dict[lang].tk_qty}`:'';
-    document.querySelectorAll('.tk-step').forEach(button=>{
-      const count=button.dataset.cat==='gen'?gen:red,plus=Number(button.dataset.d)>0;
-      button.disabled=plus?total>=visit.maxRequestGuests:count===0;
-      button.setAttribute('aria-label',`${dict[lang][plus?'tk_add':'tk_remove']} ${dict[lang][button.dataset.cat==='gen'?'tk_general':'tk_reduced']}`);
-    });
-    if(valid) {
-      const pretty=new Intl.DateTimeFormat(lang==='es'?'es-PE':'en-GB',{dateStyle:'long',timeZone:'UTC'}).format(new Date(date.value+'T12:00:00Z'));
-      const message=lang==='es'
-        ? `Hola ARTECH, quisiera consultar disponibilidad para el ${pretty}. Horario preferido: ${time.value||'sin preferencia'} (hora de Lima). General: ${gen}. Niños/adultos mayores: ${red}. ¿Podrían confirmar disponibilidad y precio?`
-        : `Hi ARTECH, could you confirm availability for ${pretty}? Preferred time: ${time.value||'no preference'} (Lima time). Adults: ${gen}. Children/seniors: ${red}. Please confirm availability and price.`;
-      cont.href=whatsappURL(message);
-    } else cont.removeAttribute('href');
-    return valid;
-  }
-  document.querySelectorAll('.tk-step').forEach(button=>button.addEventListener('click',()=>{
-    const change=Number(button.dataset.d);
-    if(change>0&&gen+red>=visit.maxRequestGuests)return;
-    if(button.dataset.cat==='gen')gen=Math.max(0,gen+change);else red=Math.max(0,red+change);
-    update();
-  }));
-  date.addEventListener('change',()=>update(true));time.addEventListener('change',()=>update());
-  cont.addEventListener('click',e=>{if(!update(true)){e.preventDefault();date.focus();}});
-  window.updateTickets=update; update();
-})();
 function setImg(id,src){ const el=document.getElementById(id); if(!el) return; const box=el.parentElement, lbl=box&&box.querySelector('.ph-lbl'); if(src){ el.src=src; if(lbl) lbl.style.display='none'; } else { el.removeAttribute('src'); if(lbl) lbl.style.display=''; } }
 let galTimer=null, galPaused=false;
 function showVehicle(slug){
@@ -1760,7 +1875,7 @@ document.querySelector('.skip-link').addEventListener('click',event=>{
     const media=document.getElementById(id);
     if(!media||media.dataset.on==='1'||reducedMotion.matches)return;
     media.dataset.on='1';media.src=media.dataset.src;media.load();
-    if(!document.body.classList.contains('page-open')&&!document.hidden)media.play().catch(()=>{});
+    if(!document.body.classList.contains('page-open')&&!document.hidden&&media.dataset.userPaused!=='1')media.play().catch(()=>{});
   }
   function reveal() {
     if(done)return;done=true;clearTimeout(timer);
@@ -1789,7 +1904,7 @@ document.querySelector('.skip-link').addEventListener('click',event=>{
   document.addEventListener('keydown',e=>{if(done)return;if(e.key==='Escape')reveal();if(e.key==='Tab'){e.preventDefault();(document.activeElement===skip?sound:skip).focus();}});
   addEventListener('hashchange',()=>{if(!done)reveal();});
   const experience=document.getElementById('experiences');
-  if('IntersectionObserver' in window) {
+  if(experience && 'IntersectionObserver' in window) {
     const observer=new IntersectionObserver(entries=>{if(entries.some(e=>e.isIntersecting)&&!document.body.classList.contains('page-open')){prepareBackground('expVid');observer.disconnect();}},{rootMargin:'150px'});
     observer.observe(experience);
   }

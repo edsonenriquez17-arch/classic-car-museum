@@ -110,6 +110,77 @@ test('Browser regression suite', { timeout: 180000 }, async t => {
     assert.deepEqual(errors, []); await context.close();
   });
 
+  await t.test('MH07-MH10: workshop controls and truthful visit handoff', async () => {
+    const { page: p, context, errors } = await page();
+    await p.goto(base+'#p-workshops');
+    await p.locator('#atelierCompare').waitFor();
+    await p.locator('.atelier-hero a[href="#workshop-process"]').click();
+    assert.equal(await p.locator('#page-workshops').isVisible(),true);
+    assert.equal(new URL(p.url()).hash,'#p-workshops');
+    await p.locator('#atelierCompare').focus(); await p.keyboard.press('ArrowRight');
+    assert.equal(await p.locator('#atelierCompare').inputValue(),'51');
+    await p.locator('[data-stage="4"]').click();
+    assert.match(await p.locator('#stageName').textContent(),/Tapicería/);
+    await p.locator('[data-craft="1"]').click();
+    assert.equal(await p.locator('#craftPhoto').getAttribute('src'),'assets/cars/cxj-330/d1.jpg');
+    await p.goto(base+'#p-tickets');
+    await p.locator('[data-level="1"]').click();
+    await p.locator('#tkDate').fill('2099-01-06');
+    await p.locator('#tkTime').selectOption('11:00');
+    await p.locator('[data-cat="gen"][data-d="1"]').click();
+    await p.locator('[data-cat="red"][data-d="1"]').click();
+    assert.equal(await p.locator('#visitTotal').textContent(),'S/ 120');
+    assert.match(await p.locator('#pricePending').textContent(),/parcial/);
+    await p.locator('#tkContinue').click();
+    await p.locator('#visitName').fill('<Ana> Torres');
+    await p.locator('#visitPhone').fill('987654321');
+    await p.locator('#visitEmail').fill('ana@example');
+    await p.locator('#visitPrepare').click();
+    assert.equal(await p.locator('#visitConfirmation').isVisible(),false);
+    assert.match(await p.locator('#emailError').textContent(),/dominio/);
+    await p.locator('#visitEmail').fill('ana@example.com');
+    await p.locator('#visitConsent').check();
+    await p.locator('#visitPrepare').click();
+    assert.equal(await p.locator('#visitConfirmation').isVisible(),true);
+    assert.equal(await p.locator('.visit-closing').isVisible(),false);
+    assert.match(await p.locator('#confirmationTitle').textContent(),/<ANA>/);
+    assert.equal(await p.locator('#confirmationTitle img').count(),0);
+    const prepared=new URL(await p.locator('#visitSend').getAttribute('href'));
+    assert.match(prepared.searchParams.get('text'),/Colección \+ Taller/);
+    assert.match(prepared.searchParams.get('text'),/987654321/);
+    const download=p.waitForEvent('download'); await p.locator('#visitCalendar').click();
+    const file=await download; const calendar=fs.readFileSync(await file.path(),'utf8');
+    assert.match(calendar,/STATUS:TENTATIVE/);assert.match(calendar,/DTSTART:20990106T160000Z/);
+    await p.locator('[data-lang="en"]').click();
+    assert.match(await p.locator('#visitConfirmation').textContent(),/AWAITING CONFIRMATION/);
+    await p.locator('#visitEdit').click();
+    assert.equal(await p.locator('#visitName').inputValue(),'<Ana> Torres');
+    await p.locator('#visitBack').click();await p.locator('[data-level="2"]').click();
+    assert.match(await p.locator('#tkError').textContent(),/at least 15/);
+    assert.equal(await p.locator('#tkContinue').getAttribute('href'),null);
+    assert.deepEqual(errors,[]);await context.close();
+  });
+
+  await t.test('MH07-MH10: narrow calendars, contact fields and paper mobile menu', async () => {
+    for(const width of [320,390]) {
+      const {page:p,context,errors}=await page({viewport:{width,height:844}});
+      await p.goto(base+'#p-tickets');await p.locator('#visitCalendars button').first().waitFor();
+      assert.equal(await p.locator('.visit-month').count(),2);
+      assert.ok(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
+      await p.locator('#burger').click();
+      assert.equal(await p.locator('#burger').getAttribute('aria-expanded'),'true');
+      assert.equal(await p.locator('#navlinks').evaluate(el=>getComputedStyle(el).backgroundColor),'rgb(236, 235, 232)');
+      await p.keyboard.press('Escape');
+      await p.locator('[data-date]:not([disabled])').first().click();
+      await p.locator('[data-time="11:00"]').click();await p.locator('[data-cat="gen"][data-d="1"]').click();
+      await p.locator('#tkContinue').click();assert.ok(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
+      await p.goto(base+'#p-workshops');await p.locator('#stageName').waitFor();
+      await p.locator('[data-stage="5"]').click();assert.equal(await p.locator('#dialNumber').textContent(),'06');
+      assert.ok(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
+      assert.deepEqual(errors,[]);await context.close();
+    }
+  });
+
   await t.test('Contact keeps values and opens an explicit handoff; no fake newsletter', async () => {
     const { page: p, context, errors } = await page();
     await p.goto(base + '#p-contact');

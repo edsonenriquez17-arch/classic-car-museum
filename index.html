@@ -64,62 +64,114 @@
 </header>
 
 <main id="main-content" tabindex="-1">
-<!-- HERO -->
-<section class="hero home-only" id="top">
-  <!-- el video no se descarga hasta que el preloader termina: así no le roba ancho de banda -->
-  <video class="hero-bg" id="heroVid" autoplay muted loop playsinline preload="none"
-         poster="assets/hero-poster.jpg" data-src="assets/hero.mp4"></video>
-  <div class="hero-inner">
-    <div class="wrap">
-      <h1 data-i="hero_title" data-motion="lines">Shift into history</h1>
-      <p data-i="hero_sub">A living experience of cars, art and gastronomy — home to the World's Oldest Car &amp; a rare Porsche collection.</p>
-      <div class="hero-btns">
-        <a href="#p-tickets" class="btn-red" data-i="hero_tickets">Buy Tickets</a>
-        <a href="#exp3d" class="btn-ghost" data-i="hero_btn">360° tour</a>
-      </div>
-    </div>
+<!-- MH04–MH06 · Homepage narrative -->
+<section class="hero home-only home-hero" id="top">
+  <div class="home-hero-media" aria-hidden="true">
+    <img class="home-hero-still" src="assets/cars/cxj-330/cover.jpg" alt="" fetchpriority="high" width="1850" height="1233">
+    <video class="hero-bg" id="heroVid" muted loop playsinline preload="none" poster="assets/cars/cxj-330/cover.jpg" data-src="assets/hero.mp4" data-has-audio="false"></video>
+  </div>
+  <div class="wrap home-hero-copy">
+    <p class="home-kicker" data-i="h_hero_pre">WE DON'T EXHIBIT CARS.</p>
+    <h1 data-motion="lines" data-i="h_hero_title">WE BRING THEM
+BACK TO LIFE.</h1>
+    <p class="home-hero-hook" id="homeHeroHook">The collection begins in 1903. Meet its first piece below.</p>
+    <div class="home-actions"><a href="#p-tickets" class="home-button" data-i="nav_tickets">Plan your visit</a><a href="#p-workshops" class="home-link" data-i="h_enter_workshop">Enter the workshop ↗</a></div>
+  </div>
+  <div class="wrap home-hero-bottom">
+    <a href="#collection" class="home-scroll"><span class="brand-bars" aria-hidden="true"><span></span><span></span><span></span></span><span data-i="h_scroll">Discover the collection ↓</span></a>
+    <div class="home-video-controls"><button id="homeVideoToggle" type="button" aria-pressed="false">Pause video</button><button id="homeSoundToggle" type="button" aria-pressed="false" disabled>Video without audio</button></div>
   </div>
 </section>
 
-<!-- BANNER -->
-<section class="banner home-only">
-  <div class="wrap bn-grid">
-    <h2 class="bn-title" data-i="banner" data-motion="lines">A living museum
-of motoring history</h2>
-    <div class="bn-items">
-      <a class="bn-item" href="#p-contact">
-        <img class="bn-ic" src="assets/icons/compass.png" alt="" loading="lazy">
-        <div>
-          <h3 data-i="p1_t">Book your private tour</h3>
-          <p data-i="p1_d">Reserve a guided visit and step into an unrepeatable collection.</p>
-          <span class="link-arrow"><span data-i="visit_info">Visit info</span> <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </div>
+<section class="home-only home-brands" aria-label="Collection brands" data-aria="h_brands_label">
+  <div class="wrap home-brand-caption"><p id="homeBrandCount">Under one roof.</p><button id="homeBrandsToggle" type="button" aria-pressed="false" data-i="h_pause_brands">Pause brands</button></div>
+  <div class="home-brand-window"><div class="home-brand-track" id="homeBrandTrack"><div class="home-brand-set">FERRARI · AUBURN · MASERATI · PORSCHE · DODGE</div></div></div>
+</section>
+
+<section class="home-only home-manifesto">
+  <div class="wrap"><h2 class="home-display home-statement" data-motion="lines" data-i="h_statement">A CLASSIC SPEAKS
+BEFORE YOU START
+THE ENGINE.</h2><p class="home-kicker" data-i="h_statement_note">LOOK CLOSELY. THE DETAILS TELL THE STORY.</p></div>
+</section>
+
+<section class="home-only home-collection" id="collection">
+  <div class="wrap home-section-heading"><div><p class="home-kicker" data-i="h_journey">THE JOURNEY</p><h2 class="home-display" data-motion="lines" data-i="h_years">115 YEARS.
+SIX STOPS.</h2></div><a class="home-link" href="#p-collection" data-i="h_collection">View the collection ↗</a></div>
+  <div class="home-era-track">
+      <a class="home-era" href="#p-vehicle/sin-placa-25">
+        <span class="home-era-year">1903</span>
+        <img src="assets/cars/sin-placa-25/v1.jpg" alt="Brass-era Tonneau, 1903" loading="lazy" decoding="async" width="600" height="780">
+        <span class="home-era-name">Brass-era Tonneau</span><span class="home-era-open" data-i="h_piece">Discover this piece ↗</span>
       </a>
-      <a class="bn-item" href="#p-cafe">
-        <img class="bn-ic" src="assets/icons/cafe.png" alt="" loading="lazy">
-        <div>
-          <h3 data-i="p2_t">Restaurant · Café · Bar</h3>
-          <p data-i="p2_d">Signature cuisine inside the Museum, by Chef Carla Navea.</p>
-          <span class="link-arrow"><span data-i="visit_info">Visit info</span> <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </div>
+      <a class="home-era" href="#p-vehicle/sin-placa-15">
+        <span class="home-era-year">1936</span>
+        <img src="assets/cars/sin-placa-15/cover.jpg" alt="Auburn 852 Supercharged, 1936" loading="lazy" decoding="async" width="600" height="780">
+        <span class="home-era-name">Auburn 852 Supercharged</span><span class="home-era-open" data-i="h_piece">Discover this piece ↗</span>
       </a>
-    </div>
+      <a class="home-era" href="#p-vehicle/maserati-300s">
+        <span class="home-era-year">1956</span>
+        <img src="assets/cars/maserati-300s/cover.jpg" alt="Maserati 300S, 1956" loading="lazy" decoding="async" width="600" height="780">
+        <span class="home-era-name">Maserati 300S</span><span class="home-era-open" data-i="h_piece">Discover this piece ↗</span>
+      </a>
+      <a class="home-era" href="#p-vehicle/awf-621">
+        <span class="home-era-year">1970</span>
+        <img src="assets/cars/awf-621/cover.jpg" alt="Dodge Challenger R/T, 1970" loading="lazy" decoding="async" width="600" height="780">
+        <span class="home-era-name">Dodge Challenger R/T</span><span class="home-era-open" data-i="h_piece">Discover this piece ↗</span>
+      </a>
+      <a class="home-era" href="#p-vehicle/cxj-330">
+        <span class="home-era-year">1988</span>
+        <img src="assets/cars/cxj-330/cover.jpg" alt="Ferrari Testarossa, 1988" loading="lazy" decoding="async" width="600" height="780">
+        <span class="home-era-name">Ferrari Testarossa</span><span class="home-era-open" data-i="h_piece">Discover this piece ↗</span>
+      </a>
+      <a class="home-era" href="#p-vehicle/bfu-487">
+        <span class="home-era-year">2018</span>
+        <img src="assets/cars/bfu-487/cover.jpg" alt="Porsche 911 GT2 RS, 2018" loading="lazy" decoding="async" width="600" height="780">
+        <span class="home-era-name">Porsche 911 GT2 RS</span><span class="home-era-open" data-i="h_piece">Discover this piece ↗</span>
+      </a>
+  </div>
+  <p class="wrap home-collection-note" data-i="h_journey_note">From the 1903 Tonneau to the 2018 Porsche. Choose a year to discover its piece.</p>
+</section>
+
+<section class="home-only home-memory">
+  <img class="home-photo home-memory-photo" src="assets/cars/sin-placa-15/d1.jpg" alt="Auburn 852 headlamp and grille" data-alt="h_auburn_detail" loading="lazy" decoding="async" width="1600" height="1100">
+  <div class="wrap"><h2 class="home-display home-statement" data-motion="lines" data-i="h_memory">SOME CARS
+ARE FORGOTTEN.</h2></div>
+</section>
+
+<section class="home-only home-return" id="legacy">
+  <div class="wrap home-return-grid">
+    <div class="home-return-copy"><p class="home-kicker" data-i="nav_taller">The Workshop</p><h2 class="home-display" data-motion="lines" data-i="h_return">HERE, THEY
+DRIVE AGAIN.</h2><p data-i="h_return_body">The collection is only one part of the story. Enter the workshop and see the craft behind each piece.</p><a href="#p-workshops" class="home-link" data-i="h_workshop">Discover the workshop ↗</a></div>
+    <img class="home-photo" src="assets/cars/sin-placa-15/d1.jpg" alt="Auburn 852 headlamp and grille" data-alt="h_auburn_detail" loading="lazy" decoding="async" width="1600" height="1100">
   </div>
 </section>
 
-<!-- SPLIT PANELS -->
-
-<!-- EXPERIENCES -->
-<section class="experiences home-only" id="experiences">
-  <!-- se descarga junto al de portada, cuando el preloader ya termino -->
-  <video class="exp-bg" id="expVid" autoplay muted loop playsinline preload="none"
-         poster="assets/experiences-poster.jpg" data-src="assets/experiences.mp4"></video>
-  <div class="inner">
-    <div class="kicker" data-i="exp_the">ARTECH</div>
-    <div class="kicker big" data-i="exp_title">EXPERIENCES</div>
-    <p class="exp-lead" data-i="exp_lead">Guided tours, exclusive Porsche access and contemporary gastronomy — a complete journey through automotive history.</p>
-    <a href="#p-experience" class="btn-red exp-cta" data-i="exp_cta">See the experiences</a>
+<section class="home-only home-pillars">
+  <div class="wrap home-pillar-grid">
+    <article><span class="home-outline-number" aria-hidden="true">01</span><img src="assets/cars/sin-placa-15/d2.jpg" alt="Auburn 852 dashboard and interior" data-alt="h_auburn_interior" loading="lazy" decoding="async" width="600" height="400"><h2 class="home-display" data-i="h_rescue">RESCUE</h2><p data-i="h_rescue_body">See the details that make a piece worth preserving.</p></article>
+    <article><span class="home-outline-number" aria-hidden="true">02</span><img src="assets/interior.png" alt="Leather upholstery and instruments" data-alt="h_upholstery" loading="lazy" decoding="async" width="600" height="400"><h2 class="home-display" data-i="h_rebuild">REBUILD</h2><p data-i="h_rebuild_body">Discover the work behind the seats, the engine and the body.</p></article>
+    <article><span class="home-outline-number" aria-hidden="true">03</span><img src="assets/cars/asv-385/cover.jpg" alt="Porsche 911 GT3 RS" loading="lazy" decoding="async" width="600" height="400"><h2 class="home-display" data-i="h_exhibit">EXHIBIT</h2><p data-i="h_exhibit_body">Meet the piece in person. Look beyond the photograph.</p></article>
   </div>
+</section>
+
+<section class="home-only home-levels" id="experiences" data-transition="bars">
+  <div class="wrap" data-transition-content>
+    <p class="home-kicker" data-i="h_access">THREE LEVELS OF ACCESS</p><h2 class="home-display" data-i="h_levels">LOOKING IS EASY.
+UNDERSTANDING TAKES MORE.</h2>
+    <p class="home-level-anchor" data-i="h_anchor">For S/ 40 more, step inside the workshop.</p>
+    <div class="home-level-grid">
+      <a href="#p-tickets" class="home-level" data-experience="01"><span class="home-outline-number" aria-hidden="true">01</span><img src="assets/cars/sin-placa-15/cover.jpg" alt="Auburn 852 Supercharged" loading="lazy" decoding="async" width="600" height="400"><h3 class="home-display" data-i="h_level_1">COLLECTION</h3><p data-i="h_level_1_detail">Guided tour · 1 hour</p><p class="home-level-price">S/ 80 <span data-i="h_person">per person</span></p><span class="home-link" data-i="h_choose">Plan this visit ↗</span></a>
+      <a href="#p-tickets" class="home-level" data-experience="02"><span class="home-outline-number" aria-hidden="true">02</span><img src="assets/history.png" alt="Ferrari badge and grille" data-alt="h_ferrari_detail" loading="lazy" decoding="async" width="600" height="400"><h3 class="home-display" data-i="h_level_2">COLLECTION + WORKSHOP</h3><p data-i="h_level_2_detail">VIP · 1 hour 30 minutes</p><p class="home-level-price">S/ 120 <span data-i="h_person">per person</span></p><span class="home-link" data-i="h_choose">Plan this visit ↗</span></a>
+      <a href="#p-experience" class="home-level" data-experience="03"><span class="home-outline-number" aria-hidden="true">03</span><img src="assets/interior.png" alt="Leather upholstery and instruments" data-alt="h_upholstery" loading="lazy" decoding="async" width="600" height="400"><h3 class="home-display" data-i="h_level_3">ALL OF ARTECH. PRIVATE.</h3><p data-i="h_level_3_detail">Minimum 15 people · 2 hours 30 minutes</p><p class="home-level-price">S/ 450 <span data-i="h_person">per person</span></p><span class="home-link" data-i="h_private">Explore private access ↗</span></a>
+    </div>
+    <p class="home-level-footnote" data-i="h_request_note">Send your request. The team confirms availability and the final price on WhatsApp.</p>
+  </div>
+</section>
+
+<section class="home-only home-closing" id="home-closing" data-transition="spotlight" data-transition-scope="home">
+  <img class="home-photo home-closing-photo" src="assets/cars/bfu-487/cover.jpg" alt="Porsche 911 GT2 RS" loading="lazy" decoding="async" width="1850" height="1233">
+  <div class="wrap home-closing-copy" data-transition-content><p class="home-kicker" data-i="h_ready">READY TO</p><h2 class="home-display" data-i="h_close">IGNITE
+THE HISTORY?</h2><p data-i="h_no_payment">No online payment. We confirm your request on WhatsApp.</p><div class="home-actions"><a href="#p-tickets" class="home-button" data-i="nav_tickets">Plan your visit</a><a href="#p-collection" class="home-link" data-i="h_collection">View the collection ↗</a></div></div>
 </section>
 
 <!-- 3D EXPERIENCE · ARTECH 360 VIEWER -->
@@ -166,66 +218,6 @@ of motoring history</h2>
 
     <div class="v3d-foot">
       <span class="v3d-hint" data-i="d3_hint">↤ Drag to rotate 360° · scroll to zoom ↦</span>
-    </div>
-  </div>
-</section>
-
-<!-- COLLECTION (home preview) -->
-<section class="collection home-only" id="collection">
-  <div class="wrap">
-    <h2 data-i="col_t">Our Collection</h2>
-    <div class="sub">
-      <div data-i="col_s1">Including the World's Oldest Car in existence</div>
-      <div data-i="col_s2">World's Oldest Car &amp; Rare Porsche Collection</div>
-    </div>
-    <div class="home-carousel">
-      <button class="hc-arrow prev" aria-label="Previous" onclick="hcScroll(-1)">‹</button>
-      <div class="grid3" id="homeGrid"></div>
-      <button class="hc-arrow next" aria-label="Next" onclick="hcScroll(1)">›</button>
-    </div>
-    <div class="view-all">
-      <a href="#p-collection" data-i="view_col">View all 96 models <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-    </div>
-  </div>
-</section>
-
-<!-- LEGACY -->
-<section class="legacy home-only" id="legacy">
-  <div class="media"><img src="assets/legacy.png" alt="Classic muscle car" loading="lazy"></div>
-  <div class="txt">
-    <h2 data-i="leg_t">The legacy</h2>
-    <p data-i="leg_1">For decades, Jimmy has rescued, restored, and preserved automotive history in the heart of Lima.</p>
-    <p data-i="leg_2">From the World's Oldest Car to rare Porsche classics, each vehicle has an engine, a story, and a soul.</p>
-    <p data-i="leg_3">This is not a garage. This is a living Museum. And your experience starts here.</p>
-  </div>
-</section>
-
-<!-- SERVICES -->
-<section class="services home-only">
-  <div class="wrap">
-    <h2 data-i="serv_t">Our Services</h2>
-    <div class="cards">
-      <div class="card">
-        <img class="ic ic-img" src="assets/icons/tours.png" alt="" loading="lazy">
-        <h4 data-i="s1_t">Group Tours</h4>
-        <p data-i="s1_d">Guided experiences for groups through the full collection.</p>
-      </div>
-      <div class="card">
-        <img class="ic ic-img" src="assets/icons/private-tour.png" alt="" loading="lazy">
-        <h4 data-i="s2_t">Private Tours</h4>
-        <p data-i="s2_d">One-on-one curated visits at your own pace.</p>
-      </div>
-      <div class="card">
-        <img class="ic ic-img" src="assets/icons/sales.png" alt="" loading="lazy">
-        <h4 data-i="s3_t">Private Sales</h4>
-        <p data-i="s3_d">Exclusive one-on-one transactions for high-value or rare vehicles.</p>
-      </div>
-      <a href="#p-cafe" class="card card-link">
-        <img class="ic ic-img" src="assets/icons/cafe.png" alt="" loading="lazy">
-        <h4 data-i="s4_t">Restaurant · Café · Bar</h4>
-        <p data-i="s4_d">Signature cuisine by Chef Carla Navea.</p>
-        <span class="link-arrow" data-i="visit_info">Visit info <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-      </a>
     </div>
   </div>
 </section>
@@ -346,70 +338,52 @@ of motoring history</h2>
 </section>
 
 <!-- INTERNAL PAGE · TICKETS -->
-<section class="subpage" id="page-tickets">
-  <div class="wrap">
-    <a href="#top" class="back-btn" data-i="back_home">← Back to Home</a>
-    <div class="tk-head">
-      <h1 data-i="tk_title">An Invitation to History</h1>
-      <p data-i="tk_sub">Choose your date and secure your tickets to discover the collection, explore the history of the automobile, and enjoy a dining experience at our restaurant.</p>
-    </div>
-
-    <!-- TICKET -->
-    <div class="ticket">
-      <div class="ticket-photo"><img data-src="assets/tickets-hero.jpg" alt=""></div>
-      <div class="ticket-body">
-        <div class="tk-col">
-          <label class="tk-lbl" for="tkDate" data-i="tk_date">Select a date</label>
-          <input type="date" id="tkDate" required aria-describedby="tkHelp tkError">
-          <label class="tk-lbl" for="tkTime" data-i="tk_time">Preferred time</label>
-          <select id="tkTime" aria-describedby="tkHelp"><option value="" data-i="tk_any_time">No preference</option></select>
-          <p class="fnote" id="tkHelp" data-i="tk_help">Lima time. This is a request; the museum confirms availability.</p>
-          <div class="tk-row">
-            <div class="tk-tinfo"><b data-i="tk_general">General</b><span data-i="tk_general_d">Adult admission</span></div>
-            <div class="tk-qty"><button type="button" class="tk-step" data-cat="gen" data-d="-1" aria-label="Remove ticket">−</button><span id="qtyGen">0</span><button type="button" class="tk-step" data-cat="gen" data-d="1" aria-label="Add ticket">+</button></div>
-          </div>
-          <div class="tk-row">
-            <div class="tk-tinfo"><b data-i="tk_reduced">Children &amp; Seniors</b><span data-i="tk_reduced_d">Kids and senior citizens</span></div>
-            <div class="tk-qty"><button type="button" class="tk-step" data-cat="red" data-d="-1" aria-label="Remove ticket">−</button><span id="qtyRed">0</span><button type="button" class="tk-step" data-cat="red" data-d="1" aria-label="Add ticket">+</button></div>
-          </div>
-          <div class="tk-summary" id="tkSummary" role="status" aria-live="polite"></div>
-          <p class="form-error" id="tkError" role="alert" hidden></p>
-          <a href="#p-contact" class="group-help" data-i="tk_group">For groups larger than 20, contact us.</a>
-        </div>
-
-        <div class="tk-col tk-info">
-          <h4 data-i="tk_hours_t">Opening Hours</h4>
-          <p data-i="tk_hours">Tuesday to Sunday · 9 am – 7 pm</p>
-          <h4 data-i="tk_addr_t">Address</h4>
-          <p>Av. Huaylas 640, Chorrillos, Lima</p>
-        </div>
-
-        <div class="tk-col tk-action">
-
-          <a class="btn-red tk-continue" id="tkContinue" href="https://wa.me/51992432455" target="_blank" rel="noopener" aria-disabled="true" data-i="tk_continue">Request via WhatsApp</a>
-          <p class="tk-note" data-i="tk_note">We are finalizing our pricing. Very soon, you will be able to book and pay directly online. For now, please confirm your visit via WhatsApp or directly at the museum entrance.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- DISCOVER ARTECH -->
-    <div class="disc">
-      <div class="disc-head">
-        <h3 data-i="disc_t">Discover ARTECH</h3>
-        <p data-i="disc_s">A look at the spaces, details, and pieces that make every visit an extraordinary experience.</p>
-      </div>
-      <div class="disc-grid">
-        <a class="disc-tile" href="#p-collection"><img src="assets/ambience-collection.jpg" alt="Collection" data-alt="nav_collection" loading="lazy"><span data-i="nav_collection">Collection</span></a>
-        <a class="disc-tile" href="#p-experience"><img src="assets/experiences-poster.jpg" alt="Experiences" data-alt="nav_experience" loading="lazy"><span data-i="nav_experience">Experiences</span></a>
-        <a class="disc-tile" href="#p-cafe"><img src="assets/interior.png" alt="Restaurant" data-alt="nav_cafe" loading="lazy"><span data-i="nav_cafe">Restaurant</span></a>
-        <a class="disc-tile" href="#p-visit"><img src="assets/legacy.png" alt="Plan your visit" data-alt="ft_visit" loading="lazy"><span data-i="ft_visit">Plan your visit</span></a>
-      </div>
-    </div>
-  </div>
-</section>
+<section class="subpage visit-page" id="page-tickets"><div class="wrap">
+  <div id="visitIntro" class="visit-intro"><div><p data-es="ARTECH / PLANIFICA TU VISITA" data-en="ARTECH / PLAN YOUR VISIT" class="chapter-kicker">ARTECH / PLANIFICA TU VISITA</p><h1 data-es="ELIGE EL DÍA." data-en="CHOOSE THE DAY." >ELIGE EL DÍA.</h1><h1 data-es="NOSOTROS
+ENCENDEMOS
+LAS LUCES." data-en="WE WILL
+TURN ON
+THE LIGHTS." class="muted">NOSOTROS
+ENCENDEMOS
+LAS LUCES.</h1><div class="visit-facts"><p data-es="Martes a domingo · 9:00–19:00" data-en="Tuesday–Sunday · 9:00–19:00" >Martes a domingo · 9:00–19:00</p><p data-es="Chorrillos, Lima" data-en="Chorrillos, Lima" >Chorrillos, Lima</p><p data-es="Hasta 20 personas por solicitud" data-en="Up to 20 people per request" >Hasta 20 personas por solicitud</p></div></div><img src="assets/cars/maserati-300s/cover.jpg" alt="Maserati 300S" loading="lazy"></div>
+  <nav class="visit-progress" id="visitProgress" aria-label="Pasos de la visita" data-es-aria="Pasos de la visita" data-en-aria="Visit steps"><span class="visit-bars" aria-hidden="true"><i></i><i></i><i></i></span><button data-es="01 EXPERIENCIA" data-en="01 EXPERIENCE" type="button" data-step="1">01 EXPERIENCIA</button><button data-es="02 FECHA, HORA Y VISITANTES" data-en="02 DATE, TIME AND VISITORS" type="button" data-step="2">02 FECHA, HORA Y VISITANTES</button><button data-es="03 TUS DATOS" data-en="03 YOUR DETAILS" type="button" data-step="3">03 TUS DATOS</button></nav>
+  <div class="visit-layout" id="visitLayout"><div class="visit-editor">
+    <section id="visitExperience"><h2 data-es="¿HASTA DÓNDE QUIERES ENTRAR?" data-en="HOW FAR DO YOU WANT TO GO?" class="visit-section-title">¿HASTA DÓNDE QUIERES ENTRAR?</h2><div id="visitLevels"></div></section>
+    <section id="visitSchedule"><h2 data-es="¿QUÉ DÍA VIENES?" data-en="WHEN ARE YOU COMING?" class="visit-section-title">¿QUÉ DÍA VIENES?</h2><div class="calendar-navigation"><button type="button" id="monthPrev" aria-label="Mes anterior" data-es-aria="Mes anterior" data-en-aria="Previous month">←</button><span data-es="Lunes cerrado · Fechas en hora de Lima" data-en="Closed Mondays · Dates in Lima time" >Lunes cerrado · Fechas en hora de Lima</span><button type="button" id="monthNext" aria-label="Mes siguiente" data-es-aria="Mes siguiente" data-en-aria="Next month">→</button></div><div id="visitCalendars" class="visit-calendars"></div>
+      <div class="visit-native-date"><label for="tkDate"><span data-es="O escribe la fecha" data-en="Or enter the date" >O escribe la fecha</span></label><input type="date" id="tkDate" required aria-describedby="tkError"></div>
+      <label for="tkTime" class="chapter-kicker"><span data-es="HORA PREFERIDA" data-en="PREFERRED TIME" >HORA PREFERIDA</span></label><select id="tkTime"><option value="">—</option></select><div id="visitTimes" class="visit-times"></div><p data-es="Horarios preferidos; el museo confirma el turno disponible. No se muestran cupos en tiempo real." data-en="Preferred times; the museum confirms the available slot. Live availability is not displayed." class="editorial-note">Horarios preferidos; el museo confirma el turno disponible. No se muestran cupos en tiempo real.</p>
+      <h2 class="visit-section-title"><span data-es="¿QUIÉNES VIENEN?" data-en="WHO IS COMING?" >¿QUIÉNES VIENEN?</span></h2><div class="visit-guest"><div><strong data-es="Adultos" data-en="Adults" >Adultos</strong><small data-es="Según experiencia elegida" data-en="Based on your experience" >Según experiencia elegida</small></div><div class="visit-counter"><button type="button" class="tk-step" data-cat="gen" data-d="-1">−</button><output id="qtyGen">0</output><button type="button" class="tk-step" data-cat="gen" data-d="1">+</button></div><span id="cost-gen">—</span></div><div class="visit-guest"><div><strong data-es="Niños" data-en="Children" >Niños</strong><small data-es="Tarifa por confirmar" data-en="Rate to be confirmed" >Tarifa por confirmar</small></div><div class="visit-counter"><button type="button" class="tk-step" data-cat="red" data-d="-1">−</button><output id="qtyRed">0</output><button type="button" class="tk-step" data-cat="red" data-d="1">+</button></div><span id="cost-red">—</span></div><div class="visit-guest"><div><strong data-es="Adultos mayores" data-en="Seniors" >Adultos mayores</strong><small data-es="Tarifa por confirmar" data-en="Rate to be confirmed" >Tarifa por confirmar</small></div><div class="visit-counter"><button type="button" class="tk-step" data-cat="sen" data-d="-1">−</button><output id="qtySen">0</output><button type="button" class="tk-step" data-cat="sen" data-d="1">+</button></div><span id="cost-sen">—</span></div><div id="tkSummary" role="status" aria-live="polite"></div><p id="tkError" class="form-error" role="alert" hidden></p><a data-es="¿Más de 20 personas? Consulta con el equipo." data-en="More than 20 people? Contact the team." href="#p-contact" class="chapter-link">¿Más de 20 personas? Consulta con el equipo.</a></section>
+    <form id="visitDetails" hidden novalidate><h2 data-es="¿A NOMBRE DE QUIÉN?" data-en="WHO IS THE VISIT FOR?" class="visit-section-title">¿A NOMBRE DE QUIÉN?</h2>
+      <label for="visitName"><span data-es="NOMBRE Y APELLIDO" data-en="FULL NAME" >NOMBRE Y APELLIDO</span></label><input id="visitName" name="name" autocomplete="name" required maxlength="100" aria-describedby="nameError"><small id="nameError" class="field-error" role="status"></small>
+      <div class="visit-form-grid"><div><label for="visitPhone">WHATSAPP</label><div class="visit-phone"><select id="visitPrefix" aria-label="Prefijo internacional" data-es-aria="Prefijo internacional" data-en-aria="International prefix"><option value="51">PE +51</option><option value="1">US/CA +1</option><option value="52">MX +52</option><option value="54">AR +54</option><option value="55">BR +55</option><option value="56">CL +56</option><option value="57">CO +57</option><option value="34">ES +34</option><option value="44">UK +44</option><option value="other">Otro / Other</option></select><input id="visitPhone" name="phone" type="tel" autocomplete="tel-national" required maxlength="22" placeholder="987 654 321" aria-describedby="phoneError"></div><small id="phoneError" class="field-error" role="status"></small></div><div><label for="visitEmail"><span data-es="CORREO" data-en="EMAIL" >CORREO</span></label><input id="visitEmail" name="email" type="email" autocomplete="email" required maxlength="150" aria-describedby="emailError"><small id="emailError" class="field-error" role="status"></small></div>
+      <div><label for="visitLanguage"><span data-es="IDIOMA PREFERIDO DE LA VISITA" data-en="PREFERRED VISIT LANGUAGE" >IDIOMA PREFERIDO DE LA VISITA</span></label><select id="visitLanguage"><option value="Español">Español</option><option value="English">English</option></select></div><div><label for="visitCountry"><span data-es="PAÍS DE RESIDENCIA" data-en="COUNTRY OF RESIDENCE" >PAÍS DE RESIDENCIA</span></label><input id="visitCountry" name="country" autocomplete="country-name" maxlength="80" value="Perú"></div></div>
+      <label for="visitNotes"><span data-es="¿ALGO QUE DEBAMOS SABER? (OPCIONAL)" data-en="ANYTHING WE SHOULD KNOW? (OPTIONAL)" >¿ALGO QUE DEBAMOS SABER? (OPCIONAL)</span></label><textarea id="visitNotes" name="notes" rows="3" maxlength="600"></textarea>
+      <label class="visit-consent"><input id="visitConsent" type="checkbox" required><span data-es="Acepto que Artech me contacte sobre esta visita." data-en="I agree that Artech may contact me about this visit." >Acepto que Artech me contacte sobre esta visita.</span><a data-es="Política de privacidad" data-en="Privacy policy" href="#p-privacy" class="chapter-link">Política de privacidad</a></label><small id="consentError" class="field-error" role="status"></small>
+      <button data-es="← VOLVER A FECHA Y HORA" data-en="← BACK TO DATE AND TIME" type="button" id="visitBack" class="chapter-link">← VOLVER A FECHA Y HORA</button>
+    </form>
+  </div><aside class="visit-summary" id="visitSummary"><p data-es="TU VISITA" data-en="YOUR VISIT" class="chapter-kicker">TU VISITA</p><h2 id="summaryLevel"></h2><dl id="summaryFacts"></dl><div id="summaryCosts"></div><div class="visit-total"><span data-es="ESTIMADO" data-en="ESTIMATE" >ESTIMADO</span><strong id="visitTotal"></strong></div><p id="pricePending" class="editorial-note"></p>
+    <a id="tkContinue" class="btn-red" aria-disabled="true"><span data-es="CONTINUAR CON TUS DATOS" data-en="CONTINUE WITH YOUR DETAILS" >CONTINUAR CON TUS DATOS</span></a><button id="visitPrepare" type="submit" form="visitDetails" class="btn-red" hidden><span data-es="PREPARAR SOLICITUD" data-en="PREPARE REQUEST" >PREPARAR SOLICITUD</span></button><p data-es="No pagas nada ahora. Disponibilidad y precio final sujetos a confirmación por el museo." data-en="Nothing to pay now. Availability and final price must be confirmed by the museum." >No pagas nada ahora. Disponibilidad y precio final sujetos a confirmación por el museo.</p><small data-es="La solicitud se envía desde WhatsApp en el último paso." data-en="Send the request from WhatsApp in the last step." >La solicitud se envía desde WhatsApp en el último paso.</small></aside></div>
+  <section id="visitConfirmation" class="visit-confirmation" hidden aria-live="polite" tabindex="-1"><div class="visit-bars red-text" aria-hidden="true"><i></i><i></i><i></i></div><p class="chapter-kicker" id="requestCode"></p><h1 id="confirmationTitle"></h1><h1 data-es="TU VISITA ESTÁ
+POR CONFIRMAR." data-en="YOUR VISIT IS
+AWAITING CONFIRMATION." class="muted">TU VISITA ESTÁ
+POR CONFIRMAR.</h1><p data-es="Abre WhatsApp y envía el mensaje preparado. El museo recibirá tu solicitud cuando lo envíes y te responderá para confirmar disponibilidad y precio." data-en="Open WhatsApp and send the prepared message. The museum receives your request only after you send it and will reply to confirm availability and price." >Abre WhatsApp y envía el mensaje preparado. El museo recibirá tu solicitud cuando lo envíes y te responderá para confirmar disponibilidad y precio.</p><div id="confirmationFacts" class="confirmation-facts"></div><div class="confirmation-actions"><a id="visitSend" class="btn-red" target="_blank" rel="noopener"><span data-es="ENVIAR POR WHATSAPP ↗" data-en="SEND VIA WHATSAPP ↗" >ENVIAR POR WHATSAPP ↗</span></a><button data-es="AÑADIR PLAN AL CALENDARIO" data-en="ADD PLAN TO CALENDAR" type="button" id="visitCalendar" class="chapter-link">AÑADIR PLAN AL CALENDARIO</button><button data-es="COPIAR RESUMEN" data-en="COPY SUMMARY" type="button" id="visitShare" class="chapter-link">COPIAR RESUMEN</button><button data-es="EDITAR SOLICITUD" data-en="EDIT REQUEST" type="button" id="visitEdit" class="chapter-link">EDITAR SOLICITUD</button></div><p id="visitCopyStatus" role="status"></p><div class="confirmation-explore"><img src="assets/cars/cxj-330/cover.jpg" alt="Ferrari Testarossa" loading="lazy"><div><p data-es="MIENTRAS TANTO" data-en="IN THE MEANTIME" class="chapter-kicker">MIENTRAS TANTO</p><h2 data-es="CONOCE A QUIÉN
+VAS A VER." data-en="MEET WHO
+YOU WILL SEE." >CONOCE A QUIÉN
+VAS A VER.</h2><a data-es="EXPLORAR LA COLECCIÓN" data-en="EXPLORE THE COLLECTION" href="#p-collection" class="chapter-link">EXPLORAR LA COLECCIÓN</a></div></div></section>
+  <section class="visit-after" id="visitAfter"><p data-es="QUÉ PASA DESPUÉS" data-en="WHAT HAPPENS NEXT" class="chapter-kicker">QUÉ PASA DESPUÉS</p><h2 data-es="TRES PASOS Y ESTÁS
+FRENTE A LA COLECCIÓN." data-en="THREE STEPS TO
+THE COLLECTION." >TRES PASOS Y ESTÁS
+FRENTE A LA COLECCIÓN.</h2><div><article><span>01</span><h3 data-es="ENVÍAS TU SOLICITUD" data-en="SEND YOUR REQUEST" >ENVÍAS TU SOLICITUD</h3><p data-es="Elige el día y envía el resumen por WhatsApp." data-en="Choose the day and send the summary via WhatsApp." >Elige el día y envía el resumen por WhatsApp.</p></article><article><span>02</span><h3 data-es="TE CONFIRMAMOS" data-en="WE CONFIRM" >TE CONFIRMAMOS</h3><p data-es="El equipo confirma disponibilidad, precio y punto de llegada." data-en="The team confirms availability, price and arrival details." >El equipo confirma disponibilidad, precio y punto de llegada.</p></article><article><span>03</span><h3 data-es="LLEGAS A LA COLECCIÓN" data-en="ARRIVE AT THE COLLECTION" >LLEGAS A LA COLECCIÓN</h3><p data-es="Trae la confirmación que recibas del museo." data-en="Bring the confirmation you receive from the museum." >Trae la confirmación que recibas del museo.</p></article></div><div class="visit-location"><img src="assets/ambience-collection.jpg" alt="Sala de la colección Artech" loading="lazy"><div><p data-es="CÓMO LLEGAR" data-en="GETTING HERE" class="chapter-kicker">CÓMO LLEGAR</p><h2 data-es="LA COLECCIÓN
+TE ESPERA EN
+CHORRILLOS." data-en="THE COLLECTION
+AWAITS YOU IN
+CHORRILLOS." >LA COLECCIÓN
+TE ESPERA EN
+CHORRILLOS.</h2><p>Av. Huaylas 640, Chorrillos, Lima</p><p data-es="Confirma el acceso exacto con el equipo antes de venir." data-en="Confirm the exact entrance with the team before coming." >Confirma el acceso exacto con el equipo antes de venir.</p><a class="chapter-link" href="https://www.google.com/maps/search/?api=1&amp;query=Artech+Chorrillos+Lima" target="_blank" rel="noopener">GOOGLE MAPS ↗</a></div></div></section>
+</div><section class="visit-closing" data-transition="spotlight"><div class="wrap" data-transition-content><img src="assets/cars/maserati-300s/cover.jpg" alt="Maserati 300S" loading="lazy"><p data-es="TE ESPERAMOS" data-en="WE WILL SEE YOU" class="chapter-kicker">TE ESPERAMOS</p><h2 data-es="BAJO LA LUZ." data-en="UNDER THE LIGHT." data-motion="lines">BAJO LA LUZ.</h2><button data-es="PLANIFICAR MI VISITA" data-en="PLAN MY VISIT" type="button" id="visitTop" class="btn-red">PLANIFICAR MI VISITA</button><a data-es="PREGUNTAS FRECUENTES" data-en="FREQUENTLY ASKED QUESTIONS" href="#p-faqs" class="chapter-link">PREGUNTAS FRECUENTES</a></div></section></section>
 
 <!-- LOCATION -->
-<section class="location home-only" id="location">
+<section class="subpage location" id="location">
   <div class="wrap loc-grid">
     <div class="loc-info">
       <div class="loc-kicker"><span class="bar"></span><span data-i="loc_kicker">LOCATION</span></div>
@@ -429,7 +403,7 @@ of motoring history</h2>
 </section>
 
 <!-- NEWSLETTER -->
-<section class="newsletter home-only" id="newsletter">
+<section class="newsletter internal-only" id="newsletter">
   <div class="nl-bg"></div>
   <div class="wrap nl-inner">
     <div class="nl-kicker" data-i="nl_kicker">CLASSIC CAR MUSEUM NEWSLETTER</div>
@@ -566,8 +540,47 @@ of motoring history</h2>
 
 <!-- FOOTER -->
 
+<section class="subpage atelier" id="page-workshops">
+  <div class="atelier-hero">
+    <img src="assets/cars/cxj-330/d1.jpg" alt="Detalle Ferrari Testarossa" fetchpriority="high">
+    <div class="wrap atelier-hero-copy"><p data-es="ARTECH / EL TALLER" data-en="ARTECH / THE WORKSHOP" class="chapter-kicker">ARTECH / EL TALLER</p><h1 data-es="EL TALLER
+NO ES PARA
+TODOS." data-en="THE WORKSHOP
+IS NOT FOR
+EVERYONE." data-motion="lines">EL TALLER
+NO ES PARA
+TODOS.</h1><p data-es="Aquí se descubre lo que una sala no muestra. Entra con la experiencia Colección + Taller o Privada." data-en="Discover what the exhibition cannot show. Enter with the Collection + Workshop or Private experience." >Aquí se descubre lo que una sala no muestra. Entra con la experiencia Colección + Taller o Privada.</p><a data-es="SOLICITAR ACCESO" data-en="REQUEST ACCESS" href="#p-tickets" class="btn-red">SOLICITAR ACCESO</a><a data-es="DESCUBRIR EL PROCESO ↓" data-en="DISCOVER THE PROCESS ↓" href="#workshop-process" class="chapter-link">DESCUBRIR EL PROCESO ↓</a></div>
+  </div>
+  <div class="wrap atelier-compare-section"><h2 data-es="LO DESARMAMOS TODO." data-en="WE TAKE IT ALL APART." data-motion="lines">LO DESARMAMOS TODO.</h2><h2 data-es="PARA QUE NADA SOBRE." data-en="SO NOTHING IS LEFT OVER." class="muted" data-motion="lines">PARA QUE NADA SOBRE.</h2>
+    <figure class="atelier-comparison" style="--split:50%">
+      <img src="assets/cars/sin-placa-15/d1.jpg" alt="Detalle del Auburn 852" loading="lazy">
+      <div class="comparison-layer"><img src="assets/cars/sin-placa-15/d1.jpg" alt="" loading="lazy"></div>
+      <div class="comparison-rule" aria-hidden="true"><span>↔</span></div>
+      <input id="atelierCompare" type="range" min="0" max="100" value="50" aria-label="Comparar iluminación" data-es-aria="Comparar iluminación" data-en-aria="Compare lighting">
+    </figure>
+    <div class="comparison-caption"><span data-es="LUZ TENUE" data-en="DIM LIGHT" >LUZ TENUE</span><span>AUBURN 852</span><span data-es="LUZ COMPLETA" data-en="FULL LIGHT" >LUZ COMPLETA</span></div><p data-es="Muestra de interacción con una misma fotografía. El antes y después real se incorporará con el archivo de restauración." data-en="Interaction preview using one photograph. Actual before-and-after images will be added from the restoration archive." class="editorial-note">Muestra de interacción con una misma fotografía. El antes y después real se incorporará con el archivo de restauración.</p>
+  </div>
+  <section class="atelier-process" id="workshop-process" data-transition="bars"><div class="wrap" data-transition-content>
+    <div class="process-scroll" id="processScroll"><div class="process-sticky">
+      <div class="atelier-dial"><svg viewBox="0 0 400 290" role="img" aria-label="Etapa del proceso" data-es-aria="Etapa del proceso" data-en-aria="Process stage">
+        <path d="M 57 262 A 165 165 0 1 1 343 262" fill="none" stroke="currentColor" stroke-width="1"/>
+        <g id="dialTicks"></g><g id="atelierNeedle" style="transform-origin:200px 180px"><path d="M200 180 L79 250" stroke="var(--red)" stroke-width="2"/><circle cx="200" cy="180" r="5" fill="var(--paper)" stroke="currentColor"/></g>
+        <text x="200" y="244" text-anchor="middle" id="dialNumber">01</text>
+      </svg><p data-es="ETAPA DE 06" data-en="STAGE OF 06" class="chapter-kicker">ETAPA DE 06</p><div id="processTabs" class="process-tabs" aria-label="Etapas" data-es-aria="Etapas" data-en-aria="Stages"></div></div>
+      <div class="process-copy"><p data-es="EL PROCESO" data-en="THE PROCESS" class="chapter-kicker">EL PROCESO</p><h2 data-es="SEIS ETAPAS.
+NINGÚN ATAJO." data-en="SIX STAGES.
+NO SHORTCUTS." >SEIS ETAPAS.
+NINGÚN ATAJO.</h2><p class="chapter-kicker stage-marker" id="stageMarker"></p><h3 id="stageName"></h3><p id="stageDescription"></p><img id="stagePhoto" src="assets/360-tour/ford-super-deluxe-woody/front.jpg" alt="Ford Woody" loading="lazy"><small data-es="Imágenes de piezas de la colección. Secuencia editorial pendiente de validar con el taller." data-en="Collection photographs. Editorial sequence to be validated by the workshop." class="editorial-note">Imágenes de piezas de la colección. Secuencia editorial pendiente de validar con el taller.</small></div>
+    </div></div>
+    <section class="atelier-crafts"><p data-es="LO QUE HACEMOS CON LAS MANOS" data-en="WHAT WE DO BY HAND" class="chapter-kicker">LO QUE HACEMOS CON LAS MANOS</p><div class="crafts-grid"><div id="craftRows"></div><img id="craftPhoto" src="assets/history.png" alt="Emblema Ferrari" loading="lazy"></div><a data-es="CONOCER LOS TALLERES AFILIADOS ↗" data-en="MEET THE AFFILIATED WORKSHOPS ↗" href="#p-affiliated" class="chapter-link">CONOCER LOS TALLERES AFILIADOS ↗</a></section>
+  </div></section>
+  <section class="atelier-closing" data-transition="spotlight"><div class="wrap" data-transition-content><h2 data-es="HECHO A MANO.
+HECHO PARA DURAR" data-en="MADE BY HAND.
+BUILT TO LAST" data-motion="lines">HECHO A MANO.
+HECHO PARA DURAR</h2><h2 data-es="OTRO SIGLO." data-en="ANOTHER CENTURY." class="red-text" data-motion="lines">OTRO SIGLO.</h2><img src="assets/cars/asv-385/cover.jpg" alt="Porsche 911 GT3 RS" loading="lazy"><p data-es="HAY VISITAS. Y HAY" data-en="THERE ARE VISITS. AND THERE IS" class="chapter-kicker">HAY VISITAS. Y HAY</p><h2 data-es="ACCESO." data-en="ACCESS." data-motion="lines">ACCESO.</h2><a data-es="SOLICITAR ACCESO AL TALLER" data-en="REQUEST WORKSHOP ACCESS" href="#p-tickets" class="btn-red">SOLICITAR ACCESO AL TALLER</a><a data-es="VER LA COLECCIÓN" data-en="VIEW THE COLLECTION" href="#p-collection" class="chapter-link">VER LA COLECCIÓN</a></div></section>
+</section>
 <!-- ===== INTERNAL PAGE · TALLERES AFILIADOS ===== -->
-<section class="subpage" id="page-workshops">
+<section class="subpage" id="page-affiliated">
   <div class="tw-hero">
     <div class="wrap">
       <a href="#top" class="back-btn light" data-i="back_home">← Back to Home</a>
@@ -646,6 +659,7 @@ of motoring history</h2>
 
 <script src="assets/js/core.js"></script>
 <script src="assets/js/site.js"></script>
+<script defer src="assets/js/visit-workshop.js"></script>
 <!-- Ordered, deferred libraries: content and navigation never depend on them. -->
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous"></script>
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" crossorigin="anonymous"></script>
