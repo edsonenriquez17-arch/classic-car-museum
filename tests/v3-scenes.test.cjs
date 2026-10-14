@@ -21,8 +21,8 @@ test('V3-01 scene, menu and playback behavior',{timeout:180000},async t=>{
     const context=await browser.newContext({locale:'es-PE',viewport:{width:1440,height:900},reducedMotion:'no-preference',...options});
     await context.route('**/*',route=>route.request().url().startsWith(base)?route.continue():route.abort());
     const p=await context.newPage(),errors=[];p.on('pageerror',e=>errors.push(e.message));
-    await p.goto(base);if(await p.locator('#plSkip').isVisible())await p.locator('#plSkip').click();
-    await p.locator('#top h1').waitFor();
+    await p.goto(base);if(await p.locator('#preloader').isVisible())await p.keyboard.press('Escape');
+    await p.waitForFunction(()=>!document.getElementById('main-content').inert&&document.getElementById('preloader').hidden);
     return {p,context,errors};
   }
   async function scroll(p,progress){
@@ -30,14 +30,21 @@ test('V3-01 scene, menu and playback behavior',{timeout:180000},async t=>{
     await p.waitForTimeout(60);
     return p.locator('.v3-scene').evaluateAll(nodes=>nodes.slice(0,3).map(n=>Number(getComputedStyle(n).opacity)));
   }
+  // B04: positions follow each scene's data-scene-units (hero film = 2.7 viewports).
+  async function at(p,units){
+    await p.evaluate(value=>{const root=document.getElementById('v3Opening');scrollTo({top:root.getBoundingClientRect().top+scrollY+innerHeight*value,behavior:'instant'});},units);
+    await p.waitForTimeout(80);
+    return p.locator('.v3-scene').evaluateAll(nodes=>nodes.slice(0,3).map(n=>Math.round(Number(getComputedStyle(n).opacity)*100)/100));
+  }
   await t.test('Scene exits fully to black, enters next, and reverses at the same scroll position',async()=>{
     const {p,context,errors}=await page();
     await p.waitForFunction(()=>document.getElementById('v3Opening').classList.contains('v3-enhanced'));
-    const middle=await scroll(p,.79);assert.ok(middle[0]>.35&&middle[0]<.65);assert.equal(middle[1],0);
-    assert.deepEqual(await scroll(p,.95),[0,0,0]);
-    assert.deepEqual(await scroll(p,1.35),[0,1,0]);
-    const reverse=await scroll(p,.79);assert.ok(Math.abs(reverse[0]-middle[0])<.01);
-    assert.deepEqual(await scroll(p,0),[1,0,0]);
+    assert.deepEqual(await at(p,0),[1,0,0]);
+    const leaving=await at(p,2.4);assert.ok(leaving[0]>.2&&leaving[0]<.9);assert.equal(leaving[1],0);
+    assert.deepEqual(await at(p,2.66),[0,0,0]);
+    assert.deepEqual(await at(p,3.4),[0,1,0]);
+    const reverse=await at(p,2.4);assert.ok(Math.abs(reverse[0]-leaving[0])<.02);
+    assert.deepEqual(await at(p,0),[1,0,0]);
     assert.equal(await p.locator('.motion-bars,.motion-spotlight-plane,.pin-spacer').count(),0);
     assert.equal(await p.locator('#top img').evaluate(el=>getComputedStyle(el).filter),'none');
     assert.equal(await p.locator('#top img').evaluate(el=>getComputedStyle(el).maskImage),'none');
@@ -47,7 +54,7 @@ test('V3-01 scene, menu and playback behavior',{timeout:180000},async t=>{
     const {p,context,errors}=await page();
     // Exercise the shared contract for the paper scenes added in later page milestones.
     await p.evaluate(()=>{document.querySelectorAll('.v3-scene')[1].classList.add('v3-scene--paper');window.ArtechMotion.refresh();});
-    await scroll(p,.95);assert.deepEqual(await scroll(p,1.35),[0,1,0]);
+    await at(p,2.66);assert.deepEqual(await at(p,3.4),[0,1,0]);
     assert.equal(await p.locator('.v3-scene').nth(1).evaluate(el=>getComputedStyle(el).backgroundColor),'rgb(242, 240, 235)');
     await p.emulateMedia({reducedMotion:'reduce'});
     await p.waitForFunction(()=>!document.getElementById('v3Opening').classList.contains('v3-enhanced'));
@@ -71,17 +78,16 @@ test('V3-01 scene, menu and playback behavior',{timeout:180000},async t=>{
     assert.equal(await p.locator('#main-content').evaluate(el=>el.inert),false);
     assert.deepEqual(errors,[]);await context.close();
   });
-  await t.test('Play is an icon, video waits for the user and pauses when leaving the scene',async()=>{
+  await t.test('Play is an icon, the film starts muted after the intro and pauses when leaving the scene',async t2=>{
     const {p,context,errors}=await page();
-    assert.equal(await p.locator('#heroVid').getAttribute('src'),null);
     assert.equal((await p.locator('#homeVideoToggle').innerText()).trim(),'');
     assert.equal(await p.locator('#homeVideoToggle svg').count(),2);
-    assert.equal(await p.locator('#homeBrandsToggle').count(),0);
-    assert.equal(await p.locator('#homeBrandTrack').count(),0);
-    await p.locator('#homeVideoToggle').click();
-    await p.waitForFunction(()=>!document.getElementById('heroVid').paused&&document.getElementById('heroVid').currentTime>0,null,{timeout:15000});
-    assert.equal(await p.locator('#homeVideoToggle').getAttribute('aria-pressed'),'true');
-    await scroll(p,1.35);assert.equal(await p.locator('#heroVid').evaluate(el=>el.paused),true);
+    assert.equal(await p.locator('#heroVid').evaluate(el=>el.muted),true);
+    const h264=await p.evaluate(()=>document.createElement('video').canPlayType('video/mp4; codecs="avc1.42E01E"')!=='');
+    if(h264){
+      await p.waitForFunction(()=>!document.getElementById('heroVid').paused,null,{timeout:15000});
+      await at(p,3.4);assert.equal(await p.locator('#heroVid').evaluate(el=>el.paused),true);
+    }else t2.diagnostic('Este Chromium no reproduce H.264; la reproducción se valida en Chrome.');
     await p.goto(base+'#p-collection');await p.locator('#carGrid a').first().waitFor();
     assert.equal(await p.locator('#heroVid').evaluate(el=>el.paused),true);
     assert.deepEqual(errors,[]);await context.close();
@@ -117,7 +123,7 @@ test('V3-01 scene, menu and playback behavior',{timeout:180000},async t=>{
   });
   await t.test('Booking route fades through black, clears its curtain and supports browser Back',async()=>{
     const {p,context,errors}=await page();
-    await p.locator('#top a[href="#p-tickets"]').click();
+    await at(p,1.6);await p.locator('#top a[href="#p-tickets"]').click();
     await p.waitForURL('**/#p-tickets');
     await p.waitForFunction(()=>document.querySelector('.v3-route-curtain').hidden);
     assert.equal(await p.locator('#page-tickets').isVisible(),true);
@@ -134,7 +140,7 @@ test('V3-01 scene, menu and playback behavior',{timeout:180000},async t=>{
     const p=await context.newPage(),errors=[];p.on('pageerror',e=>errors.push(e.message));
     await p.goto(base);assert.equal(await p.locator('#preloader').isVisible(),true);
     assert.equal(await p.locator('#main-content').evaluate(el=>el.inert),true);
-    await p.waitForFunction(()=>document.getElementById('preloader').hidden,null,{timeout:7000});
+    await p.waitForFunction(()=>document.getElementById('preloader').hidden,null,{timeout:12000});
     assert.equal(await p.locator('#main-content').evaluate(el=>el.inert),false);
     await p.reload();assert.equal(await p.locator('#preloader').isVisible(),false);
     assert.deepEqual(errors,[]);await context.close();

@@ -1762,7 +1762,7 @@ loadCars();
     close.focus();
   }
   document.addEventListener('click',e=>{
-    const target=e.target.closest('#page-vehicle .vh-gitem,#vhSide');
+    const target=e.target.closest('#page-vehicle .vh-gitem,#vhSide,#vhCover');
     if(target){e.preventDefault();openPhoto(target,target);return;}
     if(e.target===lb||e.target===img||e.target===close)closePhoto();
   });
@@ -1771,7 +1771,7 @@ loadCars();
       if(e.key==='Escape'){e.preventDefault();closePhoto();}
       if(e.key==='ArrowLeft'){e.preventDefault();changePhoto(photoIndex-1);}if(e.key==='ArrowRight'){e.preventDefault();changePhoto(photoIndex+1);}
       if(e.key==='Tab'){const buttons=[...lb.querySelectorAll('button')].filter(button=>!button.hidden&&!button.disabled);const first=buttons[0],last=buttons.at(-1);if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}}
-    }else if((e.key==='Enter'||e.key===' ')&&e.target.matches('#vhSide')){e.preventDefault();openPhoto(e.target);}
+    }else if((e.key==='Enter'||e.key===' ')&&e.target.matches('#vhSide,#vhCover')){e.preventDefault();openPhoto(e.target);}
   });
   img.addEventListener('error',()=>{closePhoto();window.__toast(dict[lang].catalogue_error);});
   addEventListener('hashchange',closePhoto);

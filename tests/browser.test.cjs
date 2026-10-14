@@ -142,7 +142,8 @@ test('Browser regression suite', { timeout: 180000 }, async t => {
     await p.locator('#visitConsent').check();
     await p.locator('#visitPrepare').click();
     assert.equal(await p.locator('#visitConfirmation').isVisible(),true);
-    assert.equal(await p.locator('.visit-closing').isVisible(),false);
+    // B03: «Bajo la luz» aparece solo después de una solicitud válida.
+    assert.equal(await p.locator('.visit-closing').isVisible(),true);
     assert.match(await p.locator('#confirmationTitle').textContent(),/<ANA>/);
     assert.equal(await p.locator('#confirmationTitle img').count(),0);
     const prepared=new URL(await p.locator('#visitSend').getAttribute('href'));
@@ -196,8 +197,9 @@ test('Browser regression suite', { timeout: 180000 }, async t => {
     assert.match(await p.locator('#menuRoute').textContent(),/Tuna Tartare/);
     const url=new URL(await p.locator('#restaurantRequest').getAttribute('href'));
     assert.match(url.searchParams.get('text'),/request a table/);
-    await p.goto(base+'#p-history');await p.locator('#historyMilestones a').first().waitFor();
-    assert.equal(await p.locator('#historyMilestones a').count(),3);
+    await p.goto(base+'#p-history');await p.locator('#tlStations button').first().waitFor();
+    // B03: la cronología es una línea de tiempo navegable con estaciones del catálogo.
+    assert.equal(await p.locator('#tlStations button').count(),10);
     assert.match(await p.locator('#historyCount').textContent(),/96/);
     await p.reload();await p.locator('#page-history.active').waitFor();
     assert.equal(await p.locator('html').getAttribute('lang'),'en');
@@ -226,10 +228,10 @@ test('Browser regression suite', { timeout: 180000 }, async t => {
     await p.goto(base+'#p-collection');await p.locator('#collectionFeatureTabs button').first().waitFor();
     assert.equal(await p.locator('#collectionFilmVideo').getAttribute('preload'),'none');
     assert.equal(await p.locator('#collectionFilmVideo').getAttribute('autoplay'),null);
-    await p.locator('[data-feature="2"]').click();
+    await p.locator(`#collectionFeatureTabs [data-slug="${ferrari.slug}"]`).click();
     assert.equal(await p.locator('#collectionFeatureName').textContent(),ferrari.name);
     await p.locator('#collectionFeatureLink').click();await p.locator('#vhName').filter({hasText:ferrari.name}).waitFor();
-    await p.locator('#vehiclePhotoOpen').click();
+    await p.locator('#vhCover').click();
     const photoTotal=1+ferrari.shots.length+(ferrari.side?1:0);
     assert.equal(await p.locator('#lbCount').textContent(),'1 / '+photoTotal);
     await p.keyboard.press('ArrowRight');
@@ -237,7 +239,7 @@ test('Browser regression suite', { timeout: 180000 }, async t => {
     assert.equal(await p.locator('#lbCount').textContent(),'2 / '+photoTotal);
     await p.locator('.lb-next').click();assert.equal(await p.locator('#lbCount').textContent(),'3 / '+photoTotal);
     await p.keyboard.press('Escape');assert.equal(await p.locator('#lightbox').isVisible(),false);
-    assert.equal(await p.evaluate(()=>document.activeElement.id),'vehiclePhotoOpen');
+    assert.equal(await p.evaluate(()=>document.activeElement.id),'vhCover');
     await p.locator('#vehicleNext').click();
     await p.waitForFunction(()=>document.querySelector('#vhName').textContent!=='Ferrari Testarossa');
     await p.goto(base+'#p-collection');await p.locator('#brandSel').selectOption('Porsche');
@@ -355,9 +357,9 @@ test('Browser regression suite', { timeout: 180000 }, async t => {
     assert.deepEqual(errors,[]);await context.close();
   });
 
-  await t.test('Intro can be skipped and does not replay in the same tab', async () => {
+  await t.test('Intro exits with Escape (no visible skip button) and does not replay in the same tab', async () => {
     const { page: p, context, errors }=await page({reducedMotion:'no-preference'});
-    await p.goto(base);await p.locator('#plSkip').click();
+    await p.goto(base);assert.equal(await p.locator('#plSkip').count(),0);await p.keyboard.press('Escape');
     assert.equal(await p.locator('#preloader').isVisible(),false);
     assert.equal(await p.locator('#main-content').getAttribute('inert'),null);
     await p.reload();assert.equal(await p.locator('#preloader').isVisible(),false);

@@ -12,9 +12,21 @@
   const visible=root=>root.isConnected&&root.getClientRects().length>0;
   function clear(state){
     state.root.classList.remove('v3-enhanced');state.root.style.height='';state.root.style.removeProperty('--v3-stage-height');
-    state.scenes.forEach(scene=>{scene.style.opacity='';scene.inert=false;scene.removeAttribute('aria-hidden');scene.classList.remove('is-active');});
+    state.scenes.forEach(scene=>{scene.style.opacity='';scene.style.removeProperty('--v3-fit');scene.inert=false;scene.removeAttribute('aria-hidden');scene.classList.remove('is-active');});
     window.ArtechHome?.fallback(state.root);
     window.ArtechShell?.heroFallback(state.root);
+  }
+  // B04: measure the readable content only. Decorative media is clipped by the stage and must not
+  // switch the whole deck off; a scene that is slightly taller than the viewport is scaled to fit.
+  function fit(scene,height){
+    scene.style.removeProperty('--v3-fit');
+    const inner=scene.querySelector(':scope > .v3-scene-inner');
+    if(!inner)return scene.scrollHeight<=height+4;
+    const style=getComputedStyle(scene),available=height-parseFloat(style.paddingTop)-parseFloat(style.paddingBottom),need=inner.offsetHeight;
+    if(need<=available+2)return true;
+    if(scene.querySelector('.v3-hero-media'))return need<=height-40;
+    const ratio=available/need;if(ratio<.68)return false;
+    scene.style.setProperty('--v3-fit',ratio.toFixed(4));return true;
   }
   function prepare(){
     needsMeasure=false;
@@ -33,7 +45,8 @@
       scenes.forEach(scene=>{state.starts.push(state.total);const units=Math.max(1.55,Math.min(12,Number(scene.dataset.sceneUnits)||1.55));state.lengths.push(state.height*units);state.total+=state.height*units;});
       root.style.setProperty('--v3-stage-height',state.height+'px');root.style.height=(state.height+state.total)+'px';root.classList.add('v3-enhanced');
       state.start=root.getBoundingClientRect().top+scrollY;
-      if(scenes.some(scene=>scene.scrollHeight>state.height+4)){clear(state);decks.delete(root);}
+      let fits=true;scenes.forEach(scene=>{if(!fit(scene,state.height))fits=false;});
+      if(!fits){clear(state);decks.delete(root);}
     });
   }
   function paint(state){
@@ -88,6 +101,8 @@
   ['artech:route','artech:lang','artech:menu'].forEach(name=>addEventListener(name,()=>schedule(true)));
   preference.addEventListener('change',()=>{for(const state of decks.values())clear(state);decks.clear();schedule(true);});
   document.fonts?.ready.then(()=>schedule(true));
+  addEventListener('load',()=>schedule(true));
+  document.addEventListener('load',event=>{if(event.target.tagName==='IMG'&&event.target.closest('[data-scene-deck]'))schedule(true);},true);
   window.ArtechMotion=Object.freeze({refresh:()=>schedule(true),reveal(element){const root=element.closest('[data-scene-deck]');if(root){const scenes=[...root.querySelectorAll('.v3-scene')];show(root,scenes.indexOf(element.closest('.v3-scene')));}},
     seek(scene,bodyProgress){const root=scene.closest('[data-scene-deck]'),state=decks.get(root);if(!state)return false;const index=state.scenes.indexOf(scene),fade=state.height*.341,gap=state.height*.155,body=state.lengths[index]-fade*2-gap;scrollTo({top:state.start+state.starts[index]+fade+body*clamp(bodyProgress),behavior:'instant'});paint(state);return true;},
     get reduced(){return preference.matches;},get available(){return !preference.matches;}});

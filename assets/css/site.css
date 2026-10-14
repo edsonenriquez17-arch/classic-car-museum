@@ -551,7 +551,7 @@
 
   /* ---------- NEWSLETTER ---------- */
   .newsletter{position:relative;background:var(--dark-1);color:#fff;padding:var(--sp-l) 0;text-align:center;overflow:hidden}
-  .newsletter .nl-bg{position:absolute;inset:0;background:url('assets/hero-poster.jpg') center/cover no-repeat;opacity:.14;filter:grayscale(.4)}
+  .newsletter .nl-bg{position:absolute;inset:0;background:url('../hero-poster.jpg') center/cover no-repeat;opacity:.14;filter:grayscale(.4)}
   .newsletter::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(5,5,6,.55),rgba(5,5,6,.92))}
   .nl-inner{position:relative;z-index:2;max-width:840px}
   .nl-kicker{color:var(--red);letter-spacing:5px;font-size:14px;text-transform:uppercase;margin-bottom:22px}
