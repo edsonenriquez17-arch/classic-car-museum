@@ -28,7 +28,7 @@ test('V3-01 scene, menu and playback behavior',{timeout:180000},async t=>{
   async function scroll(p,progress){
     await p.evaluate(value=>{const root=document.getElementById('v3Opening');scrollTo({top:root.getBoundingClientRect().top+scrollY+innerHeight*1.55*value,behavior:'instant'});},progress);
     await p.waitForTimeout(60);
-    return p.locator('.v3-scene').evaluateAll(nodes=>nodes.map(n=>Number(getComputedStyle(n).opacity)));
+    return p.locator('.v3-scene').evaluateAll(nodes=>nodes.slice(0,3).map(n=>Number(getComputedStyle(n).opacity)));
   }
   await t.test('Scene exits fully to black, enters next, and reverses at the same scroll position',async()=>{
     const {p,context,errors}=await page();
@@ -51,7 +51,7 @@ test('V3-01 scene, menu and playback behavior',{timeout:180000},async t=>{
     assert.equal(await p.locator('.v3-scene').nth(1).evaluate(el=>getComputedStyle(el).backgroundColor),'rgb(242, 240, 235)');
     await p.emulateMedia({reducedMotion:'reduce'});
     await p.waitForFunction(()=>!document.getElementById('v3Opening').classList.contains('v3-enhanced'));
-    assert.deepEqual(await p.locator('.v3-scene').evaluateAll(nodes=>nodes.map(n=>[getComputedStyle(n).opacity,n.inert])),[['1',false],['1',false],['1',false]]);
+    assert.ok(await p.locator('.v3-scene').evaluateAll(nodes=>nodes.every(n=>getComputedStyle(n).opacity==='1'&&!n.inert)));
     assert.equal(await p.locator('#v3Opening').evaluate(el=>el.style.height),'');
     assert.deepEqual(errors,[]);await context.close();
   });
@@ -77,7 +77,7 @@ test('V3-01 scene, menu and playback behavior',{timeout:180000},async t=>{
     assert.equal((await p.locator('#homeVideoToggle').innerText()).trim(),'');
     assert.equal(await p.locator('#homeVideoToggle svg').count(),2);
     assert.equal(await p.locator('#homeBrandsToggle').count(),0);
-    assert.equal(await p.locator('#homeBrandTrack').evaluate(el=>getComputedStyle(el).animationName),'none');
+    assert.equal(await p.locator('#homeBrandTrack').count(),0);
     await p.locator('#homeVideoToggle').click();
     await p.waitForFunction(()=>!document.getElementById('heroVid').paused&&document.getElementById('heroVid').currentTime>0,null,{timeout:15000});
     assert.equal(await p.locator('#homeVideoToggle').getAttribute('aria-pressed'),'true');
@@ -138,5 +138,64 @@ test('V3-01 scene, menu and playback behavior',{timeout:180000},async t=>{
     assert.equal(await p.locator('#main-content').evaluate(el=>el.inert),false);
     await p.reload();assert.equal(await p.locator('#preloader').isVisible(),false);
     assert.deepEqual(errors,[]);await context.close();
+  });
+  await t.test('V3-02 chronology selects every real year and preserves the selected car on browser Back',async()=>{
+    const {p,context,errors}=await page();
+    assert.equal(await p.locator('.v3-scene').count(),9);
+    await p.locator('#top [data-next-scene]').click();await p.locator('[data-scene="home-02"] [data-next-scene]').click();await p.locator('[data-scene="home-03"] [data-next-scene]').click();
+    for(const [i,year,slug] of [[0,'1903','sin-placa-25'],[1,'1936','sin-placa-15'],[2,'1956','maserati-300s'],[3,'1970','awf-621'],[4,'1988','cxj-330'],[5,'2018','bfu-487']]){
+      await p.locator(`[data-era="${i}"]`).click();assert.equal(await p.locator('#homeEraYear').textContent(),year);assert.equal(await p.locator('#homeEraLink').getAttribute('href'),'#p-vehicle/'+slug);
+    }
+    await p.mouse.wheel(0,-600);await p.waitForFunction(()=>document.getElementById('homeEraYear').textContent==='1988');
+    await p.locator('[data-era="5"]').click();await p.locator('#homeEraLink').click();await p.waitForURL('**/#p-vehicle/bfu-487');
+    await p.goBack();await p.waitForFunction(()=>document.querySelector('[data-era="5"]').getAttribute('aria-pressed')==='true'&&!document.body.classList.contains('page-open'));
+    await p.waitForFunction(()=>document.querySelector('.v3-route-curtain').hidden);
+    assert.equal(await p.locator('#homeEraYear').textContent(),'2018');
+    assert.deepEqual(errors,[]);await context.close();
+  });
+  await t.test('V3-02 experience links preserve their selection and paper headings reflect while pinned',async()=>{
+    const {p,context,errors}=await page();
+    for(const [id,index] of [['collection','0'],['vip','1'],['private','2']]){
+      await p.goto(base+'#experiences');await p.waitForFunction(()=>document.querySelector('.v3-route-curtain').hidden);
+      await p.locator(`.v3-experience-link[href="#p-tickets/${id}"]`).click();await p.waitForURL('**/#p-tickets/'+id);
+      await p.waitForFunction(index=>document.querySelector(`[data-level="${index}"]`)?.getAttribute('aria-pressed')==='true',index);
+    }
+    await p.locator('#header .logo').click();await p.waitForFunction(()=>!document.body.classList.contains('page-open'));
+    await p.evaluate(()=>window.ArtechMotion.seek(document.getElementById('experiences'),.2));await p.waitForTimeout(60);
+    const first=await p.locator('#experiences h2').evaluate(el=>el.style.getPropertyValue('--v3-light-position'));
+    await p.evaluate(()=>window.ArtechMotion.seek(document.getElementById('experiences'),.8));await p.waitForTimeout(60);
+    const second=await p.locator('#experiences h2').evaluate(el=>el.style.getPropertyValue('--v3-light-position'));
+    assert.notEqual(first,second);assert.equal(await p.locator('#experiences h2').evaluate(el=>el.classList.contains('v3-letter-light')),true);
+    assert.deepEqual(errors,[]);await context.close();
+  });
+  await t.test('V3-02 chapter progress reverses, needs real scrolling and keeps footer access',async()=>{
+    const {p,context,errors}=await page();
+    await p.evaluate(()=>window.ArtechMotion.seek(document.getElementById('home-closing'),.8));
+    await p.mouse.wheel(0,250);await p.waitForFunction(()=>Number(document.getElementById('homeChapterProgress').getAttribute('aria-valuenow'))>20);
+    const forward=Number(await p.locator('#homeChapterProgress').getAttribute('aria-valuenow'));
+    await p.mouse.wheel(0,-180);await p.waitForFunction(before=>Number(document.getElementById('homeChapterProgress').getAttribute('aria-valuenow'))<before,forward);
+    assert.equal(new URL(p.url()).hash,'');
+    await p.mouse.wheel(0,650);await p.waitForURL('**/#p-workshops');
+    await p.goBack();await p.waitForFunction(()=>!document.body.classList.contains('page-open'));await p.waitForFunction(()=>document.querySelector('.v3-route-curtain').hidden);
+    await p.locator('a[href="#site-footer"]').click();await p.waitForURL('**/#site-footer');await p.waitForFunction(()=>document.querySelector('.v3-route-curtain').hidden);
+    await p.mouse.wheel(0,400);assert.equal(new URL(p.url()).hash,'#site-footer');
+    assert.deepEqual(errors,[]);await context.close();
+  });
+  await t.test('V3-02 every scene fits laptop/mobile in both languages and reduced motion keeps the full story',async()=>{
+    for(const [width,height] of [[1280,720],[390,844],[320,844]]){
+      const {p,context,errors}=await page({viewport:{width,height}});
+      for(const language of ['es','en']){
+        await p.locator(`[data-lang="${language}"]`).click();await p.waitForFunction(()=>document.getElementById('v3Opening').classList.contains('v3-enhanced'));
+        for(const id of ['home-04','home-06','home-07','home-09']){
+          await p.evaluate(id=>window.ArtechMotion.reveal(document.querySelector(`[data-scene="${id}"]`)),id);await p.waitForTimeout(30);
+          const bounds=await p.locator(`[data-scene="${id}"] .v3-scene-inner`).boundingBox();assert.ok(bounds.y>=65&&bounds.y+bounds.height<=height-35,JSON.stringify({width,height,language,id,bounds}));
+          assert.ok(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
+        }
+      }
+      await p.emulateMedia({reducedMotion:'reduce'});await p.waitForFunction(()=>!document.getElementById('v3Opening').classList.contains('v3-enhanced'));
+      assert.ok(await p.locator('.v3-scene').evaluateAll(nodes=>nodes.every(n=>!n.inert&&getComputedStyle(n).opacity==='1')));
+      assert.equal(await p.locator('#homeChapterMeter').isVisible(),false);
+      assert.deepEqual(errors,[]);await context.close();
+    }
   });
 });

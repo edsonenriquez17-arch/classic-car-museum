@@ -80,14 +80,19 @@
       routeFade.finished.then(()=>{if(version===routeVersion){curtain.hidden=true;curtain.style.opacity='';routeFade.cancel();}}).catch(()=>{});
     }));
   }
-  document.addEventListener('click',async event=>{
-    const link=event.target.closest('a[href]'),hash=link?.getAttribute('href');
-    if(!link||event.button!==0||event.ctrlKey||event.metaKey||event.shiftKey||event.altKey||link.target==='_blank'||link.hasAttribute('download')||!/^#(?:p-|top$)/.test(hash)||hash===location.hash||preference.matches)return;
-    event.preventDefault();
+  async function navigate(hash){
+    if(hash===location.hash)return;
+    if(preference.matches){location.hash=hash;return;}
     const version=++routeVersion;pendingHash=hash;routeFade?.cancel();curtain.hidden=false;curtain.style.opacity='0';
     routeFade=curtain.animate([{opacity:0},{opacity:1}],{duration:220,easing:'linear',fill:'forwards'});
     try{await routeFade.finished;}catch(_){return;}
     if(version===routeVersion&&pendingHash===hash)location.hash=hash;
+  }
+  document.addEventListener('click',event=>{
+    const link=event.target.closest('a[href]'),hash=link?.getAttribute('href');
+    if(!link||event.button!==0||event.ctrlKey||event.metaKey||event.shiftKey||event.altKey||link.target==='_blank'||link.hasAttribute('download')||!/^#(?:p-|top$)/.test(hash)||hash===location.hash||preference.matches)return;
+    event.preventDefault();
+    navigate(hash);
   },true);
   addEventListener('hashchange',()=>{
     const expected=pendingHash===location.hash;pendingHash=null;
@@ -152,5 +157,5 @@
   document.addEventListener('keydown',event=>{if(introDone)return;if(event.key==='Escape'){event.preventDefault();reveal(true);}if(event.key==='Tab'){event.preventDefault();skip.focus();}});
   addEventListener('hashchange',()=>{if(!introDone)reveal(true);});
   preference.addEventListener('change',()=>{if(preference.matches){if(!introDone)reveal(true);else exitAnimation?.finish();video.dataset.userPaused='1';video.pause();}});
-  window.ArtechShell=Object.freeze({closeMenu:()=>setMenu(false),get menuOpen(){return menuOpen;}});
+  window.ArtechShell=Object.freeze({closeMenu:()=>setMenu(false),navigate,get menuOpen(){return menuOpen;}});
 })();

@@ -1275,7 +1275,10 @@ function route(options = {}) {
     if(key==='exp3d') window.dispatchEvent(new Event('resize'));
   } else {
     const target = document.getElementById(key);
-    if(target && (wasOpen || options.focus)) target.scrollIntoView({behavior:reducedMotion.matches?'instant':'smooth'});
+    if(target && (wasOpen || options.focus)) {
+      if(target.closest('.v3-scene')&&window.ArtechMotion)window.ArtechMotion.reveal(target);
+      else target.scrollIntoView({behavior:reducedMotion.matches?'instant':'smooth'});
+    }
   }
   mediaDeFondo(!page && !reducedMotion.matches);
   document.querySelectorAll('#navlinks a').forEach(link => {
@@ -1315,15 +1318,6 @@ function renderHome() {
   if (hook) hook.textContent = years.length
     ? t.h_hero_hook.replace('{age}', Number(todayInLima().slice(0, 4)) - Math.min(...years))
     : t.h_hook_fallback;
-  const brands = [...new Set(CARS.map(car => car.brand).filter(Boolean))].sort();
-  const count = document.getElementById('homeBrandCount'), track = document.getElementById('homeBrandTrack');
-  if (count) count.textContent = brands.length ? t.h_brands.replace('{count}', brands.length) : (lang === 'es' ? 'Bajo un solo techo.' : 'Under one roof.');
-  const key = brands.join('|');
-  if (track && brands.length && track.dataset.brands !== key) {
-    const names = brands.map(brand => `<span>${escapeHTML(brand)}</span>`).join('');
-    track.innerHTML = `<div class="home-brand-set">${names}</div><div class="home-brand-set" aria-hidden="true">${names}</div>`;
-    track.dataset.brands = key;
-  }
   const video = document.getElementById('heroVid'), toggle = document.getElementById('homeVideoToggle');
   if (toggle && video) {
     toggle.setAttribute('aria-label', t[video.error ? 'h_video_failed' : video.paused ? 'h_video_play' : 'h_video_pause']);
