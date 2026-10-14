@@ -37,27 +37,8 @@
     $('historyCount').textContent=cars.length?L(`${cars.length} PIEZAS.\nUNA HISTORIA ABIERTA.`,`${cars.length} PIECES.\nAN OPEN STORY.`):L('UNA HISTORIA\nQUE CONTINÚA.','A STORY\nTHAT CONTINUES.');
   }
   function mountScenes(){ window.ArtechMotion?.refresh(); }
-  const featureSlugs=['maserati-300s','sin-placa-15','cxj-330','bfu-487'];
-  let featureIndex=0,featureRun=0,featureAnimation,lastCollectionScroll=0,previousRoute='';
-  function featuredCars(){return (typeof CARS!=='undefined'?featureSlugs.map(slug=>CARS.find(car=>car.slug===slug)):[]).filter(Boolean);}
-  function renderFeatured(animate=false){
-    const cars=featuredCars(),image=$('collectionHeroPhoto');
-    $('collectionFeaturePrev').disabled=$('collectionFeatureNext').disabled=cars.length<2;
-    if(!cars.length){$('collectionFeatureLink').href='#p-collection/catalogue';$('collectionFeatureTabs').innerHTML='';return;}
-    featureIndex=(featureIndex+cars.length)%cars.length;const car=cars[featureIndex];
-    $('collectionFeatureTabs').innerHTML=cars.map((c,index)=>`<button type="button" data-feature="${index}" aria-pressed="${index===featureIndex}">${E(c.brand)} / ${E(c.year)}</button>`).join('');
-    const run=++featureRun;
-    const paint=()=>{if(run!==featureRun)return;image.src=`assets/cars/${car.slug}/cover.jpg`;image.alt=car.name;$('collectionFeatureName').textContent=car.name;$('collectionFeatureYear').textContent=car.year;$('collectionFeatureLink').href='#p-vehicle/'+encodeURIComponent(car.slug);};
-    featureAnimation?.cancel();
-    if(animate&&!matchMedia('(prefers-reduced-motion: reduce)').matches){
-      const preload=new Image();preload.src=`assets/cars/${car.slug}/cover.jpg`;
-      featureAnimation=image.animate([{opacity:1},{opacity:0}],{duration:250,fill:'forwards'});
-      featureAnimation.finished.then(()=>{if(run!==featureRun)return;paint();featureAnimation.cancel();featureAnimation=image.animate([{opacity:0},{opacity:1}],{duration:650,easing:'cubic-bezier(.16,1,.3,1)'});}).catch(()=>{});
-    }else{paint();if(animate)image.animate([{opacity:.5},{opacity:1}],{duration:200});}
-  }
-  $('collectionFeatureTabs').addEventListener('click',event=>{const button=event.target.closest('[data-feature]');if(!button)return;featureIndex=+button.dataset.feature;renderFeatured(true);$('collectionFeatureTabs').querySelector(`[data-feature="${featureIndex}"]`)?.focus({preventScroll:true});});
-  $('collectionFeaturePrev').addEventListener('click',()=>{featureIndex--;renderFeatured(true);});
-  $('collectionFeatureNext').addEventListener('click',()=>{featureIndex++;renderFeatured(true);});
+  let lastCollectionScroll=0,previousRoute='';
+  function renderFeatured(){window.ArtechCollection?.refreshFeatured();}
   function updateResults(count,total,filtered){
     $('collectionResults').textContent=L(`${count} de ${total} piezas`,`${count} of ${total} pieces`);
     $('collectionClear').disabled=!filtered;
@@ -71,6 +52,7 @@
     const photos=Array.isArray(car.shots)?car.shots.length:0;
     $('vehicleGalleryHeading').hidden=!photos;$('vehicleGalleryHeading').parentElement.hidden=!photos;
     $('vehiclePhotoCount').textContent=L(`${photos} fotografías · Pulsa para ampliar`,`${photos} photographs · Select to enlarge`);
+    window.ArtechCollection?.renderVehicle(car);
     mountScenes();
   }
   document.addEventListener('click',event=>{if(event.target.closest('#carGrid a,#collectionFeatureLink'))lastCollectionScroll=scrollY;});
@@ -92,6 +74,6 @@
   window.ArtechEditorial={renderExperiences,renderVehicle,updateResults,refresh};
   addEventListener('artech:lang',refresh);
   addEventListener('artech:route',()=>{pageState();translate();sectionRoute();collectionReturn();mountScenes();});
-  matchMedia('(prefers-reduced-motion: reduce)').addEventListener('change',()=>{featureAnimation?.cancel();renderFeatured(false);mountScenes();});
+  matchMedia('(prefers-reduced-motion: reduce)').addEventListener('change',()=>{renderFeatured();mountScenes();});
   refresh();
 })();

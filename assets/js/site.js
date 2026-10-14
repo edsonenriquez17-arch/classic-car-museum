@@ -278,6 +278,7 @@ const dict = {
     "photo_gallery": "Photo gallery",
     "layout_one": "One column",
     "layout_two": "Two columns",
+    "layout_four": "Four columns",
     "start_3d": "Explore 3D demo",
     "demo_3d": "Illustrative 3D model; not a virtual tour of the museum.",
     "demo_3d_short": "ILLUSTRATIVE MODEL",
@@ -612,6 +613,7 @@ const dict = {
     "photo_gallery": "Galería de fotografías",
     "layout_one": "Una columna",
     "layout_two": "Dos columnas",
+    "layout_four": "Cuatro columnas",
     "start_3d": "Explorar demo 3D",
     "demo_3d": "Modelo 3D ilustrativo; no es un recorrido virtual del museo.",
     "demo_3d_short": "MODELO ILUSTRATIVO",
@@ -689,7 +691,7 @@ function apply(l){
   document.querySelectorAll('[data-alt]').forEach(el => el.alt = dict[l][el.dataset.alt] || '');
   document.querySelectorAll('[data-aria]').forEach(el => el.setAttribute('aria-label', dict[l][el.dataset.aria] || ''));
   document.querySelectorAll('.pc-lay').forEach(button => {
-    button.setAttribute('aria-label',dict[l][button.dataset.cols==='1'?'layout_one':'layout_two']);
+    button.setAttribute('aria-label',dict[l][button.dataset.cols==='1'?'layout_one':button.dataset.cols==='4'?'layout_four':'layout_two']);
     button.setAttribute('aria-pressed',String(button.classList.contains('active')));
   });
   document.querySelectorAll('.lang button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.lang === l)));
@@ -1698,7 +1700,7 @@ function wireFilters(){
   const layBtns=[...document.querySelectorAll('.pc-lay')];
   layBtns.forEach(b=>b.addEventListener('click',()=>{
     const c=b.dataset.cols;
-    grid.classList.toggle('cols-1', c==='1'); grid.classList.toggle('cols-2', c==='2');
+    grid.classList.remove('cols-1','cols-2','cols-4'); grid.classList.add('cols-'+c);
     layBtns.forEach(x=>x.classList.toggle('active',x===b));
     layBtns.forEach(x=>x.setAttribute('aria-pressed',String(x===b)));
   }));
@@ -1760,8 +1762,8 @@ loadCars();
     close.focus();
   }
   document.addEventListener('click',e=>{
-    const target=e.target.closest('#page-vehicle .vh-gitem,#vhCover,#vhSide,#vehiclePhotoOpen');
-    if(target){e.preventDefault();openPhoto(target.id==='vehiclePhotoOpen'?document.getElementById('vhCover'):target,target);return;}
+    const target=e.target.closest('#page-vehicle .vh-gitem,#vhSide');
+    if(target){e.preventDefault();openPhoto(target,target);return;}
     if(e.target===lb||e.target===img||e.target===close)closePhoto();
   });
   document.addEventListener('keydown',e=>{
@@ -1769,7 +1771,7 @@ loadCars();
       if(e.key==='Escape'){e.preventDefault();closePhoto();}
       if(e.key==='ArrowLeft'){e.preventDefault();changePhoto(photoIndex-1);}if(e.key==='ArrowRight'){e.preventDefault();changePhoto(photoIndex+1);}
       if(e.key==='Tab'){const buttons=[...lb.querySelectorAll('button')].filter(button=>!button.hidden&&!button.disabled);const first=buttons[0],last=buttons.at(-1);if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}}
-    }else if((e.key==='Enter'||e.key===' ')&&e.target.matches('#vhCover,#vhSide')){e.preventDefault();openPhoto(e.target);}
+    }else if((e.key==='Enter'||e.key===' ')&&e.target.matches('#vhSide')){e.preventDefault();openPhoto(e.target);}
   });
   img.addEventListener('error',()=>{closePhoto();window.__toast(dict[lang].catalogue_error);});
   addEventListener('hashchange',closePhoto);
