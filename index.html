@@ -14,6 +14,8 @@
 <link rel="stylesheet" href="assets/css/editorial.css">
 <link rel="stylesheet" href="assets/css/v3-scenes.css">
 <link rel="stylesheet" href="assets/css/v3-block1.css">
+<link rel="stylesheet" href="assets/css/v3-block2.css">
+<link rel="stylesheet" href="assets/css/v3-block2-fix.css">
 </head>
 <body>
 <a class="skip-link" href="#main-content" data-i="skip_content">Skip to content</a>
@@ -434,10 +436,33 @@ MOVING." data-motion="lines">SIGUE
 EN MARCHA.</h2><div class="editorial-actions"><a data-es="RESERVA TU TURNO" data-en="BOOK YOUR VISIT" href="#p-tickets" class="editorial-button">RESERVA TU TURNO</a><a data-es="VER LA COLECCIÓN" data-en="VIEW THE COLLECTION" href="#p-collection" class="editorial-link">VER LA COLECCIÓN</a></div></div></section></section>
 
 <!-- ===== INTERNAL PAGE · COLLECTION ===== -->
-<section class="subpage editorial-page" id="page-collection"><div class="collection-opening"><div class="collection-feature-media"><img id="collectionHeroPhoto" src="assets/cars/maserati-300s/cover.jpg" alt="Maserati 300S" fetchpriority="high"></div><div class="wrap collection-opening-copy"><p data-es="ARTECH / LA COLECCIÓN" data-en="ARTECH / THE COLLECTION" class="editorial-kicker">ARTECH / LA COLECCIÓN</p><h1 data-es="CADA ÉPOCA
+<section class="subpage editorial-page" id="page-collection">
+  <div class="collection-opening" aria-label="Featured vehicles" data-es-aria="Piezas destacadas" data-en-aria="Featured vehicles">
+    <div class="collection-feature-media">
+      <img id="collectionHeroPhoto" src="assets/cars/sin-placa-15/cover.jpg" alt="Auburn 852 Supercharged" fetchpriority="high">
+      <img id="collectionHeroIncoming" alt="" aria-hidden="true" hidden>
+    </div>
+    <div class="wrap collection-opening-copy">
+      <div class="collection-intro-text">
+        <p data-es="ARTECH / LA COLECCIÓN" data-en="ARTECH / THE COLLECTION" class="editorial-kicker">ARTECH / LA COLECCIÓN</p>
+        <h1 data-es="CADA ÉPOCA
 DEJÓ UNA PIEZA." data-en="EVERY ERA
-LEFT A PIECE." data-motion="lines">CADA ÉPOCA
-DEJÓ UNA PIEZA.</h1><p data-es="Descubre el diseño, la historia y los detalles de cada automóvil." data-en="Discover the design, history and details of every automobile." class="editorial-lead">Descubre el diseño, la historia y los detalles de cada automóvil.</p><div class="editorial-actions"><a data-es="EXPLORAR LA COLECCIÓN ↓" data-en="EXPLORE THE COLLECTION ↓" href="#p-collection/catalogue" class="editorial-link">EXPLORAR LA COLECCIÓN ↓</a><a data-es="RESERVA TU TURNO" data-en="BOOK YOUR VISIT" href="#p-tickets" class="editorial-button">RESERVA TU TURNO</a></div><div class="collection-feature-meta"><p class="editorial-kicker"><span data-es="SELECCIÓN ARTECH" data-en="ARTECH SELECTION" >SELECCIÓN ARTECH</span></p><a id="collectionFeatureLink" href="#p-vehicle/maserati-300s"><strong id="collectionFeatureName">Maserati 300S</strong><span id="collectionFeatureYear">1956</span><span aria-hidden="true">↗</span></a></div></div><div class="wrap collection-feature-controls"><div id="collectionFeatureTabs" role="group" aria-label="Piezas destacadas" data-es-aria="Piezas destacadas" data-en-aria="Featured vehicles"></div><div><button type="button" id="collectionFeaturePrev" aria-label="Pieza anterior" data-es-aria="Pieza anterior" data-en-aria="Previous vehicle">←</button><button type="button" id="collectionFeatureNext" aria-label="Pieza siguiente" data-es-aria="Pieza siguiente" data-en-aria="Next vehicle">→</button></div></div></div>    <div class="pc-filterbar">
+LEFT A PIECE.">CADA ÉPOCA
+DEJÓ UNA PIEZA.</h1>
+        <p data-es="Descubre el diseño, la historia y los detalles de cada automóvil." data-en="Discover the design, history and details of every automobile." class="editorial-lead">Descubre el diseño, la historia y los detalles de cada automóvil.</p>
+        <div class="editorial-actions"><a data-es="EXPLORAR LA COLECCIÓN ↓" data-en="EXPLORE THE COLLECTION ↓" href="#p-collection/catalogue" class="editorial-link">EXPLORAR LA COLECCIÓN ↓</a><a data-es="RESERVA TU TURNO" data-en="BOOK YOUR VISIT" href="#p-tickets" class="editorial-button">RESERVA TU TURNO</a></div>
+      </div>
+    </div>
+    <div class="collection-feature-meta" hidden><strong id="collectionFeatureName"></strong><span id="collectionFeatureYear"></span></div>
+    <div class="collection-feature-controls">
+      <div class="collection-selector-panel">
+        <div class="collection-selector-heading"><p data-es="SELECCIÓN ARTECH" data-en="ARTECH SELECTION">SELECCIÓN ARTECH</p><a id="collectionFeatureLink" href="#p-vehicle/sin-placa-15" aria-label="Ver pieza seleccionada" title="Ver pieza seleccionada">↗</a></div>
+        <div id="collectionFeatureTabs" role="group" aria-label="Piezas destacadas" data-es-aria="Piezas destacadas" data-en-aria="Featured vehicles"></div>
+      </div>
+      <div class="collection-feature-arrows"><button type="button" id="collectionFeaturePrev" aria-label="Pieza anterior">←</button><button type="button" id="collectionFeatureNext" aria-label="Pieza siguiente">→</button></div>
+    </div>
+  </div>
+  <div class="pc-filterbar">
       <div class="wrap pc-filters">
         <div class="pc-pills">
           <button class="pf active" data-cat="all" data-i="flt_all">All</button>
@@ -457,7 +482,8 @@ DEJÓ UNA PIEZA.</h1><p data-es="Descubre el diseño, la historia y los detalles
         </div>
         <div class="pc-layout" role="group" aria-label="Layout">
           <button class="pc-lay" data-cols="1" aria-label="One column"><svg viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="7" rx="1"/><rect x="5" y="13" width="14" height="7" rx="1"/></svg></button>
-          <button class="pc-lay active" data-cols="2" aria-label="Two columns"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="16" rx="1"/><rect x="13" y="4" width="7" height="16" rx="1"/></svg></button>
+          <button class="pc-lay" data-cols="2" aria-label="Two columns"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="16" rx="1"/><rect x="13" y="4" width="7" height="16" rx="1"/></svg></button>
+          <button class="pc-lay active" data-cols="4" aria-label="Four columns"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 4h4v16H2zM7 4h4v16H7zM12 4h4v16h-4zM17 4h4v16h-4z"/></svg></button>
         </div>
       </div>
     </div>
@@ -469,7 +495,7 @@ DEJÓ UNA PIEZA.</h1><p data-es="Descubre el diseño, la historia y los detalles
         <div class="stat"><b id="statBrands">—</b><span data-i="st3">Brands represented</span></div>
       </div>
       <p id="catalogue-status" class="catalogue-status" role="status" aria-live="polite"></p><button id="catalogue-retry" type="button" hidden data-i="retry">Retry</button>
-      <div class="collection-result-bar"><p id="collectionResults" role="status" aria-live="polite"></p><button data-es="LIMPIAR FILTROS" data-en="CLEAR FILTERS" type="button" id="collectionClear" class="editorial-link" disabled>LIMPIAR FILTROS</button></div><div class="grid4 cols-2" id="carGrid" aria-busy="true"></div>
+      <div class="collection-result-bar"><p id="collectionResults" role="status" aria-live="polite"></p><button data-es="LIMPIAR FILTROS" data-en="CLEAR FILTERS" type="button" id="collectionClear" class="editorial-link" disabled>LIMPIAR FILTROS</button></div><div class="grid4 cols-4" id="carGrid" aria-busy="true"></div>
       <div class="pc-noresults" id="noResults" hidden data-i="flt_none">No vehicles match your search.</div>
       <nav class="pc-pager" id="pcPager" aria-label="Collection pages"></nav>
     </div>
@@ -481,13 +507,13 @@ EN MOVIMIENTO.</h2><p data-es="Una mirada al museo. Reproduce el film para conti
 
 <!-- ===== INTERNAL PAGE · VEHICLE DATA SHEET ===== -->
 <section class="subpage editorial-page" id="page-vehicle">
-  <div class="vh-topbar"><div class="wrap"><a href="#p-collection" class="vh-back" data-i="vh_back">← Collection</a><nav class="vehicle-nav" aria-label="Navegar entre piezas" data-es-aria="Navegar entre piezas" data-en-aria="Browse vehicles"><a id="vehiclePrev" class="editorial-link"><span data-es="← ANTERIOR" data-en="← PREVIOUS" >← ANTERIOR</span></a><a id="vehicleNext" class="editorial-link"><span data-es="SIGUIENTE →" data-en="NEXT →" >SIGUIENTE →</span></a></nav></div></div>
+  <div class="vh-topbar"><div class="wrap"><a href="#p-collection" class="vh-back" data-i="vh_back">← Collection</a><nav class="vehicle-nav" aria-label="Navegar entre piezas"><a id="vehiclePrev" class="vehicle-arrow"><span aria-hidden="true">‹</span></a><a id="vehicleNext" class="vehicle-arrow"><span aria-hidden="true">›</span></a></nav></div></div>
   <div class="vh-hero">
-    <img id="vhCover" class="vh-cover-img" alt="" role="button" tabindex="0" data-aria="photo_open">
+    <img id="vhCover" class="vh-cover-img" alt="">
     <div class="vh-hero-ph"><span data-i="vh_cover">COVER PHOTO</span></div>
-    <div class="vh-hero-cap wrap"><p class="editorial-kicker" id="vehicleChapter"></p>
+    <div class="vh-hero-cap wrap"><p class="editorial-kicker" id="vehicleChapter" hidden></p>
       <h1 class="vh-name" id="vhName" tabindex="-1">—</h1>
-      <div class="vh-meta" id="vhMetaWrap"></div><div class="editorial-actions"><a data-es="VER ESTA PIEZA EN ARTECH" data-en="SEE THIS PIECE AT ARTECH" href="#p-tickets" class="editorial-button">VER ESTA PIEZA EN ARTECH</a><button data-es="AMPLIAR FOTOGRAFÍA ↗" data-en="ENLARGE PHOTOGRAPH ↗" type="button" id="vehiclePhotoOpen" class="editorial-link">AMPLIAR FOTOGRAFÍA ↗</button></div>
+      <div class="vh-meta" id="vhMetaWrap"></div><div class="editorial-actions"><a data-es="VER ESTA PIEZA EN ARTECH" data-en="SEE THIS PIECE AT ARTECH" href="#p-tickets" class="editorial-button">VER ESTA PIEZA EN ARTECH</a></div>
     </div>
   </div>
   <div class="wrap"><div class="vh-keys" id="vhKeys"></div></div>
@@ -525,7 +551,7 @@ EN MOVIMIENTO.</h2><p data-es="Una mirada al museo. Reproduce el film para conti
     <div class="view-all"><a href="#p-collection" data-i="view_col">View Collection <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
     <div class="grid4 vh-strip" id="vhStrip"></div>
   </div>
-<section class="vehicle-closing editorial-scene"><div class="wrap"><p data-es="ESTA PIEZA" data-en="THIS PIECE" class="editorial-kicker">ESTA PIEZA</p><h2 data-es="TE ESPERA
+<section class="vehicle-closing editorial-scene"><figure class="vehicle-closing-photo"><img id="vehicleClosingPhoto" alt="" loading="lazy"></figure><div class="wrap"><p data-es="ESTA PIEZA" data-en="THIS PIECE" class="editorial-kicker">ESTA PIEZA</p><h2 data-es="TE ESPERA
 EN CHORRILLOS." data-en="AWAITS YOU
 IN CHORRILLOS." >TE ESPERA
 EN CHORRILLOS.</h2><div class="editorial-actions"><a data-es="RESERVA TU TURNO" data-en="BOOK YOUR VISIT" href="#p-tickets" class="editorial-button">RESERVA TU TURNO</a><a data-es="CONOCER EL TALLER" data-en="DISCOVER THE WORKSHOP" href="#p-workshops" class="editorial-link">CONOCER EL TALLER</a></div></div></section></section>
@@ -657,6 +683,7 @@ HECHO PARA DURAR</h2><h2 data-es="OTRO SIGLO." data-en="ANOTHER CENTURY." class=
 <script defer src="assets/js/v3-shell.js"></script>
 <script defer src="assets/js/visit-workshop.js"></script>
 <script defer src="assets/js/editorial.js"></script>
+<script defer src="assets/js/v3-collection.js"></script>
 <!-- Native sticky + scroll scrub; the scene engine has no CDN dependency. -->
 <script defer src="assets/js/v3-home.js"></script>
 <script defer src="assets/js/motion.js"></script>

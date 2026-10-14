@@ -82,6 +82,11 @@
   }
   async function navigate(hash){
     if(hash===location.hash)return;
+    // A vehicle opens immediately; its name supplies the individual light sweep.
+    if(/^#p-vehicle\//.test(hash)){
+      if(!preference.matches&&/^#p-vehicle\//.test(location.hash)&&window.ArtechCollection?.navigateVehicle){return window.ArtechCollection.navigateVehicle(hash);}
+      location.hash=hash;return;
+    }
     if(preference.matches){location.hash=hash;return;}
     const version=++routeVersion;pendingHash=hash;routeFade?.cancel();curtain.hidden=false;curtain.style.opacity='0';
     routeFade=curtain.animate([{opacity:0},{opacity:1}],{duration:220,easing:'linear',fill:'forwards'});
@@ -95,6 +100,9 @@
     navigate(hash);
   },true);
   addEventListener('hashchange',()=>{
+    if(/^#p-vehicle\//.test(location.hash)){
+      pendingHash=null;routeVersion++;routeFade?.cancel();curtain.hidden=true;curtain.style.opacity='';return;
+    }
     const expected=pendingHash===location.hash;pendingHash=null;
     if(!expected){routeVersion++;routeFade?.cancel();}
     if(preference.matches){curtain.hidden=true;curtain.style.opacity='';return;}
