@@ -11,6 +11,7 @@
 <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@200;300;400&amp;family=Inter:wght@300;400;500&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/site.css">
+<link rel="stylesheet" href="assets/css/editorial.css">
 <!-- MH02: line masks only. The page remains readable without motion.js. -->
 <style id="artech-motion-styles">
   [data-motion="lines"].motion-lines{white-space:normal}
@@ -48,7 +49,7 @@
       <li><a href="#p-workshops" data-i="nav_taller">The Workshop</a></li>
       <li><a href="#p-experience" data-i="nav_experience">Experiences</a></li>
       <li><a href="#p-cafe" data-i="nav_cafe">Restaurant</a></li>
-      <li><a href="#legacy" data-i="nav_history">History</a></li>
+      <li><a href="#p-history" data-i="nav_history">History</a></li>
       <li><a href="#p-tickets" class="nav-cta" data-i="nav_tickets">Plan your visit</a></li>
       <li>
         <div class="lang" role="group" aria-label="Language" data-aria="ft_language">
@@ -286,29 +287,22 @@ THE HISTORY?</h2><p data-i="h_no_payment">No online payment. We confirm your req
 </section>
 
 <!-- INTERNAL PAGE · GOURMET CAFÉ (menu) -->
-<section class="subpage" id="page-cafe">
-  <div class="wrap">
-    <a href="#top" class="back-btn" data-i="back_home">← Back to Home</a>
-
-    <div class="cafe-head">
-      <h2 class="cafe-title" data-i="cafe_title">Restaurant · Café · Bar</h2>
-      <div class="cafe-sub" data-i="cafe_sub">An exceptional gastronomic experience</div>
-      <p class="cafe-lead" data-i="cafe_lead">Signature cuisine by Chef Carla Navea, created to complement the museum experience.</p>
-    </div>
-
-    <!-- espacio reservado para la foto de ambiente del café (pendiente del cliente) -->
-    <figure class="cafe-photo"><img src="assets/interior.png" alt="Museum interior" loading="lazy"><figcaption class="sr-only" data-i="cafe_photo_note">Museum interior</figcaption></figure>
-
-    <div class="cafe-menu-head">
-      <h3 data-i="cafe_explore">Explore Our Menu</h3>
-      <p data-i="cafe_hours">Tuesday to Sunday · 9:00 a.m. – 7:00 p.m.</p>
-    </div>
-
-    <div class="cafe-menu" id="cafeMenu"></div>
-
-    <p class="cafe-closing" data-i="cafe_closing">Discover a space where a passion for automobiles and fine dining come together in a unique experience.</p>
-  </div>
-</section>
+<section class="subpage editorial-page" id="page-cafe"><div class="editorial-hero"><div class="editorial-hero-media"><img src="assets/interior.png" alt="" fetchpriority="high"></div><div class="wrap editorial-hero-copy"><p data-es="ARTECH / RESTAURANTE · CAFÉ · BAR" data-en="ARTECH / RESTAURANT · CAFÉ · BAR" class="editorial-kicker">ARTECH / RESTAURANTE · CAFÉ · BAR</p><h1 data-es="COCINA CON
+KILOMETRAJE." data-en="CUISINE WITH
+MILEAGE." data-motion="lines">COCINA CON
+KILOMETRAJE.</h1><p data-es="Cocina de autor de la chef Carla Navea. Una pausa dentro del recorrido." data-en="Signature cuisine by chef Carla Navea. A pause within the journey." class="editorial-lead">Cocina de autor de la chef Carla Navea. Una pausa dentro del recorrido.</p><div class="editorial-actions"><a data-es="SOLICITAR UNA MESA" data-en="REQUEST A TABLE" href="#p-cafe/table" class="editorial-button">SOLICITAR UNA MESA</a><a data-es="EXPLORAR LA CARTA ↓" data-en="EXPLORE THE MENU ↓" href="#p-cafe/menu" class="editorial-link">EXPLORAR LA CARTA ↓</a></div></div></div><section class="wrap editorial-duo editorial-scene"><figure><img src="assets/cars/sin-placa-15/d2.jpg" alt="Interior del Auburn 852" data-es-alt="Interior del Auburn 852" data-en-alt="Auburn 852 interior" loading="lazy"><figcaption data-es="DETALLE DE LA COLECCIÓN ARTECH" data-en="DETAIL FROM THE ARTECH COLLECTION" >DETALLE DE LA COLECCIÓN ARTECH</figcaption></figure><div><p data-es="LA PROPUESTA" data-en="THE CONCEPT" class="editorial-kicker">LA PROPUESTA</p><h2 data-es="PRODUCTO PERUANO.
+TÉCNICA DE AUTOR." data-en="PERUVIAN INGREDIENTS.
+SIGNATURE TECHNIQUE." >PRODUCTO PERUANO.
+TÉCNICA DE AUTOR.</h2><p data-es="La propuesta gastronómica de Carla Navea acompaña la visita al museo: una carta para comenzar, quedarse y cerrar el recorrido." data-en="Carla Navea’s dining concept complements the museum visit: a menu to start, stay and finish the journey." >La propuesta gastronómica de Carla Navea acompaña la visita al museo: una carta para comenzar, quedarse y cerrar el recorrido.</p><a data-es="DESCUBRIR LA CARTA" data-en="DISCOVER THE MENU" href="#p-cafe/menu" class="editorial-link">DESCUBRIR LA CARTA</a></div></section><section class="editorial-paper editorial-scene" data-section="menu"><div class="wrap"><p data-es="LA CARTA, COMO UN RECORRIDO" data-en="THE MENU, AS A JOURNEY" class="editorial-kicker">LA CARTA, COMO UN RECORRIDO</p><h2 data-es="ARRANQUE.
+EN RUTA. META." data-en="THE START.
+THE JOURNEY. THE FINISH." >ARRANQUE.
+EN RUTA. META.</h2><div id="menuRoute" class="menu-route"></div><div class="restaurant-benefit"><strong data-es="S/ 100" data-en="S/ 100" >S/ 100</strong><p data-es="Con un consumo mínimo de S/ 100 por persona en el restaurante, accedes a la Experiencia Artech. Confirma las condiciones vigentes con el equipo." data-en="With a minimum restaurant spend of S/ 100 per person, you receive access to the Artech Experience. Confirm current conditions with the team." >Con un consumo mínimo de S/ 100 por persona en el restaurante, accedes a la Experiencia Artech. Confirma las condiciones vigentes con el equipo.</p></div><div class="editorial-menu-heading"><h3 data-es="LA CARTA COMPLETA" data-en="THE FULL MENU" >LA CARTA COMPLETA</h3><p data-es="Disponibilidad y precios se confirman en el restaurante." data-en="Availability and prices are confirmed at the restaurant." >Disponibilidad y precios se confirman en el restaurante.</p></div><div class="cafe-menu" id="cafeMenu"></div></div></section><section class="wrap editorial-table editorial-scene" data-section="table"><p data-es="UNA MESA ENTRE CLÁSICOS" data-en="A TABLE AMONG CLASSICS" class="editorial-kicker">UNA MESA ENTRE CLÁSICOS</p><h2 data-es="CONTINÚA
+EL RECORRIDO." data-en="CONTINUE
+THE JOURNEY." >CONTINÚA
+EL RECORRIDO.</h2><p data-es="Solicita una mesa por WhatsApp. El restaurante confirma el horario, la disponibilidad y cualquier requerimiento especial." data-en="Request a table on WhatsApp. The restaurant confirms the time, availability and any special requirements." >Solicita una mesa por WhatsApp. El restaurante confirma el horario, la disponibilidad y cualquier requerimiento especial.</p><a id="restaurantRequest" href="https://wa.me/51992432455" class="editorial-button" target="_blank" rel="noopener"><span data-es="CONSULTAR POR WHATSAPP ↗" data-en="ENQUIRE VIA WHATSAPP ↗" >CONSULTAR POR WHATSAPP ↗</span></a><p data-es="Fotografías del salón, platos y retrato de la chef pendientes de incorporación. Las imágenes actuales muestran piezas de la colección." data-en="Dining room and food photography, plus the chef’s portrait, will be added. Current images show pieces from the collection." class="editorial-media-note">Fotografías del salón, platos y retrato de la chef pendientes de incorporación. Las imágenes actuales muestran piezas de la colección.</p></section><section class="editorial-closing editorial-scene"><div class="editorial-closing-media"><img src="assets/ambience.jpg" alt="" loading="lazy"></div><div class="wrap"><p data-es="UNA MESA" data-en="A TABLE" class="editorial-kicker">UNA MESA</p><h2 data-es="ENTRE
+CLÁSICOS." data-en="AMONG
+CLASSICS." data-motion="lines">ENTRE
+CLÁSICOS.</h2><div class="editorial-actions"><a data-es="PLANIFICA TU VISITA" data-en="PLAN YOUR VISIT" href="#p-tickets" class="editorial-button">PLANIFICA TU VISITA</a><a data-es="VER EXPERIENCIAS" data-en="VIEW EXPERIENCES" href="#p-experience" class="editorial-link">VER EXPERIENCIAS</a></div></div></section></section>
 
 <!-- INTERNAL PAGE · BLOG (list) -->
 <section class="subpage" id="page-blog">
@@ -414,40 +408,45 @@ CHORRILLOS.</h2><p>Av. Huaylas 640, Chorrillos, Lima</p><p data-es="Confirma el 
 </section>
 
 <!-- ===== INTERNAL PAGE · EXPERIENCES ===== -->
-<section class="subpage" id="page-experience">
-  <div class="wrap">
-    <a class="back-btn" href="#top" data-i="back_home">← Back to Home</a>
-    <div class="xp-head">
-      <div class="xp-kick" data-i="xp_kick">ARTECH EXPERIENCES</div>
-      <h2 data-i="xp_title">An immersive experience that awakens your senses</h2>
-      <p data-i="xp_sub">At ARTECH, every visit is a guided experience designed to connect visitors with the world of automobiles, their history, design, and passion.</p>
-      <p class="xp-note" data-i="xp_note">All visits are guided, with groups of up to 20 people per hour.</p>
-    </div>
+<section class="subpage editorial-page" id="page-experience"><div class="editorial-hero"><div class="editorial-hero-media"><img src="assets/cars/cxj-330/cover.jpg" alt="" fetchpriority="high"></div><div class="wrap editorial-hero-copy"><p data-es="ARTECH / EXPERIENCIAS" data-en="ARTECH / EXPERIENCES" class="editorial-kicker">ARTECH / EXPERIENCIAS</p><h1 data-es="MIRAR ES FÁCIL.
+ENTRAR ES OTRA HISTORIA." data-en="LOOKING IS EASY.
+ENTERING IS ANOTHER STORY." data-motion="lines">MIRAR ES FÁCIL.
+ENTRAR ES OTRA HISTORIA.</h1><p data-es="De la colección al taller. Elige hasta dónde quieres descubrir Artech." data-en="From the collection to the workshop. Choose how far you want to discover Artech." class="editorial-lead">De la colección al taller. Elige hasta dónde quieres descubrir Artech.</p><div class="editorial-actions"><a data-es="DESCUBRIR LOS NIVELES ↓" data-en="DISCOVER THE LEVELS ↓" href="#p-experience/levels" class="editorial-link">DESCUBRIR LOS NIVELES ↓</a><a data-es="PLANIFICA TU VISITA" data-en="PLAN YOUR VISIT" href="#p-tickets" class="editorial-button">PLANIFICA TU VISITA</a></div></div></div><div id="xpList" class="editorial-levels" data-section="levels"></div><section class="wrap editorial-visit-note editorial-scene"><p data-es="TU RECORRIDO" data-en="YOUR VISIT" class="editorial-kicker">TU RECORRIDO</p><h2 data-es="LA EXPERIENCIA
+EMPIEZA ANTES DE LLEGAR." data-en="THE EXPERIENCE
+STARTS BEFORE YOU ARRIVE." >LA EXPERIENCIA
+EMPIEZA ANTES DE LLEGAR.</h2><div><h3 data-es="Visitas guiadas" data-en="Guided visits" >Visitas guiadas</h3><p data-es="El museo confirma el horario y la disponibilidad para tu grupo." data-en="The museum confirms the time and availability for your group." >El museo confirma el horario y la disponibilidad para tu grupo.</p><p data-es="Hasta 20 visitantes por solicitud. Para grupos mayores o eventos, contacta con el equipo." data-en="Up to 20 visitors per request. For larger groups or events, contact the team." >Hasta 20 visitantes por solicitud. Para grupos mayores o eventos, contacta con el equipo.</p><a data-es="COORDINAR UNA VISITA" data-en="ARRANGE A VISIT" href="#p-contact" class="editorial-link">COORDINAR UNA VISITA</a></div></section><section class="editorial-closing editorial-scene"><div class="editorial-closing-media"><img src="assets/cars/bfu-487/cover.jpg" alt="" loading="lazy"></div><div class="wrap"><p data-es="ELIGE QUÉ TAN" data-en="CHOOSE HOW" class="editorial-kicker">ELIGE QUÉ TAN</p><h2 data-es="PROFUNDO
+QUIERES ENTRAR." data-en="DEEP YOU
+WANT TO GO." data-motion="lines">PROFUNDO
+QUIERES ENTRAR.</h2><div class="editorial-actions"><a data-es="PLANIFICA TU VISITA" data-en="PLAN YOUR VISIT" href="#p-tickets" class="editorial-button">PLANIFICA TU VISITA</a><a data-es="CONOCER EL TALLER" data-en="DISCOVER THE WORKSHOP" href="#p-workshops" class="editorial-link">CONOCER EL TALLER</a></div></div></section></section>
 
-    <figure class="xp-photo"><img data-src="assets/ambience.jpg" alt=""></figure>
-
-    <div class="xp-list" id="xpList"></div>
-
-    <div class="xp-cap">
-      <h3 data-i="xp_cap_t">Capacity</h3>
-      <p data-i="xp_cap_1">20 people per hour for regular experiences.</p>
-      <p data-i="xp_cap_2">For private experiences, the tour is tailored to each group to ensure personalized, high-level service.</p>
-    </div>
-  </div>
-</section>
+<section class="subpage editorial-page" id="page-history"><div class="editorial-hero"><div class="editorial-hero-media"><img src="assets/tickets-hero.jpg" alt="" fetchpriority="high"></div><div class="wrap editorial-hero-copy"><p data-es="ARTECH / HISTORIA" data-en="ARTECH / HISTORY" class="editorial-kicker">ARTECH / HISTORIA</p><h1 data-es="ESTO NO ES
+UN GARAJE." data-en="THIS IS NOT
+A GARAGE." data-motion="lines">ESTO NO ES
+UN GARAJE.</h1><p data-es="Una colección construida para preservar la historia del automóvil y compartirla." data-en="A collection built to preserve motoring history and share it." class="editorial-lead">Una colección construida para preservar la historia del automóvil y compartirla.</p><div class="editorial-actions"><a data-es="DESCUBRIR EL LEGADO ↓" data-en="DISCOVER THE LEGACY ↓" href="#p-history/legacy" class="editorial-link">DESCUBRIR EL LEGADO ↓</a></div></div></div><section class="wrap history-statement editorial-scene" data-section="legacy"><p data-es="UNA COLECCIÓN. MUCHAS VIDAS." data-en="ONE COLLECTION. MANY LIVES." class="editorial-kicker">UNA COLECCIÓN. MUCHAS VIDAS.</p><h2 data-es="RESCATAR.
+RECONSTRUIR.
+COMPARTIR." data-en="RESCUE.
+REBUILD.
+SHARE." >RESCATAR.
+RECONSTRUIR.
+COMPARTIR.</h2></section><section class="wrap editorial-duo editorial-scene"><figure><img src="assets/cars/sin-placa-15/v2.jpg" alt="Auburn 852" loading="lazy"><figcaption data-es="AUBURN 852 / LA COLECCIÓN" data-en="AUBURN 852 / THE COLLECTION" >AUBURN 852 / LA COLECCIÓN</figcaption></figure><div><p data-es="JIMMY / EL ORIGEN DE LA COLECCIÓN" data-en="JIMMY / THE COLLECTION’S ORIGIN" class="editorial-kicker">JIMMY / EL ORIGEN DE LA COLECCIÓN</p><h2 data-es="UNA HISTORIA
+QUE SE CONSTRUYE
+PIEZA A PIEZA." data-en="A STORY
+BUILT ONE
+PIECE AT A TIME." >UNA HISTORIA
+QUE SE CONSTRUYE
+PIEZA A PIEZA.</h2><p data-es="Durante décadas, Jimmy ha rescatado, restaurado y preservado la historia automotriz en Lima. Artech reúne ese trabajo y abre la colección a quienes quieren conocerla de cerca." data-en="For decades, Jimmy has rescued, restored and preserved motoring history in Lima. Artech brings that work together and opens the collection to those who want to experience it up close." >Durante décadas, Jimmy ha rescatado, restaurado y preservado la historia automotriz en Lima. Artech reúne ese trabajo y abre la colección a quienes quieren conocerla de cerca.</p><a data-es="CONOCER LA COLECCIÓN" data-en="DISCOVER THE COLLECTION" href="#p-collection" class="editorial-link">CONOCER LA COLECCIÓN</a></div></section><section class="history-journey editorial-paper editorial-scene"><div class="wrap"><p data-es="EL TIEMPO, EN LA COLECCIÓN" data-en="TIME, IN THE COLLECTION" class="editorial-kicker">EL TIEMPO, EN LA COLECCIÓN</p><h2 data-es="CADA ÉPOCA
+DEJA UNA HUELLA." data-en="EVERY ERA
+LEAVES ITS MARK." >CADA ÉPOCA
+DEJA UNA HUELLA.</h2><div id="historyMilestones" class="history-milestones"></div><p data-es="Los años corresponden a los vehículos del catálogo, no a fechas de fundación del museo." data-en="Years refer to vehicles in the catalogue, not museum founding dates." class="editorial-media-note">Los años corresponden a los vehículos del catálogo, no a fechas de fundación del museo.</p></div></section><section class="wrap history-now editorial-scene"><div><p class="editorial-kicker"><span data-es="HOY / LA COLECCIÓN" data-en="TODAY / THE COLLECTION" >HOY / LA COLECCIÓN</span></p><h2 id="historyCount"></h2></div><div><p data-es="El trabajo continúa detrás de cada pieza. Descubre dónde una parte de esa historia vuelve a tomar forma." data-en="The work continues behind every piece. Discover where part of that history takes shape again." >El trabajo continúa detrás de cada pieza. Descubre dónde una parte de esa historia vuelve a tomar forma.</p><a data-es="ENTRAR AL TALLER" data-en="ENTER THE WORKSHOP" href="#p-workshops" class="editorial-link">ENTRAR AL TALLER</a></div></section><section class="editorial-closing editorial-scene"><div class="editorial-closing-media"><img src="assets/cars/maserati-300s/cover.jpg" alt="" loading="lazy"></div><div class="wrap"><p data-es="LA HISTORIA" data-en="THE STORY" class="editorial-kicker">LA HISTORIA</p><h2 data-es="SIGUE
+EN MARCHA." data-en="KEEPS
+MOVING." data-motion="lines">SIGUE
+EN MARCHA.</h2><div class="editorial-actions"><a data-es="PLANIFICA TU VISITA" data-en="PLAN YOUR VISIT" href="#p-tickets" class="editorial-button">PLANIFICA TU VISITA</a><a data-es="VER LA COLECCIÓN" data-en="VIEW THE COLLECTION" href="#p-collection" class="editorial-link">VER LA COLECCIÓN</a></div></div></section></section>
 
 <!-- ===== INTERNAL PAGE · COLLECTION ===== -->
-<section class="subpage" id="page-collection">
-  <div class="pc-hero">
-    <div class="wrap">
-      <a href="#top" class="back-btn light" data-i="back_home">← Back to Home</a>
-      <div class="pc-head">
-        <h1 data-i="col_t2">A Collection That Makes History</h1>
-        <p class="pc-lead" data-i="col_lead">ARTECH brings together 96 exceptional vehicles, the result of decades of Jimmy's passion and dedication to preserving automotive history. Each piece stands out for its design, engineering, and historical significance, making the collection a unique legacy of elegance, innovation, and automotive culture in Lima, Peru.</p>
-      </div>
-      <figure class="pc-photo"><img data-src="assets/ambience-collection.jpg" alt=""></figure>
-    </div>
-    <div class="pc-filterbar">
+<section class="subpage editorial-page" id="page-collection"><div class="collection-opening"><div class="collection-feature-media"><img id="collectionHeroPhoto" src="assets/cars/maserati-300s/cover.jpg" alt="Maserati 300S" fetchpriority="high"></div><div class="wrap collection-opening-copy"><p data-es="ARTECH / LA COLECCIÓN" data-en="ARTECH / THE COLLECTION" class="editorial-kicker">ARTECH / LA COLECCIÓN</p><h1 data-es="CADA ÉPOCA
+DEJÓ UNA PIEZA." data-en="EVERY ERA
+LEFT A PIECE." data-motion="lines">CADA ÉPOCA
+DEJÓ UNA PIEZA.</h1><p data-es="Descubre el diseño, la historia y los detalles de cada automóvil." data-en="Discover the design, history and details of every automobile." class="editorial-lead">Descubre el diseño, la historia y los detalles de cada automóvil.</p><div class="editorial-actions"><a data-es="EXPLORAR LA COLECCIÓN ↓" data-en="EXPLORE THE COLLECTION ↓" href="#p-collection/catalogue" class="editorial-link">EXPLORAR LA COLECCIÓN ↓</a><a data-es="PLANIFICA TU VISITA" data-en="PLAN YOUR VISIT" href="#p-tickets" class="editorial-button">PLANIFICA TU VISITA</a></div><div class="collection-feature-meta"><p class="editorial-kicker"><span data-es="SELECCIÓN ARTECH" data-en="ARTECH SELECTION" >SELECCIÓN ARTECH</span></p><a id="collectionFeatureLink" href="#p-vehicle/maserati-300s"><strong id="collectionFeatureName">Maserati 300S</strong><span id="collectionFeatureYear">1956</span><span aria-hidden="true">↗</span></a></div></div><div class="wrap collection-feature-controls"><div id="collectionFeatureTabs" role="group" aria-label="Piezas destacadas" data-es-aria="Piezas destacadas" data-en-aria="Featured vehicles"></div><div><button type="button" id="collectionFeaturePrev" aria-label="Pieza anterior" data-es-aria="Pieza anterior" data-en-aria="Previous vehicle">←</button><button type="button" id="collectionFeatureNext" aria-label="Pieza siguiente" data-es-aria="Pieza siguiente" data-en-aria="Next vehicle">→</button></div></div></div>    <div class="pc-filterbar">
       <div class="wrap pc-filters">
         <div class="pc-pills">
           <button class="pf active" data-cat="all" data-i="flt_all">All</button>
@@ -471,8 +470,7 @@ CHORRILLOS.</h2><p>Av. Huaylas 640, Chorrillos, Lima</p><p data-es="Confirma el 
         </div>
       </div>
     </div>
-  </div>
-  <div class="pc-grid-zone">
+  <div class="pc-grid-zone" data-section="catalogue">
     <div class="wrap">
       <div class="pc-stats">
         <div class="stat"><b id="statCars">—</b><span data-i="st1">Vehicles on exhibition</span></div>
@@ -480,22 +478,25 @@ CHORRILLOS.</h2><p>Av. Huaylas 640, Chorrillos, Lima</p><p data-es="Confirma el 
         <div class="stat"><b id="statBrands">—</b><span data-i="st3">Brands represented</span></div>
       </div>
       <p id="catalogue-status" class="catalogue-status" role="status" aria-live="polite"></p><button id="catalogue-retry" type="button" hidden data-i="retry">Retry</button>
-      <div class="grid4 cols-2" id="carGrid" aria-busy="true"></div>
+      <div class="collection-result-bar"><p id="collectionResults" role="status" aria-live="polite"></p><button data-es="LIMPIAR FILTROS" data-en="CLEAR FILTERS" type="button" id="collectionClear" class="editorial-link" disabled>LIMPIAR FILTROS</button></div><div class="grid4 cols-2" id="carGrid" aria-busy="true"></div>
       <div class="pc-noresults" id="noResults" hidden data-i="flt_none">No vehicles match your search.</div>
       <nav class="pc-pager" id="pcPager" aria-label="Collection pages"></nav>
     </div>
   </div>
-</section>
+<section class="wrap collection-film editorial-scene" data-section="film"><p class="editorial-kicker" data-es="UN RECORRIDO POR ARTECH" data-en="A JOURNEY THROUGH ARTECH">UN RECORRIDO POR ARTECH</p><div class="collection-film-heading"><h2 data-es="LA COLECCIÓN,
+EN MOVIMIENTO." data-en="THE COLLECTION,
+IN MOTION.">LA COLECCIÓN,
+EN MOVIMIENTO.</h2><p data-es="Una mirada al museo. Reproduce el film para continuar el recorrido." data-en="A look inside the museum. Play the film to continue the journey.">Una mirada al museo. Reproduce el film para continuar el recorrido.</p></div><video id="collectionFilmVideo" src="assets/hero.mp4" poster="assets/cars/cxj-330/cover.jpg" controls playsinline muted preload="none" aria-label="Film de la colección Artech" data-es-aria="Film de la colección Artech" data-en-aria="Artech collection film"></video></section><section class="editorial-closing editorial-scene"><div class="editorial-closing-media"><img src="assets/cars/bfu-487/cover.jpg" alt="" loading="lazy"></div><div class="wrap"><p data-es="LAS FOTOS NO LES HACEN" data-en="PHOTOGRAPHS DO NOT DO THEM" class="editorial-kicker">LAS FOTOS NO LES HACEN</p><h2 data-es="JUSTICIA." data-en="JUSTICE." >JUSTICIA.</h2><div class="editorial-actions"><a data-es="PLANIFICA TU VISITA" data-en="PLAN YOUR VISIT" href="#p-tickets" class="editorial-button">PLANIFICA TU VISITA</a><a data-es="VER EXPERIENCIAS" data-en="VIEW EXPERIENCES" href="#p-experience" class="editorial-link">VER EXPERIENCIAS</a></div></div></section></section>
 
 <!-- ===== INTERNAL PAGE · VEHICLE DATA SHEET ===== -->
-<section class="subpage" id="page-vehicle">
-  <div class="vh-topbar"><a href="#p-collection" class="vh-back" data-i="vh_back">← Collection</a></div>
+<section class="subpage editorial-page" id="page-vehicle">
+  <div class="vh-topbar"><div class="wrap"><a href="#p-collection" class="vh-back" data-i="vh_back">← Collection</a><nav class="vehicle-nav" aria-label="Navegar entre piezas" data-es-aria="Navegar entre piezas" data-en-aria="Browse vehicles"><a id="vehiclePrev" class="editorial-link"><span data-es="← ANTERIOR" data-en="← PREVIOUS" >← ANTERIOR</span></a><a id="vehicleNext" class="editorial-link"><span data-es="SIGUIENTE →" data-en="NEXT →" >SIGUIENTE →</span></a></nav></div></div>
   <div class="vh-hero">
     <img id="vhCover" class="vh-cover-img" alt="" role="button" tabindex="0" data-aria="photo_open">
     <div class="vh-hero-ph"><span data-i="vh_cover">COVER PHOTO</span></div>
-    <div class="vh-hero-cap">
+    <div class="vh-hero-cap wrap"><p class="editorial-kicker" id="vehicleChapter"></p>
       <h1 class="vh-name" id="vhName" tabindex="-1">—</h1>
-      <div class="vh-meta" id="vhMetaWrap"></div>
+      <div class="vh-meta" id="vhMetaWrap"></div><div class="editorial-actions"><a data-es="VER ESTA PIEZA EN ARTECH" data-en="SEE THIS PIECE AT ARTECH" href="#p-tickets" class="editorial-button">VER ESTA PIEZA EN ARTECH</a><button data-es="AMPLIAR FOTOGRAFÍA ↗" data-en="ENLARGE PHOTOGRAPH ↗" type="button" id="vehiclePhotoOpen" class="editorial-link">AMPLIAR FOTOGRAFÍA ↗</button></div>
     </div>
   </div>
   <div class="wrap"><div class="vh-keys" id="vhKeys"></div></div>
@@ -503,7 +504,7 @@ CHORRILLOS.</h2><p>Av. Huaylas 640, Chorrillos, Lima</p><p data-es="Confirma el 
     <p class="vh-desc" id="vhDesc"></p>
   </div>
   <div class="wrap"><figure class="vh-side" id="vhSideWrap" hidden><img id="vhSide" alt="" role="button" tabindex="0" data-aria="photo_open"></figure></div>
-  <div class="wrap"><div class="vh-gallery" id="vhGallery"></div></div>
+  <section class="wrap vehicle-photo-section editorial-scene"><div class="vehicle-gallery-heading" id="vehicleGalleryHeading"><h2 data-es="LA PIEZA, DE CERCA" data-en="THE PIECE, UP CLOSE" >LA PIEZA, DE CERCA</h2><p id="vehiclePhotoCount"></p></div><div class="vh-gallery" id="vhGallery"></div></section>
   <div class="wrap">
     <div class="vh-spec-cards">
       <div class="vh-card" id="vhInfoCard">
@@ -529,14 +530,17 @@ CHORRILLOS.</h2><p>Av. Huaylas 640, Chorrillos, Lima</p><p data-es="Confirma el 
       </div>
     </div>
   </div>
-  <div class="wrap vh-more">
+  <div class="wrap vh-more editorial-scene"><p data-es="EL RECORRIDO CONTINÚA" data-en="THE JOURNEY CONTINUES" class="editorial-kicker">EL RECORRIDO CONTINÚA</p>
     <div class="view-all"><a href="#p-collection" data-i="view_col">View Collection <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
     <div class="grid4 vh-strip" id="vhStrip"></div>
   </div>
-</section>
+<section class="vehicle-closing editorial-scene"><div class="wrap"><p data-es="ESTA PIEZA" data-en="THIS PIECE" class="editorial-kicker">ESTA PIEZA</p><h2 data-es="TE ESPERA
+EN CHORRILLOS." data-en="AWAITS YOU
+IN CHORRILLOS." >TE ESPERA
+EN CHORRILLOS.</h2><div class="editorial-actions"><a data-es="PLANIFICA TU VISITA" data-en="PLAN YOUR VISIT" href="#p-tickets" class="editorial-button">PLANIFICA TU VISITA</a><a data-es="CONOCER EL TALLER" data-en="DISCOVER THE WORKSHOP" href="#p-workshops" class="editorial-link">CONOCER EL TALLER</a></div></div></section></section>
 
 <div id="toast" class="toast" role="status" aria-live="polite"></div>
-<div id="lightbox" role="dialog" aria-modal="true" aria-label="Photo gallery"><button class="lb-close" type="button" aria-label="Close" data-aria="close">×</button><img id="lbImg" alt=""></div>
+<div id="lightbox" role="dialog" aria-modal="true" aria-label="Photo gallery"><button class="lb-close" type="button" aria-label="Close" data-aria="close">×</button><button class="lb-prev" type="button" aria-label="Foto anterior" data-es-aria="Foto anterior" data-en-aria="Previous photo">←</button><img id="lbImg" alt=""><button class="lb-next" type="button" aria-label="Foto siguiente" data-es-aria="Foto siguiente" data-en-aria="Next photo">→</button><span id="lbCount" role="status" aria-live="polite"></span></div>
 
 <!-- FOOTER -->
 
@@ -624,7 +628,7 @@ HECHO PARA DURAR</h2><h2 data-es="OTRO SIGLO." data-en="ANOTHER CENTURY." class=
         <h2 data-i="footer_museum">Museum</h2>
         <a href="#p-collection" data-i="nav_collection">Collection</a>
         <a href="#p-workshops" data-i="nav_taller">The Workshop</a>
-        <a href="#legacy" data-i="nav_history">History</a>
+        <a href="#p-history" data-i="nav_history">History</a>
         <a href="#p-blog" data-i="ft_blog">Blog</a>
       </nav>
       <nav class="footer-column" aria-label="Visit" data-aria="footer_visit">
@@ -660,6 +664,7 @@ HECHO PARA DURAR</h2><h2 data-es="OTRO SIGLO." data-en="ANOTHER CENTURY." class=
 <script src="assets/js/core.js"></script>
 <script src="assets/js/site.js"></script>
 <script defer src="assets/js/visit-workshop.js"></script>
+<script defer src="assets/js/editorial.js"></script>
 <!-- Ordered, deferred libraries: content and navigation never depend on them. -->
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous"></script>
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" crossorigin="anonymous"></script>

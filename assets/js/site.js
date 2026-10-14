@@ -779,28 +779,7 @@ const EXPERIENCIAS = [
      es:'Una experiencia pensada para grupos privados, empresas, celebraciones y clientes que buscan una experiencia automotriz única y exclusiva.'}}
 ];
 
-function renderExperiencias(){
-  const host=document.getElementById('xpList'); if(!host) return;
-  const L=o=>o ? (o[lang]||o.en||'') : '';
-  const et=k=>(typeof dict!=='undefined' && dict[lang] && dict[lang][k]) ? dict[lang][k] : k;
-  host.innerHTML=EXPERIENCIAS.map(function(e){
-    let h='<article class="xp-item"><div class="xp-num">'+e.n+'</div>'
-        + '<div class="xp-body"><h3>'+L(e.t)+'</h3><dl class="xp-facts">';
-    if(e.gr) h+='<div><dt>'+et('xp_groups')+'</dt><dd>'+L(e.gr)+'</dd></div>';
-    h+='<div><dt>'+et('xp_dur')+'</dt><dd>'+L(e.dur)+'</dd></div>'
-     + '<div><dt>'+et('xp_price')+'</dt><dd>'+L(e.pre)+'</dd></div></dl>'
-     + '<p class="xp-d">'+L(e.d)+'</p>';
-    if(e.inc){
-      h+='<div class="xp-inc"><h4>'+L(e.incT)+'</h4><ul>'
-       + e.inc.map(function(i){return '<li>'+L(i)+'</li>';}).join('') + '</ul></div>';
-    }
-    if(e.extra){
-      h+='<div class="xp-extra"><h4>'+L(e.extra.k)+'</h4><p>'+L(e.extra.v)+'</p></div>';
-    }
-    if(e.x) h+='<p class="xp-tag">'+L(e.x)+'</p>';
-    return h+'</div></article>';
-  }).join('');
-}
+function renderExperiencias(){ window.ArtechEditorial?.renderExperiences(); }
 
 /* ===== TALLERES AFILIADOS · ESTRELLAS ARTECH =====
    Las estrellas se otorgan por CINCO criterios. Editar aqui, en EN y ES.
@@ -1236,7 +1215,7 @@ function renderInfo(key){
 })();
 
 // internal pages router (same-window views: #p-experience / #p-collection)
-const innerPages={ 'location':document.getElementById('location'), 'p-experience':document.getElementById('page-experience'), 'p-collection':document.getElementById('page-collection'), 'p-vehicle':document.getElementById('page-vehicle'), 'p-cafe':document.getElementById('page-cafe'), 'p-contact':document.getElementById('page-contact'), 'p-blog':document.getElementById('page-blog'), 'p-post':document.getElementById('page-post'), 'p-tickets':document.getElementById('page-tickets')  , 'p-workshops':document.getElementById('page-workshops'), 'p-affiliated':document.getElementById('page-affiliated') };
+const innerPages={ 'location':document.getElementById('location'), 'p-experience':document.getElementById('page-experience'), 'p-collection':document.getElementById('page-collection'), 'p-vehicle':document.getElementById('page-vehicle'), 'p-cafe':document.getElementById('page-cafe'), 'p-contact':document.getElementById('page-contact'), 'p-blog':document.getElementById('page-blog'), 'p-post':document.getElementById('page-post'), 'p-tickets':document.getElementById('page-tickets')  , 'p-workshops':document.getElementById('page-workshops'), 'p-affiliated':document.getElementById('page-affiliated'), 'p-history':document.getElementById('page-history') };
 Object.keys(INFO).forEach(function(k){ innerPages[k]=document.getElementById('page-info'); });
 innerPages['exp3d']=document.getElementById('exp3d');
 /* los videos decorativos del home consumen CPU aunque estén ocultos:
@@ -1258,7 +1237,7 @@ function updatePageMetadata() {
   const car = CARS.find(c => c.slug === currentSlug);
   const description = key === 'p-vehicle' && car
     ? ((lang === 'es' ? car.desc_es : car.desc) || car.desc || '')
-    : (page?.querySelector('.pc-lead,.info-lead,.tk-head p,.xp-head p,.cafe-lead,.contact-head p')?.textContent
+    : (page?.querySelector('.editorial-lead,.pc-lead,.info-lead,.tk-head p,.xp-head p,.cafe-lead,.contact-head p')?.textContent
       || dict[lang].hero_sub);
   document.querySelector('meta[name="description"]').content = description.trim();
 }
@@ -1362,7 +1341,7 @@ function carCard(c, cls) {
   const search = [disp,c.plate,c.brand,c.model,c.year].filter(Boolean).join(' ').toLowerCase();
   return `<a class="col-card c-item${cls||''}" href="#p-vehicle/${encodeURIComponent(c.slug)}"
     data-name="${escapeHTML(search)}" data-brand="${escapeHTML(c.brand)}" data-cat="${category}" data-slug="${escapeHTML(c.slug)}">
-    <div class="ph"><img src="assets/cars/${c.slug}/thumb.jpg" alt="${escapeHTML(disp)}" loading="lazy" decoding="async"></div>
+    <div class="ph"><picture><source media="(max-width:650px)" srcset="assets/cars/${c.slug}/thumb.jpg"><img src="assets/cars/${c.slug}/cover.jpg" alt="${escapeHTML(disp)}" loading="lazy" decoding="async"></picture></div>
     <div class="body"><h4>${escapeHTML(disp)}</h4><p class="c-meta">${escapeHTML([c.brand,c.year].filter(Boolean).join(' · '))}</p>
     <span class="link-arrow"><span data-i="visit_info">${dict[lang].visit_info}</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div></a>`;
 }
@@ -1543,9 +1522,10 @@ const CAFE_EN={
 function renderCafeMenu(){
   const host=document.getElementById('cafeMenu'); if(!host) return;
   const L=(typeof lang!=='undefined'&&lang==='es')?'es':'en';
-  host.innerHTML=CAFE_MENU.map(cat=>{
+  const openCategories=[...host.querySelectorAll('.cm-block')].map((el,index)=>el.classList.contains('open')?index:-1);
+  host.innerHTML=CAFE_MENU.map((cat,index)=>{
     const items=cat.items.map(it=>{const en=CAFE_EN[it.n]||{}; const nm=(L==='en'&&en.n)?en.n:it.n; const ds=(L==='en')?(en.d||''):(it.d||''); return `<div class="cm-item"><div class="in">${nm}</div>${ds?`<div class="id">${ds}</div>`:''}</div>`;}).join('');
-    return `<div class="cm-block"><button class="cm-cat" type="button" aria-expanded="false"><span class="cm-name">${cat.t[L]}</span><span class="cm-right"><span class="cm-count">${cat.items.length}</span><svg class="cm-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></span></button><div class="cm-items"><div class="cm-list">${items}</div></div></div>`;
+    return `<div class="cm-block${openCategories.includes(index)?' open':''}"><button class="cm-cat" type="button" aria-expanded="${openCategories.includes(index)}" aria-controls="menu-category-${index}"><span class="cm-name">${cat.t[L]}</span><span class="cm-right"><span class="cm-count">${cat.items.length}</span><svg class="cm-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></span></button><div class="cm-items" id="menu-category-${index}"><div class="cm-list">${items}</div></div></div>`;
   }).join('');
 }
 document.addEventListener('click',e=>{const b=e.target.closest('.cm-cat');if(!b)return;b.setAttribute('aria-expanded',String(b.closest('.cm-block').classList.toggle('open')));});
@@ -1680,7 +1660,7 @@ function showVehicle(slug){
   if(gal){
     const shots=Array.isArray(car.shots)?car.shots:[];
     gal.innerHTML = shots.length
-      ? shots.map(f=>`<button type="button" class="vh-gitem" aria-label="${dict[lang].photo_open}"><img class="vh-slot" src="${b}${f}" alt="${escapeHTML(disp)}" loading="lazy"></button>`).join('')
+      ? shots.map((f,index)=>`<button type="button" class="vh-gitem" aria-label="${dict[lang].photo_open} ${index+1}"><img class="vh-slot" src="${b}${f}" alt="${escapeHTML(disp)} · ${index+1}" loading="lazy"><span class="vehicle-photo-caption">${String(index+1).padStart(2,'0')} / ${escapeHTML(disp)} <span aria-hidden="true">↗</span></span></button>`).join('')
       : '';   // espacios en blanco para fotos futuras
     clearInterval(galTimer);
   }
@@ -1707,6 +1687,7 @@ function showVehicle(slug){
     for(let k=1;k<=4;k++){ const c=CARS[(i+k)%CARS.length]; const dn=c.name||c.plate;
       out+=`<a class="col-card vh-link" href="#p-vehicle/${encodeURIComponent(c.slug)}" data-slug="${c.slug}"><div class="ph"><img src="assets/cars/${c.slug}/thumb.jpg" alt="${escapeHTML(dn)}" loading="lazy"></div><div class="body"><h4>${escapeHTML(dn)}</h4></div></a>`; }
     strip.innerHTML=out; }
+  window.ArtechEditorial?.renderVehicle(car);
   updatePageMetadata();
 }
 // filters (category pills + live search by plate)
@@ -1757,10 +1738,13 @@ function wireFilters(){
     list.slice(start,start+perPage).forEach(it=>it.style.display='');
     if(noRes) noRes.hidden = list.length>0;
     renderPager(pages);
+    window.ArtechEditorial?.updateResults(list.length,CARS.length,cat!=='all'||!!brandSel.value||!!search?.value.trim());
+    pills.forEach(p=>p.setAttribute('aria-pressed',String(p.dataset.cat===cat)));
   }
   window._pcApply=apply;
   if(!grid.dataset.wired) {
   grid.dataset.wired='true';
+  document.getElementById('collectionClear')?.addEventListener('click',()=>{cat='all';page=1;brandSel.value='';search.value='';pills.forEach(p=>p.classList.toggle('active',p.dataset.cat==='all'));apply();});
   brandSel.addEventListener('change',()=>{ page=1; apply(); });
   pills.forEach(p=>p.addEventListener('click',()=>{ cat=p.dataset.cat; page=1; pills.forEach(x=>x.classList.toggle('active',x===p)); apply(); }));
   if(search) search.addEventListener('input',()=>{ page=1; apply(); });
@@ -1815,7 +1799,10 @@ loadCars();
 // Accessible photo dialog, including keyboard activation and focus restoration.
 (function() {
   const lb=document.getElementById('lightbox'),img=document.getElementById('lbImg'),close=lb.querySelector('button');
-  let opener=null,oldOverflow='',fadeTimer;
+  let opener=null,oldOverflow='',fadeTimer,photos=[],photoIndex=0;
+  const previous=lb.querySelector('.lb-prev'),next=lb.querySelector('.lb-next'),counter=document.getElementById('lbCount');
+  function changePhoto(index){photoIndex=(index+photos.length)%photos.length;const photo=photos[photoIndex];if(!photo)return;img.src=photo.currentSrc||photo.src;img.alt=photo.alt;counter.textContent=`${photoIndex+1} / ${photos.length}`;previous.hidden=next.hidden=photos.length<2;}
+  previous.addEventListener('click',()=>changePhoto(photoIndex-1));next.addEventListener('click',()=>changePhoto(photoIndex+1));
   function closePhoto() {
     if(!lb.classList.contains('show'))return;
     lb.classList.remove('show');document.documentElement.style.overflow=oldOverflow;
@@ -1824,10 +1811,10 @@ loadCars();
     if(opener?.isConnected)opener.focus({preventScroll:true});
     fadeTimer=setTimeout(()=>img.removeAttribute('src'),300);
   }
-  function openPhoto(target) {
+  function openPhoto(target,focusTarget=target) {
     const photo=target.matches('img')?target:target.querySelector('img');if(!photo?.getAttribute('src'))return;
-    clearTimeout(fadeTimer);opener=target;oldOverflow=document.documentElement.style.overflow;
-    img.src=photo.currentSrc||photo.src;img.alt=photo.alt;
+    clearTimeout(fadeTimer);opener=focusTarget;oldOverflow=document.documentElement.style.overflow;
+    photos=[...document.querySelectorAll('#vhCover,#vhSideWrap:not([hidden]) img,#vhGallery img')].filter(image=>image.getAttribute('src'));photoIndex=Math.max(0,photos.indexOf(photo));changePhoto(photoIndex);
     lb.classList.add('show');document.documentElement.style.overflow='hidden';
     // main uses display:contents; the dialog lives inside it, so inert only sibling sections.
     document.getElementById('header').inert=true;document.querySelector('footer').inert=true;
@@ -1835,14 +1822,15 @@ loadCars();
     close.focus();
   }
   document.addEventListener('click',e=>{
-    const target=e.target.closest('#page-vehicle .vh-gitem,#vhCover,#vhSide');
-    if(target){e.preventDefault();openPhoto(target);return;}
+    const target=e.target.closest('#page-vehicle .vh-gitem,#vhCover,#vhSide,#vehiclePhotoOpen');
+    if(target){e.preventDefault();openPhoto(target.id==='vehiclePhotoOpen'?document.getElementById('vhCover'):target,target);return;}
     if(e.target===lb||e.target===img||e.target===close)closePhoto();
   });
   document.addEventListener('keydown',e=>{
     if(lb.classList.contains('show')) {
       if(e.key==='Escape'){e.preventDefault();closePhoto();}
-      if(e.key==='Tab'){e.preventDefault();close.focus();}
+      if(e.key==='ArrowLeft'){e.preventDefault();changePhoto(photoIndex-1);}if(e.key==='ArrowRight'){e.preventDefault();changePhoto(photoIndex+1);}
+      if(e.key==='Tab'){const buttons=[...lb.querySelectorAll('button')].filter(button=>!button.hidden&&!button.disabled);const first=buttons[0],last=buttons.at(-1);if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}}
     }else if((e.key==='Enter'||e.key===' ')&&e.target.matches('#vhCover,#vhSide')){e.preventDefault();openPhoto(e.target);}
   });
   img.addEventListener('error',()=>{closePhoto();window.__toast(dict[lang].catalogue_error);});

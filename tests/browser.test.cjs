@@ -181,6 +181,80 @@ test('Browser regression suite', { timeout: 180000 }, async t => {
     }
   });
 
+  await t.test('Editorial pages: menu, dedicated history and selected visit experience', async () => {
+    const {page:p,context,errors}=await page();
+    await p.goto(base+'#p-experience');await p.locator('.editorial-level').first().waitFor();
+    assert.equal(await p.locator('.editorial-level').count(),3);
+    await p.locator('.editorial-level a[href="#p-tickets/vip"]').click();
+    await p.waitForFunction(()=>document.querySelector('[data-level="1"]')?.getAttribute('aria-pressed')==='true');
+    assert.equal(await p.locator('[data-level="1"]').getAttribute('aria-pressed'),'true');
+    await p.goto(base+'#p-cafe/menu');await p.locator('#menuRoute .menu-dish').first().waitFor();
+    assert.equal(await p.locator('#menuRoute .menu-dish').count(),9);
+    await p.locator('#cafeMenu .cm-cat').first().click();
+    await p.locator('[data-lang="en"]').click();
+    assert.equal(await p.locator('#cafeMenu .cm-cat').first().getAttribute('aria-expanded'),'true');
+    assert.match(await p.locator('#menuRoute').textContent(),/Tuna Tartare/);
+    const url=new URL(await p.locator('#restaurantRequest').getAttribute('href'));
+    assert.match(url.searchParams.get('text'),/request a table/);
+    await p.goto(base+'#p-history');await p.locator('#historyMilestones a').first().waitFor();
+    assert.equal(await p.locator('#historyMilestones a').count(),3);
+    assert.match(await p.locator('#historyCount').textContent(),/96/);
+    await p.reload();await p.locator('#page-history.active').waitFor();
+    assert.equal(await p.locator('html').getAttribute('lang'),'en');
+    assert.match(await p.locator('#page-history h1').textContent(),/GARAGE/);
+    assert.deepEqual(errors,[]);await context.close();
+  });
+
+  await t.test('Editorial interiors fit 320px and 390px in both languages', async () => {
+    for(const width of [320,390]){
+      const {page:p,context,errors}=await page({viewport:{width,height:844}});
+      for(const route of ['p-experience','p-cafe','p-history']){
+        await p.goto(base+'#'+route);await p.locator('.editorial-page.active').waitFor();
+        await p.locator('#burger').click();
+        await p.locator('[data-lang="en"]').click();
+        assert.ok(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
+        await p.locator('[data-lang="es"]').click();
+        await p.keyboard.press('Escape');
+        assert.ok(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
+      }
+      assert.deepEqual(errors,[]);await context.close();
+    }
+  });
+
+  await t.test('Collection selection, results, filter reset and gallery navigation', async () => {
+    const {page:p,context,errors}=await page();
+    await p.goto(base+'#p-collection');await p.locator('#collectionFeatureTabs button').first().waitFor();
+    assert.equal(await p.locator('#collectionFilmVideo').getAttribute('preload'),'none');
+    assert.equal(await p.locator('#collectionFilmVideo').getAttribute('autoplay'),null);
+    await p.locator('[data-feature="2"]').click();
+    assert.equal(await p.locator('#collectionFeatureName').textContent(),ferrari.name);
+    await p.locator('#collectionFeatureLink').click();await p.locator('#vhName').filter({hasText:ferrari.name}).waitFor();
+    await p.locator('#vehiclePhotoOpen').click();
+    const photoTotal=1+ferrari.shots.length+(ferrari.side?1:0);
+    assert.equal(await p.locator('#lbCount').textContent(),'1 / '+photoTotal);
+    await p.keyboard.press('ArrowRight');
+    assert.match(await p.locator('#lbImg').getAttribute('src'),ferrari.side?/side.jpg/:/d1.jpg/);
+    assert.equal(await p.locator('#lbCount').textContent(),'2 / '+photoTotal);
+    await p.locator('.lb-next').click();assert.equal(await p.locator('#lbCount').textContent(),'3 / '+photoTotal);
+    await p.keyboard.press('Escape');assert.equal(await p.locator('#lightbox').isVisible(),false);
+    assert.equal(await p.evaluate(()=>document.activeElement.id),'vehiclePhotoOpen');
+    await p.locator('#vehicleNext').click();
+    await p.waitForFunction(()=>document.querySelector('#vhName').textContent!=='Ferrari Testarossa');
+    await p.goto(base+'#p-collection');await p.locator('#brandSel').selectOption('Porsche');
+    assert.match(await p.locator('#collectionResults').textContent(),/8 de 96/);
+    const selected=await p.locator('#carGrid a:visible').first().getAttribute('data-slug');
+    await p.locator('#carGrid a:visible').first().click();await p.waitForURL('**/#p-vehicle/'+selected);
+    await p.goBack();await p.locator('#page-collection.active').waitFor();
+    assert.equal(await p.locator('#brandSel').inputValue(),'Porsche');
+    assert.equal(await p.locator('#carGrid a:visible').count(),8);
+    await p.locator('#collectionClear').click();
+    assert.equal(await p.locator('#brandSel').inputValue(),'');
+    assert.match(await p.locator('#collectionResults').textContent(),/96 de 96/);
+    await p.locator('#carSearch').fill('no-such-car');assert.equal(await p.locator('#noResults').isVisible(),true);
+    await p.locator('#collectionClear').click();assert.equal(await p.locator('#noResults').isVisible(),false);
+    assert.deepEqual(errors,[]);await context.close();
+  });
+
   await t.test('Contact keeps values and opens an explicit handoff; no fake newsletter', async () => {
     const { page: p, context, errors } = await page();
     await p.goto(base + '#p-contact');

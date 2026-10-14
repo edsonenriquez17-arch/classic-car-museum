@@ -187,6 +187,7 @@
   $('visitShare').addEventListener('click',async()=>{const summary=L('Plan de visita ARTECH (por confirmar)','ARTECH visit plan (unconfirmed)')+'\n'+level()[es()?'es':'en']+'\n'+prettyDate()+' · '+time.value+' Lima\n'+guests();try{await navigator.clipboard.writeText(summary);$('visitCopyStatus').textContent=L('Resumen copiado.','Summary copied.');}catch(_){$('visitCopyStatus').textContent=summary;}});
   $('visitTop').addEventListener('click',()=>{if(confirmed)setStep(3);else setStep(step);});
   function refresh(){translate();renderLevels();calendar();times();update();setStage(stage);renderCrafts();fieldErrors(submitted);}
-  addEventListener('artech:lang',refresh);addEventListener('artech:route',()=>{translate();processScroll();});
-  window.updateTickets=update;refresh();
+  function selectedRoute(){const {key,id}=Artech.parseHash(location.hash);const index=['collection','vip','private'].indexOf(id);if(key==='p-tickets'&&index!==-1){selected=index;renderLevels();setStep(1,false);}}
+  addEventListener('artech:lang',refresh);addEventListener('artech:route',()=>{translate();processScroll();selectedRoute();});
+  window.updateTickets=update;refresh();selectedRoute();
 })();
