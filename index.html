@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
-<link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@200;300;400&amp;family=Inter:wght@300;400;500&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/site.css">
 </head>
 <body>
@@ -34,20 +34,21 @@
 
 <!-- HEADER -->
 <header id="header">
-  <nav aria-label="Main navigation">
+  <nav aria-label="Main navigation" data-aria="nav_main">
   <div class="wrap nav">
     <a href="#top" class="logo" aria-label="ARTECH"><img src="assets/logo.png" alt="ARTECH"></a>
     <ul class="navlinks" id="navlinks">
       <li><a href="#p-collection" data-i="nav_collection">Collection</a></li>
-      <li><a href="#p-experience" data-i="nav_experience">Experience</a></li>
-      <li><a href="#exp3d" data-i="nav_360">360° Tour</a></li>
+      <li><a href="#p-workshops" data-i="nav_taller">The Workshop</a></li>
+      <li><a href="#p-experience" data-i="nav_experience">Experiences</a></li>
       <li><a href="#p-cafe" data-i="nav_cafe">Restaurant</a></li>
-      <li><a href="#p-workshops" data-i="nav_workshops">Workshops</a></li>
-      <li><a href="#p-tickets" class="nav-cta" data-i="nav_tickets">Buy Tickets</a></li>
+      <li><a href="#legacy" data-i="nav_history">History</a></li>
+      <li><a href="#p-tickets" class="nav-cta" data-i="nav_tickets">Plan your visit</a></li>
       <li>
-        <div class="lang">
-          <button data-lang="en" class="active">EN</button>
-          <button data-lang="es">ES</button>
+        <div class="lang" role="group" aria-label="Language" data-aria="ft_language">
+          <button type="button" data-lang="es" lang="es" aria-label="Español">ES</button>
+          <span class="lang-divider" aria-hidden="true">/</span>
+          <button type="button" data-lang="en" lang="en" aria-label="English" class="active">EN</button>
         </div>
       </li>
     </ul>
@@ -593,49 +594,46 @@ of motoring history</h2>
 <section class="subpage" id="page-info"></section>
 
 </main>
-<footer>
+<footer class="site-footer">
   <div class="wrap">
-    <div class="ft-brand"><img src="assets/logo.png" alt="ARTECH"></div>
-    <div class="ft-cols">
-      <nav class="ft-col">
-        <a href="#p-preowned" data-i="ft_preowned">Vehicles for sale</a>
-        <a href="#p-visit" data-i="ft_visit">Plan your visit</a>
-        <a href="#p-privacy" data-i="ft_privacy">Privacy</a>
-        <a href="#" class="ft-lang" id="ftLang" data-i="ft_language">Language</a>
-      </nav>
-      <nav class="ft-col">
-        <a href="#p-cookies" data-i="ft_cookies">Cookies</a>
-        <a href="#p-careers" data-i="ft_careers">Careers</a>
-        <a href="#p-club" data-i="ft_club">ARTECH Club</a>
-      </nav>
-      <nav class="ft-col">
-        <a href="#p-press" data-i="ft_press">Press room</a>
-        <a href="#p-sitemap" data-i="ft_sitemap">Site map</a>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#top" aria-label="ARTECH"><img src="assets/logo.png" alt="ARTECH" width="120" loading="lazy"></a>
+        <p data-i="footer_intro">Rescue. Rebuild. Exhibit.<br>Discover the collection in Chorrillos.</p>
+      </div>
+      <nav class="footer-column" aria-label="Museum" data-aria="footer_museum">
+        <h2 data-i="footer_museum">Museum</h2>
+        <a href="#p-collection" data-i="nav_collection">Collection</a>
+        <a href="#p-workshops" data-i="nav_taller">The Workshop</a>
+        <a href="#legacy" data-i="nav_history">History</a>
         <a href="#p-blog" data-i="ft_blog">Blog</a>
       </nav>
-      <nav class="ft-col">
-        <a href="#p-legal" data-i="ft_legal">Legal</a>
+      <nav class="footer-column" aria-label="Visit" data-aria="footer_visit">
+        <h2 data-i="footer_visit">Visit</h2>
+        <a href="#p-tickets" data-i="nav_tickets">Plan your visit</a>
+        <a href="#p-experience" data-i="nav_experience">Experiences</a>
+        <a href="#p-cafe" data-i="nav_cafe">Restaurant</a>
         <a href="#p-faqs" data-i="ft_faqs">FAQs</a>
-        <a href="#p-sustainability" data-i="ft_sustain">Sustainability</a>
-      </nav>
-      <nav class="ft-col">
         <a href="#p-claims" data-i="ft_claims">Complaints book</a>
-        <a href="#p-contact" data-i="ft_contact">Contact</a>
-        <a href="#p-tickets" data-i="ft_tickets">Buy tickets</a>
       </nav>
-      <div class="ft-social socials">
-        <a href="https://facebook.com/classiccarmuseum" target="_blank" rel="noopener" aria-label="Facebook"><img src="assets/icons/facebook.png" alt="Facebook" loading="lazy"></a>
-        <a href="https://instagram.com/classiccarmuseum" target="_blank" rel="noopener" aria-label="Instagram"><img src="assets/icons/instagram.png" alt="Instagram" loading="lazy"></a>
-        <a href="https://tiktok.com/@classiccarmuseum" target="_blank" rel="noopener" aria-label="TikTok"><img src="assets/icons/tiktok.png" alt="TikTok" loading="lazy"></a>
+      <div class="footer-column footer-contact">
+        <h2 data-i="ft_contact">Contact</h2>
+        <p data-i="footer_location">Chorrillos · Lima, Peru</p>
+        <p data-i="footer_hours">Tuesday–Sunday · 09:00–19:00</p>
+        <a href="https://wa.me/51992432455" target="_blank" rel="noopener" aria-label="WhatsApp: +51 992 432 455">+51 992 432 455</a>
+        <a href="mailto:info@artech.pe">info@artech.pe</a>
+        <a href="https://instagram.com/classiccarmuseum" target="_blank" rel="noopener">Instagram ↗</a>
       </div>
     </div>
-    <div class="ft-bottom">
-      <div class="fl">© 2026 ARTECH · Lima, Perú</div>
-      <div class="ft-mini">
-        <a href="#p-legal" data-i="ft_legal">Legal</a>
+    <div class="footer-bottom">
+      <span class="brand-bars" aria-hidden="true"><span></span><span></span><span></span></span>
+      <span class="footer-copyright" data-i="footer_copyright">© 2026 ARTECH · Lima, Peru</span>
+      <nav class="footer-legal" aria-label="Legal information" data-aria="footer_legal">
         <a href="#p-privacy" data-i="ft_privacy">Privacy</a>
         <a href="#p-cookies" data-i="ft_cookies">Cookies</a>
-      </div>
+        <a href="#p-legal" data-i="ft_legal">Legal</a>
+      </nav>
+      <button class="footer-language" id="ftLang" type="button" data-i="ft_language">Language</button>
     </div>
   </div>
 </footer>

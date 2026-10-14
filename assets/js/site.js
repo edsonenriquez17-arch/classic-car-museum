@@ -5,6 +5,18 @@ const dict = {
   "en": {
     "d3_loading": "Loading…",
     "nav_collection": "Collection",
+    "nav_taller": "The Workshop",
+    "nav_history": "History",
+    "nav_main": "Main navigation",
+    "footer_intro": "Rescue. Rebuild. Exhibit.\nDiscover the collection in Chorrillos.",
+    "footer_museum": "Museum",
+    "footer_visit": "Visit",
+    "footer_location": "Chorrillos · Lima, Peru",
+    "footer_hours": "Tuesday–Sunday · 09:00–19:00",
+    "footer_copyright": "© 2026 ARTECH · Lima, Peru",
+    "footer_legal": "Legal information",
+    "lang_switch": "Cambiar a español",
+
     "nav_experience": "Experiences",
     "nav_360": "3D demo",
     "nav_about": "About",
@@ -277,6 +289,18 @@ const dict = {
   "es": {
     "d3_loading": "Cargando…",
     "nav_collection": "Colección",
+    "nav_taller": "El Taller",
+    "nav_history": "Historia",
+    "nav_main": "Navegación principal",
+    "footer_intro": "Rescatar. Reconstruir. Exhibir.\nDescubre la colección en Chorrillos.",
+    "footer_museum": "Museo",
+    "footer_visit": "Visita",
+    "footer_location": "Chorrillos · Lima, Perú",
+    "footer_hours": "Martes–domingo · 09:00–19:00",
+    "footer_copyright": "© 2026 ARTECH · Lima, Perú",
+    "footer_legal": "Información legal",
+    "lang_switch": "Switch to English",
+
     "nav_experience": "Experiencias",
     "nav_360": "Demo 3D",
     "nav_about": "Nosotros",
@@ -571,6 +595,7 @@ function apply(l){
   document.querySelectorAll('.lang button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.lang === l)));
   const labels = { burger: 'menu', carSearch: 'search_label', brandSel: 'brand_label', lightbox: 'photo_gallery' };
   Object.entries(labels).forEach(([id, key]) => document.getElementById(id)?.setAttribute('aria-label', dict[l][key]));
+  document.getElementById('ftLang')?.setAttribute('aria-label', dict[l].lang_switch);
   window.dispatchEvent(new Event('artech:lang'));
   const pv=document.getElementById('page-vehicle');
   if(currentSlug && pv && pv.classList.contains('active')) showVehicle(currentSlug);
@@ -1189,7 +1214,7 @@ addEventListener('hashchange', () => route({ focus: true }));
 
 // Mobile navigation: closed controls cannot receive keyboard focus.
 const burger = document.getElementById('burger'), nav = document.getElementById('navlinks');
-const mobileMenu = matchMedia('(max-width:900px)');
+const mobileMenu = matchMedia('(max-width:1100px)');
 const navBd = document.createElement('div'); navBd.className='nav-backdrop'; document.body.appendChild(navBd);
 function setNav(open, restoreFocus = false) {
   nav.classList.toggle('open', open);
@@ -1208,6 +1233,7 @@ function setNav(open, restoreFocus = false) {
 burger.addEventListener('click', () => setNav(!nav.classList.contains('open'), true));
 navBd.addEventListener('click', () => setNav(false, true));
 nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setNav(false)));
+document.querySelector('#header .logo').addEventListener('click', () => setNav(false));
 addEventListener('keydown', e => {
   if(!mobileMenu.matches || !nav.classList.contains('open')) return;
   if(e.key==='Escape'){ e.preventDefault(); setNav(false,true); }
