@@ -23,6 +23,7 @@
 <link rel="stylesheet" href="assets/css/v3-block2-fix.css">
 <link rel="stylesheet" href="assets/css/v3-block3.css">
 <link rel="stylesheet" href="assets/css/v3-block4.css">
+<link rel="stylesheet" href="assets/css/v3-block5.css">
 </head>
 <body>
 <a class="skip-link" href="#main-content" data-i="skip_content">Skip to content</a>
@@ -44,18 +45,18 @@
     <a href="#top" class="logo" aria-label="ARTECH"><img src="assets/logo.png" alt="ARTECH"></a>
     <div class="v3-header-links" aria-label="Museum sections" data-aria="nav_main">
       <a href="#p-collection" data-i="nav_collection">Collection</a>
+      <a href="#p-history" data-i="nav_history">History</a>
       <a href="#p-workshops" data-i="nav_taller">The Workshop</a>
       <a href="#p-experience" data-i="nav_experience">Experiences</a>
       <a href="#p-cafe" data-i="nav_cafe">Restaurant</a>
-      <a href="#p-history" data-i="nav_history">History</a>
     </div>
     <div id="v3MenuPanel" class="v3-menu-panel" hidden>
       <ul class="navlinks" id="navlinks" inert>
         <li><a href="#p-collection" data-i="nav_collection" data-menu-photo="assets/cars/maserati-300s/cover.jpg">Collection</a></li>
+        <li><a href="#p-history" data-i="nav_history" data-menu-photo="assets/cars/sin-placa-15/cover.jpg">History</a></li>
         <li><a href="#p-workshops" data-i="nav_taller" data-menu-photo="assets/cars/cxj-330/d1.jpg">The Workshop</a></li>
         <li><a href="#p-experience" data-i="nav_experience" data-menu-photo="assets/legacy.png">Experiences</a></li>
         <li><a href="#p-cafe" data-i="nav_cafe" data-menu-photo="assets/ambience.jpg">Restaurant</a></li>
-        <li><a href="#p-history" data-i="nav_history" data-menu-photo="assets/cars/sin-placa-15/cover.jpg">History</a></li>
         <li><a href="#p-tickets" class="nav-cta" data-i="nav_tickets" data-menu-photo="assets/legacy.png">Book your visit</a></li>
       </ul>
       <figure class="v3-menu-preview" aria-hidden="true"><img id="v3MenuPhoto" src="assets/cars/maserati-300s/cover.jpg" alt="" width="1850" height="1233"><figcaption id="v3MenuCaption">Collection</figcaption></figure>
@@ -75,7 +76,7 @@
 
 <main id="main-content" tabindex="-1">
 <!-- V3-02 · Complete homepage: nine scenes and the shared footer. -->
-<section class="home-only v3-deck" id="v3Opening" data-scene-deck>
+<section class="home-only v3-deck b5-home" id="v3Opening">
   <div class="v3-stage">
     <section class="v3-scene v3-hero-scene" id="top" data-scene="home-01" data-scene-units="2.7">
       <div class="v3-scene-inner v3-split">
@@ -101,21 +102,13 @@ THROUGH TIME.</h1>
       </div>
       <div class="v3-scene-bottom"><button class="v3-next-scene" type="button" data-next-scene aria-label="Next scene" data-es-aria="Siguiente escena" data-en-aria="Next scene"><span data-es="SIGUE EL RECORRIDO" data-en="CONTINUE THE JOURNEY">CONTINUE THE JOURNEY</span><span aria-hidden="true">↓</span></button></div>
     </section>
-    <section class="v3-scene v3-type-scene" data-scene="home-02">
-      <div class="v3-scene-inner"><p class="v3-kicker" data-es="EL COMIENZO" data-en="THE BEGINNING">THE BEGINNING</p><h2 id="v3OldestTitle">THE JOURNEY
-BEGINS IN 1903.</h2><p id="v3OldestNote"></p></div>
-      <div class="v3-scene-bottom"><button class="v3-next-scene" type="button" data-next-scene aria-label="Next scene" data-es-aria="Siguiente escena" data-en-aria="Next scene"><span data-es="DESCUBRE LA PRIMERA PIEZA" data-en="DISCOVER THE FIRST CAR">DISCOVER THE FIRST CAR</span><span aria-hidden="true">↓</span></button></div>
-    </section>
-    <section class="v3-scene v3-first-car" data-scene="home-03">
-      <div class="v3-scene-inner"><figure class="v3-media"><img src="assets/cars/sin-placa-25/v1.jpg" alt="Automóvil de 1903 de la colección" data-v3-alt-es="Automóvil de 1903 de la colección" data-v3-alt-en="1903 car in the collection" width="1600" height="1600" loading="lazy"></figure><div class="v3-photo-caption"><div><p class="v3-kicker">1903</p><h2 data-es="OTRA FORMA
-DE VIAJAR." data-en="A DIFFERENT WAY
-TO TRAVEL.">A DIFFERENT WAY
-TO TRAVEL.</h2></div><a class="home-link" href="#p-vehicle/sin-placa-25" data-i="h_piece">Discover this piece ↗</a></div></div>
-      <div class="v3-scene-bottom"><button class="v3-next-scene" type="button" data-next-scene aria-label="Next scene" data-es-aria="Siguiente escena" data-en-aria="Next scene"><span data-es="CONTINÚA POR LAS ÉPOCAS" data-en="CONTINUE THROUGH THE ERAS">CONTINUE THROUGH THE ERAS</span><span aria-hidden="true">↓</span></button></div>
-    </section>
+    
+    
 
-    <section class="v3-scene v3-era-scene" id="collection" data-scene="home-04" data-scene-units="5.8">
-      <div class="v3-scene-inner">
+    <section class="v3-scene v3-era-scene b5-journey" id="collection" data-scene="home-04">
+      <div class="b5-sticky"><div class="b5-journey-copy"><p class="v3-kicker" data-es="EL COMIENZO" data-en="THE BEGINNING">THE BEGINNING</p><h2 id="v3OldestTitle">THE JOURNEY
+BEGINS IN 1903.</h2><p id="v3OldestNote"></p></div>
+      <div class="v3-scene-inner b5-timeline">
         <p class="v3-kicker" data-es="CADA ÉPOCA, SU PROPIA FORMA" data-en="EVERY ERA, A SHAPE OF ITS OWN">EVERY ERA, A SHAPE OF ITS OWN</p>
         <div class="v3-era-view" id="homeEraView"><figure class="v3-media"><img id="homeEraPhoto" src="assets/cars/sin-placa-15/cover.jpg" alt="Auburn 852 Supercharged, 1936" width="1800" height="1199" loading="lazy"></figure>
           <div class="v3-photo-caption"><div><p class="v3-kicker" id="homeEraYear">1936</p><h2 id="homeEraName">AUBURN 852
@@ -124,7 +117,7 @@ SUPERCHARGED</h2></div><a id="homeEraLink" class="home-link" href="#p-vehicle/si
         <nav class="v3-era-years" id="homeEraYears" aria-label="Years in the collection" data-es-aria="Épocas de la colección" data-en-aria="Years in the collection">
           <button type="button" data-era="0" aria-pressed="false">1903</button><button type="button" data-era="1" aria-pressed="true">1936</button><button type="button" data-era="2" aria-pressed="false">1956</button><button type="button" data-era="3" aria-pressed="false">1970</button><button type="button" data-era="4" aria-pressed="false">1988</button><button type="button" data-era="5" aria-pressed="false">2018</button>
         </nav>
-      </div>
+      </div></div>
       <div class="v3-scene-bottom"><button class="v3-next-scene" type="button" data-next-scene aria-label="Next scene" data-es-aria="Siguiente escena" data-en-aria="Next scene"><span data-es="DETRÁS DE LA COLECCIÓN" data-en="BEHIND THE COLLECTION">BEHIND THE COLLECTION</span><span aria-hidden="true">↓</span></button></div>
     </section>
     <section class="v3-scene v3-type-scene" data-scene="home-05">
@@ -141,25 +134,7 @@ BE REBUILT.">HISTORY CAN
 BE REBUILT.</h2><p data-es="Carrocería, mecánica, pintura y tapicería. Descubre los oficios detrás de la colección." data-en="Bodywork, mechanics, paint and upholstery. Discover the crafts behind the collection.">Bodywork, mechanics, paint and upholstery. Discover the crafts behind the collection.</p><div class="v3-actions"><a href="#p-workshops" class="home-link" data-i="h_workshop">Discover the workshop ↗</a></div></div><figure class="v3-media"><img src="assets/cars/cxj-330/d1.jpg" alt="Emblema y carrocería del Ferrari Testarossa" data-v3-alt-es="Emblema y carrocería del Ferrari Testarossa" data-v3-alt-en="Ferrari Testarossa badge and bodywork" width="1400" height="1099" loading="lazy"></figure></div>
       <div class="v3-scene-bottom"><button class="v3-next-scene" type="button" data-next-scene aria-label="Next scene" data-es-aria="Siguiente escena" data-en-aria="Next scene"><span data-es="ELIGE TU EXPERIENCIA" data-en="CHOOSE YOUR EXPERIENCE">CHOOSE YOUR EXPERIENCE</span><span aria-hidden="true">↓</span></button></div>
     </section>
-    <section class="v3-scene v3-scene--paper v3-home-experiences" id="experiences" data-scene="home-07">
-      <div class="v3-scene-inner"><p class="v3-kicker" data-es="EXPERIENCIAS" data-en="EXPERIENCES">EXPERIENCES</p><h2 data-es="ELIGE CÓMO
-VIVIR ARTECH." data-en="CHOOSE HOW
-TO EXPERIENCE ARTECH.">CHOOSE HOW
-TO EXPERIENCE ARTECH.</h2>
-        <div class="v3-experience-grid">
-          <article class="v3-experience"><div class="v3-experience-media"><img src="assets/cars/sin-placa-15/cover.jpg" alt="Auburn 852 Supercharged" width="1800" height="1199" loading="lazy"><p><strong>S/ 80</strong><span data-es="POR ADULTO" data-en="PER ADULT">PER ADULT</span></p></div><div class="v3-experience-copy"><span class="v3-kicker">01</span><h3 data-es="COLECCIÓN" data-en="COLLECTION">COLLECTION</h3><p data-es="Recorrido guiado · 1 hora" data-en="Guided tour · 1 hour">Guided tour · 1 hour</p><a class="v3-experience-link" href="#p-tickets/collection" data-i="nav_tickets">Book your visit</a></div></article>
-          <article class="v3-experience"><div class="v3-experience-media"><img src="assets/cars/cxj-330/d1.jpg" alt="Detalle del Ferrari Testarossa" data-v3-alt-es="Detalle del Ferrari Testarossa" data-v3-alt-en="Ferrari Testarossa detail" width="1400" height="1099" loading="lazy"><p><strong>S/ 120</strong><span data-es="POR ADULTO" data-en="PER ADULT">PER ADULT</span></p></div><div class="v3-experience-copy"><span class="v3-kicker">02</span><h3 data-es="COLECCIÓN
-+ TALLER" data-en="COLLECTION
-+ WORKSHOP">COLLECTION
-+ WORKSHOP</h3><p data-es="VIP · 1 hora 30 minutos" data-en="VIP · 1 hour 30 minutes">VIP · 1 hour 30 minutes</p><a class="v3-experience-link" href="#p-tickets/vip" data-i="nav_tickets">Book your visit</a></div></article>
-          <article class="v3-experience"><div class="v3-experience-media"><img src="assets/interior.png" alt="Tapicería de la colección" data-v3-alt-es="Tapicería de la colección" data-v3-alt-en="Upholstery in the collection" width="1200" height="1800" loading="lazy"><p><strong>S/ 450</strong><span data-es="POR ADULTO" data-en="PER ADULT">PER ADULT</span></p></div><div class="v3-experience-copy"><span class="v3-kicker">03</span><h3 data-es="ARTECH
-EN PRIVADO" data-en="ARTECH
-IN PRIVATE">ARTECH
-IN PRIVATE</h3><p data-es="Mín. 15 personas · 2 h 30 min" data-en="Min. 15 guests · 2 h 30 min">Min. 15 guests · 2 h 30 min</p><a class="v3-experience-link" href="#p-tickets/private" data-i="nav_tickets">Book your visit</a></div></article>
-        </div><p class="v3-commercial-note" data-es="Solicita tu turno. Artech confirma disponibilidad y condiciones." data-en="Request your visit. Artech confirms availability and conditions.">Request your visit. Artech confirms availability and conditions.</p>
-      </div>
-      <div class="v3-scene-bottom"><button class="v3-next-scene" type="button" data-next-scene aria-label="Next scene" data-es-aria="Siguiente escena" data-en-aria="Next scene"><span data-es="TU VISITA EMPIEZA AQUÍ" data-en="YOUR VISIT STARTS HERE">YOUR VISIT STARTS HERE</span><span aria-hidden="true">↓</span></button></div>
-    </section>
+    
     <section class="v3-scene v3-type-scene v3-visit-preview" data-scene="home-08">
       <div class="v3-scene-inner"><p class="v3-kicker" id="homeCollectionFacts"></p><h2 data-es="HAZ ESPACIO
 PARA DESCUBRIR." data-en="MAKE TIME
@@ -167,9 +142,7 @@ TO DISCOVER.">MAKE TIME
 TO DISCOVER.</h2><p data-es="Elige tu día. El resto comienza en Artech." data-en="Choose your day. The rest begins at Artech.">Choose your day. The rest begins at Artech.</p><div class="v3-actions"><a class="home-button" href="#p-tickets" data-i="nav_tickets">Book your visit</a><a class="home-link" href="#p-experience" data-es="CONOCE LAS EXPERIENCIAS ↗" data-en="EXPLORE THE EXPERIENCES ↗">EXPLORE THE EXPERIENCES ↗</a></div></div>
       <div class="v3-scene-bottom"><button class="v3-next-scene" type="button" data-next-scene aria-label="Next scene" data-es-aria="Siguiente escena" data-en-aria="Next scene"><span data-es="EL SIGUIENTE CAPÍTULO" data-en="THE NEXT CHAPTER">THE NEXT CHAPTER</span><span aria-hidden="true">↓</span></button></div>
     </section>
-    <section class="v3-scene v3-chapter-scene" id="home-closing" data-scene="home-09" data-scene-units="2.1" data-next-chapter="#p-workshops">
-      <div class="v3-scene-inner"><figure class="v3-media"><img src="assets/cars/cxj-330/d3.jpg" alt="Emblema frontal del Ferrari Testarossa" data-v3-alt-es="Emblema frontal del Ferrari Testarossa" data-v3-alt-en="Ferrari Testarossa front badge" width="1400" height="1099" loading="lazy"></figure><div class="v3-photo-caption"><div><p class="v3-kicker" data-es="SIGUIENTE CAPÍTULO" data-en="NEXT CHAPTER">NEXT CHAPTER</p><h2 data-es="EL TALLER." data-en="THE WORKSHOP.">THE WORKSHOP.</h2></div><a href="#p-workshops" class="home-link" data-es="ENTRAR AL TALLER ↗" data-en="ENTER THE WORKSHOP ↗">ENTER THE WORKSHOP ↗</a></div><p class="v3-chapter-note" data-es="Sigue bajando para descubrir el taller." data-en="Keep scrolling to discover the workshop.">Keep scrolling to discover the workshop.</p><a class="v3-footer-access" href="#site-footer" data-es="INFORMACIÓN DEL MUSEO ↓" data-en="MUSEUM INFORMATION ↓">MUSEUM INFORMATION ↓</a></div>
-    </section>
+    
     <div class="v3-chapter-meter" id="homeChapterMeter" hidden><span data-es="EL TALLER" data-en="THE WORKSHOP">THE WORKSHOP</span><div role="progressbar" aria-label="Progress towards the workshop" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="homeChapterProgress"><svg viewBox="0 0 44 44" aria-hidden="true"><circle class="v3-meter-track" cx="22" cy="22" r="18"/><circle class="v3-meter-fill" cx="22" cy="22" r="18"/></svg><span aria-hidden="true">↗</span></div></div>
   </div>
 </section>
@@ -413,10 +386,10 @@ ENTERING IS ANOTHER STORY." data-motion="lines">MIRAR ES FÁCIL.
 ENTRAR ES OTRA HISTORIA.</h1><p data-es="De la colección al taller. Elige hasta dónde quieres descubrir Artech." data-en="From the collection to the workshop. Choose how far you want to discover Artech." class="editorial-lead">De la colección al taller. Elige hasta dónde quieres descubrir Artech.</p><div class="editorial-actions"><a data-es="DESCUBRIR LOS NIVELES ↓" data-en="DISCOVER THE LEVELS ↓" href="#p-experience/levels" class="editorial-link">DESCUBRIR LOS NIVELES ↓</a><a data-es="RESERVA TU TURNO" data-en="BOOK YOUR VISIT" href="#p-tickets" class="editorial-button">RESERVA TU TURNO</a></div></div></div><div id="xpList" class="editorial-levels" data-section="levels"></div><section class="wrap editorial-visit-note editorial-scene"><p data-es="TU RECORRIDO" data-en="YOUR VISIT" class="editorial-kicker">TU RECORRIDO</p><h2 data-es="LA EXPERIENCIA
 EMPIEZA ANTES DE LLEGAR." data-en="THE EXPERIENCE
 STARTS BEFORE YOU ARRIVE." >LA EXPERIENCIA
-EMPIEZA ANTES DE LLEGAR.</h2><div><h3 data-es="Visitas guiadas" data-en="Guided visits" >Visitas guiadas</h3><p data-es="El museo confirma el horario y la disponibilidad para tu grupo." data-en="The museum confirms the time and availability for your group." >El museo confirma el horario y la disponibilidad para tu grupo.</p><p data-es="Hasta 20 visitantes por solicitud. Para grupos mayores o eventos, contacta con el equipo." data-en="Up to 20 visitors per request. For larger groups or events, contact the team." >Hasta 20 visitantes por solicitud. Para grupos mayores o eventos, contacta con el equipo.</p><a data-es="COORDINAR UNA VISITA" data-en="ARRANGE A VISIT" href="#p-contact" class="editorial-link">COORDINAR UNA VISITA</a></div></section><section class="editorial-closing editorial-scene"><div class="editorial-closing-media"><img src="assets/cars/bfu-487/cover.jpg" alt="" loading="lazy"></div><div class="wrap"><p data-es="ELIGE QUÉ TAN" data-en="CHOOSE HOW" class="editorial-kicker">ELIGE QUÉ TAN</p><h2 data-es="PROFUNDO
-QUIERES ENTRAR." data-en="DEEP YOU
-WANT TO GO." data-motion="lines">PROFUNDO
-QUIERES ENTRAR.</h2><div class="editorial-actions"><a data-es="RESERVA TU TURNO" data-en="BOOK YOUR VISIT" href="#p-tickets" class="editorial-button">RESERVA TU TURNO</a><a data-es="CONOCER EL TALLER" data-en="DISCOVER THE WORKSHOP" href="#p-workshops" class="editorial-link">CONOCER EL TALLER</a></div></div></section></section>
+EMPIEZA ANTES DE LLEGAR.</h2><div><h3 data-es="Visitas guiadas" data-en="Guided visits" >Visitas guiadas</h3><p data-es="El museo confirma el horario y la disponibilidad para tu grupo." data-en="The museum confirms the time and availability for your group." >El museo confirma el horario y la disponibilidad para tu grupo.</p><p data-es="Hasta 20 visitantes por solicitud. Para grupos mayores o eventos, contacta con el equipo." data-en="Up to 20 visitors per request. For larger groups or events, contact the team." >Hasta 20 visitantes por solicitud. Para grupos mayores o eventos, contacta con el equipo.</p><a data-es="COORDINAR UNA VISITA" data-en="ARRANGE A VISIT" href="#p-contact" class="editorial-link">COORDINAR UNA VISITA</a></div></section><section class="editorial-closing editorial-scene"><div class="editorial-closing-media"><img src="assets/cars/bfu-487/cover.jpg" alt="" loading="lazy"></div><div class="wrap"><p data-es="TU VISITA" data-en="YOUR VISIT" class="editorial-kicker">TU VISITA</p><h2 data-es="UNA EXPERIENCIA
+A TU MEDIDA." data-en="AN EXPERIENCE
+MADE FOR YOU." data-motion="lines">UNA EXPERIENCIA
+A TU MEDIDA.</h2><div class="editorial-actions"><a data-es="RESERVA TU TURNO" data-en="BOOK YOUR VISIT" href="#p-tickets" class="editorial-button">RESERVA TU TURNO</a><a data-es="CONOCER EL TALLER" data-en="DISCOVER THE WORKSHOP" href="#p-workshops" class="editorial-link">CONOCER EL TALLER</a></div></div></section></section>
 
 <section class="subpage editorial-page" id="page-history"><div class="editorial-hero"><div class="editorial-hero-media"><img src="assets/tickets-hero.jpg" alt="" fetchpriority="high"></div><div class="wrap editorial-hero-copy"><p data-es="ARTECH / HISTORIA" data-en="ARTECH / HISTORY" class="editorial-kicker">ARTECH / HISTORIA</p><h1 data-es="ESTO NO ES
 UN GARAJE." data-en="THIS IS NOT
@@ -704,5 +677,6 @@ HECHO PARA DURAR</h2><h2 data-es="OTRO SIGLO." data-en="ANOTHER CENTURY." class=
 }}
 </script>
 <script type="module" src="assets/js/viewer.js"></script>
+<script src="assets/js/v3-block5.js" defer></script>
 </body>
 </html>

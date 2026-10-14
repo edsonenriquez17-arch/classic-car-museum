@@ -115,7 +115,7 @@
   });
   const video=$('heroVid'),toggle=$('homeVideoToggle'),sound=$('homeSoundToggle'),status=$('v3VideoStatus');
   const hero=$('top'),slot=hero.querySelector('.v3-hero-slot'),film=video.closest('figure');
-  const root=hero.closest('[data-scene-deck]');
+  const root=hero.closest('[data-scene-deck]')||hero.closest('.v3-deck');
   let mediaVersion=0,playPending=false,autoplayBlocked=false,heroInView=true,introBlocking=false,heroBounds=null;
   const clamp=n=>Math.max(0,Math.min(1,n));
   const smooth=n=>{const t=clamp(n);return t*t*(3-2*t);};

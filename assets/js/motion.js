@@ -80,7 +80,7 @@
   }
   function render(){
     frame=0;if(needsMeasure){prepare();measureLights();}
-    if(!initialSeek){initialSeek=true;const target=document.getElementById(window.Artech?.parseHash(location.hash).key||'top');if(target?.closest('.v3-scene')){const root=target.closest('[data-scene-deck]');show(root,[...root.querySelectorAll('.v3-scene')].indexOf(target.closest('.v3-scene')));}}
+    if(!initialSeek){initialSeek=true;const target=document.getElementById(window.Artech?.parseHash(location.hash).key||'top');if(target?.closest('[data-scene-deck] .v3-scene')){const root=target.closest('[data-scene-deck]');show(root,[...root.querySelectorAll('.v3-scene')].indexOf(target.closest('.v3-scene')));}}
     if(!document.body.classList.contains('nav-open'))for(const state of decks.values())paint(state);
     if(!preference.matches)for(const heading of lights){if(heading.closest('.v3-enhanced'))continue;const p=clamp((innerHeight-heading.getBoundingClientRect().top)/(innerHeight+heading.offsetHeight));heading.style.setProperty('--v3-light-position',(100-p*100).toFixed(2)+'%');}
   }
