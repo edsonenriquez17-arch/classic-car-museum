@@ -226,9 +226,10 @@
   document.fonts?.ready.then(()=>{heroBounds=null;});
   updateHeader();syncVideo();
 
-  // Fifteen visible seconds of the existing render; no new 3D dependency.
-  const intro=$('preloader'),introVideo=$('plVideo'),skip=$('plSkip'),inner=intro.querySelector('.pl-inner');
-  let introDone=false,timer,exitAnimation,introRemaining=15000,introClock=0,renderStarted=false;
+  // B03: one pass of the original car film (~4.5 s), no skip button; Escape still exits.
+  const intro=$('preloader'),introVideo=$('plVideo'),inner=intro.querySelector('.pl-inner');
+  const INTRO_MS=4300; // film is 3.4 s; the last frame holds with ARTECH, then a 0.7 s fade.
+  let introDone=false,timer,exitAnimation,introRemaining=6500,introClock=0,renderStarted=false;
   function stopIntroClock(){
     clearTimeout(timer);
     if(introClock){introRemaining=Math.max(0,introRemaining-(performance.now()-introClock));introClock=0;}
@@ -244,33 +245,32 @@
       intro.hidden=true;intro.style.opacity='';inner.style.opacity='';document.documentElement.classList.remove('pl-lock');introBlocking=false;
       background.forEach(el=>el.inert=false);header.inert=false;
       window.Artech.storage('sessionStorage','artech_intro_b01_seen','1');
-      if(document.activeElement===skip){
+      if(document.activeElement===intro){
         // The first title is deliberately hidden while the film fills the screen.
         header.querySelector('.logo').focus({preventScroll:true});
       }
       window.ArtechMotion?.refresh();fallbackVisibility();reconcileVideo();
     };
     if(immediate||preference.matches||intro.hidden){finish();return;}
-    exitAnimation=intro.animate([{opacity:1},{opacity:0}],{duration:450,easing:'linear'});
+    exitAnimation=intro.animate([{opacity:1},{opacity:0}],{duration:700,easing:'ease-out'});
     exitAnimation.finished.then(finish).catch(finish);
   }
   const entrance=window.Artech.parseHash(location.hash).key==='top';
   if(!entrance||preference.matches||window.Artech.storage('sessionStorage','artech_intro_b01_seen')==='1')reveal(true);
   else{
     introBlocking=true;intro.hidden=false;document.documentElement.classList.add('pl-lock');
-    background.forEach(el=>el.inert=true);header.inert=true;skip.focus({preventScroll:true});
+    background.forEach(el=>el.inert=true);header.inert=true;intro.focus({preventScroll:true});
     introVideo.addEventListener('playing',()=>{
       if(renderStarted||introDone)return;
-      renderStarted=true;stopIntroClock();introRemaining=15000;startIntroClock();
+      renderStarted=true;stopIntroClock();introRemaining=INTRO_MS;startIntroClock();intro.classList.add('is-playing');
     });
     introVideo.src=introVideo.dataset.src;introVideo.load();
     introVideo.play().catch(()=>{});startIntroClock();
   }
-  skip.addEventListener('click',()=>reveal(true));
   document.addEventListener('keydown',event=>{
     if(introDone)return;
     if(event.key==='Escape'){event.preventDefault();reveal(true);}
-    if(event.key==='Tab'){event.preventDefault();skip.focus();}
+    if(event.key==='Tab'){event.preventDefault();intro.focus({preventScroll:true});}
   });
   document.addEventListener('visibilitychange',()=>{
     if(!introDone){

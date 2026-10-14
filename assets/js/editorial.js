@@ -22,20 +22,54 @@
     {es:'En ruta',en:'The journey',noteEs:'Para quedarse',noteEn:'To stay',names:['Panceta Laqueada en Salsa Miso y Chaufa','Atún en Costra de Pimienta','Bife Americano a la Parrilla']},
     {es:'Meta',en:'The finish',noteEs:'Para cerrar',noteEn:'To finish',names:['Soufflé de Chocolate','Suspiro de Lúcuma','Crocante de Manzana']}
   ];
+  // B03: crossfade prepared per dish. Add real dish photos here (name → path); dishes without one keep the room photo.
+  const DISH_PHOTOS={};
+  const MENU_DEFAULT='assets/ambience.jpg';
+  let menuFront='menuPhotoA';
+  function menuPhoto(src){
+    const front=$(menuFront),backId=menuFront==='menuPhotoA'?'menuPhotoB':'menuPhotoA',back=$(backId);
+    if(!front||!back||front.getAttribute('src')===src)return;
+    back.onload=()=>{back.classList.add('is-front');front.classList.remove('is-front');menuFront=backId;};
+    back.src=src;
+  }
+  function menuHover(e){const dish=e.target.closest?.('.menu-dish');menuPhoto(dish?.dataset.photo||MENU_DEFAULT);}
+  $('menuRoute')?.addEventListener('mouseover',menuHover);$('menuRoute')?.addEventListener('focusin',menuHover);
+  $('menuRoute')?.addEventListener('mouseleave',()=>menuPhoto(MENU_DEFAULT));
   function renderMenuRoute(){
     const items=CAFE_MENU.flatMap(category=>category.items);
-    $('menuRoute').innerHTML=stops.map((stop,index)=>`<section class="menu-stop"><p class="editorial-kicker">0${index+1} / ${E(L(stop.noteEs,stop.noteEn))}</p><h3>${E(L(stop.es,stop.en))}</h3>${stop.names.map(name=>{const item=items.find(i=>i.n===name);if(!item)return '';const translated=CAFE_EN[name];return `<div class="menu-dish"><h4>${E(es()?item.n:translated?.n||item.n)}</h4>${(es()?item.d:translated?.d)?`<p>${E(es()?item.d:translated.d)}</p>`:''}</div>`;}).join('')}</section>`).join('');
+    $('menuRoute').innerHTML=stops.map((stop,index)=>`<section class="menu-stop"><p class="editorial-kicker">0${index+1} / ${E(L(stop.noteEs,stop.noteEn))}</p><h3>${E(L(stop.es,stop.en))}</h3>${stop.names.map(name=>{const item=items.find(i=>i.n===name);if(!item)return '';const translated=CAFE_EN[name];const photo=DISH_PHOTOS[name];return `<div class="menu-dish"${photo?` data-photo="${E(photo)}" tabindex="0"`:''}><h4>${E(es()?item.n:translated?.n||item.n)}</h4>${(es()?item.d:translated?.d)?`<p>${E(es()?item.d:translated.d)}</p>`:''}</div>`;}).join('')}</section>`).join('');
     $('restaurantRequest').href=whatsappURL(L('Hola ARTECH, quisiera solicitar una mesa en el restaurante. ¿Podrían confirmar horario, disponibilidad y condiciones?','Hi ARTECH, I would like to request a table at the restaurant. Could you confirm the time, availability and conditions?'));
+  }
+  // B03: navigable timeline. Stations are catalogue vehicles; years refer to the cars, not to the museum.
+  const timelineSlugs=['axs-615','bvs-249','sin-placa-22','cpl-048','auk-547','aby-304','aue-622','y1s-584','maserati-300s'];
+  const photographed=new Set(['axs-615','bvs-249','sin-placa-22','cpl-048','auk-547','aby-304','aue-622','y1s-584']);
+  let station=0,stations=[];
+  function eraLabel(year){const y=parseInt(year,10);if(y<1920)return L('Los primeros motores','The first engines');if(y<1930)return L('Los años veinte','The twenties');if(y<1940)return L('Los años treinta','The thirties');if(y<1960)return L('Posguerra y competición','Post-war and racing');return L('Una época contemporánea','A contemporary era');}
+  function photoOf(car){return `assets/cars/${car.slug}/${photographed.has(car.slug)?'marcelo':'cover'}.jpg`;}
+  function showStation(i,focus=false){
+    if(!stations.length)return;
+    station=(i+stations.length)%stations.length;const car=stations[station],img=$('tlPhoto');
+    $('tlYear').textContent=car.year;$('tlName').textContent=car.name;$('tlEra').textContent=eraLabel(car.year);
+    $('tlLink').href='#p-vehicle/'+encodeURIComponent(car.slug);
+    const src=photoOf(car);
+    if(img.getAttribute('src')!==src){img.classList.add('is-leaving');setTimeout(()=>{img.src=src;img.alt=car.name+', '+car.year;img.classList.remove('is-leaving');},matchMedia('(prefers-reduced-motion: reduce)').matches?0:200);}
+    $('historyTimeline').style.setProperty('--tl-progress',stations.length>1?(station/(stations.length-1)).toFixed(3):'0');
+    $('tlStations').querySelectorAll('button').forEach((b,n)=>{b.setAttribute('aria-pressed',String(n===station));b.closest('li').classList.toggle('is-past',n<station);});
+    if(focus)$('tlStations').querySelector(`[data-station="${station}"]`)?.focus({preventScroll:true});
   }
   function renderHistory(){
     const cars=typeof CARS!=='undefined'?CARS:[];
+    stations=timelineSlugs.map(slug=>cars.find(car=>car.slug===slug)).filter(car=>car&&Number.isFinite(parseInt(car.year,10))).sort((a,b)=>parseInt(a.year,10)-parseInt(b.year,10));
     const dated=cars.filter(car=>Number.isFinite(parseInt(car.year,10))).sort((a,b)=>parseInt(a.year,10)-parseInt(b.year,10));
-    const middle=cars.find(car=>car.slug==='maserati-300s');
-    const selected=[dated[0],middle,dated.at(-1)].filter(Boolean);
-    const labels=[L('El origen del recorrido','The journey’s beginning'),L('Diseño y competición','Design and competition'),L('Una época contemporánea','A contemporary era')];
-    $('historyMilestones').innerHTML=selected.map((car,index)=>`<a href="#p-vehicle/${encodeURIComponent(car.slug)}"><img src="assets/cars/${car.slug}/cover.jpg" alt="${E(car.name)}" loading="lazy"><strong>${E(car.year)}</strong><h3>${E(car.name)}</h3><p>${E(labels[index])} ↗</p></a>`).join('');
+    const latest=dated.at(-1);if(latest&&!stations.includes(latest))stations.push(latest);
+    $('tlStations').innerHTML=stations.map((car,i)=>`<li><button type="button" data-station="${i}" aria-pressed="false" aria-controls="historyTimeline"><i aria-hidden="true"></i><strong>${E(car.year)}</strong><small>${E(car.brand||car.name)}</small></button></li>`).join('');
+    showStation(Math.min(station,Math.max(0,stations.length-1)));
     $('historyCount').textContent=cars.length?L(`${cars.length} PIEZAS.\nUNA HISTORIA ABIERTA.`,`${cars.length} PIECES.\nAN OPEN STORY.`):L('UNA HISTORIA\nQUE CONTINÚA.','A STORY\nTHAT CONTINUES.');
   }
+  $('tlStations').addEventListener('click',e=>{const b=e.target.closest('[data-station]');if(b)showStation(+b.dataset.station);});
+  $('tlStations').addEventListener('keydown',e=>{const b=e.target.closest('[data-station]');if(!b)return;const k={ArrowRight:1,ArrowDown:1,ArrowLeft:-1,ArrowUp:-1}[e.key];if(e.key==='Home'||e.key==='End'){e.preventDefault();showStation(e.key==='Home'?0:stations.length-1,true);}else if(k){e.preventDefault();showStation(+b.dataset.station+k,true);}});
+  $('tlPrev').addEventListener('click',()=>showStation(station-1));$('tlNext').addEventListener('click',()=>showStation(station+1));
+  $('tlExit').addEventListener('click',()=>{const next=$('historyNow');next.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth',block:'start'});next.focus({preventScroll:true});});
   function mountScenes(){ window.ArtechMotion?.refresh(); }
   let lastCollectionScroll=0,previousRoute='';
   function renderFeatured(){window.ArtechCollection?.refreshFeatured();}

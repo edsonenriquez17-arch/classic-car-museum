@@ -39,12 +39,58 @@
     ['Mecánica','Mechanics','Sistemas que devuelven movimiento.','Systems that restore movement.','assets/360-tour/ford-super-deluxe-woody/underside.jpg'],
     ['Electricidad','Electrics','Conexiones detrás de cada función.','Connections behind every function.','assets/360-tour/ford-super-deluxe-woody/dashboard.jpg']
   ];
-  let craft = 3;
+  // B03: six crafts start at 01; scroll progress is reversible and a row can be chosen by hand.
+  let craft = 0, craftShown = -1;
+  const craftSection = document.querySelector('.atelier-crafts');
+  const craftReduced = matchMedia('(prefers-reduced-motion: reduce)');
   function renderCrafts() {
-    $('craftRows').innerHTML = crafts.map((c,i)=>`<button type="button" class="craft-row" data-craft="${i}" aria-pressed="${i===craft}"><span>0${i+1}</span><strong>${E(L(c[0],c[1]))}</strong><small>${E(L(c[2],c[3]))}</small></button>`).join('');
-    $('craftPhoto').src = crafts[craft][4]; $('craftPhoto').alt = L(crafts[craft][0],crafts[craft][1]);
+    $('craftRows').innerHTML = crafts.map((c,i)=>`<li><button type="button" class="craft-row" data-craft="${i}" aria-pressed="${i===craft}" aria-controls="craftStage"><span class="craft-dot" aria-hidden="true"></span><span class="craft-num">0${i+1}</span><strong>${E(L(c[0],c[1]))}</strong></button></li>`).join('');
+    craftShown = -1; showCraft(craft);
   }
-  $('craftRows').addEventListener('click',e=>{const b=e.target.closest('[data-craft]');if(b){craft=+b.dataset.craft;renderCrafts();$('craftRows').querySelector(`[data-craft="${craft}"]`).focus({preventScroll:true});}});
+  function showCraft(i) {
+    craft = i;
+    $('craftRows').querySelectorAll('[data-craft]').forEach(b=>{const on=+b.dataset.craft===i;b.setAttribute('aria-pressed',on);b.closest('li').classList.toggle('is-active',on);b.closest('li').classList.toggle('is-past',+b.dataset.craft<i);});
+    if (craftShown === i) return;
+    craftShown = i;
+    const c = crafts[i], photo = $('craftPhoto');
+    $('craftIndex').textContent = `0${i+1} / 0${crafts.length}`;
+    $('craftTitle').textContent = L(c[0],c[1]);
+    $('craftText').textContent = L(c[2],c[3]);
+    if (photo.getAttribute('src') !== c[4]) {
+      photo.classList.add('is-leaving');
+      const swap = () => { photo.src = c[4]; photo.alt = L(c[0],c[1]); photo.classList.remove('is-leaving'); };
+      if (craftReduced.matches) swap(); else setTimeout(swap, 220);
+    } else photo.alt = L(c[0],c[1]);
+  }
+  function craftScrollable() { return !craftReduced.matches && craftSection.offsetHeight > innerHeight * 1.5; }
+  function craftProgress() {
+    if (!craftScrollable()) { craftSection.style.setProperty('--craft-progress', (craft/(crafts.length-1)).toFixed(3)); return; }
+    const r = craftSection.getBoundingClientRect(), span = r.height - innerHeight;
+    const p = Math.min(1, Math.max(0, -r.top / span));
+    craftSection.style.setProperty('--craft-progress', p.toFixed(3));
+    const i = Math.min(crafts.length-1, Math.floor(p * crafts.length));
+    if (i !== craft || craftShown !== i) showCraft(i);
+  }
+  $('craftRows').addEventListener('click',e=>{
+    const b=e.target.closest('[data-craft]'); if(!b) return;
+    const i=+b.dataset.craft;
+    if (craftScrollable()) {
+      const top = craftSection.getBoundingClientRect().top + scrollY, span = craftSection.offsetHeight - innerHeight;
+      scrollTo({top: top + span * (i + .5) / crafts.length, behavior: 'smooth'});
+    }
+    showCraft(i); craftProgress();
+  });
+  $('craftRows').addEventListener('keydown',e=>{
+    const b=e.target.closest('[data-craft]'); if(!b||!['ArrowDown','ArrowUp','ArrowRight','ArrowLeft'].includes(e.key)) return;
+    e.preventDefault();
+    const n=(+b.dataset.craft+(e.key==='ArrowDown'||e.key==='ArrowRight'?1:-1)+crafts.length)%crafts.length;
+    $('craftRows').querySelector(`[data-craft="${n}"]`).focus(); $('craftRows').querySelector(`[data-craft="${n}"]`).click();
+  });
+  let craftFrame;
+  addEventListener('scroll',()=>{ if(craftFrame||!craftSection.closest('.subpage.active')) return; craftFrame=requestAnimationFrame(()=>{craftFrame=0;craftProgress();}); },{passive:true});
+  addEventListener('resize',craftProgress);
+  craftReduced.addEventListener?.('change',craftProgress);
+  addEventListener('artech:route',()=>requestAnimationFrame(craftProgress));
   document.querySelector('.atelier-hero a[href="#workshop-process"]').addEventListener('click',e=>{e.preventDefault();$('workshop-process').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});});
   $('atelierCompare').addEventListener('input',e=>e.target.closest('figure').style.setProperty('--split',e.target.value+'%'));
   let scrollFrame;
@@ -74,7 +120,7 @@
   function money(value){return 'S/ '+value.toLocaleString('es-PE');}
   function guests(){return `${counts.gen} ${L('adultos','adults')} · ${counts.red} ${L('niños','children')} · ${counts.sen} ${L('adultos mayores','seniors')}`;}
   function estimate(){return counts.gen?money(counts.gen*level().price):L('Por confirmar','To confirm');}
-  function message(){return L('Hola ARTECH, quisiera consultar disponibilidad y precio.','Hi ARTECH, could you confirm availability and price?')+'\n'+L('Experiencia: ','Experience: ')+level()[es()?'es':'en']+'\n'+prettyDate()+'. '+L('Horario preferido: ','Preferred time: ')+time.value+L(' (hora de Lima).',' (Lima time).')+'\n'+guests()+'\n'+L('Estimado adultos: ','Adult estimate: ')+estimate()+'. '+L('Tarifas de niños/adultos mayores por confirmar.','Child/senior rates to be confirmed.')+'\n'+L('Nombre: ','Name: ')+$('visitName').value.trim()+'\nWhatsApp: '+phoneNumber()+'\nEmail: '+$('visitEmail').value.trim()+'\n'+L('Idioma: ','Language: ')+$('visitLanguage').value+'\n'+L('País: ','Country: ')+$('visitCountry').value.trim()+($('visitNotes').value.trim()?'\n'+$('visitNotes').value.trim():'')+(code?'\n'+L('Referencia local: ','Local reference: ')+code:'');}
+  function message(){return L('Hola ARTECH, quisiera consultar disponibilidad y precio.','Hi ARTECH, could you confirm availability and price?')+'\n'+L('Experiencia: ','Experience: ')+level()[es()?'es':'en']+'\n'+prettyDate()+'. '+L('Horario preferido: ','Preferred time: ')+time.value+L(' (hora de Lima).',' (Lima time).')+'\n'+guests()+'\n'+L('Estimado adultos: ','Adult estimate: ')+estimate()+'. '+L('Tarifas de niños/adultos mayores por confirmar.','Child/senior rates to be confirmed.')+'\n'+L('Nombre: ','Name: ')+$('visitName').value.trim()+'\nWhatsApp: '+phoneNumber()+'\nEmail: '+$('visitEmail').value.trim()+'\n'+L('Idioma: ','Language: ')+$('visitLanguage').value+($('visitNotes').value.trim()?'\n'+$('visitNotes').value.trim():'')+(code?'\n'+L('Referencia local: ','Local reference: ')+code:'');}
   function renderLevels(){
     $('visitLevels').innerHTML=levels.map((v,i)=>`<button type="button" class="visit-level" data-level="${i}" aria-pressed="${i===selected}"><img src="${v.image}" alt="" loading="lazy"><span><strong>${E(v[es()?'es':'en'])}</strong><small>${v.duration} · ${E(v[es()?'esInfo':'enInfo'])}</small>${i===selected?`<small class="level-includes">${E(L('Seleccionada · precio por adulto','Selected · price per adult'))}</small>`:''}</span><span><b>${money(v.price)}</b><small>${E(L('por adulto','per adult'))}</small></span></button>`).join('');
   }
@@ -137,7 +183,7 @@
     step=next;confirmed=false;
     $('visitIntro').hidden=step===3;$('visitExperience').hidden=step===3;$('visitSchedule').hidden=step===3;
     $('visitDetails').hidden=step!==3;$('tkContinue').hidden=step===3;$('visitPrepare').hidden=step!==3;
-    document.querySelector('.visit-closing').hidden=false;$('visitLayout').hidden=false;$('visitProgress').hidden=false;$('visitAfter').hidden=step===3;$('visitConfirmation').hidden=true;
+    document.querySelector('.visit-closing').hidden=true;$('visitLayout').hidden=false;$('visitProgress').hidden=false;$('visitAfter').hidden=step===3;$('visitConfirmation').hidden=true;
     update();if(focus){const el=step===3?$('visitDetails'):step===2?$('visitSchedule'):$('visitExperience');el.tabIndex=-1;el.focus({preventScroll:true});el.scrollIntoView({behavior:'instant',block:'start'});}
     window.ArtechMotion?.refresh();
   }
@@ -158,6 +204,9 @@
     const first=$('visitName').value.trim().split(/\s+/)[0];$('confirmationTitle').textContent=L('LISTO, ','READY, ')+first.toLocaleUpperCase()+'.';
     $('confirmationFacts').innerHTML=[ [L('Experiencia','Experience'),level()[es()?'es':'en']],[L('Cuándo','When'),prettyDate()+' · '+time.value],[L('Visitantes','Visitors'),guests()],[L('Estimado de adultos','Adult estimate'),estimate()] ].map(([k,v])=>`<div><small>${E(k)}</small><strong>${E(v)}</strong></div>`).join('');
     $('visitSend').href=whatsappURL(message());
+    // B03: the closing greets the visitor only after a valid local request; it stays pending museum confirmation.
+    $('closingName').textContent=first?', '+first.toLocaleUpperCase():'';
+    $('closingSend').href=$('visitSend').href;
   }
   $('visitLevels').addEventListener('click',e=>{const b=e.target.closest('[data-level]');if(!b)return;selected=+b.dataset.level;step=2;renderLevels();update();$('visitLevels').querySelector(`[data-level="${selected}"]`).focus({preventScroll:true});});
   $('visitCalendars').addEventListener('click',e=>{const b=e.target.closest('[data-date]');if(!b)return;date.value=b.dataset.date;touched=true;step=2;calendar();times();update();$('visitCalendars').querySelector(`[data-date="${date.value}"]`)?.focus({preventScroll:true});});
@@ -174,7 +223,7 @@
     e.preventDefault();submitted=true;touched=true;if(!valid()){setStep(2);return;}
     const errors=fieldErrors(true);if(errors.length){errors[0].focus();return;}
     code='ART-'+date.value.replace(/-/g,'')+'-'+(crypto.randomUUID?crypto.randomUUID().slice(0,8):Math.random().toString(16).slice(2,10)).toUpperCase();
-    confirmed=true;document.querySelector('.visit-closing').hidden=true;renderConfirmation();$('visitLayout').hidden=true;$('visitIntro').hidden=true;$('visitProgress').hidden=true;$('visitAfter').hidden=true;$('visitConfirmation').hidden=false;$('visitConfirmation').focus({preventScroll:true});window.scrollTo({top:0,behavior:'instant'});window.ArtechMotion?.refresh();
+    confirmed=true;renderConfirmation();document.querySelector('.visit-closing').hidden=false;$('visitLayout').hidden=true;$('visitIntro').hidden=true;$('visitProgress').hidden=true;$('visitAfter').hidden=true;$('visitConfirmation').hidden=false;$('visitConfirmation').focus({preventScroll:true});window.scrollTo({top:0,behavior:'instant'});window.ArtechMotion?.refresh();
   });
   function icsEscape(s){return String(s).replace(/\\/g,'\\\\').replace(/[\r\n]+/g,'\\n').replace(/,/g,'\\,').replace(/;/g,'\\;');}
   $('visitCalendar').addEventListener('click',()=>{
