@@ -1,4 +1,4 @@
-/* ARTECH · MH02: T4 line reveals, with progressive enhancement.
+/* ARTECH · MH02 + MH03: T4 headings, T1 bars and T2 spotlight.
  * Opt in with data-motion="lines" on a plain-text heading.
  * No SplitText, no hidden-content dependency, no global GSAP defaults.
  */
@@ -9,6 +9,7 @@
   const preference = matchMedia('(prefers-reduced-motion: reduce)');
   const states = new Map();
   const seen = new WeakMap();
+  const transitions = new Map();
   const gsap = window.gsap;
   const ScrollTrigger = window.ScrollTrigger;
   let available = false;
@@ -164,10 +165,144 @@
     }
   }
 
+  // Reusable transition contract:
+  // data-transition="bars|spotlight", direct child data-transition-content,
+  // optional data-transition-scope="home". Plain sections remain the fallback.
+  function transitionVisible(root) {
+    return visible(root) && !(root.dataset.transitionScope === 'home'
+      && document.body.classList.contains('page-open'));
+  }
+
+  function stopTransition(state) {
+    state.trigger?.kill(true);
+    state.tween?.kill();
+    state.observer?.disconnect();
+    state.fade?.cancel();
+    if (state.focus) state.root.removeEventListener('focusin', state.focus);
+    if (state.content) gsap?.set(state.content, { clearProps: 'transform,opacity,visibility' });
+    // The site uses main{display:contents} + flex order. Never leave a pin wrapper.
+    if (state.spacer?.contains(state.root)) state.spacer.replaceWith(state.root);
+    else state.spacer?.remove();
+    if (state.plane?.parentNode === state.root) state.plane.replaceWith(...state.plane.childNodes);
+    state.panels?.remove();
+    state.root.classList.remove('motion-t1', 'motion-t2');
+  }
+
+  function transitionFallback(state) {
+    state.heading = state.root;
+    state.signature = `${document.documentElement.lang}|${state.kind}`;
+    nativeReveal(state);
+  }
+
+  function bars(state) {
+    const { root, content } = state;
+    const panels = document.createElement('div');
+    panels.className = 'motion-bars';
+    panels.setAttribute('aria-hidden', 'true');
+    const strips = Array.from({ length: 3 }, () => {
+      const strip = document.createElement('span');
+      panels.append(strip);
+      return strip;
+    });
+    state.panels = panels;
+    root.prepend(panels);
+    root.classList.add('motion-t1');
+    gsap.set(strips, { xPercent: -100 });
+    gsap.set(content, { y: 30, opacity: 0 });
+    state.tween = gsap.timeline({ paused: true });
+    // Outer bars precede the centre: a brief E, then a complete paper surface.
+    [0, 2, 1].forEach((index, order) => state.tween.to(strips[index], {
+      xPercent: 0, duration: .52, ease: easeOut
+    }, order * .09));
+    state.tween.to(content, { y: 0, opacity: 1, duration: .35, ease: easeOut }, .7);
+    state.trigger = ScrollTrigger.create({
+      trigger: root, start: 'top 60%',
+      animation: state.tween, toggleActions: 'play none none reverse'
+    });
+    state.focus = () => state.tween.progress(1).pause();
+    root.addEventListener('focusin', state.focus);
+  }
+
+  function spotlight(state) {
+    const { root, content } = state;
+    const plane = document.createElement('div');
+    plane.className = 'motion-spotlight-plane';
+    plane.append(...root.childNodes);
+    root.append(plane);
+    state.plane = plane;
+    root.classList.add('motion-t2');
+    const spacer = document.createElement('div');
+    spacer.className = 'motion-pin-spacer';
+    if (root.classList.contains('home-only')) spacer.classList.add('home-only');
+    spacer.style.order = getComputedStyle(root).order;
+    root.before(spacer);
+    spacer.append(root);
+    state.spacer = spacer;
+    const distance = 900;
+    const size = () => { spacer.style.height = `${plane.offsetHeight + distance}px`; };
+    state.size = size;
+    size();
+    // Native sticky holds the section. Measure the static wrapper, never its
+    // moving child, so viewport changes cannot pin the closing block over the hero.
+    const start = () => spacer.getBoundingClientRect().top + window.scrollY;
+    const radius = () => Math.ceil(Math.hypot(plane.clientWidth, plane.clientHeight) / 2) + 2;
+    gsap.set(plane, { clipPath: 'circle(0px at 50% 50%)' });
+    gsap.set(content, { opacity: 0 });
+    state.tween = gsap.timeline({ paused: true })
+      .fromTo(plane, { clipPath: 'circle(0px at 50% 50%)' }, {
+        clipPath: () => `circle(${radius()}px at 50% 50%)`, duration: 1, ease: 'none'
+      }, 0)
+      .fromTo(content, { opacity: 0 }, { opacity: 1, duration: .25, ease: easeOut }, .6);
+    state.trigger = ScrollTrigger.create({
+      trigger: root, start, end: () => start() + distance,
+      animation: state.tween, scrub: true, invalidateOnRefresh: true,
+      onRefreshInit: size
+    });
+    state.focus = () => {
+      // Keyboard users can reach and read the links without completing a scroll gesture.
+      if (state.trigger.progress < 1) {
+        window.scrollTo({ top: state.trigger.end, behavior: 'instant' });
+        ScrollTrigger.update();
+        state.tween.progress(1);
+      }
+    };
+    root.addEventListener('focusin', state.focus);
+  }
+
+  function syncTransitions() {
+    for (const [root, state] of transitions) {
+      if (!transitionVisible(root) || !root.contains(state.content)
+        || state.kind !== root.dataset.transition) {
+        stopTransition(state);
+        transitions.delete(root);
+      } else state.size?.();
+    }
+    document.querySelectorAll('[data-transition="bars"],[data-transition="spotlight"]').forEach(root => {
+      if (!transitionVisible(root) || transitions.has(root)) return;
+      const content = root.querySelector(':scope > [data-transition-content],:scope > .wrap');
+      if (!content) return;
+      const state = { root, content, kind: root.dataset.transition };
+      transitions.set(root, state);
+      if (preference.matches || !available || (state.kind === 'spotlight'
+        && !CSS.supports('clip-path', 'circle(1px at 50% 50%)'))) {
+        transitionFallback(state);
+        return;
+      }
+      try {
+        if (state.kind === 'bars') bars(state); else spotlight(state);
+      } catch (_) {
+        stopTransition(state);
+        transitionFallback(state);
+      }
+    });
+  }
+
   function refresh() {
     frame = 0;
     const force = rebuild;
     rebuild = false;
+    // Resize/font updates refresh existing pins; only headings need re-splitting.
+    syncTransitions();
     for (const [heading, state] of states) {
       const changed = signature(heading, heading.textContent.trim()) !== state.signature;
       // apply(lang) can replace the spans with identical text after catalogue loading.
@@ -204,6 +339,8 @@
     // Settle in-flight movement immediately when the preference changes.
     for (const state of states.values()) stop(state);
     states.clear();
+    for (const state of transitions.values()) stopTransition(state);
+    transitions.clear();
     schedule();
   });
   const intro = document.getElementById('preloader');
