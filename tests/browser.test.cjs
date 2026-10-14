@@ -30,8 +30,12 @@ test('Browser regression suite', { timeout: 180000 }, async t => {
   async function page(options = {}) {
     const context = await browser.newContext({ locale: 'es-PE', reducedMotion: 'reduce', ...options });
     // No test sends a real enquiry or newsletter registration to an external service.
-    await context.route('**/*', route => route.request().url().startsWith(base)
-      ? route.continue() : route.fulfill({ status: 200, contentType: 'text/html', body: '<p>Test handoff</p>' }));
+    await context.route('**/*', route => {
+      if (route.request().url().startsWith(base)) return route.continue();
+      // Exercise the native motion fallback; never return HTML as a CDN script.
+      if (route.request().url().startsWith('https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/')) return route.abort();
+      return route.fulfill({ status: 200, contentType: 'text/html', body: '<p>Test handoff</p>' });
+    });
     const page = await context.newPage();
     const errors = []; page.on('pageerror', error => errors.push(error.message));
     return { page, context, errors };

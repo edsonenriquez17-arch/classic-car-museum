@@ -11,6 +11,12 @@
 <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@200;300;400&amp;family=Inter:wght@300;400;500&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/site.css">
+<!-- MH02: line masks only. The page remains readable without motion.js. -->
+<style id="artech-motion-styles">
+  [data-motion="lines"].motion-lines{white-space:normal}
+  [data-motion="lines"] .motion-line{display:block;overflow:hidden;padding-bottom:.12em;margin-bottom:-.12em}
+  [data-motion="lines"] .motion-line-text{display:block;white-space:normal}
+</style>
 </head>
 <body>
 <a class="skip-link" href="#main-content" data-i="skip_content">Skip to content</a>
@@ -65,7 +71,7 @@
          poster="assets/hero-poster.jpg" data-src="assets/hero.mp4"></video>
   <div class="hero-inner">
     <div class="wrap">
-      <h1 data-i="hero_title">Shift into history</h1>
+      <h1 data-i="hero_title" data-motion="lines">Shift into history</h1>
       <p data-i="hero_sub">A living experience of cars, art and gastronomy — home to the World's Oldest Car &amp; a rare Porsche collection.</p>
       <div class="hero-btns">
         <a href="#p-tickets" class="btn-red" data-i="hero_tickets">Buy Tickets</a>
@@ -78,7 +84,7 @@
 <!-- BANNER -->
 <section class="banner home-only">
   <div class="wrap bn-grid">
-    <h2 class="bn-title" data-i="banner">A living museum
+    <h2 class="bn-title" data-i="banner" data-motion="lines">A living museum
 of motoring history</h2>
     <div class="bn-items">
       <a class="bn-item" href="#p-contact">
@@ -640,6 +646,10 @@ of motoring history</h2>
 
 <script src="assets/js/core.js"></script>
 <script src="assets/js/site.js"></script>
+<!-- Ordered, deferred libraries: content and navigation never depend on them. -->
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" crossorigin="anonymous"></script>
+<script defer src="assets/js/motion.js"></script>
 
 <!-- ===== Real 3D stylized car (Three.js) ===== -->
 <script type="importmap">
