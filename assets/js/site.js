@@ -76,7 +76,7 @@ const dict = {
     "xp_cap_2": "For private experiences, the tour is tailored to each group to ensure personalized, high-level service.",
     "banner": "A living museum\nof motoring history",
     "pl_tag": "SHIFT INTO HISTORY",
-    "pl_sub": "ARTECH · Lima, Perú",
+    "pl_sub": "AUTOMOBILE MUSEUM · LIMA",
     "p1_t": "Book your private tour",
     "p1_d": "Reserve a guided visit and step into an unrepeatable collection.",
     "p2_t": "Restaurant · Café · Bar",
@@ -284,16 +284,14 @@ const dict = {
     "model_3d": "3D DESIGN STUDY",
     "viewer_fallback": "The 3D viewer is unavailable. You can explore the collection instead.",
     "cafe_photo_note": "Museum interior",
-    "h_hero_pre": "WE DON’T EXHIBIT CARS.",
-    "h_hero_title": "WE BRING THEM\nBACK TO LIFE.",
-    "h_hero_hook": "The oldest piece is {age} years old. Meet it below.",
+    "h_hero_pre": "ARTECH · LIMA",
+    "h_hero_title": "THE AUTOMOBILE,\nTHROUGH TIME.",
+    "h_hero_hook": "Classic and contemporary cars. A collection to discover in Lima.",
     "h_hook_fallback": "The journey begins in 1903. Meet its first piece below.",
     "h_enter_workshop": "Enter the workshop ↗",
     "h_scroll": "Discover the collection ↓",
     "h_brands_label": "Collection brands",
     "h_brands": "{count} brands. Under one roof.",
-    "h_pause_brands": "Pause brands",
-    "h_resume_brands": "Resume brands",
     "h_video_pause": "Pause video",
     "h_video_play": "Play video",
     "h_video_no_audio": "No audio track",
@@ -412,7 +410,7 @@ const dict = {
     "xp_cap_2": "En las experiencias privadas, el recorrido se adapta al grupo para garantizar una atención personalizada y de alto nivel.",
     "banner": "Historia viva\ndel automóvil",
     "pl_tag": "UN VIAJE A LA HISTORIA",
-    "pl_sub": "ARTECH · Lima, Perú",
+    "pl_sub": "MUSEO DEL AUTOMÓVIL · LIMA",
     "p1_t": "Reserva tu tour privado",
     "p1_d": "Reserva una visita guiada y entra a una colección irrepetible.",
     "p2_t": "Restaurante · Café · Bar",
@@ -620,16 +618,14 @@ const dict = {
     "model_3d": "ESTUDIO DE DISEÑO 3D",
     "viewer_fallback": "El visor 3D no está disponible. Puedes explorar la colección.",
     "cafe_photo_note": "Interior del museo",
-    "h_hero_pre": "NO EXHIBIMOS AUTOS.",
-    "h_hero_title": "LOS TRAEMOS\nDE VUELTA.",
-    "h_hero_hook": "La pieza más antigua tiene {age} años. Te la presentamos al bajar.",
+    "h_hero_pre": "ARTECH · LIMA",
+    "h_hero_title": "EL AUTOMÓVIL,\nA TRAVÉS DEL TIEMPO.",
+    "h_hero_hook": "Clásicos y contemporáneos. Una colección para descubrir en Lima.",
     "h_hook_fallback": "El recorrido comienza en 1903. Te presentamos su primera pieza al bajar.",
     "h_enter_workshop": "Entrar al taller ↗",
     "h_scroll": "Descubre la colección ↓",
     "h_brands_label": "Marcas de la colección",
     "h_brands": "{count} marcas. Un solo techo.",
-    "h_pause_brands": "Pausar marcas",
-    "h_resume_brands": "Reanudar marcas",
     "h_video_pause": "Pausar video",
     "h_video_play": "Reproducir video",
     "h_video_no_audio": "Sin audio",
@@ -1296,40 +1292,7 @@ function route(options = {}) {
 }
 addEventListener('hashchange', () => route({ focus: true }));
 
-// Mobile navigation: closed controls cannot receive keyboard focus.
-const burger = document.getElementById('burger'), nav = document.getElementById('navlinks');
-const mobileMenu = matchMedia('(max-width:1100px)');
-const navBd = document.createElement('div'); navBd.className='nav-backdrop'; document.body.appendChild(navBd);
-function setNav(open, restoreFocus = false) {
-  nav.classList.toggle('open', open);
-  document.body.classList.toggle('nav-open', open && mobileMenu.matches);
-  document.getElementById('header').classList.toggle('nav-open', open);
-  burger.setAttribute('aria-expanded', String(open));
-  nav.inert = mobileMenu.matches && !open;
-  if(mobileMenu.matches) {
-    nav.style.transform = open ? 'translateX(0)' : 'translateX(100%)';
-    nav.style.visibility = open ? 'visible' : 'hidden';
-    nav.style.pointerEvents = open ? 'auto' : 'none';
-  } else { nav.style.transform=''; nav.style.visibility=''; nav.style.pointerEvents=''; }
-  if(open && mobileMenu.matches) nav.querySelector('a')?.focus();
-  else if(restoreFocus) burger.focus();
-}
-burger.addEventListener('click', () => setNav(!nav.classList.contains('open'), true));
-navBd.addEventListener('click', () => setNav(false, true));
-nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setNav(false)));
-document.querySelector('#header .logo').addEventListener('click', () => setNav(false));
-addEventListener('keydown', e => {
-  if(!mobileMenu.matches || !nav.classList.contains('open')) return;
-  if(e.key==='Escape'){ e.preventDefault(); setNav(false,true); }
-  if(e.key==='Tab') {
-    const controls=[...nav.querySelectorAll('a,button'),burger];
-    const first=controls[0],last=controls.at(-1);
-    if(e.shiftKey && document.activeElement===first){e.preventDefault();last.focus();}
-    if(!e.shiftKey && document.activeElement===last){e.preventDefault();first.focus();}
-  }
-});
-mobileMenu.addEventListener('change', () => setNav(false));
-setNav(false);
+// Full-screen navigation is managed by v3-shell.js.
 
 // (3D turntable is now a real Three.js scene — see the module script below)
 // ===== data-driven collection (95 cars) + per-car data sheet =====
@@ -1361,42 +1324,21 @@ function renderHome() {
     track.innerHTML = `<div class="home-brand-set">${names}</div><div class="home-brand-set" aria-hidden="true">${names}</div>`;
     track.dataset.brands = key;
   }
-  const pause = document.getElementById('homeBrandsToggle');
-  if (pause) pause.textContent = t[track?.classList.contains('paused') ? 'h_resume_brands' : 'h_pause_brands'];
-  const video = document.getElementById('heroVid'), toggle = document.getElementById('homeVideoToggle'), sound = document.getElementById('homeSoundToggle');
+  const video = document.getElementById('heroVid'), toggle = document.getElementById('homeVideoToggle');
   if (toggle && video) {
-    toggle.textContent = t[video.error ? 'h_video_failed' : video.paused ? 'h_video_play' : 'h_video_pause'];
+    toggle.setAttribute('aria-label', t[video.error ? 'h_video_failed' : video.paused ? 'h_video_play' : 'h_video_pause']);
     toggle.setAttribute('aria-pressed', String(!video.paused));
+    toggle.classList.toggle('is-playing', !video.paused);
     toggle.disabled = !!video.error;
   }
-  if (sound && video) {
-    sound.disabled = video.dataset.hasAudio !== 'true';
-    sound.textContent = t[sound.disabled ? 'h_video_no_audio' : video.muted ? 'h_sound_on' : 'h_sound_off'];
-    sound.setAttribute('aria-pressed', String(!video.muted && !sound.disabled));
-  }
+  const oldest = document.getElementById('v3OldestTitle'), note = document.getElementById('v3OldestNote');
+  if (oldest) oldest.textContent = years.length
+    ? (lang === 'es' ? 'EL RECORRIDO\nCOMIENZA EN ' : 'THE JOURNEY\nBEGINS IN ') + Math.min(...years) + '.'
+    : (lang === 'es' ? 'LA HISTORIA\nDEL AUTOMÓVIL.' : 'THE HISTORY\nOF THE AUTOMOBILE.');
+  if (note) note.textContent = years.length
+    ? (lang === 'es' ? 'La pieza más antigua del catálogo tiene ' : 'The oldest car in the catalogue is ') + (Number(todayInLima().slice(0,4))-Math.min(...years)) + (lang === 'es' ? ' años.' : ' years old.') : '';
+
 }
-document.getElementById('homeBrandsToggle')?.addEventListener('click', event => {
-  const track = document.getElementById('homeBrandTrack');
-  const paused = track.classList.toggle('paused');
-  event.currentTarget.setAttribute('aria-pressed', String(paused));
-  renderHome();
-});
-document.getElementById('homeVideoToggle')?.addEventListener('click', () => {
-  const video = document.getElementById('heroVid');
-  if (video.paused) {
-    video.dataset.userPaused = '0';
-    if (!video.getAttribute('src')) { video.dataset.on = '1'; video.src = video.dataset.src; video.load(); }
-    video.play().catch(() => renderHome());
-  } else { video.dataset.userPaused = '1'; video.pause(); }
-  renderHome();
-});
-document.getElementById('homeSoundToggle')?.addEventListener('click', () => {
-  const video = document.getElementById('heroVid');
-  if (video.dataset.hasAudio !== 'true') return;
-  video.muted = !video.muted;
-  renderHome();
-});
-['play', 'pause', 'error', 'loadedmetadata'].forEach(type => document.getElementById('heroVid')?.addEventListener(type, renderHome));
 
 function renderCollections(){
   const home=document.getElementById('homeGrid');
@@ -1851,52 +1793,7 @@ route();
 document.querySelector('.skip-link').addEventListener('click',event=>{
   event.preventDefault();
   const heading=document.querySelector('.subpage.active h1,.subpage.active h2')||document.querySelector('#top h1');
-  if(heading){heading.tabIndex=-1;heading.focus();}
+  if(heading){window.ArtechMotion?.reveal(heading);heading.tabIndex=-1;heading.focus();}
 });
 
-// Decorative intro once per tab, never a prerequisite for internal pages.
-(function() {
-  const pl=document.getElementById('preloader'),video=document.getElementById('plVideo');
-  const skip=document.getElementById('plSkip'),sound=document.getElementById('plSound');
-  let done=false,timer;
-  function prepareBackground(id) {
-    const media=document.getElementById(id);
-    if(!media||media.dataset.on==='1'||reducedMotion.matches)return;
-    media.dataset.on='1';media.src=media.dataset.src;media.load();
-    if(!document.body.classList.contains('page-open')&&!document.hidden&&media.dataset.userPaused!=='1')media.play().catch(()=>{});
-  }
-  function reveal() {
-    if(done)return;done=true;clearTimeout(timer);
-    video.pause();video.muted=true;video.removeAttribute('src');video.load();
-    pl.hidden=true;document.documentElement.classList.remove('pl-lock');
-    document.getElementById('main-content').inert=false;document.getElementById('header').inert=false;document.querySelector('footer').inert=false;
-    storage('sessionStorage','artech_intro_seen','1');
-    if(!document.body.classList.contains('page-open'))prepareBackground('heroVid');
-    if(document.activeElement===skip||document.activeElement===sound){const heading=document.querySelector('#top h1');heading.tabIndex=-1;heading.focus({preventScroll:true});}
-  }
-  const entrance=parseHash(location.hash).key==='top';
-  if(!entrance||reducedMotion.matches||storage('sessionStorage','artech_intro_seen')==='1')reveal();
-  else {
-    pl.hidden=false;document.documentElement.classList.add('pl-lock');
-    document.getElementById('main-content').inert=true;document.getElementById('header').inert=true;document.querySelector('footer').inert=true;
-    skip.focus();video.src=video.dataset.src;video.load();video.play().catch(reveal);
-    video.addEventListener('ended',reveal,{once:true});video.addEventListener('error',reveal,{once:true});
-    timer=setTimeout(reveal,4500);
-  }
-  skip.addEventListener('click',reveal);
-  sound.addEventListener('click',()=>{
-    video.muted=!video.muted;sound.setAttribute('aria-pressed',String(!video.muted));
-    sound.dataset.i=video.muted?'sound_on':'sound_off';sound.textContent=dict[lang][sound.dataset.i];
-  });
-  video.addEventListener('timeupdate',()=>{const bar=pl.querySelector('.pl-bar');if(video.duration)bar.style.width=Math.min(100,video.currentTime/video.duration*100)+'%';});
-  document.addEventListener('keydown',e=>{if(done)return;if(e.key==='Escape')reveal();if(e.key==='Tab'){e.preventDefault();(document.activeElement===skip?sound:skip).focus();}});
-  addEventListener('hashchange',()=>{if(!done)reveal();});
-  const experience=document.getElementById('experiences');
-  if(experience && 'IntersectionObserver' in window) {
-    const observer=new IntersectionObserver(entries=>{if(entries.some(e=>e.isIntersecting)&&!document.body.classList.contains('page-open')){prepareBackground('expVid');observer.disconnect();}},{rootMargin:'150px'});
-    observer.observe(experience);
-  }
-  addEventListener('artech:route',()=>{if(done&&!document.body.classList.contains('page-open'))prepareBackground('heroVid');});
-  document.addEventListener('visibilitychange',()=>mediaDeFondo(!document.hidden&&!document.body.classList.contains('page-open')&&!reducedMotion.matches));
-  reducedMotion.addEventListener('change',()=>{if(reducedMotion.matches)reveal();mediaDeFondo(!reducedMotion.matches&&!document.body.classList.contains('page-open'));});
-})();
+// Intro and manual video playback are managed by v3-shell.js.

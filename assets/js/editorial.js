@@ -36,20 +36,7 @@
     $('historyMilestones').innerHTML=selected.map((car,index)=>`<a href="#p-vehicle/${encodeURIComponent(car.slug)}"><img src="assets/cars/${car.slug}/cover.jpg" alt="${E(car.name)}" loading="lazy"><strong>${E(car.year)}</strong><h3>${E(car.name)}</h3><p>${E(labels[index])} ↗</p></a>`).join('');
     $('historyCount').textContent=cars.length?L(`${cars.length} PIEZAS.\nUNA HISTORIA ABIERTA.`,`${cars.length} PIECES.\nAN OPEN STORY.`):L('UNA HISTORIA\nQUE CONTINÚA.','A STORY\nTHAT CONTINUES.');
   }
-  let observer;const seen=new WeakSet();const animations=new Map();
-  function mountScenes(){
-    observer?.disconnect();
-    for(const [element,animation] of animations)if(!element.getClientRects().length){animation.cancel();animations.delete(element);}
-    if(!('IntersectionObserver' in window))return;
-    observer=new IntersectionObserver(entries=>entries.forEach(entry=>{
-      if(!entry.isIntersecting||seen.has(entry.target))return;
-      seen.add(entry.target);observer.unobserve(entry.target);
-      const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
-      const animation=entry.target.animate(reduce?[{opacity:.3},{opacity:1}]:[{opacity:.25,transform:'translateY(12px)'},{opacity:1,transform:'translateY(0)'}],{duration:reduce?200:750,easing:'cubic-bezier(.16,1,.3,1)'});
-      animations.set(entry.target,animation);animation.finished.catch(()=>{}).finally(()=>animations.delete(entry.target));
-    }),{threshold:.08,rootMargin:'0px 0px -5% 0px'});
-    document.querySelectorAll('.subpage.active .editorial-scene').forEach(el=>{if(!seen.has(el))observer.observe(el);});
-  }
+  function mountScenes(){ window.ArtechMotion?.refresh(); }
   const featureSlugs=['maserati-300s','sin-placa-15','cxj-330','bfu-487'];
   let featureIndex=0,featureRun=0,featureAnimation,lastCollectionScroll=0,previousRoute='';
   function featuredCars(){return (typeof CARS!=='undefined'?featureSlugs.map(slug=>CARS.find(car=>car.slug===slug)):[]).filter(Boolean);}
@@ -105,6 +92,6 @@
   window.ArtechEditorial={renderExperiences,renderVehicle,updateResults,refresh};
   addEventListener('artech:lang',refresh);
   addEventListener('artech:route',()=>{pageState();translate();sectionRoute();collectionReturn();mountScenes();});
-  matchMedia('(prefers-reduced-motion: reduce)').addEventListener('change',()=>{for(const animation of animations.values())animation.cancel();animations.clear();});
+  matchMedia('(prefers-reduced-motion: reduce)').addEventListener('change',()=>{featureAnimation?.cancel();renderFeatured(false);mountScenes();});
   refresh();
 })();

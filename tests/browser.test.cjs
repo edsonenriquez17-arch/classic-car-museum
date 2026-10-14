@@ -161,7 +161,7 @@ test('Browser regression suite', { timeout: 180000 }, async t => {
     assert.deepEqual(errors,[]);await context.close();
   });
 
-  await t.test('MH07-MH10: narrow calendars, contact fields and paper mobile menu', async () => {
+  await t.test('MH07-MH10: narrow calendars, contact fields and black full-screen menu', async () => {
     for(const width of [320,390]) {
       const {page:p,context,errors}=await page({viewport:{width,height:844}});
       await p.goto(base+'#p-tickets');await p.locator('#visitCalendars button').first().waitFor();
@@ -169,7 +169,7 @@ test('Browser regression suite', { timeout: 180000 }, async t => {
       assert.ok(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
       await p.locator('#burger').click();
       assert.equal(await p.locator('#burger').getAttribute('aria-expanded'),'true');
-      assert.equal(await p.locator('#navlinks').evaluate(el=>getComputedStyle(el).backgroundColor),'rgb(236, 235, 232)');
+      assert.equal(await p.locator('#navlinks').evaluate(el=>getComputedStyle(el).backgroundColor),'rgb(8, 8, 8)');
       await p.keyboard.press('Escape');
       await p.locator('[data-date]:not([disabled])').first().click();
       await p.locator('[data-time="11:00"]').click();await p.locator('[data-cat="gen"][data-d="1"]').click();

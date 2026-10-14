@@ -12,87 +12,93 @@
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@200;300;400&amp;family=Inter:wght@300;400;500&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/site.css">
 <link rel="stylesheet" href="assets/css/editorial.css">
-<!-- MH02: line masks only. The page remains readable without motion.js. -->
-<style id="artech-motion-styles">
-  [data-motion="lines"].motion-lines{white-space:normal}
-  [data-motion="lines"] .motion-line{display:block;overflow:hidden;padding-bottom:.12em;margin-bottom:-.12em}
-  [data-motion="lines"] .motion-line-text{display:block;white-space:normal}
-</style>
+<link rel="stylesheet" href="assets/css/v3-scenes.css">
 </head>
 <body>
 <a class="skip-link" href="#main-content" data-i="skip_content">Skip to content</a>
 <noscript><p class="noscript-note">JavaScript is required for the catalogue. Contact ARTECH: <a href="https://wa.me/51992432455">WhatsApp</a> · <a href="mailto:info@artech.pe">info@artech.pe</a>.</p><style>#preloader{display:none!important}.subpage{display:none!important}</style></noscript>
 
-<!-- ===== PRELOADER / WELCOME SPLASH ===== -->
-<div id="preloader" hidden role="dialog" aria-modal="true" aria-label="Welcome">
-  <video class="pl-video" id="plVideo" data-src="assets/preloader.mp4" muted playsinline preload="none" aria-hidden="true"></video>
-  <div class="pl-glow"></div>
+<!-- V3-01 · Black, wordmark, black, first scene. -->
+<div id="preloader" hidden role="dialog" aria-modal="true" aria-label="ARTECH">
   <button class="pl-skip" id="plSkip" type="button" data-i="skip_intro">Skip intro</button>
-  <button class="pl-sound" id="plSound" type="button" aria-pressed="false" data-i="sound_on">Sound on</button>
   <div class="pl-inner">
-    <img class="pl-logo" src="assets/logo.png" alt="ARTECH">
-
-    <div class="pl-tag" data-i="pl_tag">SHIFT INTO HISTORY</div>
-    <div class="pl-sub" data-i="pl_sub">ARTECH · Lima, Perú</div>
-    <div class="pl-barwrap"><div class="pl-bar"></div></div>
+    <img class="pl-logo" src="assets/logo.png" alt="ARTECH" width="280" height="54">
+    <p class="pl-sub" data-i="pl_sub">AUTOMOBILE MUSEUM · LIMA</p>
   </div>
 </div>
-
 
 <!-- HEADER -->
 <header id="header">
   <nav aria-label="Main navigation" data-aria="nav_main">
   <div class="wrap nav">
     <a href="#top" class="logo" aria-label="ARTECH"><img src="assets/logo.png" alt="ARTECH"></a>
-    <ul class="navlinks" id="navlinks">
-      <li><a href="#p-collection" data-i="nav_collection">Collection</a></li>
-      <li><a href="#p-workshops" data-i="nav_taller">The Workshop</a></li>
-      <li><a href="#p-experience" data-i="nav_experience">Experiences</a></li>
-      <li><a href="#p-cafe" data-i="nav_cafe">Restaurant</a></li>
-      <li><a href="#p-history" data-i="nav_history">History</a></li>
-      <li><a href="#p-tickets" class="nav-cta" data-i="nav_tickets">Book your visit</a></li>
-      <li>
-        <div class="lang" role="group" aria-label="Language" data-aria="ft_language">
-          <button type="button" data-lang="es" lang="es" aria-label="Español">ES</button>
-          <span class="lang-divider" aria-hidden="true">/</span>
-          <button type="button" data-lang="en" lang="en" aria-label="English" class="active">EN</button>
-        </div>
-      </li>
-    </ul>
-    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="navlinks"><span></span><span></span><span></span></button>
+    <div id="v3MenuPanel" class="v3-menu-panel" hidden>
+      <ul class="navlinks" id="navlinks" inert>
+        <li><a href="#p-collection" data-i="nav_collection" data-menu-photo="assets/cars/maserati-300s/cover.jpg">Collection</a></li>
+        <li><a href="#p-workshops" data-i="nav_taller" data-menu-photo="assets/cars/cxj-330/d1.jpg">The Workshop</a></li>
+        <li><a href="#p-experience" data-i="nav_experience" data-menu-photo="assets/legacy.png">Experiences</a></li>
+        <li><a href="#p-cafe" data-i="nav_cafe" data-menu-photo="assets/ambience.jpg">Restaurant</a></li>
+        <li><a href="#p-history" data-i="nav_history" data-menu-photo="assets/cars/sin-placa-15/cover.jpg">History</a></li>
+        <li><a href="#p-tickets" class="nav-cta" data-i="nav_tickets" data-menu-photo="assets/legacy.png">Book your visit</a></li>
+      </ul>
+      <figure class="v3-menu-preview" aria-hidden="true"><img id="v3MenuPhoto" src="assets/cars/maserati-300s/cover.jpg" alt="" width="1850" height="1233"><figcaption id="v3MenuCaption">Collection</figcaption></figure>
+    </div>
+    <div class="v3-header-tools">
+      <div class="lang" role="group" aria-label="Language" data-aria="ft_language">
+        <button type="button" data-lang="es" lang="es" aria-label="Español">ES</button>
+        <span class="lang-divider" aria-hidden="true">/</span>
+        <button type="button" data-lang="en" lang="en" aria-label="English" class="active">EN</button>
+      </div>
+      <a href="#p-tickets" class="v3-header-reserve" data-i="nav_tickets">Book your visit</a>
+      <button class="burger" id="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="v3MenuPanel"><span></span><span></span><span></span></button>
+    </div>
   </div>
   </nav>
 </header>
 
 <main id="main-content" tabindex="-1">
-<!-- MH04–MH06 · Homepage narrative -->
-<section class="hero home-only home-hero" id="top">
-  <div class="home-hero-media" aria-hidden="true">
-    <img class="home-hero-still" src="assets/cars/cxj-330/cover.jpg" alt="" fetchpriority="high" width="1850" height="1233">
-    <video class="hero-bg" id="heroVid" muted loop playsinline preload="none" poster="assets/cars/cxj-330/cover.jpg" data-src="assets/hero.mp4" data-has-audio="false"></video>
-  </div>
-  <div class="wrap home-hero-copy">
-    <p class="home-kicker" data-i="h_hero_pre">WE DON'T EXHIBIT CARS.</p>
-    <h1 data-motion="lines" data-i="h_hero_title">WE BRING THEM
-BACK TO LIFE.</h1>
-    <p class="home-hero-hook" id="homeHeroHook">The collection begins in 1903. Meet its first piece below.</p>
-    <div class="home-actions"><a href="#p-tickets" class="home-button" data-i="nav_tickets">Book your visit</a><a href="#p-workshops" class="home-link" data-i="h_enter_workshop">Enter the workshop ↗</a></div>
-  </div>
-  <div class="wrap home-hero-bottom">
-    <a href="#collection" class="home-scroll"><span class="brand-bars" aria-hidden="true"><span></span><span></span><span></span></span><span data-i="h_scroll">Discover the collection ↓</span></a>
-    <div class="home-video-controls"><button id="homeVideoToggle" type="button" aria-pressed="false">Pause video</button><button id="homeSoundToggle" type="button" aria-pressed="false" disabled>Video without audio</button></div>
+<!-- V3-01 · First three scenes. V3-02 extends the rest of the homepage. -->
+<section class="home-only v3-deck" id="v3Opening" data-scene-deck>
+  <div class="v3-stage">
+    <section class="v3-scene v3-hero-scene" id="top" data-scene="home-01">
+      <div class="v3-scene-inner v3-split">
+        <div class="v3-copy">
+          <p class="v3-kicker" data-i="h_hero_pre">ARTECH · LIMA</p>
+          <h1 data-i="h_hero_title">THE AUTOMOBILE,
+THROUGH TIME.</h1>
+          <p id="homeHeroHook">Classic and contemporary cars. A collection to discover in Lima.</p>
+          <div class="v3-actions"><a href="#p-tickets" class="home-button" data-i="nav_tickets">Book your visit</a><a href="#p-collection" class="home-link" data-i="h_collection">View the collection ↗</a></div>
+        </div>
+        <figure class="v3-media v3-hero-media">
+          <img src="assets/cars/cxj-330/cover.jpg" alt="Ferrari Testarossa, 1988" width="1800" height="1199" fetchpriority="high">
+          <video id="heroVid" class="hero-bg" muted loop playsinline preload="none" poster="assets/cars/cxj-330/cover.jpg" data-src="assets/hero.mp4" data-has-audio="false" data-user-paused="1" aria-label="ARTECH"></video>
+          <button id="homeVideoToggle" class="v3-video-toggle" type="button" aria-label="Play video" aria-controls="heroVid" aria-pressed="false">
+            <svg class="v3-play-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+            <svg class="v3-pause-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h4v14H7zM14 5h4v14h-4z"/></svg>
+          </button>
+          <figcaption id="v3VideoStatus" class="v3-video-status" hidden role="status"></figcaption>
+        </figure>
+      </div>
+      <div class="v3-scene-bottom"><span class="v3-scene-index">01 / 03</span><button class="v3-next-scene" type="button" data-next-scene aria-label="Next scene"><span data-es="SIGUE EL RECORRIDO" data-en="CONTINUE THE JOURNEY">CONTINUE THE JOURNEY</span><span aria-hidden="true">↓</span></button></div>
+    </section>
+    <section class="v3-scene v3-type-scene" data-scene="home-02">
+      <div class="v3-scene-inner"><p class="v3-kicker" data-es="EL COMIENZO" data-en="THE BEGINNING">THE BEGINNING</p><h2 id="v3OldestTitle">THE JOURNEY
+BEGINS IN 1903.</h2><p id="v3OldestNote"></p></div>
+      <div class="v3-scene-bottom"><span class="v3-scene-index">02 / 03</span><button class="v3-next-scene" type="button" data-next-scene aria-label="Next scene"><span data-es="DESCUBRE LA PRIMERA PIEZA" data-en="DISCOVER THE FIRST CAR">DISCOVER THE FIRST CAR</span><span aria-hidden="true">↓</span></button></div>
+    </section>
+    <section class="v3-scene v3-first-car" data-scene="home-03">
+      <div class="v3-scene-inner"><figure class="v3-media"><img src="assets/cars/sin-placa-25/v1.jpg" alt="Automóvil de 1903 de la colección" width="1600" height="1600" loading="lazy"></figure><div class="v3-photo-caption"><div><p class="v3-kicker">1903</p><h2 data-es="OTRA FORMA
+DE VIAJAR." data-en="A DIFFERENT WAY
+TO TRAVEL.">A DIFFERENT WAY
+TO TRAVEL.</h2></div><a class="home-link" href="#p-vehicle/sin-placa-25" data-i="h_piece">Discover this piece ↗</a></div></div>
+      <div class="v3-scene-bottom"><span class="v3-scene-index">03 / 03</span><button class="v3-next-scene" type="button" data-next-scene aria-label="Next scene"><span data-es="CONTINÚA POR LAS ÉPOCAS" data-en="CONTINUE THROUGH THE ERAS">CONTINUE THROUGH THE ERAS</span><span aria-hidden="true">↓</span></button></div>
+    </section>
   </div>
 </section>
 
 <section class="home-only home-brands" aria-label="Collection brands" data-aria="h_brands_label">
-  <div class="wrap home-brand-caption"><p id="homeBrandCount">Under one roof.</p><button id="homeBrandsToggle" type="button" aria-pressed="false" data-i="h_pause_brands">Pause brands</button></div>
+  <div class="wrap home-brand-caption"><p id="homeBrandCount">Under one roof.</p></div>
   <div class="home-brand-window"><div class="home-brand-track" id="homeBrandTrack"><div class="home-brand-set">FERRARI · AUBURN · MASERATI · PORSCHE · DODGE</div></div></div>
-</section>
-
-<section class="home-only home-manifesto">
-  <div class="wrap"><h2 class="home-display home-statement" data-motion="lines" data-i="h_statement">A CLASSIC SPEAKS
-BEFORE YOU START
-THE ENGINE.</h2><p class="home-kicker" data-i="h_statement_note">LOOK CLOSELY. THE DETAILS TELL THE STORY.</p></div>
 </section>
 
 <section class="home-only home-collection" id="collection">
@@ -155,7 +161,7 @@ DRIVE AGAIN.</h2><p data-i="h_return_body">The collection is only one part of th
   </div>
 </section>
 
-<section class="home-only home-levels" id="experiences" data-transition="bars">
+<section class="home-only home-levels" id="experiences">
   <div class="wrap" data-transition-content>
     <p class="home-kicker" data-i="h_access">THREE LEVELS OF ACCESS</p><h2 class="home-display" data-i="h_levels">LOOKING IS EASY.
 UNDERSTANDING TAKES MORE.</h2>
@@ -169,7 +175,7 @@ UNDERSTANDING TAKES MORE.</h2>
   </div>
 </section>
 
-<section class="home-only home-closing" id="home-closing" data-transition="spotlight" data-transition-scope="home">
+<section class="home-only home-closing" id="home-closing">
   <img class="home-photo home-closing-photo" src="assets/cars/bfu-487/cover.jpg" alt="Porsche 911 GT2 RS" loading="lazy" decoding="async" width="1850" height="1233">
   <div class="wrap home-closing-copy" data-transition-content><p class="home-kicker" data-i="h_ready">READY TO</p><h2 class="home-display" data-i="h_close">IGNITE
 THE HISTORY?</h2><p data-i="h_no_payment">No online payment. We confirm your request on WhatsApp.</p><div class="home-actions"><a href="#p-tickets" class="home-button" data-i="nav_tickets">Book your visit</a><a href="#p-collection" class="home-link" data-i="h_collection">View the collection ↗</a></div></div>
@@ -564,7 +570,7 @@ TODOS.</h1><p data-es="Aquí se descubre lo que una sala no muestra. Entra con l
     </figure>
     <div class="comparison-caption"><span data-es="LUZ TENUE" data-en="DIM LIGHT" >LUZ TENUE</span><span>AUBURN 852</span><span data-es="LUZ COMPLETA" data-en="FULL LIGHT" >LUZ COMPLETA</span></div><p data-es="Muestra de interacción con una misma fotografía. El antes y después real se incorporará con el archivo de restauración." data-en="Interaction preview using one photograph. Actual before-and-after images will be added from the restoration archive." class="editorial-note">Muestra de interacción con una misma fotografía. El antes y después real se incorporará con el archivo de restauración.</p>
   </div>
-  <section class="atelier-process" id="workshop-process" data-transition="bars"><div class="wrap" data-transition-content>
+  <section class="atelier-process" id="workshop-process"><div class="wrap" data-transition-content>
     <div class="process-scroll" id="processScroll"><div class="process-sticky">
       <div class="atelier-dial"><svg viewBox="0 0 400 290" role="img" aria-label="Etapa del proceso" data-es-aria="Etapa del proceso" data-en-aria="Process stage">
         <path d="M 57 262 A 165 165 0 1 1 343 262" fill="none" stroke="currentColor" stroke-width="1"/>
@@ -663,11 +669,10 @@ HECHO PARA DURAR</h2><h2 data-es="OTRO SIGLO." data-en="ANOTHER CENTURY." class=
 
 <script src="assets/js/core.js"></script>
 <script src="assets/js/site.js"></script>
+<script defer src="assets/js/v3-shell.js"></script>
 <script defer src="assets/js/visit-workshop.js"></script>
 <script defer src="assets/js/editorial.js"></script>
-<!-- Ordered, deferred libraries: content and navigation never depend on them. -->
-<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous"></script>
-<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" crossorigin="anonymous"></script>
+<!-- Native sticky + scroll scrub; the scene engine has no CDN dependency. -->
 <script defer src="assets/js/motion.js"></script>
 
 <!-- ===== Real 3D stylized car (Three.js) ===== -->
