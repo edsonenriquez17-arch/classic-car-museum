@@ -37,9 +37,17 @@
     };
     const version=++animationVersion;animations.forEach(animation=>animation.cancel());animations=[];
     const a=$(front),backId=front==='b06DishA'?'b06DishB':'b06DishA',b=$(backId);
-    if(immediate||a.getAttribute('src')===src) {a.src=src;a.alt=caption;a.classList.add('is-front');a.removeAttribute('aria-hidden');b.classList.remove('is-front');b.setAttribute('aria-hidden','true');describe();return;}
+    if(immediate||a.getAttribute('src')===src) {a.loading='eager';a.src=src;a.alt=caption;a.classList.add('is-front');a.removeAttribute('aria-hidden');b.classList.remove('is-front');b.setAttribute('aria-hidden','true');describe();return;}
     b.src=src;b.alt=caption;b.loading='eager';
-    const ready=typeof b.decode==='function'?b.decode():Promise.resolve();
+    /* decode() no se resuelve nunca si la imagen de atras no esta renderizada:
+       se espera load, y decode() queda como adorno con tope de tiempo. */
+    const cargada=b.complete&&b.naturalWidth>0?Promise.resolve():new Promise((ok,falla)=>{
+      b.addEventListener('load',()=>ok(),{once:true});
+      b.addEventListener('error',()=>falla(new Error('imagen no disponible')),{once:true});
+    });
+    const ready=cargada.then(()=>typeof b.decode==='function'
+      ?Promise.race([b.decode().catch(()=>{}),new Promise(ok=>setTimeout(ok,120))])
+      :undefined);
     ready.then(()=>{
       if(version!==animationVersion)return;
       describe();b.removeAttribute('aria-hidden');
@@ -48,7 +56,16 @@
       }
       const incoming=b.animate([{opacity:0},{opacity:1}],{duration:280,easing:'ease-out',fill:'both'});
       animations=[incoming,a.animate([{opacity:1},{opacity:0}],{duration:280,easing:'ease-out',fill:'both'})];
-      incoming.finished.then(()=>{if(version!==animationVersion)return;b.classList.add('is-front');a.classList.remove('is-front');a.setAttribute('aria-hidden','true');animations.forEach(animation=>animation.cancel());animations=[];front=backId;}).catch(()=>{});
+      /* El cambio no puede depender solo de finished: esa promesa se queda colgada
+         si el elemento no esta renderizado o si otra llamada cancela la animacion. */
+      const comprometer=()=>{
+        if(version!==animationVersion)return;
+        b.classList.add('is-front');a.classList.remove('is-front');
+        a.setAttribute('aria-hidden','true');
+        animations.forEach(animation=>animation.cancel());animations=[];front=backId;
+      };
+      Promise.race([incoming.finished,new Promise(ok=>setTimeout(ok,320))])
+        .then(comprometer,comprometer);
     }).catch(()=>{/* Keep the last fully loaded photograph and its matching caption. */});
   }
   function renderCategory(focus=false) {
@@ -150,7 +167,7 @@
   $('b06MenuItems').addEventListener('scroll',scheduleSync,{passive:true});
   function onRoute(){
     if(window.Artech.parseHash(location.hash).key!=='p-cafe'){++animationVersion;animations.forEach(animation=>animation.cancel());animations=[];clearTimeout(syncTimer);cancelAnimationFrame(frame);frame=0;return;}
-    const facade=page.querySelector('.b06-table img');if(facade)facade.loading='eager';
+    const facade=page.querySelector('.b06-table img');if(facade)facade.loading='eager';page.querySelectorAll('.b06-plate-rail img').forEach(img=>img.loading='eager');
     picture(true);schedule();const {id}=window.Artech.parseHash(location.hash);
     if(id==='menu')requestAnimationFrame(()=>requestAnimationFrame(()=>openMenu(false,true)));
   }
