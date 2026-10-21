@@ -1,0 +1,33 @@
+/* P09 · orange Porsche in the second scene; original red hero uses P06. */
+@media (max-height: 600px) and (min-width: 641px) {
+  .c31-hero { min-height: 520px; }
+}
+#page-workshops .e362-scene--bodywork .e362-photo {
+  inset: 0 !important; width: 100%; height: 100%;
+}
+#page-workshops .e362-scene--bodywork .e362-photo img {
+  object-fit: cover !important; object-position: right center !important;
+}
+#page-workshops .e362-scene--bodywork .e362-copy {
+  width: min(430px, 30vw); text-align: left;
+}
+#page-workshops .e362-scene--bodywork .e362-photo::after {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(0deg,#030303a3,transparent 25%);
+}
+#page-workshops .e362-scene--interiors .e362-photo::after {
+  background: linear-gradient(90deg,#030303d9,transparent 70%),linear-gradient(0deg,#030303bd,transparent 35%);
+}
+#page-workshops .e362-scene--interiors .e362-photo img { object-position: 55% center; }
+@media (max-aspect-ratio: 6/5) {
+  #page-workshops .e362-scene--bodywork .e362-photo img { object-position: 55% center !important; }
+}
+@media (max-width: 899px) {
+  #page-workshops .e362-scene--bodywork .e362-photo img { object-position: 55% center !important; }
+  #page-workshops .e362-scene--bodywork .e362-copy { width: 88%; max-width: 520px; }
+  #page-workshops .e362-scene--bodywork { min-height: clamp(840px,124vw,1100px); }
+  #page-workshops .e362-scene--bodywork .e362-photo::after { background: linear-gradient(0deg,#030303e8,transparent 35%); }
+}
+@media (max-height: 679px) and (min-width: 900px) {
+  #page-workshops .e362-scene--bodywork { min-height: 720px; }
+}
