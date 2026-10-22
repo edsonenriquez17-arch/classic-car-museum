@@ -4,7 +4,7 @@
    - Imágenes del museo (../assets/cars/...) quedan fuera de scope: se sirven en
      línea y el navegador las cachea; si faltan, la app muestra placeholders.
 */
-const VERSION = 'artech-app-v3';
+const VERSION = 'artech-app-v4';
 const CORE = [
   './',
   './index.html',

@@ -92,50 +92,75 @@ h1, h2, h3 { margin: 0; }
   position: fixed;
   inset: 0;
   z-index: 100;
-  background: radial-gradient(120% 80% at 50% 0%, #17130c 0%, var(--bg) 60%);
+  background: #08080a;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
   transition: opacity .5s ease;
 }
 .splash.hide { opacity: 0; pointer-events: none; }
+/* Fondo cinemático a pantalla completa (foto real, muy atenuada) */
+.splash-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(8,8,10,.55) 0%, rgba(8,8,10,.8) 55%, #08080a 100%),
+    url('../assets/media/lp06/hero-red-1920.webp') center/cover no-repeat;
+  animation: splashZoom 9s ease-out both;
+}
+@keyframes splashZoom { from { transform: scale(1.12); } to { transform: scale(1); } }
+
 .splash-inner {
+  position: relative;
+  z-index: 1;
   text-align: center;
   padding: 32px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 14px;
-  max-width: 460px;
+  max-width: 480px;
+  animation: rise .9s ease both;
 }
-.splash-art {
-  width: min(74vw, 320px);
-  aspect-ratio: 4/3;
-  border-radius: var(--r-lg);
-  margin-bottom: 4px;
-  animation: rise .8s ease both;
+.splash-logo {
+  height: 62px;
+  object-fit: contain;
+  filter: drop-shadow(0 3px 18px rgba(0,0,0,.7));
 }
-.splash-logo { height: 46px; object-fit: contain; filter: drop-shadow(0 2px 12px rgba(0,0,0,.6)); }
+.splash-rule {
+  width: 54px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  margin: 22px 0 16px;
+}
+.splash-eyebrow {
+  color: var(--gold);
+  letter-spacing: 4px;
+  font-size: 10.5px;
+  font-weight: 700;
+  margin: 0 0 10px;
+}
 .splash-tagline {
   font-family: var(--serif);
-  font-size: 24px;
+  font-size: clamp(26px, 7vw, 34px);
   font-weight: 600;
   margin: 0;
   color: var(--text);
   text-wrap: balance;
+  line-height: 1.1;
 }
 .splash-cta {
-  margin-top: 8px;
+  margin-top: 30px;
   background: linear-gradient(180deg, var(--gold-soft), var(--gold));
   color: #17130c;
   border: none;
   font-weight: 700;
   font-size: 16px;
-  padding: 14px 30px;
+  padding: 15px 38px;
   border-radius: var(--r-pill);
   letter-spacing: .3px;
+  box-shadow: 0 12px 34px rgba(201,162,75,.28);
 }
-.splash-hint { color: var(--faint); font-size: 12px; letter-spacing: 1px; margin: 2px 0 0; }
 
 @keyframes rise { from { opacity: 0; transform: translateY(16px) scale(.98);} to { opacity:1; transform:none; } }
 

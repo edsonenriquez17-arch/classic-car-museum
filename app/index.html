@@ -25,15 +25,13 @@
 
 <!-- Splash / arranque tipo app -->
 <div id="splash" class="splash">
+  <div class="splash-bg" aria-hidden="true"></div>
   <div class="splash-inner">
-    <div class="ph splash-art">
-      <span class="ph-label">IMAGEN DE PORTADA</span>
-      <img src="../assets/splash-ferrari.png" alt="" onerror="this.remove()" />
-    </div>
     <img class="splash-logo" src="../assets/logo.png" alt="ARTECH" onerror="this.replaceWith(document.createTextNode('ARTECH'))" />
+    <span class="splash-rule" aria-hidden="true"></span>
+    <p class="splash-eyebrow" data-i="splashHint">GUÍA INTERACTIVA DEL MUSEO · LIMA</p>
     <p class="splash-tagline" data-i="tagline">Historia viva del automóvil</p>
     <button class="splash-cta" id="splashStart" data-i="enter">Iniciar recorrido</button>
-    <p class="splash-hint" data-i="splashHint">Guía interactiva del museo · Lima</p>
   </div>
 </div>
 
