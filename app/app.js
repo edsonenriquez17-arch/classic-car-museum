@@ -48,7 +48,15 @@ const I = {
     restTitle: 'Restaurante · Café · Bar', restTxt: 'Cocina de autor dentro del museo. Haz una pausa entre salas.',
     howTitle: 'Cómo usar la app', howTxt: 'Explora la colección, sigue el recorrido guiado por épocas y guarda tus autos favoritos. Añádela a tu pantalla de inicio para abrirla como una app.',
     waBtn: 'Reservar por WhatsApp', foot: 'ARTECH · Guía del museo — versión demo. Uso interno.',
-    favsEmpty: 'Aún no has guardado autos. Toca la estrella en cualquier ficha.'
+    favsEmpty: 'Aún no has guardado autos. Toca la estrella en cualquier ficha.',
+    installTitle: 'Instala la app', installSub: 'Añádela a tu pantalla de inicio',
+    installBtn: 'Instalar', installInfoTitle: 'Llévate la app', installed: '✓ App instalada',
+    installInfoTxt: 'Instálala en tu teléfono o tablet para abrirla a pantalla completa, como una app, y usarla también sin conexión.',
+    installInfoBtn: 'Instalar app',
+    iosTitle: 'Instalar en tu iPhone/iPad',
+    iosStep1: 'Toca el botón Compartir abajo en Safari.',
+    iosStep2: 'Elige “Añadir a pantalla de inicio”.',
+    iosStep3: 'Toca Añadir. ¡Listo!'
   },
   en: {
     tagline: 'The living history of the automobile', enter: 'Start the tour',
@@ -76,7 +84,15 @@ const I = {
     restTitle: 'Restaurant · Café · Bar', restTxt: 'Signature cuisine inside the museum. Take a break between halls.',
     howTitle: 'How to use the app', howTxt: 'Browse the collection, follow the era-by-era guided tour and save your favorite cars. Add it to your home screen to open it like an app.',
     waBtn: 'Book via WhatsApp', foot: 'ARTECH · Museum guide — demo build. Internal use.',
-    favsEmpty: 'No saved cars yet. Tap the star on any car.'
+    favsEmpty: 'No saved cars yet. Tap the star on any car.',
+    installTitle: 'Install the app', installSub: 'Add it to your home screen',
+    installBtn: 'Install', installInfoTitle: 'Take the app with you', installed: '✓ App installed',
+    installInfoTxt: 'Install it on your phone or tablet to open it full-screen, like an app, and use it offline too.',
+    installInfoBtn: 'Install app',
+    iosTitle: 'Install on your iPhone/iPad',
+    iosStep1: 'Tap the Share button at the bottom of Safari.',
+    iosStep2: 'Choose “Add to Home Screen”.',
+    iosStep3: 'Tap Add. Done!'
   }
 };
 const t = (k) => (I[state.lang][k] ?? k);
@@ -130,13 +146,16 @@ async function boot() {
     b.addEventListener('click', () => switchTab(b.dataset.tab)));
 
   try {
-    const res = await fetch(`${ASSET}/cars.json`);
+    // local (en scope del service worker, cacheable offline); respaldo al global
+    let res = await fetch('cars.json').catch(() => null);
+    if (!res || !res.ok) res = await fetch(`${ASSET}/cars.json`);
     const data = await res.json();
     state.cars = Array.isArray(data) ? data : (data.cars || Object.values(data));
   } catch (e) {
     state.cars = [];
     console.error('No se pudo cargar cars.json', e);
   }
+  initPWA();
   // auto-cierra el splash tras unos segundos si no tocan
   setTimeout(hideSplash, 4200);
   switchTab('home');
@@ -471,6 +490,15 @@ function viewInfo() {
       <p>${t('howTxt')}</p>
     </div>
 
+    <div class="info-card" id="installCard">
+      <h3><svg viewBox="0 0 24 24"><path d="M12 3v12M12 15l-4-4M12 15l4-4M5 19h14" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>${t('installInfoTitle')}</h3>
+      <p>${t('installInfoTxt')}</p>
+      <button class="info-install" id="infoInstallBtn">
+        <svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 3v12M12 15l-4-4M12 15l4-4M5 19h14" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        ${isStandalone() ? t('installed') : t('installInfoBtn')}
+      </button>
+    </div>
+
     <p class="info-foot">${t('foot')}</p>
   </div>`;
 }
@@ -530,6 +558,11 @@ function bindView(tab) {
   if (tab === 'tour') {
     v.querySelectorAll('[data-era]').forEach(b => b.onclick = () => startTour(b.dataset.era));
   }
+
+  if (tab === 'info') {
+    const ib = el('infoInstallBtn');
+    if (ib && !isStandalone()) ib.onclick = triggerInstall;
+  }
 }
 
 function bindGrid() {
@@ -539,6 +572,60 @@ function bindGrid() {
   v.querySelectorAll('[data-fav]').forEach(s => s.onclick = (e) => {
     e.stopPropagation(); toggleFav(s.dataset.fav); s.classList.toggle('on');
   });
+}
+
+/* ============================================================
+   PWA — instalar / offline
+   ============================================================ */
+let deferredPrompt = null;
+
+const isIOS = () => /iphone|ipad|ipod/i.test(navigator.userAgent) ||
+  (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+const isStandalone = () =>
+  window.matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
+
+function initPWA() {
+  // 1) Service worker (offline + instalable)
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js').catch((e) => console.warn('SW no registrado', e));
+  }
+
+  const bar = el('installBar');
+  const dismissed = localStorage.getItem('artech_install_dismiss') === '1';
+
+  // 2) Android/Chrome: capturamos el evento nativo
+  window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    if (!isStandalone() && !dismissed) bar.hidden = false;
+  });
+
+  // 3) iOS Safari: no hay evento → mostramos el banner que abre instrucciones
+  if (isIOS() && !isStandalone() && !dismissed) {
+    setTimeout(() => { bar.hidden = false; }, 2600);
+  }
+
+  window.addEventListener('appinstalled', () => { bar.hidden = true; deferredPrompt = null; });
+
+  el('installBtn').addEventListener('click', triggerInstall);
+  el('installClose').addEventListener('click', () => {
+    bar.hidden = true;
+    localStorage.setItem('artech_install_dismiss', '1');
+  });
+  el('iosClose').addEventListener('click', () => { el('iosSheet').hidden = true; });
+  el('iosSheet').addEventListener('click', (e) => { if (e.target.id === 'iosSheet') el('iosSheet').hidden = true; });
+}
+
+function triggerInstall() {
+  if (deferredPrompt) {
+    deferredPrompt.prompt();
+    deferredPrompt.userChoice.finally(() => { deferredPrompt = null; el('installBar').hidden = true; });
+  } else if (isIOS()) {
+    el('iosSheet').hidden = false;
+  } else {
+    // ya instalada o no disponible el prompt → instrucciones genéricas
+    el('iosSheet').hidden = false;
+  }
 }
 
 document.addEventListener('DOMContentLoaded', boot);

@@ -12,7 +12,8 @@
 <meta name="apple-mobile-web-app-title" content="ARTECH" />
 <meta name="theme-color" content="#0b0b0d" />
 <link rel="manifest" href="manifest.webmanifest" />
-<link rel="apple-touch-icon" href="../assets/logo.png" />
+<link rel="icon" href="icon-192.png" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
 
 <title>ARTECH · Guía del Museo</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -73,6 +74,31 @@
       <span data-i="tabInfo">Info</span>
     </button>
   </nav>
+</div>
+
+<!-- Banner "Instalar app" (aparece si el dispositivo lo permite) -->
+<div id="installBar" class="install-bar" hidden>
+  <img src="icon-192.png" alt="" class="ib-icon" />
+  <div class="ib-text">
+    <b data-i="installTitle">Instala la app</b>
+    <span data-i="installSub">Añádela a tu pantalla de inicio</span>
+  </div>
+  <button id="installBtn" class="ib-btn" data-i="installBtn">Instalar</button>
+  <button id="installClose" class="ib-x" aria-label="Cerrar">✕</button>
+</div>
+
+<!-- Hoja de instrucciones para iPhone/iPad (Safari no permite instalar con 1 toque) -->
+<div id="iosSheet" class="ios-sheet" hidden>
+  <div class="ios-card">
+    <button id="iosClose" class="ios-x" aria-label="Cerrar">✕</button>
+    <img src="icon-192.png" alt="" class="ios-icon" />
+    <h3 data-i="iosTitle">Instalar en tu iPhone/iPad</h3>
+    <ol class="ios-steps">
+      <li><span class="ios-num">1</span> <span data-i="iosStep1">Toca el botón <b>Compartir</b> <svg viewBox="0 0 24 24" class="ios-share"><path d="M12 15V4M12 4l-4 4M12 4l4 4M6 11v7a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> abajo en Safari.</span></li>
+      <li><span class="ios-num">2</span> <span data-i="iosStep2">Elige <b>“Añadir a pantalla de inicio”</b>.</span></li>
+      <li><span class="ios-num">3</span> <span data-i="iosStep3">Toca <b>Añadir</b>. ¡Listo!</span></li>
+    </ol>
+  </div>
 </div>
 
 <!-- Lightbox de galería -->
