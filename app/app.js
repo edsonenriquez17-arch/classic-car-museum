@@ -25,7 +25,15 @@ const I = {
   es: {
     tagline: 'Historia viva del automóvil', enter: 'Iniciar recorrido',
     splashHint: 'Guía interactiva del museo · Lima',
-    tabHome: 'Inicio', tabCollection: 'Colección', tabTour: 'Recorrido', tabInfo: 'Info',
+    tabHome: 'Inicio', tabCollection: 'Colección', tabTour: 'Recorrido', tabCarta: 'Carta', tabInfo: 'Info',
+    expEyebrow: 'VIVE EL MUSEO', expTitle: 'Experiencias', expLead: 'Elige cómo quieres recorrer la colección.',
+    expMin: 'min', expFrom: 'desde', expPerPerson: 'por persona', expGuests: 'personas',
+    expBook: 'Reservar por WhatsApp', expAll: 'Ver experiencias',
+    cartaEyebrow: 'RESTAURANTE · CAFÉ · BAR', cartaTitle: 'La carta', cartaLead: 'Cocina de autor dentro del museo — una pausa que también es parte del recorrido.',
+    cartaTable: 'Consultar por una mesa', cartaPrices: 'Consulta precios y disponibilidad con nuestro equipo.', cartaSee: 'Ver la carta',
+    wkEyebrow: 'TALLERES AFILIADOS', wkTitle: 'Dónde nacen las restauraciones', wkLead: 'Los talleres detrás de la colección. Estrellas ARTECH por cinco criterios.',
+    wkPrincipal: 'Taller principal', wkWorks: 'Restauraciones', wkSee: 'Ver talleres',
+    galleryTitle: 'El museo', visitTitle: 'Planifica tu visita', visitLead: 'Chorrillos, Lima — Perú · 9:00–19:00',
     heroKicker: 'ARTECH · GUÍA DEL VISITANTE',
     heroTitle: 'Historia viva del automóvil',
     heroSub: 'Recorre la colección auto por auto: su historia, su ficha técnica y su lugar en la evolución del automóvil.',
@@ -43,7 +51,7 @@ const I = {
     addFav: 'Guardar en favoritos', remFav: 'En favoritos',
     prevCar: 'Anterior', nextCar: 'Siguiente',
     infoTitle: 'Información', hours: 'Horarios', location: 'Ubicación', visit: 'Tu visita',
-    open: 'Mar – Dom', openHrs: '10:00 – 19:00', monday: 'Lunes', closed: 'Cerrado',
+    open: 'Mar – Dom', openHrs: '9:00 – 19:00', monday: 'Lunes', closed: 'Cerrado',
     addr: 'Chorrillos, Lima — Perú', tickets: 'Entradas', ticketsVal: 'Reserva por WhatsApp',
     restTitle: 'Restaurante · Café · Bar', restTxt: 'Cocina de autor dentro del museo. Haz una pausa entre salas.',
     howTitle: 'Cómo usar la app', howTxt: 'Explora la colección, sigue el recorrido guiado por épocas y guarda tus autos favoritos. Añádela a tu pantalla de inicio para abrirla como una app.',
@@ -61,7 +69,15 @@ const I = {
   en: {
     tagline: 'The living history of the automobile', enter: 'Start the tour',
     splashHint: 'Interactive museum guide · Lima',
-    tabHome: 'Home', tabCollection: 'Collection', tabTour: 'Tour', tabInfo: 'Info',
+    tabHome: 'Home', tabCollection: 'Collection', tabTour: 'Tour', tabCarta: 'Menu', tabInfo: 'Info',
+    expEyebrow: 'LIVE THE MUSEUM', expTitle: 'Experiences', expLead: 'Choose how you want to explore the collection.',
+    expMin: 'min', expFrom: 'from', expPerPerson: 'per person', expGuests: 'guests',
+    expBook: 'Book via WhatsApp', expAll: 'See experiences',
+    cartaEyebrow: 'RESTAURANT · CAFÉ · BAR', cartaTitle: 'The menu', cartaLead: 'Signature cuisine inside the museum — a pause that becomes part of the journey.',
+    cartaTable: 'Enquire about a table', cartaPrices: 'Ask our team about prices and availability.', cartaSee: 'See the menu',
+    wkEyebrow: 'AFFILIATED WORKSHOPS', wkTitle: 'Where the restorations are born', wkLead: 'The workshops behind the collection. ARTECH stars across five criteria.',
+    wkPrincipal: 'Main workshop', wkWorks: 'Restorations', wkSee: 'See workshops',
+    galleryTitle: 'The museum', visitTitle: 'Plan your visit', visitLead: 'Chorrillos, Lima — Peru · 9:00–19:00',
     heroKicker: 'ARTECH · VISITOR GUIDE',
     heroTitle: 'The living history of the automobile',
     heroSub: 'Explore the collection car by car: its history, its spec sheet and its place in automotive evolution.',
@@ -79,7 +95,7 @@ const I = {
     addFav: 'Save to favorites', remFav: 'Saved',
     prevCar: 'Previous', nextCar: 'Next',
     infoTitle: 'Information', hours: 'Hours', location: 'Location', visit: 'Your visit',
-    open: 'Tue – Sun', openHrs: '10:00 – 19:00', monday: 'Monday', closed: 'Closed',
+    open: 'Tue – Sun', openHrs: '9:00 – 19:00', monday: 'Monday', closed: 'Closed',
     addr: 'Chorrillos, Lima — Peru', tickets: 'Tickets', ticketsVal: 'Book via WhatsApp',
     restTitle: 'Restaurant · Café · Bar', restTxt: 'Signature cuisine inside the museum. Take a break between halls.',
     howTitle: 'How to use the app', howTxt: 'Browse the collection, follow the era-by-era guided tour and save your favorite cars. Add it to your home screen to open it like an app.',
@@ -131,6 +147,12 @@ const SPEC_LABELS = {
   es: { tipo: 'Tipo', motor: 'Motor', cil: 'Cilindrada', hp: 'Potencia', trans: 'Transmisión', frenos: 'Frenos', vel: 'Velocidad máx.' },
   en: { tipo: 'Type', motor: 'Engine', cil: 'Displacement', hp: 'Power', trans: 'Transmission', frenos: 'Brakes', vel: 'Top speed' }
 };
+const L = (es, en) => (state.lang === 'en' ? (en ?? es) : es);
+const waURL = (msg) => `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`;
+// barra de puntuación 1–3 por criterio (estrellas ARTECH)
+function dots(n) {
+  return `<span class="dots">${[1,2,3].map(i => `<i class="${i<=n?'on':''}"></i>`).join('')}</span>`;
+}
 
 /* ============================================================
    ARRANQUE
@@ -198,6 +220,7 @@ function switchTab(tab, keep) {
   if (tab === 'home') v.innerHTML = viewHome();
   else if (tab === 'collection') v.innerHTML = viewCollection();
   else if (tab === 'tour') v.innerHTML = viewTour();
+  else if (tab === 'carta') v.innerHTML = viewCarta();
   else if (tab === 'info') v.innerHTML = viewInfo();
   bindView(tab);
 }
@@ -229,47 +252,190 @@ function viewHome() {
   const years = state.cars.map(yearNum).filter(Boolean);
   const decades = Math.round((Math.max(...years) - Math.min(...years)) / 10);
 
+  // Experiencias (3 tiers)
+  const expCards = EXPERIENCES.map(e => `
+    <button class="exp-card" data-exp="${e.id}">
+      ${ph('FOTO', e.img)}
+      <div class="exp-scrim">
+        <span class="exp-price">S/ ${e.price}</span>
+        <span class="exp-name">${e[state.lang].name}</span>
+        <span class="exp-meta">${e.min} ${t('expMin')} · ${e[state.lang].info}</span>
+      </div>
+    </button>`).join('');
+
+  // Galería del museo (fotos reales)
+  const gal = IMG.gallery.slice(0, 10).map(src =>
+    `<button class="gal-shot" data-lb="${src}">${ph('FOTO', src)}</button>`).join('');
+
   return `
-  <section class="home-hero">
-    <p class="hero-kicker">${t('heroKicker')}</p>
-    <h1 class="hero-title">${t('heroTitle')}</h1>
-    <p class="hero-sub">${t('heroSub')}</p>
+  <section class="hero-cine">
+    ${ph('IMAGEN — PORTADA', IMG.heroPool[0])}
+    <div class="hero-cine-scrim">
+      <p class="hero-kicker">${t('heroKicker')}</p>
+      <h1 class="hero-cine-title">${t('heroTitle')}</h1>
+      <p class="hero-cine-sub">${t('heroSub')}</p>
+      <div class="hero-cine-cta">
+        <button class="btn-gold" data-goto="tour">${t('tourCtaBtn')}</button>
+        <button class="btn-ghost-s" data-goto="collection">${t('seeAll')} →</button>
+      </div>
+    </div>
   </section>
 
-  <div class="section-head"><h2>${t('featured')}</h2>
-    <button class="see" data-goto="collection">${t('seeAll')}</button></div>
-  <div class="rail">${featCards}</div>
-
-  <div class="stats">
+  <div class="stats stats-float">
     <div class="stat"><b>${state.cars.length}</b><span>${t('statCars')}</span></div>
     <div class="stat"><b>${brands}</b><span>${t('statBrands')}</span></div>
     <div class="stat"><b>${decades}</b><span>${t('statDecades')}</span></div>
   </div>
 
-  <button class="tour-cta" data-goto="tour">
-    ${ph('IMAGEN — INTERIOR DEL MUSEO', `${ASSET}/interior.png`)}
-    <div class="tour-cta-body">
-      <h3>${t('tourCtaTitle')}</h3>
-      <p>${t('tourCtaSub')}</p>
-      <span class="btn-gold">${t('tourCtaBtn')}</span>
+  <div class="section-head"><div><p class="eyebrow">${t('expEyebrow')}</p><h2>${t('expTitle')}</h2></div>
+    <button class="see" data-goto="experiences">${t('seeAll')}</button></div>
+  <div class="rail">${expCards}</div>
+
+  <div class="section-head"><div><p class="eyebrow">${t('heroKicker')}</p><h2>${t('featured')}</h2></div>
+    <button class="see" data-goto="collection">${t('seeAll')}</button></div>
+  <div class="rail">${featCards}</div>
+
+  <button class="feature-band" data-goto="carta">
+    ${ph('FOTO', IMG.restaurantWide)}
+    <div class="band-scrim">
+      <p class="eyebrow">${t('cartaEyebrow')}</p>
+      <h3>${t('cartaTitle')}</h3>
+      <span class="band-go">${t('cartaSee')} →</span>
     </div>
   </button>
 
-  <div class="section-head"><h2>${t('tExplore')}</h2></div>
-  <div class="tiles">
-    <button class="tile" data-goto="collection">
-      <svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
-      <b>${t('collection')}</b><span>${t('tileColSub')}</span></button>
-    <button class="tile" data-goto="tour">
-      <svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>
-      <b>${t('tour')}</b><span>${t('tileTourSub')}</span></button>
-    <button class="tile" data-goto="info-rest">
-      <svg viewBox="0 0 24 24"><path d="M6 3v8a3 3 0 0 0 6 0V3M9 3v18M18 3c-1.5 1-2 3-2 6s.5 4 2 5v7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-      <b>${t('restaurant')}</b><span>${t('tileRestSub')}</span></button>
-    <button class="tile" data-goto="info">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 11v5M12 8h.01" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>
-      <b>${t('info')}</b><span>${t('tileInfoSub')}</span></button>
+  <div class="section-head"><div><p class="eyebrow">ARTECH</p><h2>${t('galleryTitle')}</h2></div></div>
+  <div class="rail rail-gal">${gal}</div>
+
+  <button class="feature-band" data-goto="talleres">
+    ${ph('FOTO', IMG.workshopWide)}
+    <div class="band-scrim">
+      <p class="eyebrow">${t('wkEyebrow')}</p>
+      <h3>${t('wkTitle')}</h3>
+      <span class="band-go">${t('wkSee')} →</span>
+    </div>
+  </button>
+
+  <div class="visit-cta">
+    <p class="eyebrow">${t('visitTitle')}</p>
+    <h3>${t('heroTitle')}</h3>
+    <p class="visit-lead">${t('visitLead')}</p>
+    <div class="visit-actions">
+      <a class="btn-gold" href="${waURL(L('Hola, quisiera información para visitar el museo ARTECH.','Hello, I would like information to visit the ARTECH museum.'))}" target="_blank" rel="noopener">${t('expBook')}</a>
+      <button class="btn-ghost-s" data-goto="info">${t('info')} →</button>
+    </div>
   </div>`;
+}
+
+/* ============================================================
+   EXPERIENCIAS
+   ============================================================ */
+function viewExperiences() {
+  const cards = EXPERIENCES.map(e => {
+    const msg = L(`Hola, quisiera reservar la ${e.es.name} (S/ ${e.price} por persona) en ARTECH.`,
+                  `Hello, I'd like to book the ${e.en.name} (S/ ${e.price} per person) at ARTECH.`);
+    return `
+    <article class="xp">
+      <div class="xp-media">${ph('FOTO', e.img)}<span class="xp-price">S/ ${e.price}</span></div>
+      <div class="xp-body">
+        <h3>${e[state.lang].name}</h3>
+        <p class="xp-meta">${e.min} ${t('expMin')} · ${e.guests > 1 ? e.guests + '+ ' + t('expGuests') : t('expPerPerson')}</p>
+        <p class="xp-info">${e[state.lang].info}</p>
+        <a class="btn-gold xp-book" href="${waURL(msg)}" target="_blank" rel="noopener">${t('expBook')}</a>
+      </div>
+    </article>`;
+  }).join('');
+  return `
+  <section class="sub-hero">${ph('FOTO', IMG.exp.vip)}
+    <div class="sub-hero-scrim"><p class="eyebrow">${t('expEyebrow')}</p><h1>${t('expTitle')}</h1><p>${t('expLead')}</p></div>
+  </section>
+  <div class="xp-list">${cards}</div>`;
+}
+
+/* ============================================================
+   TALLERES
+   ============================================================ */
+function viewTalleres() {
+  const crit = (p) => `<div class="wk-crit">${CRITERIOS.map(c =>
+    `<div class="wk-crit-row"><span>${c[state.lang]}</span>${dots(p[c.k]||0)}</div>`).join('')}</div>`;
+
+  const principal = `
+    <article class="wk wk-main">
+      <div class="wk-media">${ph('FOTO', WORKSHOP_PRINCIPAL.img)}<span class="wk-badge">${t('wkPrincipal')}</span></div>
+      <div class="wk-body">
+        <h3>${WORKSHOP_PRINCIPAL.n}</h3>
+        <p class="wk-spec">${WORKSHOP_PRINCIPAL[state.lang].e} · ${WORKSHOP_PRINCIPAL.z}</p>
+        <p class="wk-desc">${WORKSHOP_PRINCIPAL[state.lang].d}</p>
+        ${crit(WORKSHOP_PRINCIPAL.p)}
+        <p class="eyebrow wk-works-h">${t('wkWorks')}</p>
+        <div class="wk-works">${WORKSHOP_PRINCIPAL.obras.map(o => `<span class="wk-chip">${o}</span>`).join('')}</div>
+      </div>
+    </article>`;
+
+  const allies = WORKSHOPS.map(w => `
+    <article class="wk">
+      <div class="wk-media">${ph('FOTO', w.img)}</div>
+      <div class="wk-body">
+        <h3>${w.n}</h3>
+        <p class="wk-spec">${w[state.lang].e} · ${w.z}</p>
+        ${crit(w.p)}
+      </div>
+    </article>`).join('');
+
+  return `
+  <section class="sub-hero">${ph('FOTO', IMG.workshopMechanics)}
+    <div class="sub-hero-scrim"><p class="eyebrow">${t('wkEyebrow')}</p><h1>${t('wkTitle')}</h1><p>${t('wkLead')}</p></div>
+  </section>
+  <div class="wk-list">${principal}${allies}</div>`;
+}
+
+/* ============================================================
+   CARTA (restaurante)
+   ============================================================ */
+function viewCarta() {
+  const cats = CAFE_MENU.map((cat, ci) => {
+    const items = cat.items.map(it => {
+      const en = CAFE_EN[it.n] || {};
+      const nm = L(it.n, en.n || it.n);
+      const ds = L(it.d || '', en.d || '');
+      return `<div class="cm-item"><div class="cm-in">${nm}</div>${ds ? `<div class="cm-id">${ds}</div>` : ''}</div>`;
+    }).join('');
+    const dishKey = CAFE_CAT_IMG[ci] || 'dish-bife';
+    return `
+    <div class="cm-block${ci === 0 ? ' open' : ''}">
+      <button class="cm-cat" type="button" aria-expanded="${ci === 0}">
+        <span class="cm-name">${cat.t[state.lang]}</span>
+        <span class="cm-right"><span class="cm-count">${cat.items.length}</span>
+        <svg class="cm-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></span>
+      </button>
+      <div class="cm-items"><div class="cm-dish">${ph('FOTO', `${ASSET}/media/b06/${dishKey}.webp`)}</div><div class="cm-list">${items}</div></div>
+    </div>`;
+  }).join('');
+
+  return `
+  <section class="sub-hero sub-hero-tall">${ph('FOTO', IMG.restaurant)}
+    <div class="sub-hero-scrim">
+      <p class="eyebrow">${t('cartaEyebrow')}</p>
+      <h1>${t('cartaTitle')}</h1>
+      <p>${t('cartaLead')}</p>
+    </div>
+  </section>
+  <div class="cm-wrap">${cats}</div>
+  <div class="cm-foot">
+    <p>${t('cartaPrices')}</p>
+    <a class="btn-gold" href="${waURL(L('Hola, me gustaría consultar por una mesa en el restaurante ARTECH.','Hello, I would like to enquire about a table at the ARTECH restaurant.'))}" target="_blank" rel="noopener">${t('cartaTable')}</a>
+  </div>`;
+}
+
+/* abre una sub-página (experiencias/talleres) con botón volver */
+function openSub(view, title) {
+  state.back = () => switchTab('home');
+  setHeader(title);
+  el('tabbar').style.display = 'none';
+  window.scrollTo(0, 0);
+  el('view').innerHTML = view === 'experiences' ? viewExperiences() : viewTalleres();
+  // bind lightbox/goto dentro de la subpágina
+  el('view').querySelectorAll('[data-lb]').forEach(b => b.onclick = () => openLightbox(b.dataset.lb));
 }
 
 /* ============================================================
@@ -464,7 +630,7 @@ function viewInfo() {
   const wa = 'https://wa.me/51992432455';
   return `
   <div class="info-wrap">
-    <div class="info-banner">${ph('IMAGEN — FACHADA / SALA PRINCIPAL', `${ASSET}/legacy.png`)}</div>
+    <div class="info-banner">${ph('FOTO', IMG.gallery[0])}</div>
 
     <div class="info-card">
       <h3><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>${t('hours')}</h3>
@@ -479,11 +645,12 @@ function viewInfo() {
       <a class="wa-btn" href="${wa}" target="_blank" rel="noopener">${t('waBtn')}</a>
     </div>
 
-    <div class="info-card" id="restCard">
+    <button class="info-card info-card-btn" id="restCard" data-goto="carta">
       <h3><svg viewBox="0 0 24 24"><path d="M6 3v8a3 3 0 0 0 6 0V3M9 3v18M18 3c-1.5 1-2 3-2 6s.5 4 2 5v7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>${t('restTitle')}</h3>
       <p>${t('restTxt')}</p>
-      <div class="info-banner" style="margin-top:12px">${ph('IMAGEN — RESTAURANTE / CAFÉ', `${ASSET}/interior.png`)}</div>
-    </div>
+      <div class="info-banner" style="margin-top:12px">${ph('FOTO', IMG.restaurantWide)}</div>
+      <span class="info-go">${t('cartaSee')} →</span>
+    </button>
 
     <div class="info-card">
       <h3><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 11v5M12 8h.01" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>${t('howTitle')}</h3>
@@ -519,11 +686,25 @@ function openLightbox(src) {
 function bindView(tab) {
   const v = el('view');
 
-  // navegación por data-goto (home)
+  // navegación por data-goto
   v.querySelectorAll('[data-goto]').forEach(b => b.onclick = () => {
     const g = b.dataset.goto;
-    if (g === 'info-rest') { switchTab('info'); setTimeout(()=>el('restCard')?.scrollIntoView({behavior:'smooth',block:'start'}), 60); }
+    if (g === 'experiences') openSub('experiences', t('expTitle'));
+    else if (g === 'talleres') openSub('talleres', t('wkTitle'));
+    else if (g === 'info-rest') switchTab('carta');
     else switchTab(g);
+  });
+
+  // tarjetas de experiencia (home) → página experiencias
+  v.querySelectorAll('[data-exp]').forEach(b => b.onclick = () => openSub('experiences', t('expTitle')));
+
+  // galería (lightbox)
+  v.querySelectorAll('[data-lb]').forEach(b => b.onclick = () => openLightbox(b.dataset.lb));
+
+  // acordeón de la carta
+  v.querySelectorAll('.cm-cat').forEach(b => b.onclick = () => {
+    const open = b.closest('.cm-block').classList.toggle('open');
+    b.setAttribute('aria-expanded', String(open));
   });
 
   // tarjetas de auto (home rail + colección)

@@ -206,7 +206,7 @@ h1, h2, h3 { margin: 0; }
   height: calc(var(--tabbar-h) + var(--safe-b));
   padding-bottom: var(--safe-b);
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   background: rgba(16,16,18,.92);
   backdrop-filter: blur(16px);
   border-top: 1px solid var(--line);
@@ -225,7 +225,8 @@ h1, h2, h3 { margin: 0; }
   letter-spacing: .3px;
   transition: color .18s;
 }
-.tab svg { width: 24px; height: 24px; }
+.tab svg { width: 23px; height: 23px; }
+.tab span { font-size: 10px; }
 .tab-on { color: var(--gold); }
 
 /* ============================================================
@@ -604,6 +605,167 @@ h1, h2, h3 { margin: 0; }
   width: 40px; height: 40px; border-radius: 50%;
   background: rgba(255,255,255,.12); border: none; color: #fff; font-size: 18px;
 }
+
+/* ============================================================
+   HOME PREMIUM — hero cinemático + apartados
+   ============================================================ */
+.eyebrow { color: var(--gold); letter-spacing: 3px; font-size: 10.5px; font-weight: 700; margin: 0 0 6px; }
+
+.hero-cine {
+  position: relative;
+  height: 74vh;
+  min-height: 460px;
+  max-height: 640px;
+  overflow: hidden;
+}
+.hero-cine .ph { position: absolute; inset: 0; height: 100%; }
+.hero-cine-scrim {
+  position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(0deg, var(--bg) 2%, rgba(11,11,13,.35) 40%, rgba(11,11,13,.55) 100%);
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 0 var(--pad) 34px;
+}
+.hero-cine-title {
+  font-family: var(--serif); font-weight: 600;
+  font-size: clamp(34px, 10vw, 52px); line-height: 1.02; text-wrap: balance;
+  margin: 0 0 12px;
+}
+.hero-cine-sub { color: #d9d5cd; font-size: 15px; line-height: 1.55; max-width: 36ch; margin: 0 0 20px; }
+.hero-cine-cta { display: flex; gap: 10px; flex-wrap: wrap; }
+
+.btn-ghost-s {
+  background: rgba(255,255,255,.08); border: 1px solid var(--line);
+  color: var(--text); font-weight: 600; font-size: 14px;
+  padding: 11px 18px; border-radius: var(--r-pill);
+}
+
+.stats-float {
+  margin: -30px var(--pad) 0; position: relative; z-index: 2;
+  background: var(--bg-elev); border: 1px solid var(--line);
+  border-radius: var(--r-md); padding: 16px 10px;
+}
+.stats-float .stat { background: none; border: none; padding: 0; }
+
+.section-head .eyebrow { margin-bottom: 2px; }
+
+/* Experiencias (rail en home) */
+.exp-card {
+  flex: 0 0 72%; max-width: 280px; scroll-snap-align: center;
+  border-radius: var(--r-lg); overflow: hidden; position: relative;
+  border: 1px solid var(--line-soft); background: var(--bg-elev); padding: 0;
+}
+.exp-card .ph { aspect-ratio: 3/4; }
+.exp-scrim {
+  position: absolute; inset: 0;
+  background: linear-gradient(0deg, rgba(0,0,0,.88) 6%, transparent 55%);
+  display: flex; flex-direction: column; justify-content: flex-end; padding: 16px;
+}
+.exp-price { color: var(--gold); font-weight: 800; font-size: 15px; }
+.exp-name { font-family: var(--serif); font-size: 20px; font-weight: 600; margin: 2px 0; line-height: 1.08; }
+.exp-meta { color: var(--muted); font-size: 12px; }
+
+/* Galería */
+.rail-gal { padding-top: 0; }
+.gal-shot { flex: 0 0 64%; max-width: 260px; scroll-snap-align: center; border: none; padding: 0; border-radius: var(--r-md); overflow: hidden; }
+.gal-shot .ph { aspect-ratio: 4/3; border-radius: var(--r-md); }
+
+/* Bandas (carta / talleres) */
+.feature-band {
+  display: block; width: calc(100% - var(--pad)*2); margin: 24px var(--pad) 0;
+  border: 1px solid var(--line); border-radius: var(--r-lg); overflow: hidden;
+  position: relative; padding: 0; text-align: left;
+}
+.feature-band .ph { aspect-ratio: 16/10; }
+.band-scrim {
+  position: absolute; inset: 0;
+  background: linear-gradient(90deg, rgba(8,7,5,.88), rgba(8,7,5,.25));
+  display: flex; flex-direction: column; justify-content: center; gap: 4px; padding: 22px;
+}
+.band-scrim h3 { font-family: var(--serif); font-size: 26px; font-weight: 600; max-width: 62%; line-height: 1.05; }
+.band-go { color: var(--gold-soft); font-weight: 700; font-size: 14px; margin-top: 8px; }
+
+/* Visita CTA */
+.visit-cta {
+  margin: 30px var(--pad) 4px; padding: 26px 22px;
+  border-radius: var(--r-lg);
+  background: linear-gradient(150deg, rgba(201,162,75,.14), rgba(20,20,22,.9)), var(--bg-elev);
+  border: 1px solid rgba(201,162,75,.3); text-align: center;
+}
+.visit-cta h3 { font-family: var(--serif); font-size: 24px; font-weight: 600; margin: 4px 0 6px; text-wrap: balance; }
+.visit-lead { color: var(--muted); font-size: 14px; margin: 0 0 18px; }
+.visit-actions { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+
+/* ============================================================
+   SUB-PÁGINAS (experiencias / talleres) + hero de sección
+   ============================================================ */
+.sub-hero { position: relative; height: 40vh; min-height: 260px; overflow: hidden; }
+.sub-hero-tall { height: 46vh; min-height: 300px; }
+.sub-hero .ph { position: absolute; inset: 0; height: 100%; }
+.sub-hero-scrim {
+  position: absolute; inset: 0;
+  background: linear-gradient(0deg, var(--bg) 2%, rgba(11,11,13,.3) 45%, rgba(11,11,13,.5));
+  display: flex; flex-direction: column; justify-content: flex-end; padding: 0 var(--pad) 22px;
+}
+.sub-hero-scrim h1 { font-family: var(--serif); font-size: clamp(28px, 7vw, 40px); font-weight: 600; line-height: 1.04; margin: 2px 0 6px; }
+.sub-hero-scrim p { color: #d9d5cd; font-size: 14px; max-width: 34ch; margin: 0; }
+
+/* Experiencias (lista) */
+.xp-list { padding: 18px var(--pad) 10px; display: flex; flex-direction: column; gap: 18px; }
+.xp { background: var(--bg-elev); border: 1px solid var(--line-soft); border-radius: var(--r-lg); overflow: hidden; }
+.xp-media { position: relative; }
+.xp-media .ph { aspect-ratio: 16/10; }
+.xp-price { position: absolute; top: 12px; right: 12px; background: var(--gold); color: #17130c; font-weight: 800; padding: 6px 13px; border-radius: var(--r-pill); font-size: 14px; }
+.xp-body { padding: 16px 18px 18px; }
+.xp-body h3 { font-family: var(--serif); font-size: 23px; font-weight: 600; }
+.xp-meta { color: var(--gold-soft); font-size: 12.5px; font-weight: 600; letter-spacing: .5px; margin: 4px 0 8px; }
+.xp-info { color: var(--muted); font-size: 14.5px; line-height: 1.5; margin: 0 0 14px; }
+.xp-book { display: inline-block; text-decoration: none; }
+
+/* Talleres */
+.wk-list { padding: 18px var(--pad) 10px; display: flex; flex-direction: column; gap: 16px; }
+.wk { background: var(--bg-elev); border: 1px solid var(--line-soft); border-radius: var(--r-lg); overflow: hidden; }
+.wk-main { border-color: var(--gold); }
+.wk-media { position: relative; }
+.wk-media .ph { aspect-ratio: 16/9; }
+.wk-badge { position: absolute; top: 12px; left: 12px; background: var(--gold); color: #17130c; font-weight: 700; font-size: 11px; letter-spacing: 1px; padding: 5px 12px; border-radius: var(--r-pill); }
+.wk-body { padding: 16px 18px 18px; }
+.wk-body h3 { font-family: var(--serif); font-size: 22px; font-weight: 600; }
+.wk-spec { color: var(--muted); font-size: 13px; margin: 3px 0 12px; }
+.wk-desc { color: #d9d5cd; font-size: 14.5px; line-height: 1.6; margin: 0 0 14px; }
+.wk-crit { display: flex; flex-direction: column; gap: 7px; }
+.wk-crit-row { display: flex; justify-content: space-between; align-items: center; font-size: 13.5px; color: var(--muted); }
+.dots { display: inline-flex; gap: 5px; }
+.dots i { width: 8px; height: 8px; border-radius: 50%; background: var(--line); display: block; }
+.dots i.on { background: var(--gold); }
+.wk-works-h { margin: 16px 0 8px; }
+.wk-works { display: flex; flex-wrap: wrap; gap: 8px; }
+.wk-chip { background: var(--bg-elev-2); border: 1px solid var(--line); border-radius: var(--r-pill); padding: 6px 13px; font-size: 12.5px; color: #d9d5cd; }
+
+/* Carta (acordeón) */
+.cm-wrap { padding: 16px var(--pad) 0; display: flex; flex-direction: column; gap: 10px; }
+.cm-block { background: var(--bg-elev); border: 1px solid var(--line-soft); border-radius: var(--r-md); overflow: hidden; }
+.cm-cat { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 10px; background: none; border: none; padding: 16px 16px; color: var(--text); }
+.cm-name { font-family: var(--serif); font-size: 17px; font-weight: 600; text-align: left; }
+.cm-right { display: flex; align-items: center; gap: 10px; color: var(--muted); }
+.cm-count { font-size: 12px; background: var(--bg-elev-2); border-radius: var(--r-pill); padding: 2px 9px; }
+.cm-chev { width: 18px; height: 18px; transition: transform .2s; }
+.cm-block.open .cm-chev { transform: rotate(180deg); }
+.cm-items { max-height: 0; overflow: hidden; transition: max-height .3s ease; }
+.cm-block.open .cm-items { max-height: 1600px; }
+.cm-dish { padding: 0 16px; }
+.cm-dish .ph { aspect-ratio: 16/9; border-radius: var(--r-sm); margin-bottom: 6px; }
+.cm-list { padding: 4px 16px 16px; display: flex; flex-direction: column; gap: 12px; }
+.cm-item { border-bottom: 1px solid var(--line-soft); padding-bottom: 12px; }
+.cm-item:last-child { border-bottom: none; padding-bottom: 0; }
+.cm-in { font-size: 15px; font-weight: 600; }
+.cm-id { color: var(--muted); font-size: 13px; line-height: 1.45; margin-top: 3px; }
+.cm-foot { text-align: center; padding: 22px var(--pad) 8px; }
+.cm-foot p { color: var(--muted); font-size: 13.5px; margin: 0 0 14px; }
+.cm-foot .btn-gold { display: inline-block; text-decoration: none; }
+
+/* Info: tarjeta-botón */
+.info-card-btn { width: 100%; text-align: left; border: 1px solid var(--line-soft); cursor: pointer; }
+.info-go { display: inline-block; margin-top: 10px; color: var(--gold); font-weight: 700; font-size: 14px; }
 
 /* ============================================================
    INSTALAR APP (banner + hoja iOS)
