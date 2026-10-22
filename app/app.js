@@ -23,7 +23,7 @@ const state = {
 /* ---------- i18n de la interfaz (los datos traen su propio ES/EN) ---------- */
 const I = {
   es: {
-    tagline: 'Historia viva del automóvil', enter: 'Iniciar recorrido',
+    tagline: 'Historia viva del automóvil', enter: 'Entrar',
     splashHint: 'Guía interactiva del museo · Lima',
     tabHome: 'Inicio', tabCollection: 'Colección', tabTour: 'Recorrido', tabCarta: 'Carta', tabInfo: 'Info',
     expEyebrow: 'VIVE EL MUSEO', expTitle: 'Experiencias', expLead: 'Elige cómo quieres recorrer la colección.',
@@ -67,7 +67,7 @@ const I = {
     iosStep3: 'Toca Añadir. ¡Listo!'
   },
   en: {
-    tagline: 'The living history of the automobile', enter: 'Start the tour',
+    tagline: 'The living history of the automobile', enter: 'Enter',
     splashHint: 'Interactive museum guide · Lima',
     tabHome: 'Home', tabCollection: 'Collection', tabTour: 'Tour', tabCarta: 'Menu', tabInfo: 'Info',
     expEyebrow: 'LIVE THE MUSEUM', expTitle: 'Experiences', expLead: 'Choose how you want to explore the collection.',

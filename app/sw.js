@@ -4,7 +4,7 @@
    - Imágenes del museo (../assets/cars/...) quedan fuera de scope: se sirven en
      línea y el navegador las cachea; si faltan, la app muestra placeholders.
 */
-const VERSION = 'artech-app-v4';
+const VERSION = 'artech-app-v5';
 const CORE = [
   './',
   './index.html',
@@ -38,10 +38,26 @@ self.addEventListener('fetch', (e) => {
   if (req.method !== 'GET') return;
   const url = new URL(req.url);
 
-  // Navegación: devuelve el shell (cache-first con red de respaldo)
+  // Navegación: RED primero (siempre lo último al estar en línea), caché de respaldo offline
   if (req.mode === 'navigate') {
     e.respondWith(
-      caches.match('./index.html').then((cached) => cached || fetch(req))
+      fetch(req).then((res) => {
+        const copy = res.clone();
+        caches.open(VERSION).then((c) => c.put('./index.html', copy));
+        return res;
+      }).catch(() => caches.match('./index.html'))
+    );
+    return;
+  }
+
+  // Shell (css/js): red primero para recibir cambios al instante, caché offline
+  if (/\/(app\.js|app\.css|content\.js)$/.test(url.pathname)) {
+    e.respondWith(
+      fetch(req).then((res) => {
+        const copy = res.clone();
+        caches.open(VERSION).then((c) => c.put(req, copy));
+        return res;
+      }).catch(() => caches.match(req))
     );
     return;
   }
